@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>민수기 19:1–10 쉽게 읽기 — 정론·정행·적용</title>
+  <meta name="description" content="민수기 19:1–10(붉은 암송아지)을 일반 성도도 쉽게 이해할 수 있도록 정론(orthodoxy)·정행(orthopraxy)·현대 적용으로 나눈 모바일 친화 상호작용 페이지" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-soft: #121821;
+      --card: #141c27;
+      --fg: #eaf2ff;
+      --muted: #b8c4d9;
+      --accent: #7bdcb5;   /* 민트 */
+      --accent-2: #82aaff; /* 블루 */
+      --danger: #ff6b6b;
+      --ok: #22c55e;
+      --shadow: 0 8px 24px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f7fb;
+        --bg-soft: #eef2f8;
+        --card: #ffffff;
+        --fg: #0e1726;
+        --muted: #4b5563;
+        --accent: #06b6d4;
+        --accent-2: #4f46e5;
+        --shadow: 0 10px 24px rgba(0,0,0,.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding-bottom: 96px; }
+    header {
+      position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(1.2) blur(8px);
+      background: linear-gradient(90deg, rgba(127,221,181,0.08), rgba(130,170,255,0.08));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .head { display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
+    .brand { display:flex; gap:10px; align-items:center; }
+    .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+    .title { font-weight: 800; letter-spacing:.1px; }
+    .controls { display:flex; gap:8px; }
+    .btn {
+      appearance:none; border:none; cursor:pointer; border-radius: 999px; padding:10px 14px; font-weight:700; font-size:14px; color: var(--fg);
+      background: rgba(255,255,255,.08); box-shadow: var(--shadow);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#03121a; }
+
+    .hero { padding: 18px 16px 8px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; font-size:12px; color: var(--fg); background: rgba(255,255,255,.08); padding:8px 12px; border-radius:999px; }
+    .h1 { font-size: 22px; font-weight: 900; line-height:1.25; margin: 10px 0 6px; }
+    .sub { color: var(--muted); font-size: 14px; }
+
+    .grid { display:grid; gap:14px; padding: 12px 16px; }
+    .card { background: var(--card); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card .hint { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+    details { border: 1px solid rgba(255,255,255,.06); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.02); }
+    summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:10px; padding: 14px 14px; cursor: pointer; font-weight:800; }
+    summary::-webkit-details-marker { display:none; }
+    .chev { transition: transform .2s ease; }
+    details[open] .chev { transform: rotate(90deg); }
+    .content { padding: 0 14px 16px; color: var(--fg); }
+    .content ul { margin: 10px 0; padding-left: 18px; }
+    .content li { margin: 8px 0; }
+
+    .tagbar { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .chip { padding:8px 12px; border-radius:999px; background: rgba(127,221,181,.15); color: var(--fg); border:1px solid rgba(127,221,181,.35); font-weight:700; font-size:13px; cursor:pointer; }
+    .chip[data-type="blue"] { background: rgba(130,170,255,.12); border-color: rgba(130,170,255,.35); }
+
+    .kv { display:grid; grid-template-columns: 110px 1fr; gap:8px; }
+    .kv div { padding:6px 0; border-bottom:1px dashed rgba(255,255,255,.08); color: var(--muted); }
+    .kv div b { color: var(--fg); }
+
+    .sheet { position: fixed; inset: 0; display:none; z-index: 90; }
+    .sheet.show { display:block; }
+    .sheet .overlay { position:absolute; inset:0; background: rgba(0,0,0,.4); }
+    .sheet .panel { position:absolute; left:0; right:0; bottom:0; background: var(--card); border-radius: 18px 18px 0 0; padding: 16px; box-shadow: var(--shadow); max-height: 70vh; overflow:auto; }
+    .sheet h4 { margin: 0 0 8px; }
+
+    .bar { position:fixed; left:0; right:0; bottom:0; z-index: 40; backdrop-filter: blur(8px) saturate(1.2); box-shadow: 0 -6px 24px rgba(0,0,0,.25); background: linear-gradient(90deg, rgba(127,221,181,.08), rgba(130,170,255,.08)); padding: 10px 12px; }
+    .bar .row { display:flex; gap:8px; }
+    .bar .row .btn { flex:1; }
+
+    .quiz { padding: 8px 16px 0; }
+    .qcard { background: var(--card); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+    .q { font-weight:800; margin: 0 0 10px; }
+    .opt { display:flex; flex-direction:column; gap:8px; }
+    .opt button { text-align:left; width:100%; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: var(--fg); padding:12px; border-radius:12px; font-weight:700; }
+    .opt button.correct { border-color: rgba(34,197,94,.6); box-shadow: inset 0 0 0 999px rgba(34,197,94,.12); }
+    .opt button.wrong { border-color: rgba(255,107,107,.6); box-shadow: inset 0 0 0 999px rgba(255,107,107,.10); }
+    .result { margin-top:10px; font-weight:800; }
+
+    .muted { color: var(--muted); font-size: 13px; }
+    .divider { height:1px; background: rgba(255,255,255,.08); margin: 12px 0; }
+
+    .small { font-size: 12px; }
+    .note { background: rgba(255,255,255,.06); padding:10px 12px; border-radius:12px; }
+
+    .summary-mode details .content { display:none; }
+    .summary-mode .hint, .summary-mode .muted { display:none; }
+
+    /* Full text (scripture) panel */
+    .fulltext { padding: 8px 16px 0; }
+    .fulltext details {
+      border: 1px solid rgba(127,221,181,.45);
+      background: linear-gradient(180deg, rgba(127,221,181,.10), rgba(130,170,255,.08));
+      border-radius: 16px; overflow: hidden;
+    }
+    .fulltext summary { font-weight: 900; padding: 14px 14px; display:flex; align-items:center; justify-content:space-between; }
+    .fulltext .content { padding: 6px 14px 14px; }
+    .scripture { font-size: 14px; line-height: 1.7; }
+    .scripture p { margin: 8px 0; }
+    .scripture .v { display:inline-block; width: 2.2em; color: var(--accent); font-weight: 800; }
+    .scripture .note { color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">민수기 19:1–10</div>
+          <div class="small muted">정론 · 정행 · 현대 적용 — 모바일 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare" title="공유">공유</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- 본문 전체 보기: 최상단 접이식 패널 -->
+    <section class="fulltext" aria-label="민수기 19:1–10 본문 전체">
+      <details>
+        <summary>📜 본문 전체 보기 (민수기 19:1–10) <span class="chev">▶</span></summary>
+        <div class="content scripture">
+          <p><span class="v">1</span> 여호와께서 모세와 아론에게 말씀하여 이르시되</p>
+          <p><span class="v">2</span> 여호와께서 명령하시는 법의 율례를 이제 이르노니 이스라엘 자손에게 일러서 온전하여 흠이 없고 아직 멍에 메지 아니한 붉은 암송아지를 네게로 끌어오게 하고</p>
+          <p><span class="v">3</span> 너는 그것을 제사장 엘르아살에게 줄 것이요 그는 그것을 진영 밖으로 끌어내어서 자기 목전에서 잡게 할 것이며</p>
+          <p><span class="v">4</span> 제사장 엘르아살은 손가락에 그 피를 찍고 그 피를 회막 앞을 향하여 일곱 번 뿌리고</p>
+          <p><span class="v">5</span> 그 암소를 자기 목전에서 불사르게 하되 그 가죽과 고기와 피와 똥을 불사르게 하고</p>
+          <p><span class="v">6</span> 동시에 제사장은 백향목과 우슬초와 홍색 실을 가져다가 암송아지를 사르는 불 가운데에 던질 것이며</p>
+          <p><span class="v">7</span> 제사장은 자기의 옷을 빨고 물로 몸을 씻은 후에 진영에 들어갈 것이라 그는 저녁까지 부정하리라</p>
+          <p><span class="v">8</span> 송아지를 불사른 자도 자기의 옷을 물로 빨고 물로 그 몸을 씻을 것이라 그도 저녁까지 부정하리라</p>
+          <p><span class="v">9</span> 이에 정결한 자가 암송아지의 재를 거두어 진영 밖 정한 곳에 둘지니 이것은 이스라엘 자손 회중을 위하여 간직하였다가 부정을 씻는 물을 위해 간직할지니 그것은 속죄제니라</p>
+          <p><span class="v">10</span> 암송아지의 재를 거둔 자도 자기의 옷을 빨 것이며 저녁까지 부정하리라 이는 이스라엘 자손과 그중에 거류하는 외인에게 영원한 율례니라</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="hero">
+      <span class="pill">📖 오늘의 본문 — 붉은 암송아지 정결 규례</span>
+      <h1 class="h1">쉽게 읽는 요점</h1>
+      <p class="sub">
+        시체 접촉으로 생기는 <b>부정(טָמֵא)</b>을 씻기 위해, <b>붉은 암송아지</b>를 <b>진영 밖</b>에서 전소하고
+        재를 <b>정한 곳</b>에 보관해 <b>부정을 씻는 물(מֵי נִדָּה)</b>을 만듭니다.
+        정결을 돕는 사람들도 <b>저녁까지 부정</b>하다는 역설이 강조됩니다.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>한눈 요약 (3문장)</h3>
+        <ul>
+          <li><b>정론</b>: 하나님은 “<u>법의 율례(חֻקַּת הַתּוֹרָה)</u>”로 붉은 암송아지 의식을 제정하여 <u>시체 부정</u>을 정결케 하십니다.</li>
+          <li><b>정행</b>: 의미 설명보다 <u>절차</u>가 핵심—누가/어디서/어떻게 준비·소각·보관·뿌리는지 상세히 규정합니다.</li>
+          <li><b>적용</b>: 오늘 우리는 이를 <u>위험 관리·격리·재입장</u>의 SOP로 번역해 장례·간병 이후의 회복 루틴을 세울 수 있습니다.</li>
+        </ul>
+        <div class="hint">아래 섹션을 펼쳐 상세 설명과 예시, 퀴즈를 볼 수 있습니다.</div>
+      </article>
+
+      <!-- 1) 정론 -->
+      <details open>
+        <summary>① 정론(Orthodoxy) — 본문이 말하는 것 <span class="chev">▶</span></summary>
+        <div class="content">
+          <div class="note">핵심: <b>붉은 암송아지(פָרָה אֲדֻמָּה)</b>를 <b>진영 밖</b>에서 전소하고, <b>재</b>와 <b>생수</b>로 만든 물을 시체 접촉자에게 뿌려 정결케 합니다.</div>
+          <ul>
+            <li><b>도입</b>: “<b>법의 율례</b>”(19:2) — 해석보다 순종이 전제된 규정.</li>
+            <li><b>절차</b>: 엘르아살이 감독, <u>회막을 향해 피 7번</u> 뿌림 → <u>완전 소각</u> → <u>백향목·우슬초·홍색 실</u> 투입(19:3–6).</li>
+            <li><b>보관과 사용</b>: 재를 <u>정한 곳</u>에 보관, <u>부정을 씻는 물</u>로 활용(19:9).</li>
+            <li><b>역설</b>: 정결을 돕는 제사장·소각자·재를 거둔 자도 <u>저녁까지 부정</u>(19:7–10).</li>
+            <li><b>범위</b>: “이스라엘과 그중에 거류하는 외인에게 <u>영원한 율례</u>”(19:10).</li>
+          </ul>
+          <div class="divider"></div>
+          <div class="muted small">포인트: 죽음의 오염을 <u>도덕적 비난</u>이 아니라 <u>관리할 위험</u>으로 취급—정결의 길을 제도화합니다.</div>
+        </div>
+      </details>
+
+      <!-- 2) 정행 -->
+      <details>
+        <summary>② 정행(Orthopraxy) — 실천 관점의 점검 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>왜·무엇보다 ‘어떻게’</b>: 본문은 상징 해설보다 <u>공정(工程)</u>을 규정합니다(장소·동선·역할·시간).</li>
+            <li><b>경계 관리</b>: <u>진영 밖</u>에서 처리 — 죽음의 오염을 <u>성영역 밖</u>으로 격리.</li>
+            <li><b>정화자의 보호</b>: 정결을 돕는 이도 일시적 부정(저녁까지) — <u>2차 위험</u>을 전제로 보호 규정 필요.</li>
+            <li><b>포용성</b>: “외인”까지 적용 — <u>공동체 전체의 안전 규범</u>으로 기능.</li>
+          </ul>
+          <div class="note small">핵심 문장: “정결은 설명보다 절차로 지켜진다.” — 질서를 살리는 운영 표준.</div>
+        </div>
+      </details>
+
+      <!-- 3) 적용 -->
+      <details>
+        <summary>③ 현대 적용 — 오늘 교회/공동체에서 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>SOP 3단계</b>: ① <u>준비·격리</u>(진영 밖) → ② <u>정화 루틴</u>(세정·휴식·시간) → ③ <u>재입장</u>(면책 기준 문서화).</li>
+            <li><b>장례·간병 사역</b>: 봉사자에게 <u>휴식/세정/심리 회복</u> 시간을 제도화(“저녁까지”의 리셋 상징).</li>
+            <li><b>공동체 안전</b>: 감염·재난 대응 훈련에 <u>격리→정화→복귀</u> 절차를 명문화.</li>
+            <li><b>반복 의례</b>: 정기적 추모/위생 훈련 등 <u>반복 가능한 상징</u>으로 ‘경계 회복’을 체화.</li>
+          </ul>
+          <div class="note small">포인트: 본문을 오늘의 <u>위험관리·돌봄 윤리</u>로 번역하면, 모두가 안전하게 다시 공동체로 들어오게 됩니다.</div>
+        </div>
+      </details>
+
+      <!-- 히브리어 키워드 -->
+      <article class="card">
+        <h3>히브리어 키워드 (누르면 설명)</h3>
+        <div class="tagbar">
+          <button class="chip" data-word="huqqah">חֻקָּה · ḥuqqāh</button>
+          <button class="chip" data-type="blue" data-word="parah">פָּרָה אֲדֻמָּה · parāh ʾădummāh</button>
+          <button class="chip" data-word="tahor">טָהוֹר / טָמֵא · ṭāhôr/ṭāmēʾ</button>
+          <button class="chip" data-type="blue" data-word="meiniddah">מֵי נִדָּה · mē niddāh</button>
+          <button class="chip" data-word="chattaat">חַטָּאת · ḥaṭṭāʾt</button>
+          <button class="chip" data-type="blue" data-word="triad">עֵץ אֶרֶז · אֵזוֹב · שְׁנִי תוֹלָעַת</button>
+        </div>
+        <p class="hint">철자·음역·어근·의미·대표 용례를 간단히 정리했습니다.</p>
+      </article>
+
+      <!-- 본문 하이라이트 -->
+      <details>
+        <summary>본문 핵심 흐름 다시 보기 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li>(1–2) <u>법의 율례</u> 선포 — 결함 없고 멍에 메지 않은 <u>붉은 암송아지</u>.</li>
+            <li>(3–6) <u>엘르아살</u> 감독, <u>진영 밖</u>에서 잡고 피를 <u>일곱 번</u> 뿌림 → <u>완전 소각</u> + <u>백향목·우슬초·홍색 실</u> 투입.</li>
+            <li>(7–8) 제사장·소각자는 옷 빨고 몸 씻되 <u>저녁까지 부정</u>.</li>
+            <li>(9–10) <u>정결한 자</u>가 재를 모아 <u>정한 곳</u>에 보관 → <u>부정을 씻는 물</u>로 사용. 재를 거둔 자도 <u>저녁까지 부정</u>. “<u>영원한 율례</u>”.</li>
+          </ul>
+          <div class="muted small">※ 성경 인용은 이해를 돕기 위한 요약입니다.</div>
+        </div>
+      </details>
+
+      <!-- 퀴즈 -->
+      <section id="quiz" class="quiz" aria-label="이해도 점검 퀴즈">
+        <div class="qcard">
+          <div class="q" id="qtext">퀴즈를 시작해 보세요.</div>
+          <div class="opt" id="qopts"></div>
+          <div class="result" id="qresult"></div>
+          <div class="divider"></div>
+          <div class="muted small" id="qprogress">0 / 5</div>
+        </div>
+      </section>
+
+      <article class="card">
+        <h3>실천 체크리스트</h3>
+        <ul>
+          <li><b>격리</b>: 위험·오염 상황에 <u>임시 분리 공간</u>(진영 밖)을 운영하는가?</li>
+          <li><b>정화 루틴</b>: 봉사자·유가족·간병인을 위한 <u>세정·휴식·심리 회복</u> 시간을 보장하는가?</li>
+          <li><b>재입장 규정</b>: “저녁까지” 같은 <u>리셋 시간</u>과 복귀 면책 기준이 문서화되어 있는가?</li>
+        </ul>
+      </article>
+
+      <article class="card small muted">
+        <div>제작: 모바일 전용, 오프라인에서도 동작합니다. 상단 <b>공유</b> 버튼으로 링크를 나눌 수 있습니다.</div>
+      </article>
+    </section>
+  </main>
+
+  <!-- 바텀 액션 바 -->
+  <div class="bar">
+    <div class="wrap">
+      <div class="row">
+        <button class="btn" id="btnToggleSummary">요약 모드</button>
+        <button class="btn" id="btnExpand">전체 펼치기</button>
+        <button class="btn primary" id="btnQuiz">퀴즈 시작</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 바텀 시트: 용어 설명 -->
+  <div class="sheet" id="sheet">
+    <div class="overlay" id="sheetClose" aria-label="닫기"></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <h4 id="sheetTitle">용어</h4>
+      <div id="sheetBody" class="small"></div>
+      <div class="divider"></div>
+      <button class="btn" id="sheetCloseBtn">닫기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    document.getElementById('btnShare').addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: document.title, text: '민수기 19:1–10 쉽게 읽기', url: location.href });
+        } catch(e) { /* 취소 */ }
+      } else {
+        alert('이 링크를 복사해 공유하세요:\n' + location.href);
+      }
+    });
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode') ? '자세히 모드' : '요약 모드';
+    });
+
+    // 전체 펼치기/접기
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true; // 첫 섹션이 열려 있으니 초기 true
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+
+    // 히브리어 키워드 바텀시트
+    const dict = {
+      huqqah: {
+        title: 'חֻקָּה — ḥuqqāh',
+        html: `
+          <div class="kv">
+            <div>어근</div><div><b>√חקק</b> (새기다·정하다)</div>
+            <div>의미</div><div>법규, 규정(설명보다 준수 강조)</div>
+            <div>핵심</div><div>19:2; 19:10 “법의 율례/영원한 율례”</div>
+            <div>용례</div><div>출 12:14; 레 10:13; 민 19:2,10</div>
+          </div>`
+      },
+      parah: {
+        title: 'פָּרָה אֲדֻמָּה — parāh ʾădummāh',
+        html: `
+          <div class="kv">
+            <div>요건</div><div>무흠(תְּמִימָה), 멍에 無(לֹא עֹל)</div>
+            <div>의미</div><div>시체 부정 정결을 위한 전용 제물</div>
+            <div>핵심</div><div>진영 밖 전소, 피 7번, 재 보관</div>
+            <div>용례</div><div>민 19장 전반</div>
+          </div>`
+      },
+      tahor: {
+        title: 'טָהוֹר / טָמֵא — ṭāhôr / ṭāmēʾ',
+        html: `
+          <div class="kv">
+            <div>의미</div><div>정결 / 부정(도덕판단이 아닌 <b>상태</b>)</div>
+            <div>핵심</div><div>죽음의 오염은 강력·전염성 — 관리 대상 위험</div>
+            <div>용례</div><div>민 19:7–10 등</div>
+          </div>`
+      },
+      meiniddah: {
+        title: 'מֵי נִדָּה — mē niddāh',
+        html: `
+          <div class="kv">
+            <div>뜻</div><div>부정을 씻는 물(재 + 생수 혼합)</div>
+            <div>핵심</div><div>시체 접촉자 정결을 위한 뿌림용</div>
+            <div>용례</div><div>민 19:9, 19:17(문맥)</div>
+          </div>`
+      },
+      chattaat: {
+        title: 'חַטָּאת — ḥaṭṭāʾt',
+        html: `
+          <div class="kv">
+            <div>의미</div><div>정화 제물(여기서는 ‘죄’보다 ‘정결’ 기능 강조)</div>
+            <div>핵심</div><div>민 19:9 “그것은 속죄제니라”</div>
+            <div>용례</div><div>레 4장 전반; 민 19:9</div>
+          </div>`
+      },
+      triad: {
+        title: 'עֵץ אֶרֶז · אֵזוֹב · שְׁנִי תוֹלָעַת',
+        html: `
+          <div class="kv">
+            <div>구성</div><div>백향목·우슬초·홍색 실</div>
+            <div>의미</div><div>정결·경계 회복의 상징 삼합</div>
+            <div>핵심</div><div>불 속에 던져 <b>정결 행위에 결속</b></div>
+            <div>용례</div><div>민 19:6; 레 14장(정결 본문)</div>
+          </div>`
+      }
+    };
+
+    const sheet = document.getElementById('sheet');
+    const sheetTitle = document.getElementById('sheetTitle');
+    const sheetBody = document.getElementById('sheetBody');
+    const openSheet = (key) => {
+      const item = dict[key];
+      if (!item) return;
+      sheetTitle.textContent = item.title;
+      sheetBody.innerHTML = item.html;
+      sheet.classList.add('show');
+    };
+    const closeSheet = () => sheet.classList.remove('show');
+    document.getElementById('sheetClose').addEventListener('click', closeSheet);
+    document.getElementById('sheetCloseBtn').addEventListener('click', closeSheet);
+
+    document.querySelectorAll('.chip').forEach(ch => ch.addEventListener('click', () => openSheet(ch.dataset.word)));
+
+    // 퀴즈
+    const quizData = [
+      {
+        q: '붉은 암송아지 의식은 어디에서 진행되나요?',
+        a: [
+          '회막 안',
+          '진영 밖',
+          '성소 지성소 안'
+        ],
+        correct: 1,
+        explain: '민 19:3—의식의 핵심은 <u>진영 밖</u> 처리입니다.'
+      },
+      {
+        q: '피는 어떻게 사용되나요?',
+        a: [
+          '제단 위에 붓는다',
+          '회막 앞을 향해 일곱 번 뿌린다',
+          '제사장이 마신다'
+        ],
+        correct: 1,
+        explain: '민 19:4—회막 앞을 향해 <u>7번</u> 뿌립니다.'
+      },
+      {
+        q: '불에 던지는 세 가지는 무엇인가요?',
+        a: [
+          '백향목·우슬초·홍색 실',
+          '소금·기름·포도주',
+          '향품·몰약·유향'
+        ],
+        correct: 0,
+        explain: '민 19:6—백향목·우슬초·홍색 실의 삼합.'
+      },
+      {
+        q: '<u>부정을 씻는 물(מֵי נִדָּה)</u>은 무엇으로 만드나요?',
+        a: [
+          '재와 생수를 섞어 만든다',
+          '포도주와 기름을 섞는다',
+          '향을 태운 연기를 모은다'
+        ],
+        correct: 0,
+        explain: '민 19:9, 17—암송아지의 재 + 생수.'
+      },
+      {
+        q: '정결을 돕는 사람들의 상태는 어떻게 되나요?',
+        a: [
+          '즉시 완전 정결',
+          '저녁까지 부정',
+          '일주일간 부정'
+        ],
+        correct: 1,
+        explain: '민 19:7–10—제사장·소각자·재를 거둔 자 모두 <u>저녁까지</u> 부정.'
+      }
+    ];
+
+    let qi = -1, score = 0;
+    const qtext = document.getElementById('qtext');
+    const qopts = document.getElementById('qopts');
+    const qresult = document.getElementById('qresult');
+    const qprogress = document.getElementById('qprogress');
+
+    function renderQ() {
+      if (qi < 0) {
+        qtext.textContent = '퀴즈를 시작해 보세요.';
+        qopts.innerHTML = '';
+        qresult.textContent = '';
+        qprogress.textContent = '0 / ' + quizData.length;
+        return;
+      }
+      const item = quizData[qi];
+      qtext.innerHTML = `Q${qi+1}. ${item.q}`;
+      qopts.innerHTML = '';
+      item.a.forEach((t, idx) => {
+        const b = document.createElement('button');
+        b.innerHTML = t;
+        b.addEventListener('click', () => answer(idx));
+        qopts.appendChild(b);
+      });
+      qresult.textContent = '';
+      qprogress.textContent = `${qi+1} / ${quizData.length}`;
+    }
+
+    function answer(idx) {
+      const item = quizData[qi];
+      const buttons = Array.from(qopts.querySelectorAll('button'));
+      buttons.forEach((b, i) => {
+        b.disabled = true;
+        if (i === item.correct) b.classList.add('correct');
+        else if (i === idx) b.classList.add('wrong');
+      });
+      const ok = idx === item.correct;
+      if (ok) score++;
+      qresult.innerHTML = (ok ? '정답! ' : '오답 ') + '— ' + item.explain;
+      setTimeout(nextQ, 800);
+    }
+
+    function nextQ() {
+      qi++;
+      if (qi >= quizData.length) {
+        qtext.textContent = '완료!';
+        qopts.innerHTML = '';
+        qresult.textContent = `점수: ${score} / ${quizData.length}  — 수고하셨습니다!`;
+        qprogress.textContent = `${quizData.length} / ${quizData.length}`;
+        qi = -1; score = 0; // 초기화
+        return;
+      }
+      renderQ();
+    }
+
+    document.getElementById('btnQuiz').addEventListener('click', () => {
+      if (qi === -1) { qi = 0; score = 0; renderQ(); }
+      else { nextQ(); }
+      window.scrollTo({ top: document.getElementById('quiz').offsetTop - 80, behavior: 'smooth' });
+    });
+
+    // 초기 상태
+    renderQ();
+  </script>
+</body>
+</html>
