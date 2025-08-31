@@ -1,0 +1,124 @@
+name: BNOC Pages (hub+feed)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  BASE_PATH: /BNOC
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate hub, feed, latest
+        run: |
+          python3 - << 'PY'
+          import os, re, html, json, subprocess, datetime, pathlib
+          OWNER = os.getenv("GITHUB_REPOSITORY_OWNER","")
+          REPO  = os.getenv("GITHUB_REPOSITORY","").split("/")[-1] if os.getenv("GITHUB_REPOSITORY") else ""
+          BASE  = os.getenv("BASE_PATH", f"/{REPO}" if REPO else "")
+          HOST  = f"https://{OWNER}.github.io"
+
+          def find_issue_dirs():
+              items=[]
+              for d in sorted(os.listdir('.')):
+                  if not os.path.isdir(d): continue
+                  if d.startswith(('.', '_', 'assets', '.git')): continue
+                  if re.fullmatch(r'\d{8}', d): items.append(d)
+              return items
+
+          def parse_date_from_folder(name):
+              s=name
+              if re.fullmatch(r'\d{8}', s):
+                  mm, dd, yyyy = int(s[:2]), int(s[2:4]), int(s[4:])
+                  if 1<=mm<=12 and 1<=dd<=31 and 2000<=yyyy<=2100:
+                      return f"{yyyy:04d}-{mm:02d}-{dd:02d}"
+                  yyyy, mm, dd = int(s[:4]), int(s[4:6]), int(s[6:])
+                  if 2000<=yyyy<=2100 and 1<=mm<=12 and 1<=dd<=31:
+                      return f"{yyyy:04d}-{mm:02d}-{dd:02d}"
+              return None
+
+          def git_date(path):
+              try:
+                  out = subprocess.check_output(["git","log","-1","--format=%aI","--",path], text=True).strip()
+                  if out: return out[:10]
+              except Exception: pass
+              return None
+
+          issues=[]
+          for d in find_issue_dirs():
+              htmls=[f for f in os.listdir(d) if f.lower().endswith(".html")]
+              if not htmls: continue
+              filename = "index.html" if "index.html" in htmls else htmls[0]
+              p = os.path.join(d, filename)
+              raw=open(p,encoding="utf-8",errors="ignore").read()
+              t  = re.search(r'<title>(.*?)</title>', raw, re.I|re.S)
+              m  = re.search(r'<meta\s+name=["\']date["\']\s+content=["\'](.*?)["\']', raw, re.I)
+              title = html.escape(t.group(1).strip()) if t else f"#{d}"
+              date  = (m.group(1).strip() if m else None) or parse_date_from_folder(d) or git_date(d) or git_date(p) or datetime.date.today().isoformat()
+              link  = f"{BASE}/{d}/" if filename.lower()=="index.html" else f"{BASE}/{d}/{filename}"
+              issues.append({"dir": d, "title": title, "date": date, "link": link})
+
+          issues.sort(key=lambda x: (x["date"], x["link"]), reverse=True)
+          pathlib.Path(".nojekyll").write_text("")
+
+          open("index.json","w",encoding="utf-8").write(json.dumps({"items":issues}, ensure_ascii=False, indent=2))
+
+          items="\n".join([f'<li><time datetime="{it["date"]}">{it["date"]}</time> — <a href="{it["link"]}">{it["title"]}</a></li>' for it in issues])
+          hub=f"""<!doctype html><meta charset="utf-8">
+          <title>BNOC — Weekly</title>
+          <h1>BNOC — Weekly</h1>
+          <p><a href="{BASE}/feed.xml">RSS</a> · <a href="{BASE}/sitemap.xml">Sitemap</a> · <a href="{BASE}/latest/">Latest</a></p>
+          <ol>{items if items else "<li>(empty)</li>"}</ol>"""
+          open("index.html","w",encoding="utf-8").write(hub)
+
+          def esc(s): return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+          now = datetime.datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S +0000")
+          rss = [f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel>',
+                 f'<title>BNOC Weekly</title>',
+                 f'<link>{HOST}{BASE}/</link>',
+                 f'<description>Weekly BNOC newsletters</description>',
+                 f'<language>ko</language>',
+                 f'<lastBuildDate>{now}</lastBuildDate>']
+          for it in issues[:50]:
+              pub = datetime.datetime.fromisoformat(it["date"]).strftime("%a, %d %b %Y 00:00:00 +0000")
+              rss.append(f'<item><title>{esc(it["title"])}</title>'
+                         f'<link>{HOST}{it["link"]}</link>'
+                         f'<guid isPermaLink="true">{HOST}{it["link"]}</guid>'
+                         f'<pubDate>{pub}</pubDate></item>')
+          rss.append('</channel></rss>')
+          open("feed.xml","w",encoding="utf-8").write("".join(rss))
+
+          urls = [f"{HOST}{BASE}/"] + [f"{HOST}{it['link']}" for it in issues]
+          sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+          sm += [f"<url><loc>{u}</loc></url>" for u in urls]
+          sm.append("</urlset>")
+          open("sitemap.xml","w",encoding="utf-8").write("\n".join(sm))
+
+          if issues:
+              os.makedirs("latest", exist_ok=True)
+              open("latest/index.html","w",encoding="utf-8").write(
+                f'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={issues[0]["link"]}"><link rel="canonical" href="{issues[0]["link"]}">')
+          PY
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/deploy-pages@v4
