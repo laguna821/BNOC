@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>신명기 3:18–29 쉽게 읽기 — 정론·정행·적용</title>
+  <meta name="description" content="신명기 3:18–29를 일반 성도도 쉽게 이해할 수 있도록 정론(orthodoxy)·정행(orthopraxy)·현대 적용으로 나눈 모바일 친화 상호작용 페이지" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-soft: #121821;
+      --card: #141c27;
+      --fg: #eaf2ff;
+      --muted: #b8c4d9;
+      --accent: #7bdcb5;   /* 민트 */
+      --accent-2: #82aaff; /* 블루 */
+      --danger: #ff6b6b;
+      --ok: #22c55e;
+      --shadow: 0 8px 24px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f7fb;
+        --bg-soft: #eef2f8;
+        --card: #ffffff;
+        --fg: #0e1726;
+        --muted: #4b5563;
+        --accent: #06b6d4;
+        --accent-2: #4f46e5;
+        --shadow: 0 10px 24px rgba(0,0,0,.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding-bottom: 96px; }
+    header {
+      position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(1.2) blur(8px);
+      background: linear-gradient(90deg, rgba(127,221,181,0.08), rgba(130,170,255,0.08));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .head { display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
+    .brand { display:flex; gap:10px; align-items:center; }
+    .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+    .title { font-weight: 800; letter-spacing:.1px; }
+    .controls { display:flex; gap:8px; }
+    .btn {
+      appearance:none; border:none; cursor:pointer; border-radius: 999px; padding:10px 14px; font-weight:700; font-size:14px; color: var(--fg);
+      background: rgba(255,255,255,.08); box-shadow: var(--shadow);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#03121a; }
+
+    .hero { padding: 18px 16px 8px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; font-size:12px; color: var(--fg); background: rgba(255,255,255,.08); padding:8px 12px; border-radius:999px; }
+    .h1 { font-size: 22px; font-weight: 900; line-height:1.25; margin: 10px 0 6px; }
+    .sub { color: var(--muted); font-size: 14px; }
+
+    .grid { display:grid; gap:14px; padding: 12px 16px; }
+    .card { background: var(--card); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card .hint { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+    details { border: 1px solid rgba(255,255,255,.06); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.02); }
+    summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:10px; padding: 14px 14px; cursor: pointer; font-weight:800; }
+    summary::-webkit-details-marker { display:none; }
+    .chev { transition: transform .2s ease; }
+    details[open] .chev { transform: rotate(90deg); }
+    .content { padding: 0 14px 16px; color: var(--fg); }
+    .content ul { margin: 10px 0; padding-left: 18px; }
+    .content li { margin: 8px 0; }
+
+    .tagbar { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .chip { padding:8px 12px; border-radius:999px; background: rgba(127,221,181,.15); color: var(--fg); border:1px solid rgba(127,221,181,.35); font-weight:700; font-size:13px; cursor:pointer; }
+    .chip[data-type="blue"] { background: rgba(130,170,255,.12); border-color: rgba(130,170,255,.35); }
+
+    .kv { display:grid; grid-template-columns: 110px 1fr; gap:8px; }
+    .kv div { padding:6px 0; border-bottom:1px dashed rgba(255,255,255,.08); color: var(--muted); }
+    .kv div b { color: var(--fg); }
+
+    .sheet { position: fixed; inset: 0; display:none; z-index: 90; }
+    .sheet.show { display:block; }
+    .sheet .overlay { position:absolute; inset:0; background: rgba(0,0,0,.4); }
+    .sheet .panel { position:absolute; left:0; right:0; bottom:0; background: var(--card); border-radius: 18px 18px 0 0; padding: 16px; box-shadow: var(--shadow); max-height: 70vh; overflow:auto; }
+    .sheet h4 { margin: 0 0 8px; }
+
+    .bar { position:fixed; left:0; right:0; bottom:0; z-index: 40; backdrop-filter: blur(8px) saturate(1.2); box-shadow: 0 -6px 24px rgba(0,0,0,.25); background: linear-gradient(90deg, rgba(127,221,181,.08), rgba(130,170,255,.08)); padding: 10px 12px; }
+    .bar .row { display:flex; gap:8px; }
+    .bar .row .btn { flex:1; }
+
+    .quiz { padding: 8px 16px 0; }
+    .qcard { background: var(--card); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+    .q { font-weight:800; margin: 0 0 10px; }
+    .opt { display:flex; flex-direction:column; gap:8px; }
+    .opt button { text-align:left; width:100%; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: var(--fg); padding:12px; border-radius:12px; font-weight:700; }
+    .opt button.correct { border-color: rgba(34,197,94,.6); box-shadow: inset 0 0 0 999px rgba(34,197,94,.12); }
+    .opt button.wrong { border-color: rgba(255,107,107,.6); box-shadow: inset 0 0 0 999px rgba(255,107,107,.10); }
+    .result { margin-top:10px; font-weight:800; }
+
+    .muted { color: var(--muted); font-size: 13px; }
+    .divider { height:1px; background: rgba(255,255,255,.08); margin: 12px 0; }
+
+    .small { font-size: 12px; }
+    .note { background: rgba(255,255,255,.06); padding:10px 12px; border-radius:12px; }
+
+    .summary-mode details .content { display:none; }
+    .summary-mode .hint, .summary-mode .muted { display:none; }
+      /* Full text (scripture) panel */
+    .fulltext { padding: 8px 16px 0; }
+    .fulltext details { 
+      border: 1px solid rgba(127,221,181,.45);
+      background: linear-gradient(180deg, rgba(127,221,181,.10), rgba(130,170,255,.08));
+      border-radius: 16px; overflow: hidden;
+    }
+    .fulltext summary { font-weight: 900; padding: 14px 14px; display:flex; align-items:center; justify-content:space-between; }
+    .fulltext .content { padding: 6px 14px 14px; }
+    .scripture { font-size: 14px; line-height: 1.7; }
+    .scripture p { margin: 8px 0; }
+    .scripture .v { display:inline-block; width: 2.2em; color: var(--accent); font-weight: 800; }
+    .scripture .note { color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">신명기 3:18–29</div>
+          <div class="small muted">정론 · 정행 · 현대 적용 — 모바일 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare" title="공유">공유</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- 본문 전체 보기: 최상단 접이식 패널 -->
+    <section class="fulltext" aria-label="신명기 3:18–29 본문 전체">
+      <details open>
+        <summary>📜 본문 전체 보기 (신명기 3:18–29) <span class="chev">▶</span></summary>
+        <div class="content scripture">
+          <p><span class="v">18</span> 그 때에 내가 너희에게 명령하여 이르기를 너희의 하나님 여호와께서 이 땅을 너희에게 주어 기업이 되게 하셨은즉 너희의 군인들은 무장하고 너희의 형제 이스라엘 자손의 선봉이 되어 건너가되</p>
+          <p><span class="v">19</span> 너희에게 가축이 많은 줄 내가 아노니 너희의 처자와 가축은 내가 너희에게 준 성읍에 머무르게 하라</p>
+          <p><span class="v">20</span> 여호와께서 너희에게 주신 것 같이 너희의 형제에게도 안식을 주시리니 그들도 요단 저쪽에서 너희의 하나님 여호와께서 그들에게 주시는 땅을 받아 기업을 삼기에 이르거든 너희는 각기 내가 준 기업으로 돌아갈 것이니라 하고</p>
+          <p><span class="v">21</span> 그 때에 내가 여호수아에게 명령하여 이르기를 너희의 하나님 여호와께서 이 두 왕에게 행하신 모든 일을 네 눈으로 보았거니와 네가 가는 모든 나라에도 여호와께서 이와 같이 행하시리니</p>
+          <p><span class="v">22</span> 너희는 그들을 두려워하지 말라 너희의 하나님 여호와께서 친히 너희를 위하여 싸우시리라 하였노라</p>
+          <p class="note">— 모세가 요단을 건너지 못하다 —</p>
+          <p><span class="v">23</span> 그 때에 내가 여호와께 간구하기를</p>
+          <p><span class="v">24</span> 주 여호와여 주께서 주의 크심과 주의 권능을 주의 종에게 나타내시기를 시작하셨사오니 천지간에 어떤 신이 능히 주께서 행하신 일 곧 주의 큰 능력으로 행하신 일 같이 행할 수 있으리이까</p>
+          <p><span class="v">25</span> 구하옵나니 나를 건너가게 하사 요단 저쪽에 있는 아름다운 땅, 아름다운 산과 레바논을 보게 하옵소서 하되</p>
+          <p><span class="v">26</span> 여호와께서 너희 때문에 내게 진노하사 내 말을 듣지 아니하시고 내게 이르시기를 그만해도 족하니 이 일로 다시 내게 말하지 말라</p>
+          <p><span class="v">27</span> 너는 비스가 산 꼭대기에 올라가서 눈을 들어 동서남북을 바라고 네 눈으로 그 땅을 바라보라 너는 이 요단을 건너지 못할 것임이니라</p>
+          <p><span class="v">28</span> 너는 여호수아에게 명령하고 그를 담대하게 하며 그를 강하게 하라 그는 이 백성을 거느리고 건너가서 네가 볼 땅을 그들이 기업으로 얻게 하리라 하셨느니라</p>
+          <p><span class="v">29</span> 그 때에 우리가 벳브올 맞은편 골짜기에 거주하였느니라</p>
+        </div>
+      </details>
+    </section>
+    <section class="hero">
+      <span class="pill">📖 오늘의 본문 — 선봉(חֲלוּצִים)과 안식(מְנוּחָה)</span>
+      <h1 class="h1">쉽게 읽는 요점</h1>
+      <p class="sub">동부 지파는 <b>무장한 선봉</b>으로 먼저 <b>건너가</b> 형제의 정착을 돕고, 모든 지파가 <b>안식</b>에 이르면 각자 <b>기업</b>으로 돌아갑니다. 모세는 <b>피스가</b>에 올라 <b>여호수아</b>를 <b>담대·강하게</b> 하라는 위임을 받습니다.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>한눈 요약 (3문장)</h3>
+        <ul>
+          <li><b>선봉 의무</b>: 요단 동편 지파는 <u>무장한 선봉(חֲלוּצִים)</u>으로 먼저 건너가 형제들을 돕습니다.</li>
+          <li><b>공동의 안식</b>: 모든 지파가 <u>안식(מְנוּחָה)</u>에 이른 뒤 각자 <u>기업(נַחֲלָה)</u>으로 되돌아옵니다.</li>
+          <li><b>승계·격려</b>: 모세는 비스가에서 땅을 바라볼 뿐, <u>여호수아</u>를 <u>담대·강하게(חָזַק·אִמֵּץ)</u> 하여 백성을 이끌게 합니다.</li>
+        </ul>
+        <div class="hint">아래 섹션을 펼쳐 상세 설명과 예시, 퀴즈를 볼 수 있습니다.</div>
+      </article>
+
+      <!-- 1) 정론 -->
+      <details open>
+        <summary>① 정론(Orthodoxy) — 본문이 말하는 것 <span class="chev">▶</span></summary>
+        <div class="content">
+          <div class="note">핵심: <b>선봉으로 함께 건너감(עָבַר)</b> → <b>공동의 안식(יָנִיחַ/מְנוּחָה)</b> → <b>각자의 기업(יָרַשׁ/נַחֲלָה)</b>. 그리고 <b>여호수아 위임</b>.</div>
+          <ul>
+            <li><b>동부 지파의 선봉</b>: 이미 분깃을 받은 르우벤·갓·므낫세 반 지파도 <u>앞장서</u> 서편 정착을 돕습니다(3:18–20).</li>
+            <li><b>‘안식’의 조건</b>: 나만이 아니라 <u>형제</u>도 안식해야 합니다(3:20).</li>
+            <li><b>승계 명령</b>: 모세는 <u>여호수아를 담대·강하게</u> 하라는 명을 받습니다(3:28).</li>
+            <li><b>모세의 조망</b>: 피스가(느보 산령)에서 가나안 전역을 <u>보되</u> 건너가지는 못합니다(3:25–27, 29).</li>
+            <li><b>신적 전쟁의 언어</b>: “여호와께서 친히 싸우신다”(3:22)는 선언은 <u>인간의 책임</u>을 면제하지 않습니다.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 2) 정행 -->
+      <details>
+        <summary>② 정행(Orthopraxy) — 실천 관점의 점검 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>선봉 책임 원리</b>: <u>먼저 혜택 본 자</u>가 <u>먼저 책임</u> — 자원·안전·시간을 앞서 내어 공동의 안식을 앞당깁니다.</li>
+            <li><b>‘안식’은 사회적</b>: 개인의 휴식이 아니라, 공동체 모두가 쉬게 되는 <u>사회적 안식</u>.</li>
+            <li><b>승계의 기술</b>: 격려(חָזַק·אִמֵּץ)–권한이양–정보공개를 <u>절차</u>화.</li>
+            <li><b>폭력 본문 읽기</b>: 문자적 모사보다 <u>용기·연대·책임</u>의 가치 실천.</li>
+          </ul>
+          <div class="note small">핵심 문장: “하나님이 싸우신다”는 <u>면책</u>이 아니라 <u>소명</u> — <b>선봉으로 참여</b>.</div>
+        </div>
+      </details>
+
+      <!-- 3) 적용 -->
+      <details>
+        <summary>③ 현대 적용 — 오늘 교회/공동체에서 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>개인</b>: 이번 주 “<u>먼저 건너감(עָבַר)</u>” 한 가지를 정해 선제 착수.</li>
+            <li><b>가정/팀</b>: <u>공동의 안식(מְנוּחָה)</u>을 위한 역할 분담표 작성.</li>
+            <li><b>교회</b>: 새 리더를 <u>격려(חָזַק·אִמֵּץ)</u>, 권한·정보 이양 체크리스트 도입.</li>
+            <li><b>지역사회</b>: 자원이 많은 쪽이 <u>선봉(חֲלוּצִים)</u>에 서는 상호부조 1건 제안.</li>
+          </ul>
+          <div class="note small">포인트: “먼저 받은 은혜”는 “먼저 짊어지는 책임”으로 전환됩니다.</div>
+        </div>
+      </details>
+
+      <!-- 히브리어 키워드 -->
+      <article class="card">
+        <h3>히브리어 키워드 (누르면 설명)</h3>
+        <div class="tagbar">
+          <button class="chip" data-word="chalutzim">חֲלוּצִים · ḥalūtzim</button>
+          <button class="chip" data-type="blue" data-word="menuchah">מְנוּחָה · menūḥāh</button>
+          <button class="chip" data-word="yarash">יָרַשׁ · yāraš</button>
+          <button class="chip" data-type="blue" data-word="nahalah">נַחֲלָה · naḥălāh</button>
+          <button class="chip" data-word="avar">עָבַר · ‘āvar</button>
+          <button class="chip" data-type="blue" data-word="chazaq">חָזַק · ḥāzaq</button>
+          <button class="chip" data-word="immetz">אִמֵּץ · ’immēṣ</button>
+          <button class="chip" data-type="blue" data-word="pisgah">פִּסְגָּה · Pisgah</button>
+          <button class="chip" data-type="blue" data-word="bethpeor">בֵּית־פְּעוֹר · Beth‑peor</button>
+        </div>
+        <p class="hint">각 용어의 철자·음역·어근·기본 의미·대표 용례를 간단히 정리했습니다.</p>
+      </article>
+
+      <!-- 본문 하이라이트 (선택) -->
+      <details>
+        <summary>본문 핵심 흐름 다시 보기 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li>(18–20) 동부 지파는 <u>선봉</u>으로 먼저 <u>건너가</u> 돕고, <u>공동의 안식</u> 후 각자 <u>기업</u>으로 복귀.</li>
+            <li>(21–22) 두 왕(헤스본·바산) 정복의 기억을 근거로 <u>두려워하지 말라</u> — 하나님이 <u>싸우신다</u>.</li>
+            <li>(23–29) 모세의 간구·<u>피스가</u> 조망, <u>여호수아</u>를 <u>담대·강하게</u> 하라는 위임.</li>
+          </ul>
+          <div class="muted small">※ 성경 인용은 이해를 돕기 위한 요약입니다.</div>
+        </div>
+      </details>
+
+      <!-- 퀴즈 -->
+      <section id="quiz" class="quiz" aria-label="이해도 점검 퀴즈">
+        <div class="qcard">
+          <div class="q" id="qtext">퀴즈를 시작해 보세요.</div>
+          <div class="opt" id="qopts"></div>
+          <div class="result" id="qresult"></div>
+          <div class="divider"></div>
+          <div class="muted small" id="qprogress">0 / 6</div>
+        </div>
+      </section>
+
+      <article class="card">
+        <h3>실천 체크리스트</h3>
+        <ul>
+          <li><b>선봉</b>: 내가 먼저 건너가 도울 “형제”는 누구인가?</li>
+          <li><b>안식</b>: 우리 팀/가정이 함께 쉬려면 무엇을 재정비해야 하나?</li>
+          <li><b>승계</b>: 리더 교체 시 격려·권한·정보 이양 절차가 있는가?</li>
+        </ul>
+      </article>
+
+      <article class="card small muted">
+        <div>제작: 모바일 전용, 오프라인에서도 동작합니다. 상단 <b>공유</b> 버튼으로 링크를 나눌 수 있습니다.</div>
+      </article>
+    </section>
+  </main>
+
+  <!-- 바텀 액션 바 -->
+  <div class="bar">
+    <div class="wrap">
+      <div class="row">
+        <button class="btn" id="btnToggleSummary">요약 모드</button>
+        <button class="btn" id="btnExpand">전체 펼치기</button>
+        <button class="btn primary" id="btnQuiz">퀴즈 시작</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 바텀 시트: 용어 설명 -->
+  <div class="sheet" id="sheet">
+    <div class="overlay" id="sheetClose" aria-label="닫기"></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <h4 id="sheetTitle">용어</h4>
+      <div id="sheetBody" class="small"></div>
+      <div class="divider"></div>
+      <button class="btn" id="sheetCloseBtn">닫기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    document.getElementById('btnShare').addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: document.title, text: '신명기 3:18–29 쉽게 읽기', url: location.href });
+        } catch(e) { /* 취소 */ }
+      } else {
+        alert('이 링크를 복사해 공유하세요:\\n' + location.href);
+      }
+    });
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode') ? '자세히 모드' : '요약 모드';
+    });
+
+    // 전체 펼치기/접기
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+
+    // 히브리어 키워드 바텀시트
+    const dict = {
+      chalutzim: {
+        title: 'חֲלוּצִים — ḥalūtzim',
+        html: `
+          <div class="kv">
+            <div>어근</div><div><b>√חלץ</b> (빼내다/무장)</div>
+            <div>의미</div><div>선발·<b>선봉</b> 부대</div>
+            <div>핵심</div><div>동부 지파의 선제 <b>참여</b>(3:18)</div>
+            <div>용례</div><div>신 3:18; 민 32:20; 수 4:13</div>
+          </div>`
+      },
+      menuchah: {
+        title: 'מְנוּחָה — menūḥāh',
+        html: `
+          <div class="kv">
+            <div>어근</div><div><b>√נוח</b> (쉬다)</div>
+            <div>의미</div><div><b>안식</b>, 정착의 쉼</div>
+            <div>핵심</div><div><b>공동의 안식</b>이 목표(3:20)</div>
+            <div>용례</div><div>신 3:20; 12:9</div>
+          </div>`
+      },
+      yarash: {
+        title: 'יָרַשׁ — yāraš',
+        html: `
+          <div class="kv">
+            <div>의미</div><div>차지하다/취득</div>
+            <div>핵심</div><div>정착 후 <b>기업</b>을 얻게 됨(3:28)</div>
+            <div>짝어</div><div>נַחֲלָה(naḥălāh)</div>
+            <div>용례</div><div>신 3:18, 20, 28</div>
+          </div>`
+      },
+      nahalah: {
+        title: 'נַחֲלָה — naḥălāh',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>기업</b>, 분깃</div>
+            <div>핵심</div><div>공동 안식 후 각자 기업</div>
+            <div>용례</div><div>신 3:18, 20, 28</div>
+          </div>`
+      },
+      avar: {
+        title: 'עָבַר — ‘āvar',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>건너다</b>, 경계 통과</div>
+            <div>핵심</div><div>요단을 <b>건너</b> 선봉으로 참여(3:18, 28)</div>
+            <div>용례</div><div>신 3:18, 27–28</div>
+          </div>`
+      },
+      chazaq: {
+        title: 'חָזַק — ḥāzaq',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>강하게 하다</b></div>
+            <div>핵심</div><div>여호수아를 <b>강하게</b>(3:28)</div>
+            <div>짝어</div><div>’immēṣ(담대)</div>
+            <div>용례</div><div>신 3:28; 수 1:6–9</div>
+          </div>`
+      },
+      immetz: {
+        title: 'אִמֵּץ — ’immēṣ',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>담대케 하다</b></div>
+            <div>핵심</div><div>승계의 정서적 기술(3:28)</div>
+            <div>용례</div><div>신 3:28; 수 1:6–9</div>
+          </div>`
+      },
+      pisgah: {
+        title: 'פִּסְגָּה — Pisgah',
+        html: `
+          <div class="kv">
+            <div>뜻</div><div>느보 산령 봉우리</div>
+            <div>핵심</div><div>모세의 조망 지점(3:27)</div>
+          </div>`
+      },
+      bethpeor: {
+        title: 'בֵּית־פְּעוֹר — Beth‑peor',
+        html: `
+          <div class="kv">
+            <div>뜻</div><div>브올의 집, 지명</div>
+            <div>핵심</div><div>“벳브올 맞은편 골짜기”(3:29)</div>
+          </div>`
+      }
+    };
+
+    const sheet = document.getElementById('sheet');
+    const sheetTitle = document.getElementById('sheetTitle');
+    const sheetBody = document.getElementById('sheetBody');
+    const openSheet = (key) => {
+      const item = dict[key];
+      if (!item) return;
+      sheetTitle.textContent = item.title;
+      sheetBody.innerHTML = item.html;
+      sheet.classList.add('show');
+    };
+    const closeSheet = () => sheet.classList.remove('show');
+    document.getElementById('sheetClose').addEventListener('click', closeSheet);
+    document.getElementById('sheetCloseBtn').addEventListener('click', closeSheet);
+
+    document.querySelectorAll('.chip').forEach(ch => ch.addEventListener('click', () => openSheet(ch.dataset.word)));
+
+    // 퀴즈
+    const quizData = [
+      {
+        q: '동부 지파(르우벤·갓·므낫세 반 지파)에게 부여된 가장 중요한 의무는?',
+        a: [
+          '무장한 <u>선봉</u>으로 먼저 건너가 형제들을 돕는 것',
+          '자기 가족과 가축을 먼저 서편으로 옮기는 것',
+          '성막 봉사를 대신 맡는 것'
+        ],
+        correct: 0,
+        explain: '3:18–20 — “무장하고… 선봉이 되어 건너가되”'
+      },
+      {
+        q: '“너희의 형제에게도 <u>안식</u>을 주시리니…”(3:20)의 의미에 가장 가까운 것은?',
+        a: [
+          '개인별 휴식을 보장받는 것',
+          '모든 지파가 정착의 쉼을 누리는 <u>공동의 안식</u>',
+          '레위인만 쉬는 특별 규정'
+        ],
+        correct: 1,
+        explain: '형제도 안식을 누릴 때 각자 기업으로 돌아간다는 맥락입니다.'
+      },
+      {
+        q: '여호수아에 대해 모세가 받은 명령은? (3:28)',
+        a: [
+          '그를 책망하고 업무를 줄이라',
+          '그를 <u>담대하게</u> 하며 <u>강하게</u> 하라',
+          '그를 다른 지파로 교체하라'
+        ],
+        correct: 1,
+        explain: '“담대하게 하며 강하게 하라” — 승계 격려의 명령.'
+      },
+      {
+        q: '모세는 요단을 건널 수 있었는가? 그 대신 무엇을 하였는가?',
+        a: [
+          '건넜다; 단, 북부만 둘러보았다',
+          '건너지 못했다; <u>피스가</u>에 올라 사방을 바라보았다',
+          '건너지 못했다; 장막에 머물렀다'
+        ],
+        correct: 1,
+        explain: '3:27 — “비스가 산 꼭대기에 올라가… 바라보라”'
+      },
+      {
+        q: '본문에 실제로 등장하는 지명 조합은?',
+        a: [
+          '시내산과 길갈',
+          '예루살렘과 벧엘',
+          '<u>피스가</u>·<u>레바논</u>·<u>벳브올</u>'
+        ],
+        correct: 2,
+        explain: '3:25, 27, 29 — 피스가/레바논/벳브올'
+      },
+      {
+        q: '“여호와께서 친히 너희를 위하여 싸우시리라”(3:22)의 실천적 의미는?',
+        a: [
+          '싸우지 말고 기다리라',
+          '<u>선봉으로 참여하라</u> — 신적 도우심은 인간의 책임을 대체하지 않는다',
+          '제사장만 전투한다'
+        ],
+        correct: 1,
+        explain: '동시에 선봉 의무가 주어졌음을 기억합니다.'
+      }
+    ];
+
+    let qi = -1, score = 0;
+    const qtext = document.getElementById('qtext');
+    const qopts = document.getElementById('qopts');
+    const qresult = document.getElementById('qresult');
+    const qprogress = document.getElementById('qprogress');
+
+    function renderQ() {
+      if (qi < 0) {
+        qtext.textContent = '퀴즈를 시작해 보세요.';
+        qopts.innerHTML = '';
+        qresult.textContent = '';
+        qprogress.textContent = '0 / ' + quizData.length;
+        return;
+      }
+      const item = quizData[qi];
+      qtext.innerHTML = `Q${qi+1}. ${item.q}`;
+      qopts.innerHTML = '';
+      item.a.forEach((t, idx) => {
+        const b = document.createElement('button');
+        b.innerHTML = t;
+        b.addEventListener('click', () => answer(idx));
+        qopts.appendChild(b);
+      });
+      qresult.textContent = '';
+      qprogress.textContent = `${qi+1} / ${quizData.length}`;
+    }
+
+    function answer(idx) {
+      const item = quizData[qi];
+      const buttons = Array.from(qopts.querySelectorAll('button'));
+      buttons.forEach((b, i) => {
+        b.disabled = true;
+        if (i === item.correct) b.classList.add('correct');
+        else if (i === idx) b.classList.add('wrong');
+      });
+      const ok = idx === item.correct;
+      if (ok) score++;
+      qresult.textContent = (ok ? '정답! ' : '오답 ') + '— ' + item.explain;
+      setTimeout(nextQ, 750);
+    }
+
+    function nextQ() {
+      qi++;
+      if (qi >= quizData.length) {
+        qtext.textContent = '완료!';
+        qopts.innerHTML = '';
+        qresult.textContent = `점수: ${score} / ${quizData.length}  — 수고하셨습니다!`;
+        qprogress.textContent = `${quizData.length} / ${quizData.length}`;
+        qi = -1; score = 0; // 초기화
+        return;
+      }
+      renderQ();
+    }
+
+    document.getElementById('btnQuiz').addEventListener('click', () => {
+      if (qi === -1) { qi = 0; score = 0; renderQ(); }
+      else { nextQ(); }
+      window.scrollTo({ top: document.getElementById('quiz').offsetTop - 80, behavior: 'smooth' });
+    });
+
+    // 초기 상태
+    renderQ();
+  </script>
+</body>
+</html>
