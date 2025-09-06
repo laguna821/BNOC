@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>신명기 6:10–19 쉽게 읽기 — 정론·정행·적용</title>
+  <meta name="date" content="2025-09-06" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-soft: #121821;
+      --card: #141c27;
+      --fg: #eaf2ff;
+      --muted: #b8c4d9;
+      --accent: #7bdcb5;   /* 민트 */
+      --accent-2: #82aaff; /* 블루 */
+      --danger: #ff6b6b;
+      --ok: #22c55e;
+      --shadow: 0 8px 24px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f7fb;
+        --bg-soft: #eef2f8;
+        --card: #ffffff;
+        --fg: #0e1726;
+        --muted: #4b5563;
+        --accent: #06b6d4;
+        --accent-2: #4f46e5;
+        --shadow: 0 10px 24px rgba(0,0,0,.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding-bottom: 10px; }
+    header {
+      position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(1.2) blur(8px);
+      background: linear-gradient(90deg, rgba(127,221,181,0.08), rgba(130,170,255,0.08));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .head { display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
+    .brand { display:flex; gap:10px; align-items:center; }
+    .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+    .title { font-weight: 800; letter-spacing:.1px; }
+    .controls { display:flex; gap:8px; }
+    .btn {
+      appearance:none; border:none; cursor:pointer; border-radius: 999px; padding:10px 14px; font-weight:700; font-size:14px; color: var(--fg);
+      background: rgba(255,255,255,.08); box-shadow: var(--shadow);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#03121a; }
+
+    .hero { padding: 18px 16px 8px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; font-size:12px; color: var(--fg); background: rgba(255,255,255,.08); padding:8px 12px; border-radius:999px; }
+    .h1 { font-size: 22px; font-weight: 900; line-height:1.25; margin: 10px 0 6px; }
+    .sub { color: var(--muted); font-size: 14px; }
+
+    .grid { display:grid; gap:14px; padding: 12px 16px; }
+    .card { background: var(--card); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card .hint { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+    details { border: 1px solid rgba(255,255,255,.06); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.02); }
+    summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:10px; padding: 14px 14px; cursor: pointer; font-weight:800; }
+    summary::-webkit-details-marker { display:none; }
+    .chev { transition: transform .2s ease; }
+    details[open] .chev { transform: rotate(90deg); }
+    .content { padding: 0 14px 16px; color: var(--fg); }
+    .content ul { margin: 10px 0; padding-left: 18px; }
+    .content li { margin: 8px 0; }
+
+    .tagbar { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .chip { padding:8px 12px; border-radius:999px; background: rgba(127,221,181,.15); color: var(--fg); border:1px solid rgba(127,221,181,.35); font-weight:700; font-size:13px; cursor:pointer; }
+    .chip[data-type="blue"] { background: rgba(130,170,255,.12); border-color: rgba(130,170,255,.35); }
+
+    .kv { display:grid; grid-template-columns: 110px 1fr; gap:8px; }
+    .kv div { padding:6px 0; border-bottom:1px dashed rgba(255,255,255,.08); color: var(--muted); }
+    .kv div b { color: var(--fg); }
+
+    .sheet { position: fixed; inset: 0; display:none; z-index: 90; }
+    .sheet.show { display:block; }
+    .sheet .overlay { position:absolute; inset:0; background: rgba(0,0,0,.4); }
+    .sheet .panel { position:absolute; left:0; right:0; bottom:0; background: var(--card); border-radius: 18px 18px 0 0; padding: 16px; box-shadow: var(--shadow); max-height: 70vh; overflow:auto; }
+    .sheet h4 { margin: 0 0 8px; }
+
+    .bar { position:fixed; left:0; right:0; bottom:0; z-index: 40; backdrop-filter: blur(8px) saturate(1.2); box-shadow: 0 -6px 24px rgba(0,0,0,.25); background: linear-gradient(90deg, rgba(127,221,181,.08), rgba(130,170,255,.08)); padding: 6px 10px; }
+    .bar .row { display:flex; gap:8px; }
+    .bar .row .btn { flex:1; }
+
+    .quiz { padding: 8px 16px 0; }
+    .qcard { background: var(--card); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+    .q { font-weight:800; margin: 0 0 10px; }
+    .opt { display:flex; flex-direction:column; gap:8px; }
+    .opt button { text-align:left; width:100%; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: var(--fg); padding:12px; border-radius:12px; font-weight:700; }
+    .opt button.correct { border-color: rgba(34,197,94,.6); box-shadow: inset 0 0 0 999px rgba(34,197,94,.12); }
+    .opt button.wrong { border-color: rgba(255,107,107,.6); box-shadow: inset 0 0 0 999px rgba(255,107,107,.10); }
+    .result { margin-top:10px; font-weight:800; }
+
+    .muted { color: var(--muted); font-size: 13px; }
+    .divider { height:1px; background: rgba(255,255,255,.08); margin: 12px 0; }
+
+    .small { font-size: 12px; }
+    .note { background: rgba(255,255,255,.06); padding:10px 12px; border-radius:12px; }
+
+    .summary-mode details .content { display:none; }
+    .summary-mode .hint, .summary-mode .muted { display:none; }
+
+    /* Full text (scripture) panel */
+    .fulltext { padding: 8px 16px 0; }
+    .fulltext details {
+      border: 1px solid rgba(127,221,181,.45);
+      background: linear-gradient(180deg, rgba(127,221,181,.10), rgba(130,170,255,.08));
+      border-radius: 16px; overflow: hidden;
+    }
+    .fulltext summary { font-weight: 900; padding: 14px 14px; display:flex; align-items:center; justify-content:space-between; }
+    .fulltext .content { padding: 6px 14px 14px; }
+    .scripture { font-size: 14px; line-height: 1.7; }
+    .scripture p { margin: 8px 0; }
+    .scripture .v { display:inline-block; width: 2.2em; color: var(--accent); font-weight: 800; }
+    .scripture .note { color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">신명기 6:10–19</div>
+          <div class="small muted">정론 · 정행 · 현대 적용 — 모바일 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare" title="공유">공유</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- 본문 전체 보기 -->
+    <section class="fulltext" aria-label="신명기 6:10–19 본문 전체">
+      <details open>
+        <summary>📜 본문 전체 보기 (신명기 6:10–19) <span class="chev">▶</span></summary>
+        <div class="content scripture">
+          <p><span class="v">10</span> 네 하나님 여호와께서 네 조상 아브라함과 이삭과 야곱을 향하여 네게 주리라 맹세하신 땅으로 너를 들어가게 하시고 네가 건축하지 아니한 크고 아름다운 성읍을 얻게 하시며</p>
+          <p><span class="v">11</span> 네가 채우지 아니한 아름다운 물건이 가득한 집을 얻게 하시며 네가 파지 아니한 우물을 차지하게 하시며 네가 심지 아니한 포도원과 감람나무를 차지하게 하사 네게 배불리 먹게 하실 때에</p>
+          <p><span class="v">12</span> 너는 조심하여 너를 애굽 땅 종 되었던 집에서 인도하여 내신 여호와를 잊지 말고</p>
+          <p><span class="v">13</span> 네 하나님 여호와를 경외하며 그를 섬기며 그의 이름으로 맹세할 것이니라</p>
+          <p><span class="v">14</span> 너희는 다른 신들 곧 네 사면에 있는 백성의 신들을 따르지 말라</p>
+          <p><span class="v">15</span> 너희 중에 계신 너희의 하나님 여호와는 질투하시는 하나님이신즉 너희의 하나님 여호와께서 네게 진노하사 너를 지면에서 멸절시키실까 두려워하노라</p>
+          <p class="note">— 맛사(מַסָּה) 사건을 기억하여, 시험하지 말라 —</p>
+          <p><span class="v">16</span> 너희가 맛사에서 시험한 것 같이 너희의 하나님 여호와를 시험하지 말고</p>
+          <p><span class="v">17</span> 너희의 하나님 여호와께서 너희에게 명하신 명령과 증거와 규례를 삼가 지키며</p>
+          <p><span class="v">18</span> 여호와께서 보시기에 정직하고 선량한 일을 행하라 그리하면 네가 복을 받고 그 땅에 들어가서 여호와께서 모든 대적을 네 앞에서 쫓아내시겠다고 네 조상들에게 맹세하신 아름다운 땅을 차지하리니</p>
+          <p><span class="v">19</span> 여호와의 말씀과 같으니라</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="hero">
+      <span class="pill">📖 오늘의 본문 — 경외(יָרֵא) · 섬김(עָבַד) · 맹세(נִשְׁבַּע) · הַיָּשָׁר וְהַטּוֹב</span>
+      <h1 class="h1">쉽게 읽는 요점</h1>
+      <p class="sub">
+        약속의 땅에서 <b>번영을 누릴 때</b> <u>잊지 말라</u>(שָׁכַח 금지). 오직 여호와를 <b>경외</b>하고 <b>섬기며</b> <b>그의 이름으로 맹세</b>하라. 
+        <u>다른 신들</u>을 따르지 말고, <u>맛사처럼 시험</u>하지 말며, <b>정직하고 선한 것</b>(הַיָּשָׁר וְהַטּוֹב)을 행하라.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>한눈 요약 (3문장)</h3>
+        <ul>
+          <li><b>번영-망각 경고</b>: 건축·채움·우물·포도원·감람의 <u>선물</u>을 받을 때 <b>여호와를 잊지 말라</b>(6:10–12).</li>
+          <li><b>배타적 충성</b>: 여호와를 <u>경외</u>·<u>섬김</u>·<u>그의 이름으로 맹세</u>하고, <u>다른 신들</u>을 따르지 말라(6:13–15).</li>
+          <li><b>시험 금지·윤리 총칙</b>: <u>맛사</u>처럼 시험하지 말고, 여호와 보시기에 <u>정직하고 선한 것</u>을 행하라—그리하면 <u>기업</u>을 얻게 된다(6:16–19).</li>
+        </ul>
+        <div class="hint">아래 섹션을 펼쳐 상세 설명과 예시, 퀴즈를 볼 수 있습니다.</div>
+      </article>
+
+      <!-- 1) 정론 -->
+      <details open>
+        <summary>① 정론(Orthodoxy) — 본문이 말하는 것 <span class="chev">▶</span></summary>
+        <div class="content">
+          <div class="note">핵심 명령: <b>잊지 말라</b> → <b>여호와만 경외·섬김·맹세</b> → <b>다른 신들 금지</b> → <b>시험 금지(맛사)</b> → <b>정직/선 행함</b>.</div>
+          <ul>
+            <li><b>선물의 역설</b>: “네가 하지 않은” 성읍·집·우물·포도원·감람—<u>은혜</u>의 결과가 <u>망각</u>으로 기울 수 있음을 경고(10–12).</li>
+            <li><b>배타적 충성</b>: 여호와만 경외(יָרֵא)·섬김(עָבַד)·그 이름으로 맹세(נִשְׁבַּע)(13), <u>다른 신들</u> 금지(14).</li>
+            <li><b>언약의 질투</b>: 여호와는 <u>질투하시는(קַנָּא)</u> 하나님—언약 파기에 대한 경고(15).</li>
+            <li><b>시험 금지</b>: 맛사(מַסָּה)의 전례를 거울삼아, <u>증명 요구</u>로 주를 시험하지 말라(16).</li>
+            <li><b>윤리 총칙</b>: “여호와 보시기에 <u>정직하고 선한 것</u>(הַיָּשָׁר וְהַטּוֹב)”—법 조목을 넘어서는 포괄 명령(18).</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 2) 정행 -->
+      <details>
+        <summary>② 정행(Orthopraxy) — 실천 관점의 점검 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>기억 루틴 설계</b>: 번영기일수록 <u>감사·나눔·안식</u> 루틴으로 “잊지 않기”를 훈련(12).</li>
+            <li><b>충성 실천</b>: <u>맹세 남발</u>을 경계하고(13), <u>경쟁 충성</u>(소비주의·국가주의 등)을 분별(14–15).</li>
+            <li><b>시험 금지의 습속</b>: “증명하면 믿겠다”식 거래 신앙을 버리고, <u>신뢰를 행동</u>으로 확인(16).</li>
+            <li><b>윤리 총칙 운영</b>: “정직/선”을 분쟁 해결의 <u>최소 공통규범</u>으로—법 이전의 양보와 화해 훈련(18).</li>
+          </ul>
+          <div class="note small">요지: 정론(말씀)은 <u>정행(루틴)</u> 속에서 굳어진다.</div>
+        </div>
+      </details>
+
+      <!-- 3) 적용 -->
+      <details>
+        <summary>③ 현대 적용 — 오늘 교회/공동체에서 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>개인</b>: 주간 “<u>감사–나눔–안식</u>” 체크리스트 1회 완주(6:12).</li>
+            <li><b>가정/팀</b>: <u>맹세/약속 관리 규칙</u>(기한·책임자·추적)을 문서화(6:13).</li>
+            <li><b>공동체</b>: “<u>다른 신들</u>”에 해당하는 내부 우상(성과주의·금전숭배 등) 목록화·감축(6:14–15).</li>
+            <li><b>공적 영역</b>: 갈등 사안에 “<u>정직하고 선한 것</u>” 체크(사실성·공정성·관계회복성)로 의사결정(6:18).</li>
+          </ul>
+          <div class="note small">포인트: 번영이 신앙을 마모시키지 않도록 <u>의도적 습관</u>을 설계합니다.</div>
+        </div>
+      </details>
+
+      <!-- 히브리어 키워드 -->
+      <article class="card">
+        <h3>히브리어 키워드 (누르면 설명)</h3>
+        <div class="tagbar">
+          <button class="chip" data-word="yare">יָרֵא · yārē’</button>
+          <button class="chip" data-type="blue" data-word="avad">עָבַד · ‘āvad</button>
+          <button class="chip" data-word="nishba">נִשְׁבַּע · nišba‘</button>
+          <button class="chip" data-type="blue" data-word="othergods">אֱלֹהִים אֲחֵרִים · ’elohim ’aḥerim</button>
+          <button class="chip" data-word="qanna">קַנָּא · qannā’</button>
+          <button class="chip" data-type="blue" data-word="nasah">נָסָה · nāsāh</button>
+          <button class="chip" data-word="shakach">שָׁכַח · šākaḥ</button>
+          <button class="chip" data-type="blue" data-word="yasharvtov">הַיָּשָׁר וְהַטּוֹב · hayyāšār we-haṭṭōv</button>
+          <button class="chip" data-word="massah">מַסָּה · Massah</button>
+          <button class="chip" data-type="blue" data-word="yarash">יָרַשׁ · yāraš</button>
+        </div>
+        <p class="hint">철자·음역·어근(שורש)·기본 의미·대표 용례를 간단히 정리했습니다.</p>
+      </article>
+
+      <!-- 본문 흐름 -->
+      <details>
+        <summary>본문 핵심 흐름 다시 보기 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li>(10–12) <u>선물</u>로 가득한 땅에 들어갈 때—<b>여호와를 잊지 말라</b>.</li>
+            <li>(13–15) <u>여호와만</u> 경외·섬김·맹세, <u>다른 신들</u> 금지—여호와는 <b>질투하시는</b> 분.</li>
+            <li>(16–19) <u>맛사</u>처럼 시험하지 말고, <b>정직하고 선한 것</b>을 행하라—그리하면 <u>기업</u>을 얻게 됨.</li>
+          </ul>
+          <div class="muted small">※ 성경 인용은 이해를 돕기 위한 요약입니다.</div>
+        </div>
+      </details>
+
+      <!-- 퀴즈 -->
+      <section id="quiz" class="quiz" aria-label="이해도 점검 퀴즈">
+        <div class="qcard">
+          <div class="q" id="qtext">퀴즈를 시작해 보세요.</div>
+          <div class="opt" id="qopts"></div>
+          <div class="result" id="qresult"></div>
+          <div class="divider"></div>
+          <div class="muted small" id="qprogress">0 / 6</div>
+        </div>
+      </section>
+
+      <article class="card">
+        <h3>실천 체크리스트</h3>
+        <ul>
+          <li><b>기억</b>: 이번 주 “감사–나눔–안식” 루틴을 1회 완주했다.</li>
+          <li><b>맹세</b>: 불필요한 서약·과장 약속을 줄이고, 한 약속의 이행률을 기록한다.</li>
+          <li><b>분별</b>: 우리 공동체의 “다른 신들”(소비/성과/권력)을 목록화하고 하나 줄였다.</li>
+          <li><b>윤리</b>: 갈등 사안 1건에 “정직/선” 기준(사실·공정·회복)을 적용했다.</li>
+        </ul>
+      </article>
+
+      <article class="card small muted">
+        <div>제작: 모바일 전용, 오프라인에서도 동작합니다. 상단 <b>공유</b> 버튼으로 링크를 나눌 수 있습니다.</div>
+      </article>
+    </section>
+  </main>
+
+  <!-- 바텀 액션 바 -->
+  <div class="bar">
+    <div class="wrap">
+      <div class="row">
+        <button class="btn" id="btnToggleSummary">요약 모드</button>
+        <button class="btn" id="btnExpand">전체 펼치기</button>
+        <button class="btn primary" id="btnQuiz">퀴즈 시작</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 바텀 시트: 용어 설명 -->
+  <div class="sheet" id="sheet">
+    <div class="overlay" id="sheetClose" aria-label="닫기"></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <h4 id="sheetTitle">용어</h4>
+      <div id="sheetBody" class="small"></div>
+      <div class="divider"></div>
+      <button class="btn" id="sheetCloseBtn">닫기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    document.getElementById('btnShare').addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: document.title, text: '신명기 6:10–19 쉽게 읽기', url: location.href });
+        } catch(e) { /* 취소 */ }
+      } else {
+        alert('이 링크를 복사해 공유하세요:\\n' + location.href);
+      }
+    });
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode') ? '자세히 모드' : '요약 모드';
+    });
+
+    // 전체 펼치기/접기
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+
+    // 히브리어 키워드 바텀시트
+    const dict = {
+      yare: {
+        title: 'יָרֵא — yārē’ (√ירא)',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>경외하다</b> (존재 앞의 두려움)</div>
+            <div>핵심</div><div>여호와만 경외(6:13)</div>
+            <div>용례</div><div>신 6:13; 잠 1:7</div>
+          </div>`
+      },
+      avad: {
+        title: 'עָבַד — ‘āvad (√עבד)',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>섬기다</b>, 예배하다</div>
+            <div>핵심</div><div>경외와 짝을 이루는 <b>실천</b>(6:13)</div>
+            <div>용례</div><div>신 6:13; 출 3:12</div>
+          </div>`
+      },
+      nishba: {
+        title: 'נִשְׁבַּע — nišba‘ (√שבע)',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>맹세하다</b></div>
+            <div>핵심</div><div>“그의 이름으로” <b>진실한 서약</b>(6:13)</div>
+            <div>주의</div><div>남발 금지·성실 이행</div>
+          </div>`
+      },
+      othergods: {
+        title: 'אֱלֹהִים אֲחֵרִים — ’elohim ’aḥerim',
+      html: `
+          <div class="kv">
+            <div>의미</div><div><b>다른 신들</b>, 경쟁 충성</div>
+            <div>핵심</div><div><b>배타적 충성</b>을 위협(6:14)</div>
+            <div>용례</div><div>신 6:14; 8:19</div>
+          </div>`
+      },
+      qanna: {
+        title: 'קַנָּא — qannā’ (√קנא)',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>질투하는/열정적</b> (언약적 질투)</div>
+            <div>핵심</div><div>언약 파기에 대한 경고(6:15)</div>
+            <div>용례</div><div>신 6:15; 출 34:14</div>
+          </div>`
+      },
+      nasah: {
+        title: 'נָסָה — nāsāh (√נסה)',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>시험하다</b>, 시험에 들게 하다</div>
+            <div>핵심</div><div><b>맛사</b>처럼 시험 금지(6:16)</div>
+            <div>용례</div><div>신 6:16; 출 17:2,7</div>
+          </div>`
+      },
+      shakach: {
+        title: 'שָׁכַח — šākaḥ (√שכח)',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>잊다</b></div>
+            <div>핵심</div><div>번영기에 <b>망각 금지</b>(6:12)</div>
+            <div>습속</div><div>감사·나눔·안식 루틴</div>
+          </div>`
+      },
+      yasharvtov: {
+        title: 'הַיָּשָׁר וְהַטּוֹב — hayyāšār we-haṭṭōv',
+        html: `
+          <div class="kv">
+            <div>구성</div><div><b>바른 것</b>(יָשָׁר) + <b>선한 것</b>(טוֹב)</div>
+            <div>핵심</div><div>법 너머의 <b>윤리 총칙</b>(6:18)</div>
+            <div>적용</div><div>공정·화해·선행</div>
+          </div>`
+      },
+      massah: {
+        title: 'מַסָּה — Massah',
+        html: `
+          <div class="kv">
+            <div>뜻</div><div><b>시험</b> (지명·사건명)</div>
+            <div>핵심</div><div>출 17장의 물 사건 상기(6:16)</div>
+          </div>`
+      },
+      yarash: {
+        title: 'יָרַשׁ — yāraš (√ירש)',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>차지하다</b>, <b>상속</b>·<b>몰아내다</b></div>
+            <div>핵심</div><div>정직/선을 행한 결과(6:18–19)</div>
+            <div>용례</div><div>신 6:18–19; 4:1</div>
+          </div>`
+      }
+    };
+
+    const sheet = document.getElementById('sheet');
+    const sheetTitle = document.getElementById('sheetTitle');
+    const sheetBody = document.getElementById('sheetBody');
+    const openSheet = (key) => {
+      const item = dict[key];
+      if (!item) return;
+      sheetTitle.textContent = item.title;
+      sheetBody.innerHTML = item.html;
+      sheet.classList.add('show');
+    };
+    const closeSheet = () => sheet.classList.remove('show');
+    document.getElementById('sheetClose').addEventListener('click', closeSheet);
+    document.getElementById('sheetCloseBtn').addEventListener('click', closeSheet);
+
+    document.querySelectorAll('.chip').forEach(ch => ch.addEventListener('click', () => openSheet(ch.dataset.word)));
+
+    // 퀴즈
+    const quizData = [
+      {
+        q: '6:10–12에 따르면 약속의 땅에서 가장 먼저 경계해야 할 것은?',
+        a: [
+          '새 성읍을 더 많이 건축하지 못하는 것',
+          '<u>여호와를 잊는 것</u> — 번영 때문에 망각하는 일',
+          '레위인의 몫을 줄이는 일'
+        ],
+        correct: 1,
+        explain: '“배부를 때에… 여호와를 잊지 말라”(6:11–12).'
+      },
+      {
+        q: '6:13의 세 동사는 무엇인가?',
+        a: [
+          '<u>경외</u>·<u>섬김</u>·<u>그의 이름으로 맹세</u>',
+          '경청·묵상·찬양',
+          '금식·헌금·기도'
+        ],
+        correct: 0,
+        explain: '“여호와를 경외하며 그를 섬기며 그의 이름으로 맹세할 것이니라.”'
+      },
+      {
+        q: '6:14–15의 핵심 금지는?',
+        a: [
+          '안식일 규례 폐지',
+          '<u>다른 신들</u>을 따르는 것',
+          '제사장 직무 대행'
+        ],
+        correct: 1,
+        explain: '“너희는 다른 신들… 을 따르지 말라”(6:14).'
+      },
+      {
+        q: '“질투하시는(קַנָּא) 하나님”은 무엇을 뜻하는가?',
+        a: [
+          '감정이 불안정하다',
+          '<u>언약적 배타성</u>을 요구하신다',
+          '우상에게도 관대하다'
+        ],
+        correct: 1,
+        explain: '언약 충성의 배타성을 강조(6:15).'
+      },
+      {
+        q: '6:16에서 금지한 행동은?',
+        a: [
+          '십일조',
+          '금식',
+          '<u>맛사처럼 여호와를 시험</u>하는 것'
+        ],
+        correct: 2,
+        explain: '“맛사에서 시험한 것 같이… 시험하지 말고.”'
+      },
+      {
+        q: '6:18의 포괄 명령은?',
+        a: [
+          '더 많은 성읍을 점령하라',
+          '<u>여호와 보시기에 정직하고 선한 것</u>을 행하라',
+          '레위인의 수를 늘려라'
+        ],
+        correct: 1,
+        explain: '“정직하고 선량한 일을 행하라.”'
+      }
+    ];
+
+    let qi = -1, score = 0;
+    const qtext = document.getElementById('qtext');
+    const qopts = document.getElementById('qopts');
+    const qresult = document.getElementById('qresult');
+    const qprogress = document.getElementById('qprogress');
+
+    function renderQ() {
+      if (qi < 0) {
+        qtext.textContent = '퀴즈를 시작해 보세요.';
+        qopts.innerHTML = '';
+        qresult.textContent = '';
+        qprogress.textContent = '0 / ' + quizData.length;
+        return;
+      }
+      const item = quizData[qi];
+      qtext.innerHTML = `Q${qi+1}. ${item.q}`;
+      qopts.innerHTML = '';
+      item.a.forEach((t, idx) => {
+        const b = document.createElement('button');
+        b.innerHTML = t;
+        b.addEventListener('click', () => answer(idx));
+        qopts.appendChild(b);
+      });
+      qresult.textContent = '';
+      qprogress.textContent = `${qi+1} / ${quizData.length}`;
+    }
+
+    function answer(idx) {
+      const item = quizData[qi];
+      const buttons = Array.from(qopts.querySelectorAll('button'));
+      buttons.forEach((b, i) => {
+        b.disabled = true;
+        if (i === item.correct) b.classList.add('correct');
+        else if (i === idx) b.classList.add('wrong');
+      });
+      const ok = idx === item.correct;
+      if (ok) score++;
+      qresult.textContent = (ok ? '정답! ' : '오답 ') + '— ' + item.explain;
+      setTimeout(nextQ, 750);
+    }
+
+    function nextQ() {
+      qi++;
+      if (qi >= quizData.length) {
+        qtext.textContent = '완료!';
+        qopts.innerHTML = '';
+        qresult.textContent = `점수: ${score} / ${quizData.length}  — 수고하셨습니다!`;
+        qprogress.textContent = `${quizData.length} / ${quizData.length}`;
+        qi = -1; score = 0; // 초기화
+        return;
+      }
+      renderQ();
+    }
+
+    document.getElementById('btnQuiz').addEventListener('click', () => {
+      if (qi === -1) { qi = 0; score = 0; renderQ(); }
+      else { nextQ(); }
+      window.scrollTo({ top: document.getElementById('quiz').offsetTop - 80, behavior: 'smooth' });
+    });
+
+    // 초기 상태
+    renderQ();
+  </script>
+</body>
+</html>
