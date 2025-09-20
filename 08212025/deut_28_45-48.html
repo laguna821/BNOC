@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>신명기 28:45–48 쉽게 읽기 — 정론·정행·적용</title>
+  <meta name="date" content="2025-09-20" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-soft: #121821;
+      --card: #141c27;
+      --fg: #eaf2ff;
+      --muted: #b8c4d9;
+      --accent: #7bdcb5;   /* 민트 */
+      --accent-2: #82aaff; /* 블루 */
+      --danger: #ff6b6b;
+      --ok: #22c55e;
+      --shadow: 0 8px 24px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f7fb;
+        --bg-soft: #eef2f8;
+        --card: #ffffff;
+        --fg: #0e1726;
+        --muted: #4b5563;
+        --accent: #06b6d4;
+        --accent-2: #4f46e5;
+        --shadow: 0 10px 24px rgba(0,0,0,.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding-bottom: 10px; }
+    header {
+      position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(1.2) blur(8px);
+      background: linear-gradient(90deg, rgba(127,221,181,0.08), rgba(130,170,255,0.08));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .head { display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
+    .brand { display:flex; gap:10px; align-items:center; }
+    .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+    .title { font-weight: 800; letter-spacing:.1px; }
+    .controls { display:flex; gap:8px; }
+    .btn {
+      appearance:none; border:none; cursor:pointer; border-radius: 999px; padding:10px 14px; font-weight:700; font-size:14px; color: var(--fg);
+      background: rgba(255,255,255,.08); box-shadow: var(--shadow);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#03121a; }
+.hero { padding: 18px 16px 8px; }
+.pill { display:inline-flex; align-items:center; gap:8px; font-size:12px; color: var(--fg); background: rgba(255,255,255,.08); padding:8px 12px; border-radius:999px; }
+.h1 { font-size: 22px; font-weight: 900; line-height:1.25; margin: 10px 0 6px; }
+.sub { color: var(--muted); font-size: 14px; }
+
+.grid { display:grid; gap:14px; padding: 12px 16px; }
+.card { background: var(--card); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+.card h3 { margin: 0 0 8px; font-size: 18px; }
+.card .hint { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+details { border: 1px solid rgba(255,255,255,.06); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.02); }
+summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:10px; padding: 14px 14px; cursor: pointer; font-weight:800; }
+summary::-webkit-details-marker { display:none; }
+.chev { transition: transform .2s ease; }
+details[open] .chev { transform: rotate(90deg); }
+.content { padding: 0 14px 16px; color: var(--fg); }
+.content ul { margin: 10px 0; padding-left: 18px; }
+.content li { margin: 8px 0; }
+
+.tagbar { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+.chip { padding:8px 12px; border-radius:999px; background: rgba(127,221,181,.15); color: var(--fg); border:1px solid rgba(127,221,181,.35); font-weight:700; font-size:13px; cursor:pointer; }
+.chip[data-type="blue"] { background: rgba(130,170,255,.12); border-color: rgba(130,170,255,.35); }
+
+.kv { display:grid; grid-template-columns: 110px 1fr; gap:8px; }
+.kv div { padding:6px 0; border-bottom:1px dashed rgba(255,255,255,.08); color: var(--muted); }
+.kv div b { color: var(--fg); }
+
+.sheet { position: fixed; inset: 0; display:none; z-index: 90; }
+.sheet.show { display:block; }
+.sheet .overlay { position:absolute; inset:0; background: rgba(0,0,0,.4); }
+.sheet .panel { position:absolute; left:0; right:0; bottom:0; background: var(--card); border-radius: 18px 18px 0 0; padding: 16px; box-shadow: var(--shadow); max-height: 70vh; overflow:auto; }
+.sheet h4 { margin: 0 0 8px; }
+
+.bar { position:fixed; left:0; right:0; bottom:0; z-index: 40; backdrop-filter: blur(8px) saturate(1.2); box-shadow: 0 -6px 24px rgba(0,0,0,.25); background: linear-gradient(90deg, rgba(127,221,181,.08), rgba(130,170,255,.08)); padding: 6px 10px; }
+.bar .row { display:flex; gap:8px; }
+.bar .row .btn { flex:1; }
+
+.quiz { padding: 8px 16px 0; }
+.qcard { background: var(--card); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+.q { font-weight:800; margin: 0 0 10px; }
+.opt { display:flex; flex-direction:column; gap:8px; }
+.opt button { text-align:left; width:100%; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: var(--fg); padding:12px; border-radius:12px; font-weight:700; }
+.opt button.correct { border-color: rgba(34,197,94,.6); box-shadow: inset 0 0 0 999px rgba(34,197,94,.12); }
+.opt button.wrong { border-color: rgba(255,107,107,.6); box-shadow: inset 0 0 0 999px rgba(255,107,107,.10); }
+.result { margin-top:10px; font-weight:800; }
+
+.muted { color: var(--muted); font-size: 13px; }
+.divider { height:1px; background: rgba(255,255,255,.08); margin: 12px 0; }
+
+.small { font-size: 12px; }
+.note { background: rgba(255,255,255,.06); padding:10px 12px; border-radius:12px; }
+
+.summary-mode details .content { display:none; }
+.summary-mode .hint, .summary-mode .muted { display:none; }
+
+/* Full text (scripture) panel */
+.fulltext { padding: 8px 16px 0; }
+.fulltext details {
+  border: 1px solid rgba(127,221,181,.45);
+  background: linear-gradient(180deg, rgba(127,221,181,.10), rgba(130,170,255,.08));
+  border-radius: 16px; overflow: hidden;
+}
+.fulltext summary { font-weight: 900; padding: 14px 14px; display:flex; align-items:center; justify-content:space-between; }
+.fulltext .content { padding: 6px 14px 14px; }
+.scripture { font-size: 14px; line-height: 1.7; }
+.scripture p { margin: 8px 0; }
+.scripture .v { display:inline-block; width: 2.2em; color: var(--accent); font-weight: 800; }
+.scripture .note { color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">신명기 28:45–48</div>
+          <div class="small muted">정론 · 정행 · 현대 적용 — 모바일 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare" title="공유">공유</button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <!-- 본문 전체 보기 -->
+    <section class="fulltext" aria-label="신명기 28:45–48 본문 전체">
+      <details open>
+        <summary>📜 본문 전체 보기 (신명기 28:45–48) <span class="chev">▶</span></summary>
+        <div class="content scripture">
+          <p><span class="v">45</span> 네가 네 하나님 여호와의 말씀을 청종하지 아니하고 네게 명령하신 그의 명령과 규례를 지키지 아니하므로 이 모든 저주가 네게 와서 너를 따르고 네게 이르러 마침내 너를 멸하리니</p>
+          <p><span class="v">46</span> 이 모든 저주가 너와 네 자손에게 영원히 있어서 표징과 훈계가 되리라</p>
+          <p><span class="v">47</span> 네가 모든 것이 풍족하여도 기쁨과 즐거운 마음으로 네 하나님 여호와를 섬기지 아니함으로 말미암아</p>
+          <p><span class="v">48</span> 네가 주리고 목마르고 헐벗고 모든 것이 부족한 중에서 여호와께서 보내사 너를 치게 하실 적군을 섬기게 될 것이니 그가 철 멍에를 네 목에 메워 마침내 너를 멸할 것이라</p>
+        </div>
+      </details>
+    </section>
+<section class="hero">
+  <span class="pill">📖 오늘의 본문 — 청종(שָׁמַע) · 저주(קְלָלָה) · 표징/이적(אוֹת/מוֹפֵת) · 섬김(עָבַד) · 철 멍에(עֹל בַּרְזֶל)</span>
+  <h1 class="h1">쉽게 읽는 요점</h1>
+  <p class="sub">
+    <b>불순종</b>은 저주가 <u>와서–따르고–이르러</u> 결국 <b>멸함</b>에 이르게 한다(28:45). 이 저주는 <u>표징과 이적</u>으로 너와 자손에게 남는다(28:46). 
+    풍족할 때조차 <b>기쁨</b>(שִׂמְחָה)과 <b>즐거운 마음</b>(טוּב לֵבָב)으로 <b>섬기지</b>(עָבַד) 않은 것이 뿌리이며, 결과는 <u>결핍</u>과 <u>적국 섬김</u>, <b>철 멍에</b>이다(28:47–48).
+  </p>
+</section>
+
+<section class="grid">
+  <article class="card">
+    <h3>한눈 요약 (3문장)</h3>
+    <ul>
+      <li><b>원인–결과 사슬</b>: <u>청종 부재</u>가 저주를 불러오고, 저주는 <u>추적·포위</u>하여 마침내 멸망에 이르게 한다(45).</li>
+      <li><b>교육적 기능</b>: 저주는 개인과 <u>자손</u>에게 남는 <u>표징/훈계</u>로서 공동체 기억을 각인한다(46).</li>
+      <li><b>심층 원인과 귀결</b>: 풍족 속 <u>기쁨 없는 섬김</u>의 결핍 → <u>굶주림·갈증·벌거벗음·결핍</u> + <u>적국 섬김</u>과 <b>철 멍에</b>(47–48).</li>
+    </ul>
+    <div class="hint">아래 섹션을 펼쳐 상세 설명과 예시, 퀴즈를 볼 수 있습니다.</div>
+  </article>
+
+  <!-- 1) 정론 -->
+  <details open>
+    <summary>① 정론(Orthodoxy) — 본문이 말하는 것 <span class="chev">▶</span></summary>
+    <div class="content">
+      <div class="note">핵심 논리: <b>불청종</b>(שׁמע 부정) → <b>저주</b>(קְלָלָה)가 <u>와서·따르고·이르러</u> → <b>멸함</b> → <b>표징/훈계</b>로 세대 각인 → <b>기쁨 없는 섬김</b>이 근원 → <b>결핍·적국 섬김·철 멍에</b>.</div>
+      <ul>
+        <li><b>언약 제재부</b>: “와서–따르고–이르러”는 저주의 <u>점증적 포위</u>를 묘사(45).</li>
+        <li><b>표징/이적</b>: 저주는 <u>표징(אוֹת)·이적(מוֹפֵת)</u>으로 너와 자손에게 남아 <u>훈계</u>가 됨(46).</li>
+        <li><b>심층 원인</b>: 풍족 중에도 <u>기쁨과 즐거운 마음</u>(שִׂמְחָה·טוּב לֵבָב)으로 <b>여호와를 섬기지 않음</b>(47).</li>
+        <li><b>귀결</b>: <u>굶주림·갈증·벌거벗음·결핍</u>(רָעָב·צָמָא·עֵירֹם·חֹסֶר) + <u>적국 섬김</u>과 <b>철 멍에</b>(עֹל בַּרְזֶל)(48).</li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- 2) 정행 -->
+  <details>
+    <summary>② 정행(Orthopraxy) — 실천 관점의 점검 <span class="chev">▶</span></summary>
+    <div class="content">
+      <ul>
+        <li><b>기억–교육 루틴</b>: 저주가 <u>표징/훈계</u>라면, 공동체는 <b>기억 의례</b>(기록·증언·다음 세대 교육)를 설계해야 한다(46).</li>
+        <li><b>기쁨의 습속</b>: 번영기일수록 <u>감사·기쁨 루틴</u>을 제도화—섬김(עָבַד)은 <u>정서</u>와 <u>행동</u>의 결속(47).</li>
+        <li><b>구조적 ‘철 멍에’ 인식</b>: 빚·중독·착취 구조를 오늘의 <u>멍에</u>로 식별하고, 공동선 정책·상호부조로 완화(48).</li>
+        <li><b>청종 훈련</b>: 듣기(שָׁמַע)–순종 루틴(주간 실천 목표→리뷰)을 통해 <u>불청종의 관성</u>을 깬다(45).</li>
+      </ul>
+      <div class="note small">요지: 경고(정론)는 <u>기억·기쁨·섬김·청종</u>의 루틴(정행)으로 전환될 때 힘을 가진다.</div>
+    </div>
+  </details>
+
+  <!-- 3) 적용 -->
+  <details>
+    <summary>③ 현대 적용 — 오늘 교회/공동체에서 <span class="chev">▶</span></summary>
+    <div class="content">
+      <ul>
+        <li><b>개인</b>: “<u>철 멍에 점검</u>”(부채·알코올/니코틴·디지털 과의존) 체크리스트 작성·1항목 감축.</li>
+        <li><b>가정/팀</b>: 주 1회 <u>감사–기쁨–섬김</u> 공유 시간(작은 자선/봉사 포함)으로 <u>기쁨 있는 섬김</u> 훈련.</li>
+        <li><b>공동체</b>: 결핍(רָעָב·צָמָא·עֵירֹם·חֹסֶר)에 대응하는 <u>식사–의복–상담–채무경감</u> 프로그램 운영.</li>
+        <li><b>공적 영역</b>: 약자를 <u>적국에 섬김</u>처럼 만드는 구조(부채·독점)를 완화하는 정책을 지지·점검.</li>
+      </ul>
+      <div class="note small">포인트: <u>불청종의 결과</u>를 막는 가장 현실적 방법은 <b>기억·기쁨·섬김</b>의 반복 훈련이다.</div>
+    </div>
+  </details>
+
+  <!-- 히브리어 키워드 -->
+  <article class="card">
+    <h3>히브리어 키워드 (누르면 설명)</h3>
+    <div class="tagbar">
+      <button class="chip" data-word="shama">שָׁמַע · shāmaʿ</button>
+      <button class="chip" data-type="blue" data-word="mitsvah">מִצְוָה · miṣwāh</button>
+      <button class="chip" data-word="chuqqot">חֻקּוֹת · ḥuqqōt</button>
+      <button class="chip" data-type="blue" data-word="qelalah">קְלָלָה · qəlālāh</button>
+      <button class="chip" data-word="otmophet">אוֹת/מוֹפֵת · ʾōt/mōphet</button>
+      <button class="chip" data-type="blue" data-word="simchah">שִׂמְחָה · simḥāh</button>
+      <button class="chip" data-word="tuvlevav">טוּב לֵבָב · ṭûv lēvāv</button>
+      <button class="chip" data-type="blue" data-word="avad">עָבַד · ʿāvad</button>
+      <button class="chip" data-word="ravtsamachoser">רָעָב·צָמָא·עֵירֹם·חֹסֶר</button>
+      <button class="chip" data-type="blue" data-word="olbarzel">עֹל בַּרְזֶל · ʿōl barzel</button>
+    </div>
+    <p class="hint">철자·음역·어근(שורש)·기본 의미·대표 용례를 간단히 정리했습니다.</p>
+  </article>
+
+  <!-- 본문 흐름 -->
+  <details>
+    <summary>본문 핵심 흐름 다시 보기 <span class="chev">▶</span></summary>
+    <div class="content">
+      <ul>
+        <li>(45) <u>불청종</u> → 저주가 <u>와서–따르고–이르러</u> → <b>멸함</b>.</li>
+        <li>(46) 저주는 너와 <u>자손</u>에게 남는 <b>표징/훈계</b>.</li>
+        <li>(47) <u>풍족</u> 속 <u>기쁨 없는 섬김</u>이 근원.</li>
+        <li>(48) <u>결핍</u> + <u>적국 섬김</u> + <b>철 멍에</b>.</li>
+      </ul>
+      <div class="muted small">※ 성경 인용은 이해를 돕기 위한 요약입니다.</div>
+    </div>
+  </details>
+
+  <!-- 퀴즈 -->
+  <section id="quiz" class="quiz" aria-label="이해도 점검 퀴즈">
+    <div class="qcard">
+      <div class="q" id="qtext">퀴즈를 시작해 보세요.</div>
+      <div class="opt" id="qopts"></div>
+      <div class="result" id="qresult"></div>
+      <div class="divider"></div>
+      <div class="muted small" id="qprogress">0 / 6</div>
+    </div>
+  </section>
+
+  <article class="card">
+    <h3>실천 체크리스트</h3>
+    <ul>
+      <li><b>청종 루틴</b>: 이번 주 ‘듣기–순종(שָׁמַע)’ 실행 계획을 세우고 주말에 리뷰했다.</li>
+      <li><b>기쁨 있는 섬김</b>: 감사 일지 3회 기록 + 작은 봉사 1회(שִׂמְחָה·טוּב לֵבָב → עָבַד).</li>
+      <li><b>철 멍에 점검</b>: 부채/중독/과소비 중 1항목을 선정해 <u>감축 행동</u>을 실천했다.</li>
+      <li><b>결핍 완화</b>: 굶주림·갈증·의복 부족 완화를 위한 기부/식사 제공 1회 참여.</li>
+    </ul>
+  </article>
+
+  <article class="card small muted">
+    <div>제작: 모바일 전용, 오프라인에서도 동작합니다. 상단 <b>공유</b> 버튼으로 링크를 나눌 수 있습니다.</div>
+  </article>
+</section>
+  </main>
+  <!-- 바텀 액션 바 -->
+  <div class="bar">
+    <div class="wrap">
+      <div class="row">
+        <button class="btn" id="btnToggleSummary">요약 모드</button>
+        <button class="btn" id="btnExpand">전체 펼치기</button>
+        <button class="btn primary" id="btnQuiz">퀴즈 시작</button>
+      </div>
+    </div>
+  </div>
+  <!-- 바텀 시트: 용어 설명 -->
+  <div class="sheet" id="sheet">
+    <div class="overlay" id="sheetClose" aria-label="닫기"></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <h4 id="sheetTitle">용어</h4>
+      <div id="sheetBody" class="small"></div>
+      <div class="divider"></div>
+      <button class="btn" id="sheetCloseBtn">닫기</button>
+    </div>
+  </div>
+  <script>
+    // 공유
+    document.getElementById('btnShare').addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: document.title, text: '신명기 28:45–48 쉽게 읽기', url: location.href });
+        } catch(e) { /* 취소 */ }
+      } else {
+        alert('이 링크를 복사해 공유하세요:\\n' + location.href);
+      }
+    });
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode') ? '자세히 모드' : '요약 모드';
+    });
+
+    // 전체 펼치기/접기
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+
+    // 히브리어 키워드 바텀시트
+    const dict = {
+      shama: {
+        title: 'שָׁמַע — shāmaʿ (√שמע)',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>듣다/순종하다</b></div>
+            <div>핵심</div><div><b>불청종</b>이 저주의 기점(28:45)</div>
+            <div>용례</div><div>신 6:4; 28:45</div>
+          </div>`
+      },
+      mitsvah: {
+        title: 'מִצְוָה — miṣwāh (√צוה)',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>명령</b></div>
+            <div>핵심</div><div>명령 불이행 → 제재(28:45)</div>
+            <div>용례</div><div>신 28:45</div>
+          </div>`
+      },
+      chuqqot: {
+        title: 'חֻקּוֹת — ḥuqqōt (√חקק)',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>규례/법도</b></div>
+            <div>핵심</div><div>규례 불이행과 병렬(28:45)</div>
+            <div>용례</div><div>신 28:45</div>
+          </div>`
+      },
+      qelalah: {
+        title: 'קְלָלָה — qəlālāh (√קלל)',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>저주</b>, 재난 선언</div>
+            <div>핵심</div><div>와서–따르고–이르러 <b>포위</b>(28:45)</div>
+            <div>용례</div><div>신 27–28장</div>
+          </div>`
+      },
+      otmophet: {
+        title: 'אוֹת / מוֹפֵת — ʾōt / mōphet',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>표징</b> / <b>이적</b></div>
+            <div>핵심</div><div>세대에 남는 <b>훈계</b>(28:46)</div>
+            <div>용례</div><div>출 7:3; 신 28:46</div>
+          </div>`
+      },
+      simchah: {
+        title: 'שִׂמְחָה — simḥāh',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>기쁨</b></div>
+            <div>핵심</div><div>풍족 속 <b>기쁨 결핍</b>이 근원(28:47)</div>
+            <div>용례</div><div>신 16:11; 28:47</div>
+          </div>`
+      },
+      tuvlevav: {
+        title: 'טוּב לֵבָב — ṭûv lēvāv',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>즐거운 마음</b></div>
+            <div>핵심</div><div><b>정서+행동</b>의 섬김(28:47)</div>
+            <div>용례</div><div>신 28:47</div>
+          </div>`
+      },
+      avad: {
+        title: 'עָבַד — ʿāvad (√עבד)',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>섬기다</b>, 노동/예배하다</div>
+            <div>핵심</div><div>하나님 섬김의 결핍 → <b>적국 섬김</b>(28:47–48)</div>
+            <div>용례</div><div>출 3:12; 신 28:47–48</div>
+          </div>`
+      },
+      ravtsamachoser: {
+        title: 'רָעָב · צָמָא · עֵירֹם · חֹסֶר',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>굶주림</b>·<b>갈증</b>·<b>벌거벗음</b>·<b>결핍</b></div>
+            <div>핵심</div><div>불순종의 <b>사회적 결과</b>(28:48)</div>
+            <div>용례</div><div>신 28:48</div>
+          </div>`
+      },
+      olbarzel: {
+        title: 'עֹל בַּרְזֶל — ʿōl barzel',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>철 멍에</b>, 완전 예속의 은유</div>
+            <div>핵심</div><div><b>타자 지배</b> 아래의 강제 노역(28:48)</div>
+            <div>용례</div><div>신 28:48; 렘 28:13–14</div>
+          </div>`
+      }
+    };
+
+    const sheet = document.getElementById('sheet');
+    const sheetTitle = document.getElementById('sheetTitle');
+    const sheetBody = document.getElementById('sheetBody');
+    const openSheet = (key) => {
+      const item = dict[key];
+      if (!item) return;
+      sheetTitle.textContent = item.title;
+      sheetBody.innerHTML = item.html;
+      sheet.classList.add('show');
+    };
+    const closeSheet = () => sheet.classList.remove('show');
+    document.getElementById('sheetClose').addEventListener('click', closeSheet);
+    document.getElementById('sheetCloseBtn').addEventListener('click', closeSheet);
+
+    document.querySelectorAll('.chip').forEach(ch => ch.addEventListener('click', () => openSheet(ch.dataset.word)));
+
+    // 퀴즈
+    const quizData = [
+      {
+        q: '28:45에서 저주가 “와서–따르고–이르러” 하는 이유는?',
+        a: [
+          '이방 신을 한 번만 섬겼기 때문',
+          '<u>여호와의 말씀을 청종하지 않고 명령과 규례를 지키지 않았기 때문</u>',
+          '성전을 건축하지 않았기 때문'
+        ],
+        correct: 1,
+        explain: '“청종하지 아니하고… 명령과 규례를 지키지 아니하므로”(28:45).'
+      },
+      {
+        q: '28:46에 따르면 저주는 무엇이 되는가?',
+        a: [
+          '일시적 불운',
+          '<u>너와 네 자손에게 영원한 표징과 훈계</u>',
+          '제사장만을 위한 비밀 계시'
+        ],
+        correct: 1,
+        explain: '“영원히 있어서 표징과 훈계가 되리라.”'
+      },
+      {
+        q: '28:47이 지적하는 심층 원인은?',
+        a: [
+          '가난해서 섬기지 못함',
+          '<u>모든 것이 풍족하여도 기쁨과 즐거운 마음으로 섬기지 않음</u>',
+          '언어가 달라서 율법을 이해 못함'
+        ],
+        correct: 1,
+        explain: '“풍족하여도… 기쁨과 즐거운 마음으로… 섬기지 아니함.”'
+      },
+      {
+        q: '28:48이 묘사하는 상태로 옳은 것은?',
+        a: [
+          '성읍의 번영과 평화',
+          '<u>굶주림·갈증·벌거벗음·모든 것의 부족</u>',
+          '연이은 축제와 잔치'
+        ],
+        correct: 1,
+        explain: '“주리고 목마르고 헐벗고 모든 것이 부족한 중에서.”'
+      },
+      {
+        q: '“철 멍에(עֹל בַּרְזֶל)”는 무엇을 상징하는가?',
+        a: [
+          '온화한 지도',
+          '<u>적국의 완전한 예속·강제 지배</u>',
+          '농경의 번성'
+        ],
+        correct: 1,
+        explain: '적국의 지배 아래 강제노역/예속의 은유(28:48).'
+      },
+      {
+        q: '28:48에서 “적군을 섬기게 된다”의 원인은 누구의 보내심인가?',
+        a: [
+          '우연한 국제 정세',
+          '<u>여호와께서 보내신 적군</u>',
+          '사사 시대의 관습'
+        ],
+        correct: 1,
+        explain: '“여호와께서 보내사… 적군을 섬기게 될 것이니.”'
+      }
+    ];
+
+    let qi = -1, score = 0;
+    const qtext = document.getElementById('qtext');
+    const qopts = document.getElementById('qopts');
+    const qresult = document.getElementById('qresult');
+    const qprogress = document.getElementById('qprogress');
+
+    function renderQ() {
+      if (qi < 0) {
+        qtext.textContent = '퀴즈를 시작해 보세요.';
+        qopts.innerHTML = '';
+        qresult.textContent = '';
+        qprogress.textContent = '0 / ' + quizData.length;
+        return;
+      }
+      const item = quizData[qi];
+      qtext.innerHTML = `Q${qi+1}. ${item.q}`;
+      qopts.innerHTML = '';
+      item.a.forEach((t, idx) => {
+        const b = document.createElement('button');
+        b.innerHTML = t;
+        b.addEventListener('click', () => answer(idx));
+        qopts.appendChild(b);
+      });
+      qresult.textContent = '';
+      qprogress.textContent = `${qi+1} / ${quizData.length}`;
+    }
+
+    function answer(idx) {
+      const item = quizData[qi];
+      const buttons = Array.from(qopts.querySelectorAll('button'));
+      buttons.forEach((b, i) => {
+        b.disabled = true;
+        if (i === item.correct) b.classList.add('correct');
+        else if (i === idx) b.classList.add('wrong');
+      });
+      const ok = idx === item.correct;
+      if (ok) score++;
+      qresult.textContent = (ok ? '정답! ' : '오답 ') + '— ' + item.explain;
+      setTimeout(nextQ, 750);
+    }
+
+    function nextQ() {
+      qi++;
+      if (qi >= quizData.length) {
+        qtext.textContent = '완료!';
+        qopts.innerHTML = '';
+        qresult.textContent = `점수: ${score} / ${quizData.length}  — 수고하셨습니다!`;
+        qprogress.textContent = `${quizData.length} / ${quizData.length}`;
+        qi = -1; score = 0; // 초기화
+        return;
+      }
+      renderQ();
+    }
+
+    document.getElementById('btnQuiz').addEventListener('click', () => {
+      if (qi === -1) { qi = 0; score = 0; renderQ(); }
+      else { nextQ(); }
+      window.scrollTo({ top: document.getElementById('quiz').offsetTop - 80, behavior: 'smooth' });
+    });
+
+    // 초기 상태
+    renderQ();
+  </script>
+</body>
+</html>
