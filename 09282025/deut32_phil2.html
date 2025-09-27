@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>어그러진 세대 속 하나님의 자녀 — 신 32:5 · 빌 2:15 | 모바일 가이드</title>
+  <meta name="date" content="2025-09-27" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-soft: #121821;
+      --card: #141c27;
+      --fg: #eaf2ff;
+      --muted: #b8c4d9;
+      --accent: #7bdcb5;   /* 민트 */
+      --accent-2: #82aaff; /* 블루 */
+      --danger: #ff6b6b;
+      --ok: #22c55e;
+      --shadow: 0 8px 24px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f7fb;
+        --bg-soft: #eef2f8;
+        --card: #ffffff;
+        --fg: #0e1726;
+        --muted: #4b5563;
+        --accent: #06b6d4;
+        --accent-2: #4f46e5;
+        --shadow: 0 10px 24px rgba(0,0,0,.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding-bottom: 10px; }
+    header {
+      position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(1.2) blur(8px);
+      background: linear-gradient(90deg, rgba(127,221,181,0.08), rgba(130,170,255,0.08));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .head { display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
+    .brand { display:flex; gap:10px; align-items:center; }
+    .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+    .title { font-weight: 800; letter-spacing:.1px; }
+    .controls { display:flex; gap:8px; }
+    .btn {
+      appearance:none; border:none; cursor:pointer; border-radius: 999px; padding:10px 14px; font-weight:700; font-size:14px; color: var(--fg);
+      background: rgba(255,255,255,.08); box-shadow: var(--shadow);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#03121a; }
+
+    .hero { padding: 18px 16px 8px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; font-size:12px; color: var(--fg); background: rgba(255,255,255,.08); padding:8px 12px; border-radius:999px; }
+    .h1 { font-size: 22px; font-weight: 900; line-height:1.25; margin: 10px 0 6px; }
+    .sub { color: var(--muted); font-size: 14px; }
+
+    .grid { display:grid; gap:14px; padding: 12px 16px; }
+    .card { background: var(--card); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card .hint { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+    details { border: 1px solid rgba(255,255,255,.06); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.02); }
+    summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:10px; padding: 14px 14px; cursor: pointer; font-weight:800; }
+    summary::-webkit-details-marker { display:none; }
+    .chev { transition: transform .2s ease; }
+    details[open] .chev { transform: rotate(90deg); }
+    .content { padding: 0 14px 16px; color: var(--fg); }
+    .content ul { margin: 10px 0; padding-left: 18px; }
+    .content li { margin: 8px 0; }
+
+    .tagbar { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .chip { padding:8px 12px; border-radius:999px; background: rgba(127,221,181,.15); color: var(--fg); border:1px solid rgba(127,221,181,.35); font-weight:700; font-size:13px; cursor:pointer; }
+    .chip[data-type="blue"] { background: rgba(130,170,255,.12); border-color: rgba(130,170,255,.35); }
+
+    .kv { display:grid; grid-template-columns: 110px 1fr; gap:8px; }
+    .kv div { padding:6px 0; border-bottom:1px dashed rgba(255,255,255,.08); color: var(--muted); }
+    .kv div b { color: var(--fg); }
+
+    .sheet { position: fixed; inset: 0; display:none; z-index: 90; }
+    .sheet.show { display:block; }
+    .sheet .overlay { position:absolute; inset:0; background: rgba(0,0,0,.4); }
+    .sheet .panel { position:absolute; left:0; right:0; bottom:0; background: var(--card); border-radius: 18px 18px 0 0; padding: 16px; box-shadow: var(--shadow); max-height: 70vh; overflow:auto; }
+    .sheet h4 { margin: 0 0 8px; }
+
+    .bar { position:fixed; left:0; right:0; bottom:0; z-index: 40; backdrop-filter: blur(8px) saturate(1.2); box-shadow: 0 -6px 24px rgba(0,0,0,.25); background: linear-gradient(90deg, rgba(127,221,181,.08), rgba(130,170,255,.08)); padding: 6px 10px; }
+    .bar .row { display:flex; gap:8px; }
+    .bar .row .btn { flex:1; }
+
+    .quiz { padding: 8px 16px 0; }
+    .qcard { background: var(--card); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+    .q { font-weight:800; margin: 0 0 10px; }
+    .opt { display:flex; flex-direction:column; gap:8px; }
+    .opt button { text-align:left; width:100%; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: var(--fg); padding:12px; border-radius:12px; font-weight:700; }
+    .opt button.correct { border-color: rgba(34,197,94,.6); box-shadow: inset 0 0 0 999px rgba(34,197,94,.12); }
+    .opt button.wrong { border-color: rgba(255,107,107,.6); box-shadow: inset 0 0 0 999px rgba(255,107,107,.10); }
+    .result { margin-top:10px; font-weight:800; }
+
+    .muted { color: var(--muted); font-size: 13px; }
+    .divider { height:1px; background: rgba(255,255,255,.08); margin: 12px 0; }
+
+    .small { font-size: 12px; }
+    .note { background: rgba(255,255,255,.06); padding:10px 12px; border-radius:12px; }
+
+    .summary-mode details .content { display:none; }
+    .summary-mode .hint, .summary-mode .muted { display:none; }
+
+    /* Full text (scripture) panel */
+    .fulltext { padding: 8px 16px 0; }
+    .fulltext details {
+      border: 1px solid rgba(127,221,181,.45);
+      background: linear-gradient(180deg, rgba(127,221,181,.10), rgba(130,170,255,.08));
+      border-radius: 16px; overflow: hidden;
+    }
+    .fulltext summary { font-weight: 900; padding: 14px 14px; display:flex; align-items:center; justify-content:space-between; }
+    .fulltext .content { padding: 6px 14px 14px; }
+    .scripture { font-size: 14px; line-height: 1.7; }
+    .scripture p { margin: 8px 0; }
+    .scripture .v { display:inline-block; width: 2.2em; color: var(--accent); font-weight: 800; }
+    .scripture .note { color: var(--muted); font-size: 12px; }
+
+    /* simple table card */
+    table { width:100%; border-collapse: collapse; }
+    th, td { padding: 10px; border-bottom: 1px dashed rgba(255,255,255,.08); text-align: left; font-size: 14px; }
+    th { color: var(--muted); font-weight: 800; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">어그러진 세대 속 하나님의 자녀</div>
+          <div class="small muted">신명기 32:5 · 빌립보서 2:15 — 정론 · 정행 · 적용 (모바일 가이드)</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare" title="공유">공유</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- 본문 전체 보기 -->
+    <section class="fulltext" aria-label="본문 전체">
+      <details open>
+        <summary>📜 본문 전체 보기 (신 32:5; 빌 2:15) <span class="chev">▶</span></summary>
+        <div class="content scripture">
+          <p class="note">— 설교 제목: &lt;어그러진 세대 속 하나님의 자녀&gt; —</p>
+          <p><b>신명기 32:5</b> — <span class="v">5</span> 그들이 여호와를 향하여 악을 행하니 하나님의 자녀가 아니요 흠이 있고 삐뚤어진 세대로다</p>
+          <p><b>빌립보서 2:15</b> — <span class="v">15</span> 이는 너희가 흠이 없고 순전하여 어그러지고 거스르는 세대 가운데서 하나님의 흠 없는 자녀로 세상에서 그들 가운데 빛들로 나타내며</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="hero">
+      <span class="pill">📖 오늘의 주제 — ‘어그러진 세대’와 ‘하나님의 자녀’</span>
+      <h1 class="h1">쉽게 읽는 요점</h1>
+      <p class="sub">이스라엘의 실패를 고발한 <b>신 32:5</b>와, 그 한복판에서 <b>자녀의 품성</b>을 드러내라 권하는 <b>빌 2:15</b>를 함께 읽습니다. 정체성(자녀) → <b>일관성</b>(흠 없음) → <b>가시성</b>(빛)으로 이어지는 길을 제시합니다.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>한눈 요약 (3문장)</h3>
+        <ul>
+          <li><b>진단</b>: 신 32:5는 하나님의 백성 <u>안</u>에서 나타난 <b>왜곡(삐뚤어짐)</b>을 고발합니다.</li>
+          <li><b>소명</b>: 빌 2:15은 같은 시대 속에서 <b>흠 없고 순전한</b> 하나님의 <b>자녀</b>로 <b>빛</b>처럼 살라 부릅니다.</li>
+          <li><b>방향</b>: 믿음의 말보다 <b>생활 루틴</b>(말·돈·시간·관계)의 <b>곧음</b>으로 증거합니다.</li>
+        </ul>
+        <div class="hint">아래 섹션을 펼쳐 자세한 설명과 퀴즈, 적용을 볼 수 있습니다.</div>
+      </article>
+
+      <!-- ① 정론 -->
+      <details open>
+        <summary>① 정론(Orthodoxy) — 본문이 말하는 것 <span class="chev">▶</span></summary>
+        <div class="content">
+          <div class="note">핵심: <b>자녀</b>(정체성) → <b>흠 없음·순전</b>(성품) → <b>빛</b>(증언).</div>
+          <ul>
+            <li><b>신 32:5</b> — 언약 공동체가 <u>부패</u>(<i>שִׁחֵת</i>)하여 <u>흠(מֻם)</u>이 드러나고, <u>삐뚤어진 세대</u>(<i>עִקֵּשׁ</i>·<i>פְּתַלְתֹּל</i>)가 되었다는 고발입니다.</li>
+            <li><b>빌 2:15</b> — <u>흠 없음(ἄμωμος)</u>·<u>순전(ἀκέραιος)</u>으로 살며, <u>어그러진(σκολιός)</u>·<u>거스르는(διαστραμμένος)</u> 세대 가운데 <u>하나님의 자녀(τέκνα θεοῦ)</u>로 <u>빛들(φωστῆρες)</u>처럼 나타나라는 부르심입니다.</li>
+            <li><b>LXX 연결</b> — 바울은 칠십인역(LXX)의 신 32:5 어휘를 불러와, 이스라엘의 실패를 <u>교회의 성품</u>으로 전복합니다.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- ② 정행 -->
+      <details>
+        <summary>② 정행(Orthopraxy) — 실천 관점의 점검 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>우리부터</b> — “어그러진 세대”를 세상 탓으로만 돌리지 않고, <u>공동체 내부</u>의 왜곡부터 점검합니다.</li>
+            <li><b>완벽주의 대신 일관성</b> — 성경의 ‘흠 없음’은 <u>위선</u>이 아니라 <u>정직·일관성</u>입니다(숨기지 말고 고치기).</li>
+            <li><b>말의 루틴</b> — 빌 2:14의 맥락처럼 <u>원망·시비</u> 습관을 끊고, 사실-대안-책임의 3줄로 말하기.</li>
+            <li><b>공공의 곧음</b> — 돈·권력·시간을 <u>곧게</u>(공정·책임·배려) 쓰는 작은 선택을 반복합니다.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- ③ 적용 -->
+      <details>
+        <summary>③ 현대 적용 — 오늘 교회/가정/개인 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>개인</b>: 이번 주 <u>24시간 “원망·시비 금식”</u> 도전 — 불만은 <u>사실·대안·내 몫</u>으로만 표현.</li>
+            <li><b>가정/팀</b>: 주 1회 <u>감사 노트</u> 공유 — 서로의 ‘빛’이 보이게 만듭니다.</li>
+            <li><b>교회</b>: 월 1회 <u>정직 인벤토리</u> — 말·돈·시간 사용에서 곧게 고칠 한 가지를 기록·실행.</li>
+            <li><b>지역사회</b>: 약자 보호 1건 동참(상담 동행, 공정 거래 선택 등) — <u>빛</u>은 구체적 행동으로 드러납니다.</li>
+          </ul>
+          <div class="note small">포인트: 정체성(자녀) → 루틴(곧음) → 가시성(빛).</div>
+        </div>
+      </details>
+
+      <!-- LXX 매핑 표 -->
+      <article class="card">
+        <h3>LXX-히브리-헬라어 매핑 (핵심 어휘 연결)</h3>
+        <table aria-label="어휘 매핑">
+          <thead>
+            <tr><th>주제</th><th>히브리어(신 32:5)</th><th>헬라어(LXX/빌 2:15)</th><th>우리말</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>흠/결점</td><td><b>מֻם</b> · <i>mûm</i></td><td><b>ἄμωμος</b> · <i>amōmos</i></td><td>흠 없음</td></tr>
+            <tr><td>굽음/왜곡</td><td><b>עִקֵּשׁ</b> · <i>ʿiqqēš</i></td><td><b>σκολιός</b> · <i>skolios</i></td><td>어그러진</td></tr>
+            <tr><td>비틀림</td><td><b>פְּתַלְתֹּל</b> · <i>pĕtaltōl</i></td><td><b>διαστραμμένος</b> · <i>diastrammenos</i></td><td>거스르는/뒤틀린</td></tr>
+            <tr><td>세대</td><td><b>דּוֹר</b> · <i>dōr</i></td><td><b>γενεά</b> · <i>genea</i></td><td>세대</td></tr>
+            <tr><td>자녀</td><td><b>בָּנִים</b> · <i>bānîm</i></td><td><b>τέκνα θεοῦ</b> · <i>tekna theou</i></td><td>하나님의 자녀</td></tr>
+            <tr><td>빛/발광</td><td>(암시: 별)</td><td><b>φωστῆρες</b> · <i>phōstēres</i></td><td>빛들</td></tr>
+          </tbody>
+        </table>
+        <p class="hint">이 표 하나로 두 본문의 연결고리를 쉽게 설명할 수 있습니다.</p>
+      </article>
+
+      <!-- 용어 바 -->
+      <article class="card">
+        <h3>키워드 (누르면 설명)</h3>
+        <div class="tagbar">
+          <button class="chip" data-word="mum">מֻם · mûm</button>
+          <button class="chip" data-word="iqqesh">עִקֵּשׁ · ʿiqqēš</button>
+          <button class="chip" data-word="petaltol">פְּתַלְתֹּל · pĕtaltōl</button>
+          <button class="chip" data-word="dor">דּוֹר · dōr</button>
+          <button class="chip" data-word="banim">בָּנִים · bānîm</button>
+          <button class="chip" data-type="blue" data-word="amomos">ἄμωμος · amōmos</button>
+          <button class="chip" data-type="blue" data-word="akeraios">ἀκέραιος · akeraios</button>
+          <button class="chip" data-type="blue" data-word="skolios">σκολιός · skolios</button>
+          <button class="chip" data-type="blue" data-word="diastrammenos">διαστραμμένος · diastrammenos</button>
+          <button class="chip" data-type="blue" data-word="genea">γενεά · genea</button>
+          <button class="chip" data-type="blue" data-word="phosteres">φωστῆρες · phōstēres</button>
+        </div>
+        <p class="hint">철자·음역·어근·기본 의미·대표 용례를 간단히 정리했습니다.</p>
+      </article>
+
+      <!-- 본문 핵심 흐름 -->
+      <details>
+        <summary>본문 핵심 흐름 다시 보기 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>신 32:5</b> — 언약 백성의 <u>내부 왜곡</u> 진단.</li>
+            <li><b>빌 2:15</b> — <u>흠 없음·순전</u>의 성품으로 <u>빛</u>을 드러내라는 소명.</li>
+            <li><b>연결</b> — LXX 어휘 반향을 통해 <u>실패 → 소명</u>으로 전환.</li>
+          </ul>
+          <div class="muted small">※ 성경 인용은 이해를 돕기 위한 요약입니다.</div>
+        </div>
+      </details>
+
+      <!-- 퀴즈 -->
+      <section id="quiz" class="quiz" aria-label="이해도 점검 퀴즈">
+        <div class="qcard">
+          <div class="q" id="qtext">퀴즈를 시작해 보세요.</div>
+          <div class="opt" id="qopts"></div>
+          <div class="result" id="qresult"></div>
+          <div class="divider"></div>
+          <div class="muted small" id="qprogress">0 / 6</div>
+        </div>
+      </section>
+
+      <!-- 실천 체크리스트 -->
+      <article class="card">
+        <h3>실천 체크리스트</h3>
+        <ul>
+          <li><b>말</b>: 오늘 하루 <u>원망·시비 금식</u> — 댓글·단톡·가정 모두 포함.</li>
+          <li><b>돈</b>: 이번 주 한 번, <u>공정</u>을 선택(정직 결제·약자 배려 소비).</li>
+          <li><b>시간</b>: 주 1회 <u>기술 안식</u>(알림 끄기·가족/이웃과 식사).</li>
+          <li><b>관계</b>: 갈등 1건을 <u>사실·감정·요청</u> 3단락으로 평화롭게 제안.</li>
+        </ul>
+      </article>
+
+      <article class="card small muted">
+        <div>제작: 모바일 전용, 오프라인에서도 동작합니다. 상단 <b>공유</b> 버튼으로 링크를 나눌 수 있습니다.</div>
+      </article>
+    </section>
+  </main>
+
+  <!-- 바텀 액션 바 -->
+  <div class="bar">
+    <div class="wrap">
+      <div class="row">
+        <button class="btn" id="btnToggleSummary">요약 모드</button>
+        <button class="btn" id="btnExpand">전체 펼치기</button>
+        <button class="btn primary" id="btnQuiz">퀴즈 시작</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 바텀 시트: 용어 설명 -->
+  <div class="sheet" id="sheet">
+    <div class="overlay" id="sheetClose" aria-label="닫기"></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <h4 id="sheetTitle">용어</h4>
+      <div id="sheetBody" class="small"></div>
+      <div class="divider"></div>
+      <button class="btn" id="sheetCloseBtn">닫기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    document.getElementById('btnShare').addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: document.title, text: '어그러진 세대 속 하나님의 자녀 — 신 32:5 · 빌 2:15', url: location.href });
+        } catch(e) { /* 취소 */ }
+      } else {
+        alert('이 링크를 복사해 공유하세요:\n' + location.href);
+      }
+    });
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode') ? '자세히 모드' : '요약 모드';
+    });
+
+    // 전체 펼치기/접기
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+
+    // 히브리어/헬라어 키워드 바텀시트
+    const dict = {
+      mum: {
+        title: 'מֻם — mûm',
+        html: `
+          <div class="kv">
+            <div>어근</div><div><b>√מום</b> (흠/결점)</div>
+            <div>의미</div><div>제의·윤리의 <b>흠</b></div>
+            <div>핵심</div><div>신 32:5의 <b>흠 있음</b> 진단</div>
+            <div>용례</div><div>레 22; 신 17; 신 32:5</div>
+          </div>`
+      },
+      iqqesh: {
+        title: 'עִקֵּשׁ — ʿiqqēš',
+        html: `
+          <div class="kv">
+            <div>어근</div><div><b>√עקש</b> (구부리다)</div>
+            <div>의미</div><div><b>왜곡/어그러짐</b></div>
+            <div>핵심</div><div>신 32:5의 <b>삐뚤어진</b> 세대</div>
+            <div>용례</div><div>신 32:5; 잠 2:15</div>
+          </div>`
+      },
+      petaltol: {
+        title: 'פְּתַלְתֹּל — pĕtaltōl',
+        html: `
+          <div class="kv">
+            <div>어근</div><div><b>√פתל</b> (비틀다)</div>
+            <div>의미</div><div><b>뒤틀린</b>, 꼬인</div>
+            <div>핵심</div><div>신 32:5의 <b>거스르는</b> 뉘앙스</div>
+            <div>용례</div><div>신 32:5</div>
+          </div>`
+      },
+      dor: {
+        title: 'דּוֹר — dōr',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>세대</b>, 시대의 층위</div>
+            <div>핵심</div><div>시대 전체의 <b>기류</b>를 가리킴</div>
+            <div>용례</div><div>신 32; 시 24:6</div>
+          </div>`
+      },
+      banim: {
+        title: 'בָּנִים — bānîm',
+        html: `
+          <div class="kv">
+            <div>어근</div><div><b>√בן</b> (낳다/세우다)</div>
+            <div>의미</div><div><b>자녀</b>, 관계적 신분</div>
+            <div>핵심</div><div>언약 <b>가족 은유</b></div>
+            <div>용례</div><div>신 14:1; 호 1–2</div>
+          </div>`
+      },
+      amomos: {
+        title: 'ἄμωμος — amōmos',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>흠 없음</b></div>
+            <div>대응</div><div>히브리어 <b>מֻם</b>의 반대</div>
+            <div>용례</div><div>빌 2:15; 엡 1:4</div>
+          </div>`
+      },
+      akeraios: {
+        title: 'ἀκέραιος — akeraios',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>순전/혼합 없음</b></div>
+            <div>핵심</div><div>내적 <b>일관성</b></div>
+            <div>용례</div><div>빌 2:15; 마 10:16</div>
+          </div>`
+      },
+      skolios: {
+        title: 'σκολιός — skolios',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>구부러진/어그러진</b></div>
+            <div>대응</div><div>히브리어 <b>עִקֵּשׁ</b></div>
+            <div>용례</div><div>빌 2:15; 행 2:40</div>
+          </div>`
+      },
+      diastrammenos: {
+        title: 'διαστραμμένος — diastrammenos',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>뒤틀린/거스르는</b></div>
+            <div>대응</div><div>히브리어 <b>פְּתַלְתֹּל</b></div>
+            <div>용례</div><div>빌 2:15; 눅 23:2(동계어)</div>
+          </div>`
+      },
+      genea: {
+        title: 'γενεά — genea',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>세대</b></div>
+            <div>대응</div><div>히브리어 <b>דּוֹר</b></div>
+            <div>용례</div><div>빌 2:15; 막 8:38</div>
+          </div>`
+      },
+      phosteres: {
+        title: 'φωστῆρες — phōstēres',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>발광체/별</b></div>
+            <div>핵심</div><div>세상 속 <b>가시성</b>의 은유</div>
+            <div>용례</div><div>빌 2:15; 단 12:3(배경)</div>
+          </div>`
+      }
+    };
+
+    const sheet = document.getElementById('sheet');
+    const sheetTitle = document.getElementById('sheetTitle');
+    const sheetBody = document.getElementById('sheetBody');
+    const openSheet = (key) => {
+      const item = dict[key];
+      if (!item) return;
+      sheetTitle.textContent = item.title;
+      sheetBody.innerHTML = item.html;
+      sheet.classList.add('show');
+    };
+    const closeSheet = () => sheet.classList.remove('show');
+    document.getElementById('sheetClose').addEventListener('click', closeSheet);
+    document.getElementById('sheetCloseBtn').addEventListener('click', closeSheet);
+
+    document.querySelectorAll('.chip').forEach(ch => ch.addEventListener('click', () => openSheet(ch.dataset.word)));
+
+    // 퀴즈
+    const quizData = [
+      {
+        q: '신 32:5가 지적하는 “어그러진 세대”의 대상은 어디에 더 가깝나요?',
+        a: [
+          '외부 사회 전체',
+          '하나님 백성 <u>내부</u>의 왜곡',
+          '이방 나라 왕들만'
+        ],
+        correct: 1,
+        explain: '신 32:5는 언약 백성의 내부 변질을 고발합니다.'
+      },
+      {
+        q: '빌 2:15의 “흠 없음(ἄμωμος)”이 가리키는 태도에 가장 가까운 것은?',
+        a: [
+          '실수 제로의 완벽주의',
+          '숨기지 않는 <u>정직·일관성</u>',
+          '의식주의 엄격함'
+        ],
+        correct: 1,
+        explain: '성경의 흠 없음은 위선이 아니라 일관성입니다.'
+      },
+      {
+        q: '다음 중 LXX-연결이 맞는 것은?',
+        a: [
+          'מֻם ↔ ἄμωμος (흠 ↔ 흠 없음)',
+          'דּוֹר ↔ διαστραμμένος (세대 ↔ 뒤틀림)',
+          'פְּתַלְתֹּל ↔ γενεά (뒤틀림 ↔ 세대)'
+        ],
+        correct: 0,
+        explain: 'מֻם(흠)과 ἄμωμος(흠 없음)이 대조됩니다.'
+      },
+      {
+        q: '빌 2:15의 “빛들(φωστῆρες)” 이미지는 무엇을 강조하나요?',
+        a: [
+          '교회의 건물 미관',
+          '세상 한복판에서의 <u>가시성</u>',
+          '별자리 운세'
+        ],
+        correct: 1,
+        explain: '별처럼 드러나는 가시성을 뜻합니다.'
+      },
+      {
+        q: '다음 중 오늘의 “정행(실천)”에 해당하는 것은?',
+        a: [
+          '정답 교리를 암송한다',
+          '24시간 <u>원망·시비 금식</u>에 도전한다',
+          '논쟁 댓글에 더 적극적으로 참여한다'
+        ],
+        correct: 1,
+        explain: '말의 루틴을 바꾸는 실천이 핵심입니다.'
+      },
+      {
+        q: '“하나님의 자녀”가 빛으로 드러나는 순서는?',
+        a: [
+          '가시성 → 정체성 → 루틴',
+          '정체성 → 루틴 → 가시성',
+          '루틴 → 가시성 → 정체성'
+        ],
+        correct: 1,
+        explain: '자녀의 정체성이 루틴을 낳고, 그 루틴이 빛으로 보입니다.'
+      }
+    ];
+
+    let qi = -1, score = 0;
+    const qtext = document.getElementById('qtext');
+    const qopts = document.getElementById('qopts');
+    const qresult = document.getElementById('qresult');
+    const qprogress = document.getElementById('qprogress');
+
+    function renderQ() {
+      if (qi < 0) {
+        qtext.textContent = '퀴즈를 시작해 보세요.';
+        qopts.innerHTML = '';
+        qresult.textContent = '';
+        qprogress.textContent = '0 / ' + quizData.length;
+        return;
+      }
+      const item = quizData[qi];
+      qtext.innerHTML = `Q${qi+1}. ${item.q}`;
+      qopts.innerHTML = '';
+      item.a.forEach((t, idx) => {
+        const b = document.createElement('button');
+        b.innerHTML = t;
+        b.addEventListener('click', () => answer(idx));
+        qopts.appendChild(b);
+      });
+      qresult.textContent = '';
+      qprogress.textContent = `${qi+1} / ${quizData.length}`;
+    }
+
+    function answer(idx) {
+      const item = quizData[qi];
+      const buttons = Array.from(qopts.querySelectorAll('button'));
+      buttons.forEach((b, i) => {
+        b.disabled = true;
+        if (i === item.correct) b.classList.add('correct');
+        else if (i === idx) b.classList.add('wrong');
+      });
+      const ok = idx === item.correct;
+      if (ok) score++;
+      qresult.textContent = (ok ? '정답! ' : '오답 ') + '— ' + item.explain;
+      setTimeout(nextQ, 750);
+    }
+
+    function nextQ() {
+      qi++;
+      if (qi >= quizData.length) {
+        qtext.textContent = '완료!';
+        qopts.innerHTML = '';
+        qresult.textContent = `점수: ${score} / ${quizData.length}  — 수고하셨습니다!`;
+        qprogress.textContent = `${quizData.length} / ${quizData.length}`;
+        qi = -1; score = 0; // 초기화
+        return;
+      }
+      renderQ();
+    }
+
+    document.getElementById('btnQuiz').addEventListener('click', () => {
+      if (qi === -1) { qi = 0; score = 0; renderQ(); }
+      else { nextQ(); }
+      window.scrollTo({ top: document.getElementById('quiz').offsetTop - 80, behavior: 'smooth' });
+    });
+
+    // 초기 상태
+    renderQ();
+  </script>
+</body>
+</html>
