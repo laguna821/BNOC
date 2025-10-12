@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>신명기 33:29 쉽게 읽기 — 정론·정행·적용</title>
+  <meta name="date" content="2025-10-12" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-soft: #121821;
+      --card: #141c27;
+      --fg: #eaf2ff;
+      --muted: #b8c4d9;
+      --accent: #7bdcb5;
+      --accent-2: #82aaff;
+      --danger: #ff6b6b;
+      --ok: #22c55e;
+      --shadow: 0 8px 24px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f7fb;
+        --bg-soft: #eef2f8;
+        --card: #ffffff;
+        --fg: #0e1726;
+        --muted: #4b5563;
+        --accent: #06b6d4;
+        --accent-2: #4f46e5;
+        --shadow: 0 10px 24px rgba(0,0,0,.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding-bottom: 10px; }
+    header {
+      position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(1.2) blur(8px);
+      background: linear-gradient(90deg, rgba(127,221,181,0.08), rgba(130,170,255,0.08));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .head { display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
+    .brand { display:flex; gap:10px; align-items:center; }
+    .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+    .title { font-weight: 800; letter-spacing:.1px; }
+    .controls { display:flex; gap:8px; }
+    .btn {
+      appearance:none; border:none; cursor:pointer; border-radius: 999px; padding:10px 14px; font-weight:700; font-size:14px; color: var(--fg);
+      background: rgba(255,255,255,.08); box-shadow: var(--shadow);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#03121a; }
+
+    .hero { padding: 18px 16px 8px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; font-size:12px; color: var(--fg); background: rgba(255,255,255,.08); padding:8px 12px; border-radius:999px; }
+    .h1 { font-size: 22px; font-weight: 900; line-height:1.25; margin: 10px 0 6px; }
+    .sub { color: var(--muted); font-size: 14px; }
+
+    .grid { display:grid; gap:14px; padding: 12px 16px; }
+    .card { background: var(--card); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card .hint { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+    details { border: 1px solid rgba(255,255,255,.06); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.02); }
+    summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:10px; padding: 14px 14px; cursor: pointer; font-weight:800; }
+    summary::-webkit-details-marker { display:none; }
+    .chev { transition: transform .2s ease; }
+    details[open] .chev { transform: rotate(90deg); }
+    .content { padding: 0 14px 16px; color: var(--fg); }
+    .content ul { margin: 10px 0; padding-left: 18px; }
+    .content li { margin: 8px 0; }
+
+    .tagbar { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .chip { padding:8px 12px; border-radius:999px; background: rgba(127,221,181,.15); color: var(--fg); border:1px solid rgba(127,221,181,.35); font-weight:700; font-size:13px; cursor:pointer; }
+    .chip[data-type="blue"] { background: rgba(130,170,255,.12); border-color: rgba(130,170,255,.35); }
+
+    .kv { display:grid; grid-template-columns: 110px 1fr; gap:8px; }
+    .kv div { padding:6px 0; border-bottom:1px dashed rgba(255,255,255,.08); color: var(--muted); }
+    .kv div b { color: var(--fg); }
+
+    .sheet { position: fixed; inset: 0; display:none; z-index: 90; }
+    .sheet.show { display:block; }
+    .sheet .overlay { position:absolute; inset:0; background: rgba(0,0,0,.4); }
+    .sheet .panel { position:absolute; left:0; right:0; bottom:0; background: var(--card); border-radius: 18px 18px 0 0; padding: 16px; box-shadow: var(--shadow); max-height: 70vh; overflow:auto; }
+    .sheet h4 { margin: 0 0 8px; }
+
+    .bar { position:fixed; left:0; right:0; bottom:0; z-index: 40; backdrop-filter: blur(8px) saturate(1.2); box-shadow: 0 -6px 24px rgba(0,0,0,.25); background: linear-gradient(90deg, rgba(127,221,181,.08), rgba(130,170,255,.08)); padding: 6px 10px; }
+    .bar .row { display:flex; gap:8px; }
+    .bar .row .btn { flex:1; }
+
+    .quiz { padding: 8px 16px 0; }
+    .qcard { background: var(--card); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+    .q { font-weight:800; margin: 0 0 10px; }
+    .opt { display:flex; flex-direction:column; gap:8px; }
+    .opt button { text-align:left; width:100%; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: var(--fg); padding:12px; border-radius:12px; font-weight:700; }
+    .opt button.correct { border-color: rgba(34,197,94,.6); box-shadow: inset 0 0 0 999px rgba(34,197,94,.12); }
+    .opt button.wrong { border-color: rgba(255,107,107,.6); box-shadow: inset 0 0 0 999px rgba(255,107,107,.10); }
+    .result { margin-top:10px; font-weight:800; }
+
+    .muted { color: var(--muted); font-size: 13px; }
+    .divider { height:1px; background: rgba(255,255,255,.08); margin: 12px 0; }
+
+    .small { font-size: 12px; }
+    .note { background: rgba(255,255,255,.06); padding:10px 12px; border-radius:12px; }
+
+    .summary-mode details .content { display:none; }
+    .summary-mode .hint, .summary-mode .muted { display:none; }
+
+    .fulltext { padding: 8px 16px 0; }
+    .fulltext details { 
+      border: 1px solid rgba(127,221,181,.45);
+      background: linear-gradient(180deg, rgba(127,221,181,.10), rgba(130,170,255,.08));
+      border-radius: 16px; overflow: hidden;
+    }
+    .fulltext summary { font-weight: 900; padding: 14px 14px; display:flex; align-items:center; justify-content:space-between; }
+    .fulltext .content { padding: 6px 14px 14px; }
+    .scripture { font-size: 14px; line-height: 1.7; }
+    .scripture p { margin: 8px 0; }
+    .scripture .v { display:inline-block; width: 2.2em; color: var(--accent); font-weight: 800; }
+    .scripture .note { color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">신명기 33:29</div>
+          <div class="small muted">정론 · 정행 · 현대 적용 — 모바일 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare" title="공유">공유</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="fulltext" aria-label="신명기 33:29 본문 전체">
+      <details open>
+        <summary>📜 본문 전체 보기 (신명기 33:29) <span class="chev">▶</span></summary>
+        <div class="content scripture">
+          <p><span class="v">29</span> 이스라엘이여 너는 행복한 사람이로다 여호와의 구원을 너 같이 얻은 백성이 누구냐 그는 너를 돕는 방패시요 네 영광의 칼이시로다 네 대적이 네게 복종하리니 네가 그들의 높은 곳을 밟으리로다</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="hero">
+      <span class="pill">📖 오늘의 본문 — 행복(אַשְׁרֶיךָ) · 구원(נוֹשַׁע) · 방패(מָגֵן) · 칼(חֶרֶב) · 높은 곳(בָּמוֹת)</span>
+      <h1 class="h1">쉽게 읽는 요점</h1>
+      <p class="sub">“<b>구원받은 백성</b>”의 정체성 선언. 하나님은 <b>방패</b>와 <b>영광의 칼</b>로 보호하고 바로 세우시며, 우리는 <b>‘높은 곳’</b>(우상/악습/교만)을 <b>밟아</b> 극복합니다.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>한눈 요약 (3문장)</h3>
+        <ul>
+          <li><b>복됨</b>: “행복하도다(אַשְׁרֶיךָ)”—하나님의 <u>구원</u>을 받은 백성의 환호입니다.</li>
+          <li><b>보호와 실행</b>: 하나님은 <u>방패(מָגֵן)</u>이시며 <u>영광의 칼(חֶרֶב גַּאֲוָתֶךָ)</u>이십니다.</li>
+          <li><b>극복</b>: 대적은 <u>굴복</u>하고 우리는 그들의 <u>높은 곳(בָּמוֹתֵימוֹ)</u>을 <u>밟습니다(תִדְרֹךְ)</u>.</li>
+        </ul>
+        <div class="hint">아래 섹션을 펼쳐 상세 설명, 실천, 퀴즈를 볼 수 있습니다.</div>
+      </article>
+
+      <details open>
+        <summary>① 정론(Orthodoxy) — 본문이 말하는 것 <span class="chev">▶</span></summary>
+        <div class="content">
+          <div class="note">핵심: <b>구원(נוֹשַׁע)</b>의 정체성 → <b>하나님: 방패·영광의 칼</b> → <b>대적의 굴복</b>과 <b>높은 곳의 극복</b>.</div>
+          <ul>
+            <li><b>행복의 감탄</b>: “<u>복되다, 행복하도다</u>”(אַשְׁרֶיךָ)는 <u>신앙의 기쁨</u>을 여는 감탄구입니다.</li>
+            <li><b>신적 전사 모티프</b>: 하나님은 <u>방패</u>(보호)와 <u>칼</u>(정의의 실행)로 묘사됩니다.</li>
+            <li><b>대적의 굴복</b>: “굴복/아첨하다”(יִכַּחֲשׁוּ)는 <u>질서 회복</u>의 결과로 읽습니다.</li>
+            <li><b>높은 곳</b>: <u>산당/요새/교만</u>을 뜻하는 <b>בָּמוֹת</b>—우상적 구조를 상징합니다.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>② 정행(Orthopraxy) — 실천 관점의 점검 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>방패(מָגֵן)의 실천</b>: 약자를 <u>지키는 울타리</u>—언어, 관계, 제도의 보호 장치 만들기.</li>
+            <li><b>칼(חֶרֶב)의 실천</b>: 분노가 아닌 <u>공적 정의를 단호히 실행</u>하는 용기와 절차.</li>
+            <li><b>높은 곳 밟기(תִדְרֹךְ)</b>: 공동체의 <u>우상적 구조</u>(사익 카르텔·악습)를 식별·해체.</li>
+            <li><b>복됨의 증거</b>: “구원받은 백성”은 <u>말보다 습관</u>으로 증명됩니다.</li>
+          </ul>
+          <div class="note small">핵심 문장: <b>보호–실행–해체</b>가 오늘의 “방패–칼–높은 곳”입니다.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>③ 현대 적용 — 오늘 교회/공동체에서 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>개인</b>: 나의 하루에서 <u>방패 1</u>(지켜줄 사람/말), <u>칼 1</u>(해야 할 올바른 행동), <u>높은 곳 1</u>(끊을 악습)을 적고 실행.</li>
+            <li><b>가정/팀</b>: 약자를 우선 보호하는 <u>규칙</u> 1개 도입(예: 발언/예산 투명 규칙).</li>
+            <li><b>교회</b>: 허위정보·혐오에 대한 <u>사실 검증-중재</u> 프로토콜 마련.</li>
+            <li><b>지역사회</b>: 불공정 관행(“높은 곳”) 1건을 찾아 <u>밟는 행동</u> 제안하기.</li>
+          </ul>
+          <div class="note small">포인트: “복됨(אַשְׁרֶיךָ)”은 <u>관계와 제도</u>에서 드러납니다.</div>
+        </div>
+      </details>
+
+      <article class="card">
+        <h3>히브리어 키워드 (누르면 설명)</h3>
+        <div class="tagbar">
+          <button class="chip" data-word="ashrecha">אַשְׁרֶיךָ · ’ashreḵā</button>
+          <button class="chip" data-type="blue" data-word="nosha">נוֹשַׁע · nōsha‘</button>
+          <button class="chip" data-word="magen">מָגֵן · māgēn</button>
+          <button class="chip" data-type="blue" data-word="cherev">חֶרֶב גַּאֲוָתֶךָ · ḥerev ga’ăvātekha</button>
+          <button class="chip" data-word="yikkachashu">יִכַּחֲשׁוּ · yikkaḥashū</button>
+          <button class="chip" data-type="blue" data-word="bamotemo">בָּמוֹתֵימוֹ · bāmōtêmo</button>
+          <button class="chip" data-word="tidrokh">תִדְרֹךְ · tidrōkh</button>
+        </div>
+        <p class="hint">철자·음역·어근·기본 의미·대표 용례를 간단히 정리했습니다.</p>
+      </article>
+
+      <details>
+        <summary>본문 핵심 흐름 다시 보기 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li>복됨의 선언(אַשְׁרֶיךָ) — 구원받은 백성의 환호.</li>
+            <li>하나님: <u>방패</u>와 <u>영광의 칼</u> — 보호와 정의의 실행.</li>
+            <li>대적의 <u>굴복</u> — <u>높은 곳</u>을 <u>밟음</u>으로 질서 회복.</li>
+          </ul>
+          <div class="muted small">※ 시적 은유를 오늘의 삶과 제도로 번역해 봅시다.</div>
+        </div>
+      </details>
+
+      <section id="quiz" class="quiz" aria-label="이해도 점검 퀴즈">
+        <div class="qcard">
+          <div class="q" id="qtext">퀴즈를 시작해 보세요.</div>
+          <div class="opt" id="qopts"></div>
+          <div class="result" id="qresult"></div>
+          <div class="divider"></div>
+          <div class="muted small" id="qprogress">0 / 6</div>
+        </div>
+      </section>
+
+      <article class="card">
+        <h3>실천 체크리스트</h3>
+        <ul>
+          <li><b>방패</b>: 오늘 내가 지켜줄 사람/말은?</li>
+          <li><b>칼</b>: 오늘 내가 단호히 실행할 옳은 일은?</li>
+          <li><b>높은 곳</b>: 오늘 내가 밟아 없앨 작은 악습/불의는?</li>
+        </ul>
+      </article>
+
+      <article class="card small muted">
+        <div>제작: 모바일 전용, 오프라인에서도 동작합니다. 상단 <b>공유</b> 버튼으로 링크를 나눌 수 있습니다.</div>
+      </article>
+    </section>
+  </main>
+
+  <div class="bar">
+    <div class="wrap">
+      <div class="row">
+        <button class="btn" id="btnToggleSummary">요약 모드</button>
+        <button class="btn" id="btnExpand">전체 펼치기</button>
+        <button class="btn primary" id="btnQuiz">퀴즈 시작</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet" id="sheet">
+    <div class="overlay" id="sheetClose" aria-label="닫기"></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <h4 id="sheetTitle">용어</h4>
+      <div id="sheetBody" class="small"></div>
+      <div class="divider"></div>
+      <button class="btn" id="sheetCloseBtn">닫기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    document.getElementById('btnShare').addEventListener('click', async () => {
+      if (navigator.share) {
+        try { await navigator.share({ title: document.title, text: '신명기 33:29 쉽게 읽기', url: location.href }); } catch(e) { /* 취소 */ }
+      } else {
+        alert('이 링크를 복사해 공유하세요:\n' + location.href);
+      }
+    });
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode') ? '자세히 모드' : '요약 모드';
+    });
+
+    // 전체 펼치기/접기
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+
+    // 히브리어 키워드 바텀시트
+    const dict = {
+      ashrecha: {
+        title: 'אַשְׁרֶיךָ — ’ashreḵā',
+        html: `
+          <div class="kv">
+            <div>어근</div><div><b>√אשר</b> (행복/복)</div>
+            <div>의미</div><div><b>복되도다/행복하도다</b> (감탄)</div>
+            <div>핵심</div><div><b>구원받은 기쁨</b>의 선언</div>
+            <div>용례</div><div>신 33:29; 시 1:1 (אַשְׁרֵי)</div>
+          </div>`
+      },
+      nosha: {
+        title: 'נוֹשַׁע — nōsha‘',
+        html: `
+          <div class="kv">
+            <div>어근</div><div><b>√ישע</b> (구원)</div>
+            <div>형태</div><div><b>Nifal</b> (구원되다)</div>
+            <div>의미</div><div><b>구원받은</b> 상태/정체성</div>
+            <div>용례</div><div>신 33:29 등</div>
+          </div>`
+      },
+      magen: {
+        title: 'מָגֵן — māgēn',
+        html: `
+          <div class="kv">
+            <div>어근</div><div><b>√גנן</b> (막다/보호)</div>
+            <div>의미</div><div><b>방패</b>, 보호</div>
+            <div>핵심</div><div>하나님의 <b>보호</b> 상징</div>
+            <div>용례</div><div>창 15:1; 시 3:3 등</div>
+          </div>`
+      },
+      cherev: {
+        title: 'חֶרֶב גַּאֲוָתֶךָ — ḥerev ga’ăvātekha',
+        html: `
+          <div class="kv">
+            <div>구성</div><div><b>칼</b> + <b>네 영광/위엄</b></div>
+            <div>의미</div><div><b>정의의 실행</b> 상징</div>
+            <div>핵심</div><div>분노가 아니라 <b>공정한 단호함</b></div>
+            <div>관련</div><div>출 15장 승전 찬가 어휘</div>
+          </div>`
+      },
+      yikkachashu: {
+        title: 'יִכַּחֲשׁוּ — yikkaḥashū',
+        html: `
+          <div class="kv">
+            <div>어근</div><div><b>√כחש</b> (부인/거짓)</div>
+            <div>의미</div><div><b>굴복/아첨</b> (맥락상)</div>
+            <div>핵심</div><div>불의의 <b>기세가 꺾임</b></div>
+          </div>`
+      },
+      bamotemo: {
+        title: 'בָּמוֹתֵימוֹ — bāmōtêmo',
+        html: `
+          <div class="kv">
+            <div>어근</div><div><b>√במה</b> (높이다)</div>
+            <div>의미</div><div><b>높은 곳들</b> (산당/요새/교만)</div>
+            <div>핵심</div><div>우상적 <b>구조/관행</b>의 상징</div>
+            <div>관련</div><div>LXX 전통: '등/목' 뉘앙스 전승</div>
+          </div>`
+      },
+      tidrokh: {
+        title: 'תִדְרֹךְ — tidrōkh',
+        html: `
+          <div class="kv">
+            <div>어근</div><div><b>√דרך</b> (밟다/걷다)</div>
+            <div>의미</div><div><b>밟으리라</b> (미래)</div>
+            <div>핵심</div><div>악습/교만을 <b>제압</b></div>
+          </div>`
+      }
+    };
+
+    const sheet = document.getElementById('sheet');
+    const sheetTitle = document.getElementById('sheetTitle');
+    const sheetBody = document.getElementById('sheetBody');
+    const openSheet = (key) => {
+      const item = dict[key];
+      if (!item) return;
+      sheetTitle.textContent = item.title;
+      sheetBody.innerHTML = item.html;
+      sheet.classList.add('show');
+    };
+    const closeSheet = () => sheet.classList.remove('show');
+    document.getElementById('sheetClose').addEventListener('click', closeSheet);
+    document.getElementById('sheetCloseBtn').addEventListener('click', closeSheet);
+
+    document.querySelectorAll('.chip').forEach(ch => ch.addEventListener('click', () => openSheet(ch.dataset.word)));
+
+    // 퀴즈
+    const quizData = [
+      {
+        q: '“행복하도다(אַשְׁרֶיךָ)”의 핵심 의미는?',
+        a: [
+          '물질적 부 유무',
+          '<u>구원받은 기쁨</u>과 정체성의 환호',
+          '승진과 합격'
+        ],
+        correct: 1,
+        explain: '본문은 “여호와의 구원을 얻은 백성”의 복됨을 노래합니다.'
+      },
+      {
+        q: '하나님을 “방패(מָגֵן)”로 이해할 때 오늘의 실천은?',
+        a: [
+          '논쟁에서 이기기',
+          '<u>약자를 지키는 울타리</u>가 되기',
+          '무장을 늘리기'
+        ],
+        correct: 1,
+        explain: '방패는 보호의 상징—사람과 관계를 지켜 줍니다.'
+      },
+      {
+        q: '“영광의 칼(חֶרֶב גַּאֲוָתֶךָ)”의 적절한 현대적 번역은?',
+        a: [
+          '분노의 폭력',
+          '<u>공적 정의를 단호히 실행</u>하는 도구',
+          '언제나 침묵'
+        ],
+        correct: 1,
+        explain: '칼은 무력이 아니라 정의의 실행을 상징합니다.'
+      },
+      {
+        q: '“대적이 네게 <u>복종</u>하리니”(יִכַּחֲשׁוּ)의 뉘앙스는?',
+        a: [
+          '학살 명령',
+          '<u>기세가 꺾여 굴복/아첨</u>하는 상태',
+          '휴전 제안'
+        ],
+        correct: 1,
+        explain: '문맥은 질서 회복의 결과를 가리킵니다.'
+      },
+      {
+        q: '“그들의 <u>높은 곳</u>을 <u>밟으리라</u>”의 오늘 적용은?',
+        a: [
+          '산 꼭대기 등반',
+          '<u>우상적 구조/악습</u>을 식별하고 해체',
+          '새 성전을 건축'
+        ],
+        correct: 1,
+        explain: '높은 곳은 우상적 구조·교만의 상징입니다.'
+      },
+      {
+        q: '이 구절을 한 문장으로 요약하면?',
+        a: [
+          '힘없는 백성의 탄식',
+          '<u>구원받은 백성의 복됨</u>과 <u>보호–실행–해체</u>의 부르심',
+          '여행 안내문'
+        ],
+        correct: 1,
+        explain: '복됨 선언과 실천적 부르심이 함께 나옵니다.'
+      }
+    ];
+
+    let qi = -1, score = 0;
+    const qtext = document.getElementById('qtext');
+    const qopts = document.getElementById('qopts');
+    const qresult = document.getElementById('qresult');
+    const qprogress = document.getElementById('qprogress');
+
+    function renderQ() {
+      if (qi < 0) {
+        qtext.textContent = '퀴즈를 시작해 보세요.';
+        qopts.innerHTML = '';
+        qresult.textContent = '';
+        qprogress.textContent = '0 / ' + quizData.length;
+        return;
+      }
+      const item = quizData[qi];
+      qtext.innerHTML = `Q${qi+1}. ${item.q}`;
+      qopts.innerHTML = '';
+      item.a.forEach((t, idx) => {
+        const b = document.createElement('button');
+        b.innerHTML = t;
+        b.addEventListener('click', () => answer(idx));
+        qopts.appendChild(b);
+      });
+      qresult.textContent = '';
+      qprogress.textContent = `${qi+1} / ${quizData.length}`;
+    }
+
+    function answer(idx) {
+      const item = quizData[qi];
+      const buttons = Array.from(qopts.querySelectorAll('button'));
+      buttons.forEach((b, i) => {
+        b.disabled = true;
+        if (i === item.correct) b.classList.add('correct');
+        else if (i === idx) b.classList.add('wrong');
+      });
+      const ok = idx === item.correct;
+      if (ok) score++;
+      qresult.textContent = (ok ? '정답! ' : '오답 ') + '— ' + item.explain;
+      setTimeout(nextQ, 750);
+    }
+
+    function nextQ() {
+      qi++;
+      if (qi >= quizData.length) {
+        qtext.textContent = '완료!';
+        qopts.innerHTML = '';
+        qresult.textContent = `점수: ${score} / ${quizData.length}  — 수고하셨습니다!`;
+        qprogress.textContent = `${quizData.length} / ${quizData.length}`;
+        qi = -1; score = 0;
+        return;
+      }
+      renderQ();
+    }
+
+    document.getElementById('btnQuiz').addEventListener('click', () => {
+      if (qi === -1) { qi = 0; score = 0; renderQ(); }
+      else { nextQ(); }
+      window.scrollTo({ top: document.getElementById('quiz').offsetTop - 80, behavior: 'smooth' });
+    });
+
+    renderQ();
+  </script>
+</body>
+</html>
