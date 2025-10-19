@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>누가복음 4:1–13 쉽게 읽기 — 정론·정행·적용</title>
+  <meta name="date" content="2025-10-19" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-soft: #121821;
+      --card: #141c27;
+      --fg: #eaf2ff;
+      --muted: #b8c4d9;
+      --accent: #7bdcb5;
+      --accent-2: #82aaff;
+      --danger: #ff6b6b;
+      --ok: #22c55e;
+      --shadow: 0 8px 24px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f7fb;
+        --bg-soft: #eef2f8;
+        --card: #ffffff;
+        --fg: #0e1726;
+        --muted: #4b5563;
+        --accent: #06b6d4;
+        --accent-2: #4f46e5;
+        --shadow: 0 10px 24px rgba(0,0,0,.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding-bottom: 10px; }
+    header {
+      position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(1.2) blur(8px);
+      background: linear-gradient(90deg, rgba(127,221,181,0.08), rgba(130,170,255,0.08));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .head { display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
+    .brand { display:flex; gap:10px; align-items:center; }
+    .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+    .title { font-weight: 800; letter-spacing:.1px; }
+    .controls { display:flex; gap:8px; }
+    .btn {
+      appearance:none; border:none; cursor:pointer; border-radius: 999px; padding:10px 14px; font-weight:700; font-size:14px; color: var(--fg);
+      background: rgba(255,255,255,.08); box-shadow: var(--shadow);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#03121a; }
+
+    .hero { padding: 18px 16px 8px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; font-size:12px; color: var(--fg); background: rgba(255,255,255,.08); padding:8px 12px; border-radius:999px; }
+    .h1 { font-size: 22px; font-weight: 900; line-height:1.25; margin: 10px 0 6px; }
+    .sub { color: var(--muted); font-size: 14px; }
+
+    .grid { display:grid; gap:14px; padding: 12px 16px; }
+    .card { background: var(--card); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card .hint { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+    details { border: 1px solid rgba(255,255,255,.06); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.02); }
+    summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:10px; padding: 14px 14px; cursor: pointer; font-weight:800; }
+    summary::-webkit-details-marker { display:none; }
+    .chev { transition: transform .2s ease; }
+    details[open] .chev { transform: rotate(90deg); }
+    .content { padding: 0 14px 16px; color: var(--fg); }
+    .content ul { margin: 10px 0; padding-left: 18px; }
+    .content li { margin: 8px 0; }
+
+    .tagbar { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .chip { padding:8px 12px; border-radius:999px; background: rgba(127,221,181,.15); color: var(--fg); border:1px solid rgba(127,221,181,.35); font-weight:700; font-size:13px; cursor:pointer; }
+    .chip[data-type="blue"] { background: rgba(130,170,255,.12); border-color: rgba(130,170,255,.35); }
+
+    .kv { display:grid; grid-template-columns: 110px 1fr; gap:8px; }
+    .kv div { padding:6px 0; border-bottom:1px dashed rgba(255,255,255,.08); color: var(--muted); }
+    .kv div b { color: var(--fg); }
+
+    .sheet { position: fixed; inset: 0; display:none; z-index: 90; }
+    .sheet.show { display:block; }
+    .sheet .overlay { position:absolute; inset:0; background: rgba(0,0,0,.4); }
+    .sheet .panel { position:absolute; left:0; right:0; bottom:0; background: var(--card); border-radius: 18px 18px 0 0; padding: 16px; box-shadow: var(--shadow); max-height: 70vh; overflow:auto; }
+    .sheet h4 { margin: 0 0 8px; }
+
+    .bar { position:fixed; left:0; right:0; bottom:0; z-index: 40; backdrop-filter: blur(8px) saturate(1.2); box-shadow: 0 -6px 24px rgba(0,0,0,.25); background: linear-gradient(90deg, rgba(127,221,181,.08), rgba(130,170,255,.08)); padding: 6px 10px; }
+    .bar .row { display:flex; gap:8px; }
+    .bar .row .btn { flex:1; }
+
+    .quiz { padding: 8px 16px 0; }
+    .qcard { background: var(--card); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+    .q { font-weight:800; margin: 0 0 10px; }
+    .opt { display:flex; flex-direction:column; gap:8px; }
+    .opt button { text-align:left; width:100%; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: var(--fg); padding:12px; border-radius:12px; font-weight:700; }
+    .opt button.correct { border-color: rgba(34,197,94,.6); box-shadow: inset 0 0 0 999px rgba(34,197,94,.12); }
+    .opt button.wrong { border-color: rgba(255,107,107,.6); box-shadow: inset 0 0 0 999px rgba(255,107,107,.10); }
+    .result { margin-top:10px; font-weight:800; }
+
+    .muted { color: var(--muted); font-size: 13px; }
+    .divider { height:1px; background: rgba(255,255,255,.08); margin: 12px 0; }
+
+    .small { font-size: 12px; }
+    .note { background: rgba(255,255,255,.06); padding:10px 12px; border-radius:12px; }
+
+    .summary-mode details .content { display:none; }
+    .summary-mode .hint, .summary-mode .muted { display:none; }
+
+    .fulltext { padding: 8px 16px 0; }
+    .fulltext details { 
+      border: 1px solid rgba(127,221,181,.45);
+      background: linear-gradient(180deg, rgba(127,221,181,.10), rgba(130,170,255,.08));
+      border-radius: 16px; overflow: hidden;
+    }
+    .fulltext summary { font-weight: 900; padding: 14px 14px; display:flex; align-items:center; justify-content:space-between; }
+    .fulltext .content { padding: 6px 14px 14px; }
+    .scripture { font-size: 14px; line-height: 1.7; }
+    .scripture p { margin: 8px 0; }
+    .scripture .v { display:inline-block; width: 2.2em; color: var(--accent); font-weight: 800; }
+    .scripture .note { color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">누가복음 4:1–13</div>
+          <div class="small muted">정론 · 정행 · 현대 적용 — 모바일 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare" title="공유">공유</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="fulltext" aria-label="누가복음 4:1–13 본문 전체">
+      <details open>
+        <summary>📜 본문 전체 보기 (눅 4:1–13) <span class="chev">▶</span></summary>
+        <div class="content scripture">
+          <p><span class="v">1</span> 예수께서 성령의 충만함을 입어 요단 강에서 돌아오사 광야에서 사십 일 동안 성령에게 이끌리시며</p>
+          <p><span class="v">2</span> 마귀에게 시험을 받으시더라 이 모든 날에 아무 것도 잡수시지 아니하시니 날 수가 다하매 주리신지라</p>
+          <p><span class="v">3</span> 마귀가 이르되 네가 만일 하나님의 아들이어든 이 돌들에게 명하여 떡이 되게 하라</p>
+          <p><span class="v">4</span> 예수께서 대답하시되 기록된 바 사람이 떡으로만 살 것이 아니라 하였느니라</p>
+          <p><span class="v">5</span> 마귀가 또 예수를 이끌고 올라가서 순식간에 천하 만국을 보이며</p>
+          <p><span class="v">6</span> 이르되 이 모든 권위와 그 영광을 내가 네게 주리라 이것은 내게 넘겨 준 것이므로 내가 원하는 자에게 주노라</p>
+          <p><span class="v">7</span> 그러므로 네가 만일 내게 절하면 다 네 것이 되리라</p>
+          <p><span class="v">8</span> 예수께서 대답하여 이르시되 기록된 바 주 너의 하나님께 경배하고 다만 그를 섬기라 하였느니라</p>
+          <p><span class="v">9</span> 또 이끌고 예루살렘으로 가서 성전 꼭대기에 세우고 이르되 네가 만일 하나님의 아들이어든 여기서 뛰어내리라</p>
+          <p><span class="v">10</span> 기록되었으되 하나님이 너를 위하여 그 사자들을 명하사 너를 지키게 하시리라 하였고</p>
+          <p><span class="v">11</span> 또한 그들이 손으로 너를 받들어 네 발이 돌에 부딪치지 않게 하시리라 하였느니라</p>
+          <p><span class="v">12</span> 예수께서 대답하여 이르시되 주 너의 하나님을 시험하지 말라 하였느니라</p>
+          <p><span class="v">13</span> 마귀가 모든 시험을 다 한 후에 얼마 동안 떠나니라</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="hero">
+      <span class="pill">🕊️ 성령 충만 · 광야(40일) · 금식 · 유혹(πειρασμός) · 떡(לֶחֶם) · 말씀(דָּבָר/ῥῆμα) · 경배(עָבַד) · 시험 금지(נָסָה) · 성전 꼭대기(πτερύγιον)</span>
+      <h1 class="h1">쉽게 읽는 요점</h1>
+      <p class="sub"><b>예수</b>는 <b>성령</b>에 이끌려 <b>광야</b>에서 <b>말씀</b>으로 유혹을 이깁니다. 유혹은 <u>배고픔</u>(빵만), <u>권세</u>(경배의 전도), <u>스펙터클</u>(성전 점프)이며, 길은 <b>말씀 의존</b>, <b>주님만 경배</b>, <b>하나님 시험 금지</b>입니다.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>한눈 요약 (3문장)</h3>
+        <ul>
+          <li><b>정체성</b>: 하나님의 아들이신 예수는 <u>성령 충만</u> 가운데 유혹을 맞이합니다.</li>
+          <li><b>세 유혹</b>: <u>떡</u>·<u>권세와 영광</u>·<u>성전 점프</u>—모두 <u>신명기 8:3; 6:13; 6:16</u>으로 거절됩니다.</li>
+          <li><b>오늘의 길</b>: <u>빵+말씀의 균형</u> · <u>경배의 배타성</u> · <u>스펙터클 금지</u>—훈련된 단순성으로 삽니다.</li>
+        </ul>
+        <div class="hint">아래 섹션을 펼쳐 상세 설명, 실천, 퀴즈를 볼 수 있습니다.</div>
+      </article>
+
+      <details open>
+        <summary>① 정론(Orthodoxy) — 본문이 말하는 것 <span class="chev">▶</span></summary>
+        <div class="content">
+          <div class="note">핵심: 예수는 <b>새 이스라엘</b>로서 <b>말씀</b>으로 순종을 완성합니다.</div>
+          <ul>
+            <li><b>성령과 광야</b>: 광야(ἔρημος/מִדְבָּר)는 <u>의존과 훈련</u>의 장소입니다.</li>
+            <li><b>떡의 유혹</b>: “사람이 <u>떡(לֶחֶם)</u>으로만 살지 않고 <u>말씀(דָּבָר/ῥῆμα)</u>으로 산다”(신 8:3).</li>
+            <li><b>권세의 유혹</b>: “주 하나님께만 <u>경배·섬김(προσκυνέω/λατρεύω; עָבַד)</u>하라”(신 6:13).</li>
+            <li><b>스펙터클의 유혹</b>: “주를 <u>시험(ἐκπειράζω; נָסָה)</u>하지 말라”(신 6:16/마싸 사건 회상).</li>
+            <li><b>루가의 결말</b>: 유혹을 <u>성전 꼭대기(πτερύγιον)</u>에서 마무리—예루살렘 중심 신학을 예고.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>② 정행(Orthopraxy) — 실천 관점의 점검 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>훈련된 단순성</b>: 금식·말씀 암송·침묵을 <u>루틴</u>으로—즉각 순종의 기초 체력.</li>
+            <li><b>빵–말씀 이중 루틴</b>: 몸의 필요(영양·수면)와 <u>말씀 내재화</u>를 함께 설계.</li>
+            <li><b>경배의 재정렬</b>: 숫자·성과·브랜드가 <u>경배의 대상</u>이 되지 않도록 점검.</li>
+            <li><b>마싸 규정</b>: <u>검증 없는 퍼포먼스</u> 금지—“하나님 시험” 문화 차단.</li>
+          </ul>
+          <div class="note small">핵심 문장: <b>“Just obey the Word” — 말씀대로, 지금, 조용히.</b></div>
+        </div>
+      </details>
+
+      <details>
+        <summary>③ 현대 적용 — 오늘 교회/공동체에서 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>개인</b>: 주 1회 <u>간헐적 금식</u> + 매일 <u>신 8:3/6:13/6:16</u> 중 1절 암송.</li>
+            <li><b>가정/팀</b>: 회의 전 30초 <u>침묵·경외</u> → 과시성 발언·지름길 제안 <u>경계선</u> 확인.</li>
+            <li><b>교회</b>: ‘<u>성전 점프 금지</u>’ 조항—숫자 과시에 앞서 <u>정직·검증·겸손</u> 보고.</li>
+            <li><b>지역사회/직장</b>: 권세·영광 단축로(불투명 KPI, 과대 홍보) 차단 장치 마련.</li>
+          </ul>
+          <div class="note small">포인트: 유혹은 <u>취약 타이밍</u>에 온다—피로·배고픔·성취 직후를 관리.</div>
+        </div>
+      </details>
+
+      <article class="card">
+        <h3>핵심 용어 (누르면 설명)</h3>
+        <div class="tagbar">
+          <button class="chip" data-word="peirasmos">πειρασμός · peirasmós</button>
+          <button class="chip" data-type="blue" data-word="diabolos">διάβολος · diábolos</button>
+          <button class="chip" data-word="pneuma">πνεῦμα · pneûma</button>
+          <button class="chip" data-type="blue" data-word="eremos">ἔρημος / מִדְבָּר · erēmos / midbār</button>
+          <button class="chip" data-word="rhema">ῥῆμα / דָּבָר · rhēma / dābār</button>
+          <button class="chip" data-type="blue" data-word="lechem">לֶחֶם · leḥem</button>
+          <button class="chip" data-word="proskyneo">προσκυνέω / עָבַד · proskyneō / ‘ābad</button>
+          <button class="chip" data-type="blue" data-word="latreuo">λατρεύω · latreuō</button>
+          <button class="chip" data-word="ekpeirazo">ἐκπειράζω / נָסָה · ekpeirázō / nāsāh</button>
+          <button class="chip" data-type="blue" data-word="pterygion">πτερύγιον · pterygion</button>
+          <button class="chip" data-word="malak">מַלְאָךְ / שָׁמַר · mal’āk / šāmar</button>
+          <button class="chip" data-type="blue" data-word="doxa">δόξα / כָּבוֹד · dóxa / kāvōd</button>
+        </div>
+        <p class="hint">철자·음역·어근/기본 의미·대표 용례를 간단히 정리했습니다.</p>
+      </article>
+
+      <details>
+        <summary>본문 핵심 흐름 다시 보기 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>성령 인도</b> → 광야 훈련(금식).</li>
+            <li><b>세 유혹</b> → <u>말씀</u>으로 거절(신 8:3; 6:13; 6:16).</li>
+            <li><b>때가 이를 때까지</b>(눅 4:13) → <u>지속적 경계</u>의 필요.</li>
+          </ul>
+          <div class="muted small">※ 단순함은 ‘즉흥’이 아니라 ‘훈련된 즉시성’입니다.</div>
+        </div>
+      </details>
+
+      <section id="quiz" class="quiz" aria-label="이해도 점검 퀴즈">
+        <div class="qcard">
+          <div class="q" id="qtext">퀴즈를 시작해 보세요.</div>
+          <div class="opt" id="qopts"></div>
+          <div class="result" id="qresult"></div>
+          <div class="divider"></div>
+          <div class="muted small" id="qprogress">0 / 6</div>
+        </div>
+      </section>
+
+      <article class="card">
+        <h3>실천 체크리스트</h3>
+        <ul>
+          <li><b>암송</b>: 오늘 <u>신 8:3</u> / <u>6:13</u> / <u>6:16</u> 중 1절을 외우기.</li>
+          <li><b>금식</b>: 오늘 또는 이번 주에 <u>간헐적 금식</u> 1회—몸과 마음을 말씀에 정렬.</li>
+          <li><b>경배</b>: 나의 <u>경배 대상</u> 점검(숫자·성과·브랜드 아닌가?).</li>
+          <li><b>스펙터클 금지</b>: <u>보여주기</u> 대신 <u>숨은 섬김</u> 1건 실행.</li>
+        </ul>
+      </article>
+
+      <article class="card small muted">
+        <div>제작: 모바일 전용, 오프라인에서도 동작합니다. 상단 <b>공유</b> 버튼으로 링크를 나눌 수 있습니다.</div>
+      </article>
+    </section>
+  </main>
+
+  <div class="bar">
+    <div class="wrap">
+      <div class="row">
+        <button class="btn" id="btnToggleSummary">요약 모드</button>
+        <button class="btn" id="btnExpand">전체 펼치기</button>
+        <button class="btn primary" id="btnQuiz">퀴즈 시작</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet" id="sheet">
+    <div class="overlay" id="sheetClose" aria-label="닫기"></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <h4 id="sheetTitle">용어</h4>
+      <div id="sheetBody" class="small"></div>
+      <div class="divider"></div>
+      <button class="btn" id="sheetCloseBtn">닫기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    document.getElementById('btnShare').addEventListener('click', async () => {
+      if (navigator.share) {
+        try { await navigator.share({ title: document.title, text: '누가복음 4:1–13 쉽게 읽기', url: location.href }); } catch(e) { /* 취소 */ }
+      } else {
+        alert('이 링크를 복사해 공유하세요:\\n' + location.href);
+      }
+    });
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode') ? '자세히 모드' : '요약 모드';
+    });
+
+    // 전체 펼치기/접기
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+
+    // 용어 바텀시트
+    const dict = {
+      peirasmos: {
+        title: 'πειρασμός — peirasmós',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>시험/유혹</b></div>
+            <div>핵심</div><div>신앙의 <b>분별</b>이 필요한 순간</div>
+            <div>용례</div><div>눅 4:2</div>
+          </div>`
+      },
+      diabolos: {
+        title: 'διάβολος — diábolos',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>마귀/참소자</b></div>
+            <div>핵심</div><div><b>정체성</b>을 흔들어 유혹</div>
+            <div>용례</div><div>눅 4:2–13</div>
+          </div>`
+      },
+      pneuma: {
+        title: 'πνεῦμα — pneûma',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>영/성령</b></div>
+            <div>핵심</div><div><b>시험의 장</b>도 성령의 인도 아래</div>
+            <div>용례</div><div>눅 4:1</div>
+          </div>`
+      },
+      eremos: {
+        title: 'ἔρημος / מִדְבָּר — erēmos / midbār',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>광야/한적한 곳</b></div>
+            <div>핵심</div><div><b>의존·훈련</b>의 장소</div>
+            <div>용례</div><div>눅 4:1–2</div>
+          </div>`
+      },
+      rhema: {
+        title: 'ῥῆμα / דָּבָר — rhēma / dābār',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>말/말씀</b></div>
+            <div>핵심</div><div><b>떡만이 아니라 말씀</b>으로 산다</div>
+            <div>용례</div><div>신 8:3; 눅 4:4</div>
+          </div>`
+      },
+      lechem: {
+        title: 'לֶחֶם — leḥem',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>빵/양식</b></div>
+            <div>핵심</div><div>필요하지만 <b>전부는 아님</b></div>
+            <div>용례</div><div>신 8:3; 눅 4:3–4</div>
+          </div>`
+      },
+      proskyneo: {
+        title: 'προσκυνέω / עָבַד — proskyneō / ‘ābad',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>경배하다 / 섬기다</b></div>
+            <div>핵심</div><div><b>주님께만</b> 경배·섬김</div>
+            <div>용례</div><div>신 6:13; 눅 4:8</div>
+          </div>`
+      },
+      latreuo: {
+        title: 'λατρεύω — latreuō',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>예배로 섬기다</b></div>
+            <div>핵심</div><div><b>삶 전체</b>의 예배</div>
+            <div>용례</div><div>눅 4:8</div>
+          </div>`
+      },
+      ekpeirazo: {
+        title: 'ἐκπειράζω / נָסָה — ekpeirázō / nāsāh',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>시험하다</b></div>
+            <div>핵심</div><div><b>스펙터클 금지</b>, 하나님 시험 금지</div>
+            <div>용례</div><div>신 6:16; 눅 4:12</div>
+          </div>`
+      },
+      pterygion: {
+        title: 'πτερύγιον — pterygion',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>성전 꼭대기/돌출부</b></div>
+            <div>핵심</div><div><b>보여주기</b> 유혹의 상징</div>
+            <div>용례</div><div>눅 4:9</div>
+          </div>`
+      },
+      malak: {
+        title: 'מַלְאָךְ / שָׁמַר — mal’āk / šāmar',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>천사 / 지키다</b></div>
+            <div>핵심</div><div>시 91:11–12는 <b>과시</b>가 아니라 <b>신뢰</b>를 가르침</div>
+            <div>용례</div><div>눅 4:10–11</div>
+          </div>`
+      },
+      doxa: {
+        title: 'δόξα / כָּבוֹד — dóxa / kāvōd',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>영광</b></div>
+            <div>핵심</div><div>세상의 영광 vs <b>하나님의 영광</b> 구분</div>
+            <div>용례</div><div>눅 4:6</div>
+          </div>`
+      }
+    };
+
+    const sheet = document.getElementById('sheet');
+    const sheetTitle = document.getElementById('sheetTitle');
+    const sheetBody = document.getElementById('sheetBody');
+    const openSheet = (key) => {
+      const item = dict[key];
+      if (!item) return;
+      sheetTitle.textContent = item.title;
+      sheetBody.innerHTML = item.html;
+      sheet.classList.add('show');
+    };
+    const closeSheet = () => sheet.classList.remove('show');
+    document.getElementById('sheetClose').addEventListener('click', closeSheet);
+    document.getElementById('sheetCloseBtn').addEventListener('click', closeSheet);
+
+    document.querySelectorAll('.chip').forEach(ch => ch.addEventListener('click', () => openSheet(ch.dataset.word)));
+
+    // 퀴즈
+    const quizData = [
+      {
+        q: '예수께서 어디에서 얼마 동안 시험을 받으셨나요?',
+        a: [
+          '갈릴리에서 일주일',
+          '<u>광야에서 사십 일</u>',
+          '성전에서 하루'
+        ],
+        correct: 1,
+        explain: '눅 4:1–2의 요지입니다.'
+      },
+      {
+        q: '첫 번째 유혹에서 예수께서 인용하신 말씀의 핵심은?',
+        a: [
+          '더 많이 가지라',
+          '<u>사람이 떡으로만 살지 않는다</u>',
+          '빵이 전부다'
+        ],
+        correct: 1,
+        explain: '신 8:3을 인용하여 말씀 의존을 강조합니다.'
+      },
+      {
+        q: '두 번째 유혹의 내용은 무엇인가요?',
+        a: [
+          '새 성전 건축 제안',
+          '<u>만국의 권세와 영광을 줄 테니 경배하라</u>',
+          '물 위를 걸어보라'
+        ],
+        correct: 1,
+        explain: '눅 4:5–7의 내용입니다.'
+      },
+      {
+        q: '세 번째 유혹에서 예수의 응답은?',
+        a: [
+          '지금 점프하겠다',
+          '<u>주 너의 하나님을 시험하지 말라</u>',
+          '천사를 더 보내 달라'
+        ],
+        correct: 1,
+        explain: '신 6:16(마싸 사건)을 인용합니다.'
+      },
+      {
+        q: '“때가 이를 때까지(눅 4:13)”는 무엇을 암시하나요?',
+        a: [
+          '유혹이 영원히 끝남',
+          '<u>유혹이 다시 올 수 있음을 경계하라</u>',
+          '즉시 승천함'
+        ],
+        correct: 1,
+        explain: '지속적 분별이 필요함을 뜻합니다.'
+      },
+      {
+        q: '이 본문을 한 문장으로 요약하면?',
+        a: [
+          '보여주기로 신앙 증명',
+          '<u>성령 안에서 말씀으로 유혹을 이긴다</u>',
+          '빵만 있으면 충분'
+        ],
+        correct: 1,
+        explain: '본문의 전체 흐름입니다.'
+      }
+    ];
+
+    let qi = -1, score = 0;
+    const qtext = document.getElementById('qtext');
+    const qopts = document.getElementById('qopts');
+    const qresult = document.getElementById('qresult');
+    const qprogress = document.getElementById('qprogress');
+
+    function renderQ() {
+      if (qi < 0) {
+        qtext.textContent = '퀴즈를 시작해 보세요.';
+        qopts.innerHTML = '';
+        qresult.textContent = '';
+        qprogress.textContent = '0 / ' + quizData.length;
+        return;
+      }
+      const item = quizData[qi];
+      qtext.innerHTML = `Q${qi+1}. ${item.q}`;
+      qopts.innerHTML = '';
+      item.a.forEach((t, idx) => {
+        const b = document.createElement('button');
+        b.innerHTML = t;
+        b.addEventListener('click', () => answer(idx));
+        qopts.appendChild(b);
+      });
+      qresult.textContent = '';
+      qprogress.textContent = `${qi+1} / ${quizData.length}`;
+    }
+
+    function answer(idx) {
+      const item = quizData[qi];
+      const buttons = Array.from(qopts.querySelectorAll('button'));
+      buttons.forEach((b, i) => {
+        b.disabled = true;
+        if (i === item.correct) b.classList.add('correct');
+        else if (i === idx) b.classList.add('wrong');
+      });
+      const ok = idx === item.correct;
+      if (ok) score++;
+      qresult.textContent = (ok ? '정답! ' : '오답 ') + '— ' + item.explain;
+      setTimeout(nextQ, 750);
+    }
+
+    function nextQ() {
+      qi++;
+      if (qi >= quizData.length) {
+        qtext.textContent = '완료!';
+        qopts.innerHTML = '';
+        qresult.textContent = `점수: ${score} / ${quizData.length}  — 수고하셨습니다!`;
+        qprogress.textContent = `${quizData.length} / ${quizData.length}`;
+        qi = -1; score = 0;
+        return;
+      }
+      renderQ();
+    }
+
+    document.getElementById('btnQuiz').addEventListener('click', () => {
+      if (qi === -1) { qi = 0; score = 0; renderQ(); }
+      else { nextQ(); }
+      window.scrollTo({ top: document.getElementById('quiz').offsetTop - 80, behavior: 'smooth' });
+    });
+
+    renderQ();
+  </script>
+</body>
+</html>
