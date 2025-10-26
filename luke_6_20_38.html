@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>누가복음 6:20–38 쉽게 읽기 — 정론·정행·적용</title>
+  <meta name="date" content="2025-10-26" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-soft: #121821;
+      --card: #141c27;
+      --fg: #eaf2ff;
+      --muted: #b8c4d9;
+      --accent: #7bdcb5;
+      --accent-2: #82aaff;
+      --danger: #ff6b6b;
+      --ok: #22c55e;
+      --shadow: 0 8px 24px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f7fb;
+        --bg-soft: #eef2f8;
+        --card: #ffffff;
+        --fg: #0e1726;
+        --muted: #4b5563;
+        --accent: #06b6d4;
+        --accent-2: #4f46e5;
+        --shadow: 0 10px 24px rgba(0,0,0,.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding-bottom: 10px; }
+    header {
+      position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(1.2) blur(8px);
+      background: linear-gradient(90deg, rgba(127,221,181,0.08), rgba(130,170,255,0.08));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .head { display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
+    .brand { display:flex; gap:10px; align-items:center; }
+    .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+    .title { font-weight: 800; letter-spacing:.1px; }
+    .controls { display:flex; gap:8px; }
+    .btn {
+      appearance:none; border:none; cursor:pointer; border-radius: 999px; padding:10px 14px; font-weight:700; font-size:14px; color: var(--fg);
+      background: rgba(255,255,255,.08); box-shadow: var(--shadow);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#03121a; }
+
+    .hero { padding: 18px 16px 8px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; font-size:12px; color: var(--fg); background: rgba(255,255,255,.08); padding:8px 12px; border-radius:999px; }
+    .h1 { font-size: 22px; font-weight: 900; line-height:1.25; margin: 10px 0 6px; }
+    .sub { color: var(--muted); font-size: 14px; }
+
+    .grid { display:grid; gap:14px; padding: 12px 16px; }
+    .card { background: var(--card); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card .hint { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+    details { border: 1px solid rgba(255,255,255,.06); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.02); }
+    summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:10px; padding: 14px 14px; cursor: pointer; font-weight:800; }
+    summary::-webkit-details-marker { display:none; }
+    .chev { transition: transform .2s ease; }
+    details[open] .chev { transform: rotate(90deg); }
+    .content { padding: 0 14px 16px; color: var(--fg); }
+    .content ul { margin: 10px 0; padding-left: 18px; }
+    .content li { margin: 8px 0; }
+
+    .tagbar { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .chip { padding:8px 12px; border-radius:999px; background: rgba(127,221,181,.15); color: var(--fg); border:1px solid rgba(127,221,181,.35); font-weight:700; font-size:13px; cursor:pointer; }
+    .chip[data-type="blue"] { background: rgba(130,170,255,.12); border-color: rgba(130,170,255,.35); }
+
+    .kv { display:grid; grid-template-columns: 110px 1fr; gap:8px; }
+    .kv div { padding:6px 0; border-bottom:1px dashed rgba(255,255,255,.08); color: var(--muted); }
+    .kv div b { color: var(--fg); }
+
+    .sheet { position: fixed; inset: 0; display:none; z-index: 90; }
+    .sheet.show { display:block; }
+    .sheet .overlay { position:absolute; inset:0; background: rgba(0,0,0,.4); }
+    .sheet .panel { position:absolute; left:0; right:0; bottom:0; background: var(--card); border-radius: 18px 18px 0 0; padding: 16px; box-shadow: var(--shadow); max-height: 70vh; overflow:auto; }
+    .sheet h4 { margin: 0 0 8px; }
+
+    .bar { position:fixed; left:0; right:0; bottom:0; z-index: 40; backdrop-filter: blur(8px) saturate(1.2); box-shadow: 0 -6px 24px rgba(0,0,0,.25); background: linear-gradient(90deg, rgba(127,221,181,.08), rgba(130,170,255,.08)); padding: 6px 10px; }
+    .bar .row { display:flex; gap:8px; }
+    .bar .row .btn { flex:1; }
+
+    .quiz { padding: 8px 16px 0; }
+    .qcard { background: var(--card); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+    .q { font-weight:800; margin: 0 0 10px; }
+    .opt { display:flex; flex-direction:column; gap:8px; }
+    .opt button { text-align:left; width:100%; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: var(--fg); padding:12px; border-radius:12px; font-weight:700; }
+    .opt button.correct { border-color: rgba(34,197,94,.6); box-shadow: inset 0 0 0 999px rgba(34,197,94,.12); }
+    .opt button.wrong { border-color: rgba(255,107,107,.6); box-shadow: inset 0 0 0 999px rgba(255,107,107,.10); }
+    .result { margin-top:10px; font-weight:800; }
+
+    .muted { color: var(--muted); font-size: 13px; }
+    .divider { height:1px; background: rgba(255,255,255,.08); margin: 12px 0; }
+
+    .small { font-size: 12px; }
+    .note { background: rgba(255,255,255,.06); padding:10px 12px; border-radius:12px; }
+
+    .summary-mode details .content { display:none; }
+    .summary-mode .hint, .summary-mode .muted { display:none; }
+
+    .fulltext { padding: 8px 16px 0; }
+    .fulltext details { 
+      border: 1px solid rgba(127,221,181,.45);
+      background: linear-gradient(180deg, rgba(127,221,181,.10), rgba(130,170,255,.08));
+      border-radius: 16px; overflow: hidden;
+    }
+    .fulltext summary { font-weight: 900; padding: 14px 14px; display:flex; align-items:center; justify-content:space-between; }
+    .fulltext .content { padding: 6px 14px 14px; }
+    .scripture { font-size: 14px; line-height: 1.7; }
+    .scripture p { margin: 8px 0; }
+    .scripture .v { display:inline-block; width: 2.2em; color: var(--accent); font-weight: 800; }
+    .scripture .note { color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">누가복음 6:20–38</div>
+          <div class="small muted">정론 · 정행 · 현대 적용 — 모바일 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare" title="공유">공유</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="fulltext" aria-label="누가복음 6:20–38 본문 전체">
+      <details open>
+        <summary>📜 본문 전체 보기 (눅 6:20–38) <span class="chev">▶</span></summary>
+        <div class="content scripture">
+          <p><span class="v">20</span> 예수께서 눈을 들어 제자들을 보시고 이르시되 너희 가난한 자는 복이 있나니 하나님의 나라가 너희 것임이요</p>
+          <p><span class="v">21</span> 지금 주린 자는 복이 있나니 너희가 배부름을 얻을 것임이요 지금 우는 자는 복이 있나니 너희가 웃을 것임이요</p>
+          <p><span class="v">22</span> 인자로 말미암아 사람들이 너희를 미워하며 멀리하고 욕하고 너희 이름을 악하다 하여 버릴 때에는 너희에게 복이 있도다</p>
+          <p><span class="v">23</span> 그 날에 기뻐하고 뛰놀라 하늘에서 너희 상이 큼이라 그들의 조상들이 선지자들에게 이와 같이 하였느니라</p>
+          <p><span class="v">24</span> 그러나 화 있을진저 너희 부요한 자여 너희는 너희의 위로를 이미 받았도다</p>
+          <p><span class="v">25</span> 화 있을진저 너희 지금 배부른 자여 너희는 주리리로다 화 있을진저 너희 지금 웃는 자여 너희가 애통하며 울리로다</p>
+          <p><span class="v">26</span> 모든 사람이 너희를 칭찬하면 화가 있도다 그들의 조상들이 거짓 선지자들에게 이와 같이 하였느니라</p>
+          <p class="note">— (원수를 사랑하라)</p>
+          <p><span class="v">27</span> 그러나 너희 듣는 자에게 내가 이르노니 너희 원수를 사랑하며 너희를 미워하는 자를 선대하며</p>
+          <p><span class="v">28</span> 너희를 저주하는 자를 위하여 축복하며 너희를 모욕하는 자를 위하여 기도하라</p>
+          <p><span class="v">29</span> 너의 이 뺨을 치는 자에게 저 뺨도 돌려대며 네 겉옷을 빼앗는 자에게 속옷도 거절하지 말라</p>
+          <p><span class="v">30</span> 네게 구하는 자에게 주며 네 것을 가져가는 자에게 다시 달라 하지 말며</p>
+          <p><span class="v">31</span> 남에게 대접을 받고자 하는 대로 너희도 남을 대접하라</p>
+          <p><span class="v">32</span> 너희가 만일 너희를 사랑하는 자만을 사랑하면 칭찬 받을 것이 무엇이냐 죄인들도 사랑하는 자는 사랑하느니라</p>
+          <p><span class="v">33</span> 너희가 만일 선대하는 자만을 선대하면 칭찬 받을 것이 무엇이냐 죄인들도 이렇게 하느니라</p>
+          <p><span class="v">34</span> 너희가 받기를 바라고 사람들에게 꾸어 주면 칭찬 받을 것이 무엇이냐 죄인들도 그만큼 받고자 하여 죄인에게 꾸어 주느니라</p>
+          <p><span class="v">35</span> 오직 너희는 원수를 사랑하고 선대하며 아무 것도 바라지 말고(μηδὲν ἀπελπίζοντες) 꾸어 주라 그리하면 너희 상이 클 것이요 또 지극히 높으신 이의 아들이 되리니 그는 은혜를 모르는 자와 악한 자에게도 인자하시니라</p>
+          <p><span class="v">36</span> 너희 아버지의 자비로우심 같이 너희도 자비로운 자가 되라</p>
+          <p><span class="v">37</span> 비판하지 말라 그리하면 너희가 비판을 받지 않을 것이요 정죄하지 말라 그리하면 너희가 정죄를 받지 않을 것이요 용서하라(ἀπολύετε) 그리하면 너희가 용서를 받을 것이요</p>
+          <p><span class="v">38</span> 주라 그리하면 너희에게 줄 것이니 곧 후히 되어 누르고 흔들어 넘치도록 하여 <u>너희에게 안겨 주리라(εἰς τὸν κόλπον ὑμῶν)</u> 너희가 헤아리는 그 헤아림(μέτρον)으로 너희도 헤아림을 도로 받을 것이니라</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="hero">
+      <span class="pill">🕊️ 복·화(μακάριοι/οὐαί) · 가난(πτωχοί) · 주림/웃음 · 원수 사랑(ἀγαπᾶτε ἐχθρούς) · 자비(οἰκτίρμονες) · 되(μέτρον) · 옷자락(κόλπος) · ἀπελπίζοντες</span>
+      <h1 class="h1">쉽게 읽는 요점</h1>
+      <p class="sub"><b>하나님 나라</b>는 지금의 <u>가난·주림·눈물</u>을 뒤집고, 제자에게 <b>원수 사랑</b>·<b>비정죄·용서·관대한 나눔</b>을 요구합니다. 길은 <b>자비(רַחוּם)</b>와 <b>대가 없는 관대(צְדָקָה/חֶסֶד)</b>입니다.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>한눈 요약 (3문장)</h3>
+        <ul>
+          <li><b>역전의 복음</b>: 누가는 “<u>가난한 너희</u>”에게 직접 복을 선언하고, <u>네 복–네 화</u>로 가치의 전환을 선포합니다.</li>
+          <li><b>성품의 모방</b>: 제자는 <u>자비로우신 아버지</u>를 닮아 원수까지 사랑하고, <u>대가 없는 관대</u>를 실천합니다.</li>
+          <li><b>되 바꾸기</b>: “<u>너희가 헤아리는 그 헤아림</u>”을 <u>관대의 되</u>로 바꾸면, 공동체에 <b>평화(שָׁלוֹם)</b>가 흐릅니다.</li>
+        </ul>
+        <div class="hint">아래 섹션을 펼쳐 상세 설명, 실천, 퀴즈를 볼 수 있습니다.</div>
+      </article>
+
+      <details open>
+        <summary>① 정론(Orthodoxy) — 본문이 말하는 것 <span class="chev">▶</span></summary>
+        <div class="content">
+          <div class="note">핵심: <b>하나님 나라의 역전</b>과 <b>하나님 성품 모방(imitatio Dei)</b>.</div>
+          <ul>
+            <li><b>네 복–네 화</b>: μακάριοι/οὐαί 병치는 <u>언약적 축복/저주</u> 형식—지금/장차의 <u>가치 역전</u>을 선포.</li>
+            <li><b>가난의 직설</b>: 마태의 “심령이 가난한 자”와 달리 <u>물질적 가난</u>을 정면 지칭(πτωχοί ↔ עָנִי/אֶבְיוֹן).</li>
+            <li><b>원수 사랑</b>: 레 19:18의 이웃 사랑을 <u>적대자(ἐχθροί/אוֹיֵב)</u>까지 확장—<u>하나님 자비(οἰκτίρμονες ↔ רַחוּם/רַחֲמִים)</u>의 근거.</li>
+            <li><b>비정죄–용서–나눔</b>: “비판·정죄 금지, 용서(ἀπολύετε), 주라”는 <u>상호보복/상호호혜</u> 관습을 넘어서는 <u>언약적 충실(חֶסֶד)·의(צְדָקָה)</u>.</li>
+            <li><b>되(μέτρον)와 옷자락(κόλπος)</b>: 곡물 측량·넘침의 비유—<u>과잉 관대</u>가 제자도의 표지.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>② 정행(Orthopraxy) — 실천 관점의 점검 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>3행 루틴</b>: 오늘 <u>비판 중단</u>(mē krinete) · <u>용서 선언</u>(ἀπολύετε) · <u>익명 나눔</u>(צְדָקָה) 1회씩 기록.</li>
+            <li><b>대가 없는 관대</b>: “<u>아무것도 바라지 말고</u>(ἀπελπίζοντες)”—호혜·보상 기대를 내려놓고 <u>선제적 선대</u>.</li>
+            <li><b>되 바꾸기</b>: 나의 “평가의 되(μέτρον)”를 <u>관대의 되</u>로 교체(메모·알림).</li>
+            <li><b>창조적 비폭력</b>: “뺨/겉옷” 조항은 <u>방임</u>이 아니라 <u>보복 고리 중단</u>의 창의적 제안—회복(שָׁלוֹם) 지향.</li>
+          </ul>
+          <div class="note small">핵심 문장: <b>“너희의 되를 관대로 바꾸라.”</b></div>
+        </div>
+      </details>
+
+      <details>
+        <summary>③ 현대 적용 — 오늘 교회/공동체에서 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>개인</b>: “<u>관대 1건</u>·<u>용서 1건</u>·<u>비판 0건</u>” 일지—히브리어 키워드: חֶסֶד(인애)·צְדָקָה(의로운 베풂)·רַחֲמִים(자비).</li>
+            <li><b>가정/팀</b>: <u>채무·갈등</u>은 회복 중심으로—상환 유예/부분 탕감, 공개 망신 금지, 중재·화해 절차.</li>
+            <li><b>교회</b>: “<u>되 규정</u>” 도입—칭찬·평가·징계에서 <u>관대의 되</u> 우선(회복적 사역).</li>
+            <li><b>지역사회/직장</b>: 취약층(‘ani/’evyon) <u>무담보 소액대출</u>·<u>무이자 생계비</u> 시범, <u>회복적 사법</u>·<u>비폭력 대화</u> 훈련.</li>
+          </ul>
+          <div class="note small">포인트: <u>상호호혜</u> 대신 <u>선제적 관대</u>가 하나님 나라의 속도입니다.</div>
+        </div>
+      </details>
+
+      <article class="card">
+        <h3>핵심 용어 (누르면 설명)</h3>
+        <div class="tagbar">
+          <button class="chip" data-word="makarioi">μακάριοι · makarioi</button>
+          <button class="chip" data-type="blue" data-word="ouai">οὐαί · ouaí</button>
+          <button class="chip" data-word="ptōchoi">πτωχοί · ptōchoi</button>
+          <button class="chip" data-type="blue" data-word="chortasthēsesthe">χορτασθήσεσθε · chortasthēsesthe</button>
+          <button class="chip" data-word="klaiontes">κλαίοντες/γελάσετε · klaiontes/gelasete</button>
+          <button class="chip" data-type="blue" data-word="echthroi">ἐχθροί · echthroi</button>
+          <button class="chip" data-word="agapate">ἀγαπᾶτε · agapate</button>
+          <button class="chip" data-type="blue" data-word="eulogete">εὐλογεῖτε · eulogete</button>
+          <button class="chip" data-word="proseuchesthe">προσεύχεσθε · proseuchesthe</button>
+          <button class="chip" data-type="blue" data-word="apelpidzontes">ἀπελπίζοντες · apelpizontes</button>
+          <button class="chip" data-word="oiktirmones">οἰκτίρμονες · oiktirmones</button>
+          <button class="chip" data-type="blue" data-word="meKrinete">μὴ κρίνετε · mē krinete</button>
+          <button class="chip" data-word="meKatadikazete">μὴ καταδικάζετε · mē katadikazete</button>
+          <button class="chip" data-type="blue" data-word="apolyete">ἀπολύετε · apolyete</button>
+          <button class="chip" data-word="metron">μέτρον · metron</button>
+          <button class="chip" data-type="blue" data-word="kolpos">κόλπος · kolpos</button>
+          <button class="chip" data-word="tsedaqah">צְדָקָה · tsedaqah</button>
+          <button class="chip" data-type="blue" data-word="chesed">חֶסֶד · chesed</button>
+          <button class="chip" data-word="rachamim">רַחוּם/רַחֲמִים · rachum/rachamim</button>
+          <button class="chip" data-type="blue" data-word="ani">עָנִי/אֶבְיוֹן · ‘ani/’evyon</button>
+          <button class="chip" data-word="oyev">אוֹיֵב · ’oyev</button>
+          <button class="chip" data-type="blue" data-word="middah">מִדָּה · middah</button>
+        </div>
+        <p class="hint">철자·음역·어근/기본 의미·대표 용례를 간단히 정리했습니다.</p>
+      </article>
+
+      <details>
+        <summary>본문 핵심 흐름 다시 보기 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>네 복–네 화</b> — 지금/장차의 역전.</li>
+            <li><b>원수 사랑</b> — 축복·기도·선대로 보복 고리 중단.</li>
+            <li><b>비정죄–용서–나눔</b> — <u>되(μέτρον)</u>를 <u>관대</u>로 재설정.</li>
+          </ul>
+          <div class="muted small">※ “<u>너희의 되</u>”는 오늘 내가 사용하는 말·평가·지갑의 기준선입니다.</div>
+        </div>
+      </details>
+
+      <section id="quiz" class="quiz" aria-label="이해도 점검 퀴즈">
+        <div class="qcard">
+          <div class="q" id="qtext">퀴즈를 시작해 보세요.</div>
+          <div class="opt" id="qopts"></div>
+          <div class="result" id="qresult"></div>
+          <div class="divider"></div>
+          <div class="muted small" id="qprogress">0 / 6</div>
+        </div>
+      </section>
+
+      <article class="card">
+        <h3>실천 체크리스트</h3>
+        <ul>
+          <li><b>말</b>: 오늘 <u>비판/정죄 0회</u>를 목표(메모로 체크).</li>
+          <li><b>관대</b>: <u>익명 나눔</u> 1건—되를 관대로.</li>
+          <li><b>원수</b>: 적대감이 떠오르는 대상에 <u>축복 기도</u> 1회.</li>
+          <li><b>되 훈련</b>: 평가·급여·칭찬에 <u>관대한 기준</u> 한 가지 적용.</li>
+        </ul>
+      </article>
+
+      <article class="card small muted">
+        <div>제작: 모바일 전용, 오프라인에서도 동작합니다. 상단 <b>공유</b> 버튼으로 링크를 나눌 수 있습니다.</div>
+      </article>
+    </section>
+  </main>
+
+  <div class="bar">
+    <div class="wrap">
+      <div class="row">
+        <button class="btn" id="btnToggleSummary">요약 모드</button>
+        <button class="btn" id="btnExpand">전체 펼치기</button>
+        <button class="btn primary" id="btnQuiz">퀴즈 시작</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet" id="sheet">
+    <div class="overlay" id="sheetClose" aria-label="닫기"></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <h4 id="sheetTitle">용어</h4>
+      <div id="sheetBody" class="small"></div>
+      <div class="divider"></div>
+      <button class="btn" id="sheetCloseBtn">닫기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    document.getElementById('btnShare').addEventListener('click', async () => {
+      if (navigator.share) {
+        try { await navigator.share({ title: document.title, text: '누가복음 6:20–38 쉽게 읽기', url: location.href }); } catch(e) { /* 취소 */ }
+      } else {
+        alert('이 링크를 복사해 공유하세요:\\n' + location.href);
+      }
+    });
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode') ? '자세히 모드' : '요약 모드';
+    });
+
+    // 전체 펼치기/접기
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+
+    // 용어 바텀시트 사전
+    const dict = {
+      makarioi: {
+        title: 'μακάριοι — makarioi',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>복 있는</b></div>
+            <div>핵심</div><div>하나님 나라의 <b>현재/장차</b> 역전 선언</div>
+            <div>용례</div><div>눅 6:20–23</div>
+          </div>`
+      },
+      ouai: {
+        title: 'οὐαί — ouaí',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>화 있을진저</b></div>
+            <div>핵심</div><div><b>경고</b>의 선포—가치 전환 촉구</div>
+            <div>용례</div><div>눅 6:24–26</div>
+          </div>`
+      },
+      ptōchoi: {
+        title: 'πτωχοί — ptōchoi',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>가난한 자</b> (물질·사회적)</div>
+            <div>히브리어</div><div>עָנִי/אֶבְיוֹן (‘ani/’evyon)</div>
+            <div>용례</div><div>눅 6:20; 사 61:1(눅 4)</div>
+          </div>`
+      },
+      chortasthēsesthe: {
+        title: 'χορτασθήσεσθε — chortasthēsesthe',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>배부르게 될 것이다</b></div>
+            <div>핵심</div><div><b>장차의 만족</b> 약속</div>
+            <div>용례</div><div>눅 6:21</div>
+          </div>`
+      },
+      klaiontes: {
+        title: 'κλαίοντες / γελάσετε — klaiontes / gelasete',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>우는 자 / 너희가 웃게 되리라</b></div>
+            <div>핵심</div><div><b>애통→기쁨</b>의 역전</div>
+            <div>용례</div><div>눅 6:21</div>
+          </div>`
+      },
+      echthroi: {
+        title: 'ἐχθροί — echthroi',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>원수/적대자</b></div>
+            <div>히브리어</div><div>אוֹיֵב (‘oyev)</div>
+            <div>용례</div><div>눅 6:27</div>
+          </div>`
+      },
+      agapate: {
+        title: 'ἀγαπᾶτε — agapate',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>사랑하라</b> (의지적 사랑)</div>
+            <div>핵심</div><div>축복·기도·선대가 <b>사랑의 동사</b></div>
+            <div>용례</div><div>눅 6:27–28, 35</div>
+          </div>`
+      },
+      eulogete: {
+        title: 'εὐλογεῖτε — eulogete',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>축복하라</b></div>
+            <div>핵심</div><div><b>저주 ↔ 축복</b>으로 전환</div>
+            <div>용례</div><div>눅 6:28</div>
+          </div>`
+      },
+      proseuchesthe: {
+        title: 'προσεύχεσθε — proseuchesthe',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>기도하라</b></div>
+            <div>핵심</div><div><b>원수</b>를 위한 중보</div>
+            <div>용례</div><div>눅 6:28</div>
+          </div>`
+      },
+      apelpizontes: {
+        title: 'ἀπελπίζοντες — apelpizontes',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>바라지 않다/기대하지 않다</b></div>
+            <div>핵심</div><div><b>대가 없는 관대</b>의 동력</div>
+            <div>용례</div><div>눅 6:35</div>
+          </div>`
+      },
+      oiktirmones: {
+        title: 'οἰκτίρμονες — oiktirmones',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>자비로운</b></div>
+            <div>히브리어</div><div>רַחוּם/רַחֲמִים (raḥum/raḥamim)</div>
+            <div>용례</div><div>눅 6:36</div>
+          </div>`
+      },
+      meKrinete: {
+        title: 'μὴ κρίνετε — mē krinete',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>비판하지 말라</b></div>
+            <div>핵심</div><div><b>정죄의 되</b>를 멈춤</div>
+            <div>용례</div><div>눅 6:37</div>
+          </div>`
+      },
+      meKatadikazete: {
+        title: 'μὴ καταδικάζετε — mē katadikazete',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>정죄하지 말라</b></div>
+            <div>핵심</div><div><b>형벌 중심</b>에서 <b>회복</b>으로</div>
+            <div>용례</div><div>눅 6:37</div>
+          </div>`
+      },
+      apolyete: {
+        title: 'ἀπολύετε — apolyete',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>용서/놓아주다</b></div>
+            <div>핵심</div><div>빚·원망을 <b>해방</b></div>
+            <div>용례</div><div>눅 6:37</div>
+          </div>`
+      },
+      metron: {
+        title: 'μέτρον — metron',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>되/측량</b></div>
+            <div>히브리어</div><div>מִדָּה (middah)</div>
+            <div>용례</div><div>눅 6:38</div>
+          </div>`
+      },
+      kolpos: {
+        title: 'κόλπος — kolpos',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>품/옷자락</b></div>
+            <div>핵심</div><div><b>눌러·흔들어·넘치도록</b> 안겨 줌</div>
+            <div>용례</div><div>눅 6:38</div>
+          </div>`
+      },
+      tsedaqah: {
+        title: 'צְדָקָה — tsedaqah',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>의/의로운 베풂(자선)</b></div>
+            <div>어근</div><div>√צדק</div>
+            <div>용례</div><div>잠 19:17; 눅 6:37–38의 실천 배경</div>
+          </div>`
+      },
+      chesed: {
+        title: 'חֶסֶד — chesed',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>인애/언약적 신실</b></div>
+            <div>어근</div><div>√חסד</div>
+            <div>용례</div><div>미 6:8; 눅 6:35–36의 자비</div>
+          </div>`
+      },
+      rachamim: {
+        title: 'רַחוּם/רַחֲמִים — rachum/rachamim',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>자비/긍휼</b></div>
+            <div>핵심</div><div><b>하나님 성품 모방</b>의 기준</div>
+            <div>용례</div><div>출 34:6; 눅 6:36</div>
+          </div>`
+      },
+      ani: {
+        title: 'עָנִי/אֶבְיוֹן — ‘ani/’evyon',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>가난한 자/궁핍한 자</b></div>
+            <div>핵심</div><div><b>사회경제적 취약</b>의 지칭</div>
+            <div>용례</div><div>시 34:6; 사 61:1</div>
+          </div>`
+      },
+      oyev: {
+        title: 'אוֹיֵב — ’oyev',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>원수/적</b></div>
+            <div>핵심</div><div>사랑의 <b>대상</b>으로 확장</div>
+            <div>용례</div><div>시 110:1; 눅 6:27</div>
+          </div>`
+      },
+      middah: {
+        title: 'מִדָּה — middah',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>되/측량</b></div>
+            <div>핵심</div><div><b>“헤아리는 만큼”</b>의 원리 재정의</div>
+            <div>용례</div><div>눅 6:38</div>
+          </div>`
+      }
+    };
+
+    const sheet = document.getElementById('sheet');
+    const sheetTitle = document.getElementById('sheetTitle');
+    const sheetBody = document.getElementById('sheetBody');
+    const openSheet = (key) => {
+      const item = dict[key];
+      if (!item) return;
+      sheetTitle.textContent = item.title;
+      sheetBody.innerHTML = item.html;
+      sheet.classList.add('show');
+    };
+    const closeSheet = () => sheet.classList.remove('show');
+    document.getElementById('sheetClose').addEventListener('click', closeSheet);
+    document.getElementById('sheetCloseBtn').addEventListener('click', closeSheet);
+
+    document.querySelectorAll('.chip').forEach(ch => ch.addEventListener('click', () => openSheet(ch.dataset.word)));
+
+    // 퀴즈
+    const quizData = [
+      {
+        q: '누가의 복 선언은 누구를 직접 지칭하나요?',
+        a: [
+          '심령이 가난한 자',
+          '<u>가난한 너희(πτωχοί)</u>',
+          '부요하지만 겸손한 자'
+        ],
+        correct: 1,
+        explain: '눅 6:20은 물질적 가난을 직설로 지칭합니다.'
+      },
+      {
+        q: '복/화의 구조는 무엇을 드러내나요?',
+        a: [
+          '지리 정보',
+          '<u>언약적 축복/저주와 가치 역전</u>',
+          '기상 예보'
+        ],
+        correct: 1,
+        explain: '네 복–네 화는 언약 형식의 대조입니다.'
+      },
+      {
+        q: '“아무 것도 바라지 말고(ἀπελπίζοντες)”의 핵심은?',
+        a: [
+          '대출 금지',
+          '<u>보상·호혜 기대를 내려놓는 관대</u>',
+          '상환 독촉 강화'
+        ],
+        correct: 1,
+        explain: '호혜 관습을 전복하는 제자도의 관대입니다.'
+      },
+      {
+        q: '“되(μέτρον)” 비유는 무엇을 가리키나요?',
+        a: [
+          '측량 도구 사용법',
+          '<u>관대한 기준으로 재측량하라</u>',
+          '세금 제도'
+        ],
+        correct: 1,
+        explain: '눌러·흔들어·넘치는 관대가 기준입니다(눅 6:38).'
+      },
+      {
+        q: '누가 6:36에서 제자도는 무엇을 모방하라 하나요?',
+        a: [
+          '능력',
+          '<u>아버지의 자비(οἰκτίρμονες)</u>',
+          '지혜'
+        ],
+        correct: 1,
+        explain: '하나님 성품 모방(imitatio Dei)의 강조입니다.'
+      },
+      {
+        q: '원수 사랑의 실제 동사는 무엇인가요?',
+        a: [
+          '거리두기·논박·보복',
+          '<u>축복·기도·선대</u>',
+          '무시·차단·신고'
+        ],
+        correct: 1,
+        explain: '눅 6:27–28의 세 동사입니다.'
+      }
+    ];
+
+    let qi = -1, score = 0;
+    const qtext = document.getElementById('qtext');
+    const qopts = document.getElementById('qopts');
+    const qresult = document.getElementById('qresult');
+    const qprogress = document.getElementById('qprogress');
+
+    function renderQ() {
+      if (qi < 0) {
+        qtext.textContent = '퀴즈를 시작해 보세요.';
+        qopts.innerHTML = '';
+        qresult.textContent = '';
+        qprogress.textContent = '0 / ' + quizData.length;
+        return;
+      }
+      const item = quizData[qi];
+      qtext.innerHTML = `Q${qi+1}. ${item.q}`;
+      qopts.innerHTML = '';
+      item.a.forEach((t, idx) => {
+        const b = document.createElement('button');
+        b.innerHTML = t;
+        b.addEventListener('click', () => answer(idx));
+        qopts.appendChild(b);
+      });
+      qresult.textContent = '';
+      qprogress.textContent = `${qi+1} / ${quizData.length}`;
+    }
+
+    function answer(idx) {
+      const item = quizData[qi];
+      const buttons = Array.from(qopts.querySelectorAll('button'));
+      buttons.forEach((b, i) => {
+        b.disabled = true;
+        if (i === item.correct) b.classList.add('correct');
+        else if (i === idx) b.classList.add('wrong');
+      });
+      const ok = idx === item.correct;
+      if (ok) score++;
+      qresult.textContent = (ok ? '정답! ' : '오답 ') + '— ' + item.explain;
+      setTimeout(nextQ, 750);
+    }
+
+    function nextQ() {
+      qi++;
+      if (qi >= quizData.length) {
+        qtext.textContent = '완료!';
+        qopts.innerHTML = '';
+        qresult.textContent = `점수: ${score} / ${quizData.length}  — 수고하셨습니다!`;
+        qprogress.textContent = `${quizData.length} / ${quizData.length}`;
+        qi = -1; score = 0;
+        return;
+      }
+      renderQ();
+    }
+
+    document.getElementById('btnQuiz').addEventListener('click', () => {
+      if (qi === -1) { qi = 0; score = 0; renderQ(); }
+      else { nextQ(); }
+      window.scrollTo({ top: document.getElementById('quiz').offsetTop - 80, behavior: 'smooth' });
+    });
+
+    renderQ();
+  </script>
+</body>
+</html>
