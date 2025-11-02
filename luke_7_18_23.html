@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>누가복음 7:18–23 쉽게 읽기 — 정론·정행·적용</title>
+  <meta name="date" content="2025-11-02" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-soft: #121821;
+      --card: #141c27;
+      --fg: #eaf2ff;
+      --muted: #b8c4d9;
+      --accent: #7bdcb5;
+      --accent-2: #82aaff;
+      --danger: #ff6b6b;
+      --ok: #22c55e;
+      --shadow: 0 8px 24px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f7fb;
+        --bg-soft: #eef2f8;
+        --card: #ffffff;
+        --fg: #0e1726;
+        --muted: #4b5563;
+        --accent: #06b6d4;
+        --accent-2: #4f46e5;
+        --shadow: 0 10px 24px rgba(0,0,0,.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding-bottom: 10px; }
+    header {
+      position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(1.2) blur(8px);
+      background: linear-gradient(90deg, rgba(127,221,181,0.08), rgba(130,170,255,0.08));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .head { display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
+    .brand { display:flex; gap:10px; align-items:center; }
+    .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+    .title { font-weight: 800; letter-spacing:.1px; }
+    .controls { display:flex; gap:8px; }
+    .btn {
+      appearance:none; border:none; cursor:pointer; border-radius: 999px; padding:10px 14px; font-weight:700; font-size:14px; color: var(--fg);
+      background: rgba(255,255,255,.08); box-shadow: var(--shadow);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#03121a; }
+
+    .hero { padding: 18px 16px 8px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; font-size:12px; color: var(--fg); background: rgba(255,255,255,.08); padding:8px 12px; border-radius:999px; }
+    .h1 { font-size: 22px; font-weight: 900; line-height:1.25; margin: 10px 0 6px; }
+    .sub { color: var(--muted); font-size: 14px; }
+
+    .grid { display:grid; gap:14px; padding: 12px 16px; }
+    .card { background: var(--card); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card .hint { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+    details { border: 1px solid rgba(255,255,255,.06); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.02); }
+    summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:10px; padding: 14px 14px; cursor: pointer; font-weight:800; }
+    summary::-webkit-details-marker { display:none; }
+    .chev { transition: transform .2s ease; }
+    details[open] .chev { transform: rotate(90deg); }
+    .content { padding: 0 14px 16px; color: var(--fg); }
+    .content ul { margin: 10px 0; padding-left: 18px; }
+    .content li { margin: 8px 0; }
+
+    .tagbar { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .chip { padding:8px 12px; border-radius:999px; background: rgba(127,221,181,.15); color: var(--fg); border:1px solid rgba(127,221,181,.35); font-weight:700; font-size:13px; cursor:pointer; }
+    .chip[data-type="blue"] { background: rgba(130,170,255,.12); border-color: rgba(130,170,255,.35); }
+
+    .kv { display:grid; grid-template-columns: 110px 1fr; gap:8px; }
+    .kv div { padding:6px 0; border-bottom:1px dashed rgba(255,255,255,.08); color: var(--muted); }
+    .kv div b { color: var(--fg); }
+
+    .sheet { position: fixed; inset: 0; display:none; z-index: 90; }
+    .sheet.show { display:block; }
+    .sheet .overlay { position:absolute; inset:0; background: rgba(0,0,0,.4); }
+    .sheet .panel { position:absolute; left:0; right:0; bottom:0; background: var(--card); border-radius: 18px 18px 0 0; padding: 16px; box-shadow: var(--shadow); max-height: 70vh; overflow:auto; }
+    .sheet h4 { margin: 0 0 8px; }
+
+    .bar { position:fixed; left:0; right:0; bottom:0; z-index: 40; backdrop-filter: blur(8px) saturate(1.2); box-shadow: 0 -6px 24px rgba(0,0,0,.25); background: linear-gradient(90deg, rgba(127,221,181,.08), rgba(130,170,255,.08)); padding: 6px 10px; }
+    .bar .row { display:flex; gap:8px; }
+    .bar .row .btn { flex:1; }
+
+    .quiz { padding: 8px 16px 0; }
+    .qcard { background: var(--card); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+    .q { font-weight:800; margin: 0 0 10px; }
+    .opt { display:flex; flex-direction:column; gap:8px; }
+    .opt button { text-align:left; width:100%; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: var(--fg); padding:12px; border-radius:12px; font-weight:700; }
+    .opt button.correct { border-color: rgba(34,197,94,.6); box-shadow: inset 0 0 0 999px rgba(34,197,94,.12); }
+    .opt button.wrong { border-color: rgba(255,107,107,.6); box-shadow: inset 0 0 0 999px rgba(255,107,107,.10); }
+    .result { margin-top:10px; font-weight:800; }
+
+    .muted { color: var(--muted); font-size: 13px; }
+    .divider { height:1px; background: rgba(255,255,255,.08); margin: 12px 0; }
+
+    .small { font-size: 12px; }
+    .note { background: rgba(255,255,255,.06); padding:10px 12px; border-radius:12px; }
+
+    .summary-mode details .content { display:none; }
+    .summary-mode .hint, .summary-mode .muted { display:none; }
+
+    .fulltext { padding: 8px 16px 0; }
+    .fulltext details { 
+      border: 1px solid rgba(127,221,181,.45);
+      background: linear-gradient(180deg, rgba(127,221,181,.10), rgba(130,170,255,.08));
+      border-radius: 16px; overflow: hidden;
+    }
+    .fulltext summary { font-weight: 900; padding: 14px 14px; display:flex; align-items:center; justify-content:space-between; }
+    .fulltext .content { padding: 6px 14px 14px; }
+    .scripture { font-size: 14px; line-height: 1.7; }
+    .scripture p { margin: 8px 0; }
+    .scripture .v { display:inline-block; width: 2.2em; color: var(--accent); font-weight: 800; }
+    .scripture .note { color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">누가복음 7:18–23</div>
+          <div class="small muted">정론 · 정행 · 현대 적용 — 모바일 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare" title="공유">공유</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="fulltext" aria-label="누가복음 7:18–23 본문 전체">
+      <details open>
+        <summary>📜 본문 전체 보기 (눅 7:18–23) <span class="chev">▶</span></summary>
+        <div class="content scripture">
+          <p><span class="v">18</span> 요한의 제자들이 이 모든 일을 그에게 알리니</p>
+          <p><span class="v">19</span> 요한이 그 제자 중 둘을 불러 주께 보내어 이르되 <u>오실 그이</u>가 당신이오니이까 우리가 다른 이를 기다리오리이까 하라 하매</p>
+          <p><span class="v">20</span> 그들이 예수께 나아가 이르되 세례 요한이 우리를 보내어 당신께 여쭈어 보라고 하기를 오실 그이가 당신이오니이까 우리가 다른 이를 기다리오리이까 하더이다 하니</p>
+          <p><span class="v">21</span> 마침 그 때에 예수께서 질병과 고통과 및 악귀 들린 자를 많이 고치시며 또 많은 맹인을 보게 하신지라</p>
+          <p><span class="v">22</span> 예수께서 대답하여 이르시되 너희가 가서 <b>보고 들은 것</b>을 요한에게 알리되 <u>맹인이 보며</u> <u>못 걷는 사람이 걸으며</u> <u>나병환자가 깨끗함</u>을 받으며 <u>귀먹은 사람이 들으며</u> <u>죽은 자가 살아나며</u> <u>가난한 자에게 복음</u>이 전파된다 하라</p>
+          <p><span class="v">23</span> 누구든지 <u>나로 말미암아 실족</u>하지 아니하는 자는 복이 있도다 하시니라</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="hero">
+      <span class="pill">ὁ ἐρχόμενος(오실 그이) · 표징(signs) · 이사야 35/61 · σκανδαλίζω(실족) · בְּשׂוֹרָה(복음) · עֲנָוִים(가난한 이들)</span>
+      <h1 class="h1">쉽게 읽는 요점</h1>
+      <p class="sub"><b>세례 요한의 질문</b>에 예수께서는 교리 설명이 아닌 <b>현장에서 일어난 표징</b>으로 답하십니다. 이는 <u>이사야의 약속</u>이 지금 이루어지고 있음을 보게 하며, <u>예수로 인해 걸려 넘어지지 않는</u> 사람이 복되다고 말합니다.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>한눈 요약 (3문장)</h3>
+        <ul>
+          <li><b>질문</b>: “오실 그이(ὁ ἐρχόμενος)가 당신입니까?” — <u>메시아 확인</u> 요청.</li>
+          <li><b>응답</b>: “가서 보고 들은 것을 알리라” — <u>치유·정결·소생·복음</u>이 증거입니다.</li>
+          <li><b>경고</b>: “실족하지 않는 자는 복이 있다” — <u>기대와 다른 메시아상</u>으로 걸려 넘어지지 말 것.</li>
+        </ul>
+        <div class="hint">아래 섹션에서 정론·정행·현대 적용을 간단하고 구체적으로 안내합니다.</div>
+      </article>
+
+      <details open>
+        <summary>① 정론(Orthodoxy) — 본문이 말하는 것 <span class="chev">▶</span></summary>
+        <div class="content">
+          <div class="note">핵심: 예수의 정체는 <b>표징</b>(이사야 35:5–6; 61:1)으로 드러납니다.</div>
+          <ul>
+            <li><b>오실 그이(ὁ ἐρχόμενος)</b>: “오시는 분/메시아”를 가리키는 통용 칭호입니다.</li>
+            <li><b>표징의 목록</b>: <u>맹인·절뚝·나병·농·사망·가난</u>—몸·관계·사회 전 영역의 회복을 말합니다.</li>
+            <li><b>실족(σκανδαλίζω)</b>: 기대와 다른 방식의 메시아 때문에 <u>예수로 걸려 넘어지는 것</u>을 뜻합니다.</li>
+            <li><b>복음(בְּשׂוֹרָה)</b>: 좋은 소식은 특히 <u>가난한 이들(עֲנָוִים)</u>에게 들려야 제자리입니다.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>② 정행(Orthopraxy) — 실천 관점의 점검 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>“보고 들은 것” 보고서</b>: 우리 공동체의 한 주간 표징을 적습니다—<u>접근성 개선</u>(시각·청각 자료), <u>재활/돌봄</u>, <u>반(反)낙인 식탁</u>, <u>애도/자살예방</u>, <u>디지털 빈곤 해소</u>.</li>
+            <li><b>정결(טָהֵר)·치유(רָפָא)</b>: 몸과 관계의 정결—병보다 <u>낙인</u>을 먼저 벗겨 주는 접촉.</li>
+            <li><b>가난의 복음(בְּשׂוֹרָה)</b>: 시혜가 아니라 <u>권리·기회</u>를 회복하는 실질 지원.</li>
+            <li><b>실족 방지</b>: “내 기대”가 아닌 “예수의 방식”을 따르도록 마음을 점검합니다.</li>
+          </ul>
+          <div class="note small">핵심 문장: <b>“교리는 실천으로 증명된다.”</b></div>
+        </div>
+      </details>
+
+      <details>
+        <summary>③ 현대 적용 — 오늘 교회/공동체에서 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>개인</b>: 한 주에 <u>접근성 점검 1건</u>(자막/대체텍스트) · <u>낙인 깨기 대화 1건</u> · <u>도움 요청 받기 1건</u>.</li>
+            <li><b>가정/팀</b>: 아픈 가족·동료를 <u>찾아가 만나는 접촉</u>—“괜찮니?”에서 “<u>무엇이 필요해?</u>”로.</li>
+            <li><b>교회</b>: <u>반낙인 식탁</u>(한센·정신건강·출소자) · <u>회복적 사역</u>(빚·갈등은 탓보다 회복으로).</li>
+            <li><b>지역사회</b>: <u>디지털 문해 튜터링</u>·<u>무담보 생활자금 소액대출</u>·<u>애도 모임</u>을 작은 단위로 시작.</li>
+          </ul>
+          <div class="note small">포인트: <u>בְּשׂוֹרָה(복음)</u>를 <u>צְדָקָה(의로운 제도)</u>와 <u>חֶסֶד(관계적 충실)</u>로 번역합니다.</div>
+        </div>
+      </details>
+
+      <article class="card">
+        <h3>핵심 용어 (누르면 설명)</h3>
+        <div class="tagbar">
+          <button class="chip" data-word="erchomenos">ὁ ἐρχόμενος · ho erchomenos</button>
+          <button class="chip" data-type="blue" data-word="skandalizo">σκανδαλίζω · skandalizō</button>
+          <button class="chip" data-word="typhlos">τυφλός · typhlos</button>
+          <button class="chip" data-type="blue" data-word="lepros">λεπρός · lepros</button>
+          <button class="chip" data-word="ptōchois">πτωχοῖς εὐαγγελίζεται</button>
+          <button class="chip" data-type="blue" data-word="besorah">בְּשׂוֹרָה · besorah</button>
+          <button class="chip" data-word="anawim">עֲנָוִים/עָנִי · ‘anawim/‘ani</button>
+          <button class="chip" data-type="blue" data-word="chesed">חֶסֶד · ḥesed</button>
+          <button class="chip" data-word="tsedaqah">צְדָקָה · tsedaqah</button>
+          <button class="chip" data-type="blue" data-word="rapha">רָפָא · rapha</button>
+          <button class="chip" data-word="taher">טָהֵר · taher</button>
+          <button class="chip" data-type="blue" data-word="mechayyeh">מְחַיֶּה מֵתִים · mechayyeh metim</button>
+        </div>
+        <p class="hint">철자·음역·어근/기본 의미·대표 용례를 간단히 정리했습니다.</p>
+      </article>
+
+      <details>
+        <summary>본문 핵심 흐름 다시 보기 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>질문</b> — “오실 그이, 당신입니까?”</li>
+            <li><b>표징</b> — 보고 들은 것을 알리라(치유·정결·소생·복음).</li>
+            <li><b>결단</b> — 기대 충돌 속에서도 예수로 <u>실족하지 말라</u>.</li>
+          </ul>
+          <div class="muted small">※ “표징”은 <u>하나님 나라가 이미 시작되었다</u>는 현장 신호입니다.</div>
+        </div>
+      </details>
+
+      <section id="quiz" class="quiz" aria-label="이해도 점검 퀴즈">
+        <div class="qcard">
+          <div class="q" id="qtext">퀴즈를 시작해 보세요.</div>
+          <div class="opt" id="qopts"></div>
+          <div class="result" id="qresult"></div>
+          <div class="divider"></div>
+          <div class="muted small" id="qprogress">0 / 6</div>
+        </div>
+      </section>
+
+      <article class="card">
+        <h3>실천 체크리스트</h3>
+        <ul>
+          <li><b>접근성</b>: 오늘 문서/영상에 <u>자막·대체텍스트</u> 1건 추가.</li>
+          <li><b>반낙인</b>: 회피하던 사람과 <u>식탁/커피 1회</u>—먼저 안부 묻기.</li>
+          <li><b>회복</b>: 빚·원망에 <u>부분 탕감/유예</u> 제안.</li>
+          <li><b>복음</b>: 도움이 필요한 이에게 <u>권리·자원 연결</u> 1건.</li>
+        </ul>
+      </article>
+
+      <article class="card small muted">
+        <div>제작: 모바일 전용, 오프라인에서도 동작합니다. 상단 <b>공유</b> 버튼으로 링크를 나눌 수 있습니다.</div>
+      </article>
+    </section>
+  </main>
+
+  <div class="bar">
+    <div class="wrap">
+      <div class="row">
+        <button class="btn" id="btnToggleSummary">요약 모드</button>
+        <button class="btn" id="btnExpand">전체 펼치기</button>
+        <button class="btn primary" id="btnQuiz">퀴즈 시작</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet" id="sheet">
+    <div class="overlay" id="sheetClose" aria-label="닫기"></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <h4 id="sheetTitle">용어</h4>
+      <div id="sheetBody" class="small"></div>
+      <div class="divider"></div>
+      <button class="btn" id="sheetCloseBtn">닫기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    document.getElementById('btnShare').addEventListener('click', async () => {
+      if (navigator.share) {
+        try { await navigator.share({ title: document.title, text: '누가복음 7:18–23 쉽게 읽기', url: location.href }); } catch(e) { /* 취소 */ }
+      } else {
+        alert('이 링크를 복사해 공유하세요:\\n' + location.href);
+      }
+    });
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode') ? '자세히 모드' : '요약 모드';
+    });
+
+    // 전체 펼치기/접기
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+
+    // 용어 바텀시트 사전
+    const dict = {
+      erchomenos: {
+        title: 'ὁ ἐρχόμενος — ho erchomenos',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>오실 그이</b>(메시아)</div>
+            <div>핵심</div><div>요한의 질문 핵심 칭호</div>
+            <div>용례</div><div>눅 7:19–20; 시 118:26(“주 이름으로 오시는 이”)</div>
+          </div>`
+      },
+      skandalizo: {
+        title: 'σκανδαλίζω — skandalizō',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>실족하다/걸려 넘어지다</b></div>
+            <div>핵심</div><div>예수의 방식이 <b>기대</b>와 충돌할 때 발생</div>
+            <div>용례</div><div>눅 7:23</div>
+          </div>`
+      },
+      typhlos: {
+        title: 'τυφλός — typhlos',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>맹인</b></div>
+            <div>핵심</div><div>이사야 35:5의 표징 실현</div>
+            <div>용례</div><div>눅 7:22</div>
+          </div>`
+      },
+      lepros: {
+        title: 'λεπρός — lepros',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>나병환자</b></div>
+            <div>히브리어</div><div>טָהֵר(taher): 정결케 하다</div>
+            <div>용례</div><div>눅 7:22; 레위기 14장(정결 예식)</div>
+          </div>`
+      },
+      'ptōchois': {
+        title: 'πτωχοῖς εὐαγγελίζεται — ptōchois euangelizetai',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>가난한 자들에게 복음이 전해진다</b></div>
+            <div>히브리어</div><div>בְּשׂוֹרָה(besorah) / עֲנָוִים(‘anawim)</div>
+            <div>용례</div><div>눅 7:22; 눅 4:18–19; 사 61:1</div>
+          </div>`
+      },
+      besorah: {
+        title: 'בְּשׂוֹרָה — besorah',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>복음/좋은 소식</b></div>
+            <div>동사</div><div>בִּשֵּׂר(bisser, 전하다)</div>
+            <div>용례</div><div>사 61:1; 눅 7:22</div>
+          </div>`
+      },
+      anawim: {
+        title: 'עֲנָוִים/עָנִי — ‘anawim/‘ani',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>가난하고 낮은 이들</b></div>
+            <div>핵심</div><div>경제·사회·관계적 취약을 포괄</div>
+            <div>용례</div><div>시 34:2; 사 61:1; 눅 7:22</div>
+          </div>`
+      },
+      chesed: {
+        title: 'חֶסֶד — ḥesed',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>인애/언약적 신실</b></div>
+            <div>핵심</div><div>관계의 충실로 복음을 <b>체현</b></div>
+            <div>용례</div><div>미 6:8; 눅 7:22의 배경</div>
+          </div>`
+      },
+      tsedaqah: {
+        title: 'צְדָקָה — tsedaqah',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>의/의로운 베풂(제도적 정의)</b></div>
+            <div>핵심</div><div>복음을 <b>제도</b>로 번역</div>
+            <div>용례</div><div>시 72; 눅 4:18–19의 구현</div>
+          </div>`
+      },
+      rapha: {
+        title: 'רָפָא — rapha',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>치유하다</b></div>
+            <div>핵심</div><div>몸·관계·사회 치유</div>
+            <div>용례</div><div>출 15:26; 눅 7:21–22</div>
+          </div>`
+      },
+      taher: {
+        title: 'טָהֵר — taher',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>정결케 하다</b></div>
+            <div>핵심</div><div>병보다 <b>낙인</b>을 먼저 벗김</div>
+            <div>용례</div><div>레 14장; 눅 7:22</div>
+          </div>`
+      },
+      mechayyeh: {
+        title: 'מְחַיֶּה מֵתִים — mechayyeh metim',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>죽은 자를 살리시는 분</b></div>
+            <div>핵심</div><div>메시아 시대의 표징(4Q521 전승)</div>
+            <div>용례</div><div>눅 7:22(죽은 자가 살아남)</div>
+          </div>`
+      }
+    };
+
+    const sheet = document.getElementById('sheet');
+    const sheetTitle = document.getElementById('sheetTitle');
+    const sheetBody = document.getElementById('sheetBody');
+    const openSheet = (key) => {
+      const item = dict[key];
+      if (!item) return;
+      sheetTitle.textContent = item.title;
+      sheetBody.innerHTML = item.html;
+      sheet.classList.add('show');
+    };
+    const closeSheet = () => sheet.classList.remove('show');
+    document.getElementById('sheetClose').addEventListener('click', closeSheet);
+    document.getElementById('sheetCloseBtn').addEventListener('click', closeSheet);
+
+    document.querySelectorAll('.chip').forEach(ch => ch.addEventListener('click', () => openSheet(ch.dataset.word)));
+
+    // 퀴즈
+    const quizData = [
+      {
+        q: '요한이 보낸 질문의 핵심 칭호는 무엇인가요?',
+        a: [
+          '구세주(σωτήρ)',
+          '<u>오실 그이(ὁ ἐρχόμενος)</u>',
+          '선지자(προφήτης)'
+        ],
+        correct: 1,
+        explain: '눅 7:19–20의 표현입니다.'
+      },
+      {
+        q: '예수의 대답 방식은 무엇이었나요?',
+        a: [
+          '장문의 교리 강의',
+          '<u>보고 들은 표징을 전하라</u>',
+          '침묵과 금식'
+        ],
+        correct: 1,
+        explain: '예수는 현재 일어난 치유와 복음의 소식을 근거로 삼으셨습니다(눅 7:22).'
+      },
+      {
+        q: '표징 목록은 주로 어느 구약 본문과 연결되나요?',
+        a: [
+          '창세기 12장',
+          '<u>이사야 35장과 61장</u>',
+          '시편 1편'
+        ],
+        correct: 1,
+        explain: '맹인·절뚝·가난한 자에게 복음 등은 이사야의 회복 모티프입니다.'
+      },
+      {
+        q: '“실족(σκανδαλίζω)”의 의미에 가장 가까운 것은?',
+        a: [
+          '의심이 사라짐',
+          '<u>기대와 다른 예수 때문에 걸려 넘어짐</u>',
+          '새 계명을 암송함'
+        ],
+        correct: 1,
+        explain: '메시아상 충돌로 예수를 거부하는 상태를 가리킵니다(눅 7:23).'
+      },
+      {
+        q: '“가난한 자에게 복음(בְּשׂוֹרָה)”은 오늘 무엇을 뜻할 수 있을까요?',
+        a: [
+          '좋은 말 전하기',
+          '<u>권리·기회 회복과 실제적 지원</u>',
+          '금식 규정 강화'
+        ],
+        correct: 1,
+        explain: '시혜가 아닌 권리 기반의 회복이 핵심입니다.'
+      },
+      {
+        q: '다음 중 오늘의 “표징”에 해당하기 쉬운 실천은?',
+        a: [
+          '비판 글을 더 날카롭게 쓰기',
+          '<u>자막·대체텍스트 추가, 반낙인 식탁, 애도 모임</u>',
+          '나와 다른 사람은 피하기'
+        ],
+        correct: 1,
+        explain: '접근성·반낙인·회복은 본문 표징을 오늘로 번역한 예입니다.'
+      }
+    ];
+
+    let qi = -1, score = 0;
+    const qtext = document.getElementById('qtext');
+    const qopts = document.getElementById('qopts');
+    const qresult = document.getElementById('qresult');
+    const qprogress = document.getElementById('qprogress');
+
+    function renderQ() {
+      if (qi < 0) {
+        qtext.textContent = '퀴즈를 시작해 보세요.';
+        qopts.innerHTML = '';
+        qresult.textContent = '';
+        qprogress.textContent = '0 / ' + quizData.length;
+        return;
+      }
+      const item = quizData[qi];
+      qtext.innerHTML = `Q${qi+1}. ${item.q}`;
+      qopts.innerHTML = '';
+      item.a.forEach((t, idx) => {
+        const b = document.createElement('button');
+        b.innerHTML = t;
+        b.addEventListener('click', () => answer(idx));
+        qopts.appendChild(b);
+      });
+      qresult.textContent = '';
+      qprogress.textContent = `${qi+1} / ${quizData.length}`;
+    }
+
+    function answer(idx) {
+      const item = quizData[qi];
+      const buttons = Array.from(qopts.querySelectorAll('button'));
+      buttons.forEach((b, i) => {
+        b.disabled = true;
+        if (i === item.correct) b.classList.add('correct');
+        else if (i === idx) b.classList.add('wrong');
+      });
+      const ok = idx === item.correct;
+      if (ok) score++;
+      qresult.textContent = (ok ? '정답! ' : '오답 ') + '— ' + item.explain;
+      setTimeout(nextQ, 750);
+    }
+
+    function nextQ() {
+      qi++;
+      if (qi >= quizData.length) {
+        qtext.textContent = '완료!';
+        qopts.innerHTML = '';
+        qresult.textContent = `점수: ${score} / ${quizData.length}  — 수고하셨습니다!`;
+        qprogress.textContent = `${quizData.length} / ${quizData.length}`;
+        qi = -1; score = 0;
+        return;
+      }
+      renderQ();
+    }
+
+    document.getElementById('btnQuiz').addEventListener('click', () => {
+      if (qi === -1) { qi = 0; score = 0; renderQ(); }
+      else { nextQ(); }
+      window.scrollTo({ top: document.getElementById('quiz').offsetTop - 80, behavior: 'smooth' });
+    });
+
+    renderQ();
+  </script>
+</body>
+</html>
