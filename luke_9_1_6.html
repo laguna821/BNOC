@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>누가복음 9:1–6 쉽게 읽기 — 정론·정행·적용</title>
+  <meta name="date" content="2025-11-09" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-soft: #121821;
+      --card: #141c27;
+      --fg: #eaf2ff;
+      --muted: #b8c4d9;
+      --accent: #7bdcb5;
+      --accent-2: #82aaff;
+      --danger: #ff6b6b;
+      --ok: #22c55e;
+      --shadow: 0 8px 24px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f7fb;
+        --bg-soft: #eef2f8;
+        --card: #ffffff;
+        --fg: #0e1726;
+        --muted: #4b5563;
+        --accent: #06b6d4;
+        --accent-2: #4f46e5;
+        --shadow: 0 10px 24px rgba(0,0,0,.08);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding-bottom: 10px; }
+    header {
+      position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(1.2) blur(8px);
+      background: linear-gradient(90deg, rgba(127,221,181,0.08), rgba(130,170,255,0.08));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .head { display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; }
+    .brand { display:flex; gap:10px; align-items:center; }
+    .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+    .title { font-weight: 800; letter-spacing:.1px; }
+    .controls { display:flex; gap:8px; }
+    .btn {
+      appearance:none; border:none; cursor:pointer; border-radius: 999px; padding:10px 14px; font-weight:700; font-size:14px; color: var(--fg);
+      background: rgba(255,255,255,.08); box-shadow: var(--shadow);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#03121a; }
+
+    .hero { padding: 18px 16px 8px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; font-size:12px; color: var(--fg); background: rgba(255,255,255,.08); padding:8px 12px; border-radius:999px; }
+    .h1 { font-size: 22px; font-weight: 900; line-height:1.25; margin: 10px 0 6px; }
+    .sub { color: var(--muted); font-size: 14px; }
+
+    .grid { display:grid; gap:14px; padding: 12px 16px; }
+    .card { background: var(--card); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card .hint { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+    details { border: 1px solid rgba(255,255,255,.06); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.02); }
+    summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:10px; padding: 14px 14px; cursor: pointer; font-weight:800; }
+    summary::-webkit-details-marker { display:none; }
+    .chev { transition: transform .2s ease; }
+    details[open] .chev { transform: rotate(90deg); }
+    .content { padding: 0 14px 16px; color: var(--fg); }
+    .content ul { margin: 10px 0; padding-left: 18px; }
+    .content li { margin: 8px 0; }
+
+    .tagbar { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .chip { padding:8px 12px; border-radius:999px; background: rgba(127,221,181,.15); color: var(--fg); border:1px solid rgba(127,221,181,.35); font-weight:700; font-size:13px; cursor:pointer; }
+    .chip[data-type="blue"] { background: rgba(130,170,255,.12); border-color: rgba(130,170,255,.35); }
+
+    .kv { display:grid; grid-template-columns: 110px 1fr; gap:8px; }
+    .kv div { padding:6px 0; border-bottom:1px dashed rgba(255,255,255,.08); color: var(--muted); }
+    .kv div b { color: var(--fg); }
+
+    .sheet { position: fixed; inset: 0; display:none; z-index: 90; }
+    .sheet.show { display:block; }
+    .sheet .overlay { position:absolute; inset:0; background: rgba(0,0,0,.4); }
+    .sheet .panel { position:absolute; left:0; right:0; bottom:0; background: var(--card); border-radius: 18px 18px 0 0; padding: 16px; box-shadow: var(--shadow); max-height: 70vh; overflow:auto; }
+    .sheet h4 { margin: 0 0 8px; }
+
+    .bar { position:fixed; left:0; right:0; bottom:0; z-index: 40; backdrop-filter: blur(8px) saturate(1.2); box-shadow: 0 -6px 24px rgba(0,0,0,.25); background: linear-gradient(90deg, rgba(127,221,181,.08), rgba(130,170,255,.08)); padding: 6px 10px; }
+    .bar .row { display:flex; gap:8px; }
+    .bar .row .btn { flex:1; }
+
+    .quiz { padding: 8px 16px 0; }
+    .qcard { background: var(--card); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+    .q { font-weight:800; margin: 0 0 10px; }
+    .opt { display:flex; flex-direction:column; gap:8px; }
+    .opt button { text-align:left; width:100%; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: var(--fg); padding:12px; border-radius:12px; font-weight:700; }
+    .opt button.correct { border-color: rgba(34,197,94,.6); box-shadow: inset 0 0 0 999px rgba(34,197,94,.12); }
+    .opt button.wrong { border-color: rgba(255,107,107,.6); box-shadow: inset 0 0 0 999px rgba(255,107,107,.10); }
+    .result { margin-top:10px; font-weight:800; }
+
+    .muted { color: var(--muted); font-size: 13px; }
+    .divider { height:1px; background: rgba(255,255,255,.08); margin: 12px 0; }
+
+    .small { font-size: 12px; }
+    .note { background: rgba(255,255,255,.06); padding:10px 12px; border-radius:12px; }
+
+    .summary-mode details .content { display:none; }
+    .summary-mode .hint, .summary-mode .muted { display:none; }
+
+    .fulltext { padding: 8px 16px 0; }
+    .fulltext details { 
+      border: 1px solid rgba(127,221,181,.45);
+      background: linear-gradient(180deg, rgba(127,221,181,.10), rgba(130,170,255,.08));
+      border-radius: 16px; overflow: hidden;
+    }
+    .fulltext summary { font-weight: 900; padding: 14px 14px; display:flex; align-items:center; justify-content:space-between; }
+    .fulltext .content { padding: 6px 14px 14px; }
+    .scripture { font-size: 14px; line-height: 1.7; }
+    .scripture p { margin: 8px 0; }
+    .scripture .v { display:inline-block; width: 2.2em; color: var(--accent); font-weight: 800; }
+    .scripture .note { color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">누가복음 9:1–6</div>
+          <div class="small muted">정론 · 정행 · 현대 적용 — 모바일 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare" title="공유">공유</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="fulltext" aria-label="누가복음 9:1–6 본문 전체">
+      <details open>
+        <summary>📜 본문 전체 보기 (눅 9:1–6) <span class="chev">▶</span></summary>
+        <div class="content scripture">
+          <p><span class="v">1</span> 예수께서 열두 제자를 불러 모으사 모든 귀신을 제어하며 병을 고치는 능력과 권위를 주시고</p>
+          <p><span class="v">2</span> 하나님의 나라를 전파하며 앓는 자를 고치게 하려고 내보내시며</p>
+          <p><span class="v">3</span> 이르시되 여행을 위하여 아무 것도 가지지 말라 지팡이나 배낭이나 양식이나 돈이나 두 벌 옷을 가지지 말며</p>
+          <p><span class="v">4</span> 어느 집에 들어가든지 거기서 머물다가 거기서 떠나라</p>
+          <p><span class="v">5</span> 누구든지 너희를 영접하지 아니하거든 그 성에서 떠날 때에 너희 발에서 먼지를 떨어 버려 그들에게 증거를 삼으라 하시니</p>
+          <p><span class="v">6</span> 제자들이 나가 각 마을에 두루 다니며 곳곳에 복음을 전하며 병을 고치더라</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="hero">
+      <span class="pill">βασιλεία(나라) · ἐξουσία(권위) · δύναμις(능력) · ἀπόστολος/שליח(보냄 받은 자) · שָׁלוֹם(샬롬) · צְדָקָה(의/정의) · רָפָא(치유) · ἀποτινάσσω(먼지 털기)</span>
+      <h1 class="h1">쉽게 읽는 요점</h1>
+      <p class="sub"><b>예수의 파송</b>은 교리를 설명하기보다 <b>하나님 나라의 삶</b>을 <u>실제로 해 보라</u>는 초대입니다. 제자들은 <u>권위와 능력</u>을 위임받아 나가고, <u>가볍게 떠나 한 집에 머물며</u> 환대에 기대어 복음을 전합니다. 거부당하면 <u>먼지를 떨어</u> 관계를 정중히 마무리합니다.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>한눈 요약 (3문장)</h3>
+        <ul>
+          <li><b>위임</b>: 예수는 열둘에게 <u>권위(ἐξουσία)</u>와 <u>능력(δύναμις)</u>을 맡깁니다.</li>
+          <li><b>사명</b>: <u>하나님 나라</u>를 전하고 <u>아픈 사람을 고치는</u> 표징으로 보이게 합니다.</li>
+          <li><b>여행 규범</b>: <u>가볍게</u> 떠나 <u>한 집에 머물고</u>, 거부 시 <u>먼지를 떨어</u> 증언으로 남깁니다.</li>
+        </ul>
+        <div class="hint">아래에서 정론·정행·현대 적용을 간단히 안내합니다.</div>
+      </article>
+
+      <details open>
+        <summary>① 정론(Orthodoxy) — 본문이 말하는 것 <span class="chev">▶</span></summary>
+        <div class="content">
+          <div class="note">핵심: 하나님 <b>나라(βασιλεία)</b>의 소식은 <b>치유(רָפָא)</b>와 <b>축귀</b>라는 표징으로 드러납니다.</div>
+          <ul>
+            <li><b>권위·능력 위임</b>: 예수의 <u>권위(ἐξουσία)</u>와 <u>능력(δύναμις)</u>이 제자에게 전달됩니다.</li>
+            <li><b>사도/שליח</b>: “보냄받은 자”는 <u>보낸 이의 일을 그 자리에서</u> 재현합니다.</li>
+            <li><b>여행 지침</b>: 지팡이·배낭·양식·돈·여벌옷을 내려놓고 <u>환대</u>에 의지합니다.</li>
+            <li><b>한 집 원칙</b>: 숙소를 옮겨 더 나은 대접을 찾지 말고 <u>성실·공정</u>을 지킵니다.</li>
+            <li><b>먼지 털기</b>: 거부에 대한 <u>증언</u>과 <u>경계</u>의 표시로 관계를 정중히 마무리합니다.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>② 정행(Orthopraxy) — 실천 관점의 점검 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>가볍게</b>: 일·사역을 “핵심 도구만”으로—짐·일정·알림을 <u>미니멀</u>로.</li>
+            <li><b>한 집에 머물기</b>: 호스트 한 사람/가정과 <u>신뢰를 쌓고</u> 과시·비교를 끊습니다.</li>
+            <li><b>비용 투명성</b>: 대접·경비는 <u>공개</u>하고 요구하지 않습니다(시혜가 아닌 공정).</li>
+            <li><b>치유의 접촉</b>: 말만이 아니라 <u>돌봄·방문·동행</u>으로 회복에 참여합니다.</li>
+            <li><b>경계 설정</b>: 반복 거부·학대 상황에서는 <u>‘먼지 털기’</u>—정중한 종료 통지만 남깁니다.</li>
+          </ul>
+          <div class="note small">핵심 문장: <b>“복음은 환대와 책임으로 보입니다.”</b></div>
+        </div>
+      </details>
+
+      <details>
+        <summary>③ 현대 적용 — 오늘 교회/공동체에서 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>개인</b>: 이번 주 <u>짐 줄이기 1가지</u>, <u>돌봄 방문 1회</u>, <u>도움 요청 받기 1건</u>.</li>
+            <li><b>가정/팀</b>: 모임·방문 시 <u>호스트 지정</u>과 <u>숙소 이동 금지</u> 원칙 실험.</li>
+            <li><b>교회</b>: <u>환대 프로토콜</u>(호스트·기간·비용 공개)과 <u>경계·종료 절차</u>를 문서화.</li>
+            <li><b>지역사회</b>: <u>회복 사역</u>(병문안·정신건강 1차 연결)과 <u>소액·무담보 지원</u> 같은 구조적 환대.</li>
+          </ul>
+          <div class="note small">포인트: <u>שָׁלוֹם(샬롬)</u>은 <u>צְדָקָה(공정)</u>와 함께 옵니다.</div>
+        </div>
+      </details>
+
+      <article class="card">
+        <h3>핵심 용어 (누르면 설명)</h3>
+        <div class="tagbar">
+          <button class="chip" data-word="exousia">ἐξουσία · exousia</button>
+          <button class="chip" data-type="blue" data-word="dynamis">δύναμις · dynamis</button>
+          <button class="chip" data-word="basileia">βασιλεία · basileia</button>
+          <button class="chip" data-type="blue" data-word="apostolos">ἀπόστολος · apostolos</button>
+          <button class="chip" data-word="shaliah">שליח · shaliaḥ</button>
+          <button class="chip" data-type="blue" data-word="shalom">שָׁלוֹם · shalom</button>
+          <button class="chip" data-word="tsedaqah">צְדָקָה · tsedaqah</button>
+          <button class="chip" data-type="blue" data-word="rapha">רָפָא · rapha</button>
+          <button class="chip" data-word="apotinasso">ἀποτινάσσω · apotinassō</button>
+        </div>
+        <p class="hint">철자·음역·기본 의미·대표 용례를 간단히 정리했습니다.</p>
+      </article>
+
+      <details>
+        <summary>본문 핵심 흐름 다시 보기 <span class="chev">▶</span></summary>
+        <div class="content">
+          <ul>
+            <li><b>부르심</b> — 예수가 열둘을 <u>소집</u>합니다.</li>
+            <li><b>위임</b> — <u>권위와 능력</u>을 줍니다.</li>
+            <li><b>파송</b> — <u>나라 선포·치유</u> 사명을 줍니다.</li>
+            <li><b>여행 규범</b> — <u>가볍게</u>, <u>한 집</u>, <u>비용 투명</u>.</li>
+            <li><b>증언</b> — 거부 시 <u>먼지 털기</u>로 관계를 정중히 마무리.</li>
+            <li><b>결과</b> — 제자들이 <u>곳곳에서 복음과 치유</u>를 전합니다.</li>
+          </ul>
+          <div class="muted small">※ “표징”은 하나님 나라가 <u>이미 시작</u>되었다는 현장 신호입니다.</div>
+        </div>
+      </details>
+
+      <section id="quiz" class="quiz" aria-label="이해도 점검 퀴즈">
+        <div class="qcard">
+          <div class="q" id="qtext">퀴즈를 시작해 보세요.</div>
+          <div class="opt" id="qopts"></div>
+          <div class="result" id="qresult"></div>
+          <div class="divider"></div>
+          <div class="muted small" id="qprogress">0 / 6</div>
+        </div>
+      </section>
+
+      <article class="card">
+        <h3>실천 체크리스트</h3>
+        <ul>
+          <li><b>미니멀</b>: 이번 주 <u>짐·일정·알림</u> 중 하나 줄이기.</li>
+          <li><b>환대</b>: 모임에 <u>호스트 1명 지정</u> & 숙소 이동 금지.</li>
+          <li><b>투명성</b>: 사역/모임 <u>비용 간단 공개</u>(문서/채팅 고정).</li>
+          <li><b>경계</b>: 반복 거부·학대에는 <u>정중한 종료 통지</u> 남기기.</li>
+        </ul>
+      </article>
+
+      <article class="card small muted">
+        <div>제작: 모바일 전용, 오프라인에서도 동작합니다. 상단 <b>공유</b> 버튼으로 링크를 나눌 수 있습니다.</div>
+      </article>
+    </section>
+  </main>
+
+  <div class="bar">
+    <div class="wrap">
+      <div class="row">
+        <button class="btn" id="btnToggleSummary">요약 모드</button>
+        <button class="btn" id="btnExpand">전체 펼치기</button>
+        <button class="btn primary" id="btnQuiz">퀴즈 시작</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet" id="sheet">
+    <div class="overlay" id="sheetClose" aria-label="닫기"></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <h4 id="sheetTitle">용어</h4>
+      <div id="sheetBody" class="small"></div>
+      <div class="divider"></div>
+      <button class="btn" id="sheetCloseBtn">닫기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    document.getElementById('btnShare').addEventListener('click', async () => {
+      if (navigator.share) {
+        try { await navigator.share({ title: document.title, text: '누가복음 9:1–6 쉽게 읽기', url: location.href }); } catch(e) { /* 취소 */ }
+      } else {
+        alert('이 링크를 복사해 공유하세요:\\n' + location.href);
+      }
+    });
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode') ? '자세히 모드' : '요약 모드';
+    });
+
+    // 전체 펼치기/접기
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+
+    // 용어 바텀시트 사전
+    const dict = {
+      exousia: {
+        title: 'ἐξουσία — exousia',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>권위/권한</b></div>
+            <div>핵심</div><div>예수의 권위가 제자에게 <b>위임</b></div>
+            <div>용례</div><div>눅 9:1</div>
+          </div>`
+      },
+      dynamis: {
+        title: 'δύναμις — dynamis',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>능력/힘</b></div>
+            <div>핵심</div><div>치유·축귀 <b>표징</b>의 실행 능력</div>
+            <div>용례</div><div>눅 9:1–2</div>
+          </div>`
+      },
+      basileia: {
+        title: 'βασιλεία — basileia',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>통치/나라</b></div>
+            <div>핵심</div><div>선포와 치유가 <b>가시화</b></div>
+            <div>용례</div><div>눅 9:2; 눅 11:20</div>
+          </div>`
+      },
+      apostolos: {
+        title: 'ἀπόστολος — apostolos',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>보냄받은 자</b></div>
+            <div>핵심</div><div>보낸 이의 일을 <b>대리</b> 수행</div>
+            <div>용례</div><div>눅 9장 전체의 파송 맥락</div>
+          </div>`
+      },
+      shaliah: {
+        title: 'שליח — shaliaḥ',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>보냄받은 대리인</b>(유대 관습법)</div>
+            <div>핵심</div><div>“보낸 자의 사자는 곧 그와 같다”</div>
+            <div>용례</div><div>사도 개념의 유대적 배경</div>
+          </div>`
+      },
+      shalom: {
+        title: 'שָׁלוֹם — shalom',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>평화/온전함</b></div>
+            <div>핵심</div><div>환대의 인사이자 관계의 목표</div>
+            <div>용례</div><div>눅 10:5–7 (평행 맥락)</div>
+          </div>`
+      },
+      tsedaqah: {
+        title: 'צְדָקָה — tsedaqah',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>의/정의</b></div>
+            <div>핵심</div><div>환대·비용의 <b>공정성</b></div>
+            <div>용례</div><div>시 72; 암 5:24 (배경)</div>
+          </div>`
+      },
+      rapha: {
+        title: 'רָפָא — rapha',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>치유하다</b></div>
+            <div>핵심</div><div>몸·마음·관계의 회복</div>
+            <div>용례</div><div>눅 9:2, 6</div>
+          </div>`
+      },
+      apotinasso: {
+        title: 'ἀποτινάσσω — apotinassō',
+        html: `
+          <div class="kv">
+            <div>의미</div><div><b>(먼지를) 털어내다</b></div>
+            <div>핵심</div><div>거부에 대한 <b>증언</b>과 <b>경계</b>의 표시</div>
+            <div>용례</div><div>눅 9:5; 행 13:51</div>
+          </div>`
+      }
+    };
+
+    const sheet = document.getElementById('sheet');
+    const sheetTitle = document.getElementById('sheetTitle');
+    const sheetBody = document.getElementById('sheetBody');
+    const openSheet = (key) => {
+      const item = dict[key];
+      if (!item) return;
+      sheetTitle.textContent = item.title;
+      sheetBody.innerHTML = item.html;
+      sheet.classList.add('show');
+    };
+    const closeSheet = () => sheet.classList.remove('show');
+    document.getElementById('sheetClose').addEventListener('click', closeSheet);
+    document.getElementById('sheetCloseBtn').addEventListener('click', closeSheet);
+
+    document.querySelectorAll('.chip').forEach(ch => ch.addEventListener('click', () => openSheet(ch.dataset.word)));
+
+    // 퀴즈
+    const quizData = [
+      {
+        q: '예수가 열둘에게 주신 두 가지는 무엇인가요?',
+        a: [
+          '재물과 명예',
+          '<u>권위(ἐξουσία)와 능력(δύναμις)</u>',
+          '지팡이와 배낭'
+        ],
+        correct: 1,
+        explain: '눅 9:1의 핵심 포인트입니다.'
+      },
+      {
+        q: '파송의 목적과 가장 가까운 것은?',
+        a: [
+          '새로운 규정을 만들기',
+          '<u>하나님 나라를 전하고 병든 자를 고치기</u>',
+          '세금 제도를 정비하기'
+        ],
+        correct: 1,
+        explain: '눅 9:2에 분명히 제시됩니다.'
+      },
+      {
+        q: '“아무 것도 가지지 말라”가 뜻하는 바에 가장 가까운 것은?',
+        a: [
+          '준비하지 말라는 뜻',
+          '<u>탐욕·과시를 버리고 환대와 하나님께 의존하라</u>',
+          '항상 금식하라'
+        ],
+        correct: 1,
+        explain: '핵심은 의존과 성실함입니다(눅 9:3–4).'
+      },
+      {
+        q: '“한 집에 머물라”의 목적은 무엇일까요?',
+        a: [
+          '더 좋은 숙소로 옮기기 위함',
+          '<u>환대의 진정성과 공정성을 지키기 위해</u>',
+          '지도를 그리기 위해'
+        ],
+        correct: 1,
+        explain: '숙소를 옮겨 대접을 더 받으려는 유혹을 막습니다(눅 9:4).'
+      },
+      {
+        q: '“먼지를 떨어라”는 행위의 의미는?',
+        a: [
+          '화가 나서 절교하라는 뜻',
+          '<u>거부에 대한 증언과 경계의 표시로 관계를 정중히 마무리</u>',
+          '도로 청소 참여'
+        ],
+        correct: 1,
+        explain: '증언/경계의 상징입니다(눅 9:5).'
+      },
+      {
+        q: '오늘 적용으로 가장 알맞은 것은?',
+        a: [
+          '대접을 더 잘해주는 곳으로 옮겨 다니기',
+          '<u>호스트 지정, 비용 공개, 거부 시 정중한 종료</u>',
+          '아무에게도 도움을 요청하지 않기'
+        ],
+        correct: 1,
+        explain: '본문의 환대·책임 윤리를 현대적으로 번역한 예입니다.'
+      }
+    ];
+
+    let qi = -1, score = 0;
+    const qtext = document.getElementById('qtext');
+    const qopts = document.getElementById('qopts');
+    const qresult = document.getElementById('qresult');
+    const qprogress = document.getElementById('qprogress');
+
+    function renderQ() {
+      if (qi < 0) {
+        qtext.textContent = '퀴즈를 시작해 보세요.';
+        qopts.innerHTML = '';
+        qresult.textContent = '';
+        qprogress.textContent = '0 / ' + quizData.length;
+        return;
+      }
+      const item = quizData[qi];
+      qtext.innerHTML = `Q${qi+1}. ${item.q}`;
+      qopts.innerHTML = '';
+      item.a.forEach((t, idx) => {
+        const b = document.createElement('button');
+        b.innerHTML = t;
+        b.addEventListener('click', () => answer(idx));
+        qopts.appendChild(b);
+      });
+      qresult.textContent = '';
+      qprogress.textContent = `${qi+1} / ${quizData.length}`;
+    }
+
+    function answer(idx) {
+      const item = quizData[qi];
+      const buttons = Array.from(qopts.querySelectorAll('button'));
+      buttons.forEach((b, i) => {
+        b.disabled = true;
+        if (i === item.correct) b.classList.add('correct');
+        else if (i === idx) b.classList.add('wrong');
+      });
+      const ok = idx === item.correct;
+      if (ok) score++;
+      qresult.textContent = (ok ? '정답! ' : '오답 ') + '— ' + item.explain;
+      setTimeout(nextQ, 750);
+    }
+
+    function nextQ() {
+      qi++;
+      if (qi >= quizData.length) {
+        qtext.textContent = '완료!';
+        qopts.innerHTML = '';
+        qresult.textContent = `점수: ${score} / ${quizData.length}  — 수고하셨습니다!`;
+        qprogress.textContent = `${quizData.length} / ${quizData.length}`;
+        qi = -1; score = 0;
+        return;
+      }
+      renderQ();
+    }
+
+    document.getElementById('btnQuiz').addEventListener('click', () => {
+      if (qi === -1) { qi = 0; score = 0; renderQ(); }
+      else { nextQ(); }
+      window.scrollTo({ top: document.getElementById('quiz').offsetTop - 80, behavior: 'smooth' });
+    });
+
+    renderQ();
+  </script>
+</body>
+</html>
