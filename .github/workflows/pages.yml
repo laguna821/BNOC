@@ -19,10 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate hub, feed, latest
+      - name: Generate hub, feed, latest, random
         run: |
           python3 - << 'PY'
-          import os, re, html, json, subprocess, datetime, pathlib
+          import os, re, html, json, subprocess, datetime, pathlib, random
+
           OWNER = os.getenv("GITHUB_REPOSITORY_OWNER","")
           REPO  = os.getenv("GITHUB_REPOSITORY","").split("/")[-1] if os.getenv("GITHUB_REPOSITORY") else ""
           BASE  = os.getenv("BASE_PATH", f"/{REPO}" if REPO else "")
@@ -31,9 +32,12 @@ jobs:
           def find_issue_dirs():
               items=[]
               for d in sorted(os.listdir('.')):
-                  if not os.path.isdir(d): continue
-                  if d.startswith(('.', '_', 'assets', '.git')): continue
-                  if re.fullmatch(r'\d{8}', d): items.append(d)
+                  if not os.path.isdir(d):
+                      continue
+                  if d.startswith(('.', '_', 'assets', '.git')):
+                      continue
+                  if re.fullmatch(r'\d{8}', d):
+                      items.append(d)
               return items
 
           def parse_date_from_folder(name):
@@ -49,31 +53,46 @@ jobs:
 
           def git_date(path):
               try:
-                  out = subprocess.check_output(["git","log","-1","--format=%aI","--",path], text=True).strip()
-                  if out: return out[:10]
-              except Exception: pass
+                  out = subprocess.check_output(
+                      ["git","log","-1","--format=%aI","--",path],
+                      text=True
+                  ).strip()
+                  if out:
+                      return out[:10]
+              except Exception:
+                  pass
               return None
 
+          # 이슈 메타데이터 수집
           issues=[]
           for d in find_issue_dirs():
               htmls=[f for f in os.listdir(d) if f.lower().endswith(".html")]
-              if not htmls: continue
+              if not htmls:
+                  continue
               filename = "index.html" if "index.html" in htmls else htmls[0]
               p = os.path.join(d, filename)
               raw=open(p,encoding="utf-8",errors="ignore").read()
               t  = re.search(r'<title>(.*?)</title>', raw, re.I|re.S)
               m  = re.search(r'<meta\s+name=["\']date["\']\s+content=["\'](.*?)["\']', raw, re.I)
               title = html.escape(t.group(1).strip()) if t else f"#{d}"
-              date  = (m.group(1).strip() if m else None) or parse_date_from_folder(d) or git_date(d) or git_date(p) or datetime.date.today().isoformat()
+              date  = (m.group(1).strip() if m else None) \
+                      or parse_date_from_folder(d) \
+                      or git_date(d) or git_date(p) \
+                      or datetime.date.today().isoformat()
               link  = f"{BASE}/{d}/" if filename.lower()=="index.html" else f"{BASE}/{d}/{filename}"
               issues.append({"dir": d, "title": title, "date": date, "link": link})
 
           issues.sort(key=lambda x: (x["date"], x["link"]), reverse=True)
           pathlib.Path(".nojekyll").write_text("")
 
-          open("index.json","w",encoding="utf-8").write(json.dumps({"items":issues}, ensure_ascii=False, indent=2))
+          # index.json 저장
+          open("index.json","w",encoding="utf-8").write(
+              json.dumps({"items":issues}, ensure_ascii=False, indent=2)
+          )
 
           # ----- 허브(index.html) UI 템플릿 -----
+
+          # 리스트 아이템 HTML
           items = "\n".join([
               f'''
               <li class="item">
@@ -86,257 +105,364 @@ jobs:
               </li>
               ''' for it in issues
           ])
+          items_block = items if items else '<li class="item"><div class="item-title">아직 발행된 호가 없습니다.</div></li>'
 
+          # __BASE__ / __ITEMS__ 플레이스홀더 사용 (나중에 replace)
           hub_template = """<!doctype html>
-          <html lang="ko">
-          <head>
-            <meta charset="utf-8" />
-            <title>BNOC — Weekly</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-            <style>
-              :root {{
-                --bg: #020617;
-                --bg-soft: #0b1220;
-                --card: #020617;
-                --border: rgba(148,163,184,.45);
-                --fg: #f9fafb;
-                --muted: #9ca3af;
-                --accent: #22c55e;
-                --accent-soft: rgba(34,197,94,0.1);
-                --radius-lg: 18px;
-                --radius-md: 999px;
-                --shadow-soft: 0 18px 40px rgba(15,23,42,.75);
-              }}
-              @media (prefers-color-scheme: light) {{
-                :root {{
-                  --bg: #f3f4f6;
-                  --bg-soft: #e5e7eb;
-                  --card: #ffffff;
-                  --border: rgba(148,163,184,.7);
-                  --fg: #020617;
-                  --muted: #6b7280;
-                  --accent: #16a34a;
-                  --accent-soft: rgba(22,163,74,0.08);
-                  --shadow-soft: 0 16px 36px rgba(15,23,42,.15);
-                }}
-              }}
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>BNOC — Weekly</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-soft: #0b1220;
+      --card: #020617;
+      --border: rgba(148,163,184,.45);
+      --fg: #f9fafb;
+      --muted: #9ca3af;
+      --accent: #22c55e;
+      --accent-soft: rgba(34,197,94,0.1);
+      --radius-lg: 18px;
+      --radius-md: 999px;
+      --shadow-soft: 0 18px 40px rgba(15,23,42,.75);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f3f4f6;
+        --bg-soft: #e5e7eb;
+        --card: #ffffff;
+        --border: rgba(148,163,184,.7);
+        --fg: #020617;
+        --muted: #6b7280;
+        --accent: #16a34a;
+        --accent-soft: rgba(22,163,74,0.08);
+        --shadow-soft: 0 16px 36px rgba(15,23,42,.15);
+      }
+    }
 
-              * {{
-                box-sizing: border-box;
-              }}
-              html, body {{
-                margin: 0;
-                padding: 0;
-                height: 100%;
-              }}
-              body {{
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                  "Noto Sans KR", sans-serif;
-                background: radial-gradient(circle at top, #1e293b 0, var(--bg) 42%, #020617 100%);
-                color: var(--fg);
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-              }}
-              .wrap {{
-                max-width: 720px;
-                margin: 0 auto;
-                padding: 18px 16px 80px;
-              }}
-              header {{
-                padding: 8px 0 18px;
-              }}
-              .brand {{
-                display: flex;
-                gap: 10px;
-                align-items: center;
-                margin-bottom: 6px;
-              }}
-              .logo {{
-                width: 34px;
-                height: 34px;
-                border-radius: 12px;
-                background: radial-gradient(circle at 20% 20%, #22c55e, #16a34a 40%, #38bdf8 100%);
-                box-shadow: 0 10px 22px rgba(15,23,42,.75);
-              }}
-              .title {{
-                font-size: 20px;
-                font-weight: 800;
-                letter-spacing: 0.04em;
-              }}
-              .subtitle {{
-                font-size: 13px;
-                color: var(--muted);
-                margin-top: 2px;
-              }}
-              .nav-links {{
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-                margin-top: 12px;
-              }}
-              .pill {{
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-                padding: 6px 12px;
-                border-radius: 999px;
-                font-size: 12px;
-                border: 1px solid var(--border);
-                background: rgba(15,23,42,.72);
-                color: var(--muted);
-                text-decoration: none;
-              }}
-              @media (prefers-color-scheme: light) {{
-                .pill {{
-                  background: rgba(255,255,255,.85);
-                }}
-              }}
-              .pill b {{
-                color: var(--fg);
-                font-weight: 600;
-              }}
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Noto Sans KR", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, var(--bg) 42%, #020617 100%);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 18px 16px 80px;
+    }
+    header {
+      padding: 8px 0 18px;
+    }
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 20% 20%, #22c55e, #16a34a 40%, #38bdf8 100%);
+      box-shadow: 0 10px 22px rgba(15,23,42,.75);
+    }
+    .title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: var(--radius-md);
+      font-size: 12px;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,.72);
+      color: var(--muted);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    button.pill {
+      font: inherit;
+      background: rgba(15,23,42,.72);
+    }
+    @media (prefers-color-scheme: light) {
+      .pill,
+      button.pill {
+        background: rgba(255,255,255,.85);
+      }
+    }
+    .pill b {
+      color: var(--fg);
+      font-weight: 600;
+    }
 
-              main {{
-                margin-top: 4px;
-              }}
-              .section-head {{
-                margin-bottom: 10px;
-                font-size: 13px;
-                color: var(--muted);
-                line-height: 1.6;
-              }}
+    main {
+      margin-top: 4px;
+    }
+    .section-head {
+      margin-bottom: 10px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
 
-              .list {{
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-              }}
-              .item a {{
-                display: block;
-                padding: 10px 12px;
-                border-radius: var(--radius-lg);
-                background: linear-gradient(135deg, rgba(15,23,42,.92), var(--card));
-                border: 1px solid rgba(148,163,184,.45);
-                text-decoration: none;
-                color: inherit;
-                box-shadow: var(--shadow-soft);
-                transition: transform .12s ease-out, box-shadow .12s ease-out,
-                  border-color .12s ease-out, background .12s ease-out;
-              }}
-              @media (prefers-color-scheme: light) {{
-                .item a {{
-                  background: linear-gradient(135deg, #ffffff, #f9fafb);
-                }}
-              }}
-              .item a:hover {{
-                transform: translateY(-1px);
-                box-shadow: 0 20px 40px rgba(15,23,42,.45);
-                border-color: var(--accent);
-              }}
-              .item-meta {{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 4px;
-                font-size: 11px;
-                color: var(--muted);
-              }}
-              .item-date {{
-                display: inline-flex;
-                align-items: center;
-                padding: 3px 9px;
-                border-radius: 999px;
-                background: rgba(15,23,42,.75);
-                border: 1px solid rgba(148,163,184,.55);
-              }}
-              @media (prefers-color-scheme: light) {{
-                .item-date {{
-                  background: rgba(248,250,252,.9);
-                }}
-              }}
-              .item-title {{
-                font-size: 14px;
-                font-weight: 600;
-                line-height: 1.6;
-              }}
+    .about-panel {
+      margin: 10px 0 14px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: radial-gradient(circle at top left,
+        rgba(148,163,184,.22) 0,
+        rgba(15,23,42,.96) 40%);
+      border: 1px solid rgba(148,163,184,.55);
+      box-shadow: var(--shadow-soft);
+      font-size: 13px;
+      line-height: 1.7;
+      display: none;
+    }
+    .about-panel.open {
+      display: block;
+    }
+    .about-panel h2 {
+      margin: 0 0 4px;
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .about-panel h3 {
+      margin: 10px 0 4px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .about-panel p {
+      margin: 3px 0 6px;
+    }
+    .about-panel ul {
+      margin: 6px 0 6px;
+      padding-left: 18px;
+      font-size: 13px;
+    }
+    .about-panel li {
+      margin: 2px 0;
+    }
 
-              footer {{
-                margin-top: 18px;
-                font-size: 11px;
-                color: var(--muted);
-                line-height: 1.6;
-              }}
-              footer a {{
-                color: var(--muted);
-              }}
-            </style>
-          </head>
-          <body>
-            <div class="wrap">
-              <header>
-                <div class="brand">
-                  <div class="logo" aria-hidden="true"></div>
-                  <div>
-                    <div class="title">BNOC — Weekly</div>
-                    <div class="subtitle">
-                      성경 본문을 <b>정론(orthodoxy)</b>와 <b>정행(orthopraxy)</b>의 틀로 읽어내는
-                      모바일 가이드 아카이브입니다.
-                    </div>
-                  </div>
-                </div>
-                <div class="nav-links">
-                  <a class="pill" href="{BASE}/feed.xml"><b>RSS</b><span> 구독</span></a>
-                  <a class="pill" href="{BASE}/sitemap.xml"><b>Sitemap</b><span> 검색용</span></a>
-                  <a class="pill" href="{BASE}/latest/"><b>Latest</b><span> 최근 호</span></a>
-                </div>
-              </header>
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .item a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(15,23,42,.92), var(--card));
+      border: 1px solid rgba(148,163,184,.45);
+      text-decoration: none;
+      color: inherit;
+      box-shadow: var(--shadow-soft);
+      transition: transform .12s ease-out, box-shadow .12s ease-out,
+        border-color .12s ease-out, background .12s ease-out;
+    }
+    @media (prefers-color-scheme: light) {
+      .item a {
+        background: linear-gradient(135deg, #ffffff, #f9fafb);
+      }
+    }
+    .item a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 40px rgba(15,23,42,.45);
+      border-color: var(--accent);
+    }
+    .item-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .item-date {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(15,23,42,.75);
+      border: 1px solid rgba(148,163,184,.55);
+    }
+    @media (prefers-color-scheme: light) {
+      .item-date {
+        background: rgba(248,250,252,.9);
+      }
+    }
+    .item-title {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.6;
+    }
 
-              <main>
-                <p class="section-head">
-                  가장 최근 호가 맨 위에 정렬되어 있습니다. 원하는 주제를 골라
-                  클릭하면 모바일 최적화된 가이드 페이지로 이동합니다.
-                </p>
-                <ol class="list">
-          {items_block}
-                </ol>
-                <footer>
-                  BNOC (Bible Notes on Context)는 개인 연구용 아카이브입니다.<br />
-                  GitHub Pages를 통해 정적 사이트로 자동 빌드·배포됩니다.
-                </footer>
-              </main>
-            </div>
-          </body>
-          </html>
-          """
+    footer {
+      margin-top: 18px;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    footer a {
+      color: var(--muted);
+    }
+    .small-link {
+      font-size: 11px;
+    }
+    .small-link a {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">BNOC — Weekly</div>
+          <div class="subtitle">
+            성경 본문을 <b>정론(orthodoxy)</b>와 <b>정행(orthopraxy)</b>의 틀로 읽어내는
+            모바일 가이드 아카이브입니다.
+          </div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <button class="pill" type="button" id="btnAbout"><b>About</b><span> 소개</span></button>
+        <a class="pill" href="__BASE__/random/"><b>Random</b><span> 아무거나</span></a>
+        <a class="pill" href="__BASE__/latest/"><b>Latest</b><span> 최근 호</span></a>
+      </div>
+    </header>
 
-          hub = hub_template.format(
-              BASE=BASE,
-              items_block=(items if items else '<li class="item"><div class="item-title">아직 발행된 호가 없습니다.</div></li>')
-          )
+    <main>
+      <div id="aboutPanel" class="about-panel">
+        <h2>BNOC — Weekly 소개</h2>
+        <p>
+          BNOC(Bible Notes on Context)는 성경 본문을
+          <b>정론(orthodoxy)</b>과 <b>정행(orthopraxy)</b>의 틀로 읽어 보는
+          모바일용 한 장 가이드 아카이브입니다.
+        </p>
+        <h3>1) 무엇을 다루나요?</h3>
+        <p>
+          매 호마다 한 본문을 골라,
+          <b>역사·지리·사회적 배경</b>,
+          전통적인 <b>정론(교리)</b>,
+          그리고 오늘의 <b>정행(실천)</b>과
+          <b>현대 적용</b>까지 함께 정리합니다.
+        </p>
+        <h3>2) 어떻게 읽으면 좋을까요?</h3>
+        <ul>
+          <li>위에서 아래로 한 번 쭉 읽으면서 흐름을 먼저 잡습니다.</li>
+          <li>마음에 남는 문장 1–2개와, “오늘 나는 누구의 이웃이 될까?” 같은 질문 하나를 고릅니다.</li>
+          <li>그 질문을 가지고 하루 동안, 혹은 소그룹/가족/친구와 나눔의 소재로 사용합니다.</li>
+        </ul>
+        <h3>3) 무엇이 아니라 무엇을 목표로 하나요?</h3>
+        <p>
+          BNOC는 “모든 해석의 최종 정답”을 제시하려는 것이 아니라,
+          <b>텍스트와 씨름하도록 도와주는 프레임</b>을 제공하려고 합니다.
+          부족한 부분이 보이면, 다른 해석을 스스로 탐색해 보는
+          출발점으로 사용해 주시면 좋겠습니다.
+        </p>
+      </div>
 
+      <p class="section-head">
+        가장 최근 호가 맨 위에 정렬되어 있습니다. 원하는 주제를 골라
+        클릭하면 모바일 최적화된 가이드 페이지로 이동합니다.
+      </p>
+      <ol class="list">
+__ITEMS__
+      </ol>
+      <footer>
+        BNOC (Bible Notes on Context)는 개인 연구용 아카이브입니다.<br />
+        GitHub Pages를 통해 정적 사이트로 자동 빌드·배포됩니다.
+        <br />
+        <span class="small-link">
+          <a href="__BASE__/feed.xml">RSS</a> · <a href="__BASE__/sitemap.xml">Sitemap</a>
+        </span>
+      </footer>
+    </main>
+  </div>
+  <script>
+    (function() {
+      var panel = document.getElementById('aboutPanel');
+      var btn = document.getElementById('btnAbout');
+      if (!panel || !btn) return;
+      btn.addEventListener('click', function() {
+        var isOpen = panel.classList.toggle('open');
+        btn.innerHTML = isOpen
+          ? '<b>Hide</b><span> 닫기</span>'
+          : '<b>About</b><span> 소개</span>';
+      });
+    })();
+  </script>
+</body>
+</html>
+"""
+
+          hub = hub_template.replace("__BASE__", BASE).replace("__ITEMS__", items_block)
           open("index.html","w",encoding="utf-8").write(hub)
           # ----- 허브 템플릿 끝 -----
 
-          def esc(s): return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+          # RSS(feed.xml)
+          def esc(s):
+              return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+
           now = datetime.datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S +0000")
-          rss = [f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel>',
-                 f'<title>BNOC Weekly</title>',
-                 f'<link>{HOST}{BASE}/</link>',
-                 f'<description>Weekly BNOC newsletters</description>',
-                 f'<language>ko</language>',
-                 f'<lastBuildDate>{now}</lastBuildDate>']
+          rss = [
+              '<?xml version="1.0" encoding="UTF-8"?>',
+              '<rss version="2.0"><channel>',
+              '<title>BNOC Weekly</title>',
+              f'<link>{HOST}{BASE}/</link>',
+              '<description>Weekly BNOC newsletters</description>',
+              '<language>ko</language>',
+              f'<lastBuildDate>{now}</lastBuildDate>'
+          ]
           for it in issues[:50]:
-              pub = datetime.datetime.fromisoformat(it["date"]).strftime("%a, %d %b %Y 00:00:00 +0000")
-              rss.append(f'<item><title>{esc(it["title"])}</title>'
-                         f'<link>{HOST}{it["link"]}</link>'
-                         f'<guid isPermaLink="true">{HOST}{it["link"]}</guid>'
-                         f'<pubDate>{pub}</pubDate></item>')
+              pub = datetime.datetime.fromisoformat(it["date"]).strftime(
+                  "%a, %d %b %Y 00:00:00 +0000"
+              )
+              rss.append(
+                  f'<item><title>{esc(it["title"])}</title>'
+                  f'<link>{HOST}{it["link"]}</link>'
+                  f'<guid isPermaLink="true">{HOST}{it["link"]}</guid>'
+                  f'<pubDate>{pub}</pubDate></item>'
+              )
           rss.append('</channel></rss>')
           open("feed.xml","w",encoding="utf-8").write("".join(rss))
 
+          # sitemap.xml
           urls = [f"{HOST}{BASE}/"] + [f"{HOST}{it['link']}" for it in issues]
           sm = ['<?xml version="1.0" encoding="UTF-8"?>',
                 '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -344,10 +470,20 @@ jobs:
           sm.append("</urlset>")
           open("sitemap.xml","w",encoding="utf-8").write("\n".join(sm))
 
+          # latest & random redirect
           if issues:
+              # latest
               os.makedirs("latest", exist_ok=True)
               open("latest/index.html","w",encoding="utf-8").write(
-                f'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={issues[0]["link"]}"><link rel="canonical" href="{issues[0]["link"]}">')
+                  f'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={issues[0]["link"]}"><link rel="canonical" href="{issues[0]["link"]}">'
+              )
+              # random
+              choice = random.choice(issues)
+              os.makedirs("random", exist_ok=True)
+              open("random/index.html","w",encoding="utf-8").write(
+                  f'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={choice["link"]}"><link rel="canonical" href="{choice["link"]}">'
+              )
+
           PY
 
       - uses: actions/upload-pages-artifact@v3
