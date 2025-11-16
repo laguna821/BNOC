@@ -73,8 +73,7 @@ jobs:
 
           open("index.json","w",encoding="utf-8").write(json.dumps({"items":issues}, ensure_ascii=False, indent=2))
 
-          # ----- 여기부터 허브(index.html) UI 템플릿 -----
-          # 이슈 리스트를 카드형 HTML로 생성
+          # ----- 허브(index.html) UI 템플릿 -----
           items = "\n".join([
               f'''
               <li class="item">
@@ -89,229 +88,229 @@ jobs:
           ])
 
           hub_template = """<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <title>BNOC — Weekly</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <style>
-    :root {{
-      --bg: #020617;
-      --bg-soft: #0b1220;
-      --card: #020617;
-      --border: rgba(148,163,184,.45);
-      --fg: #f9fafb;
-      --muted: #9ca3af;
-      --accent: #22c55e;
-      --accent-soft: rgba(34,197,94,0.1);
-      --radius-lg: 18px;
-      --radius-md: 999px;
-      --shadow-soft: 0 18px 40px rgba(15,23,42,.75);
-    }}
-    @media (prefers-color-scheme: light) {{
-      :root {{
-        --bg: #f3f4f6;
-        --bg-soft: #e5e7eb;
-        --card: #ffffff;
-        --border: rgba(148,163,184,.7);
-        --fg: #020617;
-        --muted: #6b7280;
-        --accent: #16a34a;
-        --accent-soft: rgba(22,163,74,0.08);
-        --shadow-soft: 0 16px 36px rgba(15,23,42,.15);
-      }}
-    }}
+          <html lang="ko">
+          <head>
+            <meta charset="utf-8" />
+            <title>BNOC — Weekly</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+            <style>
+              :root {{
+                --bg: #020617;
+                --bg-soft: #0b1220;
+                --card: #020617;
+                --border: rgba(148,163,184,.45);
+                --fg: #f9fafb;
+                --muted: #9ca3af;
+                --accent: #22c55e;
+                --accent-soft: rgba(34,197,94,0.1);
+                --radius-lg: 18px;
+                --radius-md: 999px;
+                --shadow-soft: 0 18px 40px rgba(15,23,42,.75);
+              }}
+              @media (prefers-color-scheme: light) {{
+                :root {{
+                  --bg: #f3f4f6;
+                  --bg-soft: #e5e7eb;
+                  --card: #ffffff;
+                  --border: rgba(148,163,184,.7);
+                  --fg: #020617;
+                  --muted: #6b7280;
+                  --accent: #16a34a;
+                  --accent-soft: rgba(22,163,74,0.08);
+                  --shadow-soft: 0 16px 36px rgba(15,23,42,.15);
+                }}
+              }}
 
-    * {{
-      box-sizing: border-box;
-    }}
-    html, body {{
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }}
-    body {{
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        "Noto Sans KR", sans-serif;
-      background: radial-gradient(circle at top, #1e293b 0, var(--bg) 42%, #020617 100%);
-      color: var(--fg);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }}
-    .wrap {{
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 18px 16px 80px;
-    }}
-    header {{
-      padding: 8px 0 18px;
-    }}
-    .brand {{
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 6px;
-    }}
-    .logo {{
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      background: radial-gradient(circle at 20% 20%, #22c55e, #16a34a 40%, #38bdf8 100%);
-      box-shadow: 0 10px 22px rgba(15,23,42,.75);
-    }}
-    .title {{
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-    }}
-    .subtitle {{
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 2px;
-    }}
-    .nav-links {{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }}
-    .pill {{
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
-      border-radius: var(--radius-md);
-      font-size: 12px;
-      border: 1px solid var(--border);
-      background: rgba(15,23,42,.72);
-      color: var(--muted);
-      text-decoration: none;
-    }}
-    @media (prefers-color-scheme: light) {{
-      .pill {{
-        background: rgba(255,255,255,.85);
-      }}
-    }}
-    .pill b {{
-      color: var(--fg);
-      font-weight: 600;
-    }}
+              * {{
+                box-sizing: border-box;
+              }}
+              html, body {{
+                margin: 0;
+                padding: 0;
+                height: 100%;
+              }}
+              body {{
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                  "Noto Sans KR", sans-serif;
+                background: radial-gradient(circle at top, #1e293b 0, var(--bg) 42%, #020617 100%);
+                color: var(--fg);
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+              }}
+              .wrap {{
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 18px 16px 80px;
+              }}
+              header {{
+                padding: 8px 0 18px;
+              }}
+              .brand {{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                margin-bottom: 6px;
+              }}
+              .logo {{
+                width: 34px;
+                height: 34px;
+                border-radius: 12px;
+                background: radial-gradient(circle at 20% 20%, #22c55e, #16a34a 40%, #38bdf8 100%);
+                box-shadow: 0 10px 22px rgba(15,23,42,.75);
+              }}
+              .title {{
+                font-size: 20px;
+                font-weight: 800;
+                letter-spacing: 0.04em;
+              }}
+              .subtitle {{
+                font-size: 13px;
+                color: var(--muted);
+                margin-top: 2px;
+              }}
+              .nav-links {{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 12px;
+              }}
+              .pill {{
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 6px 12px;
+                border-radius: 999px;
+                font-size: 12px;
+                border: 1px solid var(--border);
+                background: rgba(15,23,42,.72);
+                color: var(--muted);
+                text-decoration: none;
+              }}
+              @media (prefers-color-scheme: light) {{
+                .pill {{
+                  background: rgba(255,255,255,.85);
+                }}
+              }}
+              .pill b {{
+                color: var(--fg);
+                font-weight: 600;
+              }}
 
-    main {{
-      margin-top: 4px;
-    }}
-    .section-head {{
-      margin-bottom: 10px;
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.6;
-    }}
+              main {{
+                margin-top: 4px;
+              }}
+              .section-head {{
+                margin-bottom: 10px;
+                font-size: 13px;
+                color: var(--muted);
+                line-height: 1.6;
+              }}
 
-    .list {{
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }}
-    .item a {{
-      display: block;
-      padding: 10px 12px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, rgba(15,23,42,.92), var(--card));
-      border: 1px solid rgba(148,163,184,.45);
-      text-decoration: none;
-      color: inherit;
-      box-shadow: var(--shadow-soft);
-      transition: transform .12s ease-out, box-shadow .12s ease-out,
-        border-color .12s ease-out, background .12s ease-out;
-    }}
-    @media (prefers-color-scheme: light) {{
-      .item a {{
-        background: linear-gradient(135deg, #ffffff, #f9fafb);
-      }}
-    }}
-    .item a:hover {{
-      transform: translateY(-1px);
-      box-shadow: 0 20px 40px rgba(15,23,42,.45);
-      border-color: var(--accent);
-    }}
-    .item-meta {{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 4px;
-      font-size: 11px;
-      color: var(--muted);
-    }}
-    .item-date {{
-      display: inline-flex;
-      align-items: center;
-      padding: 3px 9px;
-      border-radius: 999px;
-      background: rgba(15,23,42,.75);
-      border: 1px solid rgba(148,163,184,.55);
-    }}
-    @media (prefers-color-scheme: light) {{
-      .item-date {{
-        background: rgba(248,250,252,.9);
-      }}
-    }}
-    .item-title {{
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.6;
-    }}
+              .list {{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              }}
+              .item a {{
+                display: block;
+                padding: 10px 12px;
+                border-radius: var(--radius-lg);
+                background: linear-gradient(135deg, rgba(15,23,42,.92), var(--card));
+                border: 1px solid rgba(148,163,184,.45);
+                text-decoration: none;
+                color: inherit;
+                box-shadow: var(--shadow-soft);
+                transition: transform .12s ease-out, box-shadow .12s ease-out,
+                  border-color .12s ease-out, background .12s ease-out;
+              }}
+              @media (prefers-color-scheme: light) {{
+                .item a {{
+                  background: linear-gradient(135deg, #ffffff, #f9fafb);
+                }}
+              }}
+              .item a:hover {{
+                transform: translateY(-1px);
+                box-shadow: 0 20px 40px rgba(15,23,42,.45);
+                border-color: var(--accent);
+              }}
+              .item-meta {{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 4px;
+                font-size: 11px;
+                color: var(--muted);
+              }}
+              .item-date {{
+                display: inline-flex;
+                align-items: center;
+                padding: 3px 9px;
+                border-radius: 999px;
+                background: rgba(15,23,42,.75);
+                border: 1px solid rgba(148,163,184,.55);
+              }}
+              @media (prefers-color-scheme: light) {{
+                .item-date {{
+                  background: rgba(248,250,252,.9);
+                }}
+              }}
+              .item-title {{
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 1.6;
+              }}
 
-    footer {{
-      margin-top: 18px;
-      font-size: 11px;
-      color: var(--muted);
-      line-height: 1.6;
-    }}
-    footer a {{
-      color: var(--muted);
-    }}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <div class="title">BNOC — Weekly</div>
-          <div class="subtitle">
-            성경 본문을 <b>정론(orthodoxy)</b>와 <b>정행(orthopraxy)</b>의 틀로 읽어내는
-            모바일 가이드 아카이브입니다.
-          </div>
-        </div>
-      </div>
-      <div class="nav-links">
-        <a class="pill" href="{BASE}/feed.xml"><b>RSS</b><span> 구독</span></a>
-        <a class="pill" href="{BASE}/sitemap.xml"><b>Sitemap</b><span> 검색용</span></a>
-        <a class="pill" href="{BASE}/latest/"><b>Latest</b><span> 최근 호</span></a>
-      </div>
-    </header>
+              footer {{
+                margin-top: 18px;
+                font-size: 11px;
+                color: var(--muted);
+                line-height: 1.6;
+              }}
+              footer a {{
+                color: var(--muted);
+              }}
+            </style>
+          </head>
+          <body>
+            <div class="wrap">
+              <header>
+                <div class="brand">
+                  <div class="logo" aria-hidden="true"></div>
+                  <div>
+                    <div class="title">BNOC — Weekly</div>
+                    <div class="subtitle">
+                      성경 본문을 <b>정론(orthodoxy)</b>와 <b>정행(orthopraxy)</b>의 틀로 읽어내는
+                      모바일 가이드 아카이브입니다.
+                    </div>
+                  </div>
+                </div>
+                <div class="nav-links">
+                  <a class="pill" href="{BASE}/feed.xml"><b>RSS</b><span> 구독</span></a>
+                  <a class="pill" href="{BASE}/sitemap.xml"><b>Sitemap</b><span> 검색용</span></a>
+                  <a class="pill" href="{BASE}/latest/"><b>Latest</b><span> 최근 호</span></a>
+                </div>
+              </header>
 
-    <main>
-      <p class="section-head">
-        가장 최근 호가 맨 위에 정렬되어 있습니다. 원하는 주제를 골라
-        클릭하면 모바일 최적화된 가이드 페이지로 이동합니다.
-      </p>
-      <ol class="list">
-{items_block}
-      </ol>
-      <footer>
-        BNOC (Bible Notes on Context)는 개인 연구용 아카이브입니다.<br />
-        GitHub Pages를 통해 정적 사이트로 자동 빌드·배포됩니다.
-      </footer>
-    </main>
-  </div>
-</body>
-</html>
-"""
+              <main>
+                <p class="section-head">
+                  가장 최근 호가 맨 위에 정렬되어 있습니다. 원하는 주제를 골라
+                  클릭하면 모바일 최적화된 가이드 페이지로 이동합니다.
+                </p>
+                <ol class="list">
+          {items_block}
+                </ol>
+                <footer>
+                  BNOC (Bible Notes on Context)는 개인 연구용 아카이브입니다.<br />
+                  GitHub Pages를 통해 정적 사이트로 자동 빌드·배포됩니다.
+                </footer>
+              </main>
+            </div>
+          </body>
+          </html>
+          """
 
           hub = hub_template.format(
               BASE=BASE,
