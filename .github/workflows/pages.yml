@@ -19,10 +19,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate hub, feed, latest, random
+      - name: Generate hub, feed, latest
         run: |
           python3 - << 'PY'
-          import os, re, html, json, subprocess, datetime, pathlib, random
+          import os, re, html, json, subprocess, datetime, pathlib
 
           OWNER = os.getenv("GITHUB_REPOSITORY_OWNER","")
           REPO  = os.getenv("GITHUB_REPOSITORY","").split("/")[-1] if os.getenv("GITHUB_REPOSITORY") else ""
@@ -107,7 +107,10 @@ jobs:
           ])
           items_block = items if items else '<li class="item"><div class="item-title">아직 발행된 호가 없습니다.</div></li>'
 
-          # __BASE__ / __ITEMS__ 플레이스홀더 사용 (나중에 replace)
+          # Random용 링크 배열 (JS에서 사용)
+          links_json = json.dumps([it["link"] for it in issues], ensure_ascii=False)
+
+          # __BASE__ / __ITEMS__ / __LINKS__ 플레이스홀더 사용
           hub_template = """<!doctype html>
           <html lang="ko">
           <head>
@@ -361,7 +364,7 @@ jobs:
                 </div>
                 <div class="nav-links">
                   <button class="pill" type="button" id="btnAbout"><b>About</b><span> 소개</span></button>
-                  <a class="pill" href="__BASE__/random/"><b>Random</b><span> 아무거나</span></a>
+                  <button class="pill" type="button" id="btnRandom"><b>Random</b><span> 아무거나</span></button>
                   <a class="pill" href="__BASE__/latest/"><b>Latest</b><span> 최근 호</span></a>
                 </div>
               </header>
@@ -415,23 +418,39 @@ jobs:
               </main>
             </div>
             <script>
+              window.BNOC_LINKS = __LINKS__;
               (function() {
                 var panel = document.getElementById('aboutPanel');
                 var btn = document.getElementById('btnAbout');
-                if (!panel || !btn) return;
-                btn.addEventListener('click', function() {
-                  var isOpen = panel.classList.toggle('open');
-                  btn.innerHTML = isOpen
-                    ? '<b>Hide</b><span> 닫기</span>'
-                    : '<b>About</b><span> 소개</span>';
-                });
+                if (panel && btn) {
+                  btn.addEventListener('click', function() {
+                    var isOpen = panel.classList.toggle('open');
+                    btn.innerHTML = isOpen
+                      ? '<b>Hide</b><span> 닫기</span>'
+                      : '<b>About</b><span> 소개</span>';
+                  });
+                }
+
+                var randomBtn = document.getElementById('btnRandom');
+                if (randomBtn && Array.isArray(window.BNOC_LINKS) && window.BNOC_LINKS.length > 0) {
+                  randomBtn.addEventListener('click', function() {
+                    var links = window.BNOC_LINKS;
+                    var idx = Math.floor(Math.random() * links.length);
+                    window.location.href = links[idx];
+                  });
+                }
               })();
             </script>
           </body>
           </html>
           """
 
-          hub = hub_template.replace("__BASE__", BASE).replace("__ITEMS__", items_block)
+          hub = (
+              hub_template
+              .replace("__BASE__", BASE)
+              .replace("__ITEMS__", items_block)
+              .replace("__LINKS__", links_json)
+          )
           open("index.html", "w", encoding="utf-8").write(hub)
           # ----- 허브 템플릿 끝 -----
 
@@ -470,18 +489,11 @@ jobs:
           sm.append("</urlset>")
           open("sitemap.xml", "w", encoding="utf-8").write("\n".join(sm))
 
-          # latest & random redirect
+          # latest redirect
           if issues:
-              # latest
               os.makedirs("latest", exist_ok=True)
               open("latest/index.html", "w", encoding="utf-8").write(
                   f'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={issues[0]["link"]}"><link rel="canonical" href="{issues[0]["link"]}">'
-              )
-              # random
-              choice = random.choice(issues)
-              os.makedirs("random", exist_ok=True)
-              open("random/index.html", "w", encoding="utf-8").write(
-                  f'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={choice["link"]}"><link rel="canonical" href="{choice["link"]}">'
               )
 
           PY
