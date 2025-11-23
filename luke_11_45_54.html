@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>누가복음 11:45–54 — 정론·정행·현대 적용</title>
+  <meta name="date" content="2025-11-23" />
+  <style>
+    :root {
+      --bg: #05070b;
+      --bg-soft: #10141c;
+      --card: #111824;
+      --fg: #f4f6fb;
+      --muted: #9ca4b8;
+      --accent: #4ade80;
+      --accent-soft: rgba(74, 222, 128, 0.08);
+      --border-subtle: rgba(148,163,184,.35);
+      --shadow-soft: 0 10px 30px rgba(0,0,0,.45);
+      --radius-lg: 18px;
+      --radius-md: 14px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f3f5fb;
+        --bg-soft: #e7ecf7;
+        --card: #ffffff;
+        --fg: #070b12;
+        --muted: #636b7b;
+        --accent: #16a34a;
+        --accent-soft: rgba(22,163,74,0.06);
+        --border-subtle: rgba(148,163,184,.55);
+        --shadow-soft: 0 10px 26px rgba(15,23,42,.10);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Noto Sans KR", Apple SD Gothic Neo, sans-serif;
+      background: radial-gradient(circle at top, #111827 0, var(--bg) 50%, #020617 100%);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding-bottom: 96px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px) saturate(1.3);
+      background:
+        linear-gradient(135deg, rgba(15,23,42,.96), rgba(15,23,42,.90));
+      border-bottom: 1px solid rgba(148,163,184,.28);
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+    }
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      background: radial-gradient(circle at 20% 20%, #22c55e, #16a34a 40%, #0f766e 100%);
+    }
+    .title {
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+    }
+    .subtitle {
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .btn {
+      appearance: none;
+      border: 1px solid rgba(148,163,184,.35);
+      background: rgba(15,23,42,.9);
+      color: var(--fg);
+      font-size: 12px;
+      padding: 8px 11px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn.primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, #22c55e, #4ade80);
+      color: #022c22;
+    }
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    main {
+      padding: 6px 14px 0;
+    }
+
+    .fulltext {
+      padding: 12px 2px 0;
+    }
+    details {
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(148,163,184,.45);
+      background: radial-gradient(circle at top left,
+        rgba(148,163,184,.08) 0,
+        rgba(15,23,42,.96) 40%);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 13px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 14px;
+    }
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    .chev {
+      font-size: 13px;
+      opacity: .7;
+      transition: transform .18s ease;
+    }
+    details[open] .chev {
+      transform: rotate(90deg);
+    }
+    .content {
+      padding: 4px 14px 12px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .scripture p {
+      margin: 6px 0;
+    }
+    .v {
+      display: inline-block;
+      width: 2em;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 14px 2px 6px;
+    }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+      padding: 6px 10px;
+      background: rgba(15,23,42,.75);
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,.45);
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .pill span {
+      white-space: nowrap;
+    }
+    .h1 {
+      margin: 10px 0 6px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+    .sub {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .sub b {
+      color: var(--fg);
+    }
+
+    .grid {
+      display: grid;
+      gap: 12px;
+      padding: 10px 2px 0;
+    }
+    .card {
+      background: radial-gradient(circle at top left,
+        rgba(148,163,184,.16) 0,
+        var(--card) 40%);
+      border-radius: var(--radius-lg);
+      padding: 14px 14px 12px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148,163,184,.28);
+    }
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .card h4 {
+      margin: 12px 0 4px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .card p {
+      margin: 4px 0 8px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .card ul {
+      margin: 6px 0 4px;
+      padding-left: 18px;
+      font-size: 13px;
+    }
+    .card li {
+      margin: 4px 0;
+      line-height: 1.7;
+    }
+
+    .hint {
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .note {
+      margin: 6px 0 8px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(74,222,128,.5);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .small {
+      font-size: 11px;
+    }
+
+    .kv {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 4px 10px;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+    .kv div {
+      padding: 3px 0;
+      border-bottom: 1px dashed rgba(148,163,184,.35);
+    }
+    .kv-label {
+      color: var(--muted);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 6px 0 4px;
+    }
+    .tag {
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 11px;
+      border: 1px solid rgba(148,163,184,.45);
+      background: rgba(15,23,42,.8);
+      color: var(--muted);
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(148,163,184,.35);
+      margin: 10px 0;
+    }
+
+    .bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 30;
+      backdrop-filter: blur(10px) saturate(1.3);
+      background: linear-gradient(135deg,
+        rgba(15,23,42,.98),
+        rgba(15,23,42,.96));
+      border-top: 1px solid rgba(148,163,184,.35);
+      padding: 8px 12px;
+    }
+    .bar-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+    }
+    .bar-inner .btn {
+      flex: 1;
+      text-align: center;
+    }
+
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body {
+      display: none;
+    }
+    body.summary-mode .hint-compressed {
+      display: block;
+    }
+    .hint-compressed {
+      display: none;
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">누가복음 11:45–54</div>
+          <div class="subtitle">정론 · 정행 · 현대 적용 — 모바일 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare">공유</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- 본문 전체 -->
+    <section class="fulltext" aria-label="누가복음 11:45–54 본문 전체">
+      <details open>
+        <summary>📜 본문 전체 보기 (눅 11:45–54) <span class="chev">▶</span></summary>
+        <div class="content scripture">
+          <p><span class="v">45</span> 한 율법교사가 예수께 대답하여 이르되 선생님 이렇게 말씀하시니 우리까지 모욕하심이니이다</p>
+          <p><span class="v">46</span> 이르시되 화 있을진저 또 너희 율법교사여 지기 어려운 짐을 사람에게 지우고 너희는 한 손가락도 이 짐에 대지 않는도다</p>
+          <p><span class="v">47</span> 화 있을진저 너희는 선지자들의 무덤을 만드는도다 그들을 죽인 자도 너희 조상들이로다</p>
+          <p><span class="v">48</span> 이와 같이 그들은 죽이고 너희는 무덤을 만드니 너희가 너희 조상의 행한 일에 증인이 되어 옳게 여기는도다</p>
+          <p><span class="v">49</span> 그러므로 하나님의 지혜가 일렀으되 내가 선지자와 사도들을 그들에게 보내리니 그 중에서 더러는 죽이며 또 박해하리라 하였느니라</p>
+          <p><span class="v">50</span> 창세 이후로 흘린 모든 선지자의 피를 이 세대가 담당하되</p>
+          <p><span class="v">51</span> 곧 아벨의 피로부터 제단과 성전 사이에서 죽임을 당한 사가랴의 피까지 하리라 내가 너희에게 이르노니 과연 이 세대가 담당하리라</p>
+          <p><span class="v">52</span> 화 있을진저 너희 율법교사여 너희가 지식의 열쇠를 가져가서 너희도 들어가지 않고 또 들어가고자 하는 자도 막았느니라 하시니라</p>
+          <p><span class="v">53</span> 거기서 나오실 때에 서기관과 바리새인들이 거세게 달려들어 여러 가지 일을 따져 묻고</p>
+          <p><span class="v">54</span> 그 입에서 나오는 말을 책잡고자 하여 노리고 있더라</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="pill">
+        <span>צְדָקָה(tsedaqah)</span>
+        <span>חָכְמָה(chokmah)</span>
+        <span>σοφία τοῦ θεοῦ</span>
+        <span>κλεὶς τῆς γνώσεως</span>
+        <span>γενεά αὕτη</span>
+      </div>
+      <h1 class="h1">선지자의 피와 지식의 열쇠 — “이 세대”에 대한 고발</h1>
+      <p class="sub">
+        이 단락은 한 바리새인의 집에서 식사하시던 예수께서
+        <b>바리새인들에 이어 율법교사들까지</b> 향해 선포하신
+        <b>“화 있을진저” 선언의 두 번째 묶음</b>입니다.
+        율법교사들은 스스로를 <b>율법의 수호자</b>로 생각했지만,
+        예수는 그들을 <b>지기 어려운 짐을 만드는 시스템 설계자</b>,
+        <b>선지자의 피 위에 무덤을 장식하는 세대</b>, <b>지식의 열쇠를 쥐고 길을 막는 자들</b>로 고발하십니다.
+        이 본문은 고대 이스라엘의 긴 폭력의 역사(아벨–사가랴)를
+        <b>“이 세대”</b>의 책임 문제와 연결하면서,
+        오늘 우리의 <b>정론–정행–구조</b>를 함께 비추는 거울이 됩니다.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="해설 섹션">
+      <!-- 한눈 요약 -->
+      <article class="card">
+        <h3>한눈 요약 (3문장)</h3>
+        <p>
+          <b>1)</b> 예수는 율법교사들이 <b>지기 어려운 종교적 짐</b>을 사람들에게 올려놓고
+          정작 자신들은 손가락 하나 대지 않는다고 고발하시며(46절),
+          그들을 <b>선지자들의 무덤을 만들면서 조상들의 폭력을 정당화하는 세대</b>로 규정하십니다.
+        </p>
+        <p>
+          <b>2)</b> 이어서 예수는 “<b>아벨의 피에서 제단과 성전 사이에서 죽임을 당한 사가랴의 피까지</b>”
+          모든 의인의 피를 이 세대가 담당한다고 선언하시며,
+          선지자와 사도들에게 향할 <b>박해의 절정</b>을 예고하십니다(49–51절).
+        </p>
+        <p>
+          <b>3)</b> 마지막으로 예수는 율법교사들이 <b>“지식의 열쇠”</b>를 가지고 있으면서도
+          자신도 들어가지 않고 들어가고자 하는 자도 막는다고 선포하시고(52절),
+          서기관과 바리새인들은 그때부터 예수의 말을 <b>책잡기 위해 노리는 적대적 심문</b>에 들어갑니다(53–54절).
+        </p>
+        <div class="hint">
+          아래에서 <b>① 역사·배경 → ② 정론(교리) → ③ 정행(실천) → ④ 현대 적용</b> 순으로 살펴봅니다.
+        </div>
+      </article>
+
+      <!-- 역사·문학·사회 배경 -->
+      <article class="card">
+        <h3>역사·문학·사회 배경</h3>
+        <div class="content-long">
+          <h4>1) 장면의 위치: 한 바리새인의 집 식탁에서</h4>
+          <ul>
+            <li>
+              누가복음 11:37 이하에서 예수는 <b>한 바리새인의 집에 초대되어 식사</b>하시다가,
+              겉으로는 깨끗하지만 안으로는 탐욕과 악독으로 가득 찬 바리새인들을 먼저 책망하십니다(11:39–44).
+            </li>
+            <li>
+              45절에서 한 율법교사가 “이렇게 말씀하시니 <b>우리까지 모욕</b>하신다”고 항의하자,
+              예수는 그들 역시 같은 구조 속에 있는 <b>공범적 엘리트</b>로 지목하시며
+              두 번째 “화 선포”를 시작하십니다.
+            </li>
+          </ul>
+
+          <h4>2) 율법교사(νομικοί)와 서기관·바리새인</h4>
+          <ul>
+            <li>
+              <b>율법교사(νομικοί)</b>는 모세 율법과 구전 전통(할라카)을 해석·적용하는
+              종교법 전문가로, 오늘날의 변호사와 신학자의 역할이 섞인 집단이었습니다.
+            </li>
+            <li>
+              이들은 대개 <b>서기관 그룹</b>과 겹쳤고, 회당에서 가르치며,
+              일상 문제(안식일, 정결, 서원, 상속 등)에 대한 판례를 제시했습니다.
+              예수 시대, 바리새인·서기관·율법교사는 종종 <b>서로 얽힌 하나의 엘리트 네트워크</b>로 작동했습니다.
+            </li>
+          </ul>
+
+          <h4>3) 선지자들의 무덤 짓기: 기억과 박제 사이</h4>
+          <ul>
+            <li>
+              제2성전기 유대 사회에는 <b>선지자·의인·열사</b>의 무덤을 보수·장식하는 관습이 있었습니다.
+              이는 민족적 정체성과 신앙적 자부심을 표현하는 행위로 여겨졌습니다.
+            </li>
+            <li>
+              예수는 이 관습을 두고, 조상들이 선지자를 죽였고
+              <b>그 후손인 너희는 그 무덤을 아름답게 꾸밈으로써</b>
+              그들의 폭력에 “증인이 되어 옳게 여기는” 역할을 하고 있다고 비판하십니다(47–48절).
+              즉, 무덤은 <b>존경의 표식이면서 동시에 선지자의 급진적 메시지를 박제하는 장치</b>입니다.
+            </li>
+          </ul>
+
+          <h4>4) “아벨에서 사가랴까지” — 정경 전체를 덮는 표현</h4>
+          <ul>
+            <li>
+              <b>아벨</b>은 창세기 4장에서 형 가인에게 살해당한 의인으로,
+              히브리 성경에서 <b>첫 번째 흘린 피</b>를 상징합니다.
+            </li>
+            <li>
+              “제단과 성전 사이에서 죽임을 당한 <b>사가랴</b>”는 대부분
+              역대하 24:20–22의 <b>여호야다의 아들 사가랴</b>로 이해되며,
+              그는 성전 뜰에서 돌에 맞아 죽었습니다.
+            </li>
+            <li>
+              히브리어 성경 배열에서 창세기는 맨 앞에, 역대기는 역사서의 맨 마지막에 위치하므로
+              “<b>아벨에서 사가랴까지</b>”는 사실상
+              <b>“성경 전체에 기록된 모든 의인의 피”</b>를 상징하는 압축 표현으로 볼 수 있습니다.
+            </li>
+          </ul>
+
+          <h4>5) “하나님의 지혜”와 “지식의 열쇠”</h4>
+          <ul>
+            <li>
+              49절에서 예수는 “<b>하나님의 지혜</b>가 이르기를…”이라고 말하며,
+              선지자와 사도들이 반복적으로 보내졌으나 <b>죽임과 박해</b>를 받아 왔음을 상기시킵니다.
+              이 표현은 잠언·지혜서 등에서 <b>지혜(חָכְמָה)가 사람들을 부르지만 거절당하는 모티프</b>와 연결됩니다.
+            </li>
+            <li>
+              52절의 “<b>지식의 열쇠(κλεὶς τῆς γνώσεως)</b>”는
+              율법 해석과 하나님 나라에 대한 인식에 접근할 수 있는
+              <b>문을 여는 열쇠</b>를 뜻합니다.
+              예수는 율법교사들이 이 열쇠를 쥐고 있으면서도
+              <b>자기들도 들어가지 않고, 들어가려는 사람도 막고 있다</b>고 고발합니다.
+            </li>
+          </ul>
+
+          <h4>6) 갈등의 심화: 적대적 심문 모드로 전환</h4>
+          <ul>
+            <li>
+              53–54절에서 서기관과 바리새인들은 예수께 <b>거세게 달려들어</b>
+              여러 가지를 따져 묻고, 예수의 입에서 나오는 말을 <b>책잡기 위해 노립니다</b>.
+            </li>
+            <li>
+              이 장면은 이후 누가복음에서 이어질
+              <b>예수에 대한 체계적 공격과 결국 십자가 처형</b>의 전조로서,
+              “선지자와 사도들을 보내지만 박해받는다”는 49절의 말씀이
+              곧 예수 자신에게 적용될 것임을 암시합니다.
+            </li>
+          </ul>
+        </div>
+        <div class="hint-compressed">
+          율법교사·서기관·바리새인은 단순한 개인이 아니라
+          <b>율법 해석과 종교 권위를 독점한 엘리트 네트워크</b>였고,
+          예수는 이들이 <b>선지자 살해의 역사를 계승한 세대</b>이자
+          <b>지식의 열쇠로 문을 닫는 자들</b>이라고 고발하십니다.
+        </div>
+      </article>
+
+      <!-- ① 정론(orthodoxy) -->
+      <article class="card">
+        <h3>① 정론(Orthodoxy): 심판 받는 세대와 선지자의 피</h3>
+        <p class="note">
+          핵심 교리 포인트: <b>선지자의 피(의인의 피) 위에 세워진 종교 시스템</b>과
+          <b>“이 세대”가 그 책임을 담당한다</b>는 종말론적 심판 선언.
+        </p>
+        <div class="content-long">
+          <h4>1) 율법교사의 죄상: 짐을 만들고, 선지자를 박제하고, 길을 막는 자들</h4>
+          <ul>
+            <li>
+              예수는 율법교사들이 <b>지기 어려운 짐</b>을 사람들에게 지우면서
+              자신들은 한 손가락도 대지 않는다고 말합니다(46절).
+              정통 해석에서 이것은 구원의 길을 <b>율법주의·행위주의로 왜곡</b>하여
+              사람들을 자유롭게 하지 못하는 <b>위선적 종교지도자</b>의 전형으로 읽힙니다.
+            </li>
+            <li>
+              또한 그들은 <b>선지자들의 무덤을 만들며 조상들의 행위를 옳게 여기는 세대</b>로
+              규정됩니다(47–48절).
+              조상들은 선지자를 죽였고, 그 후손들은 그 무덤을 장식하면서
+              <b>폭력의 역사를 반성하기보다 미화하는 공모자</b>가 되었습니다.
+            </li>
+            <li>
+              마지막으로 그들은 <b>지식의 열쇠</b>를 가지고 있으면서
+              자신도 들어가지 않고, 들어가려는 이들도 막는 자들입니다(52절).
+              전통적 교리에서는 이것을
+              <b>하나님 나라에 이르는 참된 지식과 복음의 길을 가리는 행위</b>로 이해합니다.
+            </li>
+          </ul>
+
+          <h4>2) “아벨에서 사가랴까지” — 전체 역사에 대한 요약 판결</h4>
+          <ul>
+            <li>
+              예수는 “창세 이후로 흘린 모든 선지자의 피”가
+              <b>이 세대가 담당할 것</b>이라고 말씀하십니다(50절).
+            </li>
+            <li>
+              “아벨에서 사가랴까지”라는 표현은
+              히브리 성경의 첫 책(창세기)에서 마지막 책(역대기)에 이르기까지,
+              <b>성경이 증언하는 모든 의인의 피</b>를 가리키는 관용구로 이해됩니다.
+            </li>
+            <li>
+              정통 해석에서 이것은,
+              <b>오랜 세대에 걸친 선지자 거부</b>가
+              예수와 사도들에 대한 거부에서 <b>극점</b>에 이르며,
+              그 결과 “이 세대” 위에 <b>집중적인 심판</b>이 임한다는
+              종말론적 판결로 읽힙니다.
+            </li>
+          </ul>
+
+          <h4>3) 히브리어 키워드 1: צְדָקָה — tsedaqah (의/정의)</h4>
+          <div class="kv">
+            <div class="kv-label">צְדָקָה</div>
+            <div>
+              <b>의, 의로움, 공정함, 관계의 올바름</b>.
+              법정의 “무죄”를 넘어, 하나님과 이웃 앞에서
+              <b>관계를 바로 세우는 정의</b>를 가리킵니다.
+            </div>
+          </div>
+          <p>
+            누가복음 11장의 “선지자의 피” 언급은,
+            이스라엘이 하나님의 <b>צְדָקָה(의/정의)</b>를 반복적으로 짓밟고
+            의로운 자들을 죽여 온 역사를 압축합니다.
+            율법교사들은 자신들이 의로운 쪽이라고 생각하지만,
+            예수의 판결에 따르면 그들은 <b>צְדָקָה를 회복하는 대신 폭력을 이어 가는 세대</b>입니다.
+          </p>
+
+          <h4>4) 히브리어 키워드 2: חָכְמָה — chokmah (지혜)</h4>
+          <div class="kv">
+            <div class="kv-label">חָכְמָה</div>
+            <div>
+              <b>지혜, 숙련, 삶을 제대로 사는 기술</b>.
+              단순 정보가 아니라, <b>정의롭고 하나님을 경외하는 삶의 기술</b>을 뜻합니다.
+            </div>
+          </div>
+          <p>
+            “하나님의 지혜(σοφία τοῦ θεοῦ)”와
+            “지식의 열쇠” 언어는 히브리어 <b>חָכְמָה/דַּעַת</b> 전통을 배경으로 합니다.
+            정론적으로 말해, 참된 지혜는 <b>하나님의 צדקה를 구현하는 길</b>을 여는 것이지만,
+            율법교사들은 이 지혜를 <b>머리 지식·특권적 정보</b>로 축소시키고
+            그 길을 막는 자로 묘사됩니다.
+          </p>
+        </div>
+        <div class="hint-compressed">
+          교리적으로 이 본문은
+          <b>선지자의 피를 흘려 온 긴 역사</b>가
+          예수 시대 율법교사·서기관·바리새인들에게서
+          <b>정점에 이르렀다</b>는 심판 선언이며,
+          그들이 <b>하나님의 의(צדקה)와 지혜(חָכְמָה)의 길</b>을
+          막는 자로 규정된다는 메시지를 담습니다.
+        </div>
+      </article>
+
+      <!-- ② 정행(orthopraxy) -->
+      <article class="card">
+        <h3>② 정행(Orthopraxy): 지식·권위·제도의 실천적 실패</h3>
+        <p class="note">
+          정행 관점 질문: <b>내가 쥔 지식과 권위는 “열쇠”인가, “자물쇠”인가?</b>
+          — 정론의 정확성이 아니라, <b>길을 여는 실천</b>이 문제입니다.
+        </p>
+        <div class="content-long">
+          <h4>1) “지기 어려운 짐” — 제도와 구조의 문제</h4>
+          <ul>
+            <li>
+              정론적 설교는 종종 이 본문을
+              “나쁜 교사 vs 좋은 신자” 구도로 단순화합니다.
+            </li>
+            <li>
+              그러나 예수의 표현은 <b>무거운 짐</b>, <b>지우다</b>라는 동사를 통해
+              개인의 위선만이 아니라 <b>사람들에게 도저히 감당하기 힘든 종교·사회적 부담을 설계한 구조</b>를 겨냥합니다.
+            </li>
+            <li>
+              정행 관점에서 핵심 문제는
+              “어떤 규칙이 맞느냐?”보다
+              “나는 어떤 시스템을 만들고, 유지하고, 그 안에서 누가 짓눌리고 있는가?”입니다.
+            </li>
+          </ul>
+
+          <h4>2) 선지자 무덤: 기억인가, 박제인가?</h4>
+          <ul>
+            <li>
+              무덤을 꾸미는 행위는 겉으로는 선지자를 <b>존경</b>하는 것처럼 보이지만,
+              예수는 그것을 <b>폭력의 역사를 정직하게 직면하지 않고 미화하는 방식</b>으로 읽습니다.
+            </li>
+            <li>
+              정행적 해석에 따르면,
+              우리는 과거의 선지자·개혁자·피해자를 기념하면서도
+              <b>그들이 제기했던 구조적 문제를 오늘에 그대로 남겨 두고</b> 있을 수 있습니다.
+              이때 기념은 <b>“사랑스러운 박제”</b>가 됩니다.
+            </li>
+            <li>
+              우리 시대의 “선지자 무덤”은
+              <b>이름 붙은 기념관·추모일</b>일 수도 있고,
+              <b>교리·연구·강의로만 소비되는 예언자적 메시지</b>일 수도 있습니다.
+            </li>
+          </ul>
+
+          <h4>3) 지식의 열쇠: 정보 vs 길</h4>
+          <ul>
+            <li>
+              율법교사들은 <b>지식의 열쇠</b>를 가지고 있습니다.
+              정론의 세계에서 이 열쇠는 “바른 교리, 올바른 해석”으로 이해되기 쉽습니다.
+            </li>
+            <li>
+              그러나 정행 관점에서 열쇠는,
+              사람들을 <b>하나님의 צדקה와 חָכְמָה</b>의 길로 들어가게 하는
+              <b>실천적 안내자</b>여야 합니다.
+              즉, 열쇠는 정보가 아니라 <b>길을 여는 행위</b>입니다.
+            </li>
+            <li>
+              예수는 율법교사들이
+              <b>① 자신도 그 길을 걷지 않고, ② 그 길을 걷고자 하는 사람도 막는다</b>고 말합니다.
+              이는 지식·학위·직분·권위를
+              <b>자기 보호와 배제의 장치</b>로 사용하는 상태입니다.
+            </li>
+          </ul>
+
+          <h4>4) 정론 해석의 한계</h4>
+          <ul>
+            <li>
+              이 본문을 단순히 “율법주의를 버리고 은혜를 믿자”는 메시지로만 소비하면,
+              예수가 겨냥한 <b>구조적 정행의 실패</b> — 즉, <b>제도·규칙·알고리즘이 사람을 어떻게 짓누르는지</b> — 를 충분히 보지 못합니다.
+            </li>
+            <li>
+              히브리어 <b>צְדָקָה</b>는 본질적으로 <b>관계적·사회적 정의</b>이고,
+              <b>חָכְמָה</b>는 <b>삶의 기술</b>입니다.
+              정행이 부재하면, 가장 정통적인 교리조차
+              <b>폭력의 연속선을 유지하는 도구</b>가 될 수 있습니다.
+            </li>
+          </ul>
+        </div>
+        <div class="hint-compressed">
+          정행 관점에서 이 본문은
+          “내가 맞느냐?”보다
+          <b>“내가 만든 규칙과 구조가 누구를 짓누르고 있는가?”</b>를 묻습니다.
+          지식의 열쇠는 정보가 아니라 <b>길을 열어 주는 실천</b>입니다.
+        </div>
+      </article>
+
+      <!-- ③ 현대 적용 프레임 -->
+      <article class="card">
+        <h3>③ 현대 적용: 개인 · 공동체 · 공적 영역</h3>
+        <p class="note">
+          히브리어 <b>צְדָקָה(의/정의)</b>, <b>חָכְמָה(지혜)</b>를
+          <b>개인(나) · 공동체(교회/학문/조직) · 공적 구조(법·알고리즘·정책)</b>에 적용하는 프레임입니다.
+        </p>
+        <div class="content-long">
+          <h4>1) 개인 차원: 내가 짓는 “무덤”과 내가 쥔 “열쇠”</h4>
+          <ul>
+            <li>
+              <b>무덤 질문</b>:
+              나는 어떤 “선지자적 메시지”를
+              <b>책·강의·인용구</b>로 소비하면서,
+              실제 삶의 루틴·관계·소비 습관은 거의 바꾸지 않은 채
+              <b>기념만 하고 있는가?</b>
+            </li>
+            <li>
+              <b>열쇠 질문</b>:
+              내가 가진 전공·학위·경력·AI 활용 능력·종교 지식은
+              주변 사람들에게 <b>접근을 열어 주는 열쇠</b>인가,
+              아니면 “너는 수준이 안 된다”고 말하며
+              <b>출입을 막는 자물쇠</b>인가?
+            </li>
+            <li>
+              <b>צְדָקָה/חָכְמָה 질문</b>:
+              오늘 하루 나의 선택들 가운데
+              <b>관계적 정의(צְדָקָה)</b>와
+              <b>하나님을 경외하는 삶의 지혜(חָכְמָה)</b>가
+              실제로 드러난 장면은 어디였는지 돌아볼 수 있습니다.
+            </li>
+          </ul>
+
+          <h4>2) 공동체 차원: 지식과 권위의 분배</h4>
+          <ul>
+            <li>
+              교회·학문·조직에서 “율법교사/전문가”는
+              <b>지식과 의사결정의 중앙 집중</b>을 통해
+              다른 구성원들을 <b>수동적 소비자</b>로 만들 위험이 있습니다.
+            </li>
+            <li>
+              공동체가 건강하게 정행을 실천하려면,
+              지식과 도구(성경 해석 방법, 연구 기술, AI 리터러시 등)를
+              <b>더 많은 사람에게 나누어 주는 구조</b> — 즉, <b>열쇠의 공유</b>가 필요합니다.
+            </li>
+            <li>
+              회의·설교·강의·연구에서
+              “우리가 쌓은 정론”이
+              실제로 사람들의 <b>시간표, 관계, 우선순위</b>를 변화시키는
+              작은 루틴으로 번역되고 있는지 점검하는 것이
+              정행적 자기 성찰입니다.
+            </li>
+          </ul>
+
+          <h4>3) 공적 영역: 현대의 율법교사 — 법·알고리즘·정책 설계자들</h4>
+          <ul>
+            <li>
+              오늘의 “율법교사”는
+              법률가·정책 입안자뿐 아니라,
+              <b>채용·대출·복지·콘텐츠 노출을 결정하는 알고리즘 설계자</b>들일 수 있습니다.
+            </li>
+            <li>
+              이들은 현대판 “지식의 열쇠” — 데이터를 읽고,
+              규칙을 설계하며, 누구를 포함·배제할지 정하는 권한을 쥐고 있습니다.
+            </li>
+            <li>
+              정행적 적용으로,
+              우리는 자신이 속한 조직에서 사용되는 <b>규정·지표·알고리즘</b>이
+              특정 집단을 구조적으로 배제하거나
+              <b>과도한 짐</b>을 지우고 있지 않은지 질문해야 합니다.
+              이는 단지 “합법(legal)” 여부를 넘어서,
+              <b>하나님의 צדקה(관계적 정의)에 가까운가?</b>라는 기준을 세우는 작업입니다.
+            </li>
+          </ul>
+
+          <div class="divider"></div>
+          <p class="muted small">
+            요약하면, 이 본문은 우리에게 세 가지 질문을 던집니다.<br />
+            <b>① 나는 어떤 선지자적 메시지를 박제한 채 장식만 하고 있는가?</b><br />
+            <b>② 내가 쥔 지식과 권위는 열쇠인가, 자물쇠인가?</b><br />
+            <b>③ 내가 속한 구조와 시스템은 사람들에게 지기 어려운 짐이 되고 있지 않은가?</b>
+          </p>
+        </div>
+        <div class="hint-compressed">
+          현대적 적용의 핵심은,
+          <b>무덤(기념) vs 회개(변화)</b>,
+          <b>열쇠(접근) vs 자물쇠(배제)</b>,
+          <b>합법성 vs צדקה(관계적 정의)</b> 사이의 긴장을
+          개인·공동체·사회 구조에서 함께 점검하는 것입니다.
+        </div>
+      </article>
+
+      <!-- 히브리어 키워드 카드 -->
+      <article class="card">
+        <h3>히브리어 키워드 정리</h3>
+        <p class="muted small">
+          이 본문에서 직접 히브리어가 등장하진 않지만,
+          예수의 비판은 히브리 성경의 두 축 — <b>의/정의(צְדָקָה)</b>와
+          <b>지혜(חָכְמָה)</b> — 를 배경으로 이해할 때 더 입체적으로 보입니다.
+        </p>
+        <div class="tag-list">
+          <span class="tag">צְדָקָה — tsedaqah</span>
+          <span class="tag">חָכְמָה — chokmah</span>
+        </div>
+        <div class="kv">
+          <div class="kv-label">צְדָקָה</div>
+          <div>
+            <b>의/정의</b>. 단순한 법적 무죄를 넘어,
+            하나님과 이웃과의 관계를 바로 세우는
+            <b>관계적·사회적 정의</b>.
+          </div>
+          <div class="kv-label">חָכְמָה</div>
+          <div>
+            <b>지혜</b>. 정보를 많이 아는 상태가 아니라,
+            하나님의 뜻에 합당하게 <b>살아내는 기술</b>.
+            정론을 정행으로 번역하는 능력.
+          </div>
+        </div>
+        <p class="hint">
+          설교나 성경공부에서 이 두 단어를 반복적으로 상기시키면,
+          “잘 믿는 것”을 교리 암기에서 멈추지 않고,
+          <b>어떻게 정의롭게·지혜롭게 구조를 바꿀 것인가</b>까지 묻게 도와줍니다.
+        </p>
+      </article>
+
+      <!-- 실천 체크리스트 -->
+      <article class="card">
+        <h3>실천 체크리스트 (이번 주 적용 예시)</h3>
+        <ul>
+          <li>
+            <b>1. 내가 짓고 있는 “무덤” 하나 적어 보기</b><br />
+            존경한다고 말하지만 실제로는 삶에 거의 영향을 주지 않는
+            <b>선지자·사상·책·인물</b> 하나를 적고,
+            그 메시지에서 이번 주에 <b>하나만 실제 행동</b>으로 옮겨 보기.
+          </li>
+          <li>
+            <b>2. “열쇠 vs 자물쇠” 자기 점검</b><br />
+            내가 가진 정보·전문성·직위를 떠올리면서,
+            오늘 하루 중 <b>누군가에게 길을 열어 준 순간</b>과
+            <b>묵묵히 닫아 버린 순간</b>을 각각 한 가지씩 기록해 보기.
+          </li>
+          <li>
+            <b>3. 공동체 회의에서 “짐” 질문 던지기</b><br />
+            속한 팀/소그룹/교회 회의에서,
+            “우리 규칙이나 문화 중에 <b>누군가에게 불필요하게 무거운 짐</b>이 되는 건 없는가?”
+            라는 질문을 한 번이라도 공식적으로 던져 보기.
+          </li>
+          <li>
+            <b>4. 구조적 צדקה를 위한 작은 한 걸음</b><br />
+            뉴스·직장·학교에서 반복적으로 <b>쓰러지는 사람들</b>이 보이는 지점을 한 군데 정하고,
+            그 영역에서 <b>정보를 모으거나, 글을 쓰거나, 제안을 올리거나, 후원하는</b> 등
+            아주 작은 행동 한 가지를 실천하기.
+          </li>
+        </ul>
+        <p class="muted small">
+          포인트: <b>정론</b>은 머리에 쌓이지만,
+          <b>정행</b>은 <b>시간표·관계·시스템</b>에 흔적을 남깁니다.
+          이 본문은 우리 각자에게,
+          “<b>너희가 지식의 열쇠를 가져가서</b>…”라는 문장을
+          어떻게 <b>반대로 뒤집어</b> 살 것인지 묻습니다.
+        </p>
+      </article>
+
+      <!-- 푸터 카드 -->
+      <article class="card">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.
+          상단 <b>공유</b> 버튼으로 링크를 나눌 수 있고,
+          하단 <b>요약 모드</b>를 사용하면
+          소그룹 나눔이나 설교 전 빠른 리마인드에 도움이 됩니다.
+          <br />
+          동일한 레이아웃을 사용해 다른 본문(예: 눅 10:25–37)도
+          <b>정론 · 정행 · 현대 적용</b> 관점에서 시리즈로 확장할 수 있습니다.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <div class="bar" aria-label="도움말 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 펼치기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '누가복음 11:45–54 정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\\n' + location.href);
+        }
+      });
+    }
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    // 전체 펼치기/접기
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
