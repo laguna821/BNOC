@@ -90,262 +90,328 @@ jobs:
               json.dumps({"items": issues}, ensure_ascii=False, indent=2)
           )
 
-          # ----- 허브(index.html) UI 템플릿 -----
+          # ----- 허브(index.html) UI 템플릿 (개선된 디자인 적용) -----
 
-          # 리스트 아이템 HTML
+          # 리스트 아이템 HTML 생성 (카드 스타일)
           items = "\n".join([
               f'''
-              <li class="item">
-                <a href="{it["link"]}">
-                  <div class="item-meta">
-                    <time datetime="{it["date"]}" class="item-date">{it["date"]}</time>
-                  </div>
-                  <div class="item-title">{it["title"]}</div>
-                </a>
-              </li>
+              <a href="{it["link"]}" class="card item-card">
+                <div class="item-meta">
+                  <span class="item-date">{it["date"]}</span>
+                </div>
+                <h3 class="item-title">{it["title"]}</h3>
+                <div class="item-arrow">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </div>
+              </a>
               ''' for it in issues
           ])
-          items_block = items if items else '<li class="item"><div class="item-title">아직 발행된 호가 없습니다.</div></li>'
+          
+          if not items:
+              items = '<div class="card empty-card"><p>아직 발행된 호가 없습니다.</p></div>'
 
-          # Random용 링크 배열 (JS에서 사용)
+          # Random용 링크 배열
           links_json = json.dumps([it["link"] for it in issues], ensure_ascii=False)
 
-          # __BASE__ / __ITEMS__ / __LINKS__ 플레이스홀더 사용
+          # 템플릿 HTML (Midnight Slate & Glassmorphism Theme)
           hub_template = """<!doctype html>
           <html lang="ko">
           <head>
             <meta charset="utf-8" />
             <title>BNOC — Weekly</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+            
+            <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+            <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
             <style>
               :root {
-                --bg: #020617;
-                --bg-soft: #0b1220;
-                --card: #020617;
-                --border: rgba(148,163,184,.45);
-                --fg: #f9fafb;
-                --muted: #9ca3af;
-                --accent: #22c55e;
-                --accent-soft: rgba(34,197,94,0.1);
-                --radius-lg: 18px;
-                --radius-md: 999px;
-                --shadow-soft: 0 18px 40px rgba(15,23,42,.75);
+                /* Color Palette */
+                --bg-body: #0a0e14;
+                --bg-gradient-start: #111827;
+                --bg-gradient-end: #020408;
+                
+                --card-bg: rgba(23, 30, 41, 0.7);
+                --card-border: rgba(255, 255, 255, 0.08);
+                --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+                
+                --text-main: #e2e8f0;
+                --text-muted: #94a3b8;
+                --text-highlight: #f8fafc;
+                
+                --accent-primary: #10b981; /* Emerald */
+                --accent-secondary: #f59e0b; /* Amber */
+                
+                --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+                --font-serif: "Merriweather", serif;
+
+                --radius-lg: 20px;
+                --radius-md: 12px;
+                --radius-sm: 8px;
               }
+
               @media (prefers-color-scheme: light) {
                 :root {
-                  --bg: #f3f4f6;
-                  --bg-soft: #e5e7eb;
-                  --card: #ffffff;
-                  --border: rgba(148,163,184,.7);
-                  --fg: #020617;
-                  --muted: #6b7280;
-                  --accent: #16a34a;
-                  --accent-soft: rgba(22,163,74,0.08);
-                  --shadow-soft: 0 16px 36px rgba(15,23,42,.15);
+                  --bg-body: #f8fafc;
+                  --bg-gradient-start: #f1f5f9;
+                  --bg-gradient-end: #e2e8f0;
+                  
+                  --card-bg: rgba(255, 255, 255, 0.85);
+                  --card-border: rgba(0, 0, 0, 0.06);
+                  --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+                  
+                  --text-main: #1e293b;
+                  --text-muted: #64748b;
+                  --text-highlight: #0f172a;
+                  
+                  --accent-primary: #059669;
+                  --accent-secondary: #d97706;
                 }
               }
 
-              * {
-                box-sizing: border-box;
-              }
-              html, body {
-                margin: 0;
-                padding: 0;
-                height: 100%;
-              }
+              /* Base */
+              * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+              html, body { margin: 0; padding: 0; height: 100%; }
               body {
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                  "Noto Sans KR", sans-serif;
-                background: radial-gradient(circle at top, #1e293b 0, var(--bg) 42%, #020617 100%);
-                color: var(--fg);
+                font-family: var(--font-sans);
+                background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+                color: var(--text-main);
+                line-height: 1.6;
                 -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
               }
+              
               .wrap {
-                max-width: 720px;
+                max-width: 680px;
                 margin: 0 auto;
-                padding: 18px 16px 80px;
+                padding: 0 16px 80px;
               }
+
+              /* Header */
               header {
-                padding: 8px 0 18px;
+                padding: 24px 0 32px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
               }
               .brand {
                 display: flex;
-                gap: 10px;
+                gap: 14px;
                 align-items: center;
-                margin-bottom: 6px;
               }
               .logo {
-                width: 34px;
-                height: 34px;
+                width: 42px;
+                height: 42px;
                 border-radius: 12px;
-                background: radial-gradient(circle at 20% 20%, #22c55e, #16a34a 40%, #38bdf8 100%);
-                box-shadow: 0 10px 22px rgba(15,23,42,.75);
+                background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+                box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+                position: relative;
               }
+              .logo::after {
+                content: ''; position: absolute; inset: 0;
+                border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);
+              }
+              
+              .title-group { display: flex; flex-direction: column; }
               .title {
+                font-family: var(--font-serif);
                 font-size: 20px;
-                font-weight: 800;
-                letter-spacing: 0.04em;
+                font-weight: 900;
+                color: var(--text-highlight);
+                letter-spacing: -0.01em;
               }
               .subtitle {
                 font-size: 13px;
-                color: var(--muted);
-                margin-top: 2px;
+                color: var(--text-muted);
+                line-height: 1.4;
+                max-width: 400px;
               }
+
+              /* Navigation */
               .nav-links {
                 display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-                margin-top: 12px;
+                gap: 10px;
               }
-              .pill {
+              .btn {
+                appearance: none;
+                text-decoration: none;
                 display: inline-flex;
                 align-items: center;
                 gap: 6px;
-                padding: 6px 12px;
-                border-radius: var(--radius-md);
-                font-size: 12px;
-                border: 1px solid var(--border);
-                background: rgba(15,23,42,.72);
-                color: var(--muted);
-                text-decoration: none;
-                cursor: pointer;
-              }
-              button.pill {
-                font: inherit;
-                background: rgba(15,23,42,.72);
-              }
-              @media (prefers-color-scheme: light) {
-                .pill,
-                button.pill {
-                  background: rgba(255,255,255,.85);
-                }
-              }
-              .pill b {
-                color: var(--fg);
+                padding: 8px 16px;
+                border-radius: 99px;
+                font-size: 13px;
                 font-weight: 600;
+                cursor: pointer;
+                border: 1px solid var(--card-border);
+                background: rgba(255,255,255,0.03);
+                color: var(--text-muted);
+                transition: all 0.2s ease;
+                font-family: var(--font-sans);
               }
+              .btn b { color: var(--text-main); }
+              .btn:hover {
+                background: rgba(255,255,255,0.08);
+                transform: translateY(-1px);
+                color: var(--text-highlight);
+              }
+              .btn.active {
+                background: rgba(16, 185, 129, 0.1);
+                border-color: rgba(16, 185, 129, 0.3);
+                color: var(--accent-primary);
+              }
+              .btn.active b { color: var(--accent-primary); }
 
-              main {
-                margin-top: 4px;
-              }
-              .section-head {
-                margin-bottom: 10px;
-                font-size: 13px;
-                color: var(--muted);
-                line-height: 1.6;
-              }
-
+              /* About Panel */
               .about-panel {
-                margin: 10px 0 14px;
-                padding: 12px 14px;
-                border-radius: 16px;
-                background: radial-gradient(circle at top left,
-                  rgba(148,163,184,.22) 0,
-                  rgba(15,23,42,.96) 40%);
-                border: 1px solid rgba(148,163,184,.55);
-                box-shadow: var(--shadow-soft);
-                font-size: 13px;
-                line-height: 1.7;
                 display: none;
+                margin-bottom: 30px;
+                padding: 24px;
+                background: var(--card-bg);
+                border: 1px solid var(--card-border);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--card-shadow);
+                backdrop-filter: blur(10px);
+                animation: slideDown 0.3s ease-out;
               }
-              .about-panel.open {
-                display: block;
-              }
+              .about-panel.open { display: block; }
               .about-panel h2 {
-                margin: 0 0 4px;
-                font-size: 15px;
-                font-weight: 800;
+                margin: 0 0 8px;
+                font-family: var(--font-serif);
+                font-size: 18px;
+                color: var(--text-highlight);
               }
               .about-panel h3 {
-                margin: 10px 0 4px;
-                font-size: 13px;
+                margin: 20px 0 6px;
+                font-size: 14px;
                 font-weight: 700;
+                color: var(--accent-primary);
               }
-              .about-panel p {
-                margin: 3px 0 6px;
+              .about-panel p, .about-panel li {
+                font-size: 14px;
+                color: var(--text-muted);
+                line-height: 1.7;
               }
-              .about-panel ul {
-                margin: 6px 0 6px;
-                padding-left: 18px;
-                font-size: 13px;
-              }
-              .about-panel li {
-                margin: 2px 0;
+              .about-panel ul { padding-left: 20px; margin: 8px 0; }
+              
+              @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
               }
 
-              .list {
-                list-style: none;
-                padding: 0;
-                margin: 0;
+              /* Main List */
+              .section-label {
+                font-size: 12px;
+                font-weight: 600;
+                color: var(--text-muted);
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: 12px;
+                padding-left: 4px;
+                opacity: 0.8;
+              }
+
+              .grid {
+                display: grid;
+                gap: 12px;
+                animation: fadeUp 0.6s ease-out;
+              }
+
+              .card {
+                background: var(--card-bg);
+                border: 1px solid var(--card-border);
+                box-shadow: var(--card-shadow);
+                backdrop-filter: blur(10px);
+                border-radius: var(--radius-lg);
+                overflow: hidden;
+              }
+              
+              .item-card {
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
-              }
-              .item a {
-                display: block;
-                padding: 10px 12px;
-                border-radius: var(--radius-lg);
-                background: linear-gradient(135deg, rgba(15,23,42,.92), var(--card));
-                border: 1px solid rgba(148,163,184,.45);
+                padding: 20px 22px;
                 text-decoration: none;
-                color: inherit;
-                box-shadow: var(--shadow-soft);
-                transition: transform .12s ease-out, box-shadow .12s ease-out,
-                  border-color .12s ease-out, background .12s ease-out;
+                transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                position: relative;
               }
-              @media (prefers-color-scheme: light) {
-                .item a {
-                  background: linear-gradient(135deg, #ffffff, #f9fafb);
-                }
+              .item-card:hover {
+                background: rgba(255,255,255,0.03); /* subtle highlight */
+                border-color: rgba(255,255,255,0.15);
+                transform: translateY(-2px);
+                box-shadow: 0 12px 40px rgba(0,0,0,0.2);
               }
-              .item a:hover {
-                transform: translateY(-1px);
-                box-shadow: 0 20px 40px rgba(15,23,42,.45);
-                border-color: var(--accent);
-              }
+              .item-card:active { transform: scale(0.98); }
+
               .item-meta {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 4px;
-                font-size: 11px;
-                color: var(--muted);
+                margin-bottom: 8px;
               }
               .item-date {
-                display: inline-flex;
-                align-items: center;
-                padding: 3px 9px;
-                border-radius: 999px;
-                background: rgba(15,23,42,.75);
-                border: 1px solid rgba(148,163,184,.55);
-              }
-              @media (prefers-color-scheme: light) {
-                .item-date {
-                  background: rgba(248,250,252,.9);
-                }
-              }
-              .item-title {
-                font-size: 14px;
+                font-size: 11px;
+                font-family: var(--font-sans);
+                background: rgba(255,255,255,0.06);
+                padding: 4px 10px;
+                border-radius: 99px;
+                color: var(--accent-secondary);
                 font-weight: 600;
-                line-height: 1.6;
+                letter-spacing: 0.02em;
+              }
+              
+              .item-title {
+                margin: 0;
+                font-family: var(--font-serif);
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--text-main);
+                line-height: 1.5;
+                padding-right: 24px;
+              }
+              
+              .item-arrow {
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+                color: var(--text-muted);
+                opacity: 0.5;
+                transition: transform 0.2s;
+              }
+              .item-card:hover .item-arrow {
+                opacity: 1;
+                color: var(--accent-primary);
+                transform: translateX(3px);
               }
 
+              .empty-card {
+                padding: 40px;
+                text-align: center;
+                color: var(--text-muted);
+                font-size: 14px;
+              }
+
+              /* Footer */
               footer {
-                margin-top: 18px;
-                font-size: 11px;
-                color: var(--muted);
+                margin-top: 40px;
+                padding-top: 24px;
+                border-top: 1px solid var(--card-border);
+                text-align: center;
+              }
+              footer p {
+                font-size: 12px;
+                color: var(--text-muted);
                 line-height: 1.6;
+                margin: 0 0 12px;
+                opacity: 0.7;
               }
-              footer a {
-                color: var(--muted);
-              }
-              .small-link {
+              .footer-links a {
                 font-size: 11px;
+                color: var(--text-muted);
+                text-decoration: none;
+                margin: 0 6px;
+                border-bottom: 1px dotted var(--text-muted);
               }
-              .small-link a {
-                color: var(--muted);
-                text-decoration: underline;
+              .footer-links a:hover { color: var(--text-highlight); border-bottom-style: solid; }
+
+              @keyframes fadeUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
               }
             </style>
           </head>
@@ -354,69 +420,66 @@ jobs:
               <header>
                 <div class="brand">
                   <div class="logo" aria-hidden="true"></div>
-                  <div>
+                  <div class="title-group">
                     <div class="title">BNOC — Weekly</div>
                     <div class="subtitle">
-                      성경 본문을 <b>정론(orthodoxy)</b>와 <b>정행(orthopraxy)</b>의 틀로 읽어내는
-                      모바일 가이드 아카이브입니다.
+                      성경 본문을 정론(orthodoxy)와 정행(orthopraxy)의 틀로 읽어내는 모바일 가이드
                     </div>
                   </div>
                 </div>
-                <div class="nav-links">
-                  <button class="pill" type="button" id="btnAbout"><b>About</b><span> 소개</span></button>
-                  <button class="pill" type="button" id="btnRandom"><b>Random</b><span> 아무거나</span></button>
-                  <a class="pill" href="__BASE__/latest/"><b>Latest</b><span> 최근 호</span></a>
-                </div>
+                <nav class="nav-links">
+                  <button class="btn" type="button" id="btnAbout">
+                    <b>About</b> <span>소개</span>
+                  </button>
+                  <button class="btn" type="button" id="btnRandom">
+                    <b>Random</b> <span>아무거나</span>
+                  </button>
+                  <a class="btn" href="__BASE__/latest/">
+                    <b>Latest</b> <span>최근 호</span>
+                  </a>
+                </nav>
               </header>
 
               <main>
                 <div id="aboutPanel" class="about-panel">
                   <h2>BNOC — Weekly 소개</h2>
                   <p>
-                    BNOC(Bible Notes on Context)는 성경 본문을
-                    <b>정론(orthodoxy)</b>과 <b>정행(orthopraxy)</b>의 틀로 읽어 보는
-                    모바일용 한 장 가이드 아카이브입니다.
+                    BNOC(Bible Notes on Context)는 성경 본문을 <b>정론(orthodoxy)</b>과 <b>정행(orthopraxy)</b>의 균형 잡힌 시각으로 읽어 보는 모바일 가이드 아카이브입니다.
                   </p>
                   <h3>1) 무엇을 다루나요?</h3>
                   <p>
-                    매 호마다 한 본문을 골라,
-                    <b>역사·지리·사회적 배경</b>,
-                    전통적인 <b>정론(교리)</b>,
-                    그리고 오늘의 <b>정행(실천)</b>과
-                    <b>현대 적용</b>까지 함께 정리합니다.
+                    매 호마다 하나의 본문을 선정하여 <b>역사·지리적 배경</b>, <b>교리적 정론</b>, 그리고 <b>실천적 정행</b>과 현대적 적용을 정리합니다.
                   </p>
-                  <h3>2) 어떻게 읽으면 좋을까요?</h3>
+                  <h3>2) 사용 가이드</h3>
                   <ul>
-                    <li>위에서 아래로 한 번 쭉 읽으면서 흐름을 먼저 잡습니다.</li>
-                    <li>마음에 남는 문장 1–2개와, “오늘 나는 누구의 이웃이 될까?” 같은 질문 하나를 고릅니다.</li>
-                    <li>그 질문을 가지고 하루 동안, 혹은 소그룹/가족/친구와 나눔의 소재로 사용합니다.</li>
+                    <li>흐름을 따라 읽으며 본문의 입체적인 의미를 파악합니다.</li>
+                    <li>“오늘 나는 누구의 이웃이 될까?”와 같은 실천적 질문을 품습니다.</li>
+                    <li>소그룹이나 개인 묵상 시간에 나눔의 재료로 활용합니다.</li>
                   </ul>
-                  <h3>3) 무엇이 아니라 무엇을 목표로 하나요?</h3>
+                  <h3>3) 지향점</h3>
                   <p>
-                    BNOC는 “모든 해석의 최종 정답”을 제시하려는 것이 아니라,
-                    <b>텍스트와 씨름하도록 도와주는 프레임</b>을 제공하려고 합니다.
-                    부족한 부분이 보이면, 다른 해석을 스스로 탐색해 보는
-                    출발점으로 사용해 주시면 좋겠습니다.
+                    완벽한 정답보다는 텍스트와 씨름할 수 있는 <b>건강한 프레임</b>을 제공하는 것을 목표로 합니다.
                   </p>
                 </div>
 
-                <p class="section-head">
-                  가장 최근 호가 맨 위에 정렬되어 있습니다. 원하는 주제를 골라
-                  클릭하면 모바일 최적화된 가이드 페이지로 이동합니다.
-                </p>
-                <ol class="list">
-          __ITEMS__
-                </ol>
+                <div class="section-label">Publications</div>
+                <div class="grid">
+                  __ITEMS__
+                </div>
+
                 <footer>
-                  BNOC (Bible Notes on Context)는 개인 연구용 아카이브입니다.<br />
-                  GitHub Pages를 통해 정적 사이트로 자동 빌드·배포됩니다.
-                  <br />
-                  <span class="small-link">
-                    <a href="__BASE__/feed.xml">RSS</a> · <a href="__BASE__/sitemap.xml">Sitemap</a>
-                  </span>
+                  <p>
+                    BNOC (Bible Notes on Context)는 개인 연구용 아카이브입니다.<br />
+                    GitHub Pages를 통해 자동으로 빌드 및 배포됩니다.
+                  </p>
+                  <div class="footer-links">
+                    <a href="__BASE__/feed.xml">RSS Feed</a>
+                    <a href="__BASE__/sitemap.xml">Sitemap</a>
+                  </div>
                 </footer>
               </main>
             </div>
+            
             <script>
               window.BNOC_LINKS = __LINKS__;
               (function() {
@@ -425,9 +488,7 @@ jobs:
                 if (panel && btn) {
                   btn.addEventListener('click', function() {
                     var isOpen = panel.classList.toggle('open');
-                    btn.innerHTML = isOpen
-                      ? '<b>Hide</b><span> 닫기</span>'
-                      : '<b>About</b><span> 소개</span>';
+                    btn.classList.toggle('active');
                   });
                 }
 
@@ -448,7 +509,7 @@ jobs:
           hub = (
               hub_template
               .replace("__BASE__", BASE)
-              .replace("__ITEMS__", items_block)
+              .replace("__ITEMS__", items)
               .replace("__LINKS__", links_json)
           )
           open("index.html", "w", encoding="utf-8").write(hub)
