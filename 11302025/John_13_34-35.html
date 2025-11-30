@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>요한복음 13:34–35 — 정론·정행·현대 적용</title>
+  <meta name="date" content="2025-11-30" />
+  
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Color Palette */
+      --bg-body: #0a0e14;
+      --bg-gradient-start: #111827;
+      --bg-gradient-end: #020408;
+      
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+      
+      --accent-primary: #10b981; /* Emerald */
+      --accent-secondary: #f59e0b; /* Amber */
+      --accent-glow: rgba(16, 185, 129, 0.15);
+      
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-serif: "Merriweather", "Times New Roman", serif;
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-body: #f8fafc;
+        --bg-gradient-start: #f1f5f9;
+        --bg-gradient-end: #e2e8f0;
+        
+        --card-bg: rgba(255, 255, 255, 0.85);
+        --card-border: rgba(0, 0, 0, 0.06);
+        --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --text-highlight: #0f172a;
+        
+        --accent-primary: #059669;
+        --accent-secondary: #d97706;
+        --accent-glow: rgba(5, 150, 105, 0.1);
+      }
+    }
+
+    /* Reset & Base */
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { margin: 0; padding: 0; height: 100%; }
+
+    body {
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding-bottom: 120px; /* Space for bottom bar */
+    }
+
+    /* Typography Utilities */
+    h1, h2, h3, h4 { margin: 0; color: var(--text-highlight); }
+    h1, h2 { font-family: var(--font-serif); }
+    
+    .h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin: 16px 0 12px;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .sub b { color: var(--text-main); font-weight: 600; }
+    
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(10,14,20,0.8);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      position: relative;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .title-group { display: flex; flex-direction: column; }
+    .title { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+    .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    /* Buttons */
+    .btn {
+      appearance: none;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+    
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+    .btn.primary:hover {
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    }
+
+    /* Main Content */
+    main { padding: 10px 16px; }
+
+    /* Scripture (Details) */
+    .fulltext { margin-bottom: 24px; animation: fadeUp 0.6s ease-out; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    details[open] {
+      background: rgba(10,14,20,0.4);
+      border-color: var(--accent-primary);
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-highlight);
+      user-select: none;
+      transition: background 0.2s;
+    }
+    summary:hover { background: rgba(255,255,255,0.03); }
+    summary::-webkit-details-marker { display: none; }
+    
+    .chev {
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    details[open] .chev { transform: rotate(90deg); background: var(--accent-primary); color: #fff; }
+
+    .content.scripture {
+      padding: 10px 24px 24px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-main);
+      background: rgba(0,0,0,0.2);
+    }
+    .scripture p { margin: 12px 0; }
+    .v {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      margin-right: 4px;
+      vertical-align: 1px;
+      opacity: 0.9;
+    }
+
+    /* Hero Section */
+    .hero { padding: 10px 4px 24px; animation: fadeUp 0.7s ease-out; }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 8px;
+    }
+    .pill span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--accent-secondary);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+
+    /* Grid & Cards */
+    .grid {
+      display: grid;
+      gap: 16px;
+      animation: fadeUp 0.8s ease-out;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    }
+    
+    .card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+    
+    .card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-secondary);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .card p, .card li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card b {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+    .card ul {
+      margin: 8px 0;
+      padding-left: 20px;
+    }
+    .card li { margin-bottom: 6px; }
+
+    /* Special Elements */
+    .note {
+      margin: 16px 0;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 12px;
+    }
+    
+    /* KV (Key-Value) Lists */
+    .kv {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 8px 16px;
+      font-size: 14px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.2);
+      padding: 12px;
+      border-radius: var(--radius-md);
+    }
+    .kv div { padding: 4px 0; }
+    .kv-label {
+      color: var(--accent-secondary);
+      font-weight: 700;
+      font-family: var(--font-serif);
+      border-right: 1px solid var(--card-border);
+    }
+    
+    /* Tags */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .tag {
+      padding: 6px 12px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--card-border);
+      font-size: 12px;
+      color: var(--text-highlight);
+      font-weight: 600;
+    }
+
+    /* Summary Mode Logic Styles */
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body { display: none; }
+    
+    .hint-compressed {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    body.summary-mode .hint-compressed { display: block; }
+
+    /* Bottom Bar */
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      background: rgba(10,14,20,0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+    .bar-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+    .bar-inner .btn { flex: 1; padding: 12px; font-size: 14px; }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer divider */
+    .divider {
+      height: 1px;
+      background: var(--card-border);
+      margin: 24px 0;
+    }
+    .muted.small {
+      font-size: 12px;
+      opacity: 0.7;
+      text-align: center;
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-group">
+          <div class="title">요한복음 13:34–35</div>
+          <div class="subtitle">정론 · 정행 · 현대 적용 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare" aria-label="공유하기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+          공유
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- 본문 전체 -->
+    <section class="fulltext" aria-label="요한복음 13:34–35 본문 전체">
+      <details open>
+        <summary>📜 본문 전체 읽기 (요 13:34–35) <span class="chev">›</span></summary>
+        <div class="content scripture">
+          <p>
+            <span class="v">34</span>
+            새 계명을 너희에게 주노니 내가 너희를 사랑한 것 같이 너희도 서로 사랑하라.
+            내가 너희를 사랑한 것처럼, 너희가 서로 사랑하는 것이 곧 이 계명의 내용이다.
+          </p>
+          <p>
+            <span class="v">35</span>
+            너희가 서로 사랑하면 이로써 모든 사람이 너희가 내 제자인 줄 알리라.
+            제자의 정체성은 다른 무엇보다도 서로를 향한 사랑에서 드러난다.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="pill">
+        <span>אַהֲבָה (’ahavah)</span>
+        <span>חֶסֶד (ḥesed)</span>
+        <span>רֵעַ (re‘a)</span>
+        <span>ἐντολὴ καινή</span>
+        <span>ἀγάπη ἀλλήλων</span>
+      </div>
+      <h1 class="h1">새 계명과 제자의 표지 — “서로 사랑하라”</h1>
+      <p class="sub">
+        이 말씀은 <b>최후의 만찬 자리</b>에서, 가룟 유다가 떠난 뒤
+        <b>남은 제자들만을 향해</b> 주어진 <b>고별 담화의 핵심 선언</b>입니다.
+        예수는 구약의 “이웃 사랑” 계명을 <b>“내가 너희를 사랑한 것 같이”</b>라는 기준으로
+        새롭게 재해석하시며, 이 사랑이야말로 <b>제자됨의 가장 분명한 표지</b>라고 선언합니다.
+        동시에 1세기 말 <b>요한 공동체</b>에게 이 새 계명은,
+        회당과 사회에서 소외된 소수 집단이 <b>정체성을 지키는 실천 규범</b>이자,
+        오늘 우리에게는 정론을 <b>정행으로 번역하는 시험대</b>가 됩니다.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="해설 섹션">
+      <!-- 한눈 요약 -->
+      <article class="card">
+        <h3>한눈 요약 (3문장)</h3>
+        <p>
+          <b>1)</b> 요한복음 13:34–35는 최후의 만찬 자리에서
+          예수가 제자들의 발을 씻긴 직후 주신 말씀으로,
+          <b>“내가 너희를 사랑한 것 같이”</b>라는 십자가적 사랑을 기준으로 하는
+          <b>새 계명</b> 선포입니다.
+        </p>
+        <p>
+          <b>2)</b> 여기서 “새로움”은 단순한 내용이 아니라
+          사랑의 <b>기준과 강도</b>에 있으며,
+          예수의 자기희생적 사랑이 <b>제자 공동체 내부 관계의 규범</b>이 됩니다.
+        </p>
+        <p>
+          <b>3)</b> 이 사랑은 단지 감정이나 이상이 아니라
+          발 씻김과 같이 몸으로 낮아지는 <b>정행(orthopraxy)의 패턴</b>이며,
+          그 실천을 통해서만 세상이
+          <b>“너희가 내 제자”</b>임을 인식할 수 있다는
+          <b>공적 증언의 프레임</b>을 형성합니다.
+        </p>
+        <div class="hint">
+          아래에서 <b>① 역사·배경 → ② 정론(교리) → ③ 정행(실천) → ④ 현대 적용</b> 순으로 정리합니다.
+        </div>
+      </article>
+
+      <!-- 역사·문학·사회 배경 -->
+      <article class="card">
+        <h3>역사·문학·사회 배경</h3>
+        <div class="content-long">
+          <h4>1) 장면의 위치: 최후의 만찬과 고별 담화의 문턱</h4>
+          <ul>
+            <li>
+              요한복음 13장은 <b>최후의 만찬</b>을 배경으로,
+              예수의 <b>발 씻김</b>(13:1–17)과
+              유다의 퇴장(13:30), 그리고 이어지는 <b>고별 담화</b>(13–17장)의 시작을 담고 있습니다.
+            </li>
+            <li>
+              13:34–35는 바로 이 지점에서,
+              예수의 삶 전체를 요약하는 <b>사랑의 계명</b>이자,
+              남은 제자 공동체를 묶어줄 <b>핵심 규범</b>으로 제시됩니다.
+            </li>
+          </ul>
+
+          <h4>2) 예루살렘, 유월절, 로마 제국 치하</h4>
+          <ul>
+            <li>
+              시점은 로마 제국 통치하의 <b>유월절 무렵 예루살렘</b>으로,
+              민족적 긴장과 메시아 기대가 최고조에 이르렀던 때입니다.
+            </li>
+            <li>
+              제자들은 여전히 메시아를 <b>정치적 해방자</b>로 기대하는 경향이 있었고,
+              누가 더 큰가를 논쟁하던 사람들입니다.
+              그들에게 예수는 <b>발을 씻기는 종의 자리</b>를 보여 준 뒤
+              “서로 사랑하라”고 명령하십니다.
+            </li>
+          </ul>
+
+          <h4>3) 요한 공동체의 뒤늦은 시간: 배제된 소수의 자기 정체성</h4>
+          <ul>
+            <li>
+              요한복음이 기록된 시기는 대체로 <b>1세기 말</b>로 보며,
+              예수 시대보다 수십 년이 지난 <b>요한 공동체</b>의 상황을 반영합니다.
+            </li>
+            <li>
+              이 공동체는 유대 회당과의 갈등 속에서 <b>출교·배제</b>를 경험한
+              소수 그리스도인 집단으로 이해되곤 합니다.
+            </li>
+            <li>
+              외부로부터의 적대와 내부의 분열 속에서,
+              이 공동체는 자신들의 정체성을 표시해 줄 <b>표지(marker)</b>가 필요했고,
+              요한복음은 그것을 <b>“서로 사랑함”</b>으로 규정합니다.
+            </li>
+          </ul>
+
+          <h4>4) “새 계명”과 구약의 이웃 사랑</h4>
+          <ul>
+            <li>
+              이미 구약에는 “<b>네 이웃을 네 자신 같이 사랑하라</b>”(레 19:18)는
+              계명이 존재합니다.
+            </li>
+            <li>
+              따라서 “새 계명”의 새로움은 내용이 완전히 처음 등장했다기보다,
+              기준이 <b>“네 자신”에서 “내가 너희를 사랑한 것 같이”</b>로
+              <b>질적으로 격상</b>되었다는 점에 있습니다.
+            </li>
+            <li>
+              이로써 예수의 사랑(십자가)이
+              하나님 사랑·이웃 사랑 계명을 해석하는 <b>최종 렌즈</b>가 됩니다.
+            </li>
+          </ul>
+
+          <h4>5) 제자도의 표지: 제자 인식의 사회적 차원</h4>
+          <ul>
+            <li>
+              “이로써 모든 사람이 너희가 내 제자인 줄 알리라”는 말씀은,
+              사랑이 <b>개인 내면의 감정</b>이 아니라
+              <b>세상이 목격할 수 있는 공적 표지</b>임을 강조합니다.
+            </li>
+            <li>
+              요한 공동체에게 이 구절은,
+              박해 속에서도 자신들이 <b>참된 제자 공동체</b>임을 드러내는
+              가장 설득력 있는 증거가 <b>서로 사랑하는 실천</b>이라는 선언이었습니다.
+            </li>
+          </ul>
+        </div>
+        <div class="hint-compressed">
+          이 구절은 <b>최후의 만찬 자리</b>에서,
+          곧 떠날 예수가 남긴 <b>고별 규범</b>이자,
+          1세기 말 <b>요한 공동체</b>에게는
+          회당과 사회에서 배제된 소수가
+          자신들의 <b>정체성을 지키는 표지</b>로 주어진 말씀입니다.
+        </div>
+      </article>
+
+      <!-- ① 정론(orthodoxy) -->
+      <article class="card">
+        <h3>① 정론(Orthodoxy): 새 계명과 제자의 정체성</h3>
+        <p class="note">
+          핵심 교리 포인트: <b>예수의 사랑(십자가)이 기준이 되는 “새 계명”</b>과
+          <b>서로 사랑함을 통한 제자도의 표지</b>.
+        </p>
+        <div class="content-long">
+          <h4>1) “새 계명(ἐντολὴ καινή)”의 새로움</h4>
+          <ul>
+            <li>
+              이미 구약에는 <b>하나님 사랑(신 6:5)</b>과
+              <b>이웃 사랑(레 19:18)</b> 계명이 존재합니다.
+            </li>
+            <li>
+              정통 교의적 해석에서 “새 계명”의 새로움은
+              계명의 유무가 아니라 <b>기준과 깊이</b>에 있습니다:
+              <br />
+              <b>“네 자신 같이” → “내가 너희를 사랑한 것 같이”</b>.
+            </li>
+            <li>
+              예수의 십자가 사랑이
+              사랑 계명 전체의 <b>척도·스케일</b>이 되며,
+              이 사랑의 패턴이 제자의 삶 안에 <b>복제되도록 요구</b>됩니다.
+            </li>
+          </ul>
+
+          <h4>2) 제자의 표지: 사랑을 통한 인식</h4>
+          <ul>
+            <li>
+              “이로써 모든 사람이 너희가 내 제자인 줄 알리라”는
+              문장은, 참된 제자를 구분하는 표지가
+              먼저 <b>교리 시험</b>이 아니라
+              <b>서로를 향한 사랑의 실천</b>임을 보여 줍니다.
+            </li>
+            <li>
+              정론적으로, 이는 제자도(Discipleship)가
+              단순히 예수를 “옳게 믿는 것”을 넘어,
+              <b>예수처럼 관계를 맺는 것</b>을 포함한다는 교회의 자기 이해를 형성합니다.
+            </li>
+            <li>
+              교회론 차원에서 이 구절은,
+              사랑이 <b>교회의 표지</b>(notae ecclesiae) 가운데
+              핵심 위치를 차지한다는 전통적 논의를 지지하는 본문으로도 읽혀 왔습니다.
+            </li>
+          </ul>
+
+          <h4>3) 히브리어 키워드 1: אהב — ’ahav (사랑하다)</h4>
+          <div class="kv">
+            <div class="kv-label">אהב</div>
+            <div>
+              <b>사랑하다, 좋아하다</b>.
+              감정과 의지 모두를 포괄하는 동사로,
+              하나님 사랑과 이웃 사랑 명령에서 핵심이 되는 단어입니다.
+              (예: 신 6:5, 레 19:18)
+            </div>
+          </div>
+          <p>
+            정론적 해석에서 요 13:34–35는
+            구약의 <b>אהב</b> 계명을
+            예수 자신에게 적용한 후,
+            제자들의 상호 관계에 <b>확장</b>한 것으로 이해됩니다.
+            즉, 하나님과 이웃 사랑은 이제
+            <b>예수의 사랑 방식</b> 안에서 재정렬됩니다.
+          </p>
+
+          <h4>4) 히브리어 키워드 2: חסד — ḥesed (인애/신실한 사랑)</h4>
+          <div class="kv">
+            <div class="kv-label">חסד</div>
+            <div>
+              <b>인애, 자비, 언약적 신실함</b>.
+              단순한 호감이 아니라,
+              <b>꺾이지 않는 충성스러운 사랑</b>을 가리킵니다.
+              (예: 시 136, 미 6:8)
+            </div>
+          </div>
+          <p>
+            예수의 “끝까지 사랑하심”(요 13:1)은
+            히브리어 <b>חסד</b>의 신실함을 구현하는 장면으로 볼 수 있습니다.
+            정론적으로 새 계명은,
+            이런 언약적 <b>ḥesed</b>를
+            제자들 사이에서 재현하라는 요청입니다.
+          </p>
+
+          <h4>5) 히브리어 키워드 3: רֵעַ — re‘a (이웃/동무)</h4>
+          <div class="kv">
+            <div class="kv-label">רֵעַ</div>
+            <div>
+              <b>이웃, 친구, 동료</b>.
+              레 19:18의 “네 이웃”에 사용되는 단어로,
+              공동체 안에서 실제로 부딪히는 사람들을 가리킵니다.
+            </div>
+          </div>
+          <p>
+            요한복음의 “서로(ἀλλήλων)를 사랑하라”는 명령은
+            구약의 <b>re‘a</b> 개념을
+            제자 공동체 내부에 집중시킨 표현으로 볼 수 있습니다.
+            정론적으로 여기서의 이웃은,
+            같은 스승을 따르는 <b>형제·자매 제자들</b>입니다.
+          </p>
+        </div>
+        <div class="hint-compressed">
+          정통 교의적으로 이 본문은,
+          구약의 하나님·이웃 사랑 계명이
+          <b>예수의 십자가 사랑</b>을 기준으로
+          새롭게 정렬된 <b>“새 계명”</b>이며,
+          서로 사랑함이 <b>제자도의 가장 분명한 표지</b>라는
+          교회론적 선언으로 이해됩니다.
+        </div>
+      </article>
+
+      <!-- ② 정행(orthopraxy) -->
+      <article class="card">
+        <h3>② 정행(Orthopraxy): 발 씻김에서 계명으로</h3>
+        <p class="note">
+          정행 관점 질문: <b>나는 “사랑하라”는 정론을, 예수가 보여 준 발 씻김 패턴처럼 몸으로 번역하고 있는가?</b>
+        </p>
+        <div class="content-long">
+          <h4>1) 행위가 먼저, 해석이 나중: 발 씻김 → 새 계명</h4>
+          <ul>
+            <li>
+              요 13:1–17에서 예수는 먼저 제자들의 발을 씻기시는
+              <b>행위</b>를 보여 주시고,
+              그 후에야 “내가 너희를 사랑한 것 같이 서로 사랑하라”는
+              <b>해석적 계명</b>을 주십니다.
+            </li>
+            <li>
+              정행 관점에서 계명은,
+              추상적인 명령이 아니라
+              <b>이미 보여 준 행동 패턴의 요약</b>입니다.
+            </li>
+            <li>
+              즉, 사랑은 <b>낮아짐, 종의 자리, 실제 섬김</b>이라는 구체적 행위의 이름입니다.
+            </li>
+          </ul>
+
+          <h4>2) 감정화·추상화의 위험</h4>
+          <ul>
+            <li>
+              “서로 사랑하라”는 문장은 쉽게
+              <b>따뜻한 마음을 가지자</b>는
+              정서적 권면으로 축소될 수 있습니다.
+            </li>
+            <li>
+              그러나 요한복음이 보여 주는 사랑은
+              <b>발을 씻기고, 배신할 제자를 끝까지 품고, 십자가로 나아가는</b>
+              몸의 이야기입니다.
+            </li>
+            <li>
+              정행이 사라진 사랑 담론은,
+              사람들에게 죄책감만 남기거나,
+              “좋은 말”로만 소비되는 <b>박제된 계명</b>이 되기 쉽습니다.
+            </li>
+          </ul>
+
+          <h4>3) אהב와 חסד의 루틴화</h4>
+          <ul>
+            <li>
+              히브리어 <b>אהב(사랑하다)</b>와 <b>חסד(신실한 사랑)</b>이
+              정행으로 구현되려면,
+              사랑은 감정이 아니라 <b>루틴이자 습관</b>이 되어야 합니다.
+            </li>
+            <li>
+              매일 반복되는 작은 섬김, 시간을 내어 들어 줌,
+              실수한 사람을 다시 세워 줌,
+              불편한 진실을 함께 직면해 주는 일 등은
+              “서로 사랑하라”를 <b>hased-루틴</b>으로 만드는 실천입니다.
+            </li>
+            <li>
+              정행 관점에서 새 계명은
+              “가끔 감동할 때 잘하자”가 아니라
+              매일의 일정·관계 패턴 속에 박혀야 하는
+              <b>생활 구조</b>입니다.
+            </li>
+          </ul>
+
+          <h4>4) 정론 해석의 한계: 사랑을 ‘내부 정체성’에만 가두는 것</h4>
+          <ul>
+            <li>
+              이 구절을 <b>공동체 내부 결속</b>만을 위한 말로만 읽으면,
+              “우리끼리의 따뜻함”에 만족하는 <b>폐쇄적 사랑</b>이 될 수 있습니다.
+            </li>
+            <li>
+              그러나 예수는 “모든 사람이 너희가 내 제자인 줄 알리라”고 말합니다.
+              사랑은 <b>세상이 목격하는 공적 증언</b>입니다.
+            </li>
+            <li>
+              정행 관점에서,
+              사랑은 내부 결속을 강화하면서 동시에
+              <b>약자·타자·적대자에게까지 새 길을 여는 실천</b>으로 나아가야 합니다.
+            </li>
+          </ul>
+        </div>
+        <div class="hint-compressed">
+          정행 관점에서 새 계명은,
+          발 씻김으로 이미 보여 준
+          <b>낮아짐·섬김·끝까지 버티는 신실함</b>을
+          제자들의 <b>생활 루틴</b>으로 복제하라는 요청입니다.
+          사랑은 감정이 아니라 <b>반복되는 몸의 패턴</b>입니다.
+        </div>
+      </article>
+
+      <!-- ③ 현대 적용 프레임 -->
+      <article class="card">
+        <h3>③ 현대 적용: 개인 · 공동체 · 공적 영역</h3>
+        <p class="note">
+          히브리어 <b>אהב(사랑)</b>, <b>חסד(신실한 사랑)</b>, <b>רֵעַ(이웃)</b>을
+          <b>개인(나) · 공동체(교회/조직) · 공적 영역(사회/온라인)</b>에 연결하는 적용 프레임입니다.
+        </p>
+        <div class="content-long">
+          <h4>1) 개인 차원: “사랑”을 루틴으로 설계하기</h4>
+          <ul>
+            <li>
+              <b>אהב(사랑)</b>은 단지 호감이 아니라
+              <b>의지적 선택</b>입니다.
+              오늘 하루 내 일정에서,
+              사랑의 선택이 반영된 <b>구체적 시간 블록</b>이 있는지 점검할 수 있습니다.
+            </li>
+            <li>
+              <b>חסד(신실한 사랑)</b>은
+              일회성 이벤트보다 <b>지속성</b>을 강조합니다.
+              주 1회 정기적인 안부, 반복되는 섬김, 꾸준한 경청 같은 루틴은
+              새 계명을 <b>습관화된 ḥesed</b>로 만드는 방법입니다.
+            </li>
+            <li>
+              “오늘 내가 선택한 한 가지 작은 ḥesed는 무엇인가?”
+              를 매일 저녁 기록하는 습관은
+              정론을 정행으로 옮기는 간단한 연습이 됩니다.
+            </li>
+          </ul>
+
+          <h4>2) 공동체 차원: 이웃(re‘a)을 실제로 재구성하기</h4>
+          <ul>
+            <li>
+              레 19:18의 <b>רֵעַ(이웃)</b>은
+              이론상의 인류가 아니라
+              <b>실제로 얼굴을 자주 마주치는 사람들</b>입니다.
+            </li>
+            <li>
+              교회·소그룹·연구실·팀 안에서
+              “내가 불편해하는 re‘a”를 어떻게 대하는지가
+              새 계명의 현실성을 드러냅니다.
+            </li>
+            <li>
+              정행 적용으로,
+              공동체 단위에서
+              <b>갈등이 있는 관계를 위한 대화의 자리를 마련하기</b>,
+              <b>보이지 않던 구성원을 발견하고 초대하기</b> 같은
+              작은 실험들을 설계해 볼 수 있습니다.
+            </li>
+          </ul>
+
+          <h4>3) 공적 영역: 온라인·직장에서 드러나는 제자의 표지</h4>
+          <ul>
+            <li>
+              “모든 사람이 너희가 내 제자인 줄 알리라”는 말씀은
+              오늘로 치면 <b>온라인, 직장, 공적 논쟁</b> 자리에서
+              사랑이 어떻게 드러나는지를 포함합니다.
+            </li>
+            <li>
+              승자만 남고, 공격적인 언어가 표준이 된 환경에서,
+              <b>상대의 존엄을 지키는 언어</b>,
+              <b>느린 경청</b>,
+              <b>약자 편에 서려는 선택</b>은
+              새 계명의 공적 실천이 될 수 있습니다.
+            </li>
+            <li>
+              이는 “착하게 굴라”가 아니라,
+              <b>예수의 사랑 방식이 내 말투·결정·연대 방식</b>까지
+              관통하도록 허락하는 일입니다.
+            </li>
+          </ul>
+
+          <div class="divider"></div>
+          <p class="muted small">
+            요약하면, 새 계명은 우리에게 세 가지를 묻습니다.<br />
+            <b>① 사랑이 내 하루 일정표 안에 실제 시간으로 존재하는가?</b><br />
+            <b>② 공동체 안에서 내가 피하고 싶은 이웃(re‘a)에게 어떻게 반응하는가?</b><br />
+            <b>③ 온라인과 직장에서, 사랑이 제자도의 표지로 보이는가?</b>
+          </p>
+        </div>
+        <div class="hint-compressed">
+          현대적 적용의 핵심은,
+          새 계명을 <b>감동적인 문장</b>으로 두지 않고
+          <b>시간표 · 관계 · 공적 언어</b> 안에
+          작게라도 “복제”하는 것입니다.
+        </div>
+      </article>
+
+      <!-- 히브리어 키워드 카드 -->
+      <article class="card">
+        <h3>히브리어 키워드 정리</h3>
+        <p class="muted small">
+          요 13:34–35는 헬라어로 기록되었지만,
+          그 배경에는 구약의 <b>사랑(אהב)</b>, <b>신실한 사랑(חסד)</b>,
+          <b>이웃(רֵעַ)</b> 개념이 깔려 있습니다.
+        </p>
+        <div class="tag-list">
+          <span class="tag">אַהֲבָה — ’ahavah</span>
+          <span class="tag">חֶסֶד — ḥesed</span>
+          <span class="tag">רֵעַ — re‘a</span>
+        </div>
+        <div class="kv">
+          <div class="kv-label">אהב</div>
+          <div>
+            <b>사랑하다</b>. 감정·의지를 함께 포함하는 동사.
+            하나님 사랑과 이웃 사랑 계명의 기본 동사로,
+            새 계명은 이 사랑을 <b>예수의 방식</b>에 맞춰 재규정합니다.
+          </div>
+          <div class="kv-label">חסד</div>
+          <div>
+            <b>신실한 사랑, 인애</b>. 끝까지 버티는 언약적 사랑.
+            예수의 “끝까지 사랑하심”이 바로 이 <b>ḥesed</b>의 구체화입니다.
+          </div>
+          <div class="kv-label">רֵעַ</div>
+          <div>
+            <b>이웃, 동무</b>. 추상적 인류가 아니라
+            실제로 마주치는 사람들.
+            새 계명은 제자 공동체 내부의 <b>re‘a 관계</b>를
+            예수의 사랑 방식으로 다시 짜라고 요청합니다.
+          </div>
+        </div>
+        <p class="hint">
+          성경공부나 설교에서 이 세 단어를 반복해 상기시키면,
+          사랑을 <b>정서적 구호</b>를 넘어서
+          <b>지속적인 관계 패턴</b>과 <b>루틴</b>으로
+          번역하는 데 도움이 됩니다.
+        </p>
+      </article>
+
+      <!-- 실천 체크리스트 -->
+      <article class="card">
+        <h3>실천 체크리스트 (이번 주 적용 예시)</h3>
+        <ul>
+          <li>
+            <b>1. “발 씻김 루틴” 한 가지 만들기</b><br />
+            가족·동료·친구 중 한 사람을 정해서,
+            그 사람의 짐을 조금 덜어 주는
+            <b>아주 구체적인 일</b>을 이번 주에 한 번 실행해 보기.
+            (예: 대신 설거지, 보고서 초안 봐주기, 아이 돌봐주기 등)
+          </li>
+          <li>
+            <b>2. 내가 피하고 싶은 re‘a를 위한 기도·메모</b><br />
+            공동체 안에서 부담스럽거나 불편한 한 사람의 이름을 적고,
+            그 사람을 위해 <b>기도/메모/안부</b>를 한 번 실천해 보기.
+          </li>
+          <li>
+            <b>3. 온라인에서 사랑의 표지 한 번 남기기</b><br />
+            SNS나 메신저에서 갈등·냉소가 오가는 자리에,
+            <b>상대의 존엄을 지키는 댓글/메시지</b>를 한 번 남겨 보기.
+          </li>
+          <li>
+            <b>4. 사랑 루틴 기록하기</b><br />
+            일주일 동안,
+            “오늘 내가 실천한 작은 사랑 1가지”를
+            잠들기 전 메모장에 적으면서,
+            새 계명이 <b>루틴</b>이 되는 과정을 기록해 보기.
+          </li>
+        </ul>
+        <p class="muted small">
+          포인트: <b>정론</b>은 머릿속에 쌓이지만,
+          <b>정행</b>은 <b>일정표·관계·공적 언어</b>에 흔적을 남깁니다.
+          요 13:34–35는 우리가
+          “서로 사랑한다”는 말을
+          얼마나 구체적으로 <b>시간과 행동</b>으로 바꾸고 있는지 묻습니다.
+        </p>
+      </article>
+
+      <!-- 푸터 카드 -->
+      <article class="card" style="text-align: center; opacity: 0.8;">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.<br/>
+          상단 <b>공유</b> 버튼으로 링크를 나누고, 하단 <b>요약 모드</b>를 활용하세요.<br/>
+          동일한 레이아웃을 사용해 다른 본문(예: 눅 11:45–54)도
+          <b>정론 · 정행 · 현대 적용</b> 관점에서 시리즈로 확장할 수 있습니다.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <div class="bar" aria-label="도움말 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 펼치기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '요한복음 13:34–35 정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\n' + location.href);
+        }
+      });
+    }
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    // 전체 펼치기/접기
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
