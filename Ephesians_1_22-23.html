@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>에베소서 1:22–23 — 정론·정행·현대 적용</title>
+  <meta name="date" content="2025-12-14" />
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      /* Color Palette */
+      --bg-body: #0a0e14;
+      --bg-gradient-start: #111827;
+      --bg-gradient-end: #020408;
+      
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+      
+      --accent-primary: #10b981; /* Emerald */
+      --accent-secondary: #f59e0b; /* Amber */
+      --accent-glow: rgba(16, 185, 129, 0.15);
+      
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-serif: "Merriweather", "Times New Roman", serif;
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-body: #f8fafc;
+        --bg-gradient-start: #f1f5f9;
+        --bg-gradient-end: #e2e8f0;
+        
+        --card-bg: rgba(255, 255, 255, 0.85);
+        --card-border: rgba(0, 0, 0, 0.06);
+        --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --text-highlight: #0f172a;
+        
+        --accent-primary: #059669;
+        --accent-secondary: #d97706;
+        --accent-glow: rgba(5, 150, 105, 0.1);
+      }
+    }
+
+    /* Reset & Base */
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { margin: 0; padding: 0; height: 100%; }
+
+    body {
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding-bottom: 120px; /* Space for bottom bar */
+    }
+
+    /* Typography Utilities */
+    h1, h2, h3, h4 { margin: 0; color: var(--text-highlight); }
+    h1, h2 { font-family: var(--font-serif); }
+    
+    .h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin: 16px 0 12px;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .sub b { color: var(--text-main); font-weight: 600; }
+    
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(var(--bg-body), 0.8);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      position: relative;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .title-group { display: flex; flex-direction: column; }
+    .title { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+    .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    /* Buttons */
+    .btn {
+      appearance: none;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+    
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+    .btn.primary:hover {
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    }
+
+    /* Main Content */
+    main { padding: 10px 16px; }
+
+    /* Scripture (Details) */
+    .fulltext { margin-bottom: 24px; animation: fadeUp 0.6s ease-out; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    details[open] {
+      background: rgba(var(--bg-body), 0.4);
+      border-color: var(--accent-primary);
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-highlight);
+      user-select: none;
+      transition: background 0.2s;
+    }
+    summary:hover { background: rgba(255,255,255,0.03); }
+    summary::-webkit-details-marker { display: none; }
+    
+    .chev {
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    details[open] .chev { transform: rotate(90deg); background: var(--accent-primary); color: #fff; }
+
+    .content.scripture {
+      padding: 10px 24px 24px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-main);
+      background: rgba(0,0,0,0.2);
+    }
+    .scripture p { margin: 12px 0; }
+    .v {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      margin-right: 4px;
+      vertical-align: 1px;
+      opacity: 0.9;
+    }
+
+    /* Hero Section */
+    .hero { padding: 10px 4px 24px; animation: fadeUp 0.7s ease-out; }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 8px;
+    }
+    .pill span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    /* Hebrew / Greek badge 색상 구분 */
+    .pill span.hebrew {
+      background: rgba(217, 119, 6, 0.16);
+      border-color: #fbbf24;
+      color: #fed7aa;
+    }
+    .pill span.greek {
+      background: rgba(59, 130, 246, 0.18);
+      border-color: #93c5fd;
+      color: #dbeafe;
+    }
+
+    /* Grid & Cards */
+    .grid {
+      display: grid;
+      gap: 16px;
+      animation: fadeUp 0.8s ease-out;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    }
+    
+    .card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+    
+    .card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-secondary);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .card p, .card li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card b {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+    .card ul {
+      margin: 8px 0;
+      padding-left: 20px;
+    }
+    .card li { margin-bottom: 6px; }
+
+    /* Special Elements */
+    .note {
+      margin: 16px 0;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 12px;
+    }
+    
+    /* KV (Key-Value) Lists */
+    .kv {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 8px 16px;
+      font-size: 14px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.2);
+      padding: 12px;
+      border-radius: var(--radius-md);
+    }
+    .kv div { padding: 4px 0; }
+    .kv-label {
+      color: var(--accent-secondary);
+      font-weight: 700;
+      font-family: var(--font-serif);
+      border-right: 1px solid var(--card-border);
+    }
+    
+    /* Tags */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .tag {
+      padding: 6px 12px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--card-border);
+      font-size: 12px;
+      color: var(--text-highlight);
+      font-weight: 600;
+    }
+    /* 히브리어 / 헬라어 키워드 태그 색상 구분 */
+    .tag-hebrew {
+      background: rgba(217, 119, 6, 0.16);
+      border-color: #f59e0b;
+      color: #fed7aa;
+    }
+    .tag-greek {
+      background: rgba(59, 130, 246, 0.18);
+      border-color: #3b82f6;
+      color: #dbeafe;
+    }
+
+    /* Summary Mode Logic Styles */
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body { display: none; }
+    
+    .hint-compressed {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    body.summary-mode .hint-compressed { display: block; }
+
+    /* Bottom Bar */
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      background: rgba(var(--bg-body), 0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+    .bar-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+    .bar-inner .btn { flex: 1; padding: 12px; font-size: 14px; }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer divider */
+    .divider {
+      height: 1px;
+      background: var(--card-border);
+      margin: 24px 0;
+    }
+    .muted.small {
+      font-size: 12px;
+      opacity: 0.7;
+      text-align: center;
+      display: block;
+    }
+
+  
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-group">
+          <div class="title">에베소서 1:22–23</div>
+          <div class="subtitle">정론 · 정행 · 현대 적용 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare" aria-label="공유하기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+          공유
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="wrap">
+    <!-- 본문 전체 -->
+    <section class="fulltext" aria-label="에베소서 1:22–23 본문">
+      <details open>
+        <summary>📜 본문 읽기 (엡 1:22–23) <span class="chev">›</span></summary>
+        <div class="content scripture">
+          <p><span class="v">22</span> 또 만물을 그의 발 아래 복종하게 하시고 그를 만물 위에 <b>교회의 머리</b>로 삼으셨느니라</p>
+          <p><span class="v">23</span> 교회는 그의 <b>몸</b>이니 만물 안에서 만물을 <b>충만하게 하시는 이</b>의 <b>충만함</b>이니라</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="pill">
+        <span class="greek">ἐκκλησία (ekklēsia)</span>
+        <span class="greek">σῶμα (sōma)</span>
+        <span class="greek">κεφαλή (kephalē)</span>
+        <span class="greek">πλήρωμα (plērōma)</span>
+        <span class="greek">τὰ πάντα ἐν πᾶσιν</span>
+      </div>
+      <h1 class="h1">교회는 그의 몸 — “충만”을 성과가 아니라 삶으로 드러내는 공동체</h1>
+      <p class="sub">
+        에베소서 1장 23절은 “교회가 무엇인가”를 가장 응축된 언어로 말합니다.
+        교회는 단지 같은 건물에 모이는 사람들이 아니라,
+        <b>그리스도와 결합된 몸(σῶμα)</b>이며,
+        그 몸은 <b>만물 안에서 만물을 채우시는 분</b>의 <b>충만함(πλήρωμα)</b>과 연결되어 있습니다.
+        이 구절을 제대로 이해하려면, 먼저 1장 20–23절의 흐름(부활·승천·만물 위의 머리)을 잡고,
+        1세기 소아시아(에베소를 포함한 대도시 문화)가 “힘”과 “충만”을 무엇으로 체감했는지,
+        그리고 바울(혹은 바울 전승)이 왜 <b>몸/머리/충만</b>이라는 언어를 택했는지를 함께 살펴보아야 합니다.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="해설 섹션">
+      <!-- 한눈 요약 -->
+      <article class="card">
+        <h3>한눈 요약 (3–4문장)</h3>
+        <p>
+          <b>1)</b> 에베소서 1:23은 “교회”를 그리스도의 <b>몸</b>이라고 부르며,
+          교회의 정체성을 개인의 신앙심이나 종교 활동이 아니라 <b>그리스도와의 결합</b>에서 출발시킵니다.
+        </p>
+        <p>
+          <b>2)</b> 그리스도는 “만물 위의 머리”(1:22)로 선포되고,
+          교회는 그 머리와 붙어 있는 몸으로서 <b>세상 권력과 가치 체계 바깥의 다른 질서</b>를 보여 주도록 부름 받습니다.
+        </p>
+        <p>
+          <b>3)</b> “충만함(πλήρωμα)”은 “교회가 커졌다”는 자부심이 아니라,
+          <b>만물을 채우시는 그리스도의 생명과 통치가 교회 안에 채워지고, 교회를 통해 드러난다</b>는 방향을 가리킵니다.
+        </p>
+        <div class="hint">
+          아래에서 <b>① 역사·배경 → ② 정론(교리) → ③ 정행(실천) → ④ 헬라어 키워드 → ⑤ 현대 적용</b> 순서로,
+          일반 성도 눈높이에 맞춰 “교회는 그의 몸”이 실제로 무엇을 뜻하는지 차근차근 풀어 봅니다.
+        </div>
+      </article>
+
+      <!-- 역사·지리·배경 -->
+      <article class="card">
+        <h3>역사 · 지리 · 배경</h3>
+        <div class="content-long">
+          <h4>1) 에베소서는 어떤 편지인가? (한 도시만이 아니라 ‘회람 서신’ 가능성)</h4>
+          <p>
+            에베소서는 전통적으로 바울이 감금 중에 쓴 “옥중서신”으로 읽혀 왔고,
+            동시에 학계에서는 바울 사후에 바울의 신학을 계승한 저자가 썼을 가능성도 논의됩니다.
+            중요한 것은 이 편지가 특정 사건 하나를 해결하는 ‘민원 처리형’ 문서라기보다,
+            여러 교회가 공통으로 마주한 현실 한복판에서
+            <b>“교회가 무엇이고, 그리스도가 누구이며, 그 관계가 어떻게 삶으로 이어지는가”</b>를 큰 그림으로 재정의하는 편지처럼 들린다는 점입니다.
+          </p>
+
+          <h4>2) 1세기 소아시아 대도시의 분위기: “충만”은 체감되는 단어였다</h4>
+          <p>
+            에베소 같은 도시에서는 종교(신전), 경제(상업), 정치(제국 질서)가 서로 얽혀 돌아갔습니다.
+            그래서 사람들에게 “풍요”와 “충만”은 단지 마음의 상태가 아니라,
+            <b>도시가 잘 돌아가고, 안전이 보장되고, 명예가 쌓이고, 돈이 도는 체감</b>과 연결된 언어였습니다.
+            이 배경에서 “교회는… 충만함”이라는 선언은,
+            ‘진짜 충만’이 무엇인지에 대한 기준을 도시 시스템에서 그리스도로 옮겨 놓습니다.
+          </p>
+
+          <h4>3) ‘몸–머리’ 은유는 익숙했지만, 에베소서는 방향을 바꿔 쓴다</h4>
+          <p>
+            고대 사회에는 공동체나 국가를 “몸”에 비유하는 말하기 방식이 널리 있었습니다.
+            문제는 그 은유가 자주 “질서”라는 이름으로 <b>위계와 복종을 정당화</b>하는 데 쓰였다는 점입니다.
+            그런데 에베소서 1:22–23은 그 익숙한 은유를 가져오되,
+            교회가 머리 되신 그리스도에게서 <b>생명과 방향을 공급받는 몸</b>이라는 쪽으로 재배열합니다.
+            그래서 이것은 권위주의를 강화하는 비유가 아니라,
+            교회가 어떤 공동체가 되어야 하는지를 묻는 <b>윤리적 비유</b>가 됩니다.
+          </p>
+
+          <h4>4) “만물(τὰ πάντα)”이라는 스케일: 교회론이 우주적 그리스도론에 붙어 있다</h4>
+          <p>
+            1:22–23에서 반복되는 “만물” 언어는,
+            교회를 ‘소규모 신앙 모임’으로 축소시키지 못하게 합니다.
+            그리스도의 통치가 만물을 향해 열려 있다면,
+            교회는 세상과 무관한 섬이 아니라
+            <b>세상 속에서 다른 방식으로 살아내는 몸</b>이어야 합니다.
+            이게 에베소서가 교회를 설명할 때 늘 “연합·화해·성숙” 같은 주제를 함께 밀어 넣는 이유입니다.
+          </p>
+        </div>
+        <div class="hint-compressed">
+          이 구절은 특정 현안 해결보다,
+          <b>1세기 도시가 체감하던 ‘충만’(풍요·힘·질서) 언어를 가져와</b>
+          그 기준을 <b>그리스도와 교회(머리–몸)</b> 관계로 다시 배치하는 선언입니다.
+        </div>
+      </article>
+
+      <!-- ① 정론(orthodoxy) -->
+      <article class="card">
+        <h3>① 정론(Orthodoxy): 교회는 ‘그리스도의 몸’이며, 그분의 충만과 연결된다</h3>
+        <p class="note">
+          정통 교회 전통이 이 본문에서 가장 먼저 붙드는 것은
+          <b>그리스도의 주권(만물 위의 머리)</b>과
+          <b>교회의 연합(그의 몸)</b>,
+          그리고 “충만함(πλήρωμα)”이라는 진술이 말하는 <b>교회론의 깊이</b>입니다.
+        </p>
+        <div class="content-long">
+          <h4>1) 문맥: 1:20–23의 흐름을 놓치지 말 것</h4>
+          <p>
+            1:23은 홀로 떠 있는 문장이 아니라,
+            하나님이 그리스도를 죽음에서 일으키시고(부활),
+            하늘에 앉히시고(승천/보좌),
+            모든 통치와 권세 위에 두셨다는 선포(1:20–21) 위에 서 있습니다.
+            그리고 하나님이 그리스도를 <b>“만물 위에 교회의 머리”</b>로 주셨다고 말한 뒤(1:22),
+            바로 이어 “교회는 그의 몸”이라고 연결합니다(1:23).
+            즉, 교회는 ‘그리스도의 주권’과 분리된 별도 조직이 아니라,
+            <b>그 주권과 유기적으로 결합된 몸</b>으로 이해됩니다.
+          </p>
+
+          <h4>2) “교회(ἐκκλησία)”는 건물이 아니라 ‘부름 받은 공동체’</h4>
+          <p>
+            ἐκκλησία(에클레시아)는 단순히 “예배당”을 뜻하지 않고,
+            하나님께 부름 받아 모인 공동체를 가리키는 말입니다.
+            그래서 이 구절의 교회는 “어디에 모이느냐”보다
+            “무엇에 속하느냐”가 우선입니다.
+            교회는 그리스도께 속한 몸이며,
+            그 몸은 그리스도의 성품과 방향을 드러내도록 부름 받습니다.
+          </p>
+
+          <h4>3) “충만함(πλήρωμα)”은 무엇을 뜻하나? (두 가지 전통적 읽기)</h4>
+          <p>
+            πλήρωμα(플레로마)는 문자 그대로 “가득 참, 충만, 채움”입니다.
+            에베소서 전반에서 “채우다/충만” 언어는 단지 감정의 풍요가 아니라
+            <b>하나님이 공동체를 성숙하게 채우시는 영적 현실</b>을 가리키는 방향으로 쓰입니다.
+          </p>
+          <ul>
+            <li>
+              <b>(A) 교회가 그리스도로 ‘채워진다’</b>는 읽기:
+              그리스도는 만물을 채우시는 분이고,
+              교회는 그분에게서 생명과 은혜를 공급받아 충만해지는 몸이라는 이해입니다.
+            </li>
+            <li>
+              <b>(B) 교회가 그리스도의 충만을 ‘드러내는 그릇’</b>이라는 읽기:
+              그리스도께서 만물을 채우시는 방식 가운데
+              교회가 눈에 보이는 통로가 되어
+              그 충만이 공동체의 사랑·거룩·화해로 나타난다는 이해입니다.
+            </li>
+          </ul>
+          <p>
+            두 읽기는 경쟁하기보다 서로를 보완합니다.
+            교회는 먼저 그리스도로부터 채움(은혜·성령·진리)을 받고,
+            그 채움이 공동체의 삶으로 흘러나갈 때
+            “그리스도의 충만”이 교회 안에서 가시화됩니다.
+          </p>
+
+          <h4>4) “머리(κεφαλή)–몸(σῶμα)”은 권위가 아니라 생명의 연결을 말한다</h4>
+          <p>
+            κεφαλή(케팔레, 머리)는 단지 위에서 명령하는 ‘지배’의 상징이 아니라,
+            몸이 살아 움직이게 하는 <b>근원·방향·연결</b>을 강조하는 언어로 읽혀 왔습니다.
+            그래서 정론적으로 이 본문은
+            “교회는 그리스도의 지시를 받아 움직이는 조직”이라는 말보다,
+            “교회는 그리스도의 생명과 성품이 흘러들어와 움직이는 몸”이라는 뜻에 더 가깝습니다.
+          </p>
+        </div>
+        <div class="hint-compressed">
+          정론적으로 1:23은
+          교회를 “그리스도의 몸(σῶμα)”으로 규정하고,
+          그리스도의 “충만함(πλήρωμα)”과 연결합니다.
+          핵심은 교회의 자랑이 아니라,
+          <b>그리스도와의 결합에서 나오는 생명·성숙·방향</b>입니다.
+        </div>
+      </article>
+
+      <!-- ② 정행(orthopraxy) -->
+      <article class="card">
+        <h3>② 정행(Orthopraxy): ‘그리스도의 몸’이라면, 교회는 어떻게 살아야 하나</h3>
+        <p class="note">
+          정행 관점에서 이 구절은 “교회는 대단하다”로 끝나지 않습니다.
+          오히려 “몸이라면 당연히 따라야 하는 삶의 방식”을 강하게 요구합니다.
+          몸은 상징이 아니라 <b>움직임의 규칙</b>이기 때문입니다.
+        </p>
+        <div class="content-long">
+          <h4>1) ‘충만’을 숫자·규모·성과로 착각하지 말 것</h4>
+          <p>
+            교회가 ‘충만’이라는 단어를 들을 때,
+            우리는 쉽게 “출석이 늘었다, 프로그램이 많다, 영향력이 커졌다”로 번역합니다.
+            하지만 본문이 말하는 충만은 교회의 자기 충만이 아니라,
+            <b>만물을 채우시는 그리스도의 충만</b>입니다.
+            그러니 정행적으로는 이런 질문이 먼저 나와야 합니다.
+            “우리는 무엇으로 채워지고 있는가?”
+            “우리의 말투, 관계, 돈의 사용, 약자를 대하는 태도에서
+            그리스도의 성품이 실제로 묻어나오는가?”
+          </p>
+
+          <h4>2) 몸의 윤리: 고통 분담 · 지체 존중 · 연결 유지</h4>
+          <p>
+            몸은 한 지체의 아픔이 전체에 전달되고,
+            약한 부분을 무시하면 전체가 무너지고,
+            연결이 끊기면 기능이 마비됩니다.
+            따라서 “교회는 그의 몸”이라는 고백은,
+            교회가 반드시 <b>돌봄이 전달되는 구조</b>를 갖추어야 한다는 뜻입니다.
+            정행의 언어로 말하면,
+            “교회는 서로의 삶을 서로가 감당하도록 훈련받는 공동체”입니다.
+          </p>
+
+          <h4>3) ‘머리–몸’을 권위주의로 오용하지 말 것</h4>
+          <p>
+            몸 은유를 “위에서 시키면 아래가 복종한다”는 방식으로만 쓰면,
+            교회는 금방 권위주의 구조가 됩니다.
+            그러나 머리이신 그리스도는
+            억압으로 몸을 움직이시는 분이 아니라,
+            사랑과 자기 비움으로 몸을 살리시는 분입니다.
+            그러므로 교회의 리더십은
+            통제의 기술이 아니라 <b>살리는 기술(돌봄·분별·회복)</b>로 증명되어야 합니다.
+          </p>
+
+          <h4>4) ‘만물’ 스케일의 실천: 교회는 세상과 무관한 섬이 아니다</h4>
+          <p>
+            그리스도가 만물을 채우신다면,
+            교회는 세상 문제를 외면하는 섬이 될 수 없습니다.
+            다만 “세상을 이기자”는 공격성이 아니라,
+            <b>다른 방식으로 존재함</b>으로 만물 가운데 드러나는 공동체가 됩니다.
+            화해를 만들고, 약자를 보호하고, 진실을 말하되 혐오를 거부하고,
+            경쟁의 언어 대신 책임과 돌봄의 언어로 살아내는 것이
+            “몸의 정행”입니다.
+          </p>
+        </div>
+        <div class="hint-compressed">
+          정행의 관점에서 1:23은
+          “교회가 얼마나 크냐”보다
+          <b>교회가 무엇으로 채워져 어떤 방식으로 살아내느냐</b>를 묻습니다.
+          몸이라면 <b>돌봄·연결·겸손·화해</b>가 기본 동작이 됩니다.
+        </div>
+      </article>
+
+      <!-- ③ 헬라어 키워드 카드 -->
+      <article class="card">
+        <h3>헬라어 키워드 정리 (히브리어 개념 태그와 색상 구분)</h3>
+        <p class="muted small">
+          본문은 신약이므로 원어는 <b>헬라어</b>입니다.
+          아래 태그에서 <span class="tag-greek">파란 계열</span>은 <b>헬라어 키워드</b>,
+          <span class="tag-hebrew">주황 계열</span>은 연결되는 <b>구약 히브리어 개념</b>을 표시합니다.
+        </p>
+
+        <div class="tag-list">
+          <span class="tag tag-greek">ἐκκλησία — ekklēsia (교회)</span>
+          <span class="tag tag-greek">σῶμα — sōma (몸)</span>
+          <span class="tag tag-greek">κεφαλή — kephalē (머리)</span>
+          <span class="tag tag-greek">πλήρωμα — plērōma (충만)</span>
+          <span class="tag tag-greek">πληρόω — plēroō (채우다)</span>
+          <span class="tag tag-greek">τὰ πάντα ἐν πᾶσιν (만물 안에서 만물을)</span>
+
+          <span class="tag tag-hebrew">מָלֵא — mālēʾ (가득 차다/채우다)</span>
+          <span class="tag tag-hebrew">כָּבוֹד — kāvōd (영광/무게감, 임재의 빛)</span>
+        </div>
+
+        <div class="kv">
+          <div class="kv-label">ἐκκλησία</div>
+          <div>
+            <b>에클레시아</b>. “부름 받아 모인 공동체”.
+            교회를 건물·행사·프로그램보다 먼저 <b>소속과 정체성</b>으로 규정합니다.
+          </div>
+
+          <div class="kv-label">σῶμα</div>
+          <div>
+            <b>소마</b>. “몸”.
+            교회가 그리스도와 <b>유기적으로 결합</b>되어 있으며,
+            지체 간에 <b>돌봄과 연결</b>이 필수임을 암시합니다.
+          </div>
+
+          <div class="kv-label">κεφαλή</div>
+          <div>
+            <b>케팔레</b>. “머리”.
+            단순 지배가 아니라 <b>근원·방향·연결</b>의 뉘앙스를 가지며,
+            교회가 그리스도에게서 생명과 방향을 공급받는다는 뜻을 강화합니다.
+          </div>
+
+          <div class="kv-label">πλήρωμα</div>
+          <div>
+            <b>플레로마</b>. “충만/가득 참”.
+            교회가 ‘자기 성과’로 충만해진다는 뜻이 아니라,
+            <b>만물을 채우시는 그리스도의 충만과 연결</b>된 공동체라는 선언의 중심어입니다.
+          </div>
+
+          <div class="kv-label">πληρόω</div>
+          <div>
+            <b>플레로오</b>. “채우다/충만하게 하다”.
+            1:23의 “충만하게 하시는 이”는,
+            그리스도의 작용이 과거 사건으로 끝난 것이 아니라
+            <b>지금도 계속 채우시는 현재진행형</b>임을 보여 줍니다.
+          </div>
+
+          <div class="kv-label">מָלֵא / כָּבוֹד</div>
+          <div>
+            구약에서 “채움/충만”을 말할 때 자주 쓰이는 뿌리 개념은
+            <b>מָלֵא(mālēʾ)</b> 계열이며,
+            하나님의 임재가 성막·성전을 “채운다”는 전통과 연결됩니다.
+            또한 <b>כָּבוֹד(kāvōd)</b>는 하나님의 영광/임재의 ‘무게감’을 뜻해,
+            “충만”이 단지 물질적 풍요가 아니라 <b>하나님의 임재와 삶의 변화</b>로 체감된다는 배경을 제공합니다.
+          </div>
+        </div>
+
+        <p class="muted small" style="margin-top:16px;">
+          요약하면, “교회는 그의 몸”은 조직을 칭찬하는 말이 아니라
+          <b>그리스도의 생명이 흘러들어와(πληρόω) 공동체를 채우고(πλήρωμα),
+          그 채움이 지체들의 돌봄과 화해로 드러나야 한다</b>는 선언입니다.
+        </p>
+      </article>
+
+      <!-- ④ 현대 적용 -->
+      <article class="card">
+        <h3>④ 현대 적용: 개인 · 공동체 · 공적 영역</h3>
+        <p class="note">
+          “교회는 그의 몸”을 오늘에 적용할 때 핵심은 하나입니다.
+          <b>충만을 ‘느낌’이나 ‘성과’가 아니라, 삶의 방식으로 번역하는 것</b>입니다.
+        </p>
+        <div class="content-long">
+          <h4>1) 개인 — “무엇으로 채워져 살고 있는가?”</h4>
+          <p>
+            우리는 불안을 달래기 위해
+            정보, 성과, 인정, 소비로 자신을 채우려고 할 때가 많습니다.
+            그런데 그런 채움은 종종 더 큰 결핍을 낳습니다.
+            1:23은 “나를 채우는 근원”을
+            성취나 비교가 아니라 <b>만물을 채우시는 그리스도</b>로 옮기라고 부릅니다.
+            하루 5–10분이라도 ‘비움의 루틴’(침묵, 기도, 감사 기록)을 만들면
+            내 마음의 충만이 조금씩 다른 방향으로 재구성됩니다.
+          </p>
+
+          <h4>2) 공동체 — 몸의 기본 동작을 회복하기</h4>
+          <p>
+            교회가 몸이라면,
+            “누가 일을 많이 하느냐”보다
+            “누가 약한 지체를 살피느냐”가 건강의 지표가 됩니다.
+            몸은 효율보다 생명을 우선합니다.
+            그러니 공동체 안에서
+            상처받은 사람의 안전, 조용한 사람의 자리, 실패한 사람의 회복이 실제로 보장되는지 점검해 보십시오.
+            이것이 ‘충만’의 가장 현실적인 형태입니다.
+          </p>
+
+          <h4>3) 공적 영역 — ‘만물’ 속에서 다른 방식으로 존재하기</h4>
+          <p>
+            그리스도의 충만이 만물을 향한다면,
+            교회는 세상과 싸우는 집단이기보다
+            세상 속에서 <b>다른 윤리</b>로 살아내는 공동체가 됩니다.
+            혐오 대신 존엄을 말하고,
+            약자에게 불리한 구조를 그냥 두지 않고,
+            경쟁의 언어를 돌봄의 언어로 바꾸는 작은 실천이
+            “만물 안에서 만물을 채우시는” 그리스도의 통치를 믿는 방식이 됩니다.
+          </p>
+
+          <div class="divider"></div>
+          <p class="muted small">
+            이 본문이 오늘 우리에게 던지는 질문은 아주 단순합니다.<br/>
+            <b>“나는 무엇으로 채워져 살고 있는가?”</b><br/>
+            <b>“우리 공동체는 그리스도의 성품으로 채워져 있는가?”</b><br/>
+            <b>“그 채움이 세상 속에서 돌봄과 화해로 드러나고 있는가?”</b>
+          </p>
+        </div>
+        <div class="hint-compressed">
+          이번 주에는 “충만”을 목표로 하기보다,
+          <b>하루의 작은 루틴 하나</b>(비움·기도·감사)를 통해
+          “무엇으로 채워지는지”의 방향을 바꿔 보십시오.
+        </div>
+      </article>
+
+      <!-- 실천 체크리스트 -->
+      <article class="card">
+        <h3>실천 체크리스트 (이번 주 적용)</h3>
+        <ul>
+          <li>
+            <b>1. ‘나를 채우는 것’ 점검하기</b><br />
+            이번 주에 내가 자주 기대는 채움(정보, 쇼핑, 인정, 비교)을 3개 적고,
+            그중 하나를 <b>조금 줄여</b> 보며 마음의 반응을 관찰해 보기.
+          </li>
+          <li>
+            <b>2. ‘비움의 루틴’ 10분</b><br />
+            하루 10분, 휴대폰을 내려놓고
+            <b>침묵 → 짧은 기도 → 감사 3줄</b>을 한 세트로 반복해 보기.
+          </li>
+          <li>
+            <b>3. 몸의 윤리 1회 실행</b><br />
+            공동체 안에서 소외되기 쉬운 지체(조용한 사람, 새가족, 지친 봉사자) 한 사람에게
+            구체적인 도움(안부, 동행, 작은 선물)을 한 번 실행해 보기.
+          </li>
+          <li>
+            <b>4. ‘성과의 충만’ 언어 바꾸기</b><br />
+            대화 속에서 “얼마나 했냐/얼마나 늘었냐” 대신
+            “<b>누가 회복했냐/누가 안전해졌냐</b>”라는 질문을 한 번 던져 보기.
+          </li>
+        </ul>
+        <p class="muted small">
+          기억할 것: <b>정론</b>은 “교회가 무엇인가”를 세워 주고,
+          <b>정행</b>은 그 고백이 <b>내 시간과 관계, 공동체 구조 속에서 어떤 모양으로 살아지는지</b>를 결정하게 합니다.
+        </p>
+      </article>
+
+      <!-- 푸터 카드 -->
+      <article class="card" style="text-align: center; opacity: 0.8;">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.<br/>
+          상단 <b>공유</b> 버튼으로 링크를 나누고, 하단 <b>요약 모드</b>를 활용해
+          소그룹 나눔이나 개인 묵상에 사용해 보세요.<br/>
+          동일한 레이아웃으로 다른 본문들도
+          <b>정론 · 정행 · 현대 적용</b> 관점에서 시리즈로 확장할 수 있습니다.
+        </p>
+      </article>
+    </section>
+  </main>
+
+
+  <div class="bar" aria-label="도움말 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 펼치기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '에베소서 1:22–23 정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\n' + location.href);
+        }
+      });
+    }
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    // 전체 펼치기/접기
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
