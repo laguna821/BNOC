@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>골로새서 3:15–17 — 정론·정행·현대 적용</title>
+  <meta name="date" content="2025-12-21" />
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Color Palette */
+      --bg-body: #0a0e14;
+      --bg-gradient-start: #111827;
+      --bg-gradient-end: #020408;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981; /* Emerald */
+      --accent-secondary: #f59e0b; /* Amber */
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-serif: "Merriweather", "Times New Roman", serif;
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-body: #f8fafc;
+        --bg-gradient-start: #f1f5f9;
+        --bg-gradient-end: #e2e8f0;
+
+        --card-bg: rgba(255, 255, 255, 0.85);
+        --card-border: rgba(0, 0, 0, 0.06);
+        --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --text-highlight: #0f172a;
+
+        --accent-primary: #059669;
+        --accent-secondary: #d97706;
+        --accent-glow: rgba(5, 150, 105, 0.1);
+      }
+    }
+
+    /* Reset & Base */
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { margin: 0; padding: 0; height: 100%; }
+
+    body {
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding-bottom: 120px; /* Space for bottom bar */
+    }
+
+    /* Typography Utilities */
+    h1, h2, h3, h4 { margin: 0; color: var(--text-highlight); }
+    h1, h2 { font-family: var(--font-serif); }
+
+    .h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin: 16px 0 12px;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .sub b { color: var(--text-main); font-weight: 600; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(var(--bg-body), 0.8);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      position: relative;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .title-group { display: flex; flex-direction: column; }
+    .title { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+    .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    /* Buttons */
+    .btn {
+      appearance: none;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+    .btn.primary:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4); }
+
+    /* Main Content */
+    main { padding: 10px 16px; }
+
+    /* Scripture (Details) */
+    .fulltext { margin-bottom: 24px; animation: fadeUp 0.6s ease-out; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    details[open] {
+      background: rgba(var(--bg-body), 0.4);
+      border-color: var(--accent-primary);
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-highlight);
+      user-select: none;
+      transition: background 0.2s;
+    }
+    summary:hover { background: rgba(255,255,255,0.03); }
+    summary::-webkit-details-marker { display: none; }
+
+    .chev {
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    details[open] .chev { transform: rotate(90deg); background: var(--accent-primary); color: #fff; }
+
+    .content.scripture {
+      padding: 10px 24px 24px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-main);
+      background: rgba(0,0,0,0.2);
+    }
+    .scripture p { margin: 12px 0; }
+    .v {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      margin-right: 4px;
+      vertical-align: 1px;
+      opacity: 0.9;
+    }
+
+    /* Hero Section */
+    .hero { padding: 10px 4px 24px; animation: fadeUp 0.7s ease-out; }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 8px;
+    }
+    .pill span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    /* Hebrew / Greek badge 색상 구분 */
+    .pill span.hebrew {
+      background: rgba(217, 119, 6, 0.16);
+      border-color: #fbbf24;
+      color: #fed7aa;
+    }
+    .pill span.greek {
+      background: rgba(59, 130, 246, 0.18);
+      border-color: #93c5fd;
+      color: #dbeafe;
+    }
+
+    /* Grid & Cards */
+    .grid { display: grid; gap: 16px; animation: fadeUp 0.8s ease-out; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+
+    .card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-secondary);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card b { color: var(--text-main); font-weight: 600; }
+    .card ul { margin: 8px 0; padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
+
+    /* Special Elements */
+    .note {
+      margin: 16px 0;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 12px;
+    }
+
+    /* KV (Key-Value) Lists */
+    .kv {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 8px 16px;
+      font-size: 14px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.2);
+      padding: 12px;
+      border-radius: var(--radius-md);
+    }
+    .kv div { padding: 4px 0; }
+    .kv-label {
+      color: var(--accent-secondary);
+      font-weight: 700;
+      font-family: var(--font-serif);
+      border-right: 1px solid var(--card-border);
+    }
+
+    /* Tags */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .tag {
+      padding: 6px 12px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--card-border);
+      font-size: 12px;
+      color: var(--text-highlight);
+      font-weight: 600;
+    }
+    /* 히브리어 / 헬라어 키워드 태그 색상 구분 */
+    .tag-hebrew {
+      background: rgba(217, 119, 6, 0.16);
+      border-color: #f59e0b;
+      color: #fed7aa;
+    }
+    .tag-greek {
+      background: rgba(59, 130, 246, 0.18);
+      border-color: #3b82f6;
+      color: #dbeafe;
+    }
+
+    /* Summary Mode Logic Styles */
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body { display: none; }
+
+    .hint-compressed {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    body.summary-mode .hint-compressed { display: block; }
+
+    /* Bottom Bar */
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      background: rgba(var(--bg-body), 0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+    .bar-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+    .bar-inner .btn { flex: 1; padding: 12px; font-size: 14px; }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer divider */
+    .divider { height: 1px; background: var(--card-border); margin: 24px 0; }
+    .muted.small { font-size: 12px; opacity: 0.7; text-align: center; display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-group">
+          <div class="title">골로새서 3:15–17</div>
+          <div class="subtitle">정론 · 정행 · 현대 적용 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnShare" aria-label="공유하기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+          </svg>
+          공유
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- 본문 전체 -->
+    <section class="fulltext" aria-label="골로새서 3:15–17 본문">
+      <details open>
+        <summary>📜 본문 읽기 (골 3:15–17) <span class="chev">›</span></summary>
+        <div class="content scripture">
+          <p><span class="v">15</span> 그리스도의 <b>평강</b>이 너희 <b>마음</b>을 주장하게 하라 너희는 평강을 위하여 한 <b>몸</b>으로 부르심을 받았나니 너희는 또한 <b>감사</b>하는 자가 되라</p>
+          <p><span class="v">16</span> 그리스도의 <b>말씀</b>이 너희 속에 풍성히 거하여 모든 <b>지혜</b>로 피차 <b>가르치며</b> <b>권면</b>하고 시와 찬송과 신령한 노래를 부르며 감사하는 마음으로 하나님을 찬양하고</p>
+          <p><span class="v">17</span> 또 무엇을 하든지 말에나 일에나 다 <b>주 예수의 이름</b>으로 하고 그를 힘입어 하나님 아버지께 <b>감사</b>하라</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="pill">
+        <span class="greek">εἰρήνη (eirēnē)</span>
+        <span class="greek">βραβεύω (brabeuō)</span>
+        <span class="greek">καρδία (kardia)</span>
+        <span class="greek">λόγος Χριστοῦ</span>
+        <span class="greek">ἐνοικέω (enoikeō)</span>
+        <span class="greek">εὐχαριστέω (eucharisteō)</span>
+        <span class="hebrew">שָׁלוֹם (shalom)</span>
+        <span class="hebrew">תּוֹדָה (tōdāh)</span>
+      </div>
+      <h1 class="h1">평강이 ‘판정’하고, 말씀이 ‘상주’하고, 감사가 ‘리듬’이 되는 공동체</h1>
+      <p class="sub">
+        골로새서 3:15–17은 교회 생활을 한 문장씩으로 “운영 규칙”처럼 세워 줍니다.
+        본문은 단지 “마음이 편안해지라”가 아니라,
+        <b>갈등과 선택의 순간에 무엇이 최종 판단을 내릴 것인가</b>(3:15),
+        <b>공동체 안에 어떤 언어가 상주할 것인가</b>(3:16),
+        <b>일상의 말과 일이 누구의 권위 아래 놓일 것인가</b>(3:17)를 묻습니다.
+        그리고 그 세 가지가 끝까지 이어질 때,
+        공동체의 기본 정서는 반복되는 <b>감사</b>로 안정됩니다.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="해설 섹션">
+
+      <!-- 한눈 요약 -->
+      <article class="card">
+        <h3>한눈 요약 (3–4문장)</h3>
+        <p>
+          <b>1)</b> 3:15은 공동체 안에서 ‘감정’이나 ‘파벌’이 아니라,
+          <b>그리스도의 평강</b>이 너희 <b>마음(καρδία)</b>의 최종 판정을 내리게 하라고 말합니다.
+        </p>
+        <p>
+          <b>2)</b> 3:16은 신앙을 “개인 공부”로만 두지 않고,
+          <b>말씀(λόγος Χριστοῦ)</b>이 공동체 안에 풍성히 거하여 서로 <b>가르치고 권면</b>하며,
+          예배의 <b>노래</b>가 교훈과 권면의 통로가 되게 하라고 요청합니다.
+        </p>
+        <p>
+          <b>3)</b> 3:17은 말과 일 전체를 “주 예수의 이름(ὄνομα)” 아래 묶어,
+          삶의 모든 영역이 하나님께 향하는 <b>감사</b>로 귀결되게 하라고 정리합니다.
+        </p>
+        <div class="hint">
+          아래에서 <b>① 역사·배경 → ② 정론(교리) → ③ 정행(실천) → ④ 원어 키워드 → ⑤ 현대 적용</b> 순서로,
+          “평강–말씀–이름–감사”가 왜 초대교회 공동체의 ‘생존 규칙’이었는지 차근차근 풀어 봅니다.
+        </div>
+      </article>
+
+      <!-- 역사·지리·배경 -->
+      <article class="card">
+        <h3>역사 · 지리 · 배경</h3>
+
+        <div class="content-long">
+          <h4>1) 골로새 교회가 놓인 자리: 작은 공동체, 다양한 영향, 흔들리기 쉬운 환경</h4>
+          <p>
+            골로새는 소아시아(오늘날 터키) 프리기아 지역의 도시권에 속했고,
+            주변에 라오디게아와 히에라폴리스 같은 도시가 함께 언급될 만큼 “지역 네트워크” 속에 있었습니다.
+            대도시만큼 제도와 자원이 탄탄하지 않은 작은 공동체는,
+            밖에서 들어오는 사상·종교적 영향에 쉽게 흔들릴 수 있고,
+            안에서는 관계 갈등이 커질 때 공동체 자체가 무너질 위험도 큽니다.
+            이런 조건에서 3:15–17은 “교회가 무너지지 않게 하는 최소 조건”을 압축해 제시합니다.
+          </p>
+
+          <h4>2) ‘골로새의 문제’는 무엇이었나: 혼합된 압력 + 공동체 정체성의 흔들림</h4>
+          <p>
+            골로새서 2장을 보면, ‘그리스도 외에 더 필요한 무언가’가 있다는 분위기를 저자가 경계합니다.
+            어떤 형태로든 “추가 규칙, 추가 중재자, 추가 체험”이 구원의 확신과 공동체의 자부심을 대체하려고 할 때,
+            교회는 쉽게 <b>서열화</b>되고 <b>분열</b>됩니다.
+            그래서 3장은 교리를 더 복잡하게 만드는 대신,
+            “그리스도 안에서 새 사람이 되었다면” 그 새 정체성이
+            <b>말(언어), 관계, 예배, 일상</b>에서 어떻게 굳어져야 하는지 루틴으로 풀어줍니다.
+          </p>
+
+          <h4>3) 3:15–17의 자리: ‘새 사람’의 옷을 입은 공동체의 심장부</h4>
+          <p>
+            3:12–14에서 저자는 “긍휼, 자비, 겸손, 온유, 오래 참음, 용서, 사랑”을 옷처럼 입으라고 말합니다.
+            그런데 누가 그 옷을 끝까지 유지하게 합니까?
+            3:15–17은 그 질문에 답합니다.
+            <b>평강</b>이 판정하고, <b>말씀</b>이 상주하고, <b>예수의 이름</b>이 권위가 되면,
+            공동체는 사랑의 옷을 ‘의지’로만 버티지 않고 ‘운영체제’로 유지합니다.
+          </p>
+
+          <h4>4) 초대 교회의 예배 현실: 노래는 장식이 아니라 ‘교육과 권면의 매체’였다</h4>
+          <p>
+            3:16은 “시와 찬송과 신령한 노래”를 단지 분위기 조성으로 두지 않습니다.
+            오히려 “모든 지혜로 서로 가르치고 권면하는” 문맥 안에 노래를 넣습니다.
+            즉 노래는 <b>말씀을 기억하게 하고, 공동체를 권면하고, 감사를 훈련시키는 도구</b>가 됩니다.
+            오늘 우리가 “찬양은 감정, 설교는 교육”처럼 분리해 생각할 때,
+            본문은 그 분리를 조용히 해체합니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          골로새서 3:15–17은 “작고 흔들리기 쉬운 공동체”가
+          혼합된 압력과 내부 갈등 속에서 무너지지 않도록,
+          <b>평강(판정)–말씀(상주)–예수의 이름(권위)–감사(기본 정서)</b>라는 운영 원칙을 제시합니다.
+        </div>
+      </article>
+
+      <!-- ① 정론(orthodoxy) -->
+      <article class="card">
+        <h3>① 정론(Orthodoxy): 그리스도 중심의 공동체 질서</h3>
+
+        <p class="note">
+          정론 관점에서 이 단락은 “평강·말씀·이름”을 모두 그리스도에게 붙여 둡니다.
+          즉, 교회가 교회답게 서는 기준은 <b>분위기</b>나 <b>전통</b>이나 <b>개인 능력</b>이 아니라,
+          <b>그리스도에게서 오는 질서</b>입니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) “평강이 마음을 주장하게 하라”의 핵심: 마음은 ‘감정의 창고’가 아니라 ‘판정의 자리’</h4>
+          <p>
+            3:15의 “마음”은 헬라어 <b>καρδία(kardia)</b>입니다.
+            어떤 설교나 대화에서는 마음을 ψυχή(psyche)로 오해하거나(혹은 본문이 다른 곳일 때),
+            “영혼의 상태”처럼만 말하기도 하지만, 여기서는 분명히 <b>καρδία</b>가 쓰여
+            판단과 의지, 선택의 중심을 가리킵니다.
+            그래서 본문은 “기분 좋게 지내라”가 아니라,
+            공동체가 갈등과 선택의 순간에 <b>무엇을 최종 기준으로 삼을지</b>를 정하라고 말합니다.
+          </p>
+          <p>
+            “주장하게 하라”와 연결되는 동사는 <b>βραβεύω(brabeuō)</b>의 이미지로 자주 설명됩니다.
+            경기에서 심판이 최종 판정을 내리듯,
+            “누가 더 말 잘하느냐, 누가 더 오래 다녔느냐, 누가 더 상처 받았느냐”가 아니라
+            <b>그리스도의 평강(εἰρήνη)</b>이 최종 콜을 하게 하라는 뜻입니다.
+          </p>
+
+          <h4>2) “한 몸으로 부르심”: 평강은 개인 감정이 아니라 공동체 소명과 연결된다</h4>
+          <p>
+            본문은 곧바로 “너희는 평강을 위하여 한 몸으로 부르심을 받았다”고 말합니다.
+            평강은 개인의 심리 상태를 넘어, 공동체의 부르심(소명)과 연결된 방향입니다.
+            교회는 애초에 “한 몸”으로 부름받았으므로,
+            분열을 정상으로 여기지 말고,
+            평강을 공동체의 방향(목적)으로 삼아야 합니다.
+          </p>
+
+          <h4>3) “그리스도의 말씀이 풍성히 거하라”: 말씀은 ‘방문’이 아니라 ‘상주’다</h4>
+          <p>
+            3:16의 핵심은 “거한다”는 표현입니다.
+            동사 <b>ἐνοικέω(enoikeō)</b>는 ‘집 안에 거주하다, 상주하다’라는 느낌이 강합니다.
+            말씀은 가끔 들어왔다가 사라지는 좋은 말이 아니라,
+            공동체 안에서 늘 들리고, 기억되고, 반복되는 <b>상주 언어</b>가 되어야 합니다.
+          </p>
+
+          <h4>4) 노래(시·찬송·신령한 노래)는 ‘감정’만이 아니라 ‘지혜로운 권면’의 통로다</h4>
+          <p>
+            3:16은 “모든 지혜로 서로 가르치며 권면하고”와 “시와 찬송과 신령한 노래”를 한 호흡으로 묶습니다.
+            예배의 노래는 “마음이 뜨거워지는 경험”만을 목표로 하지 않고,
+            공동체가 서로를 세우는 <b>교훈과 권면의 방식</b>이 될 수 있습니다.
+            그러므로 정론적으로 이 본문은 예배를
+            “말씀(진리)–권면(성화)–감사(예배)”라는 한 덩어리로 이해하게 합니다.
+          </p>
+
+          <h4>5) “주 예수의 이름으로”: 말과 일의 최종 권위가 ‘나’에서 ‘주님’으로 옮겨간다</h4>
+          <p>
+            3:17에서 “이름(ὄνομα)”은 단순한 호칭이 아니라
+            권위, 대표성, 소속의 표지로 작동합니다.
+            말과 일이 예수의 이름 아래 놓인다는 것은,
+            우리의 모든 선택이 “내가 옳다”가 아니라
+            “예수의 성품과 방향에 합당한가”라는 질문으로 검증된다는 뜻입니다.
+            그리고 그 결론은 다시 <b>감사</b>로 돌아옵니다.
+            감사는 덤이 아니라, 이 시스템이 제대로 작동하고 있다는 신호입니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정론적으로 3:15–17은 “그리스도 중심”을 세 축으로 구체화합니다.
+          <b>평강</b>이 판단의 기준이 되고,
+          <b>말씀</b>이 공동체 안에 상주하며,
+          <b>예수의 이름</b>이 말과 일의 권위가 될 때,
+          공동체의 기본 정서는 반복되는 <b>감사</b>로 안정됩니다.
+        </div>
+      </article>
+
+      <!-- ② 정행(orthopraxy) -->
+      <article class="card">
+        <h3>② 정행(Orthopraxy): “평강–말씀–이름–감사”를 루틴으로 굳히기</h3>
+
+        <p class="note">
+          정행 관점에서 이 본문은 “좋은 생각”이 아니라 “작동하는 프로토콜”입니다.
+          특히 3:15의 ‘판정’, 3:16의 ‘상주’, 3:17의 ‘이름’은
+          공동체가 실제로 <b>어떤 절차로 갈등을 처리하고</b>, <b>어떤 언어로 서로를 세우며</b>,
+          <b>어떤 기준으로 일상을 선택할지</b>를 구체적으로 설계합니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) “평강이 판정한다”를 갈등 회피로 오용하지 말 것</h4>
+          <p>
+            평강을 “조용히 넘어가자”로 쓰면, 상처는 쌓이고 공동체는 속에서 썩습니다.
+            본문이 말하는 평강은 갈등을 지우는 고무지우개가 아니라,
+            갈등 한가운데서 “무엇이 공동체를 살리고 죽이는지”를 판정하는 기준입니다.
+            그래서 정행적으로는, 말이 거칠어질수록 잠깐 멈추고
+            ‘내가 이기려는 욕망’이 아니라 ‘한 몸을 살리려는 평강’이
+            결론을 내리게 하는 훈련이 필요합니다.
+          </p>
+
+          <h4>2) “말씀이 상주한다”는 것은 ‘지식량’보다 ‘공동체 내부 언어 환경’을 뜻한다</h4>
+          <p>
+            말씀을 많이 아는 것과, 말씀이 상주하는 것은 다를 수 있습니다.
+            상주한다는 말은, 공동체의 대화 속에 복음의 단어들이 자연스럽게 살아 있고,
+            서로를 평가할 때도 세상 잣대만이 아니라 그리스도의 언어가 섞여 있다는 뜻입니다.
+            그래서 본문은 “서로 가르치며 권면하라”고 말합니다.
+            이것은 교사가 되고 설교자가 되라는 말이 아니라,
+            서로의 삶을 향해 <b>살리는 말</b>을 건네는 일상적 책임을 뜻합니다.
+          </p>
+
+          <h4>3) 노래를 ‘분위기 장치’가 아니라 ‘공동체 형성 장치’로 회복하기</h4>
+          <p>
+            노래는 말이 기억되는 방식입니다.
+            설교는 잊어도, 노래의 한 줄은 남습니다.
+            그렇다면 노래는 느낌을 만드는 도구일 뿐 아니라,
+            공동체의 신앙 언어를 반복해서 몸에 새기는 도구입니다.
+            정행적으로는 예배의 노래가 공동체를 더 겸손하게 만들고,
+            더 감사하게 만들고, 서로를 더 세우게 만든다면,
+            이미 3:16이 작동하고 있는 것입니다.
+          </p>
+
+          <h4>4) “예수의 이름으로”를 구호로 만들지 말고, ‘검증 질문’으로 만들기</h4>
+          <p>
+            “예수 이름으로”를 말끝마다 붙인다고 삶이 거룩해지지는 않습니다.
+            정행적으로 이 표현은 이렇게 작동해야 합니다.
+            “내가 지금 하려는 말은 예수의 성품과 어울리는가?”
+            “내가 지금 하려는 일은 예수의 길과 닮아 있는가?”
+            이 질문이 진짜로 작동할 때, 말과 일이 ‘내 중심’에서 ‘주님 중심’으로 이동합니다.
+          </p>
+
+          <h4>5) 감사는 ‘기분’이 아니라 ‘기본값’이다</h4>
+          <p>
+            3:15–17에서 감사는 세 번 반복됩니다.
+            이것은 감사가 특별한 영적 기교가 아니라,
+            공동체가 건강하게 굴러갈 때 자연히 나타나는 기본값임을 보여줍니다.
+            감사는 현실 도피가 아니라,
+            “나는 내 힘으로만 사는 존재가 아니다”라는 고백을
+            매일의 언어와 표정으로 확인하는 방식입니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정행적으로 3:15–17은 네 가지 루틴을 제안합니다.
+          <b>평강으로 판정하기</b>, <b>말씀을 상주시키기</b>, <b>노래로 서로를 세우기</b>, <b>예수의 이름으로 말과 일을 검증하기</b>.
+          그 결과는 언제나 <b>감사</b>로 확인됩니다.
+        </div>
+      </article>
+
+      <!-- 원어 키워드 카드 -->
+      <article class="card">
+        <h3>원어 키워드 정리 (히브리어 개념 태그와 색상 구분)</h3>
+
+        <p class="muted small">
+          본문은 신약이므로 원어는 <b>헬라어</b>입니다.
+          아래 태그에서 <span class="tag-greek">파란 계열</span>은 <b>헬라어 키워드</b>,
+          <span class="tag-hebrew">주황 계열</span>은 연결되는 <b>구약 히브리어 개념</b>을 표시합니다.
+        </p>
+
+        <div class="tag-list">
+          <span class="tag tag-greek">εἰρήνη — eirēnē (평강)</span>
+          <span class="tag tag-greek">βραβεύω — brabeuō (판정하다)</span>
+          <span class="tag tag-greek">καρδία — kardia (마음)</span>
+          <span class="tag tag-greek">σῶμα — sōma (몸)</span>
+
+          <span class="tag tag-greek">λόγος (Χριστοῦ) — logos (말씀)</span>
+          <span class="tag tag-greek">ἐνοικέω — enoikeō (상주하다)</span>
+          <span class="tag tag-greek">σοφία — sophia (지혜)</span>
+          <span class="tag tag-greek">διδάσκω — didaskō (가르치다)</span>
+          <span class="tag tag-greek">νουθετέω — noutheteō (권면/훈계하다)</span>
+
+          <span class="tag tag-greek">ψαλμός — psalmos (시)</span>
+          <span class="tag tag-greek">ὕμνος — hymnos (찬송)</span>
+          <span class="tag tag-greek">ᾠδή πνευματική — ōdē pneumatikē (신령한 노래)</span>
+
+          <span class="tag tag-greek">ὄνομα — onoma (이름)</span>
+          <span class="tag tag-greek">εὐχαριστέω — eucharisteō (감사하다)</span>
+
+          <span class="tag tag-hebrew">שָׁלוֹם — shalom (평강/온전)</span>
+          <span class="tag tag-hebrew">דָּבָר — dābār (말씀/말)</span>
+          <span class="tag tag-hebrew">תּוֹדָה — tōdāh (감사)</span>
+          <span class="tag tag-hebrew">חָכְמָה — ḥokmāh (지혜)</span>
+        </div>
+
+        <div class="kv">
+          <div class="kv-label">εἰρήνη</div>
+          <div>
+            <b>평강</b>. 단지 “편안한 기분”이 아니라,
+            관계가 다시 연결되고 공동체가 온전해지는 <b>관계적 화평</b>을 가리킵니다.
+            본문에서는 공동체의 갈등과 선택의 순간에 ‘최종 기준’이 됩니다.
+          </div>
+
+          <div class="kv-label">βραβεύω</div>
+          <div>
+            <b>판정하다/심판하다</b>. 감정과 체면이 아니라 평강이 “최종 콜”을 하게 하라는 요청을 담습니다.
+            (심판이 판정을 내리는 이미지로 이해하면, 본문이 더 선명해집니다.)
+          </div>
+
+          <div class="kv-label">καρδία</div>
+          <div>
+            <b>마음</b>. 여기서 마음은 <b>ψυχή(psyche)</b>가 아니라 <b>καρδία(kardia)</b>입니다.
+            ‘영혼/생명’ 자체라기보다, <b>판단과 의지가 움직이는 중심</b>을 포함합니다.
+          </div>
+
+          <div class="kv-label">λόγος / ἐνοικέω</div>
+          <div>
+            <b>그리스도의 말씀</b>이 <b>상주</b>해야 합니다.
+            말씀은 가끔 듣고 지나가는 정보가 아니라,
+            공동체의 일상 대화 속에 늘 머무는 ‘내부 언어 환경’이 되어야 합니다.
+          </div>
+
+          <div class="kv-label">διδάσκω / νουθετέω</div>
+          <div>
+            <b>가르치다</b>와 <b>권면하다</b>는 “서로에게 책임지는 말”을 뜻합니다.
+            비난과 통제를 위한 말이 아니라,
+            살리고 세우고 보호하는 말이 되어야 합니다.
+          </div>
+
+          <div class="kv-label">ψαλμός·ὕμνος·ᾠδή</div>
+          <div>
+            <b>시·찬송·노래</b>는 예배의 장식이 아니라,
+            교훈과 권면, 감사의 언어를 공동체에 새기는 통로입니다.
+          </div>
+
+          <div class="kv-label">ὄνομα</div>
+          <div>
+            <b>이름</b>. “주 예수의 이름으로”는 구호가 아니라 기준입니다.
+            말과 일이 예수의 성품과 방향에 합당한지 검증하는 ‘도장’이 됩니다.
+          </div>
+
+          <div class="kv-label">שָׁלוֹם·תּוֹדָה</div>
+          <div>
+            구약의 <b>שָׁלוֹם(shalom)</b>은 평강을 “온전함/관계 회복”으로 체감하게 하고,
+            <b>תּוֹדָה(tōdāh)</b>는 감사가 예배와 삶을 잇는 핵심 언어임을 보여 줍니다.
+            신약의 εἰρήνη, εὐχαριστέω는 그 전통과 공명하면서 그리스도 중심으로 재배열됩니다.
+          </div>
+        </div>
+
+        <p class="muted small" style="margin-top:16px;">
+          정리하면, 이 본문은 “평강(관계의 화평)”을 공동체의 판정 기준으로 세우고,
+          “말씀(복음의 언어)”을 공동체 안에 상주시키며,
+          “예수의 이름(권위)”으로 말과 일을 묶어,
+          공동체의 기본 정서를 “감사(훈련된 태도)”로 안정시키는 설계도입니다.
+        </p>
+      </article>
+
+      <!-- 현대 적용 -->
+      <article class="card">
+        <h3>현대 적용: 개인 · 공동체 · 공적 영역</h3>
+
+        <p class="note">
+          오늘 이 본문을 적용할 때 핵심은 “더 많이 느끼기”가 아니라
+          <b>더 잘 굴러가게 하기</b>입니다.
+          즉, 우리의 말·관계·예배·일상을
+          <b>평강–말씀–이름–감사</b>라는 루틴으로 재구성하는 것입니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) 개인 — 내 마음의 ‘판정 기준’을 바꾸기</h4>
+          <p>
+            우리는 결정의 순간마다 많은 목소리를 듣습니다.
+            불안, 인정 욕구, 비교, 자존심, 혹은 상처.
+            3:15은 그 모든 목소리 가운데 “평강”을 최종 기준으로 세우라고 말합니다.
+            그러니 개인 적용은 거창하지 않습니다.
+            중요한 대화를 하기 전 10초 멈추고,
+            “지금 내 안에서 무엇이 판정하려고 하는가?
+            그 판정이 평강을 낳는가, 분열을 낳는가?”를 묻는 것부터 시작할 수 있습니다.
+          </p>
+
+          <h4>2) 공동체 — ‘내부 언어 환경’을 복음 언어로 바꾸기</h4>
+          <p>
+            공동체는 결국 “어떤 말을 반복하는가”에 의해 형성됩니다.
+            칭찬이든 비난이든, 신앙 언어든 세상 언어든,
+            반복되는 말이 사람을 만들고 분위기를 만듭니다.
+            3:16은 말씀을 상주시키라고 말합니다.
+            이것은 “성경 공부를 더 하자”만이 아니라,
+            소그룹 대화에서 서로를 살리는 말이 늘어나고,
+            권면이 조롱이나 통제 대신 회복을 향해 나아가며,
+            노래가 공동체의 신앙 언어를 지켜 주는 구조를 만들라는 뜻입니다.
+          </p>
+
+          <h4>3) 공적 영역 — ‘예수의 이름’이 말과 일의 윤리적 기준이 되게 하기</h4>
+          <p>
+            공적 공간은 갈등이 많고 말이 거칠어지기 쉽습니다.
+            3:17은 그 공간에서 “예수의 이름”을 스티커처럼 붙이라는 말이 아닙니다.
+            오히려 말과 일을 “예수의 방식”으로 검증하라는 말입니다.
+            혐오의 말이 아닌 존엄의 말,
+            약자를 더 약하게 만들지 않는 정책과 선택,
+            경쟁의 언어보다 책임과 돌봄의 언어를 택하는 것이
+            “예수의 이름으로 말과 일을 한다”는 가장 현실적인 형태가 될 수 있습니다.
+          </p>
+
+          <div class="divider"></div>
+          <p class="muted small">
+            오늘 이 본문이 던지는 질문은 이렇게 정리됩니다.<br/>
+            <b>“내 마음은 무엇으로 판정하고 있는가?”</b><br/>
+            <b>“우리 공동체 안에는 어떤 언어가 상주하고 있는가?”</b><br/>
+            <b>“내 말과 일은 정말 예수의 이름 아래 있는가?”</b><br/>
+            <b>“그 결과로 감사가 기본값이 되고 있는가?”</b>
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          이번 주에는 “감사해야지”를 목표로 하기보다,
+          <b>판정 기준(평강)과 언어 환경(말씀)을 먼저 바꾸는 루틴</b>을 하나만 실행해 보십시오.
+          감사는 그 루틴이 작동할 때 뒤따라오는 열매로 확인됩니다.
+        </div>
+      </article>
+
+      <!-- 실천 체크리스트 -->
+      <article class="card">
+        <h3>실천 체크리스트 (이번 주 적용)</h3>
+        <ul>
+          <li>
+            <b>1. ‘판정 멈춤’ 10초 루틴</b><br />
+            갈등 상황에서 바로 반응하기 전에 10초 멈추고,
+            “지금 내 안에서 무엇이 판정하려 하는가?”를 한 번 묻고 말하기.
+          </li>
+          <li>
+            <b>2. ‘말씀 상주’ 한 문장 만들기</b><br />
+            3:15–17에서 마음에 걸리는 구절을 한 문장으로 바꿔
+            (예: “오늘은 평강이 판정하게 하자”),
+            하루에 세 번(아침/점심/저녁) 읽기.
+          </li>
+          <li>
+            <b>3. 권면을 ‘회복의 말’로 연습하기</b><br />
+            누군가를 바로잡아야 할 때,
+            지적부터 하지 말고 “살리고 싶은 마음”을 먼저 말한 뒤,
+            한 가지 구체적 제안을 덧붙이기.
+          </li>
+          <li>
+            <b>4. 예배 노래 한 줄을 ‘일상 말’로 번역하기</b><br />
+            주일에 부른 찬양 가사 한 줄을 골라
+            월요일 일상 대화에서 쓸 수 있는 말로 바꿔 적기.
+          </li>
+          <li>
+            <b>5. 감사 3줄, 그러나 ‘결과’가 아니라 ‘관계’로</b><br />
+            오늘 잘된 일만 적지 말고,
+            하나님과 사람과의 관계 속에서 받은 은혜를 3줄로 적기.
+          </li>
+        </ul>
+        <p class="muted small">
+          기억할 것: <b>정론</b>은 “그리스도 중심”이라는 진리를 세워 주고,
+          <b>정행</b>은 그 진리가 <b>평강·말씀·이름·감사</b>라는 루틴으로 굳어지게 합니다.
+        </p>
+      </article>
+
+      <!-- 푸터 카드 -->
+      <article class="card" style="text-align:center; opacity:0.85;">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.<br/>
+          상단 <b>공유</b> 버튼으로 링크를 나누고,
+          하단 <b>요약 모드</b>를 활용해 소그룹 나눔이나 개인 묵상에 사용해 보세요.<br/>
+          동일한 레이아웃으로 다른 본문들도
+          <b>정론 · 정행 · 현대 적용</b> 관점에서 시리즈로 확장할 수 있습니다.
+        </p>
+      </article>
+
+    </section>
+  </main>
+
+  <div class="bar" aria-label="도움말 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 펼치기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '골로새서 3:15–17 정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\n' + location.href);
+        }
+      });
+    }
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    // 전체 펼치기/접기 (details)
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
