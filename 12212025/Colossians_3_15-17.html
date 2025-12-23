@@ -28,6 +28,16 @@
       --accent-secondary: #f59e0b; /* Amber */
       --accent-glow: rgba(16, 185, 129, 0.15);
 
+
+      /* Tag contrast vars (default: dark) */
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #3b82f6;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #f59e0b;
+      --tag-hebrew-text: #fed7aa;
+
       --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
       --font-serif: "Merriweather", "Times New Roman", serif;
 
@@ -54,6 +64,61 @@
         --accent-secondary: #d97706;
         --accent-glow: rgba(5, 150, 105, 0.1);
       }
+    }
+
+    /* Explicit theme override (user toggle) */
+    html[data-theme="dark"] {
+      --bg-body: #0a0e14;
+      --bg-gradient-start: #111827;
+      --bg-gradient-end: #020408;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      /* Tag contrast vars (dark) */
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #fbbf24;
+      --tag-hebrew-text: #fed7aa;
+    }
+
+    html[data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-gradient-start: #f1f5f9;
+      --bg-gradient-end: #e2e8f0;
+
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-highlight: #0f172a;
+
+      --accent-primary: #059669;
+      --accent-secondary: #b45309;
+      --accent-glow: rgba(5, 150, 105, 0.10);
+
+      /* Tag contrast vars (light) — darker text, slightly stronger borders */
+      --tag-greek-bg: rgba(37, 99, 235, 0.12);
+      --tag-greek-border: rgba(37, 99, 235, 0.55);
+      --tag-greek-text: #1e3a8a;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.12);
+      --tag-hebrew-border: rgba(217, 119, 6, 0.55);
+      --tag-hebrew-text: #7c2d12;
     }
 
     /* Reset & Base */
@@ -132,6 +197,11 @@
     .title-group { display: flex; flex-direction: column; }
     .title { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
     .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    .controls { display: flex; gap: 10px; align-items: center; }
+    #btnTheme, #btnShare { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    #btnTheme { min-width: 92px; }
+    #btnShare { min-width: 72px; }
 
     /* Buttons */
     .btn {
@@ -245,14 +315,14 @@
     }
     /* Hebrew / Greek badge 색상 구분 */
     .pill span.hebrew {
-      background: rgba(217, 119, 6, 0.16);
-      border-color: #fbbf24;
-      color: #fed7aa;
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
     }
     .pill span.greek {
-      background: rgba(59, 130, 246, 0.18);
-      border-color: #93c5fd;
-      color: #dbeafe;
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
     }
 
     /* Grid & Cards */
@@ -359,16 +429,22 @@
       color: var(--text-highlight);
       font-weight: 600;
     }
+    /* Improve tag legibility in light theme */
+    html[data-theme="light"] .tag {
+      background: rgba(0,0,0,0.03);
+      color: var(--text-highlight);
+      border-color: var(--card-border);
+    }
     /* 히브리어 / 헬라어 키워드 태그 색상 구분 */
     .tag-hebrew {
-      background: rgba(217, 119, 6, 0.16);
-      border-color: #f59e0b;
-      color: #fed7aa;
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
     }
     .tag-greek {
-      background: rgba(59, 130, 246, 0.18);
-      border-color: #3b82f6;
-      color: #dbeafe;
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
     }
 
     /* Summary Mode Logic Styles */
@@ -427,7 +503,12 @@
         </div>
       </div>
       <div class="controls">
-        <button class="btn" id="btnShare" aria-label="공유하기">
+        
+        <button class="btn" id="btnTheme" aria-label="다크/일반 모드 전환">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">다크</span>
+        </button>
+<button class="btn" id="btnShare" aria-label="공유하기">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
             <polyline points="16 6 12 2 8 6"></polyline>
@@ -931,6 +1012,51 @@
           alert('이 링크를 복사해 공유하세요:\n' + location.href);
         }
       });
+    }
+
+    // 다크/일반 테마 토글 (localStorage 저장)
+    const themeBtn = document.getElementById('btnTheme');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    function getSystemTheme() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+      // theme: 'light' | 'dark'
+      document.documentElement.setAttribute('data-theme', theme);
+      if (themeIcon && themeLabel) {
+        if (theme === 'light') {
+          themeIcon.textContent = '☀️';
+          themeLabel.textContent = '일반';
+        } else {
+          themeIcon.textContent = '🌙';
+          themeLabel.textContent = '다크';
+        }
+      }
+    }
+
+    // Init theme: stored -> system
+    const storedTheme = localStorage.getItem('col3_theme');
+    const initialTheme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : getSystemTheme();
+    applyTheme(initialTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('col3_theme', next);
+        applyTheme(next);
+      });
+    }
+
+    // If user hasn't set a theme, follow system changes live
+    if (!storedTheme && window.matchMedia) {
+      const mq = window.matchMedia('(prefers-color-scheme: light)');
+      const handler = () => applyTheme(getSystemTheme());
+      if (mq.addEventListener) mq.addEventListener('change', handler);
+      else if (mq.addListener) mq.addListener(handler);
     }
 
     // 요약 모드 토글
