@@ -430,12 +430,12 @@
       font-weight: 600;
     }
     /* Improve tag legibility in light theme */
-    html[data-theme="light"] .tag {
+    html[data-theme="light"] .tag:not(.tag-greek):not(.tag-hebrew) {
       background: rgba(0,0,0,0.03);
       color: var(--text-highlight);
       border-color: var(--card-border);
     }
-    /* 히브리어 / 헬라어 키워드 태그 색상 구분 */
+/* 히브리어 / 헬라어 키워드 태그 색상 구분 */
     .tag-hebrew {
       background: var(--tag-hebrew-bg);
       border-color: var(--tag-hebrew-border);
