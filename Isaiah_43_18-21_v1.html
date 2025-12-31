@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>이사야 43:18–21 — 역사·정론·정행·현대 적용</title>
+  <meta name="date" content="2025-12-31" />
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Color Palette */
+      --bg-body: #0a0e14;
+      --bg-gradient-start: #111827;
+      --bg-gradient-end: #020408;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981; /* Emerald */
+      --accent-secondary: #f59e0b; /* Amber */
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      /* Tag contrast vars (default: dark) */
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #3b82f6;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #f59e0b;
+      --tag-hebrew-text: #fed7aa;
+
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-serif: "Merriweather", "Times New Roman", serif;
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-body: #f8fafc;
+        --bg-gradient-start: #f1f5f9;
+        --bg-gradient-end: #e2e8f0;
+
+        --card-bg: rgba(255, 255, 255, 0.85);
+        --card-border: rgba(0, 0, 0, 0.06);
+        --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --text-highlight: #0f172a;
+
+        --accent-primary: #059669;
+        --accent-secondary: #d97706;
+        --accent-glow: rgba(5, 150, 105, 0.1);
+      }
+    }
+
+    /* Explicit theme override (user toggle) */
+    html[data-theme="dark"] {
+      --bg-body: #0a0e14;
+      --bg-gradient-start: #111827;
+      --bg-gradient-end: #020408;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      /* Tag contrast vars (dark) */
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #fbbf24;
+      --tag-hebrew-text: #fed7aa;
+    }
+
+    html[data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-gradient-start: #f1f5f9;
+      --bg-gradient-end: #e2e8f0;
+
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-highlight: #0f172a;
+
+      --accent-primary: #059669;
+      --accent-secondary: #b45309;
+      --accent-glow: rgba(5, 150, 105, 0.10);
+
+      /* Tag contrast vars (light) — darker text, slightly stronger borders */
+      --tag-greek-bg: rgba(37, 99, 235, 0.12);
+      --tag-greek-border: rgba(37, 99, 235, 0.55);
+      --tag-greek-text: #1e3a8a;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.12);
+      --tag-hebrew-border: rgba(217, 119, 6, 0.55);
+      --tag-hebrew-text: #7c2d12;
+    }
+
+    /* Reset & Base */
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { margin: 0; padding: 0; height: 100%; }
+
+    body {
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding-bottom: 120px; /* Space for bottom bar */
+    }
+
+    /* Typography Utilities */
+    h1, h2, h3, h4 { margin: 0; color: var(--text-highlight); }
+    h1, h2 { font-family: var(--font-serif); }
+
+    .h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin: 16px 0 12px;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .sub b { color: var(--text-main); font-weight: 600; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(var(--bg-body), 0.8);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      position: relative;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .title-group { display: flex; flex-direction: column; }
+    .title { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+    .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    .controls { display: flex; gap: 10px; align-items: center; }
+    #btnTheme, #btnShare { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    #btnTheme { min-width: 92px; }
+    #btnShare { min-width: 72px; }
+
+    /* Buttons */
+    .btn {
+      appearance: none;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+    .btn.primary:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4); }
+
+    /* Main Content */
+    main { padding: 10px 16px; }
+
+    /* Scripture (Details) */
+    .fulltext { margin-bottom: 24px; animation: fadeUp 0.6s ease-out; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    details[open] {
+      background: rgba(var(--bg-body), 0.4);
+      border-color: var(--accent-primary);
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-highlight);
+      user-select: none;
+      transition: background 0.2s;
+    }
+    summary:hover { background: rgba(255,255,255,0.03); }
+    summary::-webkit-details-marker { display: none; }
+
+    .chev {
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    details[open] .chev { transform: rotate(90deg); background: var(--accent-primary); color: #fff; }
+
+    .content.scripture {
+      padding: 10px 24px 24px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-main);
+      background: rgba(0,0,0,0.2);
+    }
+    .scripture p { margin: 12px 0; }
+    .v {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      margin-right: 4px;
+      vertical-align: 1px;
+      opacity: 0.9;
+    }
+
+    /* Hero Section */
+    .hero { padding: 10px 4px 24px; animation: fadeUp 0.7s ease-out; }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 8px;
+    }
+    .pill span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    /* Hebrew / Greek badge 색상 구분 */
+    .pill span.hebrew {
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
+    }
+    .pill span.greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+    /* Grid & Cards */
+    .grid { display: grid; gap: 16px; animation: fadeUp 0.8s ease-out; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+
+    .card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-secondary);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card b { color: var(--text-main); font-weight: 600; }
+    .card ul { margin: 8px 0; padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
+
+    /* Special Elements */
+    .note {
+      margin: 16px 0;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 12px;
+    }
+
+    /* KV (Key-Value) Lists */
+    .kv {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 8px 16px;
+      font-size: 14px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.2);
+      padding: 12px;
+      border-radius: var(--radius-md);
+    }
+    .kv div { padding: 4px 0; }
+    .kv-label {
+      color: var(--accent-secondary);
+      font-weight: 700;
+      font-family: var(--font-serif);
+      border-right: 1px solid var(--card-border);
+    }
+
+    /* Tags */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .tag {
+      padding: 6px 12px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--card-border);
+      font-size: 12px;
+      color: var(--text-highlight);
+      font-weight: 600;
+    }
+    /* Improve tag legibility in light theme */
+    html[data-theme="light"] .tag:not(.tag-greek):not(.tag-hebrew) {
+      background: rgba(0,0,0,0.03);
+      color: var(--text-highlight);
+      border-color: var(--card-border);
+    }
+    /* 히브리어 / 헬라어 키워드 태그 색상 구분 */
+    .tag-hebrew {
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
+    }
+    .tag-greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+    /* Summary Mode Logic Styles */
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body { display: none; }
+
+    .hint-compressed {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    body.summary-mode .hint-compressed { display: block; }
+
+    /* Bottom Bar */
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      background: rgba(var(--bg-body), 0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+    .bar-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+    .bar-inner .btn { flex: 1; padding: 12px; font-size: 14px; }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer divider */
+    .divider { height: 1px; background: var(--card-border); margin: 24px 0; }
+    .muted.small { font-size: 12px; opacity: 0.7; text-align: center; display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-group">
+          <div class="title">이사야 43:18–21</div>
+          <div class="subtitle">역사 · 정론 · 정행 · 현대 적용 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnTheme" aria-label="다크/일반 모드 전환">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">다크</span>
+        </button>
+        <button class="btn" id="btnShare" aria-label="공유하기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+          </svg>
+          공유
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- 본문 전체 -->
+    <section class="fulltext" aria-label="이사야 43:18–21 본문">
+      <details open>
+        <summary>📜 본문 읽기 (사 43:18–21) <span class="chev">›</span></summary>
+        <div class="content scripture">
+          <p><span class="v">18</span> 너희는 이전 일을 기억하지 말며 옛날 일을 생각하지 말라</p>
+          <p><span class="v">19</span> 보라 내가 새 일을 행하리니 이제 나타낼 것이라 너희가 그것을 알지 못하겠느냐 반드시 내가 광야에 길을 사막에 강을 내리니</p>
+          <p><span class="v">20</span> 장차 들짐승 곧 승냥이와 타조도 나를 존경할 것은 내가 광야에 물을, 사막에 강들을 내어 내 백성, 내가 택한 자에게 마시게 할 것임이라</p>
+          <p><span class="v">21</span> 이 백성은 내가 나를 위하여 지었나니 나를 찬송하게 하려 함이니라</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="pill">
+        <span class="hebrew">זָכַר (zākhar)</span>
+        <span class="hebrew">רִאשׁוֹנוֹת (rishonōt)</span>
+        <span class="hebrew">חָדָשׁ (chādāsh)</span>
+        <span class="hebrew">מִדְבָּר (midbār)</span>
+        <span class="hebrew">דֶּרֶךְ (derekh)</span>
+        <span class="hebrew">מַיִם (mayim)</span>
+        <span class="hebrew">נָהָר (nāhār)</span>
+        <span class="hebrew">תַּנִּים · בַּת יַעֲנָה</span>
+        <span class="hebrew">כָּבֵד (kāvēd)</span>
+        <span class="hebrew">בְּחִירִי (bechîrî)</span>
+        <span class="hebrew">יָצַר (yāṣar)</span>
+        <span class="hebrew">תְּהִלָּה (tehillāh)</span>
+      </div>
+      <h1 class="h1">과거에 갇히지 말고, 광야에서 ‘새 길’을 알아차리라</h1>
+      <p class="sub">
+        이사야 43:18–21은 바벨론 포로기 후반부의 이스라엘에게,
+        “이전 일(רִאשׁוֹנוֹת)에만 매달려 하나님을 규정하지 말라”는 강한 방향 전환을 선포합니다.
+        하나님은 <b>광야에 길(דֶּרֶךְ)</b>을 내고 <b>사막에 강(נָהָר)</b>을 내어,
+        지친 백성에게 <b>살아갈 수 있는 조건(물)</b>을 주시겠다고 약속하십니다.
+        그리고 이 회복의 목적은 “이 백성이 나를 찬송하게 하려 함”(תְּהִלָּה)이라는,
+        <b>존재의 목적 재정렬</b>로 끝맺습니다.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="해설 섹션">
+
+      <!-- 한눈 요약 -->
+      <article class="card">
+        <h3>한눈 요약 (3–4문장)</h3>
+        <p>
+          <b>1)</b> “이전 일을 기억하지 말라”는 말은 과거의 영광(출애굽)이나 과거의 실패(심판)에
+          삶의 기준을 고정하지 말고, 하나님이 지금 행하시는 “새 일”(חָדָשׁ)을 보라는 초대입니다.
+        </p>
+        <p>
+          <b>2)</b> 새 일의 그림은 “광야에 길, 사막에 강”인데,
+          이것은 포로 공동체의 현실(막막함·자원 부족) 한가운데에
+          <b>살 길과 생명의 공급</b>이 열리는 ‘새 출애굽’의 은유입니다.
+        </p>
+        <p>
+          <b>3)</b> 물이 흐르면 사람뿐 아니라 들짐승(승냥이·타조)도 하나님을 “존경/영화롭게”(כָּבֵד) 하게 되는데,
+          회복이 개인 구원에 머물지 않고 <b>피조세계의 질서까지</b> 넓어진다는 감각이 들어 있습니다.
+        </p>
+        <p>
+          <b>4)</b> 결론은 분명합니다. 하나님이 “나를 위하여 지은 백성”(יָצַר)이 되는 것,
+          곧 삶 전체로 하나님을 찬송(תְּהִלָּה)하게 하려는 목적이 회복의 끝입니다.
+        </p>
+        <div class="hint">
+          아래에서는 <b>① 역사·배경 → ② 정론(교리) → ③ 정행(실천) → ④ 원어 키워드 → ⑤ 현대 적용</b> 순서로,
+          왜 이 본문이 포로기의 ‘심리 구조’까지 뒤집는 말씀인지 서사적으로 풀어 봅니다.
+        </div>
+      </article>
+
+      <!-- 역사·지리·배경 -->
+      <article class="card">
+        <h3>역사 · 지리 · 배경</h3>
+
+        <div class="content-long">
+          <h4>1) 언제의 말씀인가? — 바벨론 포로기 후반부(‘제2이사야’의 위로 설교)</h4>
+          <p>
+            이사야 40–55장은 흔히 “포로기 후반부”를 배경으로 읽힙니다.
+            예루살렘 성전은 이미 무너졌고(기원전 586년),
+            많은 유다 사람들이 바벨론 땅에서 낯선 언어와 다신교 문화 속에 살아가며
+            “우리는 끝난 것 아닐까?”라는 체념과 무기력에 빠져 있었습니다.
+            이 문맥에서 43장은 “너희는 내 것이다”라는 정체성 회복(43:1–7)과
+            “나는 새 일을 행한다”는 방향 전환(43:18–21)을 한 세트로 묶어,
+            포로 공동체의 마음과 미래를 동시에 다시 세웁니다.
+          </p>
+
+          <h4>2) “이전 일”이란 무엇인가? — 출애굽의 영광 + 실패의 기억이라는 양면</h4>
+          <p>
+            이스라엘에게 “이전 일”(רִאשׁוֹנוֹת)은 출애굽 같은 위대한 구원 사건을 뜻하기도 하지만,
+            동시에 출애굽 이후 반복된 배반과 심판의 역사까지 품고 있습니다.
+            포로기의 사람들은 이 기억을 붙잡는 방식이 두 갈래로 갈라지기 쉬웠습니다.
+            어떤 이는 “그때처럼만 해 주시면…”이라는 <b>과거 방식에 대한 집착</b>으로,
+            또 어떤 이는 “우리는 늘 이 모양이야”라는 <b>자기 낙인(절망의 기억)</b>으로 굳어졌습니다.
+            본문은 바로 그 ‘기억의 덫’을 끊고,
+            하나님이 지금 움직이시는 자리로 시선을 옮기게 만듭니다.
+          </p>
+
+          <h4>3) “광야에 길, 사막에 강”은 어떤 장면인가? — 귀환(새 출애굽)의 은유</h4>
+          <p>
+            포로에서 귀환한다는 것은 단순히 지도를 펼쳐 “집으로 돌아간다”는 뜻이 아니었습니다.
+            길은 멀고, 위험하며, 물과 식량이 불안정하고, 공동체가 약해진 상태에서 이동해야 하는 일이었습니다.
+            그래서 이사야는 귀환을 “광야/사막” 이미지로 그리면서,
+            하나님이 그곳에 <b>길(דֶּרֶךְ)</b>과 <b>물(מַיִם)</b>을 내신다고 말합니다.
+            이는 과거의 홍해(바다)에서 ‘길’이 열린 출애굽 기억을 떠올리게 하되,
+            이제는 포로기 상황에 맞춰 “새 방식의 출애굽”으로 재해석한 것입니다.
+          </p>
+
+          <h4>4) 왜 들짐승(승냥이·타조)까지 등장하는가? — 회복의 범위를 ‘창조 질서’로 확장</h4>
+          <p>
+            20절의 들짐승은 “황무지의 상징”이기도 합니다.
+            사람이 살기 힘든 곳에 야생동물이 산다는 것은 그 땅의 황폐를 보여 줍니다.
+            그런데 하나님이 광야에 물을 내시면, 그 물은 사람뿐 아니라 짐승도 살립니다.
+            그 결과 짐승조차 하나님을 “존경/영화롭게”(כָּבֵד) 하게 된다는 말은,
+            회복이 개인 위로에만 머물지 않고
+            <b>피조세계의 삶의 조건까지 다시 열리는 새 창조의 기운</b>을 전달합니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          이 본문은 성전이 무너진 뒤, 포로로 살아가던 이스라엘이 “과거의 영광/실패”에 갇히기 쉬운 자리에서
+          하나님이 “새 일”을 시작하신다고 선포합니다.
+          “광야의 길, 사막의 강”은 포로 귀환(새 출애굽)을
+          ‘살아갈 수 있는 조건이 다시 열린다’는 이미지로 그린 것이며,
+          들짐승까지 등장하는 것은 회복이 피조세계의 질서까지 확장된다는 감각을 줍니다.
+        </div>
+      </article>
+
+      <!-- ① 정론(orthodoxy) -->
+      <article class="card">
+        <h3>① 정론(Orthodoxy): ‘새 출애굽’과 ‘새 창조’로 읽는 하나님의 구원 방식</h3>
+
+        <p class="note">
+          정론 관점에서 이 본문은 “하나님은 과거의 방식에 갇히지 않으시는 분”이라는 고백을 세웁니다.
+          하나님은 출애굽(바다의 길)로도, 포로 귀환(광야의 길)로도,
+          그리고 더 넓게는 <b>새 창조</b>로도 구원을 이루십니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) “기억하지 말라”의 신학: 과거 부정이 아니라 ‘하나님 규정하기’의 중단</h4>
+          <p>
+            18절의 “기억하지 말라”(זָכַר, zākhar)는 “과거를 지워라”가 아닙니다.
+            오히려 하나님을 과거의 특정 경험(기적, 성공, 실패)에만 묶어 두는
+            신앙의 습관을 중단하라는 요청입니다.
+            하나님은 “하실 수 있는 분”일 뿐 아니라,
+            “지금 하시는 분”이며 “새롭게 하시는 분”(חָדָשׁ)입니다.
+          </p>
+
+          <h4>2) “새 일”(חָדָשׁ)의 1차 의미: 포로 해방과 귀환</h4>
+          <p>
+            본문의 1차 현실적 의미는 포로에서의 해방과 귀환입니다.
+            이사야 40–55장은 반복해서 “돌아오라”는 초대와
+            “길을 예비하라”는 이미지를 사용합니다.
+            43:19의 “이제 나타낼 것이라”는 말은,
+            구원이 추상적 약속이 아니라 역사 속에서 실제로 드러날 사건임을 강조합니다.
+          </p>
+
+          <h4>3) “광야의 길, 사막의 강”: 구원의 모양이 ‘살 길’과 ‘생명 공급’으로 나타난다</h4>
+          <p>
+            하나님이 내시는 길(דֶּרֶךְ)은 단지 이동로가 아니라,
+            “살아갈 수 있는 방향”을 뜻합니다.
+            그리고 물(מַיִם)과 강(נָהָר)은 단지 편의가 아니라,
+            생존과 공동체 재건의 조건입니다.
+            정론적으로 이 이미지는 하나님 구원이
+            영혼의 문제만이 아니라 삶의 조건(삶의 질서)을 회복하는
+            총체적 구원임을 보여 줍니다.
+          </p>
+
+          <h4>4) “내가 택한 자”(בְּחִירִי)와 “나를 위하여 지었다”(יָצַר): 정체성과 목적</h4>
+          <p>
+            20–21절은 회복의 대상과 목적을 선명하게 합니다.
+            하나님은 “내 백성, 내가 택한 자”(בְּחִירִי)를 위해 물을 내십니다.
+            그리고 그 백성은 하나님이 “빚어 만든”(יָצַר, yāṣar) 존재입니다.
+            여기서 선택과 창조는 특권이 아니라,
+            “왜 다시 살려 주시는가?”에 대한 목적을 포함합니다.
+            목적은 “나를 찬송”(תְּהִלָּה)하게 하는 것,
+            곧 하나님을 드러내는 존재로 다시 세우는 것입니다.
+          </p>
+
+          <h4>5) “짐승도 존경한다”(כָּבֵד): 영광의 확장</h4>
+          <p>
+            20절의 “존경하다”는 히브리어 כָּבֵד(kāvēd, ‘무게를 두다/영화롭게 하다’)의 영역과 연결됩니다.
+            하나님이 광야에 물을 내시면,
+            인간 중심의 회복을 넘어 ‘창조 질서’가 다시 숨 쉬게 되고,
+            그 변화 자체가 하나님께 영광을 돌리는 장면이 됩니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정론적으로 이 본문은 포로기의 해방과 귀환을 “새 출애굽”으로 선포하면서,
+          하나님의 구원이 ‘살 길(길)’과 ‘생명 공급(물)’이라는 매우 현실적인 형태로 나타남을 보여 줍니다.
+          “택한 자/지었다”는 정체성 언어는 회복의 목적이 ‘하나님 찬송’(존재의 목적)임을 분명히 합니다.
+        </div>
+      </article>
+
+      <!-- ② 정행(orthopraxy) -->
+      <article class="card">
+        <h3>② 정행(Orthopraxy): ‘기억의 덫’에서 벗어나, 광야에서 길을 내는 삶</h3>
+
+        <p class="note">
+          정행 관점에서 이 본문은 “더 많이 알라”가 아니라 “다르게 살아라”에 가깝습니다.
+          핵심은 두 가지입니다.
+          <b>첫째, 과거에 갇힌 해석 습관을 끊고</b>,
+          <b>둘째, 지금의 광야에서 하나님이 여시는 ‘길과 물’을 따라 걷는 실천</b>을 시작하는 것입니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) “이전 일을 기억하지 말라”를 ‘상처 침묵’으로 오용하지 말 것</h4>
+          <p>
+            이 구절을 “그 일은 잊어, 말하지 마”로 적용하면,
+            상처를 덮는 폭력이 될 수 있습니다.
+            본문이 끊으려는 것은 ‘기억 자체’가 아니라,
+            기억이 우리를 묶어 두는 방식입니다.
+            즉, 과거를 “하나님도 바꾸지 못할 운명”으로 만들어 버리는
+            절망의 해석을 중단하라는 것입니다.
+            정행적으로는 “기억을 정직하게 다루되,
+            기억이 오늘의 선택을 마비시키지 않게 하는” 훈련이 필요합니다.
+          </p>
+
+          <h4>2) 광야의 실천: 길(דֶּרֶךְ)을 ‘발견’하는 것이 아니라 ‘만드는’ 루틴</h4>
+          <p>
+            광야는 대개 “방향이 보이지 않는 상태”입니다.
+            그런데 본문은 하나님이 “길을 내신다”고 말합니다.
+            오늘의 삶에서 이것은,
+            길이 이미 깔려 있기를 기다리기보다
+            작은 루틴과 결정으로 길을 만들어 가는 방식으로 구현됩니다.
+            예를 들어, 하루 10분의 기도/기록, 관계 회복을 위한 짧은 연락,
+            재정·시간의 작은 정리 같은 것들은
+            “광야에 길을 내는” 실제 행동이 됩니다.
+          </p>
+
+          <h4>3) 사막의 실천: 강(נָהָר)을 ‘기적’으로만 보지 말고 ‘흐름’으로 설계하기</h4>
+          <p>
+            사막에 강이 난다는 말은 분명 하나님의 주권을 보여 주는 이미지입니다.
+            동시에 정행적으로는 “흐름(flow)”의 지혜를 줍니다.
+            물은 한 번에 폭발적으로 생기기보다,
+            작은 통로가 연결되며 흐릅니다.
+            공동체에서는 돌봄의 연결망,
+            개인에게는 몸·마음·관계의 회복 루틴이
+            사막 같은 삶에 ‘물길’을 내는 방식이 될 수 있습니다.
+          </p>
+
+          <h4>4) 들짐승까지 살아나는 회복: 나만 살면 끝이 아니라 ‘주변이 숨 쉬게’</h4>
+          <p>
+            본문은 회복이 “나의 영적 기분”에서 끝나지 않음을 보여 줍니다.
+            물이 나면 짐승도 마십니다.
+            정행적으로는 내 회복이
+            가족, 동료, 교회, 지역사회에 ‘숨통’이 되도록 연결되는 방향을 고민해야 합니다.
+            “내가 살아나면, 누가 덜 목마를까?”라는 질문은
+            본문을 오늘에 매우 구체적으로 번역해 줍니다.
+          </p>
+
+          <h4>5) 찬송(תְּהִלָּה)은 노래만이 아니라 ‘삶의 배열’</h4>
+          <p>
+            21절의 찬송은 예배 시간의 노래만을 뜻하지 않습니다.
+            찬송은 하나님을 “무게 있게”(כָּבֵד) 대하는 삶의 배열입니다.
+            정행적으로는 시간 사용, 말의 습관, 약자에 대한 태도, 정직한 선택이
+            모두 “하나님을 찬송하는 방식”이 될 수 있습니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정행적으로 이 본문은 ‘과거를 덮어라’가 아니라,
+          과거가 오늘을 마비시키는 방식(기억의 덫)을 끊으라고 말합니다.
+          그리고 광야에서 길을 “발견”하기보다 루틴으로 “만들고”,
+          사막의 강을 ‘한 번의 기적’이 아니라 ‘지속 가능한 흐름’으로 설계하라고 초대합니다.
+        </div>
+      </article>
+
+      <!-- 원어 키워드 카드 -->
+      <article class="card">
+        <h3>원어 키워드 정리 (히브리어 중심)</h3>
+
+        <p class="muted small">
+          본문은 구약이므로 원어는 <b>히브리어</b>입니다.
+          아래 태그는 핵심 단어를 “레마 중심”으로 정리하되,
+          과도한 어근 신학을 피하고 <b>이 본문 문맥에서의 역할</b>에 초점을 맞췄습니다.
+        </p>
+
+        <div class="tag-list">
+          <span class="tag tag-hebrew">זָכַר — zākhar (기억하다)</span>
+          <span class="tag tag-hebrew">רִאשׁוֹנוֹת — rishonōt (이전 일)</span>
+          <span class="tag tag-hebrew">חָדָשׁ — chādāsh (새)</span>
+          <span class="tag tag-hebrew">מִדְבָּר — midbār (광야)</span>
+          <span class="tag tag-hebrew">דֶּרֶךְ — derekh (길)</span>
+          <span class="tag tag-hebrew">מַיִם — mayim (물)</span>
+          <span class="tag tag-hebrew">נָהָר — nāhār (강)</span>
+          <span class="tag tag-hebrew">כָּבֵד — kāvēd (영화롭게/존중하다)</span>
+          <span class="tag tag-hebrew">בְּחִירִי — bechîrî (내가 택한 자)</span>
+          <span class="tag tag-hebrew">יָצַר — yāṣar (빚다/형성하다)</span>
+          <span class="tag tag-hebrew">תְּהִלָּה — tehillāh (찬송)</span>
+        </div>
+
+        <div class="kv">
+          <div class="kv-label">זָכַר</div>
+          <div>
+            <b>기억하다</b>. 43:18에서 ‘기억 자체’를 금지하기보다,
+            과거를 기준으로 하나님을 고정시키는 습관을 끊어 내는 방향 전환을 만듭니다.
+          </div>
+
+          <div class="kv-label">רִאשׁוֹנוֹת</div>
+          <div>
+            <b>이전 일</b>. 출애굽의 영광만이 아니라,
+            그 뒤의 실패와 심판까지 포함해 ‘과거 전체’를 가리키는 표현으로 이해할 수 있습니다.
+          </div>
+
+          <div class="kv-label">חָדָשׁ</div>
+          <div>
+            <b>새</b>. 하나님이 포로기의 상황에서 ‘새 방식의 구원’을 행하신다는 핵심 표지입니다.
+            새로움은 “낯설다”가 아니라 “다시 살게 한다”로 나타납니다(길·물).
+          </div>
+
+          <div class="kv-label">מִדְבָּר</div>
+          <div>
+            <b>광야</b>. 방향이 보이지 않는 과도기, 황무지의 이미지입니다.
+            본문은 그 자리에서 ‘길’을 내시는 하나님을 보여 줍니다.
+          </div>
+
+          <div class="kv-label">דֶּרֶךְ</div>
+          <div>
+            <b>길</b>. 이동 경로를 넘어 ‘살아갈 방향’과 ‘가능성의 통로’라는 의미를 품습니다.
+            정행적으로는 작은 루틴과 결정이 길을 만드는 방식이 됩니다.
+          </div>
+
+          <div class="kv-label">מַיִם · נָהָר</div>
+          <div>
+            <b>물 · 강</b>. 생존과 회복의 조건입니다.
+            사막의 강은 “한 번의 감동”이 아니라 지속 가능한 공급(흐름)으로 상상될 수 있습니다.
+          </div>
+
+          <div class="kv-label">כָּבֵד</div>
+          <div>
+            <b>영화롭게/존중하다</b>. 들짐승조차 하나님을 ‘무게 있게’ 대하게 된다는 말은,
+            회복이 피조세계 전체의 숨통을 틔운다는 확장감을 줍니다.
+          </div>
+
+          <div class="kv-label">יָצַר</div>
+          <div>
+            <b>빚다/형성하다</b>. 43:21에서 백성의 존재를 “토기장이의 작품”처럼 표현합니다.
+            회복은 ‘원래 목적’(찬송)으로 다시 빚어짐입니다.
+          </div>
+
+          <div class="kv-label">תְּהִלָּה</div>
+          <div>
+            <b>찬송</b>. 노래만이 아니라,
+            하나님을 삶의 중심에 두는 존재 방식(말·시간·관계의 배열)을 포함합니다.
+          </div>
+        </div>
+
+        <p class="muted small" style="margin-top:16px;">
+          정리하면, 본문은 <b>과거에 고정된 기억(זָכַר)</b>을 내려놓고,
+          하나님이 지금 여시는 <b>새 일(חָדָשׁ)</b>을 알아차리며,
+          광야에서 <b>길(דֶּרֶךְ)</b>과 <b>물(מַיִם)</b>로 다시 살게 하시는 하나님을 찬송(תְּהִלָּה)하라는 흐름입니다.
+        </p>
+      </article>
+
+      <!-- 현대 적용 -->
+      <article class="card">
+        <h3>현대 적용: 개인 · 공동체 · 공적 영역</h3>
+
+        <p class="note">
+          오늘 이 본문을 적용할 때 핵심은 “새해/새 출발” 분위기를 내는 것이 아니라,
+          <b>기억의 습관을 바꾸고</b> <b>광야에서 길과 물을 설계하는 삶</b>을 시작하는 것입니다.
+          하나님은 우리의 과거를 지우지 않지만, 과거가 우리의 미래를 잠그게 두지도 않으십니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) 개인 — “과거 때문에”가 아니라 “지금의 새 일 때문에” 선택하기</h4>
+          <p>
+            개인 적용의 첫 걸음은 “내가 붙잡고 있는 이전 일”을 알아차리는 것입니다.
+            그것이 과거의 성공일 수도 있고, 실패와 상처일 수도 있습니다.
+            그리고 이렇게 질문해 보십시오.
+            “내 선택은 과거의 반응인가, 아니면 하나님이 지금 여시는 길에 대한 응답인가?”
+            오늘 할 수 있는 가장 작은 길 하나(연락, 정리, 기도, 기록, 건강 행동)를 정하고
+            그 길을 ‘반복’으로 만드는 것이 정행적 적용의 핵심입니다.
+          </p>
+
+          <h4>2) 공동체 — ‘목마른 사람’에게 먼저 물이 흐르는 구조 만들기</h4>
+          <p>
+            포로기의 약속은 “내 백성, 내가 택한 자에게 마시게” 하시는 하나님입니다.
+            오늘 공동체는 이 패턴을 배울 수 있습니다.
+            누가 늘 지치고, 누가 늘 소외되며, 누가 말할 힘이 없는지 먼저 살피는 구조,
+            돌봄이 ‘요청한 사람’에게만 가는 것이 아니라 ‘가장 목마른 자리’로 먼저 흐르는 구조가 필요합니다.
+            작은 실천으로는, 소그룹/교회/가정에서
+            “이번 주 가장 지친 사람은 누구였나”를 한 번 더 묻는 것부터 시작할 수 있습니다.
+          </p>
+
+          <h4>3) 공적 영역 — 사막 같은 영역에 ‘흐름’을 만드는 시민적 정행</h4>
+          <p>
+            사회에도 사막 같은 영역이 있습니다.
+            고립, 불평등, 혐오, 기후 위기, 돌봄 공백 같은 문제는 “물길이 끊긴 자리”로 비유할 수 있습니다.
+            이 본문을 공적 영역으로 번역하면,
+            거대한 해결책을 기다리기보다 작은 통로를 연결해 흐름을 만드는 실천이 됩니다.
+            후원, 지역 돌봄 참여, 혐오 언어를 줄이는 대화 습관,
+            에너지 사용 절감 같은 작은 연결들이 ‘사막의 강’으로 이어질 수 있습니다.
+          </p>
+
+          <div class="divider"></div>
+          <p class="muted small">
+            오늘 이 본문이 던지는 질문은 이렇게 정리됩니다.<br/>
+            <b>“내가 붙잡고 있는 ‘이전 일’은 무엇인가?”</b><br/>
+            <b>“내 삶의 광야에서 하나님이 여시는 ‘길’은 어디에서 시작되는가?”</b><br/>
+            <b>“내 회복이 누구의 목마름을 덜어 주는가?”</b>
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          이번 주에는 “과거를 정리하는” 데만 머물지 말고,
+          광야에서 <b>작은 길 하나를 반복으로 굳히는 루틴</b>을 하나 만들어 보십시오.
+          그리고 공동체에서는 ‘가장 목마른 자리’로 먼저 물이 흐르도록
+          아주 작은 구조(안부, 돌봄 순번, 짧은 기도 리스트)를 실험해 보십시오.
+        </div>
+      </article>
+
+      <!-- 실천 체크리스트 -->
+      <article class="card">
+        <h3>실천 체크리스트 (이번 주 적용)</h3>
+        <ul>
+          <li>
+            <b>1. “이전 일” 한 줄 기록</b><br />
+            내 마음을 반복해서 붙드는 과거 사건/장면을 한 줄로 적고,
+            그것이 오늘의 선택을 어떻게 굳게 만드는지(두려움/집착/낙인) 표시하기.
+          </li>
+          <li>
+            <b>2. 광야의 ‘길 하나’ 정하기</b><br />
+            오늘부터 7일 동안 반복할 수 있는 작은 행동 하나(기도 5분, 산책 15분, 연락 1통, 정리 10분)를 정하고,
+            “길(דֶּרֶךְ)”로 만들기 위해 매일 같은 시간에 실행하기.
+          </li>
+          <li>
+            <b>3. 사막의 ‘물길 하나’ 연결</b><br />
+            지친 사람 한 명에게 “지금 가장 필요한 게 뭐야?”를 묻고,
+            가능한 범위에서 ‘구체적인 한 가지’를 실제로 제공하기(시간/정보/도움/동행).
+          </li>
+          <li>
+            <b>4. 말의 찬송(תְּהִלָּה) 연습</b><br />
+            이번 주에 ‘하나님을 무게 있게 대하는 말’ 한 문장을 정해 반복하기:
+            예) “조급히 단정하지 않겠습니다. 오늘의 새 일을 보겠습니다.”
+          </li>
+          <li>
+            <b>5. 회복의 반경 확장</b><br />
+            내가 회복되면 ‘누가 덜 목마를지’ 한 사람을 떠올리고,
+            그 사람을 위한 작은 행동을 하나 더 계획하기.
+          </li>
+        </ul>
+        <p class="muted small">
+          기억할 것: <b>정론</b>은 하나님이 “새 일(חָדָשׁ)”을 행하신다는 믿음을 세우고,
+          <b>정행</b>은 그 믿음이 광야에서 <b>길(דֶּרֶךְ)을 내는 루틴</b>과
+          사막에 <b>물길(מַיִם)을 잇는 돌봄</b>으로 굳어지게 합니다.
+        </p>
+      </article>
+
+      <!-- 마지막 요약 -->
+      <article class="card">
+        <h3>마지막 3–4문장 핵심 요약</h3>
+        <p>
+          이사야 43:18–21은 포로기의 이스라엘에게 과거의 영광과 상처에 갇히지 말고,
+          하나님이 지금 여시는 “새 일”(חָדָשׁ)을 알아차리라고 초대합니다.
+          새 일은 광야에 길(דֶּרֶךְ)과 사막에 강(נָהָר), 곧 ‘살아갈 수 있는 조건’이 다시 열리는 방식으로 나타납니다.
+          그리고 그 회복의 목적은 하나님의 백성이 다시 빚어져(יָצַר) 삶 전체로 찬송(תְּהִלָּה)이 되는 것입니다.
+        </p>
+      </article>
+
+      <!-- 푸터 카드 -->
+      <article class="card" style="text-align:center; opacity:0.85;">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.<br/>
+          상단 <b>공유</b> 버튼으로 링크를 나누고,
+          하단 <b>요약 모드</b>를 활용해 소그룹 나눔이나 개인 묵상에 사용해 보세요.<br/>
+          동일한 레이아웃으로 다른 본문들도
+          <b>역사 · 정론 · 정행 · 현대 적용</b> 관점에서 시리즈로 확장할 수 있습니다.
+        </p>
+      </article>
+
+    </section>
+  </main>
+
+  <div class="bar" aria-label="도움말 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 펼치기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '이사야 43:18–21 — 역사·정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\n' + location.href);
+        }
+      });
+    }
+
+    // 다크/일반 테마 토글 (localStorage 저장)
+    const themeBtn = document.getElementById('btnTheme');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    function getSystemTheme() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (themeIcon && themeLabel) {
+        if (theme === 'light') {
+          themeIcon.textContent = '☀️';
+          themeLabel.textContent = '일반';
+        } else {
+          themeIcon.textContent = '🌙';
+          themeLabel.textContent = '다크';
+        }
+      }
+    }
+
+    const storedTheme = localStorage.getItem('is43_theme');
+    const initialTheme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : getSystemTheme();
+    applyTheme(initialTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('is43_theme', next);
+        applyTheme(next);
+      });
+    }
+
+    if (!storedTheme && window.matchMedia) {
+      const mq = window.matchMedia('(prefers-color-scheme: light)');
+      const handler = () => applyTheme(getSystemTheme());
+      if (mq.addEventListener) mq.addEventListener('change', handler);
+      else if (mq.addListener) mq.addListener(handler);
+    }
+
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
