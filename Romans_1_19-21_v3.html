@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>로마서 1:19–21 — 정론·정행·현대 적용</title>
+  <meta name="date" content="2026-01-18" />
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Color Palette */
+      --bg-body: #0a0e14;
+      --bg-gradient-start: #111827;
+      --bg-gradient-end: #020408;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981; /* Emerald */
+      --accent-secondary: #f59e0b; /* Amber */
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+
+      /* Tag contrast vars (default: dark) */
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #3b82f6;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #f59e0b;
+      --tag-hebrew-text: #fed7aa;
+
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-serif: "Merriweather", "Times New Roman", serif;
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-body: #f8fafc;
+        --bg-gradient-start: #f1f5f9;
+        --bg-gradient-end: #e2e8f0;
+
+        --card-bg: rgba(255, 255, 255, 0.85);
+        --card-border: rgba(0, 0, 0, 0.06);
+        --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --text-highlight: #0f172a;
+
+        --accent-primary: #059669;
+        --accent-secondary: #d97706;
+        --accent-glow: rgba(5, 150, 105, 0.1);
+      }
+    }
+
+    /* Explicit theme override (user toggle) */
+    html[data-theme="dark"] {
+      --bg-body: #0a0e14;
+      --bg-gradient-start: #111827;
+      --bg-gradient-end: #020408;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      /* Tag contrast vars (dark) */
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #fbbf24;
+      --tag-hebrew-text: #fed7aa;
+    }
+
+    html[data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-gradient-start: #f1f5f9;
+      --bg-gradient-end: #e2e8f0;
+
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-highlight: #0f172a;
+
+      --accent-primary: #059669;
+      --accent-secondary: #b45309;
+      --accent-glow: rgba(5, 150, 105, 0.10);
+
+      /* Tag contrast vars (light) — darker text, slightly stronger borders */
+      --tag-greek-bg: rgba(37, 99, 235, 0.12);
+      --tag-greek-border: rgba(37, 99, 235, 0.55);
+      --tag-greek-text: #1e3a8a;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.12);
+      --tag-hebrew-border: rgba(217, 119, 6, 0.55);
+      --tag-hebrew-text: #7c2d12;
+    }
+
+    /* Reset & Base */
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { margin: 0; padding: 0; height: 100%; }
+
+    body {
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding-bottom: 120px; /* Space for bottom bar */
+    }
+
+    /* Typography Utilities */
+    h1, h2, h3, h4 { margin: 0; color: var(--text-highlight); }
+    h1, h2 { font-family: var(--font-serif); }
+
+    .h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin: 16px 0 12px;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .sub b { color: var(--text-main); font-weight: 600; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(var(--bg-body), 0.8);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      position: relative;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .title-group { display: flex; flex-direction: column; }
+    .title { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+    .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    .controls { display: flex; gap: 10px; align-items: center; }
+    #btnTheme, #btnShare { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    #btnTheme { min-width: 92px; }
+    #btnShare { min-width: 72px; }
+
+    /* Buttons */
+    .btn {
+      appearance: none;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+    .btn.primary:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4); }
+
+    /* Main Content */
+    main { padding: 10px 16px; }
+
+    /* Scripture (Details) */
+    .fulltext { margin-bottom: 24px; animation: fadeUp 0.6s ease-out; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    details[open] {
+      background: rgba(var(--bg-body), 0.4);
+      border-color: var(--accent-primary);
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-highlight);
+      user-select: none;
+      transition: background 0.2s;
+    }
+    summary:hover { background: rgba(255,255,255,0.03); }
+    summary::-webkit-details-marker { display: none; }
+
+    .chev {
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    details[open] .chev { transform: rotate(90deg); background: var(--accent-primary); color: #fff; }
+
+    .content.scripture {
+      padding: 10px 24px 24px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-main);
+      background: rgba(0,0,0,0.2);
+    }
+    .scripture p { margin: 12px 0; }
+    .v {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      margin-right: 4px;
+      vertical-align: 1px;
+      opacity: 0.9;
+    }
+
+    /* Hero Section */
+    .hero { padding: 10px 4px 24px; animation: fadeUp 0.7s ease-out; }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 8px;
+    }
+    .pill span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    /* Hebrew / Greek badge 색상 구분 */
+    .pill span.hebrew {
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
+    }
+    .pill span.greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+    /* Grid & Cards */
+    .grid { display: grid; gap: 16px; animation: fadeUp 0.8s ease-out; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+
+    .card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-secondary);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card b { color: var(--text-main); font-weight: 600; }
+    .card ul { margin: 8px 0; padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
+
+    /* Special Elements */
+    .note {
+      margin: 16px 0;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 12px;
+    }
+
+    /* KV (Key-Value) Lists */
+    .kv {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 8px 16px;
+      font-size: 14px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.2);
+      padding: 12px;
+      border-radius: var(--radius-md);
+    }
+    .kv div { padding: 4px 0; }
+    .kv-label {
+      color: var(--accent-secondary);
+      font-weight: 700;
+      font-family: var(--font-serif);
+      border-right: 1px solid var(--card-border);
+    }
+
+    /* Tags */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .tag {
+      padding: 6px 12px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--card-border);
+      font-size: 12px;
+      color: var(--text-highlight);
+      font-weight: 600;
+    }
+    /* Improve tag legibility in light theme */
+    html[data-theme="light"] .tag:not(.tag-greek):not(.tag-hebrew) {
+      background: rgba(0,0,0,0.03);
+      color: var(--text-highlight);
+      border-color: var(--card-border);
+    }
+/* 히브리어 / 헬라어 키워드 태그 색상 구분 */
+    .tag-hebrew {
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
+    }
+    .tag-greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+    /* Summary Mode Logic Styles */
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body { display: none; }
+
+    .hint-compressed {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    body.summary-mode .hint-compressed { display: block; }
+
+    /* Bottom Bar */
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      background: rgba(var(--bg-body), 0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+    .bar-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+    .bar-inner .btn { flex: 1; padding: 12px; font-size: 14px; }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer divider */
+    .divider { height: 1px; background: var(--card-border); margin: 24px 0; }
+    .muted.small { font-size: 12px; opacity: 0.7; text-align: center; display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-group">
+          <div class="title">로마서 1:19–21</div>
+          <div class="subtitle">정론 · 정행 · 현대 적용 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        
+        <button class="btn" id="btnTheme" aria-label="다크/일반 모드 전환">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">다크</span>
+        </button>
+<button class="btn" id="btnShare" aria-label="공유하기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+          </svg>
+          공유
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- 본문 전체 -->
+    <section class="fulltext" aria-label="로마서 1:19–21 본문">
+      <details open>
+        <summary>📜 본문 읽기 (롬 1:19–21) <span class="chev">›</span></summary>
+        <div class="content scripture">
+          <p><span class="v">19</span> 이는 <b>하나님을 알 만한 것</b>이 그들 속에 보임이라 하나님께서 이를 그들에게 <b>보이셨느니라</b></p>
+          <p><span class="v">20</span> 창세로부터 그의 <b>보이지 아니하는 것들</b> 곧 그의 <b>영원하신 능력</b>과 <b>신성</b>이 그가 만드신 만물에 분명히 보여 알려졌나니 그러므로 그들이 <b>핑계하지 못할지니라</b></p>
+          <p><span class="v">21</span> 하나님을 알되 하나님을 <b>영화롭게도 아니하며</b> <b>감사하지도 아니하고</b> 오히려 그 생각이 <b>허망하여지며</b> 미련한 마음이 <b>어두워졌나니</b></p>
+        </div>
+      </details>
+    </section>
+
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="pill">
+        <span class="greek">φανερόν (phaneron)</span>
+        <span class="greek">φανερόω (phaneroō)</span>
+        <span class="greek">ἀόρατος (aoratos)</span>
+        <span class="greek">ἀΐδιος (aidios)</span>
+        <span class="greek">θειότης (theiotēs)</span>
+        <span class="greek">ἀναπολόγητος (anapologētos)</span>
+        <span class="greek">εὐχαριστέω (eucharisteō)</span>
+        <span class="greek">δοξάζω (doxazō)</span>
+        <span class="hebrew">כָּבוֹד (kābôd)</span>
+        <span class="hebrew">תּוֹדָה (tōdāh)</span>
+      </div>
+      <h1 class="h1">보였는데도, 감사로 가지 않았을 때 —
+        “핑계할 수 없음”은 무엇을 뜻하는가</h1>
+            <p class="sub">
+        로마서 1:19–21은 “하나님을 몰랐다”가 아니라 “<b>알았지만</b>”이라고 말하면서,
+        인간의 문제를 <b>정보 부족</b>이 아니라 <b>예배와 감사의 방향 상실</b>로 진단합니다.
+        바울은 창조 세계를 통해 하나님의 <b>영원한 능력</b>과 <b>신성(θειότης)</b>이
+        “분명히 보여” 알려졌다고 말하며, 그 결과 사람은 <b>핑계하지 못한다</b>(ἀναπολόγητος)고 선언합니다.
+        그러나 ‘앎’이 곧바로 구원을 보장하는 것이 아니라,
+        그 앎이 <b>영광(δοξάζω)</b>과 <b>감사(εὐχαριστέω)</b>로 이어지지 않을 때
+        생각은 허망해지고 마음은 어두워진다는 것이 본문의 핵심입니다.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="해설 섹션">
+
+      <!-- 한눈 요약 -->
+      <article class="card">
+        <h3>한눈 요약 (3–4문장)</h3>
+        <p>
+          <b>1)</b> 바울은 “하나님을 알 만한 것”이 인간에게 <b>명백(φανερόν)</b>하게 주어졌고,
+          하나님이 그것을 그들에게 <b>드러내 보이셨다(φανερόω)</b>고 말합니다(19절).
+        </p>
+        <p>
+          <b>2)</b> 특히 창조 세계(“만드신 만물”)를 통해 하나님의 “보이지 않는 것들(ἀόρατα)”—
+          곧 <b>영원한 능력(ἀΐδιος δύναμις)</b>과 <b>신성(θειότης)</b>—이 “분명히 보여” 알려졌으므로,
+          사람은 <b>핑계할 수 없다(ἀναπολόγητος)</b>고 결론짓습니다(20절).
+        </p>
+        <p>
+          <b>3)</b> 그러나 인간은 하나님을 “알되” 그분을 <b>영화롭게 하지도</b> <b>감사하지도</b> 않았고,
+          그 결과 사고(διαλογισμοί)는 <b>허망해지고(ἐματαιώθησαν)</b> 마음(καρδία)은 <b>어두워졌다(ἐσκοτίσθη)</b>고 말합니다(21절).
+        </p>
+        <div class="hint">
+          아래에서 <b>① 역사·배경 → ② 정론(교리) → ③ 정행(실천) → ④ 원어 키워드 → ⑤ 현대 적용</b> 순서로,
+          “보였는데도 감사로 가지 않는” 인간의 내적 메커니즘을 일반 성도도 이해할 수 있도록 차근차근 풀어 봅니다.
+        </div>
+      </article>
+
+      <!-- 역사·지리·배경 -->
+      <article class="card">
+        <h3>역사 · 지리 · 배경</h3>
+
+        <div class="content-long">
+          <h4>1) 로마서는 ‘복음이 왜 필요한가’를 처음부터 끝까지 설계한 편지다</h4>
+          <p>
+            로마서는 바울이 로마 교회를 아직 방문하지 않은 상태에서,
+            자신이 전하는 복음의 핵심을 “처음부터 끝까지” 체계적으로 설명하는 편지입니다.
+            특히 1:18–3:20은 ‘모든 사람이 죄 아래 있다’는 보편 진단을 세우는 긴 논증이고,
+            1:19–21은 그 진단의 출발점에서 “인간이 왜 하나님 앞에 책임을 피할 수 없는가”를 묻는 핵심 근거입니다.
+            여기서 바울의 초점은 ‘신 존재를 논리로 증명하라’가 아니라,
+            “하나님을 아는 단서가 있음에도 불구하고 인간이 <b>어떤 방향으로 응답했는가</b>”입니다.
+          </p>
+
+          <h4>2) 로마 제국의 종교 환경: 신은 ‘예배’이면서 동시에 ‘사회 시스템’이었다</h4>
+          <p>
+            1세기 로마 사회는 다신교적 환경이 기본이었고, 도시와 가정의 종교, 신전의 제의, 제국의 정치적 상징들이 뒤섞여 있었습니다.
+            황제 숭배(제국 숭배)는 지역과 시기마다 강도 차이가 있었지만,
+            중요한 것은 “종교가 개인 취향이 아니라 사회 질서와 관습을 유지하는 장치”로 기능했다는 점입니다.
+            이런 환경에서 바울이 비판하는 우상숭배는 단지 ‘조각상 앞 절하기’가 아니라,
+            삶의 중심축이 창조주에서 피조물로 옮겨가며 사회적·윤리적 현실까지 재배열되는 구조를 가리킵니다.
+          </p>
+
+          <h4>3) 유대 디아스포라의 전통: 창조를 통해 창조주를 ‘알 수 있다’는 지혜 전승</h4>
+          <p>
+            바울의 논지는 유대 전통과도 깊이 연결됩니다.
+            특히 디아스포라 유대 문헌(예: 『지혜서』 13–15장)에는
+            “창조 세계를 보며 창조주를 알 수 있음에도 피조물을 신격화한다”는 비판이 반복됩니다.
+            로마서 1장은 이런 전승과 공명하면서도,
+            곧바로 2:1에서 “남을 판단하는 너도 핑계하지 못한다”는 수사적 반전을 준비합니다.
+            즉, 바울은 ‘저 사람들(이방인)만 문제’라고 말하려는 것이 아니라,
+            결국 <b>모든 인간</b>의 자기중심성과 방향 상실을 드러내려는 것입니다.
+          </p>
+
+          <h4>4) 본문이 말하는 ‘앎’의 성격: 과학 교과서의 지식이 아니라 ‘예배로 이어지는 인식’</h4>
+          <p>
+            바울이 말하는 “알다”는 단지 정보량이 늘어나는 것을 뜻하지 않습니다.
+            21절에서 “하나님을 알되 영화롭게도 아니하며 감사하지도 아니하고”라고 말하는 순간,
+            이 ‘앎’은 곧바로 <b>영광(예배)</b>과 <b>감사(태도)</b>로 연결되는 종류의 인식임이 드러납니다.
+            다시 말해 본문은 “지식의 부족”보다 “방향의 왜곡”을 문제로 삼습니다.
+            그래서 로마서 1:19–21은 오늘 우리에게도,
+            ‘나는 무엇을 당연하게 여기고, 무엇에 궁극적 가치를 부여하는가’라는 질문으로 다가옵니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          로마서 1:19–21은 복음 논증의 출발점에서 “하나님을 알 단서가 분명히 주어졌는데도”
+          인간이 영광과 감사로 응답하지 않아 사고와 마음이 무너진다고 진단합니다.
+          바울의 관심은 ‘증명 경쟁’이 아니라 ‘예배의 방향’입니다.
+        </div>
+      </article>
+
+      <!-- ① 정론(orthodoxy) -->
+      <article class="card">
+        <h3>① 정론(Orthodoxy): 일반계시와 ‘핑계할 수 없음’의 의미</h3>
+
+        <p class="note">
+          정론 관점에서 로마서 1:19–21은 흔히 <b>일반계시</b>(general revelation)의 대표 본문으로 읽힙니다.
+          그러나 바울의 목표는 “자연을 통해 신을 증명하라”가 아니라,
+          “하나님을 외면할 때 인간이 왜 책임을 피할 수 없는가”를 밝히는 데 있습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) “하나님께서 이를 그들에게 보이셨느니라”: 주도권은 인간이 아니라 하나님께 있다</h4>
+          <p>
+            19절은 “알 만한 것”이 인간 안에 ‘보인다’고 말하면서,
+            곧바로 그 이유를 “하나님께서 보이셨다”로 설명합니다.
+            바울은 인간이 스스로 지혜를 쌓아 신에게 올라가는 그림보다,
+            하나님이 창조를 통해 자신을 <b>드러내는(φανερόω)</b> 그림을 먼저 세웁니다.
+            이 주도권의 강조는, 인간이 “나는 몰랐다”라고 말하기 어려운 이유이기도 합니다.
+          </p>
+
+          <h4>2) “보이지 않는 것들(ἀόρατα)”이 “분명히 보여” 알려졌다: 역설의 구조</h4>
+          <p>
+            20절의 논증은 역설적입니다.
+            하나님은 본질적으로 ‘보이지 않는다’(ἀόρατος)고 말하면서도,
+            창조 세계를 통해 그분의 ‘보이지 않는 속성들’이 “분명히 보여” 알려졌다고 합니다.
+            바울이 말하는 것은 ‘하나님의 형상을 눈으로 본다’는 뜻이 아니라,
+            피조 세계를 통해 <b>하나님이 어떤 분인지</b>를 책임 있게 인식할 만큼의 단서가 주어졌다는 말입니다.
+          </p>
+
+          <h4>3) “영원한 능력”과 “신성(θειότης)”: 무엇이 알려지고, 무엇이 아직 남는가</h4>
+          <p>
+            바울이 구체적으로 언급하는 것은 두 가지입니다.
+            하나는 “영원한 능력(ἀΐδιος δύναμις)”이고, 다른 하나는 “신성(θειότης)”입니다.
+            여기서 θειότης는 보통 ‘신적 성격, 신적인 속성’ 정도로 이해되며,
+            하나님을 ‘인격적으로 다 아는 것’(예: 구원의 복음)과는 구분되는 범주로 읽히기도 합니다.
+            즉 창조는 하나님 존재와 능력, 신적 위엄에 대한 책임 있는 인식을 가능하게 하지만,
+            복음(그리스도)의 계시 없이 인간이 스스로 구원에 이르는 충분 조건을 제공한다고 바울이 말하는 것은 아닙니다.
+            로마서 전체 흐름(1:18–3:20 → 3:21 이하)을 따라가면 이 구분이 선명해집니다.
+          </p>
+
+          <h4>4) “그러므로 그들이 핑계하지 못할지니라(ἀναπολόγητος)”: 법정 언어의 무게</h4>
+          <p>
+            “핑계하지 못한다”는 표현은 도덕적 느낌이 아니라, 법정적·언약적 뉘앙스를 가집니다.
+            ‘증거가 부족해서 무죄’가 아니라,
+            ‘증거가 있었는데도 방향을 거꾸로 잡았기 때문에 책임이 남는다’는 논리입니다.
+            이 구절을 읽을 때 핵심은 “하나님은 가혹한 심판자”가 아니라,
+            인간이 스스로 세계를 ‘선물’이 아니라 ‘소유’로 바꾸어 버리며
+            그 결과를 정당화하는 구조가 이미 충분히 드러났다는 진단에 있습니다.
+          </p>
+
+          <h4>5) 죄의 핵심은 “정보 부족”이 아니라 “영광과 감사의 거부”다</h4>
+          <p>
+            21절은 본문의 방향을 완전히 결정합니다.
+            “하나님을 알되” → “영화롭게도 아니하며” → “감사하지도 아니하고” → “허망/어두움”.
+            바울은 죄를 먼저 윤리 목록으로 제시하지 않고,
+            <b>예배의 실패(영광)</b>와 <b>태도의 실패(감사)</b>로부터 설명합니다.
+            그래서 정론적으로 이 본문은 ‘믿음’이 단지 머리의 동의가 아니라,
+            삶 전체가 하나님께 방향을 두는 예배적 실재임을 확인시켜 줍니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정론적으로 로마서 1:19–21은 창조를 통한 일반계시가 책임 있는 인식을 가능하게 한다고 말하며,
+          그럼에도 인간이 영광과 감사로 응답하지 않으면 “변명 불가”의 상태에 머문다고 진단합니다.
+        </div>
+      </article>
+
+      <!-- ② 정행(orthopraxy) -->
+      <article class="card">
+        <h3>② 정행(Orthopraxy): 감사의 상실이 만드는 ‘사고의 붕괴’</h3>
+
+        <p class="note">
+          정행 관점에서 로마서 1:19–21은 “신 존재 증명”보다 훨씬 현실적인 질문을 던집니다.
+          <b>우리는 무엇을 궁극적 가치로 두고(영광), 무엇을 선물로 받는가(감사)</b>.
+          바울은 그 두 가지가 무너지면 사고와 마음 전체가 함께 무너진다고 말합니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) ‘알면서도’ 무너지는 이유: 방향이 바뀌면 지식도 부패한다</h4>
+          <p>
+            바울은 “알되”라는 단어를 일부러 넣습니다.
+            이것은 인간이 전적으로 무지한 존재라서가 아니라,
+            어느 정도의 인식이 있음에도 그것을 ‘나의 삶’으로 번역하는 과정에서
+            방향이 거꾸로 잡힐 수 있다는 뜻입니다.
+            정행적으로 말하면, 우리는 정보를 많이 갖고도
+            “자기 중심의 예배(자기 숭배)”를 유지할 수 있습니다.
+          </p>
+
+          <h4>2) 감사의 상실은 ‘세상을 자원화’한다: 선물이 자원이 될 때</h4>
+          <p>
+            감사가 사라지면 세계는 선물이 아니라 자원이 됩니다.
+            사람은 관계가 아니라 수단이 되고,
+            시간은 은혜가 아니라 경쟁이 되며,
+            몸은 돌봄의 대상이 아니라 효율의 도구가 됩니다.
+            이때 생각은 점점 ‘허망’해집니다.
+            왜냐하면 삶의 의미가 창조주가 아니라 피조물의 무게(성과·소유·통제)에 달리기 때문입니다.
+          </p>
+
+          <h4>3) “생각이 허망해짐(ἐματαιώθησαν)”은 감정 문제가 아니라 ‘해석 체계의 붕괴’다</h4>
+          <p>
+            21절의 “허망”은 단지 ‘기분이 공허하다’가 아닙니다.
+            방향이 틀어지면, 인간의 사고(διαλογισμοί)는
+            점점 더 자기 합리화와 욕망의 정당화에 능숙해집니다.
+            정행적으로 이것은 아주 작은 습관으로 시작됩니다.
+            “이번만”, “원래 다 그래”, “나만 손해 볼 수는 없어” 같은 문장들이
+            삶의 규칙이 되는 순간, 마음은 서서히 어두워집니다.
+          </p>
+
+          <h4>4) 오용 경계: 이 본문을 ‘논쟁에서 이기기’의 도구로 만들지 말 것</h4>
+          <p>
+            로마서 1장은 종종 ‘상대방을 찍어 누르는’ 본문으로 오용됩니다.
+            그러나 바울은 곧바로 2:1에서 “남을 판단하는 너도 핑계하지 못한다”고 말하며,
+            우리 모두가 같은 구조 안에 있음을 드러냅니다.
+            그러므로 정행적 적용은 “저 사람들은 변명 못 해”가 아니라,
+            “나는 지금 무엇을 영화롭게 하고 무엇을 당연시하며 어떤 감사가 끊겼는가”로 향해야 합니다.
+          </p>
+
+          <h4>5) 실제 루틴: 감사는 ‘기분’이 아니라 ‘기본값’을 회복하는 훈련</h4>
+          <p>
+            바울에게 감사(εὐχαριστέω)는 장식이 아니라 기본값입니다.
+            정행적으로는 매우 구체적입니다.
+            하루의 시작에 ‘내가 통제할 수 없는 것’을 인정하고,
+            하루의 끝에 ‘선물로 받은 것’을 구체적으로 이름 붙이는 연습이
+            사고의 방향을 다시 창조주 쪽으로 돌려놓습니다.
+            감사는 현실 부정이 아니라, 현실을 ‘선물의 언어’로 다시 읽는 행위입니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정행적으로 로마서 1:19–21은 감사의 상실이 세계를 자원화하고,
+          그 결과 사고는 허망해지고 마음은 어두워진다는 “삶의 메커니즘”을 보여 줍니다.
+        </div>
+      </article>
+
+      <!-- 원어 키워드 카드 -->
+      <article class="card">
+        <h3>원어 키워드 정리 (히브리어 개념 태그와 색상 구분)</h3>
+
+        <p class="muted small">
+          본문은 신약이므로 원어는 <b>헬라어</b>입니다.
+          아래 태그에서 <span class="tag-greek">파란 계열</span>은 <b>헬라어 키워드</b>,
+          <span class="tag-hebrew">주황 계열</span>은 연결되는 <b>구약 히브리어 개념</b>을 표시합니다.
+        </p>
+
+        <div class="tag-list">
+          <span class="tag tag-greek">φανερόν — phaneron (명백한 것)</span>
+          <span class="tag tag-greek">φανερόω — phaneroō (드러내다)</span>
+          <span class="tag tag-greek">ἀόρατος — aoratos (보이지 않는)</span>
+          <span class="tag tag-greek">ἀΐδιος — aidios (영원한)</span>
+          <span class="tag tag-greek">θειότης — theiotēs (신성/신적 성격)</span>
+          <span class="tag tag-greek">ἀναπολόγητος — anapologētos (변명 불가)</span>
+          <span class="tag tag-greek">δοξάζω — doxazō (영화롭게 하다)</span>
+          <span class="tag tag-greek">εὐχαριστέω — eucharisteō (감사하다)</span>
+          <span class="tag tag-greek">διαλογισμοί — dialogismoi (생각/논리)</span>
+          <span class="tag tag-greek">ματαιόω — mataioō (허망해지다)</span>
+          <span class="tag tag-greek">σκοτίζω — skotizō (어둡게 하다)</span>
+
+          <span class="tag tag-hebrew">כָּבוֹד — kābôd (영광/무게)</span>
+          <span class="tag tag-hebrew">תּוֹדָה — tōdāh (감사)</span>
+          <span class="tag tag-hebrew">יָדַע — yādaʿ (알다/관계적 앎)</span>
+        </div>
+
+        <div class="kv">
+          <div class="kv-label">φανερόν</div>
+          <div>
+            <b>명백한 것</b>. ‘희미한 힌트’가 아니라 책임 있게 인식할 수 있을 만큼 드러난 상태를 뜻합니다.
+            바울의 논증은 “근거가 없었다”가 아니라 “근거가 있었는데도 방향이 틀어졌다”에 있습니다.
+          </div>
+
+          <div class="kv-label">φανερόω</div>
+          <div>
+            <b>드러내다</b>. 하나님이 창조를 통해 자신을 ‘보이셨다’는 주도권을 강조합니다.
+            신앙의 출발은 인간의 발견이 아니라, 하나님이 주신 ‘보여짐’입니다.
+          </div>
+
+          <div class="kv-label">ἀόρατος</div>
+          <div>
+            <b>보이지 않는</b>. 하나님은 눈으로 붙잡을 수 없지만,
+            피조 세계를 통해 그분의 속성은 ‘보이게’ 알려질 수 있음을 말합니다.
+          </div>
+
+          <div class="kv-label">ἀΐδιος</div>
+          <div>
+            <b>영원한</b>. 하나님의 능력이 일시적 폭발이 아니라, 지속적이고 항구적임을 강조합니다.
+            그래서 창조 세계의 질서와 지속성 자체가 ‘능력’의 표지가 됩니다.
+          </div>
+
+          <div class="kv-label">θειότης</div>
+          <div>
+            <b>신성/신적 성격</b>. 창조가 알려주는 것은 하나님에 대한 ‘어떤 책임 있는 인식’이지,
+            복음 없이도 구원에 이를 수 있는 완전한 지식이라는 뜻은 아닙니다.
+            본문은 ‘구원의 방법’보다 ‘책임의 근거’를 세웁니다.
+          </div>
+
+          <div class="kv-label">ἀναπολόγητος</div>
+          <div>
+            <b>변명 불가</b>. 법정 언어처럼, “핑계할 여지가 없다”는 결론입니다.
+            이 단어는 인간의 죄가 ‘무지의 사고’라기보다 ‘방향의 반역’임을 선명히 합니다.
+          </div>
+
+          <div class="kv-label">δοξάζω</div>
+          <div>
+            <b>영화롭게 하다</b>. 앎이 예배로 이어지는지 여부를 가르는 핵심 동사입니다.
+            하나님을 영화롭게 한다는 것은, 삶의 중심(무게)을 하나님께 돌려 드린다는 뜻입니다.
+          </div>
+
+          <div class="kv-label">εὐχαριστέω</div>
+          <div>
+            <b>감사하다</b>. 감정이 아니라 방향입니다.
+            감사는 ‘나는 내 힘으로만 사는 존재가 아니다’라는 고백을 삶의 언어로 유지하는 방식입니다.
+          </div>
+
+          <div class="kv-label">διαλογισμοί</div>
+          <div>
+            <b>생각/논리</b>. 단순한 ‘생각’이 아니라, 내적 논리·자기 대화·합리화의 흐름을 포함합니다.
+            방향이 틀어지면 이 논리는 점점 더 자기중심적 정당화에 능숙해집니다.
+          </div>
+
+          <div class="kv-label">ματαιόω·σκοτίζω</div>
+          <div>
+            <b>허망해지다·어둡게 하다</b>.
+            감사와 영광이 끊길 때 사고는 공허해지고, 마음은 빛을 잃습니다.
+            본문은 죄의 결과를 감정 문제가 아니라 “해석 체계의 붕괴”로 묘사합니다.
+          </div>
+
+          <div class="kv-label">כָּבוֹד·תּוֹדָה</div>
+          <div>
+            구약의 <b>כָּבוֹד(kābôd)</b>은 ‘영광’을 “무게/가치의 중심”으로 느끼게 하고,
+            <b>תּוֹדָה(tōdāh)</b>는 감사가 예배의 핵심 언어임을 보여 줍니다.
+            로마서 1:21은 바로 그 두 축(영광·감사)이 무너질 때 인간이 어두워진다고 말합니다.
+          </div>
+        </div>
+
+        <p class="muted small" style="margin-top:16px;">
+          정리하면, 바울은 “하나님을 알 만한 것(φανερόν)이 드러났는데도(φανερόω),
+          영광(δοξάζω)과 감사(εὐχαριστέω)로 응답하지 않으면
+          생각은 허망해지고(ματαιόω) 마음은 어두워진다(σκοτίζω)”고 진단합니다.
+        </p>
+      </article>
+
+      <!-- 현대 적용 -->
+      <article class="card">
+        <h3>현대 적용: 개인 · 공동체 · 공적 영역</h3>
+
+        <p class="note">
+          로마서 1:19–21의 현대 적용은 “논쟁에서 이기기”가 아니라,
+          삶의 방향을 다시 세우는 데 있습니다.
+          바울이 말한 핵심은 <b>영광</b>과 <b>감사</b>입니다.
+          무엇을 ‘최고 가치’로 두고, 무엇을 ‘선물’로 받는지가 결국 우리의 사고와 마음을 결정합니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) 개인 — “나는 무엇을 당연하게 여기고 있는가?”</h4>
+          <p>
+            감사가 사라지는 첫 지점은 대개 “당연함”입니다.
+            건강, 시간, 가족, 직업, 하루의 안전이 어느 순간부터 ‘내 몫’처럼 느껴질 때,
+            세계는 선물에서 자원으로 바뀌기 시작합니다.
+            그러면 우리는 더 많이 통제하려 하고, 더 많이 쥐려 하고, 더 많이 비교하게 됩니다.
+            본문은 그 흐름이 결국 마음의 어둠으로 이어진다고 경고합니다.
+          </p>
+
+          <h4>2) 공동체 — “우리는 무엇을 함께 영화롭게 하는가?”</h4>
+          <p>
+            공동체의 우상은 대개 집단적으로 ‘정상화’됩니다.
+            어떤 공동체는 성과를, 어떤 공동체는 체면을, 어떤 공동체는 순수성을 최우선으로 둡니다.
+            그런데 그것들이 ‘영광의 자리’에 앉는 순간,
+            사람은 수단이 되고 약자는 주변으로 밀려납니다.
+            로마서 1:21은 공동체가 함께 감사와 경외의 방향을 회복하지 않으면,
+            말과 판단의 기준이 서서히 어두워질 수 있음을 보여 줍니다.
+          </p>
+
+          <h4>3) 공적 영역 — “피조물의 절대화(우상화)와 세계의 도구화(감사 상실)를 동시에 경계”</h4>
+          <p>
+            공적 영역에서는 두 극단이 자주 나타납니다.
+            하나는 국가·시장·기술·이념 같은 ‘피조물(혹은 인간의 산물)’을 절대화하는 길이고,
+            다른 하나는 세계를 오직 도구로만 취급하여 감사와 경외를 삭제하는 길입니다.
+            바울의 대안은 단순합니다.
+            “보였는데도 감사로 가지 않았다”는 진단을 뒤집어,
+            오늘 우리는 ‘보이는 것’을 다시 ‘감사의 언어’로 번역하는 훈련을 해야 합니다.
+          </p>
+
+          <div class="divider"></div>
+          <p class="muted small">
+            오늘 이 본문이 던지는 질문은 이렇게 정리됩니다.<br/>
+            <b>“나는 무엇을 가장 크게 두고 있는가(영광)?”</b><br/>
+            <b>“나는 무엇을 당연하게 여기고 있는가(감사 상실)?”</b><br/>
+            <b>“내 생각의 흐름은 무엇을 정당화하고 있는가(허망한 논리)?”</b><br/>
+            <b>“그 결과 내 마음은 더 밝아졌는가, 더 어두워졌는가?”</b>
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          이 본문은 “저 사람들은 변명 못 해”가 아니라,
+          우리 모두의 삶에서 영광과 감사의 방향이 어디로 향하는지 점검하게 합니다.
+        </div>
+      </article>
+
+      <!-- 실천 체크리스트 -->
+      <article class="card">
+        <h3>실천 체크리스트 (이번 주 적용)</h3>
+        <ul>
+          <li>
+            <b>1. ‘당연함’ 하나 찾기</b><br />
+            오늘 하루 내가 가장 당연하게 여긴 것을 하나 적고,
+            그것이 사실은 선물이라는 것을 인정하는 문장을 한 줄 덧붙이기.
+          </li>
+          <li>
+            <b>2. 감사가 끊기는 지점 포착하기</b><br />
+            불평이 올라오는 순간을 한 번만 포착해,
+            “내가 무엇을 통제하려 했는가?”를 질문해 보기.
+          </li>
+          <li>
+            <b>3. ‘선물 언어’로 다시 말하기</b><br />
+            사람·시간·몸·자연 중 하나를 선택해,
+            오늘 하루 그 대상을 ‘자원’이 아니라 ‘선물’로 말하는 표현을 3번 사용하기.
+          </li>
+          <li>
+            <b>4. 영광의 방향 점검</b><br />
+            이번 주 내가 가장 크게 두는 가치(성과, 인정, 안전, 통제 등)를 하나 적고,
+            그것이 하나님보다 커지는 순간이 언제인지 돌아보기.
+          </li>
+          <li>
+            <b>5. 하루 3줄 감사(감정이 아니라 사실로)</b><br />
+            기분이 좋아서가 아니라,
+            ‘내가 받았기 때문에’ 감사할 수 있는 사실 3가지를 구체적으로 적기.
+          </li>
+        </ul>
+        <p class="muted small">
+          기억할 것: 로마서 1:19–21에서 죄의 출발은 “몰랐다”가 아니라 “<b>감사하지 않았다</b>”입니다.
+          감사는 신앙의 장식이 아니라, 삶의 방향이 하나님을 향하고 있다는 가장 현실적인 신호입니다.
+        </p>
+      </article>
+
+      <!-- 푸터 카드 -->
+      <article class="card" style="text-align:center; opacity:0.85;">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.<br/>
+          상단 <b>공유</b> 버튼으로 링크를 나누고,
+          하단 <b>요약 모드</b>를 활용해 소그룹 나눔이나 개인 묵상에 사용해 보세요.<br/>
+          동일한 레이아웃으로 다른 본문들도
+          <b>정론 · 정행 · 현대 적용</b> 관점에서 시리즈로 확장할 수 있습니다.
+        </p>
+      </article>
+
+    </section>
+  </main>
+
+  <div class="bar" aria-label="도움말 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 펼치기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '로마서 1:19–21 정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\n' + location.href);
+        }
+      });
+    }
+
+    // 다크/일반 테마 토글 (localStorage 저장)
+    const themeBtn = document.getElementById('btnTheme');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    function getSystemTheme() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+      // theme: 'light' | 'dark'
+      document.documentElement.setAttribute('data-theme', theme);
+      if (themeIcon && themeLabel) {
+        if (theme === 'light') {
+          themeIcon.textContent = '☀️';
+          themeLabel.textContent = '일반';
+        } else {
+          themeIcon.textContent = '🌙';
+          themeLabel.textContent = '다크';
+        }
+      }
+    }
+
+    // Init theme: stored -> system
+    const storedTheme = localStorage.getItem('rom1_theme');
+    const initialTheme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : getSystemTheme();
+    applyTheme(initialTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('rom1_theme', next);
+        applyTheme(next);
+      });
+    }
+
+    // If user hasn't set a theme, follow system changes live
+    if (!storedTheme && window.matchMedia) {
+      const mq = window.matchMedia('(prefers-color-scheme: light)');
+      const handler = () => applyTheme(getSystemTheme());
+      if (mq.addEventListener) mq.addEventListener('change', handler);
+      else if (mq.addListener) mq.addListener(handler);
+    }
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    // 전체 펼치기/접기 (details)
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
