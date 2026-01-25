@@ -13,8 +13,11 @@
     :root {
       /* Color Palette */
       --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
       --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
       --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
 
       --card-bg: rgba(23, 30, 41, 0.7);
       --card-border: rgba(255, 255, 255, 0.08);
@@ -49,8 +52,11 @@
     @media (prefers-color-scheme: light) {
       :root {
         --bg-body: #f8fafc;
+        --bg-body-rgb: 248, 250, 252;
         --bg-gradient-start: #f1f5f9;
+        --bg-gradient-start-rgb: 241, 245, 249;
         --bg-gradient-end: #e2e8f0;
+        --bg-gradient-end-rgb: 226, 232, 240;
 
         --card-bg: rgba(255, 255, 255, 0.85);
         --card-border: rgba(0, 0, 0, 0.06);
@@ -69,8 +75,11 @@
     /* Explicit theme override (user toggle) */
     html[data-theme="dark"] {
       --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
       --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
       --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
 
       --card-bg: rgba(23, 30, 41, 0.7);
       --card-border: rgba(255, 255, 255, 0.08);
@@ -96,8 +105,11 @@
 
     html[data-theme="light"] {
       --bg-body: #f8fafc;
+      --bg-body-rgb: 248, 250, 252;
       --bg-gradient-start: #f1f5f9;
+      --bg-gradient-start-rgb: 241, 245, 249;
       --bg-gradient-end: #e2e8f0;
+      --bg-gradient-end-rgb: 226, 232, 240;
 
       --card-bg: rgba(255, 255, 255, 0.92);
       --card-border: rgba(0, 0, 0, 0.08);
@@ -122,12 +134,18 @@
     }
 
     /* Reset & Base */
+    html{
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      background-color: var(--bg-body);
+      min-height: 100%;
+    }
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    html, body { margin: 0; padding: 0; height: 100%; }
+    html { margin: 0; padding: 0; min-height: 100%; }
+    body { margin: 0; padding: 0; min-height: 100vh; }
 
     body {
       font-family: var(--font-sans);
-      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      background: transparent;
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -137,7 +155,7 @@
     .wrap {
       max-width: 680px;
       margin: 0 auto;
-      padding-bottom: 120px; /* Space for bottom bar */
+      padding-bottom: 140px; /* Space for bottom bar + iOS safe area */
     }
 
     /* Typography Utilities */
@@ -167,7 +185,8 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(var(--bg-body), 0.8);
+      background-color: rgba(var(--bg-body-rgb), 0.82);
+      background: rgba(var(--bg-body-rgb), 0.82);
       backdrop-filter: blur(16px) saturate(180%);
       border-bottom: 1px solid var(--card-border);
       transition: all 0.3s ease;
@@ -243,7 +262,7 @@
       transition: all 0.3s ease;
     }
     details[open] {
-      background: rgba(var(--bg-body), 0.4);
+      background: rgba(var(--bg-body-rgb), 0.42);
       border-color: var(--accent-primary);
     }
     summary {
@@ -435,7 +454,7 @@
       color: var(--text-highlight);
       border-color: var(--card-border);
     }
-/* 히브리어 / 헬라어 키워드 태그 색상 구분 */
+    /* 히브리어 / 헬라어 키워드 태그 색상 구분 */
     .tag-hebrew {
       background: var(--tag-hebrew-bg);
       border-color: var(--tag-hebrew-border);
@@ -467,7 +486,8 @@
       position: fixed;
       left: 0; right: 0; bottom: 0;
       z-index: 40;
-      background: rgba(var(--bg-body), 0.85);
+      background-color: rgba(var(--bg-body-rgb), 0.88);
+      background: rgba(var(--bg-body-rgb), 0.88);
       backdrop-filter: blur(20px) saturate(180%);
       border-top: 1px solid var(--card-border);
       padding: 12px 16px max(12px, env(safe-area-inset-bottom));
@@ -503,12 +523,12 @@
         </div>
       </div>
       <div class="controls">
-        
+
         <button class="btn" id="btnTheme" aria-label="다크/일반 모드 전환">
           <span id="themeIcon" aria-hidden="true">🌙</span>
           <span id="themeLabel">다크</span>
         </button>
-<button class="btn" id="btnShare" aria-label="공유하기">
+        <button class="btn" id="btnShare" aria-label="공유하기">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
             <polyline points="16 6 12 2 8 6"></polyline>
@@ -522,7 +542,6 @@
 
   <main class="wrap">
 
-    
     <!-- 본문 전체 -->
     <section class="fulltext" aria-label="누가복음 24:13–25 본문">
       <details open>
@@ -546,7 +565,6 @@
     </section>
 
 
-    
     <!-- 히어로 -->
     <section class="hero">
       <div class="pill">
@@ -578,7 +596,6 @@
     </section>
 
 
-    
     <section class="grid" aria-label="해설 섹션">
 
       <!-- 한눈 요약 -->
@@ -1031,7 +1048,6 @@
       </article>
 
     </section>
-
   </main>
 
   <div class="bar" aria-label="도움말 바">
