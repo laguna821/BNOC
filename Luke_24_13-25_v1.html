@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>누가복음 24:13–25 — 정론·정행·현대 적용</title>
+  <meta name="date" content="2026-01-25" />
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Color Palette */
+      --bg-body: #0a0e14;
+      --bg-gradient-start: #111827;
+      --bg-gradient-end: #020408;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981; /* Emerald */
+      --accent-secondary: #f59e0b; /* Amber */
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+
+      /* Tag contrast vars (default: dark) */
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #3b82f6;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #f59e0b;
+      --tag-hebrew-text: #fed7aa;
+
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-serif: "Merriweather", "Times New Roman", serif;
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-body: #f8fafc;
+        --bg-gradient-start: #f1f5f9;
+        --bg-gradient-end: #e2e8f0;
+
+        --card-bg: rgba(255, 255, 255, 0.85);
+        --card-border: rgba(0, 0, 0, 0.06);
+        --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --text-highlight: #0f172a;
+
+        --accent-primary: #059669;
+        --accent-secondary: #d97706;
+        --accent-glow: rgba(5, 150, 105, 0.1);
+      }
+    }
+
+    /* Explicit theme override (user toggle) */
+    html[data-theme="dark"] {
+      --bg-body: #0a0e14;
+      --bg-gradient-start: #111827;
+      --bg-gradient-end: #020408;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      /* Tag contrast vars (dark) */
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #fbbf24;
+      --tag-hebrew-text: #fed7aa;
+    }
+
+    html[data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-gradient-start: #f1f5f9;
+      --bg-gradient-end: #e2e8f0;
+
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-highlight: #0f172a;
+
+      --accent-primary: #059669;
+      --accent-secondary: #b45309;
+      --accent-glow: rgba(5, 150, 105, 0.10);
+
+      /* Tag contrast vars (light) — darker text, slightly stronger borders */
+      --tag-greek-bg: rgba(37, 99, 235, 0.12);
+      --tag-greek-border: rgba(37, 99, 235, 0.55);
+      --tag-greek-text: #1e3a8a;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.12);
+      --tag-hebrew-border: rgba(217, 119, 6, 0.55);
+      --tag-hebrew-text: #7c2d12;
+    }
+
+    /* Reset & Base */
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { margin: 0; padding: 0; height: 100%; }
+
+    body {
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding-bottom: 120px; /* Space for bottom bar */
+    }
+
+    /* Typography Utilities */
+    h1, h2, h3, h4 { margin: 0; color: var(--text-highlight); }
+    h1, h2 { font-family: var(--font-serif); }
+
+    .h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin: 16px 0 12px;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .sub b { color: var(--text-main); font-weight: 600; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(var(--bg-body), 0.8);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      position: relative;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .title-group { display: flex; flex-direction: column; }
+    .title { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+    .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    .controls { display: flex; gap: 10px; align-items: center; }
+    #btnTheme, #btnShare { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    #btnTheme { min-width: 92px; }
+    #btnShare { min-width: 72px; }
+
+    /* Buttons */
+    .btn {
+      appearance: none;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+    .btn.primary:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4); }
+
+    /* Main Content */
+    main { padding: 10px 16px; }
+
+    /* Scripture (Details) */
+    .fulltext { margin-bottom: 24px; animation: fadeUp 0.6s ease-out; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    details[open] {
+      background: rgba(var(--bg-body), 0.4);
+      border-color: var(--accent-primary);
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-highlight);
+      user-select: none;
+      transition: background 0.2s;
+    }
+    summary:hover { background: rgba(255,255,255,0.03); }
+    summary::-webkit-details-marker { display: none; }
+
+    .chev {
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    details[open] .chev { transform: rotate(90deg); background: var(--accent-primary); color: #fff; }
+
+    .content.scripture {
+      padding: 10px 24px 24px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-main);
+      background: rgba(0,0,0,0.2);
+    }
+    .scripture p { margin: 12px 0; }
+    .v {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      margin-right: 4px;
+      vertical-align: 1px;
+      opacity: 0.9;
+    }
+
+    /* Hero Section */
+    .hero { padding: 10px 4px 24px; animation: fadeUp 0.7s ease-out; }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 8px;
+    }
+    .pill span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    /* Hebrew / Greek badge 색상 구분 */
+    .pill span.hebrew {
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
+    }
+    .pill span.greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+    /* Grid & Cards */
+    .grid { display: grid; gap: 16px; animation: fadeUp 0.8s ease-out; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+
+    .card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-secondary);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card b { color: var(--text-main); font-weight: 600; }
+    .card ul { margin: 8px 0; padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
+
+    /* Special Elements */
+    .note {
+      margin: 16px 0;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 12px;
+    }
+
+    /* KV (Key-Value) Lists */
+    .kv {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 8px 16px;
+      font-size: 14px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.2);
+      padding: 12px;
+      border-radius: var(--radius-md);
+    }
+    .kv div { padding: 4px 0; }
+    .kv-label {
+      color: var(--accent-secondary);
+      font-weight: 700;
+      font-family: var(--font-serif);
+      border-right: 1px solid var(--card-border);
+    }
+
+    /* Tags */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .tag {
+      padding: 6px 12px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--card-border);
+      font-size: 12px;
+      color: var(--text-highlight);
+      font-weight: 600;
+    }
+    /* Improve tag legibility in light theme */
+    html[data-theme="light"] .tag:not(.tag-greek):not(.tag-hebrew) {
+      background: rgba(0,0,0,0.03);
+      color: var(--text-highlight);
+      border-color: var(--card-border);
+    }
+/* 히브리어 / 헬라어 키워드 태그 색상 구분 */
+    .tag-hebrew {
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
+    }
+    .tag-greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+    /* Summary Mode Logic Styles */
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body { display: none; }
+
+    .hint-compressed {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    body.summary-mode .hint-compressed { display: block; }
+
+    /* Bottom Bar */
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      background: rgba(var(--bg-body), 0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+    .bar-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+    .bar-inner .btn { flex: 1; padding: 12px; font-size: 14px; }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer divider */
+    .divider { height: 1px; background: var(--card-border); margin: 24px 0; }
+    .muted.small { font-size: 12px; opacity: 0.7; text-align: center; display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-group">
+          <div class="title">누가복음 24:13–25</div>
+          <div class="subtitle">정론 · 정행 · 현대 적용 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        
+        <button class="btn" id="btnTheme" aria-label="다크/일반 모드 전환">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">다크</span>
+        </button>
+<button class="btn" id="btnShare" aria-label="공유하기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+          </svg>
+          공유
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    
+    <!-- 본문 전체 -->
+    <section class="fulltext" aria-label="누가복음 24:13–25 본문">
+      <details open>
+        <summary>📜 본문 읽기 (눅 24:13–25) <span class="chev">›</span></summary>
+        <div class="content scripture">
+          <p><span class="v">13</span> <b>그 날</b>에 그들 중 둘이 예루살렘에서 <b>이십오 리</b> 되는 <b>엠마오</b>라 하는 마을로 가면서</p>
+          <p><span class="v">14</span> 이 모든 된 일을 서로 이야기하더라</p>
+          <p><span class="v">15</span> 그들이 서로 이야기하며 문의할 때에 예수께서 가까이 이르러 그들과 동행하시나</p>
+          <p><span class="v">16</span> 그들의 눈이 <b>가리어져서</b> 그인 줄 알아보지 못하거늘</p>
+          <p><span class="v">17</span> 예수께서 이르시되 너희가 길 가면서 서로 주고받고 하는 이야기가 무엇이냐 하시니 두 사람이 <b>슬픈 빛</b>을 띠고 머물러 서더라</p>
+          <p><span class="v">18</span> 그 한 사람인 <b>글로바</b>라 하는 자가 대답하여 이르되 당신이 예루살렘에 체류하면서도 요즘 거기서 된 일을 혼자만 알지 못하느냐</p>
+          <p><span class="v">19</span> 이르시되 무슨 일이냐 이르되 <b>나사렛 예수</b>의 일이니 그는 하나님과 모든 백성 앞에서 <b>말과 일에 능하신 선지자</b>이거늘</p>
+          <p><span class="v">20</span> 우리 <b>대제사장들과 관리</b>들이 <b>사형 판결</b>에 넘겨 주어 <b>십자가</b>에 못 박았느니라</p>
+          <p><span class="v">21</span> 우리는 이 사람이 <b>이스라엘을 속량할 자</b>라고 <b>바랐노라</b> 이뿐 아니라 이 일이 일어난 지가 <b>사흘째</b>요</p>
+          <p><span class="v">22</span> 또한 우리 중에 어떤 <b>여자들</b>이 우리로 놀라게 하였으니 이는 그들이 새벽에 무덤에 갔다가</p>
+          <p><span class="v">23</span> 그의 시체는 보지 못하고 와서 그가 살아나셨다 하는 <b>천사들의 나타남</b>을 보았다 함이라</p>
+          <p><span class="v">24</span> 또 우리와 함께 한 자 중에 두어 사람이 무덤에 가 과연 여자들이 말한 바와 같음을 보았으나 예수는 보지 못하였느니라 하거늘</p>
+          <p><span class="v">25</span> 이르시되 <b>미련하고</b> 선지자들이 말한 모든 것을 <b>마음에 더디 믿는</b> 자들이여</p>
+        </div>
+      </details>
+    </section>
+
+
+    
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="pill">
+        <span class="greek">Ἐμμαοῦς (Emmaous)</span>
+        <span class="greek">στάδιον (stadion)</span>
+        <span class="greek">συζητέω (syzēteō)</span>
+        <span class="greek">ὁμιλέω (homileō)</span>
+        <span class="greek">κρατέω (krateō)</span>
+        <span class="greek">ἐπιγινώσκω (epiginōskō)</span>
+        <span class="greek">λυτρόω (lytroō)</span>
+        <span class="greek">ἀνόητος (anoētos)</span>
+        <span class="greek">βραδύς (bradys)</span>
+        <span class="hebrew">גָּאַל (gā’al)</span>
+        <span class="hebrew">פָּדָה (pādāh)</span>
+      </div>
+
+      <h1 class="h1">엠마오 길 위에서 —
+        “우리는 바랐노라”가 무너진 자리에서 성경이 다시 열릴 때</h1>
+
+      <p class="sub">
+        누가복음 24:13–25는 부활의 소식이 이미 퍼지고 있는데도,
+        두 제자가 <b>낙담과 혼란</b> 속에서 예루살렘을 떠나는 장면을 보여 줍니다.
+        핵심은 “정보가 없어서 못 믿은 것”이 아니라,
+        <b>메시아에 대한 기대(속량)</b>가 너무 좁아
+        선지자들이 말한 “고난을 통과하는 구원”을 <b>마음에 더디 믿는</b> 상태(25절)였습니다.
+        이 본문은 신앙을 ‘정답 암기’가 아니라,
+        <b>길 위의 대화 → 해석의 교정 → 공동체로의 회귀</b>로 이어지는 과정으로 그려 줍니다.
+      </p>
+    </section>
+
+
+    
+    <section class="grid" aria-label="해설 섹션">
+
+      <!-- 한눈 요약 -->
+      <article class="card">
+        <h3>한눈 요약 (3–4문장)</h3>
+        <p>
+          <b>1)</b> 부활절 당일, 두 제자는 예루살렘에서 <b>엠마오</b>로 내려가며(13절)
+          예수 사건을 계속 <b>논쟁하고 복기</b>합니다(14–15절).
+        </p>
+        <p>
+          <b>2)</b> 예수는 그들과 <b>동행</b>하지만, 그들의 눈이 “붙잡혀”(16절) 그를 알아보지 못합니다.
+          이 숨겨짐은 ‘시력’이 아니라 <b>해석과 인식의 막힘</b>을 상징합니다.
+        </p>
+        <p>
+          <b>3)</b> 제자들은 예수를 “말과 일에 능한 <b>선지자</b>”(19절)로 고백하면서도,
+          “이스라엘을 <b>속량</b>할 자”(21절)라는 기대가 십자가로 무너져
+          <b>슬픔</b>과 <b>혼란</b> 속에 있습니다(17–24절).
+        </p>
+        <p>
+          <b>4)</b> 예수는 그 문제를 “선지자들이 말한 <b>모든 것</b>을
+          마음에 <b>더디 믿는</b> 상태”(25절)로 진단하며,
+          이어지는 본문(24:26–27)에서 성경 전체의 흐름으로 기대를 교정해 나가십니다.
+        </p>
+        <div class="hint">
+          아래에서 <b>① 역사·배경 → ② 정론(전통 해석) → ③ 정행(실천적 재해석) → ④ 원어 키워드 → ⑤ 현대 적용</b> 순서로,
+          “실망한 제자들의 기대가 어떻게 다시 재구성되는가”를 일반 성도도 따라갈 수 있도록 차근차근 풀어 드립니다.
+        </div>
+      </article>
+
+      <!-- 역사·지리·배경 -->
+      <article class="card">
+        <h3>역사 · 지리 · 배경</h3>
+
+        <div class="content-long">
+          <h4>1) “그 날”(13절): 유월절 주간의 긴장과 부활절 당일의 혼란</h4>
+          <p>
+            누가가 말하는 “그 날”은 예수의 죽음과 장사가 끝난 직후,
+            여인들이 새벽에 무덤에 갔다가 “시체를 보지 못했다”는 소식이 퍼진 <b>바로 그 날</b>입니다(24:1–12의 흐름).
+            유월절 기간의 예루살렘은 순례객으로 가득했고, 로마 당국과 성전 지도자층의 경계도 예민했습니다.
+            그런 도시 한복판에서 지도자들의 결정으로 예수가 십자가형을 당했다는 사실은,
+            제자들에게 단순한 개인적 상실이 아니라
+            “우리가 기대하던 하나님 나라의 전환이 좌절되었다”는 집단적 충격으로 다가왔을 것입니다.
+          </p>
+
+          <h4>2) 엠마오까지 “60 스타디온”(약 11km권): ‘도망’이 아니라 ‘현실적인 후퇴’</h4>
+          <p>
+            본문은 엠마오가 예루살렘에서 약 “60 스타디온” 떨어졌다고 전합니다.
+            대략 오늘 감각으로는 <b>걸어서 2–3시간 안팎</b>의 거리로 이해할 수 있고,
+            “그날에 다시 예루살렘으로 되돌아가 증언했다”(24:33 이하)라는 전개와도 현실성이 맞습니다.
+            다만 고대 전승과 후보 지점들이 여러 갈래라 엠마오의 ‘정확한 위치’를 한 점으로 단정하기는 어렵습니다.
+            누가의 관심은 지도 위 좌표보다, <b>예루살렘에서 멀어지는 길</b>이
+            ‘절망의 흐름’이자 ‘새로운 해석이 열리는 무대’가 된다는 데 있습니다.
+          </p>
+
+          <h4>3) 1세기 유대 사회의 “속량” 기대: 메시아를 ‘해방의 전환점’으로 보는 마음</h4>
+          <p>
+            21절에서 제자들이 “이스라엘을 속량할 자”를 기대했다고 말할 때,
+            그 속량은 ‘영혼만의 위로’로 제한되지 않았을 가능성이 큽니다.
+            로마의 지배, 과세, 폭력, 그리고 십자가형이라는 공포의 상징은
+            “우리는 압제 아래 있다”는 감각을 강화했고,
+            많은 유대인들은 하나님이 보내실 메시아를 통해
+            <b>이스라엘이 회복·해방될 것</b>을 기대했습니다.
+            그러므로 십자가는 단지 “슬픈 죽음”이 아니라,
+            “우리가 바랐던 방식의 구원”이 무너진 사건이었습니다.
+          </p>
+
+          <h4>4) 증언은 있는데 확신은 없는 상태: ‘정보 부족’이 아니라 ‘해석의 충돌’</h4>
+          <p>
+            22–24절은 아주 중요한 현실을 보여 줍니다.
+            부활에 대한 소식은 이미 존재합니다. 여인들은 천사의 말을 들었다고 보고하고,
+            다른 제자들도 무덤이 비어 있음을 확인합니다.
+            그런데도 두 제자는 확신에 이르지 못합니다.
+            이 장면은 신앙의 위기를 “아무 소식도 없어서 생긴 불신”으로 단순화하지 않게 합니다.
+            오히려 ‘기대 프레임’이 너무 강하면,
+            새로운 사실이 와도 그것을 담아낼 해석 그릇이 부족해
+            혼란이 더 커질 수 있음을 보여 줍니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          엠마오 사건은 부활절 당일의 혼란 속에서,
+          메시아에 대한 ‘속량’ 기대가 십자가로 무너진 제자들이
+          예루살렘을 떠나는 현실적 후퇴를 보여 줍니다.
+          핵심 문제는 정보 부족이 아니라 해석의 충돌이며,
+          누가는 그 충돌이 성경 해석의 재구성으로 풀려야 함을 암시합니다.
+        </div>
+      </article>
+
+      <!-- ① 정론(orthodoxy) -->
+      <article class="card">
+        <h3>① 정론(Orthodoxy): 부활 신앙은 ‘얼굴 인식’이 아니라 ‘성경-십자가-부활’의 재해석이다</h3>
+
+        <p class="note">
+          정론(전통 해석)에서 누가복음 24장은 부활 신앙의 핵심을 “증거의 나열”보다
+          <b>성경이 가리키는 메시아의 길(고난 → 영광)</b>로 제시합니다.
+          13–25절은 그 길을 받아들이기 어려워하는 제자들의 마음을 적나라하게 보여 주며,
+          예수의 책망(25절)은 ‘모욕’이 아니라 <b>해석의 방향 교정</b>으로 읽힙니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) “그들의 눈이 가리어져”(16절): 숨겨짐은 부활 신앙의 ‘과정’을 드러낸다</h4>
+          <p>
+            16절은 예수가 동행하는데도 제자들이 알아보지 못하는 이유를 “눈이 가리어졌다”라고 말합니다.
+            여기서 전통적으로 중요한 해석은,
+            이것이 단순한 ‘시각 장애’가 아니라
+            <b>부활 인식은 하나님이 여시는 방식으로, 그리고 성경을 통해 재구성되는 방식으로</b> 온다는 점입니다.
+            누가는 “예수의 얼굴을 알아봤느냐”보다
+            “십자가와 부활을 성경의 큰 흐름으로 이해했느냐”를 더 핵심에 둡니다.
+          </p>
+
+          <h4>2) 제자들의 고백은 절반만 맞다: “선지자”는 맞지만 “속량”의 방식이 달랐다</h4>
+          <p>
+            19절에서 그들은 예수를 “말과 일에 능한 선지자”라고 부릅니다.
+            이는 예수의 공적 사역을 정직하게 인정하는 고백입니다.
+            그러나 21절의 “이스라엘 속량” 기대는
+            그들이 상상하던 ‘속량’이
+            십자가 같은 패배의 상징을 통과할 수 없다는 전제 위에 서 있었습니다.
+            정론적으로 복음서는 바로 그 전제를 뒤집습니다.
+            메시아의 승리는 폭력의 방식이 아니라,
+            <b>고난을 통과하여 새 생명을 여는 방식</b>입니다(이후 24:26–27로 이어짐).
+          </p>
+
+          <h4>3) “사흘째”(21절): 시간 표지가 아니라 ‘구원의 구조’를 가리키는 신호</h4>
+          <p>
+            “사흘째”는 단순한 달력 정보가 아니라,
+            성경 전통 속에서 하나님이 사건을 전환시키는 ‘시간의 리듬’으로 읽히곤 합니다.
+            제자들은 “벌써 사흘째인데도 아무 변화가 없다”고 느끼지만,
+            누가는 그 표현을 통해 독자에게
+            “하나님이 이미 새로운 전환을 시작하셨다”는 긴장을 심어 줍니다.
+            다만 제자들은 그 전환을 담을 해석 틀이 아직 열리지 않았습니다.
+          </p>
+
+          <h4>4) 25절의 책망: ‘신앙은 감정이 아니라’가 아니라, ‘신앙은 전체를 믿는 것’이다</h4>
+          <p>
+            예수는 “선지자들이 말한 모든 것을 마음에 더디 믿는 자들”이라고 말합니다(25절).
+            이 말은 “너희는 왜 감정이 약하냐”가 아니라,
+            “너희는 왜 <b>편한 부분만</b> 믿고
+            불편한 부분(고난, 죽음, 자기 부인, 십자가)을 제외하느냐”라는 진단에 가깝습니다.
+            정론적으로 부활 신앙은
+            ‘좋은 결말만 믿는 낙관’이 아니라,
+            <b>십자가를 통과한 하나님 나라</b>를 믿는 신뢰입니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정론적으로 엠마오 본문은
+          부활 신앙이 단순한 ‘목격담’이 아니라
+          성경 전체가 가리키는 메시아의 길(고난→영광)로
+          기대를 재구성하는 과정임을 보여 줍니다.
+        </div>
+      </article>
+
+      <!-- ② 정행(orthopraxy) -->
+      <article class="card">
+        <h3>② 정행(Orthopraxy): 길 위의 대화가 신앙을 다시 ‘살아 있게’ 만든다</h3>
+
+        <p class="note">
+          정행(실천) 관점에서 누가복음 24:13–25는,
+          위기의 순간에 신앙이 ‘교리 문장’으로만 유지되지 않는다는 것을 보여 줍니다.
+          신앙은 <b>걷기, 말하기, 질문하기, 함께 머물기</b> 같은 일상의 리듬 속에서
+          다시 방향을 찾습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) “서로 이야기하더라”(14절): 상실을 ‘나눔’으로 견디는 영성</h4>
+          <p>
+            두 제자는 혼자 무너져 있지 않습니다.
+            그들은 걸으면서 “이 모든 된 일”을 서로 말합니다.
+            정행적으로 이것은 중요합니다.
+            상실의 순간에 사람은 ‘침묵’하거나 ‘단정’하기 쉽지만,
+            엠마오의 제자들은 아직 결론을 내리지 못해도
+            사건을 꺼내어 말하며 견딥니다.
+            신앙 공동체의 건강은
+            “정답을 빨리 말하는 능력”보다,
+            “슬픔을 말로 만들고 함께 들어주는 능력”에서 먼저 드러납니다.
+          </p>
+
+          <h4>2) 예수의 방식은 ‘선포’보다 ‘질문’이다(17, 19절)</h4>
+          <p>
+            예수는 처음부터 “내가 예수다”라고 선언하지 않습니다.
+            대신 “무슨 이야기냐”, “무슨 일이냐”라고 묻습니다.
+            이 질문은 단지 정보를 얻기 위한 것이 아니라,
+            제자들 안에 있는 <b>전제와 기대</b>를 밖으로 끌어내는 장치입니다.
+            정행적으로 이것은 오늘 우리의 대화법을 바꿉니다.
+            누군가가 낙담해 있을 때,
+            ‘정답’으로 덮기보다
+            먼저 “당신이 지금 무엇을 기대했고, 무엇이 무너졌는지”를
+            말하게 하는 것이 회복의 첫걸음이 될 수 있습니다.
+          </p>
+
+          <h4>3) “눈이 가리어짐”을 운명론으로 쓰지 말 것</h4>
+          <p>
+            16절을 “하나님이 막았으니 어쩔 수 없다”라는 운명론으로 소비하면,
+            본문의 실천적 길이 사라집니다.
+            누가의 서사는 결국 “눈이 열리는” 방향으로 나아가며(24:31),
+            그 열림은 우연이 아니라
+            <b>대화 → 성경의 재해석 → 공동체의 회복</b>이라는 경로를 동반합니다.
+            즉, 이 본문은 “못 본다”를 정당화하는 이야기가 아니라,
+            “보게 되는 길을 배우라”는 이야기입니다.
+          </p>
+
+          <h4>4) 신앙의 가장 위험한 순간은 “우리는 바랐노라”(21절)가 ‘냉소’로 굳을 때</h4>
+          <p>
+            “우리는 바랐노라”는 믿음의 언어이면서,
+            동시에 냉소의 시작이 될 수 있습니다.
+            기대가 완전히 꺾이면 사람은
+            “다 헛수고였다”라는 결론으로 삶을 닫아 버리기 쉽습니다.
+            정행적으로 본문은 그 지점에서
+            공동체적 대화와 성경의 큰 이야기로
+            냉소가 굳기 전에 마음을 다시 움직이게 합니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정행적으로 엠마오 본문은
+          상실을 혼자 견디지 않고 말로 나누며,
+          질문을 통해 전제를 드러내고,
+          성경의 큰 흐름으로 기대를 교정해 가는 ‘과정의 신앙’을 보여 줍니다.
+        </div>
+      </article>
+
+      <!-- 원어 키워드 카드 -->
+      <article class="card">
+        <h3>원어 키워드 정리 (헬라어 · 히브리어)</h3>
+
+        <p class="muted small">
+          본문은 신약이므로 주요 원어는 <b>헬라어</b>입니다.
+          다만 “속량(21절)”은 구약의 해방·구속 언어와 연결되므로,
+          연결되는 <b>히브리어 개념</b>도 함께 표시합니다.
+        </p>
+
+        <div class="content-long">
+          <h4>핵심 단어 표</h4>
+          <div class="kv">
+            <div class="kv-label">στάδιον</div>
+            <div>
+              <b>stadion</b> (거리 단위). 13절의 “60 스타디온”은
+              엠마오가 예루살렘에서 하루 왕복이 가능한 현실적 거리임을 보여 줍니다.
+              본문은 “도피”가 아니라 “현실적인 후퇴의 걸음”을 무대로 삼습니다.
+            </div>
+
+            <div class="kv-label">συζητέω·ὁμιλέω</div>
+            <div>
+              <b>syzēteō·homileō</b> (토론하다·대화하다).
+              제자들은 단순히 걷는 것이 아니라,
+              사건을 ‘서로 맞춰보며’ 해석하려고 애씁니다(14–15절).
+              신앙은 위기 때 ‘침묵’이 아니라 ‘공동 해석’의 과정으로 회복될 수 있습니다.
+            </div>
+
+            <div class="kv-label">κρατέω</div>
+            <div>
+              <b>krateō</b> (붙잡다, 억제하다).
+              16절의 “눈이 가리어졌다”는 표현은
+              인식이 ‘붙잡혀’ 있는 상태를 암시합니다.
+              누가에게 부활 인식은 단순한 얼굴 인식이 아니라
+              성경을 통해 ‘해석이 열리는’ 사건입니다.
+            </div>
+
+            <div class="kv-label">ἐπιγινώσκω</div>
+            <div>
+              <b>epiginōskō</b> (분별해 알아보다).
+              “그인 줄 알아보지 못했다”의 핵심 동사로,
+              ‘누구인지 식별하는 인식’이 막혀 있음을 나타냅니다(16절).
+            </div>
+
+            <div class="kv-label">λυτρόω</div>
+            <div>
+              <b>lytroō</b> (속량하다, 풀어주다).
+              21절의 “이스라엘을 속량할 자” 기대의 핵심입니다.
+              제자들이 기대한 속량은 주로 “민족적 전환”에 가까웠고,
+              예수는 십자가를 통해 그 기대의 범위와 방식을 재정의하십니다.
+            </div>
+
+            <div class="kv-label">ἀνόητος·βραδύς</div>
+            <div>
+              <b>anoētos·bradys</b> (이해가 부족한·더딘).
+              25절의 책망은 “머리가 나쁘다”가 아니라,
+              선지자들의 말 ‘전체’를 받아들이는 데
+              마음이 지체되는 상태를 드러냅니다.
+            </div>
+
+            <div class="kv-label">גָּאַל·פָּדָה</div>
+            <div>
+              구약의 <b>גָּאַל(gā’al)</b>, <b>פָּדָה(pādāh)</b>는
+              “대가를 치르고 풀어주다/건져내다”라는 속량의 언어를 형성합니다.
+              누가복음 24:21의 속량 기대는
+              이런 전통 위에서 ‘이스라엘 회복’의 그림을 떠올리게 했고,
+              예수는 그 그림을 십자가와 부활로 확장·전환하십니다.
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h4>개념-어휘 매핑 (확실성: Medium)</h4>
+          <p>
+            “속량”은 구약에서 종종 <b>출애굽·해방·회복</b>의 큰 이야기와 연결됩니다.
+            제자들은 그 큰 이야기를 ‘정치적 반전’으로만 좁혀 잡았고,
+            예수는 선지자들의 말 전체를 통해
+            속량을 <b>폭력의 전복</b>이 아니라 <b>죽음을 이기는 새 창조</b>로 재구성하십니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          원어 관점에서 16절은 ‘인식이 붙잡힌 상태(κρατέω)’를,
+          21절은 ‘속량(λυτρόω)’ 기대의 방향을,
+          25절은 ‘마음의 지체(βραδύς)’를 강조합니다.
+          본문은 결국 기대의 그릇이 성경으로 재구성될 때
+          부활이 ‘알아짐’으로 들어온다고 말합니다.
+        </div>
+      </article>
+
+      <!-- 현대 적용 -->
+      <article class="card">
+        <h3>현대 적용: 개인 · 공동체 · 공적 영역</h3>
+
+        <p class="note">
+          엠마오 본문이 현대 성도에게 주는 가장 큰 선물은,
+          “믿음이 흔들리는 순간에도 예수는 <b>동행</b>하신다”는 위로와 함께,
+          그 흔들림이 ‘수치’가 아니라
+          <b>해석과 실천이 성숙해지는 통로</b>가 될 수 있다는 통찰입니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) 개인 — “나는 무엇을 ‘속량’이라고 기대하고 있었나?”</h4>
+          <p>
+            우리도 각자 마음속에 “속량의 그림”이 있습니다.
+            어떤 사람에게 속량은 문제의 즉각 해결일 수 있고,
+            어떤 사람에게는 인정과 성공의 회복일 수 있으며,
+            또 어떤 사람에게는 관계의 정상화일 수 있습니다.
+            엠마오 제자들은 그 그림이 무너졌을 때
+            “우리는 바랐노라”라는 문장으로 상실을 말합니다.
+            오늘의 적용은 먼저 여기에 있습니다.
+            <b>내가 기대했던 구원의 모양</b>을 솔직하게 적어 보고,
+            그것이 십자가를 통과하는 방식까지 포함하는지 점검해 보십시오.
+          </p>
+
+          <h4>2) 공동체 — 질문을 허용하는 공동체가 눈을 연다</h4>
+          <p>
+            위기 때 공동체는 두 갈래로 무너지기 쉽습니다.
+            하나는 “아무 말도 하지 않는 침묵”이고,
+            다른 하나는 “결론만 강요하는 단정”입니다.
+            예수는 둘 다 선택하지 않고 질문하십니다.
+            공동체가 건강하게 회복되려면,
+            슬픔과 혼란을 말로 꺼내고,
+            그 말 속에 숨어 있는 기대와 전제를 함께 비춰 보는
+            ‘해석의 대화’가 필요합니다.
+            엠마오 길은 그 모델을 보여 줍니다.
+          </p>
+
+          <h4>3) 공적 영역 — ‘구원’을 승리 서사로만 좁히지 않기</h4>
+          <p>
+            공적 영역에서는 ‘우리 편의 승리’가 곧 ‘구원’처럼 느껴질 때가 많습니다.
+            그러나 십자가는 승리의 방식 자체를 바꿉니다.
+            누가복음은 속량을
+            “상대의 제거”가 아니라 “새로운 인간과 공동체의 탄생”으로 확장합니다.
+            그래서 성도의 공적 실천은
+            승리의 흥분보다,
+            <b>정의와 자비를 함께 견디는 인내</b>,
+            <b>폭력과 혐오를 닮지 않는 방식</b>,
+            <b>진실을 말하되 사람을 수단화하지 않는 태도</b>로 드러나야 합니다.
+          </p>
+
+          <div class="divider"></div>
+          <p class="muted small">
+            오늘 본문이 던지는 질문은 이렇게 정리할 수 있습니다.<br/>
+            <b>“내가 기대한 속량의 그림은 무엇인가?”</b><br/>
+            <b>“그 그림은 십자가를 포함하는가, 아니면 십자가를 ‘실패’로만 보는가?”</b><br/>
+            <b>“나는 지금 누구와 이 상실을 말로 나누고 있는가?”</b><br/>
+            <b>“내 해석의 그릇은 성경의 큰 이야기로 넓어지고 있는가?”</b>
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          엠마오 본문은
+          개인의 기대(속량의 그림)를 점검하고,
+          공동체적 대화를 회복하며,
+          공적 영역에서 구원을 승리 서사로만 좁히지 않도록 우리를 교정합니다.
+        </div>
+      </article>
+
+      <!-- 실천 체크리스트 -->
+      <article class="card">
+        <h3>실천 체크리스트 (이번 주 적용)</h3>
+        <ul>
+          <li>
+            <b>1. “우리는 바랐노라” 문장 쓰기</b><br />
+            요즘 내 마음에서 무너진 기대를 1–2문장으로 솔직하게 적고,
+            그 기대가 무엇을 ‘속량’으로 상상했는지 한 줄로 덧붙이기.
+          </li>
+          <li>
+            <b>2. 혼자 걷지 않기</b><br />
+            낙담이 깊어질수록 혼자 결론 내리기 쉽습니다.
+            이번 주에 한 사람을 정해,
+            사건을 ‘정리된 결론’이 아니라 ‘있는 그대로’ 나누는 대화를 해 보기.
+          </li>
+          <li>
+            <b>3. 질문 연습</b><br />
+            누군가가 힘들어할 때 조언부터 하지 말고,
+            예수처럼 “무슨 일이냐?” “어떤 기대가 무너졌냐?”를 먼저 물어 보기.
+          </li>
+          <li>
+            <b>4. 성경의 ‘전체’를 붙잡기</b><br />
+            내가 좋아하는 구절만이 아니라,
+            불편한 부분(고난, 자기 부인, 십자가)을 포함해
+            ‘선지자들이 말한 모든 것’을 한 번에 읽어 보는 시간 만들기.
+          </li>
+          <li>
+            <b>5. 돌아갈 자리 마련하기</b><br />
+            엠마오 길은 결국 예루살렘(공동체)로 되돌아갑니다(24:33 이하).
+            이번 주에 내가 ‘다시 돌아가야 할 자리’(예배, 소그룹, 관계)를 하나 정하고,
+            작게라도 복귀 행동을 실행해 보기.
+          </li>
+        </ul>
+
+        <p class="muted small">
+          기억할 것: 예수의 책망(25절)은 “너희는 자격 없다”가 아니라,
+          “너희의 기대 그릇을 성경의 큰 이야기로 넓혀라”는 초대입니다.
+          믿음은 흔들림이 없는 상태가 아니라,
+          흔들림 속에서도 동행하시는 주님과 함께 해석이 다시 열리는 길을 걷는 것입니다.
+        </p>
+      </article>
+
+      <!-- 마지막 핵심 요약 -->
+      <article class="card">
+        <h3>마지막 3–4문장 핵심 요약</h3>
+        <p class="content-long">
+          엠마오로 내려가던 두 제자는 부활 소식을 ‘못 들어서’가 아니라,
+          “속량”에 대한 기대가 너무 좁아 그 소식을 담지 못해 낙담했습니다.
+          예수는 그 문제를 “선지자들이 말한 모든 것을 마음에 더디 믿는” 상태로 진단하며,
+          성경 전체의 흐름으로 기대를 다시 재구성하십니다.
+          이 본문은 우리에게도 묻습니다. “내가 바라는 구원의 모양은 십자가를 포함하는가?”
+          그리고 동시에 약속합니다. “낙담의 길에서도 예수는 먼저 다가와 동행하신다.”
+        </p>
+        <div class="hint-compressed">
+          엠마오 길은 ‘정보 부족’이 아니라 ‘해석의 그릇’ 문제를 다루며,
+          예수는 성경 전체로 그릇을 넓히십니다.
+          낙담의 길에서도 주님은 먼저 다가와 동행하십니다.
+        </div>
+      </article>
+
+      <!-- 푸터 카드 -->
+      <article class="card" style="text-align:center; opacity:0.85;">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.<br/>
+          상단 <b>공유</b> 버튼으로 링크를 나누고,
+          하단 <b>요약 모드</b>를 활용해 소그룹 나눔이나 개인 묵상에 사용해 보세요.<br/>
+          동일한 레이아웃으로 다른 본문들도
+          <b>정론 · 정행 · 현대 적용</b> 관점에서 시리즈로 확장할 수 있습니다.
+        </p>
+      </article>
+
+    </section>
+
+  </main>
+
+  <div class="bar" aria-label="도움말 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 펼치기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '누가복음 24:13–25 정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\n' + location.href);
+        }
+      });
+    }
+
+    // 다크/일반 테마 토글 (localStorage 저장)
+    const themeBtn = document.getElementById('btnTheme');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    function getSystemTheme() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+      // theme: 'light' | 'dark'
+      document.documentElement.setAttribute('data-theme', theme);
+      if (themeIcon && themeLabel) {
+        if (theme === 'light') {
+          themeIcon.textContent = '☀️';
+          themeLabel.textContent = '일반';
+        } else {
+          themeIcon.textContent = '🌙';
+          themeLabel.textContent = '다크';
+        }
+      }
+    }
+
+    // Init theme: stored -> system
+    const storedTheme = localStorage.getItem('lk24_theme');
+    const initialTheme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : getSystemTheme();
+    applyTheme(initialTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('lk24_theme', next);
+        applyTheme(next);
+      });
+    }
+
+    // If user hasn't set a theme, follow system changes live
+    if (!storedTheme && window.matchMedia) {
+      const mq = window.matchMedia('(prefers-color-scheme: light)');
+      const handler = () => applyTheme(getSystemTheme());
+      if (mq.addEventListener) mq.addEventListener('change', handler);
+      else if (mq.addListener) mq.addListener(handler);
+    }
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    // 전체 펼치기/접기 (details)
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
