@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>마가복음 1:14–20 — 정론·정행·현대 적용</title>
+  <meta name="date" content="2026-02-01" />
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Color Palette */
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981; /* Emerald */
+      --accent-secondary: #f59e0b; /* Amber */
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+
+      /* Tag contrast vars (default: dark) */
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #3b82f6;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #f59e0b;
+      --tag-hebrew-text: #fed7aa;
+
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-serif: "Merriweather", "Times New Roman", serif;
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-body: #f8fafc;
+      --bg-body-rgb: 248, 250, 252;
+        --bg-gradient-start: #f1f5f9;
+      --bg-gradient-start-rgb: 241, 245, 249;
+        --bg-gradient-end: #e2e8f0;
+      --bg-gradient-end-rgb: 226, 232, 240;
+
+        --card-bg: rgba(255, 255, 255, 0.85);
+        --card-border: rgba(0, 0, 0, 0.06);
+        --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --text-highlight: #0f172a;
+
+        --accent-primary: #059669;
+        --accent-secondary: #d97706;
+        --accent-glow: rgba(5, 150, 105, 0.1);
+      }
+    }
+
+    /* Explicit theme override (user toggle) */
+    html[data-theme="dark"] {
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      /* Tag contrast vars (dark) */
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #fbbf24;
+      --tag-hebrew-text: #fed7aa;
+    }
+
+    html[data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-body-rgb: 248, 250, 252;
+      --bg-gradient-start: #f1f5f9;
+      --bg-gradient-start-rgb: 241, 245, 249;
+      --bg-gradient-end: #e2e8f0;
+      --bg-gradient-end-rgb: 226, 232, 240;
+
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-highlight: #0f172a;
+
+      --accent-primary: #059669;
+      --accent-secondary: #b45309;
+      --accent-glow: rgba(5, 150, 105, 0.10);
+
+      /* Tag contrast vars (light) — darker text, slightly stronger borders */
+      --tag-greek-bg: rgba(37, 99, 235, 0.12);
+      --tag-greek-border: rgba(37, 99, 235, 0.55);
+      --tag-greek-text: #1e3a8a;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.12);
+      --tag-hebrew-border: rgba(217, 119, 6, 0.55);
+      --tag-hebrew-text: #7c2d12;
+    }
+
+    /* Reset & Base */
+    html{
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      background-color: var(--bg-body);
+      min-height: 100%;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { margin: 0; padding: 0; min-height: 100%; }
+    body { margin: 0; padding: 0; min-height: 100vh; }
+
+    body {
+      font-family: var(--font-sans);
+      background: transparent;
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding-bottom: 140px; /* Space for bottom bar + iOS safe area */
+    }
+
+    /* Typography Utilities */
+    h1, h2, h3, h4 { margin: 0; color: var(--text-highlight); }
+    h1, h2 { font-family: var(--font-serif); }
+
+    .h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin: 16px 0 12px;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .sub b { color: var(--text-main); font-weight: 600; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(var(--bg-body-rgb), 0.82);
+      background: rgba(var(--bg-body-rgb), 0.82);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      position: relative;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .title-group { display: flex; flex-direction: column; }
+    .title { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+    .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    .controls { display: flex; gap: 10px; align-items: center; }
+    #btnTheme, #btnShare { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    #btnTheme { min-width: 92px; }
+    #btnShare { min-width: 72px; }
+
+    /* Buttons */
+    .btn {
+      appearance: none;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+    .btn.primary:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4); }
+
+    /* Main Content */
+    main { padding: 10px 16px; }
+
+    /* Scripture (Details) */
+    .fulltext { margin-bottom: 24px; animation: fadeUp 0.6s ease-out; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    details[open] {
+      background: rgba(var(--bg-body-rgb), 0.42);
+      border-color: var(--accent-primary);
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-highlight);
+      user-select: none;
+      transition: background 0.2s;
+    }
+    summary:hover { background: rgba(255,255,255,0.03); }
+    summary::-webkit-details-marker { display: none; }
+
+    .chev {
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    details[open] .chev { transform: rotate(90deg); background: var(--accent-primary); color: #fff; }
+
+    .content.scripture {
+      padding: 10px 24px 24px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-main);
+      background: rgba(0,0,0,0.2);
+    }
+    .scripture p { margin: 12px 0; }
+    .v {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      margin-right: 4px;
+      vertical-align: 1px;
+      opacity: 0.9;
+    }
+
+    /* Hero Section */
+    .hero { padding: 10px 4px 24px; animation: fadeUp 0.7s ease-out; }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 8px;
+    }
+    .pill span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    /* Hebrew / Greek badge 색상 구분 */
+    .pill span.hebrew {
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
+    }
+    .pill span.greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+    /* Grid & Cards */
+    .grid { display: grid; gap: 16px; animation: fadeUp 0.8s ease-out; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+
+    .card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-secondary);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card b { color: var(--text-main); font-weight: 600; }
+    .card ul { margin: 8px 0; padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
+
+    /* Special Elements */
+    .note {
+      margin: 16px 0;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 12px;
+    }
+
+    /* KV (Key-Value) Lists */
+    .kv {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 8px 16px;
+      font-size: 14px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.2);
+      padding: 12px;
+      border-radius: var(--radius-md);
+    }
+    .kv div { padding: 4px 0; }
+    .kv-label {
+      color: var(--accent-secondary);
+      font-weight: 700;
+      font-family: var(--font-serif);
+      border-right: 1px solid var(--card-border);
+    }
+
+    /* Tags */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .tag {
+      padding: 6px 12px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--card-border);
+      font-size: 12px;
+      color: var(--text-highlight);
+      font-weight: 600;
+    }
+    /* Improve tag legibility in light theme */
+    html[data-theme="light"] .tag:not(.tag-greek):not(.tag-hebrew) {
+      background: rgba(0,0,0,0.03);
+      color: var(--text-highlight);
+      border-color: var(--card-border);
+    }
+/* 히브리어 / 헬라어 키워드 태그 색상 구분 */
+    .tag-hebrew {
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
+    }
+    .tag-greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+    /* Summary Mode Logic Styles */
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body { display: none; }
+
+    .hint-compressed {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    body.summary-mode .hint-compressed { display: block; }
+
+    /* Bottom Bar */
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      background-color: rgba(var(--bg-body-rgb), 0.88);
+      background: rgba(var(--bg-body-rgb), 0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+    .bar-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+    .bar-inner .btn { flex: 1; padding: 12px; font-size: 14px; }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer divider */
+    .divider { height: 1px; background: var(--card-border); margin: 24px 0; }
+    .muted.small { font-size: 12px; opacity: 0.7; text-align: center; display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-group">
+          <div class="title">마가복음 1:14–20</div>
+          <div class="subtitle">정론 · 정행 · 현대 적용 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        
+        <button class="btn" id="btnTheme" aria-label="다크/일반 모드 전환">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">다크</span>
+        </button>
+<button class="btn" id="btnShare" aria-label="공유하기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+          </svg>
+          공유
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    
+    <!-- 본문 전체 -->
+    <section class="fulltext" aria-label="마가복음 1:14–20 본문">
+      <details open>
+        <summary>📜 본문 읽기 (눅 24:13–25) <span class="chev">›</span></summary>
+        <div class="content scripture">
+          
+
+          <p><span class="v">14</span> <b>요한이 잡힌 후</b> 예수께서 <b>갈릴리</b>에 오셔서 하나님의 복음을 전파하여</p>
+          <p><span class="v">15</span> 이르시되 <b>때가 찼고</b> 하나님의 <b>나라가 가까이</b> 왔으니 <b>회개</b>하고 <b>복음</b>을 <b>믿으라</b> 하시더라</p>
+          <p style="margin-top:16px;"><b>어부들을 부르시다</b> (마 4:18–22; 눅 5:1–11)</p>
+          <p><span class="v">16</span> 갈릴리 <b>해변</b>으로 지나가시다가 <b>시몬</b>과 그 형제 <b>안드레</b>가 바다에 <b>그물 던지는</b> 것을 보시니 그들은 <b>어부</b>라</p>
+          <p><span class="v">17</span> 예수께서 이르시되 <b>나를 따라오라</b> 내가 너희로 <b>사람을 낚는 어부</b>가 되게 하리라 하시니</p>
+          <p><span class="v">18</span> 곧 <b>그물</b>을 버려 두고 따르니라</p>
+          <p><span class="v">19</span> 조금 더 가시다가 <b>세베대의 아들 야고보</b>와 그 형제 <b>요한</b>을 보시니 그들도 배에 있어 <b>그물</b>을 깁는데</p>
+          <p><span class="v">20</span> 곧 부르시니 그 아버지 <b>세베대</b>를 <b>품꾼들</b>과 함께 배에 버려 두고 예수를 따라가니라</p>
+        
+        </div>
+      </details>
+    </section>
+
+
+    
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="pill">
+        
+
+        <span class="greek">Γαλιλαία (Galilaia)</span>
+        <span class="greek">εὐαγγέλιον (euangelion)</span>
+        <span class="greek">καιρός (kairos)</span>
+        <span class="greek">πεπλήρωται (peplērōtai)</span>
+        <span class="greek">βασιλεία τοῦ θεοῦ (basileia)</span>
+        <span class="greek">ἤγγικεν (ēngiken)</span>
+        <span class="greek">μετανοεῖτε (metanoeite)</span>
+        <span class="greek">πιστεύετε (pisteuete)</span>
+        <span class="greek">ἀκολουθέω (akoloutheō)</span>
+        <span class="greek">δίκτυον (diktyon)</span>
+        <span class="greek">ἁλιεύς (halieus)</span>
+        <span class="greek">εὐθύς (euthys)</span>
+        <span class="hebrew">מַלְכוּת (malkhût)</span>
+        <span class="hebrew">שׁוּב (shûv)</span>
+      
+      </div>
+
+      <h1 class="h1">하나님의 나라가 가까이 왔다 —
+        “회개하고 믿으라”가 일상 한복판에서 시작될 때</h1>
+
+      <p class="sub">
+        마가복음 1:14–20은 예수님의 공적 사역이 <b>갈릴리</b>에서 본격적으로 시작되며,
+        첫 메시지(15절)와 첫 제자 소명(16–20절)이 한 호흡으로 이어지는 장면입니다.
+        여기서 “하나님의 나라”는 추상적인 종교 구호가 아니라,
+        <b>지금부터 삶의 우선순위가 재배치되는 통치의 도래</b>를 뜻합니다.
+        또한 예수님은 종교 엘리트가 아니라 <b>어부들</b>을 먼저 부르심으로,
+        복음이 ‘말’로만 머무르지 않고 <b>루틴·관계·생계의 현장</b>을 바꾸는 사건임을 보여 주십니다.
+      </p>
+    </section>
+
+
+    
+    <section class="grid" aria-label="해설 섹션">
+
+      <!-- 한눈 요약 -->
+      <article class="card">
+        <h3>한눈 요약 (3–4문장)</h3>
+        <p>
+          <b>1)</b> 세례 요한이 체포된 뒤(14절), 예수님은 <b>갈릴리</b>로 오셔서 “하나님의 복음”을 선포하십니다.
+          이 시작은 ‘평온한 종교 강의’가 아니라, 긴장된 시대 속에서 던져진 <b>통치 선언</b>입니다.
+        </p>
+        <p>
+          <b>2)</b> 예수님의 핵심 메시지는 한 문장으로 요약됩니다.
+          “<b>때가 찼고</b> 하나님의 <b>나라가 가까이</b> 왔으니 <b>회개</b>하고 <b>복음</b>을 <b>믿으라</b>”(15절).
+        </p>
+        <p>
+          <b>3)</b> 곧이어 예수님은 갈릴리 호숫가에서 어부인 <b>시몬·안드레</b>, 그리고 <b>야고보·요한</b>을 부르십니다(16–20절).
+          그들은 그물과 배, 그리고 가족 사업의 중심을 내려놓고 <b>즉시</b> 예수님을 따릅니다.
+        </p>
+        <p>
+          <b>4)</b> 마가는 “복음”을 정보가 아니라 사건으로 제시합니다.
+          하나님의 나라가 가까이 왔다는 말은, 지금부터 삶의 우선순위와 정체성이 <b>재배치</b>된다는 뜻입니다.
+        </p>
+        <div class="hint">
+          아래에서 <b>① 역사·배경 → ② 정론(전통 해석) → ③ 정행(실천적 재해석) → ④ 원어 키워드 → ⑤ 현대 적용</b> 순서로,
+          “왜 갈릴리에서, 왜 어부들을, 왜 ‘회개와 믿음’으로 시작하는가”를 일반 성도도 따라갈 수 있도록 차근차근 풀어 드립니다.
+        </div>
+      </article>
+
+      <!-- 역사·지리·배경 -->
+      <article class="card">
+        <h3>역사 · 지리 · 배경</h3>
+
+        <div class="content-long">
+          <h4>1) “요한이 잡힌 후”(14절): 예수 사역의 ‘시작 신호’이자 시대의 긴장</h4>
+          <p>
+            마가는 예수님의 활동 개시를 “세례 요한이 잡힌 후”로 표시합니다.
+            이 말은 단순한 시간 순서가 아니라,
+            당시 사회가 회개 운동과 대중적 예언자 운동을 ‘불안 요소’로 여길 정도로
+            <b>정치적 긴장</b>이 높았다는 분위기를 암시합니다.
+            예수님은 바로 그 긴장 속에서 “하나님의 나라”를 선포하시는데,
+            이는 권력·폭력·불안이 지배하는 질서 한가운데에
+            “다른 통치가 들어오고 있다”는 선언처럼 들렸을 것입니다.
+          </p>
+
+          <h4>2) 왜 ‘갈릴리’인가: 주변부의 일상에서 시작되는 복음</h4>
+          <p>
+            갈릴리는 예루살렘 성전 중심의 종교 엘리트 공간과 달리,
+            농업·어업·소상공업 등 <b>일상 노동의 세계</b>가 촘촘히 펼쳐진 지역입니다.
+            마가는 복음이 먼저 ‘중심 권력’이 아니라 ‘생활 현장’에서 시작되는 것을 강조합니다.
+            다시 말해 복음은 “교리 정리”로만 시작하지 않고,
+            <b>사람이 살고 일하는 자리에서 우선순위를 다시 짜는 일</b>로 시작합니다.
+          </p>
+
+          <h4>3) 갈릴리 호수(‘바다’)와 어업 경제: 낭만이 아니라 생업 시스템</h4>
+          <p>
+            16–20절의 배경은 갈릴리 호숫가입니다.
+            여기서 ‘바다’라고 번역되는 표현은 호수를 가리키는 관용적 표현으로 이해할 수 있습니다.
+            어업은 단순한 취미가 아니라, 배·그물·인력·가족 사업·유통이 연결된 생계 시스템이었습니다.
+            특히 20절의 “<b>품꾼들</b>” 언급은,
+            세베대의 집이 최소한 <b>고용을 동반한 가족 사업 형태</b>를 운영했을 가능성을 보여 줍니다.
+            따라서 ‘그물을 버리고 따른다’는 말은 낭만적 결단이 아니라
+            <b>생계 구조의 방향 전환</b>을 뜻합니다.
+          </p>
+
+          <h4>4) 라비-제자 관계와 예수의 소명: 제자가 ‘지원자’가 아니라 ‘부름 받은 자’</h4>
+          <p>
+            당시 유대 사회에는 교사를 따르는 제자 문화가 있었습니다.
+            그러나 마가의 강조점은 “제자가 스승을 선택”했다기보다,
+            예수님이 먼저 “<b>부르셨고</b>(20절)”, 제자들이 즉각 응답했다는 데 있습니다.
+            즉, 이 장면은 단순한 교육 관계가 아니라
+            <b>소속과 목적이 바뀌는 관계</b>를 보여 줍니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          “요한 체포 이후”는 시대의 긴장을 알리는 신호이며,
+          예수님은 갈릴리의 생활 현장에서 하나님의 나라를 선포하십니다.
+          어부 소명은 낭만이 아니라 생계 구조와 정체성의 재배치를 뜻합니다.
+        </div>
+      </article>
+
+      <!-- ① 정론(orthodoxy) -->
+      <article class="card">
+        <h3>① 정론(Orthodoxy): “때가 찼고… 회개하고 믿으라” — 복음의 요약 선언</h3>
+
+        <p class="note">
+          정론(전통 해석)에서 막 1:15는 예수님의 선포를 가장 압축적으로 담은 “요약 복음”으로 자주 읽힙니다.
+          핵심은 두 축입니다. <b>하나님의 통치가 가까이 왔다</b>는 선언과,
+          그 통치에 합당한 응답으로서 <b>회개와 믿음</b>이 요구된다는 점입니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) “때가 찼다”(καιρός · πεπλήρωται): 달력이 아니라 ‘결정적 순간’</h4>
+          <p>
+            여기서 “때”(καιρός, <i>kairos</i>)는 단순한 시간(크로노스)이 아니라,
+            하나님이 약속하신 이야기가 <b>결정적 국면에 도달했다</b>는 의미의 “적시”입니다.
+            “찼다”(πεπλήρωται, <i>peplērōtai</i>)는 완료형 뉘앙스로,
+            “이제 막 시작된다”가 아니라 “이미 결정적으로 도달했다”는 느낌을 줍니다.
+            전통적으로 교회는 이 표현을 통해,
+            예수님의 사역이 하나님 구원 계획의 중심 국면임을 고백해 왔습니다.
+          </p>
+
+          <h4>2) “하나님의 나라”(βασιλεία τοῦ θεοῦ): ‘장소’가 아니라 ‘통치’</h4>
+          <p>
+            “하나님의 나라”는 흔히 ‘천국’이라는 장소 이미지로만 오해되지만,
+            성경에서 βασιλεία는 무엇보다 <b>왕의 통치</b>를 가리킵니다.
+            즉, 예수님은 “하나님이 왕으로 다스리시는 질서가 가까이 왔다”고 선포하십니다.
+            이것은 사적인 위안의 언어이기 이전에,
+            죄·불의·두려움이 지배하는 세계에 대한 <b>대안적 통치 선언</b>입니다.
+          </p>
+
+          <h4>3) “회개하고 믿으라”(μετανοεῖτε · πιστεύετε): 후회가 아니라 방향 전환과 신뢰</h4>
+          <p>
+            “회개”(μετανοεῖτε, <i>metanoeite</i>)는 단지 ‘미안해하기’가 아니라,
+            생각과 삶의 방향을 바꾸는 <b>전환</b>을 뜻합니다.
+            “믿음”(πιστεύετε, <i>pisteuete</i>)은 머리로 동의하는 수준을 넘어서,
+            예수님의 선언을 신뢰하여 그 통치에 자신을 <b>맡기는 결단</b>으로 이해되어 왔습니다.
+            그래서 16–20절의 제자 소명은 15절의 “회개와 믿음”이
+            실제 삶에서 어떤 모양으로 나타나는지 보여주는 구체 사례가 됩니다.
+          </p>
+
+          <h4>4) “나를 따라오라”(ἀκολουθεῖν): 제자도는 ‘배움’이 아니라 ‘삶의 재배치’</h4>
+          <p>
+            전통적으로 마가복음의 제자도는 매우 급진적으로 묘사됩니다.
+            그물·배·가족 사업의 중심이 즉시 재배치되는 장면은,
+            예수를 따름이 주말 종교활동이 아니라
+            <b>삶의 중심축이 옮겨가는 일</b>임을 보여 줍니다.
+            다만 이것을 무조건 “직업 포기”로 단순화하기보다,
+            “하나님 나라가 내 삶의 최상위 우선순위가 된다”는 의미로 읽는 것이 균형 잡힌 전통 해석입니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정론적으로 막 1:15는 복음의 요약 선언입니다.
+          하나님의 통치가 가까이 왔고, 그 응답은 회개(전환)와 믿음(신뢰)이며,
+          제자 소명은 그 선언이 삶을 재배치하는 사건임을 보여 줍니다.
+        </div>
+      </article>
+
+      <!-- ② 정행(orthopraxy) -->
+      <article class="card">
+        <h3>② 정행(Orthopraxy): “즉시”의 영성 — 루틴·관계·생계가 바뀌는 방식</h3>
+
+        <p class="note">
+          정행(실천) 관점에서 이 본문은 “무엇을 믿느냐”만 묻지 않습니다.
+          “그 믿음이 <b>일상에서 어떤 선택과 루틴</b>으로 드러나느냐”를 묻습니다.
+          특히 마가는 ‘곧/즉시’(εὐθύς)의 리듬으로,
+          복음이 현실을 지연 없이 건드린다는 느낌을 만듭니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) 오용 경계: ‘즉시성’을 충동적 결단으로 미화하지 말 것</h4>
+          <p>
+            18절과 20절의 “곧”을 “오늘 당장 다 때려치우라”로 번역하면 위험해집니다.
+            본문은 가족 책임이나 사회적 의무를 가볍게 여기라고 말하지 않습니다.
+            오히려 예수님의 부르심이 들어올 때,
+            내가 붙잡고 있던 우선순위(성공·안전·체면·돈·통제)가
+            하나님의 나라 앞에서 <b>재정렬</b>되어야 함을 보여 줍니다.
+            정행적으로 중요한 질문은 이것입니다.
+            “나는 무엇을 위해 시간을 쓰고, 무엇 때문에 두려워하며, 무엇을 위해 사람을 도구화하는가?”
+          </p>
+
+          <h4>2) “사람을 낚는 어부”: 포획이 아니라 ‘살려 옮기는’ 관계 윤리</h4>
+          <p>
+            “사람을 낚는다”는 비유는 자칫 공격적 전도나 조종으로 오해될 수 있습니다.
+            그러나 복음서 전체의 흐름에서 제자들은 사람을 소유하거나 지배하도록 부름 받지 않습니다.
+            정행적으로 이 표현은,
+            <b>길 잃은 사람을 회복의 흐름으로 옮기는 일</b>,
+            그리고 공동체 안에서 사람을 “대상”이 아니라 “이웃”으로 대하는
+            <b>관계의 기술</b>을 요청합니다.
+            즉, ‘낚는다’는 말은 성과주의가 아니라 돌봄의 윤리로 번역되어야 합니다.
+          </p>
+
+          <h4>3) “그물/배/아버지/품꾼”: 신앙은 개인 결단만이 아니라 ‘구조를 의식하는 실천’</h4>
+          <p>
+            마가는 ‘그물’과 ‘배’라는 생업 도구,
+            그리고 ‘아버지 세베대’와 ‘품꾼들’이라는 가족·노동 구조를 함께 보여 줍니다.
+            정행적으로 이것은 매우 현실적인 메시지입니다.
+            신앙의 결단은 개인 마음속에서 끝나지 않고,
+            내가 속한 관계망과 경제 구조 속에서 어떤 책임과 전환을 낳습니다.
+            따라서 우리는 “나는 따르겠다”뿐 아니라,
+            “내 결단이 남에게 어떤 부담과 상처를 남기는가”도 함께 성찰해야 합니다.
+          </p>
+
+          <h4>4) 루틴의 신학: 회개는 ‘감정’이 아니라 ‘반복되는 선택의 방향’</h4>
+          <p>
+            회개(μετάνοια)를 감정으로만 이해하면,
+            시간이 지나면 흐려지고 제자리로 돌아가기 쉽습니다.
+            그러나 정행적으로 회개는
+            반복되는 선택(말, 소비, 관계, 분노, 회피)의 방향을 바꾸는 <b>루틴의 재설계</b>입니다.
+            그래서 예수님의 첫 제자들이 ‘일상 현장’에서 부름 받은 것은 의미가 큽니다.
+            복음은 예배당 밖의 삶을 건드리지 않으면, 아직 복음이 ‘가까이 온 것’이 아닙니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정행적으로 이 본문은 ‘즉시성’을 충동이 아니라 우선순위의 재정렬로 읽게 합니다.
+          “사람을 낚는 어부”는 성과주의가 아니라 회복의 관계 윤리이며,
+          회개는 감정이 아니라 루틴의 방향 전환입니다.
+        </div>
+      </article>
+
+      <!-- 원어 키워드 카드 -->
+      <article class="card">
+        <h3>원어 키워드 정리 (헬라어 · 히브리어)</h3>
+
+        <p class="muted small">
+          본문은 신약이므로 주요 원어는 <b>헬라어</b>입니다.
+          다만 “나라(통치)”와 “돌이킴(회개)”은 구약 개념과 깊이 연결되므로,
+          대표적인 <b>히브리어 개념</b>도 함께 표시합니다.
+        </p>
+
+        <div class="content-long">
+          <h4>핵심 단어 표</h4>
+          <div class="kv">
+            <div class="kv-label">καιρός</div>
+            <div>
+              <b>kairos</b> (결정적 때, 적시). 15절의 “때가 찼다”에서
+              단순한 시간 흐름이 아니라 <b>하나님의 결정적 국면</b>을 나타냅니다.
+            </div>
+
+            <div class="kv-label">πεπλήρωται</div>
+            <div>
+              <b>peplērōtai</b> (성취되었다/충만해졌다). 완료형 뉘앙스로,
+              “이미 결정적으로 도달했다”는 느낌을 줍니다.
+            </div>
+
+            <div class="kv-label">βασιλεία</div>
+            <div>
+              <b>basileia</b> (나라/통치). ‘장소’보다 ‘통치’가 중심입니다.
+              하나님의 나라가 가까이 왔다는 말은
+              <b>새로운 주권과 질서</b>가 접근해 들어왔다는 선언입니다.
+            </div>
+
+            <div class="kv-label">ἤγγικεν</div>
+            <div>
+              <b>ēngiken</b> (가까이 왔다/도달했다). ‘언젠가’가 아니라
+              <b>지금</b> 현실을 건드리는 가까움을 강조합니다.
+            </div>
+
+            <div class="kv-label">μετανοεῖτε</div>
+            <div>
+              <b>metanoeite</b> (회개하라). 후회 감정이 아니라
+              생각·삶의 방향을 바꾸는 전환을 뜻합니다.
+            </div>
+
+            <div class="kv-label">πιστεύετε</div>
+            <div>
+              <b>pisteuete</b> (믿으라/신뢰하라). 단순 동의가 아니라
+              복음에 자신을 맡기는 신뢰의 결단입니다.
+            </div>
+
+            <div class="kv-label">ἀκολουθεῖν</div>
+            <div>
+              <b>akolouthein</b> (따르다). 제자도는 정보 습득이 아니라
+              삶의 중심을 예수께로 옮기는 관계적 순종입니다.
+            </div>
+
+            <div class="kv-label">δίκτυον · ἁλιεύς</div>
+            <div>
+              <b>diktyon</b>(그물) · <b>halieus</b>(어부).
+              생업·정체성의 상징이며, “사람을 낚는 어부”는 새 소명의 은유입니다.
+            </div>
+
+            <div class="kv-label">εὐθύς</div>
+            <div>
+              <b>euthys</b> (곧/즉시). 마가복음이 즐겨 쓰는 리듬으로,
+              복음의 부르심이 현실을 지연 없이 건드린다는 긴장을 만듭니다.
+            </div>
+
+            <div class="kv-label">מַלְכוּת · שׁוּב</div>
+            <div>
+              <b>מַלְכוּת(malkhût)</b> (왕권/통치), <b>שׁוּב(shûv)</b> (돌아오다/돌이키다).
+              구약의 통치·돌이킴 언어는 신약의 “하나님의 나라/회개” 이해를 풍성하게 합니다.
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h4>개념-어휘 매핑 (확실성: Medium)</h4>
+          <p>
+            구약의 “돌이킴”(שׁוּב)은 삶의 방향 전환을,
+            “왕권/통치”(מַלְכוּת)은 하나님이 왕으로 다스리신다는 중심 주제를 형성합니다.
+            마가복음 1:15는 이 두 줄기를
+            “하나님의 통치가 가까이 왔으니, 이제 삶의 방향을 돌이켜 그 소식을 신뢰하라”는 한 문장으로 압축합니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          원어 관점에서 15절은 “결정적 때(καιρός)·성취(πεπλήρωται)·통치(βασιλεία)·가까움(ἤγγικεν)·전환(μετανοεῖτε)·신뢰(πιστεύετε)”의 문장입니다.
+          16–20절은 그 문장이 삶에서 ‘따름(ἀκολουθεῖν)’으로 번역되는 장면입니다.
+        </div>
+      </article>
+
+      <!-- 현대 적용 -->
+      <article class="card">
+        <h3>현대 적용: 개인 · 공동체 · 공적 영역</h3>
+
+        <p class="note">
+          막 1:14–20은 신앙을 “정보/지식”으로만 두지 않고,
+          삶의 우선순위·루틴·관계망이 실제로 바뀌는 자리로 데려갑니다.
+          오늘의 적용은 “내가 무엇을 1순위로 두고 사는가”를 점검하는 데서 시작됩니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) 개인 — “하나님의 나라”를 내 일정표에서 확인하기</h4>
+          <p>
+            하나님의 나라가 가까이 왔다면,
+            그 통치는 내 삶에서 ‘어딘가’에 흔적을 남겨야 합니다.
+            가장 정직한 검사는 시간표입니다.
+            나는 무엇에 시간을 쓰고, 무엇 때문에 불안해하며, 무엇을 위해 사람을 수단화합니까?
+            회개는 죄책감의 폭발이 아니라,
+            <b>일상에서 반복되는 선택의 방향</b>을 바꾸는 일입니다.
+            이번 주에 딱 하나의 루틴(말투·소비·분노·회피·과로)을 골라 “방향 전환”을 실험해 보십시오.
+          </p>
+
+          <h4>2) 공동체 — ‘사람을 낚는’ 방식의 정화: 성과주의를 넘어 회복의 언어로</h4>
+          <p>
+            공동체는 쉽게 “몇 명이 왔나, 얼마나 늘었나”로 자신을 평가합니다.
+            그러나 “사람을 낚는 어부”의 비유는 사람을 포획하는 기술이 아니라,
+            사람이 다시 숨 쉬게 되는 회복의 통로가 되라는 부르심입니다.
+            그러므로 공동체의 열매는 숫자보다,
+            <b>한 사람이 다시 살아나는가</b>,
+            <b>낙오자가 다시 돌아올 길이 열리는가</b>,
+            <b>상처 입은 사람이 안전함을 느끼는가</b>로 측정되는 편이 복음에 더 가깝습니다.
+          </p>
+
+          <h4>3) 공적 영역 — “다른 통치”를 드러내는 습관: 정직·공정·책임</h4>
+          <p>
+            공적 영역(직장·조직·사회)에서는 ‘힘’이 통치하는 것처럼 느껴질 때가 많습니다.
+            그때 “하나님의 나라”는 추상 명사가 아니라,
+            내가 어떤 방식으로 일하고, 어떤 방식으로 사람을 대하며,
+            어떤 비용을 감수하더라도 지키려는 원칙이 무엇인지로 드러납니다.
+            정직·공정·책임·약자 보호는
+            “지금 다른 통치가 가까이 왔다”는 믿음의 구체적 표지입니다.
+          </p>
+
+          <div class="divider"></div>
+          <p class="muted small">
+            오늘 본문이 던지는 질문을 이렇게 정리할 수 있습니다.<br/>
+            <b>“내 삶을 실제로 통치하는 1순위는 무엇인가?”</b><br/>
+            <b>“회개는 내 일상 루틴에서 어떤 방향 전환으로 나타나는가?”</b><br/>
+            <b>“나는 사람을 ‘성과’로 보나, ‘회복의 대상’으로 보나?”</b><br/>
+            <b>“예수를 따른다는 말이 내 관계망과 책임 구조에 어떤 변화를 낳는가?”</b>
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          하나님의 나라는 내 일정표와 선택에서 드러나야 합니다.
+          공동체는 성과주의보다 회복의 열매로 자신을 점검해야 하며,
+          공적 영역에서도 정직·공정·책임의 습관으로 ‘다른 통치’를 드러낼 수 있습니다.
+        </div>
+      </article>
+
+      <!-- 실천 체크리스트 -->
+      <article class="card">
+        <h3>실천 체크리스트 (이번 주 적용)</h3>
+        <ul>
+          <li>
+            <b>1. 시간표 점검</b><br />
+            이번 주 내 시간 사용을 돌아보며,
+            “내가 실제로 1순위로 섬기는 것”이 무엇인지 한 문장으로 써 보기.
+          </li>
+          <li>
+            <b>2. 회개의 루틴 1개 선택</b><br />
+            분노·회피·소비·과로·말투 중 하나를 골라,
+            7일 동안 “방향 전환”을 실험해 보기(작게, 구체적으로).
+          </li>
+          <li>
+            <b>3. 사람을 ‘성과’가 아니라 ‘이웃’으로 보기</b><br />
+            이번 주에 한 사람에게,
+            설득이나 조언보다 먼저 경청과 존중으로 다가가 보기.
+          </li>
+          <li>
+            <b>4. ‘따름’의 비용을 계산해 보기</b><br />
+            내가 지키고 싶은 원칙 하나(정직, 공정, 책임)를 정하고,
+            그 원칙을 지키기 위해 감수해야 할 작은 비용을 기록해 보기.
+          </li>
+          <li>
+            <b>5. 공동체의 회복 지표 세우기</b><br />
+            소그룹/가정/친구 모임에서 “이번 주 누가 더 안전해졌는가?”를
+            숫자 대신 회복의 언어로 나눠 보기.
+          </li>
+        </ul>
+
+        <p class="muted small">
+          기억할 것: 마가가 보여 주는 제자도는 ‘감정의 폭발’이 아니라,
+          하나님의 나라가 가까이 왔다는 선언 앞에서
+          삶의 중심과 루틴이 실제로 재배치되는 과정입니다.
+          오늘 우리의 현실에서도 그 재배치는 ‘작고 구체적인 실천’으로 시작될 수 있습니다.
+        </p>
+      </article>
+
+      <!-- 마지막 핵심 요약 -->
+      <article class="card">
+        <h3>마지막 3–4문장 핵심 요약</h3>
+        <p class="content-long">
+          막 1:14–20은 요한의 체포 이후 긴장된 시대 속에서,
+          예수님이 갈릴리의 일상 현장에서 “때가 찼고 하나님의 나라가 가까이 왔다”고 선언하시는 장면입니다.
+          그 선언에 대한 응답은 감정적 후회가 아니라 회개(방향 전환)와 믿음(신뢰)이며,
+          제자들의 ‘즉시 따름’은 복음이 삶의 우선순위와 정체성을 재배치한다는 증거입니다.
+          오늘 우리에게도 본문은 묻습니다. “지금 내 삶을 실제로 통치하는 것은 무엇이며, 나는 무엇을 내려놓고 예수를 따를 것인가?”
+        </p>
+        <div class="hint-compressed">
+          복음은 통치 선언이며, 응답은 회개와 믿음입니다.
+          제자 소명은 복음이 삶을 재배치하는 사건임을 보여 줍니다.
+        </div>
+      </article>
+
+      <!-- 푸터 카드 -->
+      <article class="card" style="text-align:center; opacity:0.85;">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.<br/>
+          상단 <b>공유</b> 버튼으로 링크를 나누고,
+          하단 <b>요약 모드</b>를 활용해 소그룹 나눔이나 개인 묵상에 사용해 보세요.<br/>
+          동일한 레이아웃으로 다른 본문들도
+          <b>정론 · 정행 · 현대 적용</b> 관점에서 시리즈로 확장할 수 있습니다.
+        </p>
+      </article>
+
+    </section>
+
+  </section>
+
+  </main>
+
+  <div class="bar" aria-label="도움말 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 펼치기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '마가복음 1:14–20 정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\n' + location.href);
+        }
+      });
+    }
+
+    // 다크/일반 테마 토글 (localStorage 저장)
+    const themeBtn = document.getElementById('btnTheme');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    function getSystemTheme() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+      // theme: 'light' | 'dark'
+      document.documentElement.setAttribute('data-theme', theme);
+      if (themeIcon && themeLabel) {
+        if (theme === 'light') {
+          themeIcon.textContent = '☀️';
+          themeLabel.textContent = '일반';
+        } else {
+          themeIcon.textContent = '🌙';
+          themeLabel.textContent = '다크';
+        }
+      }
+    }
+
+    // Init theme: stored -> system
+    const storedTheme = localStorage.getItem('mk1_theme');
+    const initialTheme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : getSystemTheme();
+    applyTheme(initialTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('mk1_theme', next);
+        applyTheme(next);
+      });
+    }
+
+    // If user hasn't set a theme, follow system changes live
+    if (!storedTheme && window.matchMedia) {
+      const mq = window.matchMedia('(prefers-color-scheme: light)');
+      const handler = () => applyTheme(getSystemTheme());
+      if (mq.addEventListener) mq.addEventListener('change', handler);
+      else if (mq.addListener) mq.addListener(handler);
+    }
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    // 전체 펼치기/접기 (details)
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
