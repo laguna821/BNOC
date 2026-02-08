@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>창세기 12:10–13 — 정론·정행·현대 적용</title>
+  <meta name="date" content="2026-02-08" />
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Color Palette */
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981; /* Emerald */
+      --accent-secondary: #f59e0b; /* Amber */
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      /* Tag contrast vars (default: dark) */
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #3b82f6;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #f59e0b;
+      --tag-hebrew-text: #fed7aa;
+
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-serif: "Merriweather", "Times New Roman", serif;
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-body: #f8fafc;
+        --bg-body-rgb: 248, 250, 252;
+        --bg-gradient-start: #f1f5f9;
+        --bg-gradient-start-rgb: 241, 245, 249;
+        --bg-gradient-end: #e2e8f0;
+        --bg-gradient-end-rgb: 226, 232, 240;
+
+        --card-bg: rgba(255, 255, 255, 0.85);
+        --card-border: rgba(0, 0, 0, 0.06);
+        --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --text-highlight: #0f172a;
+
+        --accent-primary: #059669;
+        --accent-secondary: #d97706;
+        --accent-glow: rgba(5, 150, 105, 0.1);
+      }
+    }
+
+    /* Explicit theme override (user toggle) */
+    html[data-theme="dark"] {
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      /* Tag contrast vars (dark) */
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #fbbf24;
+      --tag-hebrew-text: #fed7aa;
+    }
+
+    html[data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-body-rgb: 248, 250, 252;
+      --bg-gradient-start: #f1f5f9;
+      --bg-gradient-start-rgb: 241, 245, 249;
+      --bg-gradient-end: #e2e8f0;
+      --bg-gradient-end-rgb: 226, 232, 240;
+
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-highlight: #0f172a;
+
+      --accent-primary: #059669;
+      --accent-secondary: #b45309;
+      --accent-glow: rgba(5, 150, 105, 0.10);
+
+      /* Tag contrast vars (light) — darker text, slightly stronger borders */
+      --tag-greek-bg: rgba(37, 99, 235, 0.12);
+      --tag-greek-border: rgba(37, 99, 235, 0.55);
+      --tag-greek-text: #1e3a8a;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.12);
+      --tag-hebrew-border: rgba(217, 119, 6, 0.55);
+      --tag-hebrew-text: #7c2d12;
+    }
+
+    /* Reset & Base */
+    html{
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      background-color: var(--bg-body);
+      min-height: 100%;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { margin: 0; padding: 0; min-height: 100%; }
+    body { margin: 0; padding: 0; min-height: 100vh; }
+
+    body {
+      font-family: var(--font-sans);
+      background: transparent;
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding-bottom: 140px; /* Space for bottom bar + iOS safe area */
+    }
+
+    /* Typography Utilities */
+    h1, h2, h3, h4 { margin: 0; color: var(--text-highlight); }
+    h1, h2 { font-family: var(--font-serif); }
+
+    .h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin: 16px 0 12px;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .sub b { color: var(--text-main); font-weight: 600; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(var(--bg-body-rgb), 0.82);
+      background: rgba(var(--bg-body-rgb), 0.82);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      position: relative;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .title-group { display: flex; flex-direction: column; }
+    .title { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+    .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    .controls { display: flex; gap: 10px; align-items: center; }
+    #btnTheme, #btnShare { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    #btnTheme { min-width: 92px; }
+    #btnShare { min-width: 72px; }
+
+    /* Buttons */
+    .btn {
+      appearance: none;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+    .btn.primary:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4); }
+
+    /* Main Content */
+    main { padding: 10px 16px; }
+
+    /* Scripture (Details) */
+    .fulltext { margin-bottom: 24px; animation: fadeUp 0.6s ease-out; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    details[open] {
+      background: rgba(var(--bg-body-rgb), 0.42);
+      border-color: var(--accent-primary);
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-highlight);
+      user-select: none;
+      transition: background 0.2s;
+    }
+    summary:hover { background: rgba(255,255,255,0.03); }
+    summary::-webkit-details-marker { display: none; }
+
+    .chev {
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    details[open] .chev { transform: rotate(90deg); background: var(--accent-primary); color: #fff; }
+
+    .content.scripture {
+      padding: 10px 24px 24px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-main);
+      background: rgba(0,0,0,0.2);
+    }
+    .scripture p { margin: 12px 0; }
+    .v {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      margin-right: 4px;
+      vertical-align: 1px;
+      opacity: 0.9;
+    }
+
+    /* Hero Section */
+    .hero { padding: 10px 4px 24px; animation: fadeUp 0.7s ease-out; }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 8px;
+    }
+    .pill span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    .pill span.hebrew {
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
+    }
+    .pill span.greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+    /* Grid & Cards */
+    .grid { display: grid; gap: 16px; animation: fadeUp 0.8s ease-out; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+
+    .card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-secondary);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card b { color: var(--text-main); font-weight: 600; }
+    .card ul { margin: 8px 0; padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
+
+    /* Special Elements */
+    .note {
+      margin: 16px 0;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 12px;
+    }
+
+    /* KV (Key-Value) Lists */
+    .kv {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 8px 16px;
+      font-size: 14px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.2);
+      padding: 12px;
+      border-radius: var(--radius-md);
+    }
+    .kv div { padding: 4px 0; }
+    .kv-label {
+      color: var(--accent-secondary);
+      font-weight: 700;
+      font-family: var(--font-serif);
+      border-right: 1px solid var(--card-border);
+    }
+
+    /* Tags */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .tag {
+      padding: 6px 12px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--card-border);
+      font-size: 12px;
+      color: var(--text-highlight);
+      font-weight: 600;
+    }
+    html[data-theme="light"] .tag:not(.tag-greek):not(.tag-hebrew) {
+      background: rgba(0,0,0,0.03);
+      color: var(--text-highlight);
+      border-color: var(--card-border);
+    }
+    .tag-hebrew {
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
+    }
+    .tag-greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+    /* Summary Mode Logic Styles */
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body { display: none; }
+
+    .hint-compressed {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    body.summary-mode .hint-compressed { display: block; }
+
+    /* Bottom Bar */
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      background-color: rgba(var(--bg-body-rgb), 0.88);
+      background: rgba(var(--bg-body-rgb), 0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+    .bar-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+    .bar-inner .btn { flex: 1; padding: 12px; font-size: 14px; }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer divider */
+    .divider { height: 1px; background: var(--card-border); margin: 24px 0; }
+    .muted.small { font-size: 12px; opacity: 0.7; text-align: center; display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-group">
+          <div class="title">창세기 12:10–13</div>
+          <div class="subtitle">정론 · 정행 · 현대 적용 가이드</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnTheme" aria-label="다크/일반 모드 전환">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">다크</span>
+        </button>
+        <button class="btn" id="btnShare" aria-label="공유하기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+          </svg>
+          공유
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- 본문 전체 -->
+    <section class="fulltext" aria-label="창세기 12:10–13 본문">
+      <details open>
+        <summary>📜 본문 읽기 (창 12:10–13) <span class="chev">›</span></summary>
+        <div class="content scripture">
+          <p><span class="v">10</span> 그 땅에 <b>기근</b>이 있으므로 아브람이 <b>애굽에 우거</b>하려 하여 그리로 내려갔으니 이는 그 땅에 기근이 심하였음이라</p>
+          <p><span class="v">11</span> 그가 애굽에 가까이 이를 때에 그 아내 사래더러 말하되 나 알기에 그대는 <b>아리따운 여인</b>이라</p>
+          <p><span class="v">12</span> 애굽 사람이 그대를 볼 때에 이르기를 이는 그의 아내라 하고 <b>나는 죽이고</b> 그대는 살리리니</p>
+          <p><span class="v">13</span> 원컨대 그대는 나의 <b>누이라 하라</b> 그리하면 내가 그대로 인하여 <b>안전</b>하고 내 목숨이 그대로 인하여 <b>보존</b>하겠노라 하니라</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="pill">
+        <span class="hebrew">רָעָב (raʿāv)</span>
+        <span class="hebrew">גּוּר (gûr)</span>
+        <span class="hebrew">יָרַד (yārad)</span>
+        <span class="hebrew">אִשָּׁה (ʾiššâ)</span>
+        <span class="hebrew">יָפֶה (yāpeh)</span>
+        <span class="hebrew">אָחוֹת (ʾāḥôt)</span>
+        <span class="hebrew">טוֹב (ṭôv)</span>
+        <span class="hebrew">נֶפֶשׁ (nefeš)</span>
+        <span class="hebrew">חָיָה (ḥāyâ)</span>
+      </div>
+
+      <h1 class="h1">기근, 애굽, “누이라 하라” —
+        약속과 생존 본능이 충돌할 때 드러나는 믿음의 민낯</h1>
+
+      <p class="sub">
+        창세기 12:10–13은 아브람이 약속의 땅에 들어온 직후, <b>기근</b>이라는 현실 앞에서
+        <b>애굽으로 내려가 우거(체류)</b>하려는 장면과, 그 과정에서 사래에게
+        “나의 <b>누이</b>라고 말해 달라”는 <b>자기보존 전략</b>을 요청하는 대목입니다.
+        본문은 아브람을 미화하거나 단순히 정죄하기보다, 약속을 받은 사람도 위기 앞에서
+        얼마나 쉽게 <b>두려움</b>에 흔들리는지, 그리고 그 흔들림이 관계에 어떤 비용을 남기는지를
+        매우 현실적으로 보여 줍니다.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="해설 섹션">
+
+      <!-- 한눈 요약 -->
+      <article class="card">
+        <h3>한눈 요약 (3–4문장)</h3>
+        <p>
+          <b>1)</b> 가나안 땅에 <b>심한 기근</b>이 닥치자 아브람은 생존을 위해 <b>애굽으로 내려가</b> 잠시 체류하려 합니다(10절).
+          이는 신앙의 문제가 아니라 당시로서는 흔한 <b>생존 이주</b>의 현실입니다.
+        </p>
+        <p>
+          <b>2)</b> 애굽에 가까워질수록 아브람은 사래의 <b>미모</b>가 강대국의 권력 구조 안에서 위험이 될 수 있음을 두려워합니다(11–12절).
+        </p>
+        <p>
+          <b>3)</b> 그는 “나는 죽고 너는 살 것이다”라는 최악의 시나리오를 상정하고,
+          사래에게 “<b>누이라 하라</b>”고 요청하여 자신의 <b>안전과 생존</b>을 확보하려 합니다(13절).
+        </p>
+        <p>
+          <b>4)</b> 이 본문은 “믿음의 조상”도 위기 앞에서 <b>약속의 신뢰</b>보다 <b>생존의 계산</b>이 앞설 수 있음을 보여 주며,
+          동시에 그런 선택이 관계(특히 약자)에 어떤 비용을 남기는지 질문하게 합니다.
+        </p>
+        <div class="hint">
+          아래에서 <b>① 역사·배경 → ② 정론(전통 해석) → ③ 정행(실천적 재해석) → ④ 원어 키워드 → ⑤ 현대 적용</b> 순서로,
+          “왜 애굽인가, 무엇이 두려움인가, 이 이야기의 신앙적 의미는 무엇인가”를 일반 성도도 따라갈 수 있도록 차근차근 풀어 드립니다.
+        </div>
+      </article>
+
+      <!-- 역사·지리·배경 -->
+      <article class="card">
+        <h3>역사 · 지리 · 배경</h3>
+
+        <div class="content-long">
+          <h4>1) 기근(רָעָב)은 ‘이례적 사건’이 아니라 고대 가나안의 반복되는 현실</h4>
+          <p>
+            가나안 지역은 비가 불규칙하고 농업이 강우량에 크게 의존했기 때문에,
+            몇 차례 강수량이 흔들리면 곧바로 식량 위기가 닥칠 수 있었습니다.
+            따라서 “기근 때문에 이동한다”는 설정은 고대 근동 서사에서 매우 현실적입니다.
+            본문은 아브람의 이동을 ‘불신의 증거’로 단정하기보다,
+            약속의 땅에서도 여전히 사람은 <b>먹고 사는 문제</b>에 직면한다는 사실을 먼저 보여 줍니다.
+          </p>
+
+          <h4>2) 왜 애굽인가: “곡창”이면서 동시에 “권력의 압력”이 있는 곳</h4>
+          <p>
+            애굽은 나일강을 중심으로 비교적 안정적인 농업 생산이 가능해,
+            주변 지역 사람들이 기근을 피하여 내려가는 대표적인 목적지였습니다.
+            그러나 애굽은 또한 중앙집권적 권력이 강한 사회였고,
+            소규모 이주 집단(나그네)은 법·관습·군사력에서 불리한 위치에 놓였을 가능성이 큽니다.
+            그러므로 아브람이 느끼는 두려움은 단순한 ‘성격 문제’가 아니라,
+            약자가 강대국의 시스템 안으로 들어갈 때 생기는 <b>구조적 불안</b>과 맞닿아 있습니다.
+          </p>
+
+          <h4>3) “우거하려 하여”(גּוּר): ‘정착’이 아니라 ‘임시 체류’의 언어</h4>
+          <p>
+            10절의 “우거”(גּוּר, gûr)는 ‘완전한 귀화’나 ‘영구 정착’이 아니라,
+            낯선 땅에 <b>잠시 머무르며</b> 살아가는 ‘나그네 체류’의 뉘앙스를 가집니다.
+            이 단어는 아브람의 이동이 “약속의 땅 포기”라기보다,
+            기근을 피하기 위한 <b>단기 생존 선택</b>임을 보여 줍니다.
+          </p>
+
+          <h4>4) 아내/누이 전략은 ‘가정사’가 아니라 권력 비대칭 속 생존 언어</h4>
+          <p>
+            고대 사회에서 혼인 관계는 가족·경제·동맹과 깊이 연결되어 있었고,
+            강한 권력 앞에서 약자의 안전은 취약했습니다.
+            아브람의 “나는 죽이고 너는 살릴 것”이라는 말은,
+            당시 약자가 느꼈을 수 있는 최악의 시나리오를 현실적으로 계산한 표현입니다.
+            이 장면은 로맨스가 아니라, <b>두려움이 관계를 재구성</b>하는 순간을 보여 주는 서사입니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          기근은 고대 가나안에서 반복되는 생존 현실이었고, 애굽은 곡창이지만 권력 압력이 큰 곳이었습니다.
+          “우거”(גּוּר)는 임시 체류를 뜻하며, “누이라 하라”는 권력 비대칭 속 생존 언어로 이해할 수 있습니다.
+        </div>
+      </article>
+
+      <!-- ① 정론(orthodoxy) -->
+      <article class="card">
+        <h3>① 정론(Orthodoxy): 약속을 받은 사람의 흔들림, 그리고 약속의 주도권</h3>
+
+        <p class="note">
+          전통적 해석(정론)에서 이 본문은 “아브람의 실수”를 숨기지 않습니다.
+          그러나 동시에 창세기 전체의 큰 흐름 속에서,
+          인간의 두려움과 왜곡에도 불구하고 하나님이 약속의 역사를 <b>보존하고 이어 가신다</b>는 구조를 함께 읽습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) 약속 직후의 위기: ‘믿음의 사람’도 현실에 의해 흔들린다</h4>
+          <p>
+            창 12장 앞부분에서 아브람은 하나님의 부르심을 따라 길을 떠나고,
+            땅과 자손과 복의 약속을 듣습니다.
+            그런데 약속의 땅에 도착하자마자 기다리는 것은 “평탄한 신앙 생활”이 아니라
+            <b>기근</b>이라는 현실입니다.
+            정론적으로 이 배치는 중요한 메시지를 줍니다.
+            믿음은 현실을 부정하는 능력이 아니라,
+            현실 속에서 하나님을 신뢰하는 법을 배우는 <b>과정</b>입니다.
+          </p>
+
+          <h4>2) “누이라 하라”의 윤리: 거짓말은 ‘전략’이 될 때 더 위험하다</h4>
+          <p>
+            아브람의 제안은 단순한 실수라기보다, 의도된 생존 전략입니다.
+            문제는 그 전략이 “나의 안전”을 위해 “사래의 안전”을 위험에 노출시킬 수 있다는 점입니다.
+            전통적 해석은 여기서 아브람의 인간적 두려움을 이해하되,
+            신앙의 이름으로도 쉽게 합리화될 수 있는 <b>자기보존</b>의 함정을 경고해 왔습니다.
+          </p>
+
+          <h4>3) ‘약속의 주도권’은 하나님께 있다: 인간의 흔들림이 이야기를 끝내지 못한다</h4>
+          <p>
+            창세기 족장 서사에서 반복되는 패턴은,
+            하나님이 약속을 주시고 인간이 흔들리며,
+            하나님이 그 약속을 다시 붙들어 주신다는 구조입니다.
+            이 본문은 “아브람이 위대해서” 약속이 진행되는 것이 아니라,
+            궁극적으로 약속의 주도권이 하나님께 있다는 점을 드러내는 장치로 읽힙니다.
+            다시 말해 정론의 핵심은 “아브람이 완벽했다”가 아니라
+            “흔들리는 인간을 통해서도 약속이 이어진다”는 <b>하나님의 신실하심</b>에 있습니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정론적으로 이 본문은 아브람의 흔들림을 숨기지 않지만,
+          인간의 두려움에도 불구하고 약속의 주도권이 하나님께 있다는 큰 흐름 속에서 읽습니다.
+        </div>
+      </article>
+
+      <!-- ② 정행(orthopraxy) -->
+      <article class="card">
+        <h3>② 정행(Orthopraxy): 위기 속 ‘자동 반응’이 관계를 어떻게 망가뜨리는가</h3>
+
+        <p class="note">
+          정행(실천) 관점에서 이 본문은 “거짓말했나/안 했나”의 도덕 퀴즈가 되지 않습니다.
+          오히려 위기 상황에서 인간의 두려움이 어떻게 <b>의사결정의 중심</b>을 차지하고,
+          그 결과 내가 살기 위해 누군가를 <b>비용으로 세우는 구조</b>가 생기는지를 드러내는 텍스트가 됩니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) 위기에서 튀어나오는 ‘터널 시야’: 약속보다 생존이 먼저 보일 때</h4>
+          <p>
+            아브람의 말은 솔직합니다.
+            “그들이 나를 죽이고 너는 살릴 것이다… 내 목숨이 보존되게 하자.”
+            위기 상황에서 이런 사고는 흔히 발생합니다.
+            시야가 좁아지고, 장기적 신뢰(약속)보다 단기적 안전(생존)이 압도적으로 커집니다.
+            정행적으로 중요한 것은,
+            이런 자동 반응이 “나만의 문제”가 아니라
+            인간이라면 누구나 겪는 <b>심리-생존 메커니즘</b>임을 인정하면서도,
+            그 자동 반응이 관계를 파괴하지 않도록 <b>한 박자 늦추는 훈련</b>을 갖추는 것입니다.
+          </p>
+
+          <h4>2) “내가 살기 위해 너를 위험에 두는가”: 실천 윤리의 핵심 질문</h4>
+          <p>
+            아브람의 전략은 사래에게 역할을 요구합니다.
+            여기서 윤리적 긴장은 분명합니다.
+            위기 속에서 내 안전을 확보하려는 선택이,
+            타인을 위험에 노출시키는 방식으로 구현될 수 있기 때문입니다.
+            본문은 우리에게 묻습니다.
+            “나는 위기 때 누구를 비용으로 삼는가?”
+            정행적 성찰은 죄책감의 폭발이 아니라,
+            내가 반복하는 선택 패턴을 발견하고, 그 패턴을 <b>다른 방식으로 재설계</b>하는 방향으로 나아갑니다.
+          </p>
+
+          <h4>3) 오용 경계: 고난 미화·권위주의 합리화로 읽지 말 것</h4>
+          <p>
+            이 본문을 “아브람도 그랬으니 거짓말쯤은 괜찮다”로 읽는 것도,
+            “아브람이 믿음이 없으니 너도 위기에서 흔들리면 끝이다”로 읽는 것도 위험합니다.
+            정행은 처벌/허용의 이분법 대신,
+            위기 속에서 공포가 결정을 독점하지 못하도록 돕는
+            공동체적 안전망(돌봄, 지지, 상담, 현실적 지원)을 포함한 <b>실천의 장치</b>를 고민하게 합니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정행적으로 이 본문은 위기 속 자동 반응(터널 시야)이 관계를 망가뜨리는 과정을 보여 줍니다.
+          핵심 질문은 “내가 살기 위해 누구를 위험에 두는가?”이며, 답은 죄책감이 아니라 실천적 훈련과 안전망입니다.
+        </div>
+      </article>
+
+      <!-- 원어 키워드 카드 -->
+      <article class="card">
+        <h3>원어 키워드 정리 (히브리어)</h3>
+
+        <p class="muted small">
+          본문은 구약이므로 핵심 원어는 <b>히브리어</b>입니다.
+          아래 표는 “어근을 과도하게 신학화”하지 않고, <b>이 본문 안에서의 기능</b>을 중심으로 정리했습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>핵심 단어 표</h4>
+          <div class="kv">
+            <div class="kv-label">רָעָב</div>
+            <div>
+              <b>raʿāv</b> (기근). 본문에서 이동의 직접 원인입니다.
+              신앙의 실패라기보다, 현실의 압력(생존 조건)을 상징합니다.
+            </div>
+
+            <div class="kv-label">גּוּר</div>
+            <div>
+              <b>gûr</b> (우거하다/체류하다). “잠시 머무는 나그네”의 상태를 나타냅니다.
+              약속의 땅을 포기했다기보다, 기근을 피하는 임시 체류의 뉘앙스입니다.
+            </div>
+
+            <div class="kv-label">יָרַד</div>
+            <div>
+              <b>yārad</b> (내려가다). 가나안 → 애굽의 지리적 이동을 표현하며,
+              서사적으로는 “약속의 땅에서 벗어나는” 긴장을 만들어 냅니다.
+            </div>
+
+            <div class="kv-label">יָפֶה</div>
+            <div>
+              <b>yāpeh</b> (아리따운/아름다운). 사래의 미모가 권력 비대칭 속에서 위험 요소로 전환되는 지점을 강조합니다.
+            </div>
+
+            <div class="kv-label">אָחוֹת</div>
+            <div>
+              <b>ʾāḥôt</b> (누이). 아브람의 생존 전략을 구성하는 핵심 단어입니다.
+              관계의 진실이 ‘안전 확보’ 논리로 재구성되는 순간을 드러냅니다.
+            </div>
+
+            <div class="kv-label">טוֹב</div>
+            <div>
+              <b>ṭôv</b> (좋다/유익하다). “내가 그대 때문에 잘되리라”는 기대(13절의 뜻)를 요약하는 개념으로,
+              ‘타인 때문에 내가 이익을 얻는다’는 구조가 내포하는 윤리적 긴장을 보여 줍니다.
+            </div>
+
+            <div class="kv-label">נֶפֶשׁ · חָיָה</div>
+            <div>
+              <b>nefeš</b>(생명/목숨) · <b>ḥāyâ</b>(살다/생존).
+              “내 목숨이 보존되게”라는 생존 언어의 중심을 이룹니다.
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h4>짧은 관찰</h4>
+          <p>
+            이 본문은 “기근(רָעָב) → 내려감(יָרַד) → 우거(גּוּר) → 두려움 → 누이(אָחוֹת) 전략”이라는 흐름으로 진행됩니다.
+            즉, 신앙적 논쟁이 먼저가 아니라, <b>현실의 압력</b>이 먼저 사람을 움직이고,
+            그 압력 속에서 관계의 언어가 어떻게 변형되는지를 보여 줍니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          원어 관점에서 핵심은 “기근(רָעָב)·체류(גּוּר)·내려감(יָרַד)·미모(יָפֶה)·누이(אָחוֹת)·생명(נֶפֶשׁ/חָיָה)”의 연쇄입니다.
+          현실 압력이 관계 언어를 바꾸는 과정을 읽어야 합니다.
+        </div>
+      </article>
+
+      <!-- 현대 적용 -->
+      <article class="card">
+        <h3>현대 적용: 개인 · 공동체 · 공적 영역</h3>
+
+        <p class="note">
+          오늘의 “기근”은 꼭 식량 부족이 아니라,
+          경제 불안, 직장 위기, 건강 문제, 평판 리스크처럼 다양한 형태로 다가옵니다.
+          본문은 위기에서 믿음이 어떻게 작동하는지를,
+          감정이 아니라 <b>선택과 관계 윤리</b>의 언어로 점검하게 합니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) 개인 — “내가 불안할 때 자동으로 떠오르는 전략”을 기록하라</h4>
+          <p>
+            아브람에게 자동으로 떠오른 전략은 “누이라 하라”였습니다.
+            우리에게도 위기 때 자동으로 떠오르는 문장이 있습니다.
+            “일단 숨자”, “덮자”, “남 탓하자”, “빨리 결과만 만들자” 같은 문장 말입니다.
+            본문은 그 문장을 부끄러워하라고만 말하지 않습니다.
+            그 문장이 <b>누군가를 비용으로 삼는 방식</b>으로 실현되지 않는지,
+            그리고 그 자동 반응을 늦추는 나만의 <b>한 박자 루틴</b>(기도, 메모, 상담, 잠깐의 멈춤)을 가질 수 있는지 묻습니다.
+          </p>
+
+          <h4>2) 공동체 — 약자의 불안을 ‘믿음 부족’으로 도덕화하지 말라</h4>
+          <p>
+            약자가 강대국 시스템 속에서 느끼는 공포는 개인의 성격 문제가 아니라 구조적 불안일 때가 많습니다.
+            공동체는 “왜 그렇게 약하냐”고 몰아붙이기보다,
+            위기의 사람에게 현실적으로 필요한 돌봄(정보, 연결, 지원)을 제공하는 쪽으로 서야 합니다.
+            동시에 “살기 위해 타인을 위험에 두는 전략”이 공동체 안에서 합리화되지 않도록,
+            관계 윤리와 책임의 문화를 세우는 것도 공동체의 실천입니다.
+          </p>
+
+          <h4>3) 공적 영역 — 권력 비대칭이 만드는 ‘거짓말의 유혹’을 이해하고 줄이라</h4>
+          <p>
+            조직·사회에서 권력 격차가 커질수록 사람은 더 많이 숨고, 더 많이 각색하고, 더 많이 침묵합니다.
+            이 본문은 그런 현실을 비웃지 않습니다.
+            그러나 신앙의 공적 실천은, 사람들이 ‘누이 전략’ 같은 왜곡을 덜 사용해도 되도록
+            안전하고 공정한 제도와 문화를 지지하는 방향으로 나아갈 수 있습니다.
+            공정한 절차, 약자 보호, 투명한 의사소통은 “두려움이 통치하는 나라”가 아니라
+            “하나님이 통치하시는 삶의 방식”에 조금 더 가까운 흔적이 됩니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          오늘의 기근은 다양한 불안입니다. 위기 때 자동 전략을 기록하고, 공동체는 불안을 도덕화하지 말아야 하며,
+          공적 영역에서는 권력 비대칭이 낳는 왜곡을 줄이는 문화가 필요합니다.
+        </div>
+      </article>
+
+      <!-- 실천 체크리스트 -->
+      <article class="card">
+        <h3>실천 체크리스트 (이번 주 적용)</h3>
+        <ul>
+          <li>
+            <b>1. 내 “기근”을 한 문장으로 쓰기</b><br />
+            요즘 내 마음을 압박하는 현실(경제, 관계, 건강, 업무)을 한 문장으로 적고,
+            그 압박이 내 선택을 어떻게 바꾸는지 관찰해 보기.
+          </li>
+          <li>
+            <b>2. 자동 반응 문장 3개 적기</b><br />
+            불안할 때 자동으로 떠오르는 문장(숨기기, 과장, 회피 등) 3개를 적고,
+            그 문장이 누군가를 비용으로 세우는지 점검해 보기.
+          </li>
+          <li>
+            <b>3. “10분 지연 루틴” 실험</b><br />
+            중요한 결정을 내리기 전 10분만 멈추고(기도/메모/산책),
+            “나는 지금 공포가 결정하게 두고 있는가?”를 스스로에게 묻기.
+          </li>
+          <li>
+            <b>4. 관계 비용 점검</b><br />
+            내가 안전해지기 위해 가족/동료에게 무리한 역할을 요구한 적이 있는지 돌아보고,
+            가능하다면 작은 사과 또는 조정 하나 실행하기.
+          </li>
+          <li>
+            <b>5. 공동체적 안전망 한 가지 행동</b><br />
+            취약한 위치의 누군가에게 “정죄/조언”보다 먼저,
+            실제 도움이 되는 연결(정보, 동행, 지원)을 한 번 제공해 보기.
+          </li>
+        </ul>
+
+        <p class="muted small">
+          기억할 것: 이 본문은 “아브람을 심판하는 이야기” 이전에,
+          위기 속에서 두려움이 관계를 왜곡하는 메커니즘을 드러내는 이야기입니다.
+          신앙은 위기를 없애는 마법이 아니라, 위기 속에서 공포가 선택을 독점하지 못하도록
+          <b>루틴과 공동체</b>를 통해 삶을 재정렬하는 길이 될 수 있습니다.
+        </p>
+      </article>
+
+      <!-- 마지막 핵심 요약 -->
+      <article class="card">
+        <h3>마지막 3–4문장 핵심 요약</h3>
+        <p class="content-long">
+          창 12:10–13은 기근이라는 현실 앞에서 아브람이 애굽으로 내려가고,
+          강대국의 권력 비대칭 속에서 사래를 “누이”로 말하자는 생존 전략을 택하는 장면입니다.
+          정론은 여기서 인간의 흔들림을 숨기지 않되, 약속의 역사가 궁극적으로 하나님께 붙들려 이어진다는 큰 흐름 속에서 읽습니다.
+          정행은 위기 속 자동 반응이 관계에 남기는 비용을 직시하며, 공포가 선택을 독점하지 못하도록 개인 루틴과 공동체 안전망을 세우라고 초대합니다.
+        </p>
+        <div class="hint-compressed">
+          기근과 권력 비대칭 속에서 생존 전략이 관계를 왜곡합니다.
+          정론은 약속의 주도권을, 정행은 위기 속 선택의 윤리와 훈련을 강조합니다.
+        </div>
+      </article>
+
+      <!-- 푸터 카드 -->
+      <article class="card" style="text-align:center; opacity:0.85;">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.<br/>
+          상단 <b>공유</b> 버튼으로 링크를 나누고,
+          하단 <b>요약 모드</b>를 활용해 소그룹 나눔이나 개인 묵상에 사용해 보세요.<br/>
+          동일한 레이아웃으로 다른 본문들도
+          <b>정론 · 정행 · 현대 적용</b> 관점에서 시리즈로 확장할 수 있습니다.
+        </p>
+      </article>
+
+    </section>
+
+  </main>
+
+  <div class="bar" aria-label="도움말 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 펼치기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '창세기 12:10–13 정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\n' + location.href);
+        }
+      });
+    }
+
+    // 다크/일반 테마 토글 (localStorage 저장)
+    const themeBtn = document.getElementById('btnTheme');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    function getSystemTheme() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (themeIcon && themeLabel) {
+        if (theme === 'light') {
+          themeIcon.textContent = '☀️';
+          themeLabel.textContent = '일반';
+        } else {
+          themeIcon.textContent = '🌙';
+          themeLabel.textContent = '다크';
+        }
+      }
+    }
+
+    // Init theme: stored -> system (unique key for this page)
+    const storedTheme = localStorage.getItem('gn12_theme');
+    const initialTheme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : getSystemTheme();
+    applyTheme(initialTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('gn12_theme', next);
+        applyTheme(next);
+      });
+    }
+
+    // If user hasn't set a theme, follow system changes live
+    if (!storedTheme && window.matchMedia) {
+      const mq = window.matchMedia('(prefers-color-scheme: light)');
+      const handler = () => applyTheme(getSystemTheme());
+      if (mq.addEventListener) mq.addEventListener('change', handler);
+      else if (mq.addListener) mq.addListener(handler);
+    }
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    // 전체 펼치기/접기 (details)
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
