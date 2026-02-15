@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>창세기 17:1–2 — 정론·정행·현대 적용</title>
+  <meta name="date" content="2026-02-15" />
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #fbbf24;
+      --tag-hebrew-text: #fed7aa;
+
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-serif: "Merriweather", "Times New Roman", serif;
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-body: #f8fafc;
+        --bg-body-rgb: 248, 250, 252;
+        --bg-gradient-start: #f1f5f9;
+        --bg-gradient-start-rgb: 241, 245, 249;
+        --bg-gradient-end: #e2e8f0;
+        --bg-gradient-end-rgb: 226, 232, 240;
+
+        --card-bg: rgba(255, 255, 255, 0.85);
+        --card-border: rgba(0, 0, 0, 0.06);
+        --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --text-highlight: #0f172a;
+
+        --accent-primary: #059669;
+        --accent-secondary: #d97706;
+        --accent-glow: rgba(5, 150, 105, 0.1);
+      }
+    }
+
+    html[data-theme="dark"] {
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #fbbf24;
+      --tag-hebrew-text: #fed7aa;
+    }
+
+    html[data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-body-rgb: 248, 250, 252;
+      --bg-gradient-start: #f1f5f9;
+      --bg-gradient-start-rgb: 241, 245, 249;
+      --bg-gradient-end: #e2e8f0;
+      --bg-gradient-end-rgb: 226, 232, 240;
+
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-highlight: #0f172a;
+
+      --accent-primary: #059669;
+      --accent-secondary: #b45309;
+      --accent-glow: rgba(5, 150, 105, 0.10);
+
+      --tag-greek-bg: rgba(37, 99, 235, 0.12);
+      --tag-greek-border: rgba(37, 99, 235, 0.55);
+      --tag-greek-text: #1e3a8a;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.12);
+      --tag-hebrew-border: rgba(217, 119, 6, 0.55);
+      --tag-hebrew-text: #7c2d12;
+    }
+
+    html{
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      background-color: var(--bg-body);
+      min-height: 100%;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { margin: 0; padding: 0; min-height: 100%; }
+    body { margin: 0; padding: 0; min-height: 100vh; }
+
+    body {
+      font-family: var(--font-sans);
+      background: transparent;
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding-bottom: 140px;
+    }
+
+    h1, h2, h3, h4 { margin: 0; color: var(--text-highlight); }
+    h1, h2 { font-family: var(--font-serif); }
+
+    .h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin: 16px 0 12px;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .sub b { color: var(--text-main); font-weight: 600; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(var(--bg-body-rgb), 0.82);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      position: relative;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .title-group { display: flex; flex-direction: column; }
+    .title { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+    .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    .controls { display: flex; gap: 10px; align-items: center; }
+    #btnTheme, #btnShare { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    #btnTheme { min-width: 92px; }
+    #btnShare { min-width: 72px; }
+
+    .btn {
+      appearance: none;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+    .btn.primary:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4); }
+
+    main { padding: 10px 16px; }
+
+    .fulltext { margin-bottom: 24px; animation: fadeUp 0.6s ease-out; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    details[open] {
+      background: rgba(var(--bg-body-rgb), 0.42);
+      border-color: var(--accent-primary);
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-highlight);
+      user-select: none;
+      transition: background 0.2s;
+    }
+    summary:hover { background: rgba(255,255,255,0.03); }
+    summary::-webkit-details-marker { display: none; }
+
+    .chev {
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    details[open] .chev { transform: rotate(90deg); background: var(--accent-primary); color: #fff; }
+
+    .content.scripture {
+      padding: 10px 24px 24px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-main);
+      background: rgba(0,0,0,0.2);
+    }
+    .scripture p { margin: 12px 0; }
+    .v {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      margin-right: 4px;
+      vertical-align: 1px;
+      opacity: 0.9;
+    }
+
+    .hero { padding: 10px 4px 24px; animation: fadeUp 0.7s ease-out; }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 8px;
+    }
+    .pill span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    .pill span.hebrew {
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
+    }
+
+    .grid { display: grid; gap: 16px; animation: fadeUp 0.8s ease-out; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+
+    .card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-secondary);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card b { color: var(--text-main); font-weight: 600; }
+    .card ul { margin: 8px 0; padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
+
+    .note {
+      margin: 16px 0;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 12px;
+    }
+
+    .kv {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 8px 16px;
+      font-size: 14px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.2);
+      padding: 12px;
+      border-radius: var(--radius-md);
+    }
+    .kv div { padding: 4px 0; }
+    .kv-label {
+      color: var(--accent-secondary);
+      font-weight: 700;
+      font-family: var(--font-serif);
+      border-right: 1px solid var(--card-border);
+    }
+
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body { display: none; }
+
+    .hint-compressed {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    body.summary-mode .hint-compressed { display: block; }
+
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      background-color: rgba(var(--bg-body-rgb), 0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+    .bar-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+    .bar-inner .btn { flex: 1; padding: 12px; font-size: 14px; }
+
+    .divider { height: 1px; background: var(--card-border); margin: 24px 0; }
+    .muted.small { font-size: 12px; opacity: 0.7; text-align: center; display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-group">
+          <div class="title">창세기 17:1–2</div>
+          <div class="subtitle">정론 · 정행 · 현대 적용 가이드 (일반 성도용)</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnTheme" aria-label="다크/일반 모드 전환">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">다크</span>
+        </button>
+        <button class="btn" id="btnShare" aria-label="공유하기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+          </svg>
+          공유
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- 본문 전체 -->
+    <section class="fulltext" aria-label="창세기 17:1–2 본문">
+      <details open>
+        <summary>📜 본문 읽기 (창 17:1–2) <span class="chev">›</span></summary>
+        <div class="content scripture">
+          <p><span class="v">1</span> 아브람이 <b>구십구 세</b> 때에 여호와께서 아브람에게 나타나서 그에게 이르시되 나는 <b>전능한 하나님</b>이라 너는 <b>내 앞에서 행하여</b> <b>완전하라</b></p>
+          <p><span class="v">2</span> 내가 <b>내 언약</b>을 나와 너 사이에 두어 너를 <b>크게 번성</b>하게 하리라 하시니</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="pill">
+        <span class="hebrew">אֵל שַׁדַּי (ʾEl Shaddai)</span>
+        <span class="hebrew">הִתְהַלֵּךְ (hithallēḵ)</span>
+        <span class="hebrew">תָּמִים (tāmîm)</span>
+        <span class="hebrew">בְּרִית (berît)</span>
+        <span class="hebrew">הַרְבָּה (harbāh)</span>
+      </div>
+
+      <h1 class="h1">“나는 전능한 하나님… 내 앞에서 행하여 완전하라” —
+        약속의 능력과 삶의 방향을 함께 붙잡는 언약 선언</h1>
+
+      <p class="sub">
+        창세기 17:1–2는 하나님이 아브람에게 <b>자신의 이름(전능)</b>을 먼저 밝히고,
+        아브람에게는 <b>삶의 방향(내 앞에서 행하라)</b>을 요청하며,
+        그 다음에 <b>언약(약속 관계)</b>과 <b>번성(열매)</b>을 약속하는 본문입니다.
+        핵심은 “하나님이 할 일”과 “사람이 걸어갈 길”을 <b>같은 문장 안에</b> 묶어 둔 데 있습니다.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="해설 섹션">
+
+      <!-- 아주 짧은 도입 -->
+      <article class="card">
+        <h3>아주 짧은 도입 (2–3문장)</h3>
+        <p>
+          창 17장은 아브람 이야기에서 “언약”이 더 또렷해지는 장면입니다.
+          특히 17:1–2는 ‘할례’ 같은 표징(표시)이나 이름 변경이 나오기 전에,
+          <b>하나님은 어떤 분이며</b>, <b>언약 백성은 어떤 걸음으로 살아야 하는지</b>를 먼저 정리해 줍니다.
+        </p>
+        <div class="hint">
+          이 문단을 먼저 붙잡아 두면, 뒤에 나오는 창 17장의 긴 내용(이름, 표징, 약속)이 “왜 필요한지”가 더 쉽게 보입니다.
+        </div>
+      </article>
+
+      <!-- 한눈 요약 -->
+      <article class="card">
+        <h3>한눈 요약 (3–4문장)</h3>
+        <p class="content-long">
+          <b>1)</b> 아브람이 <b>99세</b>가 되었을 때, 여호와가 나타나 “나는 <b>전능한 하나님</b>(אֵל שַׁדַּי)”이라고 자신을 밝힙니다.  
+          <b>2)</b> 하나님은 아브람에게 “<b>내 앞에서 행하여</b>(הִתְהַלֵּךְ) <b>완전하라</b>(תָּמִים)”고 요청하며, 신앙이 머리 속 결론이 아니라 <b>삶의 걸음</b>임을 먼저 강조합니다.  
+          <b>3)</b> 이어서 하나님은 “나와 너 사이에 <b>언약</b>(בְּרִית)을 두고, 너를 <b>크게 번성</b>(הַרְבָּה)하게 하겠다”고 약속합니다.  
+          <b>4)</b> 요약하면, 이 본문은 <b>하나님의 능력</b>과 <b>사람의 걸음</b>, 그리고 <b>관계의 약속</b>을 한 덩어리로 묶어 주는 선언입니다.
+        </p>
+        <div class="hint-compressed">
+          99세에 나타난 하나님이 “전능”을 선언하고, “내 앞에서 걸어 온전하라”를 요청한 뒤,
+          언약과 번성을 약속합니다. 능력·걸음·약속이 한 문장에 묶여 있습니다.
+        </div>
+      </article>
+
+      <!-- 역사·지리·배경 -->
+      <article class="card">
+        <h3>역사 · 지리 · 배경</h3>
+
+        <div class="content-long">
+          <h4>1) “99세”라는 표시는 ‘분위기’가 아니라 메시지다</h4>
+          <p>
+            창세기에서 숫자는 종종 “장면의 무게”를 잡아 줍니다.
+            아브람이 99세라는 말은 “이제 사람 힘으로는 더 어려워 보이는 시점”을 의도적으로 강조합니다.
+            다시 말해 17:1–2는 “가능해 보일 때만 믿는 신앙”이 아니라,
+            <b>불가능해 보이는 시간까지 끌고 가는 약속</b>을 다룹니다.
+            이 나이는 ‘늦음’의 상징이고, 늦음 속에서 “전능”이 등장하는 구조가 본문의 핵심 힘입니다.
+          </p>
+
+          <h4>2) 바로 앞 이야기(창 16장) 이후: ‘사람의 지름길’ 뒤에 오는 재정렬</h4>
+          <p>
+            창 16장에는 하갈과 이스마엘 이야기가 등장합니다.
+            약속이 더디게 보이자, 사람들은 “우리가 현실적으로 해결하자”는 방식으로 움직입니다.
+            17:1–2는 그 다음에 하나님이 다시 나타나,
+            “약속은 내가 세우고, 나는 전능하며, 너는 내 앞에서 걸어라”라고
+            <b>관계의 중심을 다시 맞추는 장면</b>입니다.
+            즉, 이 본문은 “실패를 정죄하는 장면” 이전에,
+            <b>흐트러진 방향을 다시 잡아 주는 장면</b>으로 읽는 것이 자연스럽습니다.
+          </p>
+
+          <h4>3) 고대 근동에서 ‘언약’은 ‘관계의 계약’이었다</h4>
+          <p>
+            아브람이 살던 시대의 주변 문화에는 왕과 신하, 혹은 강한 나라와 약한 나라 사이에
+            약속을 맺는 관습이 있었습니다.
+            성경의 언약(בְּרִית, berît)도 “약속 문서” 같은 면이 있지만,
+            창세기에서는 특히 하나님이 먼저 시작하고, 하나님이 관계를 붙들어 주는 형태로 나타납니다.
+            그래서 17:1–2의 흐름은
+            <b>“하나님 소개(나는 누구) → 삶의 요청(너는 어떻게) → 관계의 약속(언약)”</b> 순서로 흘러갑니다.
+          </p>
+
+          <h4>4) “내 앞에서 행하라”는 말은 ‘의식’이 아니라 ‘일상’을 겨냥한다</h4>
+          <p>
+            ‘행하다’(הִתְהַלֵּךְ, hithallēḵ)는 “한 번의 결단”보다 “지속적인 걸음”에 어울리는 동사입니다.
+            그러므로 17:1–2는 예배당 안의 감정만이 아니라,
+            <b>하루의 선택과 습관</b>까지 언약의 자리로 끌고 들어옵니다.
+            언약은 “서류”가 아니라 “삶의 동행”이라는 메시지가 여기서 시작됩니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          99세는 ‘불가능해 보이는 시간’의 강조이고, 창 16장 이후 흐트러진 중심을 다시 맞추는 장면입니다.
+          언약은 관계의 약속이며, “내 앞에서 행하라”는 일상의 지속을 겨냥합니다.
+        </div>
+      </article>
+
+      <!-- 정론(orthodoxy) -->
+      <article class="card">
+        <h3>① 정론(Orthodoxy): 전통이 강조해 온 핵심 메시지</h3>
+
+        <p class="note">
+          전통적 해석(정론)은 이 본문을 “하나님의 자기소개”와 “언약의 확증”으로 읽어 왔습니다.
+          동시에 “완전하라”를 인간의 공로 쌓기로 바꾸지 않고,
+          언약 관계 안에서의 <b>신뢰와 충성</b>으로 이해하려는 흐름이 강합니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) “전능한 하나님”(אֵל שַׁדַּי): 약속의 근거는 ‘상황’이 아니라 ‘하나님’이다</h4>
+          <p>
+            본문에서 하나님은 먼저 “나는 전능한 하나님”이라고 말합니다.
+            이것은 아브람에게 “너의 기분”이나 “확률 계산”이 약속의 근거가 아니라는 선언입니다.
+            전통적으로 이 표현은,
+            하나님이 언약을 세우시고 끝까지 이끌어 갈 <b>충분한 능력과 권위</b>가 있다는 뜻으로 읽혀 왔습니다.
+            즉, 믿음은 “내가 할 수 있다”가 아니라 “하나님이 붙드신다”로 시작합니다.
+          </p>
+
+          <h4>2) “내 앞에서 행하여”: 믿음은 ‘선언’이 아니라 ‘동행’이다</h4>
+          <p>
+            “내 앞에서”는 단순히 감시받는 느낌이 아니라,
+            하나님이 관계 속으로 아브람을 초대하는 표현입니다.
+            정론적 관점에서 믿음은 “어떤 문장에 동의한다”에 멈추지 않고,
+            하나님 앞에서 살아가며 그 관계가 사람의 선택을 바꾸는 쪽으로 나아갑니다.
+            그러므로 ‘행함’은 벌점 없는 삶이 아니라,
+            <b>하나님과 같은 방향으로 가는 삶</b>을 뜻합니다.
+          </p>
+
+          <h4>3) “완전하라”(תָּמִים): 완벽주의가 아니라 ‘나뉘지 않은 마음’</h4>
+          <p>
+            “완전”을 “실수 0”으로 오해하면, 신앙은 곧바로 불안해집니다.
+            그러나 tāmîm은 성경 여러 곳에서 “흠이 없다”는 뜻으로 쓰이되,
+            창 17:1의 문맥에서는 “하나님 앞에서 전체가 하나로 모인 상태”,
+            다시 말해 <b>이중적이지 않은 태도</b>를 가리키는 쪽이 더 자연스럽습니다.
+            전통은 이를 “진실함, 성실함, 충성”으로 풀어 왔고,
+            ‘겉과 속이 다른 신앙’을 경계하는 본문으로 읽어 왔습니다.
+          </p>
+
+          <h4>4) “언약”과 “번성”: 개인 성공이 아니라 큰 이야기의 시작</h4>
+          <p>
+            “번성”은 ‘내 삶이 잘 된다’ 수준에서만 읽히기 쉽지만,
+            창세기 전체 흐름에서 번성은
+            한 가정이 민족이 되고, 그 민족을 통해 복이 흘러가는 큰 이야기로 연결됩니다.
+            그래서 정론적으로 이 본문은 “아브람 개인의 복”뿐 아니라
+            <b>하나님의 구원 이야기(더 큰 역사)</b>의 한 고리로 읽혀 왔습니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정론은 “전능”을 약속의 근거로, “행함”을 동행으로, “완전”을 진실한 충성으로 읽습니다.
+          번성은 개인 성공이 아니라 큰 이야기로 연결됩니다.
+        </div>
+      </article>
+
+      <!-- 정행(orthopraxy) -->
+      <article class="card">
+        <h3>② 정행(Orthopraxy): “어떻게 살라는 말인가?”를 앞에 두고 읽기</h3>
+
+        <p class="note">
+          정행(실천) 관점에서 이 본문은 “정답 문장”보다 “걸음의 방향”을 먼저 묻습니다.
+          특히 “내 앞에서 행하라”는 말은, 신앙을 ‘머리’보다 ‘습관과 선택’의 자리로 끌고 내려옵니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) “완전”은 ‘완벽’이 아니라 ‘일관성’에 가깝다</h4>
+          <p>
+            우리는 흔히 “완전하라”를 듣자마자 부담을 느낍니다.
+            그런데 정행적으로 보면, 이 본문은 “실수하지 말라”라기보다,
+            “하나님 앞에서 너의 삶을 <b>한 방향으로 정리하라</b>”에 더 가깝습니다.
+            예를 들어, 말은 믿음인데 선택은 두려움으로 가는 ‘이중 길’을 끊고,
+            작더라도 한 방향(정직, 절제, 약속 지키기)으로 걸어가라는 요청입니다.
+          </p>
+
+          <h4>2) “내 앞에서”: 신앙의 기준은 ‘타인의 평가’가 아니라 ‘하나님 앞의 진실’</h4>
+          <p>
+            사람 앞에서의 신앙은 종종 “이미지 관리”로 흐릅니다.
+            그러나 “내 앞에서”는,
+            남에게 보이기 위한 신앙이 아니라 하나님 앞에서의 진실을 뜻합니다.
+            정행적 실천은 그래서 “남이 칭찬할 만한 경건”이 아니라,
+            아무도 안 볼 때에도 지켜지는 작은 약속(시간, 말, 돈, 관계)을 중요하게 다룹니다.
+          </p>
+
+          <h4>3) “언약”은 거래가 아니라 ‘지속’의 관계다</h4>
+          <p>
+            우리는 쉽게 “내가 잘하면 하나님이 복 주신다”처럼 거래식으로 생각합니다.
+            하지만 본문은 하나님이 “내 언약을 나와 너 사이에 두겠다”고 먼저 말합니다.
+            즉, 관계의 중심은 ‘내 성과’가 아니라 ‘하나님의 붙드심’에 있습니다.
+            정행적으로는 이게 큰 위로가 됩니다.
+            신앙은 매일 완벽하게 성공하는 사람이 아니라,
+            넘어져도 다시 방향을 잡고 <b>계속 걷는 사람</b>을 만드는 길이기 때문입니다.
+          </p>
+
+          <h4>4) “번성”을 ‘숫자’가 아니라 ‘관계가 살아나는 열매’로 읽기</h4>
+          <p>
+            번성을 숫자로만 좁히면, 신앙은 경쟁이 됩니다.
+            정행은 번성을 “관계가 살아나는 열매”로 넓혀 읽습니다.
+            가정에서의 번성은 신뢰가 쌓이는 것이고,
+            공동체에서의 번성은 약자를 버리지 않는 구조가 생기는 것이며,
+            개인에게는 조급함이 줄고 약속을 지키는 힘이 커지는 것입니다.
+            이렇게 읽으면, 번성은 오늘의 우리에게도 실천 가능한 언어가 됩니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          정행은 “완전”을 완벽주의가 아니라 일관성으로, “내 앞에서”를 이미지가 아닌 진실로 읽습니다.
+          언약은 거래가 아니라 지속이며, 번성은 숫자보다 관계의 열매로 확장됩니다.
+        </div>
+      </article>
+
+      <!-- 원어 키워드 -->
+      <article class="card">
+        <h3>원어 키워드 정리 (히브리어)</h3>
+
+        <p class="muted small">
+          구약 본문이므로 핵심 키워드는 <b>히브리어 레마(표제어)</b> 기준으로 정리했습니다.
+          어근(뿌리)은 과장해서 의미를 만들지 않고, 본문 기능 중심으로만 간단히 붙였습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>핵심 단어 표</h4>
+          <div class="kv">
+            <div class="kv-label">אֵל שַׁדַּי</div>
+            <div>
+              <b>ʾEl Shaddai</b> (전능한 하나님). 하나님이 먼저 “나는 누구다”라고 밝히는 이름입니다.
+              이 본문에서 역할은 “약속의 근거는 하나님 쪽에 있다”는 선언입니다.
+              <span class="hint">대표 용례: 창 17:1, 출 6:3</span>
+            </div>
+
+            <div class="kv-label">הִתְהַלֵּךְ</div>
+            <div>
+              <b>hithallēḵ</b> (걸어 다니다/살아가다). 레마: <b>הלך</b> (h-l-k, “걷다” 계열).
+              본문에서 “내 앞에서 행하라”는 말의 핵심 동사로, <b>지속적인 삶</b>을 가리킵니다.
+              <span class="hint">대표 용례: 창 17:1, 창 5:22(에녹이 하나님과 동행)</span>
+            </div>
+
+            <div class="kv-label">תָּמִים</div>
+            <div>
+              <b>tāmîm</b> (온전한/흠 없는). 본문에서 “완전하라”의 단어입니다.
+              기능은 “겉과 속이 갈라지지 않은 상태”, “한 방향으로 모인 삶”을 요구하는 데 있습니다.
+              <span class="hint">대표 용례: 창 17:1, 레 1:3(흠 없는 제물)</span>
+            </div>
+
+            <div class="kv-label">בְּרִית</div>
+            <div>
+              <b>berît</b> (언약). 하나님-아브람 관계를 공식적으로 세우는 말입니다.
+              본문에서는 “하나님이 관계를 가운데에 두고 붙드신다”는 강조가 있습니다.
+              <span class="hint">대표 용례: 창 15:18, 창 17:2</span>
+            </div>
+
+            <div class="kv-label">הַרְבָּה</div>
+            <div>
+              <b>harbāh</b> (크게 하다/많이 하다). 번성을 강하게 강조하는 표현입니다.
+              본문에서는 ‘숫자’만이 아니라 ‘열매의 확대’를 약속하는 방향으로 읽힙니다.
+              <span class="hint">대표 용례: 창 17:2, 창 22:17</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h4>짧은 관찰: 단어들이 만드는 흐름</h4>
+          <p>
+            이 본문은 “하나님의 이름(אֵל שַׁדַּי) → 삶의 걸음(הִתְהַלֵּךְ) → 삶의 결(תָּמִים) → 관계의 약속(בְּרִית) → 열매(הַרְבָּה)”로 이어집니다.
+            즉, 신앙은 ‘약속만 듣고 끝’이 아니라, 약속을 붙드는 <b>삶의 방향</b>을 함께 요구합니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          전능(אֵל שַׁדַּי) → 걸음(הִתְהַלֵּךְ) → 온전함(תָּמִים) → 언약(בְּרִית) → 번성(הַרְבָּה) 흐름입니다.
+        </div>
+      </article>
+
+      <!-- 현대 적용 -->
+      <article class="card">
+        <h3>현대 적용 (개인 · 공동체 · 공적 영역)</h3>
+
+        <p class="note">
+          오늘 우리에게도 “늦어 보이는 시간”과 “불가능해 보이는 상황”이 있습니다.
+          창 17:1–2는 그때 “더 빨리 되는 방법”을 알려 주기보다,
+          <b>하나님 앞에서 걸어가는 방향</b>을 다시 잡아 줍니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) 개인 — ‘지금 내가 붙잡는 근거’가 무엇인지 점검하기</h4>
+          <p>
+            불안할 때 우리는 흔히 “내 능력, 내 계획, 내 컨트롤”을 근거로 삼습니다.
+            그런데 본문은 먼저 “나는 전능한 하나님”이라는 근거를 세웁니다.
+            오늘의 적용은 단순합니다.
+            “내가 통제 못하는 것을 붙잡고 불안해하기보다,
+            오늘 내가 할 수 있는 걸음(정직, 절제, 약속 지키기)을 한 걸음 내딛자.”
+            이 한 걸음이 hithallēḵ(걸어감)이고, 그 걸음이 쌓이는 것이 tāmîm(온전함)입니다.
+          </p>
+
+          <h4>2) 공동체 — ‘완벽한 사람’보다 ‘계속 걷는 사람’을 세우기</h4>
+          <p>
+            공동체가 “완전”을 완벽주의로 가르치면, 사람들은 숨거나 포기합니다.
+            그러나 본문이 겨냥하는 온전함은 “하나님 앞에서 진실한 방향”입니다.
+            그러므로 공동체는 실수 없는 사람을 뽑아 세우기보다,
+            넘어져도 다시 방향을 잡는 사람을 돕는 구조(돌봄, 훈련, 책임 있는 회복)를 마련해야 합니다.
+            그럴 때 공동체의 번성은 숫자가 아니라 <b>신뢰의 두께</b>로 나타납니다.
+          </p>
+
+          <h4>3) 공적 영역 — ‘말의 신앙’이 아니라 ‘약속을 지키는 신앙’</h4>
+          <p>
+            공적 영역에서 신앙은 자주 “주장”으로 보입니다.
+            하지만 창 17:1–2는 “내 앞에서 행하라”를 먼저 둡니다.
+            즉, 신앙은 말의 승리가 아니라 약속을 지키는 습관입니다.
+            계약을 지키고, 약자를 속이지 않고, 책임을 회피하지 않는 삶이
+            ‘언약 백성’의 현실적 흔적이 됩니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          개인은 근거를 전능하신 하나님께 두고 한 걸음을 내딛고,
+          공동체는 완벽주의 대신 회복과 지속을 세우며,
+          공적 영역에서는 말보다 약속을 지키는 습관이 신앙의 흔적이 됩니다.
+        </div>
+      </article>
+
+      <!-- 실천 체크리스트 -->
+      <article class="card">
+        <h3>작은 실천 체크리스트 (이번 주 적용)</h3>
+        <ul class="content-long">
+          <li>
+            <b>1. “99세의 시간” 하나 적기</b><br/>
+            요즘 내 삶에서 “늦었다/불가능해 보인다”라고 느끼는 영역을 하나 적고,
+            그 영역에서 내가 어떤 근거로 버티고 있는지(내 능력/하나님) 점검합니다.
+          </li>
+          <li>
+            <b>2. 하루 5분 “내 앞에서” 루틴</b><br/>
+            하루 5분만이라도 조용히 앉아 “오늘 하나님 앞에서 한 방향으로 살기”를 위해
+            딱 한 가지 선택(말, 돈, 시간, 관계)을 정합니다.
+          </li>
+          <li>
+            <b>3. ‘완전’의 정의 바꾸기</b><br/>
+            “완전=실수 0”이 아니라 “완전=한 방향”이라고 정의를 바꾸고,
+            오늘 그 한 방향 행동을 한 번 실행합니다.
+          </li>
+          <li>
+            <b>4. 언약을 거래로 만들지 않기</b><br/>
+            “내가 잘하면 하나님이 해주실 거야”라는 생각이 올라올 때,
+            “언약은 관계다. 오늘은 관계 안에서 걷자”로 문장을 바꿔 말해 봅니다.
+          </li>
+          <li>
+            <b>5. 번성의 기준을 ‘관계의 열매’로 보기</b><br/>
+            이번 주에 ‘숫자/성과’ 말고 ‘관계가 살아나는 열매’가 무엇인지 한 가지 정하고,
+            작은 행동(약속 지키기, 사과하기, 도와주기)으로 연결합니다.
+          </li>
+        </ul>
+
+        <p class="muted small">
+          기억할 것: 하나님은 “전능”을 먼저 말하고, 그 다음에 “걸어라”를 말합니다.
+          이 순서가 바뀌면 신앙은 금방 자기 증명으로 변합니다.
+        </p>
+      </article>
+
+      <!-- 마지막 3–4문장 핵심 요약 -->
+      <article class="card">
+        <h3>마지막 3–4문장 핵심 요약</h3>
+        <p class="content-long">
+          창 17:1–2는 늦어 보이는 시간(99세) 속에서 하나님이 “나는 전능한 하나님”이라고 자신을 밝히며,
+          약속의 근거를 사람의 가능성이 아니라 하나님께 둡니다.
+          동시에 “내 앞에서 행하여 완전하라”는 말로, 믿음이 말이 아니라 <b>삶의 걸음</b>임을 못 박습니다.
+          언약은 거래가 아니라 관계이며, 번성은 경쟁이 아니라 <b>관계가 살아나는 열매</b>로 나타납니다.
+          오늘 우리에게 남는 질문은 이것입니다. “나는 지금 하나님 앞에서 어떤 방향으로 걷고 있는가?”
+        </p>
+      </article>
+
+      <!-- 푸터 -->
+      <article class="card" style="text-align:center; opacity:0.85;">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.<br/>
+          상단 <b>공유</b> 버튼으로 링크를 나누고,
+          하단 <b>요약 모드</b>로 소그룹 나눔에도 활용해 보세요.<br/>
+          동일한 레이아웃으로 다른 본문도
+          <b>정론 · 정행 · 현대 적용</b> 관점에서 계속 확장할 수 있습니다.
+        </p>
+      </article>
+
+    </section>
+
+  </main>
+
+  <div class="bar" aria-label="도움말 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 펼치기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '창세기 17:1–2 정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\n' + location.href);
+        }
+      });
+    }
+
+    // 다크/일반 테마 토글 (localStorage 저장)
+    const themeBtn = document.getElementById('btnTheme');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    function getSystemTheme() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (themeIcon && themeLabel) {
+        if (theme === 'light') {
+          themeIcon.textContent = '☀️';
+          themeLabel.textContent = '일반';
+        } else {
+          themeIcon.textContent = '🌙';
+          themeLabel.textContent = '다크';
+        }
+      }
+    }
+
+    // Init theme: stored -> system (unique key for this page)
+    const storedTheme = localStorage.getItem('gn17_theme');
+    const initialTheme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : getSystemTheme();
+    applyTheme(initialTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('gn17_theme', next);
+        applyTheme(next);
+      });
+    }
+
+    // If user hasn't set a theme, follow system changes live
+    if (!storedTheme && window.matchMedia) {
+      const mq = window.matchMedia('(prefers-color-scheme: light)');
+      const handler = () => applyTheme(getSystemTheme());
+      if (mq.addEventListener) mq.addEventListener('change', handler);
+      else if (mq.addListener) mq.addListener(handler);
+    }
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    // 전체 펼치기/접기 (details)
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
