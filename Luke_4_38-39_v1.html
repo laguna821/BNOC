@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>누가복음 4:38–39 — 정론·정행·현대 적용</title>
+  <meta name="date" content="2026-02-22" />
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #fbbf24;
+      --tag-hebrew-text: #fed7aa;
+
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-serif: "Merriweather", "Times New Roman", serif;
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-body: #f8fafc;
+        --bg-body-rgb: 248, 250, 252;
+        --bg-gradient-start: #f1f5f9;
+        --bg-gradient-start-rgb: 241, 245, 249;
+        --bg-gradient-end: #e2e8f0;
+        --bg-gradient-end-rgb: 226, 232, 240;
+
+        --card-bg: rgba(255, 255, 255, 0.85);
+        --card-border: rgba(0, 0, 0, 0.06);
+        --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --text-highlight: #0f172a;
+
+        --accent-primary: #059669;
+        --accent-secondary: #d97706;
+        --accent-glow: rgba(5, 150, 105, 0.1);
+      }
+    }
+
+    html[data-theme="dark"] {
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #fbbf24;
+      --tag-hebrew-text: #fed7aa;
+    }
+
+    html[data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-body-rgb: 248, 250, 252;
+      --bg-gradient-start: #f1f5f9;
+      --bg-gradient-start-rgb: 241, 245, 249;
+      --bg-gradient-end: #e2e8f0;
+      --bg-gradient-end-rgb: 226, 232, 240;
+
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-highlight: #0f172a;
+
+      --accent-primary: #059669;
+      --accent-secondary: #b45309;
+      --accent-glow: rgba(5, 150, 105, 0.10);
+
+      --tag-greek-bg: rgba(37, 99, 235, 0.12);
+      --tag-greek-border: rgba(37, 99, 235, 0.55);
+      --tag-greek-text: #1e3a8a;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.12);
+      --tag-hebrew-border: rgba(217, 119, 6, 0.55);
+      --tag-hebrew-text: #7c2d12;
+    }
+
+    html{
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      background-color: var(--bg-body);
+      min-height: 100%;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { margin: 0; padding: 0; min-height: 100%; }
+    body { margin: 0; padding: 0; min-height: 100vh; }
+
+    body {
+      font-family: var(--font-sans);
+      background: transparent;
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding-bottom: 140px;
+    }
+
+    h1, h2, h3, h4 { margin: 0; color: var(--text-highlight); }
+    h1, h2 { font-family: var(--font-serif); }
+
+    .h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin: 16px 0 12px;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .sub b { color: var(--text-main); font-weight: 600; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(var(--bg-body-rgb), 0.82);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      position: relative;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .title-group { display: flex; flex-direction: column; }
+    .title { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+    .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    .controls { display: flex; gap: 10px; align-items: center; }
+    #btnTheme, #btnShare { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    #btnTheme { min-width: 92px; }
+    #btnShare { min-width: 72px; }
+
+    .btn {
+      appearance: none;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+    .btn.primary:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4); }
+
+    main { padding: 10px 16px; }
+
+    .fulltext { margin-bottom: 24px; animation: fadeUp 0.6s ease-out; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    details[open] {
+      background: rgba(var(--bg-body-rgb), 0.42);
+      border-color: var(--accent-primary);
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-highlight);
+      user-select: none;
+      transition: background 0.2s;
+    }
+    summary:hover { background: rgba(255,255,255,0.03); }
+    summary::-webkit-details-marker { display: none; }
+
+    .chev {
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    details[open] .chev { transform: rotate(90deg); background: var(--accent-primary); color: #fff; }
+
+    .content.scripture {
+      padding: 10px 24px 24px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-main);
+      background: rgba(0,0,0,0.2);
+    }
+    .scripture p { margin: 12px 0; }
+    .v {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      margin-right: 4px;
+      vertical-align: 1px;
+      opacity: 0.9;
+    }
+
+    .hero { padding: 10px 4px 24px; animation: fadeUp 0.7s ease-out; }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 8px;
+    }
+    .pill span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    .pill span.hebrew {
+      background: var(--tag-hebrew-bg);
+      border-color: var(--tag-hebrew-border);
+      color: var(--tag-hebrew-text);
+    }
+
+    .pill span.greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+
+    .grid { display: grid; gap: 16px; animation: fadeUp 0.8s ease-out; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+
+    .card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-secondary);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card b { color: var(--text-main); font-weight: 600; }
+    .card ul { margin: 8px 0; padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
+
+    .note {
+      margin: 16px 0;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 12px;
+    }
+
+    .kv {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 8px 16px;
+      font-size: 14px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.2);
+      padding: 12px;
+      border-radius: var(--radius-md);
+    }
+    .kv div { padding: 4px 0; }
+    .kv-label {
+      color: var(--accent-secondary);
+      font-weight: 700;
+      font-family: var(--font-serif);
+      border-right: 1px solid var(--card-border);
+    }
+
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body { display: none; }
+
+    .hint-compressed {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    body.summary-mode .hint-compressed { display: block; }
+
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      background-color: rgba(var(--bg-body-rgb), 0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+    .bar-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+    .bar-inner .btn { flex: 1; padding: 12px; font-size: 14px; }
+
+    .divider { height: 1px; background: var(--card-border); margin: 24px 0; }
+    .muted.small { font-size: 12px; opacity: 0.7; text-align: center; display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-group">
+          <div class="title">누가복음 4:38–39</div>
+          <div class="subtitle">정론 · 정행 · 현대 적용 가이드 (일반 성도용)</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnTheme" aria-label="다크/일반 모드 전환">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">다크</span>
+        </button>
+        <button class="btn" id="btnShare" aria-label="공유하기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+          </svg>
+          공유
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- 본문 전체 -->
+    <section class="fulltext" aria-label="누가복음 4:38–39 본문">
+      <details open>
+        <summary>📜 본문 읽기 (눅 4:38–39) <span class="chev">›</span></summary>
+        <div class="content scripture">
+          <p><span class="v">38</span> 예수께서 일어나 <b>회당</b>에서 나가사 <b>시몬</b>의 집에 들어가시니 시몬의 장모가 <b>중한 열병</b>을 앓고 있는지라 사람들이 그를 위하여 예수께 구하니</p>
+          <p><span class="v">39</span> 예수께서 <b>가까이 서서</b> 열병을 <b>꾸짖으신대</b> 병이 떠나고 여자가 곧 일어나 그들에게 <b>수종드니라</b></p>
+</div>
+      </details>
+    </section>
+
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="pill">
+        <span class="greek">συναγωγή (synagōgē)</span>
+        <span class="greek">πυρετός μέγας (pyretos megas)</span>
+        <span class="greek">ἐπιστάς (epistas)</span>
+        <span class="greek">ἐπετίμησεν (epetimēsen)</span>
+        <span class="greek">ἀφῆκεν (aphēken)</span>
+        <span class="greek">διηκόνει (diēkonei)</span>
+</div>
+
+      <h1 class="h1">“열병을 꾸짖으신대… 곧 일어나 수종드니라” —
+        예수님의 권위가 ‘회당’에서 ‘가정’으로 들어오는 치유 이야기</h1>
+
+      <p class="sub">
+        누가복음 4:38–39는 예수님이 <b>회당</b>(공적인 예배·가르침 자리)에서 나오자마자
+        <b>시몬의 집</b>(사적인 생활 자리)으로 들어가, 한 가족의 위기였던 <b>중한 열병</b>을 다루는 장면입니다.
+        누가는 여기서 “기적의 쇼”보다, 예수님의 돌봄이 <b>일상 안으로 스며드는 방식</b>,
+        그리고 회복이 “말”이 아니라 <b>다시 살아 움직이는 행동</b>으로 드러난다는 점을 강조합니다.
+      </p>
+    </section>
+
+    
+    <section class="grid" aria-label="해설 섹션">
+
+      <!-- 아주 짧은 도입 -->
+      <article class="card">
+        <h3>아주 짧은 도입 (2–3문장)</h3>
+        <p>
+          이 본문은 예수님이 갈릴리에서 사역을 시작하실 때, <b>가버나움</b>에서 벌어진 하루의 흐름 속에 놓여 있습니다.
+          회당에서 말씀을 가르치신 뒤 곧바로 한 집으로 이동해, <b>가정의 아픔</b>을 다루십니다.
+          누가는 “신앙은 회당 안에서만이 아니라, 집과 일상에서도 실제로 작동한다”는 그림을 짧게 보여 줍니다.
+        </p>
+        <div class="hint">
+          이 장면을 “기적 한 건”으로만 보지 말고, “회당 → 집”으로 이어지는 동선이 말하는 메시지를 같이 보시면 훨씬 깊어집니다.
+        </div>
+      </article>
+
+      <!-- 한눈 요약 -->
+      <article class="card">
+        <h3>한눈 요약 (3–4문장)</h3>
+        <p class="content-long">
+          <b>1)</b> 예수님이 <b>회당</b>에서 나오셔서 <b>시몬의 집</b>으로 들어가십니다. <br/>
+          <b>2)</b> 시몬의 장모가 <b>중한 열병</b>(πυρετός μέγας)으로 누워 있고, 주변 사람들이 예수님께 도움을 부탁합니다. <br/>
+          <b>3)</b> 예수님이 <b>가까이 서서</b>(ἐπιστάς) 열병을 <b>꾸짖자</b>(ἐπετίμησεν) 열이 <b>떠나고</b>(ἀφῆκεν), 여자는 곧 일어납니다. <br/>
+          <b>4)</b> 회복의 표지는 말이 아니라, 여자가 그들에게 <b>수종</b>(διηκόνει, 돌봄/섬김)드는 <b>구체적 행동</b>으로 나타납니다.
+        </p>
+        <div class="hint-compressed">
+          회당에서 집으로 이동한 예수님이, 심한 열병을 “멈추게” 하시고, 회복이 행동으로 드러나게 하십니다.
+        </div>
+      </article>
+
+      <!-- 역사·지리·배경 -->
+      <article class="card">
+        <h3>역사 · 지리 · 배경</h3>
+
+        <div class="content-long">
+          <h4>1) “회당”은 예배만 드리는 곳이 아니라 ‘공동체 중심’이었다</h4>
+          <p>
+            1세기 유대 사회에서 <b>회당</b>(συναγωγή, synagōgē)는 성경을 읽고 풀이하는 자리이면서,
+            동네 사람들이 모여 소식과 규범을 나누는 <b>공동체 중심</b>이기도 했습니다.
+            그래서 예수님이 회당에서 가르치시고(공적 장면), 바로 집으로 옮기시는 흐름은
+            “말씀의 권위가 예배당 안에만 머무르지 않는다”는 뜻을 담고 있습니다.
+          </p>
+
+          <h4>2) “집”은 사적인 공간이면서 동시에 ‘환대(손님맞이)’의 공간이었다</h4>
+          <p>
+            당시 집은 단순히 잠자는 곳이 아니라, 가족이 먹고 살고 손님을 맞는 생활의 중심이었습니다.
+            ‘시몬의 집’은 예수님과 제자들의 동선 속에 자주 등장하는데,
+            이 장면은 예수님이 “종교 지도자의 공간”이 아니라 “평범한 가정”으로 들어오신다는 점을 강조합니다.
+            손님을 맞이하고 식사를 준비하는 일은 집의 중요한 기능이었기에,
+            장모의 병은 개인의 고통을 넘어 <b>가정 전체의 위기</b>가 될 수 있었습니다.
+          </p>
+
+          <h4>3) “중한 열병”은 당시에는 매우 위험한 신호였다</h4>
+          <p>
+            오늘처럼 원인과 치료가 뚜렷하지 않던 시대에, <b>심한 고열</b>은 생사를 가를 수 있는 위험 신호였습니다.
+            본문은 단순히 “몸살” 정도가 아니라, <b>큰 열</b>(πυρετός μέγας)이라고 강도를 말합니다.
+            그래서 이 치유는 ‘사소한 컨디션 회복’이 아니라, 공동체가 체감할 만큼 분명한 변화로 묘사됩니다.
+          </p>
+
+          <h4>4) “사람들이… 예수께 구하니”는 돌봄의 사회적 모습을 보여 준다</h4>
+          <p>
+            병든 사람이 직접 요청하지 못할 때, 가족과 이웃이 대신 부탁하는 일은 자연스러웠습니다.
+            누가는 “사람들이”라고 복수로 말하면서, 이 장면을 개인 영웅담으로 만들지 않고
+            <b>공동체가 함께 요청하고 함께 회복을 확인하는 장면</b>으로 그립니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          회당은 공동체 중심이었고, 집은 환대와 생계의 공간이었습니다. 심한 열병은 위험했고, 주변 사람들이 함께 예수께 도움을 요청했습니다.
+        </div>
+      </article>
+
+      <!-- 정론(orthodoxy) -->
+      <article class="card">
+        <h3>① 정론(Orthodoxy): 전통적으로 이 본문을 어떻게 읽어 왔나</h3>
+
+        <p class="note">
+          정론(교리적 읽기)은 이 장면을 “예수님의 권위”와 “하나님 나라의 가까움”을 보여 주는 표지로 읽어 왔습니다.
+          중요한 점은, 예수님의 권위가 <b>말</b>(가르침)과 <b>현실</b>(병·고통) 모두에 닿는다는 것입니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) 예수님의 권위는 ‘회당’에서 ‘집’으로 이어진다</h4>
+          <p>
+            바로 앞 장면에서 예수님은 회당에서 가르치시며 권위를 드러내십니다.
+            이어서 집으로 가셔서 병을 다루시는 장면은,
+            예수님의 권위가 “설교의 설득력”에만 있지 않고
+            <b>삶의 고통을 실제로 다루는 힘</b>으로 이어진다는 것을 보여 줍니다.
+          </p>
+
+          <h4>2) “열병을 꾸짖다”는 병을 ‘멈추게 하다’는 표현이다</h4>
+          <p>
+            누가는 여기서 <b>ἐπετίμησεν</b>(epetimēsen, 꾸짖다/제지하다)라는 말을 씁니다.
+            이 단어는 누가복음에서 때로 귀신이나 바람, 혼돈을 “멈추게” 할 때도 쓰입니다.
+            따라서 전통적으로는 이것을 “예수님의 권위가 파괴와 혼돈을 제지한다”는 의미로 읽어 왔습니다.
+            중요한 것은, 예수님이 환자를 꾸짖은 것이 아니라, <b>열병(문제)을 꾸짖었다</b>는 점입니다.
+          </p>
+
+          <h4>3) 회복의 표지가 ‘수종’이라는 점: 은혜가 관계로 돌아온다</h4>
+          <p>
+            여자가 곧 일어나 <b>διηκόνει</b>(diēkonei, 섬기다/돌보다) 했다는 말은,
+            “감정 고백”보다 “관계 회복”이 먼저 드러나는 장면입니다.
+            전통은 이를 ‘감사 표현’으로만 좁히기보다,
+            회복이 “몸”과 “관계”를 동시에 다시 살린다는 표지로 이해해 왔습니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          예수님의 권위가 회당에서 집으로 이어지고, ‘꾸짖다’는 병을 멈추게 하는 표현이며, 회복은 관계 속 행동(수종)으로 드러납니다.
+        </div>
+      </article>
+
+      <!-- 정행(orthopraxy) -->
+      <article class="card">
+        <h3>② 정행(Orthopraxy): “어떻게 살아내라는 말인가?”로 읽기</h3>
+
+        <p class="note">
+          정행(실천) 관점에서 이 본문은 “즉시 치유 공식”이 아니라,
+          <b>돌봄이 일상으로 들어오는 방식</b>과
+          <b>회복이 다시 ‘살아 움직임’으로 나타나는 과정</b>을 보여 줍니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) 이 본문을 “믿으면 무조건 낫는다”로 단순화하는 위험</h4>
+          <p>
+            이 이야기를 “믿으면 병이 바로 낫는다”로만 밀어붙이면,
+            오늘의 만성질환, 치료 실패, 긴 돌봄의 시간 속에 있는 사람은
+            오히려 죄책감과 상처를 입을 수 있습니다.
+            정행적으로는, 이 본문이 “치유의 공식을 주는” 장면이라기보다,
+            예수님이 <b>고통의 자리로 들어오시고</b>, 공동체가 <b>함께 요청</b>하며,
+            회복이 <b>관계 속 행동</b>으로 확인되는 흐름을 보여 준다고 읽는 편이 더 건강합니다.
+          </p>
+
+          <h4>2) “가까이 서서”는 돌봄의 기본 자세다</h4>
+          <p>
+            누가는 예수님이 환자에게 <b>가까이 서서</b>(ἐπιστάς) 하셨다고 적습니다.
+            이는 오늘 우리에게 “돌봄은 해결책을 말하기 전에, 먼저 거리를 줄이는 것”이라는 교훈을 줍니다.
+            조언을 쏟아내기보다, 함께 있어 주고, 필요한 일을 돕고, 고통을 과장도 축소도 하지 않는 태도가
+            실제 회복에 큰 힘이 될 때가 많습니다.
+          </p>
+
+          <h4>3) “꾸짖음”은 사람을 향한 공격이 아니라, 문제를 향한 제지다</h4>
+          <p>
+            이 본문에서 ‘꾸짖음’의 대상은 사람이 아니라 <b>열병</b>입니다.
+            정행적으로 번역하면 이렇게 됩니다.
+            “아픈 사람을 탓하지 말고, 그 사람을 해치는 것을 멈추게 하라.”
+            오늘 적용으로는, 환자에게 “정신 차려”가 아니라,
+            환자를 해치는 <b>낙인, 고립, 무관심, 과로 구조</b>를 멈추게 하는 편에 서는 것입니다.
+          </p>
+
+          <h4>4) “수종듦”을 ‘의무 봉사’로 강요하지 않기</h4>
+          <p>
+            여자가 곧 수종들었다는 말을, “은혜 받았으면 당장 봉사해”로 쓰면 본문을 망칩니다.
+            여기서 수종은 ‘빚 갚기’가 아니라, <b>몸과 마음이 돌아왔다</b>는 표지이고,
+            공동체 안으로 <b>다시 연결되었다</b>는 표시입니다.
+            오늘의 정행은, 회복 중인 사람에게 일을 더 얹는 것이 아니라,
+            회복의 리듬에 맞춰 “다시 살아 움직일 수 있도록” 환경을 조정해 주는 쪽에 가깝습니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          돌봄은 ‘공식’이 아니라 ‘거리 줄이기’에서 시작됩니다. 꾸짖음은 사람을 탓하는 게 아니라 문제를 멈추게 하는 것이며, 수종은 의무가 아니라 회복의 표지입니다.
+        </div>
+      </article>
+
+      <!-- 원어 키워드 -->
+      <article class="card">
+        <h3>원어 키워드 정리 (헬라어/그리스어)</h3>
+
+        <p class="muted small">
+          신약 본문이므로 핵심 키워드는 <b>헬라어 lemma(표제어)</b> 기준으로 정리했습니다.
+          “사전 뜻 나열”보다는, 이 본문에서 어떤 역할을 하는지에 초점을 맞추었습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>핵심 단어 표</h4>
+          <div class="kv">
+            <div class="kv-label">συναγωγή</div>
+            <div>
+              <b>synagōgē</b> (회당). 공동체가 모여 성경을 읽고 배우던 중심 공간입니다.
+              이 본문에서는 “공적 자리 → 사적 자리”로 이어지는 출발점입니다.
+              <span class="hint">대표 용례: 눅 4:38(문맥), 눅 4:16</span>
+            </div>
+
+            <div class="kv-label">πυρετός</div>
+            <div>
+              <b>pyretos</b> (열/열병). 병의 핵심 상태를 직접 가리킵니다.
+              누가는 “큰 열”(μέγας)이라고 덧붙여 위기의 심각함을 강조합니다.
+              <span class="hint">대표 용례: 눅 4:38, 행 28:8</span>
+            </div>
+
+            <div class="kv-label">μέγας</div>
+            <div>
+              <b>megas</b> (큰/심한). “중한 열병”의 강도를 나타냅니다.
+              단순 컨디션이 아니라 위험한 상태라는 뉘앙스를 줍니다.
+              <span class="hint">대표 용례: 눅 4:38</span>
+            </div>
+
+            <div class="kv-label">ἐπιστάς</div>
+            <div>
+              <b>epistas</b> (가까이 서서). 돌봄의 자세를 보여 주는 말입니다.
+              “멀리서 지시”가 아니라 “곁에 서서 개입”하는 장면을 만듭니다.
+              <span class="hint">대표 용례: 눅 4:39</span>
+            </div>
+
+            <div class="kv-label">ἐπετίμησεν</div>
+            <div>
+              <b>epetimēsen</b> (꾸짖다/제지하다). 병을 “멈추게” 하는 권위의 표현입니다.
+              핵심은 사람이 아니라 ‘열병’이 대상이라는 점입니다.
+              <span class="hint">대표 용례: 눅 4:39, 눅 4:35</span>
+            </div>
+
+            <div class="kv-label">ἀφῆκεν</div>
+            <div>
+              <b>aphēken</b> (떠나다/놓아주다). 열이 물러났음을 말하는 동사입니다.
+              “개선되었다”가 아니라 “떠나갔다”로 변화의 분명함을 표현합니다.
+              <span class="hint">대표 용례: 눅 4:39</span>
+            </div>
+
+            <div class="kv-label">διηκόνει</div>
+            <div>
+              <b>diēkonei</b> (섬기다/돌보다). 회복이 공동체 돌봄으로 이어짐을 보여 줍니다.
+              이 본문에서는 ‘의무’보다 ‘회복의 표지’로 읽는 것이 안전합니다.
+              <span class="hint">대표 용례: 눅 4:39, 눅 8:3</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h4>짧은 관찰: 단어들이 만드는 흐름</h4>
+          <p>
+            누가는 “회당(συναγωγή) → 집(가정) → 큰 열(πυρετός μέγας) → 가까이 섬(ἐπιστάς) → 제지(ἐπετίμησεν) → 떠남(ἀφῆκεν) → 돌봄(διηκόνει)”의 흐름으로,
+            예수님의 권위가 <b>공적 가르침</b>에서 <b>가정의 고통</b>으로 이어지고,
+            회복이 <b>다시 관계 속으로 움직임</b>으로 나타난다는 점을 강조합니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          회당→집→큰 열→가까이 섬→제지→떠남→돌봄 흐름입니다. 권위가 일상으로 들어오고, 회복이 행동으로 드러납니다.
+        </div>
+      </article>
+
+      <!-- 현대 적용 -->
+      <article class="card">
+        <h3>현대 적용 (개인 · 공동체 · 공적 영역)</h3>
+
+        <p class="note">
+          이 본문을 오늘에 옮길 때 핵심은 “즉시 기적”을 흉내 내는 것이 아니라,
+          예수님이 보여 준 <b>돌봄의 방식</b>과 <b>회복의 표지</b>를 따라가는 것입니다.
+        </p>
+
+        <div class="content-long">
+          <h4>1) 개인 — 내 안의 “열병”을 사람 탓으로 돌리지 않기</h4>
+          <p>
+            몸의 병이든 마음의 병이든, 우리는 아플 때 자기 자신을 탓하기 쉽습니다.
+            그러나 본문에서 예수님의 ‘꾸짖음’은 사람을 향하지 않고, 문제를 향합니다.
+            오늘 우리는 “나는 왜 이 모양이냐” 대신,
+            “나를 해치는 요인이 무엇인지”를 분리해서 보고, 그 요인을 줄이는 작은 결정을 할 수 있습니다.
+            예를 들어 수면 파괴, 과로, 고립, 과도한 비교 같은 ‘열병의 연료’를 끊는 실천이 여기에 해당합니다.
+          </p>
+
+          <h4>2) 공동체 — 아픈 사람을 ‘대상’이 아니라 ‘사람’으로 대하기</h4>
+          <p>
+            공동체는 아픈 사람을 쉽게 “관리해야 할 케이스”로 만들 수 있습니다.
+            하지만 예수님은 “가까이 서서” 돌보십니다.
+            공동체 적용은, 조언과 평가보다 먼저 <b>곁에 서 주는 구조</b>를 만드는 것입니다.
+            병가·배려·역할 조정, 그리고 낙인 없는 분위기가 실제로 사람을 살립니다.
+          </p>
+
+          <h4>3) 공적 영역 — 돌봄을 개인 선의에만 맡기지 않기</h4>
+          <p>
+            심한 병은 집 한 채를 흔들 수 있습니다.
+            그래서 돌봄은 개인 마음씨만으로 해결되지 않습니다.
+            이 본문을 공적으로 읽으면, 사회가 “아픈 사람 곁에 서는” 제도(휴식, 병가, 돌봄 지원, 치료 접근성)를 갖추는 일도
+            신앙의 실천과 무관하지 않습니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          개인은 문제를 분리해 ‘열병의 연료’를 줄이고, 공동체는 평가보다 곁에 서는 구조를 만들며, 사회는 돌봄을 제도로 받쳐야 합니다.
+        </div>
+      </article>
+
+      <!-- 실천 체크리스트 -->
+      <article class="card">
+        <h3>작은 실천 체크리스트 (이번 주 적용)</h3>
+        <ul class="content-long">
+          <li>
+            <b>1. 내 주변의 “중한 열병” 한 가지 찾기</b><br/>
+            지금 누군가를 쓰러뜨리고 있는 문제가 무엇인지(몸의 병, 불안, 과로, 고립)를 한 가지 떠올려 적습니다.
+          </li>
+          <li>
+            <b>2. 조언보다 ‘거리 줄이기’ 1회</b><br/>
+            해결책을 말하기 전에, 곁에 서는 행동(동행, 심부름, 짧은 방문, 메시지)을 한 번 실천합니다.
+          </li>
+          <li>
+            <b>3. “사람 탓” 문장을 “문제 제지” 문장으로 바꾸기</b><br/>
+            “네가 약해서 그래” 대신, “이 상황을 더 악화시키는 것을 멈추자”로 말의 방향을 바꿉니다.
+          </li>
+          <li>
+            <b>4. 회복을 ‘증명’하게 하지 않기</b><br/>
+            회복 중인 사람에게 바로 일을 얹기보다, 회복 리듬을 존중하고 부담을 조정해 줍니다.
+          </li>
+          <li>
+            <b>5. 회복의 작은 표지 하나 만들기</b><br/>
+            오늘 내가 할 수 있는 ‘작은 수종’(돌봄) 하나를 정해 실행합니다. 예: 식사 챙기기, 정리, 연락, 짧은 도움.
+          </li>
+        </ul>
+
+        <p class="muted small">
+          기억할 것: 예수님은 사람을 몰아붙이지 않고, 문제를 멈추게 하셨습니다. 그리고 회복은 말이 아니라 다시 살아 움직이는 행동으로 나타났습니다.
+        </p>
+      </article>
+
+      <!-- 마지막 3–4문장 핵심 요약 -->
+      <article class="card">
+        <h3>마지막 3–4문장 핵심 요약</h3>
+        <p class="content-long">
+          누가복음 4:38–39는 예수님의 권위가 회당의 가르침에서 끝나지 않고, <b>가정의 고통</b> 속으로 들어온다는 것을 보여 줍니다.
+          예수님은 환자를 탓하지 않고, 환자를 괴롭히는 <b>열병을 멈추게</b> 하셨습니다.
+          그리고 회복은 감정의 선언이 아니라, 여인이 다시 일어나 공동체를 <b>돌보는 행동</b>으로 드러났습니다.
+          오늘 우리에게 남는 초대는 이것입니다. “나는 누군가의 고통 앞에서, 멀리서 평가할 것인가, 가까이 서서 함께 돌볼 것인가?”
+        </p>
+      </article>
+
+      <!-- 푸터 -->
+      <article class="card" style="text-align:center; opacity:0.85;">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.<br/>
+          상단 <b>공유</b> 버튼으로 링크를 나누고,
+          하단 <b>요약 모드</b>로 소그룹 나눔에도 활용해 보세요.<br/>
+          동일한 레이아웃으로 다른 본문도
+          <b>정론 · 정행 · 현대 적용</b> 관점에서 계속 확장할 수 있습니다.
+        </p>
+      </article>
+
+    </section>
+
+
+  </main>
+
+  <div class="bar" aria-label="도움말 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 펼치기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '누가복음 4:38–39 정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\n' + location.href);
+        }
+      });
+    }
+
+    // 다크/일반 테마 토글 (localStorage 저장)
+    const themeBtn = document.getElementById('btnTheme');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    function getSystemTheme() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (themeIcon && themeLabel) {
+        if (theme === 'light') {
+          themeIcon.textContent = '☀️';
+          themeLabel.textContent = '일반';
+        } else {
+          themeIcon.textContent = '🌙';
+          themeLabel.textContent = '다크';
+        }
+      }
+    }
+
+    // Init theme: stored -> system (unique key for this page)
+    const storedTheme = localStorage.getItem('lk04_38_39_theme');
+    const initialTheme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : getSystemTheme();
+    applyTheme(initialTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('lk04_38_39_theme', next);
+        applyTheme(next);
+      });
+    }
+
+    // If user hasn't set a theme, follow system changes live
+    if (!storedTheme && window.matchMedia) {
+      const mq = window.matchMedia('(prefers-color-scheme: light)');
+      const handler = () => applyTheme(getSystemTheme());
+      if (mq.addEventListener) mq.addEventListener('change', handler);
+      else if (mq.addListener) mq.addListener(handler);
+    }
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    // 전체 펼치기/접기 (details)
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
