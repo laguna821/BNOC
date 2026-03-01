@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>누가복음 5:1–11 — 정론·정행·현대 적용</title>
+  <meta name="date" content="2026-03-01" />
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.72);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.42);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #fbbf24;
+      --tag-hebrew-text: #fed7aa;
+
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-serif: "Merriweather", "Times New Roman", serif;
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-body: #f8fafc;
+        --bg-body-rgb: 248, 250, 252;
+        --bg-gradient-start: #f1f5f9;
+        --bg-gradient-start-rgb: 241, 245, 249;
+        --bg-gradient-end: #e2e8f0;
+        --bg-gradient-end-rgb: 226, 232, 240;
+
+        --card-bg: rgba(255, 255, 255, 0.88);
+        --card-border: rgba(0, 0, 0, 0.07);
+        --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --text-highlight: #0f172a;
+
+        --accent-primary: #059669;
+        --accent-secondary: #b45309;
+        --accent-glow: rgba(5, 150, 105, 0.10);
+
+        --tag-greek-bg: rgba(37, 99, 235, 0.12);
+        --tag-greek-border: rgba(37, 99, 235, 0.55);
+        --tag-greek-text: #1e3a8a;
+      }
+    }
+
+    html[data-theme="dark"] {
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.72);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.42);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+    }
+
+    html[data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-body-rgb: 248, 250, 252;
+      --bg-gradient-start: #f1f5f9;
+      --bg-gradient-start-rgb: 241, 245, 249;
+      --bg-gradient-end: #e2e8f0;
+      --bg-gradient-end-rgb: 226, 232, 240;
+
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-highlight: #0f172a;
+
+      --accent-primary: #059669;
+      --accent-secondary: #b45309;
+      --accent-glow: rgba(5, 150, 105, 0.10);
+
+      --tag-greek-bg: rgba(37, 99, 235, 0.12);
+      --tag-greek-border: rgba(37, 99, 235, 0.55);
+      --tag-greek-text: #1e3a8a;
+    }
+
+    html{
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      background-color: var(--bg-body);
+      min-height: 100%;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { margin: 0; padding: 0; min-height: 100%; }
+    body { margin: 0; padding: 0; min-height: 100vh; }
+
+    body {
+      font-family: var(--font-sans);
+      background: transparent;
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding-bottom: 140px;
+    }
+
+    h1, h2, h3, h4 { margin: 0; color: var(--text-highlight); }
+    h1, h2 { font-family: var(--font-serif); }
+
+    .h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin: 16px 0 12px;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .sub b { color: var(--text-main); font-weight: 650; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(var(--bg-body-rgb), 0.82);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      gap: 12px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.32);
+      position: relative;
+      flex: 0 0 auto;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .title-group { display: flex; flex-direction: column; min-width: 0; }
+    .title { font-weight: 800; font-size: 15px; letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 550; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .controls { display: flex; gap: 10px; align-items: center; flex: 0 0 auto; }
+    #btnTheme, #btnShare { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    #btnTheme { min-width: 92px; }
+    #btnShare { min-width: 72px; }
+
+    .btn {
+      appearance: none;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 14px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-weight: 650;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { background: rgba(255,255,255,0.10); transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.32);
+    }
+    .btn.primary:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.42); }
+
+    main { padding: 10px 14px; }
+
+    .fulltext { margin-bottom: 22px; animation: fadeUp 0.6s ease-out; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    details[open] {
+      background: rgba(var(--bg-body-rgb), 0.42);
+      border-color: var(--accent-primary);
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--text-highlight);
+      user-select: none;
+      transition: background 0.2s;
+      gap: 12px;
+    }
+    summary:hover { background: rgba(255,255,255,0.03); }
+    summary::-webkit-details-marker { display: none; }
+
+    .chev {
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.10);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      flex: 0 0 auto;
+    }
+    details[open] .chev { transform: rotate(90deg); background: var(--accent-primary); color: #fff; }
+
+    .content.scripture {
+      padding: 10px 20px 22px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.95;
+      color: var(--text-main);
+      background: rgba(0,0,0,0.18);
+    }
+    .scripture p { margin: 12px 0; }
+    .v {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--accent-primary);
+      margin-right: 6px;
+      vertical-align: 1px;
+      opacity: 0.95;
+    }
+
+    .hero { padding: 6px 4px 22px; animation: fadeUp 0.7s ease-out; }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 8px;
+    }
+    .pill span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 7px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    .pill span.greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+    .grid { display: grid; gap: 16px; animation: fadeUp 0.85s ease-out; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.20), transparent);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+
+    .card h4 {
+      font-size: 13px;
+      font-weight: 850;
+      color: var(--accent-secondary);
+      margin: 18px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card b { color: var(--text-main); font-weight: 700; }
+    .card ul { margin: 10px 0; padding-left: 20px; }
+    .card li { margin-bottom: 8px; }
+
+    .note {
+      margin: 14px 0;
+      padding: 14px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.09);
+      border: 1px solid rgba(16, 185, 129, 0.22);
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 12px;
+    }
+
+    .kv {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 8px 14px;
+      font-size: 14px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.18);
+      padding: 12px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .kv div { padding: 4px 0; }
+    .kv-label {
+      color: var(--accent-secondary);
+      font-weight: 900;
+      font-family: var(--font-serif);
+      border-right: 1px solid var(--card-border);
+      padding-right: 10px;
+    }
+
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body { display: none; }
+
+    .hint-compressed {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    body.summary-mode .hint-compressed { display: block; }
+
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      background-color: rgba(var(--bg-body-rgb), 0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 14px max(12px, env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.20);
+    }
+    .bar-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+    .bar-inner .btn { flex: 1; padding: 12px; font-size: 14px; }
+
+    .divider { height: 1px; background: var(--card-border); margin: 22px 0; }
+    .muted.small { font-size: 12px; opacity: 0.75; text-align: center; display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-group">
+          <div class="title">누가복음 5:1–11</div>
+          <div class="subtitle">정론 · 정행 · 현대 적용 가이드 (일반 성도용)</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnTheme" aria-label="다크/일반 모드 전환">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">다크</span>
+        </button>
+        <button class="btn" id="btnShare" aria-label="공유하기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+          </svg>
+          공유
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- 본문 전체 -->
+    <section class="fulltext" aria-label="누가복음 5:1–11 본문">
+      <details open>
+        <summary>📜 본문 읽기 (눅 5:1–11) <span class="chev">›</span></summary>
+        <div class="content scripture">
+          <p><span class="v">1</span> 무리가 몰려와서 하나님의 말씀을 들을새 예수는 <b>게네사렛 호숫가</b>에 서서</p>
+          <p><span class="v">2</span> 호숫가에 <b>배 두 척</b>이 있는 것을 보시니 어부들은 배에서 나와서 <b>그물을 씻는지라</b></p>
+          <p><span class="v">3</span> 예수께서 한 배에 오르시니 그 배는 <b>시몬의 배</b>라 육지에서 조금 떼기를 청하시고 앉으사 배에서 무리를 가르치시더니</p>
+          <p><span class="v">4</span> 말씀을 마치시고 시몬에게 이르시되 <b>깊은 데로 가서</b> 그물을 내려 고기를 잡으라</p>
+          <p><span class="v">5</span> 시몬이 대답하여 이르되 선생님 우리들이 밤이 새도록 수고하였으되 잡은 것이 없지마는 <b>말씀에 의지하여</b> 내가 그물을 내리리이다 하고</p>
+          <p><span class="v">6</span> 그렇게 하니 고기를 잡은 것이 심히 많아 <b>그물이 찢어지는지라</b></p>
+          <p><span class="v">7</span> 이에 다른 배에 있는 동무들에게 손짓하여 와서 도와 달라 하니 그들이 와서 <b>두 배에 채우매 잠기게</b> 되었더라</p>
+          <p><span class="v">8</span> 시몬 베드로가 이를 보고 예수의 무릎 아래에 엎드려 이르되 <b>주여</b> 나를 떠나소서 나는 <b>죄인이로소이다</b> 하니</p>
+          <p><span class="v">9</span> 이는 자기 및 자기와 함께 있는 모든 사람이 고기 잡힌 것으로 말미암아 <b>놀라고</b></p>
+          <p><span class="v">10</span> 세베대의 아들로서 시몬의 동업자인 야고보와 요한도 놀랐음이라 예수께서 시몬에게 이르시되 <b>무서워하지 말라</b> 이제 후로는 네가 사람을 <b>취하리라</b> 하시니</p>
+          <p><span class="v">11</span> 그들이 배들을 육지에 대고 <b>모든 것을 버려 두고</b> 예수를 따르니라</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="pill">
+        <span class="greek">λίμνη (limnē)</span>
+        <span class="greek">δίκτυα (diktya)</span>
+        <span class="greek">ῥῆμα (rhēma)</span>
+        <span class="greek">κύριε (kyrie)</span>
+        <span class="greek">ἁμαρτωλός (hamartōlos)</span>
+        <span class="greek">θάμβος (thambos)</span>
+        <span class="greek">ζωγρέω (zōgreō)</span>
+      </div>
+
+      <h1 class="h1">“말씀에 의지하여 그물을 내리리이다” —
+        실패한 어부의 하루가 ‘부르심’으로 바뀌는 장면</h1>
+
+      <p class="sub">
+        누가복음 5:1–11은 예수님이 <b>갈릴리(게네사렛) 호숫가</b>에서 <b>시몬(베드로)</b>을 부르시는 이야기입니다.
+        이 본문은 “큰 기적”을 자랑하려는 장면이 아니라, <b>일상 노동</b> 속에서 한 사람이 “내가 주인인 삶”을 내려놓고
+        <b>예수님의 방향</b>으로 인생의 우선순위를 바꾸는 장면입니다.
+        그래서 이 본문을 이해하려면, 그 시대 <b>어업(생계)</b>, <b>밤샘 노동</b>, <b>협업 구조</b> 같은 현실을 먼저 그려 보는 것이 중요합니다.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="해설 섹션">
+
+      <!-- 아주 짧은 도입 -->
+      <article class="card">
+        <h3>0) 아주 짧은 도입 (2–3문장)</h3>
+        <p>
+          이 장면은 예수님이 갈릴리에서 말씀을 전하시던 시기에, 사람들이 몰려와 “하나님의 말씀”을 듣는 가운데 일어납니다.
+          예수님은 시몬의 배를 잠깐 빌려 “물 위의 강단”처럼 쓰신 뒤, 실패한 어부에게 다시 그물을 내리라고 말씀하십니다.
+          이 사건은 “고기”보다 “사람”을 중심에 두며, 제자도(따름)의 시작을 아주 현실적인 삶의 자리에서 보여 줍니다.
+        </p>
+        <div class="hint">
+          이 이야기는 “성공하면 하나님이 쓰신다”가 아니라, “실패와 지침 속에서도 하나님이 부르신다”로 읽어야 중심이 흔들리지 않습니다.
+        </div>
+      </article>
+
+      <!-- 한눈 요약 -->
+      <article class="card">
+        <h3>1) 한눈 요약 (3–4문장)</h3>
+        <p class="content-long">
+          <b>1)</b> 예수님이 호숫가에서 무리를 가르치시기 위해, 시몬의 배를 육지에서 조금 떼어 앉아 말씀하십니다.<br/>
+          <b>2)</b> 밤새 고기를 못 잡고 그물을 씻던 시몬에게 예수님은 “깊은 데로 가서 그물을 내리라”라고 말씀하십니다.<br/>
+          <b>3)</b> 시몬은 “잡은 것이 없지만 말씀에 의지하여” 그물을 내리고, 그물이 찢어질 만큼 큰 수확이 생깁니다.<br/>
+          <b>4)</b> 시몬은 예수 앞에서 죄인임을 고백하고, 예수님은 “무서워 말라, 이제부터 사람을 취하리라”라고 부르시며, 그들은 예수를 따릅니다.
+        </p>
+        <div class="hint-compressed">
+          배 위에서 말씀을 가르치신 예수님이 실패한 어부에게 다시 그물을 내리게 하시고, 그 사건을 통해 제자도의 시작을 선명하게 만드십니다.
+        </div>
+      </article>
+
+      <!-- 역사·지리·배경 -->
+      <article class="card">
+        <h3>2) 역사 · 지리 · 배경</h3>
+
+        <div class="content-long">
+          <h4>2-1) “게네사렛 호수”는 생계가 걸린 현장이었다</h4>
+          <p>
+            게네사렛 호수는 흔히 “갈릴리 바다”라고도 불리는, 갈릴리 지역의 큰 담수 호수입니다.
+            호숫가에는 마을들이 모여 있고, 어업은 가족의 생계를 떠받치는 중요한 산업이었습니다.
+            그러므로 배와 그물은 ‘소품’이 아니라, 그 집의 <b>먹고사는 기반</b>이었습니다.
+          </p>
+
+          <h4>2-2) “그물을 씻는 장면”은 ‘오늘 장사는 끝났다’는 표시다</h4>
+          <p>
+            본문 2절의 “그물을 씻는” 모습은, 단순한 위생이 아니라 <b>정리와 수선</b>의 단계입니다.
+            밤샘 조업을 마치고 그물을 씻고 손질한 뒤, 다음 날을 준비하는 루틴이었습니다.
+            즉 이때 시몬은 “오늘은 실패했다”는 현실 속에 있었고, 예수님의 말은 그 실패 한가운데로 들어옵니다.
+          </p>
+
+          <h4>2-3) “깊은 데”는 단순한 위치가 아니라, 위험과 비용이 있는 선택이다</h4>
+          <p>
+            4절의 “깊은 데로 가라”는 말은, 피곤한 어부에게 다시 움직이라는 말입니다.
+            물리적으로는 더 멀리 나가야 하고, 심리적으로는 “또 실패하면 어떡하나”라는 부담도 커집니다.
+            그래서 5절의 “말씀에 의지하여”는 감정이 아니라, <b>비용을 감수한 행동의 선택</b>에 가깝습니다.
+          </p>
+
+          <h4>2-4) “두 배에 채우매 잠기게”는 협업 구조와 현실감을 보여 준다</h4>
+          <p>
+            7절에서 시몬은 다른 배 동무를 부릅니다.
+            이것은 당시 어업이 <b>협업(동업)</b>을 기반으로 했다는 것을 보여 주고, 또한 큰 수확은 “혼자 다 처리하는 성공”이 아니라
+            “함께 감당해야 하는 사건”으로 나타난다는 점을 강조합니다.
+          </p>
+
+          <h4>2-5) 배 위에서 가르치신 이유는 매우 실용적이다</h4>
+          <p>
+            3절에서 예수님은 배를 육지에서 조금 떼게 하시고 앉아 가르치십니다.
+            물가에서는 사람들이 밀려들기 쉬운데, 배는 자연스럽게 거리를 만들어 주고, 목소리가 퍼지기에 더 유리할 수 있습니다.
+            즉 이 장면은 “기적 전에 이미” 예수님의 사역이 <b>현장 감각</b>을 가지고 있음을 보여 줍니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          호수는 생계 현장이었고, 그물 씻기는 “오늘 실패”의 정리 단계였습니다. 깊은 데로 가는 것은 비용이 있는 선택이며, 큰 수확은 협업을 요청합니다.
+        </div>
+      </article>
+
+      <!-- 정론(orthodoxy) -->
+      <article class="card">
+        <h3>3) ① 정론(Orthodoxy): 전통적으로 무엇을 믿어 왔나</h3>
+
+        <p class="note">
+          정론(교리적 읽기)은 이 본문을 “예수님의 권위”와 “제자도(부르심)”의 본문으로 읽어 왔습니다.
+          핵심은 물고기 수가 아니라, 시몬이 예수님을 <b>주(κύριος)</b>로 인식하고 자신의 삶을 다시 배치하는 데에 있습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>3-1) 예수님의 권위는 ‘말씀’과 ‘현실’ 둘 다에 닿는다</h4>
+          <p>
+            예수님은 먼저 말씀으로 무리를 가르치시고(1–3절), 그 다음 현실의 생계 문제 속에서 시몬을 만나십니다(4–7절).
+            전통적으로 교회는 이 구조를 통해, 예수님의 권위가 “종교적 말”에만 머무르지 않고
+            삶의 현장에도 실제로 닿는다고 고백해 왔습니다.
+          </p>
+
+          <h4>3-2) 베드로의 ‘죄인 고백’은 도덕 점수보다 ‘거룩함의 충격’이다</h4>
+          <p>
+            8절에서 시몬은 “주여 나를 떠나소서, 나는 죄인입니다”라고 고백합니다.
+            전통적 해석은 이것을 단순한 자기비하로 보지 않고, 예수님의 임재 앞에서
+            자신의 한계와 불순함이 드러나는 <b>거룩함의 충격</b>으로 이해해 왔습니다.
+          </p>
+
+          <h4>3-3) “무서워하지 말라”는 죄책감이 부르심을 막지 못하게 하는 말씀이다</h4>
+          <p>
+            예수님은 시몬이 무너진 자리에서, 두려움과 죄책감으로 그를 눌러버리지 않고 “무서워하지 말라”고 하십니다(10절).
+            이것은 하나님이 사람을 쓰실 때, 그 사람을 완벽하게 만들고 쓰시는 것이 아니라
+            <b>부르심 속에서 사람을 빚어 가신다</b>는 복음의 논리를 보여 줍니다.
+          </p>
+
+          <h4>3-4) “사람을 취하리라”는 폭력적 포획이 아니라 ‘살려 붙드는’ 전환이다</h4>
+          <p>
+            10절의 “취하다”는 표현은 헬라어로 <b>ζωγρέω</b>(zōgreō) 계열로 이해되며,
+            문맥상 “살려서 붙잡다”에 가까운 뉘앙스를 가질 수 있습니다.
+            전통적으로는 이것을 선교와 제자훈련의 부르심으로 읽어 왔지만,
+            그 방향은 사람을 이용하는 것이 아니라 사람을 <b>살아나게</b> 하는 방향이어야 합니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          예수님의 권위는 말씀과 현실 모두에 닿고, 베드로의 고백은 거룩함의 충격입니다. “무서워 말라”는 죄책감이 부르심을 막지 못하게 하며, “사람을 취함”은 사람을 살리는 방향의 전환입니다.
+        </div>
+      </article>
+
+      <!-- 정행(orthopraxy) -->
+      <article class="card">
+        <h3>4) ② 정행(Orthopraxy): “그래서 어떻게 살아야 하나?”로 읽기</h3>
+
+        <p class="note">
+          정행(실천) 관점에서 이 본문은 “기적 감상”이 아니라, <b>실패 이후의 다음 행동</b>과
+          <b>성과 이후의 겸손</b>, 그리고 <b>사람을 살리는 방향 전환</b>을 훈련시키는 이야기입니다.
+        </p>
+
+        <div class="content-long">
+          <h4>4-1) “말씀에 의지하여”는 ‘기분’이 아니라 ‘다시 해보는 행동’이다</h4>
+          <p>
+            시몬은 전문가이고, 밤샘 조업의 현실도 압니다.
+            그런데 그는 “말씀에 의지하여” 그물을 다시 내립니다(5절).
+            정행적으로 이것은, 내가 확신이 없더라도 <b>옳은 방향의 작은 행동</b>을 선택하는 훈련입니다.
+            믿음은 종종 “감정의 확신”보다 “다음 행동”에서 먼저 드러납니다.
+          </p>
+
+          <h4>4-2) 큰 수확은 ‘내가 옳았다’가 아니라 ‘내가 누구인지 보게 하는 자리’다</h4>
+          <p>
+            수확이 나면 보통 사람은 우쭐해지기 쉽습니다.
+            그런데 시몬은 오히려 무너지고, 자신의 죄성을 고백합니다(8절).
+            정행적으로는 이것이 매우 중요한 안전장치입니다.
+            성과가 나올수록 사람은 “자기 의로움”에 취하기 쉬운데, 본문은 성과의 순간을
+            <b>정체성 재정렬</b>의 순간으로 바꿉니다.
+          </p>
+
+          <h4>4-3) “다른 배를 부른다”는 풍성함을 공동체로 흘려보내는 습관이다</h4>
+          <p>
+            7절은 단순한 도움 요청이 아니라, 풍성함을 혼자 독점하지 않는 장면입니다.
+            정행적으로는 “좋은 날일수록 함께 나누고 함께 감당하는 구조”가 필요하다는 뜻입니다.
+            배가 잠길 정도의 풍성함은, 공동체 없이 감당하려 하면 오히려 위험해집니다.
+          </p>
+
+          <h4>4-4) “모든 것을 버려두고”는 우선순위의 왕좌를 바꾸는 일이다</h4>
+          <p>
+            11절을 모든 사람에게 “직업을 당장 그만두라”로 적용하면 무리가 생깁니다.
+            더 정확한 정행은, 내가 붙들고 있던 <b>주인 자리</b>(돈, 불안, 자존심, 통제 욕구)를 내려놓고,
+            예수님의 방향을 삶의 <b>우선순위 1번</b>에 두는 전환입니다.
+            어떤 사람은 직업이 바뀌고, 어떤 사람은 직업은 유지하되 삶의 구조가 바뀝니다.
+          </p>
+
+          <h4>4-5) “사람을 취한다”는 오늘의 말로 “사람을 살리겠다”는 선택이다</h4>
+          <p>
+            본문을 잘못 쓰면 “사람을 내 편으로 끌어오라”가 됩니다.
+            그러나 예수님의 부르심은 사람을 도구로 삼는 방식이 아니라,
+            사람을 살려 붙드는 방향입니다.
+            오늘의 실천은, 내가 누군가를 대할 때 그 사람이 더 살아나는지,
+            아니면 내 성과의 재료가 되는지 점검하는 것에서 시작합니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          믿음은 실패 후의 ‘다음 행동’으로 드러나고, 성과는 우쭐함이 아니라 정체성 재정렬을 부릅니다. 풍성함은 공동체로 흘러가야 하며, “버려두고 따름”은 우선순위의 왕좌를 바꾸는 전환입니다.
+        </div>
+      </article>
+
+      <!-- 원어 키워드 -->
+      <article class="card">
+        <h3>5) 원어 키워드 정리 (헬라어/그리스어)</h3>
+
+        <p class="muted small">
+          신약 본문이므로 핵심 키워드는 <b>헬라어 lemma(표제어)</b> 기준으로 정리했습니다.
+          단어의 “사전 뜻”을 늘어놓기보다, 이 본문에서 어떤 역할을 하는지에 초점을 맞추었습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>핵심 단어</h4>
+          <div class="kv">
+            <div class="kv-label">λίμνη</div>
+            <div>
+              <b>limnē</b> (호수). 삶의 현장 자체를 뜻합니다.
+              이 본문은 종교 공간이 아니라 <b>생업의 공간</b>에서 부르심이 시작된다는 그림을 만듭니다.
+              <span class="hint">대표 용례: 눅 5:1</span>
+            </div>
+
+            <div class="kv-label">δίκτυα</div>
+            <div>
+              <b>diktya</b> (그물). 생계의 도구이면서, “다시 내리는 행동”의 상징입니다.
+              실패한 날에도 다시 손에 쥐는 것이 그물입니다.
+              <span class="hint">대표 용례: 눅 5:2, 5:4–6</span>
+            </div>
+
+            <div class="kv-label">ῥῆμα</div>
+            <div>
+              <b>rhēma</b> (말씀/발화). “말씀에 의지하여”의 근거가 되는 말입니다.
+              여기서 말씀은 정보가 아니라 <b>행동을 낳는 근거</b>로 작동합니다.
+              <span class="hint">대표 용례: 눅 5:5(문맥)</span>
+            </div>
+
+            <div class="kv-label">κύριε</div>
+            <div>
+              <b>kyrie</b> (주여). 시몬의 입에서 “예수님을 어떻게 인식하게 되었는가”를 드러냅니다.
+              기적은 단순한 감탄을 넘어, 관계의 호칭을 바꾸는 데까지 갑니다.
+              <span class="hint">대표 용례: 눅 5:8</span>
+            </div>
+
+            <div class="kv-label">ἁμαρτωλός</div>
+            <div>
+              <b>hamartōlos</b> (죄인). “과녁을 빗나간 사람”이라는 뉘앙스를 담습니다.
+              본문에서는 자학이 아니라, 거룩함 앞에서 <b>자기 실체를 아는 고백</b>으로 기능합니다.
+              <span class="hint">대표 용례: 눅 5:8</span>
+            </div>
+
+            <div class="kv-label">θάμβος</div>
+            <div>
+              <b>thambos</b> (놀람/충격). 단순한 ‘신기함’이 아니라, 존재가 흔들릴 정도의 반응을 가리킵니다.
+              본문은 기적을 소비하지 말고, 그 충격이 <b>방향 전환</b>으로 이어지게 합니다.
+              <span class="hint">대표 용례: 눅 5:9–10(문맥)</span>
+            </div>
+
+            <div class="kv-label">ζωγρέω</div>
+            <div>
+              <b>zōgreō</b> (사로잡아 살리다). “사람을 취하리라”의 핵심 동사 계열입니다.
+              사람을 수단으로 쓰는 포획이 아니라, 사람을 <b>살려 붙드는</b> 방향을 암시합니다.
+              <span class="hint">대표 용례: 눅 5:10</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h4>짧은 관찰: 단어들이 만드는 흐름</h4>
+          <p>
+            누가는 “호수(λίμνη) → 그물(δίκτυα) → 말씀(ῥῆμα) → 충격(θάμβος) → 주(κύριε) → 죄인 고백(ἁμαρτωλός) → 사람을 살리는 부르심(ζωγρέω)”의 흐름으로,
+            예수님의 임재가 <b>현장</b>을 통과해 <b>정체성</b>과 <b>사명</b>을 바꾸는 과정을 보여 줍니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          호수→그물→말씀→충격→주여→죄인 고백→사명 전환의 흐름입니다. 말씀은 행동을 낳고, 충격은 방향 전환을 낳습니다.
+        </div>
+      </article>
+
+      <!-- 현대 적용 -->
+      <article class="card">
+        <h3>6) 현대 적용 (개인 · 공동체 · 공적 영역)</h3>
+
+        <p class="note">
+          이 본문을 오늘에 옮길 때 핵심은 “큰 기적을 요구하라”가 아니라,
+          실패와 성과의 순간에 <b>우선순위</b>를 어떻게 재정렬할지에 있습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>6-1) 개인 — 실패한 날에도 ‘다음 행동’을 선택하기</h4>
+          <p>
+            우리는 실패하면 포기하거나, 반대로 무리하게 몰아붙이기 쉽습니다.
+            그런데 시몬은 “말씀에 의지하여”라는 근거 하나로, 다시 그물을 내립니다.
+            오늘의 적용은 “감정이 좋아지면 하겠다”가 아니라,
+            내가 할 수 있는 <b>작은 다음 행동</b>을 정해 실천하는 것입니다.
+            예를 들어, 관계가 깨졌다면 짧은 메시지 한 줄, 공부가 밀렸다면 15분만 시작하기 같은 선택이 여기에 해당합니다.
+          </p>
+
+          <h4>6-2) 공동체 — 풍성함이 생길수록 ‘동무’를 부르는 문화 만들기</h4>
+          <p>
+            교회든 직장이든, 일이 잘될수록 경쟁과 독점이 생기기 쉽습니다.
+            본문은 반대로 갑니다. 넘치면 동무를 부릅니다.
+            그래서 공동체 적용은 “성과를 개인 영웅담으로 만들지 않고”
+            <b>함께 채우고 함께 감당하는 구조</b>를 만드는 것입니다.
+          </p>
+
+          <h4>6-3) 공적 영역 — 사람을 ‘성과의 재료’가 아니라 ‘살릴 대상’으로 보기</h4>
+          <p>
+            “사람을 취한다”는 말을 오늘의 리더십으로 옮기면, “사람을 끌어와서 내 편을 만들라”가 될 위험이 있습니다.
+            그러나 본문의 방향은 사람을 살려 붙드는 방향입니다.
+            교육, 상담, 조직 운영에서 우리는 “사람이 더 살아나는 선택”을 우선해야 합니다.
+            한 사람의 존엄을 살리는 방식이 결국 공동체 전체를 살리는 길이 됩니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          개인은 실패 후 ‘다음 행동’을 선택하고, 공동체는 성과일수록 협업과 나눔을 강화하며, 사회는 사람을 성과의 재료가 아니라 살릴 대상으로 바라보아야 합니다.
+        </div>
+      </article>
+
+      <!-- 실천 체크리스트 -->
+      <article class="card">
+        <h3>7) 작은 실천 체크리스트 (이번 주 적용)</h3>
+        <ul class="content-long">
+          <li><b>1.</b> “내가 밤새 수고했는데도 안 된 일”을 하나 적고, 그 일에 대해 <b>다음 행동 1개</b>를 정해 실천합니다.</li>
+          <li><b>2.</b> “내 계산은 맞지만 마음은 꺾인” 영역에서, 예수님의 말처럼 <b>한 번 더 깊은 데로</b> 가는 작은 선택을 해 봅니다.</li>
+          <li><b>3.</b> 성과가 생겼을 때 “내가 잘났다”가 아니라 “내가 누구인지”를 점검하는 <b>겸손 질문 1개</b>를 적어 봅니다.</li>
+          <li><b>4.</b> 혼자서 다 하려는 습관을 내려놓고, 7절처럼 <b>도움을 요청할 사람 1명</b>에게 실제로 손짓합니다.</li>
+          <li><b>5.</b> 이번 주에 만나는 사람들 중 한 명을 떠올리며, 그 사람이 “더 살아나게” 하는 말과 행동을 <b>한 번</b> 선택합니다.</li>
+        </ul>
+
+        <p class="muted small">
+          기억할 것: 본문의 핵심은 “고기”가 아니라 “사람”입니다. 예수님은 우리의 실패와 성과를 통해, 삶의 왕좌(우선순위)를 바꾸라고 부르십니다.
+        </p>
+      </article>
+
+      <!-- 마지막 3–4문장 핵심 요약 -->
+      <article class="card">
+        <h3>8) 마지막 3–4문장 핵심 요약</h3>
+        <p class="content-long">
+          누가복음 5:1–11은 예수님이 갈릴리 호숫가의 일상 노동 한가운데에서 시몬을 부르시는 이야기입니다.
+          “말씀에 의지하여” 다시 그물을 내린 작은 순종이, 한 사람의 인생 방향을 바꾸는 출발점이 됩니다.
+          베드로의 죄인 고백과 예수님의 “무서워하지 말라”는 말씀은, 죄책감이 부르심을 막지 못하게 합니다.
+          그리고 “사람을 취하리라”는 말은 사람을 이용하는 포획이 아니라, 사람을 살려 붙드는 삶으로의 전환입니다.
+        </p>
+      </article>
+
+      <!-- 푸터 -->
+      <article class="card" style="text-align:center; opacity:0.88;">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.<br/>
+          상단 <b>공유</b> 버튼으로 링크를 나누고,
+          하단 <b>요약 모드</b>로 소그룹 나눔에도 활용해 보세요.<br/>
+          동일한 레이아웃으로 다른 본문도
+          <b>정론 · 정행 · 현대 적용</b> 관점에서 계속 확장할 수 있습니다.
+        </p>
+      </article>
+
+    </section>
+  </main>
+
+  <div class="bar" aria-label="하단 도구 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 접기</button>
+    </div>
+  </div>
+
+  <script>
+    // 공유
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '누가복음 5:1–11 정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\\n' + location.href);
+        }
+      });
+    }
+
+    // 다크/일반 테마 토글 (localStorage 저장)
+    const themeBtn = document.getElementById('btnTheme');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    function getSystemTheme() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (themeIcon && themeLabel) {
+        if (theme === 'light') {
+          themeIcon.textContent = '☀️';
+          themeLabel.textContent = '일반';
+        } else {
+          themeIcon.textContent = '🌙';
+          themeLabel.textContent = '다크';
+        }
+      }
+    }
+
+    // Init theme: stored -> system (unique key for this page)
+    const storedTheme = localStorage.getItem('lk05_01_11_theme');
+    const initialTheme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : getSystemTheme();
+    applyTheme(initialTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('lk05_01_11_theme', next);
+        applyTheme(next);
+      });
+    }
+
+    // If user hasn't set a theme, follow system changes live
+    if (!storedTheme && window.matchMedia) {
+      const mq = window.matchMedia('(prefers-color-scheme: light)');
+      const handler = () => applyTheme(getSystemTheme());
+      if (mq.addEventListener) mq.addEventListener('change', handler);
+      else if (mq.addListener) mq.addListener(handler);
+    }
+
+    // 요약 모드 토글
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    // 전체 펼치기/접기 (details)
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
