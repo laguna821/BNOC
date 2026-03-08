@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>누가복음 5:12–16 — 정론·정행·현대 적용</title>
+  <meta name="date" content="2026-03-08" />
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.72);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.42);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #fbbf24;
+      --tag-hebrew-text: #fed7aa;
+
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-serif: "Merriweather", "Times New Roman", serif;
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-body: #f8fafc;
+        --bg-body-rgb: 248, 250, 252;
+        --bg-gradient-start: #f1f5f9;
+        --bg-gradient-start-rgb: 241, 245, 249;
+        --bg-gradient-end: #e2e8f0;
+        --bg-gradient-end-rgb: 226, 232, 240;
+
+        --card-bg: rgba(255, 255, 255, 0.88);
+        --card-border: rgba(0, 0, 0, 0.07);
+        --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --text-highlight: #0f172a;
+
+        --accent-primary: #059669;
+        --accent-secondary: #b45309;
+        --accent-glow: rgba(5, 150, 105, 0.10);
+
+        --tag-greek-bg: rgba(37, 99, 235, 0.12);
+        --tag-greek-border: rgba(37, 99, 235, 0.55);
+        --tag-greek-text: #1e3a8a;
+      }
+    }
+
+    html[data-theme="dark"] {
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.72);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.42);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+    }
+
+    html[data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-body-rgb: 248, 250, 252;
+      --bg-gradient-start: #f1f5f9;
+      --bg-gradient-start-rgb: 241, 245, 249;
+      --bg-gradient-end: #e2e8f0;
+      --bg-gradient-end-rgb: 226, 232, 240;
+
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-highlight: #0f172a;
+
+      --accent-primary: #059669;
+      --accent-secondary: #b45309;
+      --accent-glow: rgba(5, 150, 105, 0.10);
+
+      --tag-greek-bg: rgba(37, 99, 235, 0.12);
+      --tag-greek-border: rgba(37, 99, 235, 0.55);
+      --tag-greek-text: #1e3a8a;
+    }
+
+    html{
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      background-color: var(--bg-body);
+      min-height: 100%;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { margin: 0; padding: 0; min-height: 100%; }
+    body { margin: 0; padding: 0; min-height: 100vh; }
+
+    body {
+      font-family: var(--font-sans);
+      background: transparent;
+      color: var(--text-main);
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding-bottom: 140px;
+    }
+
+    h1, h2, h3, h4 { margin: 0; color: var(--text-highlight); }
+    h1, h2 { font-family: var(--font-serif); }
+
+    .h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.35;
+      margin: 16px 0 12px;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .sub b { color: var(--text-main); font-weight: 650; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(var(--bg-body-rgb), 0.82);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      gap: 12px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.32);
+      position: relative;
+      flex: 0 0 auto;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .title-group { display: flex; flex-direction: column; min-width: 0; }
+    .title { font-weight: 800; font-size: 15px; letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 550; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .controls { display: flex; gap: 10px; align-items: center; flex: 0 0 auto; }
+    #btnTheme, #btnShare { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    #btnTheme { min-width: 92px; }
+    #btnShare { min-width: 72px; }
+
+    .btn {
+      appearance: none;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 14px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-weight: 650;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { background: rgba(255,255,255,0.10); transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.32);
+    }
+    .btn.primary:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.42); }
+
+    main { padding: 10px 14px; }
+
+    .fulltext { margin-bottom: 22px; animation: fadeUp 0.6s ease-out; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    details[open] {
+      background: rgba(var(--bg-body-rgb), 0.42);
+      border-color: var(--accent-primary);
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--text-highlight);
+      user-select: none;
+      transition: background 0.2s;
+      gap: 12px;
+    }
+    summary:hover { background: rgba(255,255,255,0.03); }
+    summary::-webkit-details-marker { display: none; }
+
+    .chev {
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.10);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      flex: 0 0 auto;
+    }
+    details[open] .chev { transform: rotate(90deg); background: var(--accent-primary); color: #fff; }
+
+    .content.scripture {
+      padding: 10px 20px 22px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.95;
+      color: var(--text-main);
+      background: rgba(0,0,0,0.18);
+    }
+    .scripture p { margin: 12px 0; }
+    .v {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--accent-primary);
+      margin-right: 6px;
+      vertical-align: 1px;
+      opacity: 0.95;
+    }
+
+    .hero { padding: 6px 4px 22px; animation: fadeUp 0.7s ease-out; }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 8px;
+    }
+    .pill span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 7px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    .pill span.greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+    .grid { display: grid; gap: 16px; animation: fadeUp 0.85s ease-out; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.20), transparent);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+
+    .card h4 {
+      font-size: 13px;
+      font-weight: 850;
+      color: var(--accent-secondary);
+      margin: 18px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card b { color: var(--text-main); font-weight: 700; }
+    .card ul { margin: 10px 0; padding-left: 20px; }
+    .card li { margin-bottom: 8px; }
+
+    .note {
+      margin: 14px 0;
+      padding: 14px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.09);
+      border: 1px solid rgba(16, 185, 129, 0.22);
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 12px;
+    }
+
+    .kv {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 8px 14px;
+      font-size: 14px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.18);
+      padding: 12px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .kv div { padding: 4px 0; }
+    .kv-label {
+      color: var(--accent-secondary);
+      font-weight: 900;
+      font-family: var(--font-serif);
+      border-right: 1px solid var(--card-border);
+      padding-right: 10px;
+    }
+
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body { display: none; }
+
+    .hint-compressed {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    body.summary-mode .hint-compressed { display: block; }
+
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      background-color: rgba(var(--bg-body-rgb), 0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 14px max(12px, env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.20);
+    }
+    .bar-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+    .bar-inner .btn { flex: 1; padding: 12px; font-size: 14px; }
+
+    .divider { height: 1px; background: var(--card-border); margin: 22px 0; }
+    .muted.small { font-size: 12px; opacity: 0.75; text-align: center; display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-group">
+          <div class="title">누가복음 5:12–16</div>
+          <div class="subtitle">정론 · 정행 · 현대 적용 가이드 (일반 성도용)</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnTheme" aria-label="다크/일반 모드 전환">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">다크</span>
+        </button>
+        <button class="btn" id="btnShare" aria-label="공유하기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+          </svg>
+          공유
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="fulltext" aria-label="누가복음 5:12–16 본문">
+      <details open>
+        <summary>📜 본문 읽기 (눅 5:12–16) <span class="chev">›</span></summary>
+        <div class="content scripture">
+          <p><span class="v">12</span> 예수께서 한 동네에 계실 때에 <b>온 몸에 나병 들린 사람</b>이 있어 예수를 보고 엎드려 구하여 이르되 <b>주여 원하시면 나를 깨끗하게 하실 수 있나이다</b> 하니</p>
+          <p><span class="v">13</span> 예수께서 <b>손을 내밀어 그에게 대시며</b> 이르시되 <b>내가 원하노니 깨끗함을 받으라</b> 하신대 나병이 곧 떠나니라</p>
+          <p><span class="v">14</span> 예수께서 그를 경고하시되 아무에게도 이르지 말고 가서 <b>제사장에게 네 몸을 보이고</b> 또 네가 깨끗하게 됨으로 인하여 <b>모세가 명한 대로 예물을 드려 그들에게 입증하라</b> 하셨더니</p>
+          <p><span class="v">15</span> 예수의 소문이 더욱 퍼지매 수많은 무리가 말씀도 듣고 자기 병도 고침을 받고자 하여 모여 오되</p>
+          <p><span class="v">16</span> 예수는 <b>물러가사 한적한 곳에서 기도하시니라</b></p>
+        </div>
+      </details>
+    </section>
+
+    <section class="hero">
+      <div class="pill">
+        <span class="greek">λέπρα (lepra)</span>
+        <span class="greek">καθαρίζω (katharizō)</span>
+        <span class="greek">θέλω (thelō)</span>
+        <span class="greek">ἱερεύς (hiereus)</span>
+        <span class="greek">ἔρημος (erēmos)</span>
+        <span class="greek">προσεύχομαι (proseuchomai)</span>
+      </div>
+
+      <h1 class="h1">“내가 원하노니 깨끗함을 받으라” —
+        만지기 꺼려진 한 사람을 다시 삶의 자리로 돌려보내시는 예수님</h1>
+
+      <p class="sub">
+        누가복음 5:12–16은 예수님이 한 사람의 병만 고치신 이야기가 아닙니다.
+        이 장면은 <b>배제</b>, <b>정결 규례</b>, <b>공동체 복귀</b>, 그리고 <b>기도로 중심을 지키는 사역</b>이 함께 묶여 있는 본문입니다.
+        그래서 이 본문을 읽을 때는 “기적이 일어났다”는 감탄만이 아니라,
+        왜 예수님이 <b>손을 대셨는지</b>, 왜 그를 <b>제사장에게 보내셨는지</b>, 그리고 왜 마지막에 <b>한적한 곳으로 물러가 기도하셨는지</b>까지 함께 보아야 합니다.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="해설 섹션">
+
+      <article class="card">
+        <h3>0) 아주 짧은 도입 (2–3문장)</h3>
+        <p>
+          이 본문은 갈릴리 사역 초반, 예수님의 소문이 점점 퍼져 가는 가운데 일어난 장면입니다.
+          공동체에서 멀리 밀려나 있었을 한 사람이 예수님 앞에 엎드리고, 예수님은 그를 피하지 않고 손을 내미십니다.
+          그리고 치유 직후에는 곧바로 군중의 열광을 붙잡지 않으시고, 오히려 한적한 곳으로 물러가 기도하십니다.
+        </p>
+        <div class="hint">
+          이 이야기는 “대단한 병 고침”만이 아니라, “누가 공동체 밖에 밀려나 있는가”와 “예수님은 그런 사람을 어떻게 다시 안으로 불러들이시는가”를 보여 줍니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>1) 한눈 요약 (3–4문장)</h3>
+        <p class="content-long">
+          <b>1)</b> 온몸에 나병이 든 사람이 예수님께 엎드려 “원하시면 저를 깨끗하게 하실 수 있습니다”라고 구합니다.<br/>
+          <b>2)</b> 예수님은 손을 내밀어 그 사람에게 직접 대시며 “내가 원한다. 깨끗해져라”라고 말씀하시고, 그는 곧 깨끗해집니다.<br/>
+          <b>3)</b> 예수님은 그에게 소문내지 말고 제사장에게 가서 몸을 보이고, 모세 율법이 정한 예물을 드리라고 하십니다.<br/>
+          <b>4)</b> 사람들은 점점 더 몰려들지만, 예수님은 한적한 곳으로 물러가 기도하심으로 사역의 중심을 잃지 않으십니다.
+        </p>
+        <div class="hint-compressed">
+          배제된 한 사람이 예수님께 나아오고, 예수님은 그를 만지시며 깨끗하게 하십니다. 그리고 그 회복을 공동체 안으로 다시 돌아가는 자리까지 연결하십니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>2) 역사 · 지리 · 배경</h3>
+
+        <div class="content-long">
+          <h4>2-1) 이 사건은 “병원 장면”이 아니라 “공동체 배제의 장면”이다</h4>
+          <p>
+            오늘 우리는 “나병”이라는 말을 들으면 먼저 의학적인 병명을 떠올리지만,
+            성경 시대의 사람들은 그보다 먼저 <b>정결과 부정</b>, 그리고 <b>공동체 안팎</b>을 떠올렸습니다.
+            구약 율법, 특히 레위기 13–14장을 보면 피부에 생긴 심한 이상은 단순히 아픈 정도를 넘어,
+            그 사람이 예배 공동체 안에 머물 수 있는지와 연결되어 있었습니다.
+            그래서 본문 속 이 사람은 아픈 사람일 뿐 아니라, 사람들 사이에서 쉽게 가까이하기 어려운 존재였을 가능성이 큽니다.
+          </p>
+
+          <h4>2-2) “온 몸에 나병 들린 사람”이라는 표현은 상태가 매우 심각했음을 보여 준다</h4>
+          <p>
+            누가는 이 사람을 가볍게 묘사하지 않습니다.
+            “온 몸에”라는 표현은 병이 꽤 진행된 상태처럼 들리게 하며,
+            사람들 눈에도 이 사람이 얼마나 오랫동안 고통과 낙인을 함께 짊어지고 있었는지를 짐작하게 합니다.
+            이런 표현은 단순히 병의 정도를 말하는 것만이 아니라,
+            그가 공동체에서 얼마나 오래 멀어져 있었을지를 함께 떠올리게 합니다.
+          </p>
+
+          <h4>2-3) 제사장은 의사라기보다 ‘공식 판정자’였다</h4>
+          <p>
+            14절에서 예수님이 “제사장에게 네 몸을 보이라”고 하신 이유는 매우 중요합니다.
+            당시 제사장은 병을 치료하는 의사라기보다,
+            그 사람이 다시 <b>정결한 상태로 공동체 안에 들어와도 되는지</b>를 판정하는 공식 역할을 했습니다.
+            다시 말해, 이 치유는 단지 몸의 회복이 아니라
+            <b>사회적 복귀</b>와 <b>예배 공동체 복귀</b>까지 열어 주는 사건입니다.
+          </p>
+
+          <h4>2-4) 모세가 명한 예물을 드리라는 말은 율법 무시가 아니라 참된 완성의 방향이다</h4>
+          <p>
+            예수님은 그 사람을 고치신 뒤 “이제 율법은 필요 없다”라고 말씀하지 않으십니다.
+            오히려 모세가 명한 절차를 따라 예물을 드리라고 하십니다.
+            이것은 예수님이 율법을 가볍게 여기는 분이 아니라,
+            사람을 살리는 방향으로 율법의 자리를 바르게 쓰시는 분이라는 사실을 보여 줍니다.
+          </p>
+
+          <h4>2-5) 소문이 커질수록 예수님은 더 시끄러운 곳이 아니라 더 조용한 곳으로 가신다</h4>
+          <p>
+            15절에서 예수님의 소문은 더 널리 퍼지고, 수많은 무리가 몰려듭니다.
+            보통 사람이라면 이 기세를 더 키우고 싶었을 것입니다.
+            그런데 16절에서 예수님은 오히려 물러가 한적한 곳에서 기도하십니다.
+            이 장면은 예수님의 사역이 군중의 반응으로 굴러가는 것이 아니라,
+            하나님과의 깊은 관계 속에서 방향을 잡고 있었다는 사실을 보여 줍니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          이 본문은 아픈 사람의 치료 장면이면서 동시에 공동체에서 밀려난 사람의 복귀 장면입니다. 제사장은 공식 판정자였고, 예수님은 소문이 커질수록 더 깊이 기도로 들어가셨습니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>3) ① 정론(Orthodoxy): 전통적으로 무엇을 믿어 왔나</h3>
+
+        <p class="note">
+          정론의 관점에서 교회는 이 본문을 주로 <b>예수님의 권위</b>, <b>거룩함</b>, <b>자비</b>, 그리고 <b>율법에 대한 참된 태도</b>를 보여 주는 본문으로 읽어 왔습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>3-1) 예수님의 거룩함은 부정을 피해 숨지 않고, 오히려 부정을 이긴다</h4>
+          <p>
+            구약의 정결 개념 안에서 보면, 부정한 것과 접촉하는 일은 매우 민감한 문제였습니다.
+            그런데 예수님은 그 사람을 멀리서 고치시는 대신, <b>손을 내밀어 대십니다</b>(13절).
+            전통적인 교회 해석은 이 장면을 통해, 예수님이 부정에 오염되는 분이 아니라
+            오히려 자신의 거룩함으로 부정을 밀어내시는 분이라고 보아 왔습니다.
+            이것은 예수님의 권위가 단순한 말의 권위가 아니라, 존재 자체의 권위임을 보여 줍니다.
+          </p>
+
+          <h4>3-2) “원하시면”이라는 말은 예수님의 능력을 의심한 것이 아니라 그 뜻을 맡긴 믿음이다</h4>
+          <p>
+            이 사람은 “하실 수 있나이까?”라고 묻지 않고, “원하시면”이라고 말합니다.
+            즉 예수님에게 능력이 있는지는 의심하지 않고, 그분의 뜻과 자비를 구한 것입니다.
+            정론적으로 이 말은 믿음의 중요한 모습을 보여 줍니다.
+            믿음은 내 바람을 억지로 밀어붙이는 힘이 아니라,
+            하나님의 능력을 인정하면서도 그 뜻 앞에 자신을 맡기는 태도입니다.
+          </p>
+
+          <h4>3-3) “깨끗하게 하다”는 단순한 치료가 아니라 정결 회복이다</h4>
+          <p>
+            여기서 예수님은 “낫게 하라”보다 “깨끗하게 하라”는 의미를 강하게 드러내십니다.
+            헬라어 <b>καθαρίζω</b>(katharizō)는 단순히 병이 사라지는 것만이 아니라,
+            더럽혀진 상태에서 다시 <b>정결한 자리</b>로 회복되는 뜻을 함께 품고 있습니다.
+            그래서 이 장면은 의료적 회복만이 아니라 종교적·공동체적 회복까지 함께 말합니다.
+          </p>
+
+          <h4>3-4) 예수님은 율법을 무너뜨리지 않고 참뜻으로 이끄신다</h4>
+          <p>
+            예수님은 그를 제사장에게 보내시고, 모세가 명한 예물을 드리라고 하십니다.
+            전통적 해석에서 이것은 예수님이 율법 자체를 없애려는 분이 아니라,
+            율법이 본래 지향하던 생명과 회복의 뜻을 이루시는 분이라는 점을 보여 줍니다.
+            예수님은 사람을 살리신 뒤, 그 회복이 공동체 안에서도 공적으로 확인되게 하십니다.
+          </p>
+
+          <h4>3-5) 기도는 예수님 사역의 여분이 아니라 중심이다</h4>
+          <p>
+            16절은 짧지만 매우 중요합니다.
+            사람들은 더 몰려들고, 더 많은 병 고침을 기대하지만,
+            예수님은 한적한 곳으로 가서 기도하십니다.
+            교회는 전통적으로 여기서, 예수님의 능력과 사역이 군중의 열광에서 나온 것이 아니라
+            <b>아버지와의 관계</b>에서 흘러나온다는 사실을 보아 왔습니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          예수님은 부정을 피하는 분이 아니라 부정을 이기시는 분이며, 이 사람의 믿음은 “예수님의 뜻”에 자신을 맡기는 믿음입니다. 또한 예수님은 율법을 무너뜨리지 않고 참뜻으로 살리시며, 기도로 사역의 중심을 지키십니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>4) ② 정행(Orthopraxy): “그래서 어떻게 살아야 하나?”로 읽기</h3>
+
+        <p class="note">
+          정행의 관점에서 이 본문은 “예수님이 놀라운 능력을 가지셨다”는 감탄을 넘어서,
+          <b>우리가 누구를 멀리하고 있는가</b>, <b>진짜 회복을 어디까지 생각하고 있는가</b>, <b>사역과 일상 속에서 어떻게 중심을 지킬 것인가</b>를 묻습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>4-1) 예수님은 ‘문제 있는 사람’을 피하지 않으셨다</h4>
+          <p>
+            정행의 눈으로 보면, 이 본문의 가장 충격적인 장면은 사실 치유 자체보다 <b>접촉</b>입니다.
+            사람들은 그를 피했을 것이고, 그는 스스로도 사람들 앞에 서는 일이 두려웠을 것입니다.
+            그런데 예수님은 그를 피하지 않습니다.
+            오늘 우리의 신앙도 여기서 점검받습니다.
+            우리는 상처가 많은 사람, 평판이 좋지 않은 사람, 경제적으로 어려운 사람,
+            정서적으로 불안정한 사람을 은근히 공동체 가장자리로 밀어내고 있지 않은지 돌아보아야 합니다.
+          </p>
+
+          <h4>4-2) 진짜 회복은 감동으로 끝나지 않고 ‘자리 회복’으로 이어져야 한다</h4>
+          <p>
+            예수님은 그 사람을 감동시키는 데서 멈추지 않으셨습니다.
+            제사장에게 가서 몸을 보이고 예물을 드리라고 하신 것은,
+            회복이 개인적인 체험에만 머물지 않고 <b>공동체적 자리 회복</b>으로 이어져야 한다는 뜻으로 읽을 수 있습니다.
+            오늘 교회도 마찬가지입니다.
+            누군가를 위로하고 기도해 주는 것만으로 끝나지 않고,
+            그 사람이 다시 사람들 사이에 설 수 있도록 실제 자리를 만들어 주어야 합니다.
+          </p>
+
+          <h4>4-3) 소문이 퍼질수록 더 깊은 기도 루틴이 필요하다</h4>
+          <p>
+            정행적으로 16절은 매우 강한 교정 장치입니다.
+            사역이 커지고, 일이 많아지고, 사람들이 나를 찾을수록,
+            우리는 더 바빠지며 자기 중심을 잃기 쉽습니다.
+            그런데 예수님은 정반대로 움직이십니다.
+            더 많은 수요가 생길수록 더 조용한 곳으로 물러가십니다.
+            이것은 “효율보다 중심”, “인기보다 방향”, “반응보다 관계”를 붙드는 영적 루틴의 본보기입니다.
+          </p>
+
+          <h4>4-4) 이 본문은 ‘모든 고생 미화’나 ‘무조건 믿으면 병이 낫는다’로 오용되면 안 된다</h4>
+          <p>
+            이 장면을 잘못 읽으면 “믿음만 좋으면 병은 다 낫는다”는 식의 단순 공식으로 흐를 수 있습니다.
+            반대로, 아픈 사람이나 힘든 사람을 향해 “믿음이 부족한가 보다”라고 낙인찍는 말로도 오용될 수 있습니다.
+            정행적 읽기는 이런 오용을 막습니다.
+            핵심은 병을 무조건 설명하는 데 있지 않고,
+            예수님이 <b>배제된 사람을 다시 품으시는 방식</b>과
+            회복을 <b>삶의 자리</b>로 연결하시는 방식에 있습니다.
+          </p>
+
+          <h4>4-5) 깨끗함은 겉모습의 완벽함이 아니라 다시 함께 살아갈 수 있는 상태다</h4>
+          <p>
+            오늘 우리는 “깨끗함”을 종종 흠 없는 상태, 문제 없는 상태, 완벽한 상태로 생각합니다.
+            그러나 본문이 보여 주는 깨끗함은 혼자 반짝이는 완벽함이 아니라,
+            다시 공동체와 함께 살아갈 수 있는 회복의 상태에 가깝습니다.
+            그래서 정행은 완벽주의를 키우는 신앙이 아니라,
+            사람을 다시 사람들 가운데로 돌려보내는 신앙이어야 합니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          예수님은 배제된 사람을 피하지 않으셨고, 회복을 공동체 자리 회복까지 이어가셨습니다. 또한 소문이 커질수록 더 깊이 기도하심으로 중심을 지키셨습니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>5) 원어 키워드 정리 (헬라어/그리스어)</h3>
+
+        <p class="muted small">
+          신약 본문이므로 핵심 키워드는 <b>헬라어 lemma(표제어)</b> 기준으로 정리했습니다.
+          단어의 사전 뜻만 나열하지 않고, 이 본문 안에서 어떤 그림을 만드는지에 초점을 맞추었습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>핵심 단어</h4>
+          <div class="kv">
+            <div class="kv-label">λέπρα</div>
+            <div>
+              <b>lepra</b> (나병, 심한 피부병 상태).
+              이 본문에서는 단순한 병명이 아니라, 공동체 바깥으로 밀려난 현실까지 함께 떠올리게 합니다.
+              <span class="hint">대표 용례: 눅 5:12, 마 8:3</span>
+            </div>
+
+            <div class="kv-label">καθαρίζω</div>
+            <div>
+              <b>katharizō</b> (깨끗하게 하다, 정결하게 하다).
+              몸의 회복만이 아니라 정결 회복, 곧 다시 공동체 안으로 들어가는 회복을 가리킵니다.
+              <span class="hint">대표 용례: 눅 5:13, 눅 17:14</span>
+            </div>
+
+            <div class="kv-label">θέλω</div>
+            <div>
+              <b>thelō</b> (원하다, 뜻하다).
+              예수님의 “내가 원하노니”는 능력이 있음을 넘어 자비로운 뜻이 있음을 드러냅니다.
+              <span class="hint">대표 용례: 눅 5:13, 막 1:41</span>
+            </div>
+
+            <div class="kv-label">ἱερεύς</div>
+            <div>
+              <b>hiereus</b> (제사장).
+              이 본문에서는 병을 치료하는 사람이 아니라, 정결 회복과 공동체 복귀를 공식적으로 확인하는 역할을 떠올리게 합니다.
+              <span class="hint">대표 용례: 눅 5:14, 눅 17:14</span>
+            </div>
+
+            <div class="kv-label">μαρτύριον</div>
+            <div>
+              <b>martyrion</b> (증거, 입증).
+              예수님이 예물을 드려 “그들에게 입증하라”고 하신 말과 이어지며, 회복이 공적으로 확인되어야 함을 보여 줍니다.
+              <span class="hint">대표 용례: 눅 5:14</span>
+            </div>
+
+            <div class="kv-label">ἔρημος</div>
+            <div>
+              <b>erēmos</b> (한적한 곳, 빈 들, 광야 같은 곳).
+              예수님이 사람들의 열광을 피해 하나님 앞에서 다시 중심을 잡는 장소입니다.
+              <span class="hint">대표 용례: 눅 5:16, 눅 4:42</span>
+            </div>
+
+            <div class="kv-label">προσεύχομαι</div>
+            <div>
+              <b>proseuchomai</b> (기도하다).
+              예수님의 사역을 떠받치는 내적 리듬이며, 바쁠수록 더 깊어져야 하는 관계의 자리입니다.
+              <span class="hint">대표 용례: 눅 5:16, 눅 6:12</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h4>짧은 관찰: 단어들이 만드는 흐름</h4>
+          <p>
+            누가는 <b>λέπρα</b>로 시작해 <b>καθαρίζω</b>로 전환시키고,
+            그 회복을 <b>ἱερεύς</b>와 <b>μαρτύριον</b>을 통해 공동체 안의 공식 자리로 연결한 뒤,
+            마지막에는 <b>ἔρημος</b>와 <b>προσεύχομαι</b>로 예수님의 사역 중심을 보여 줍니다.
+            다시 말해 이 본문은 “병→치유”만이 아니라,
+            “배제→회복→공동체 복귀→기도로 중심 지킴”의 흐름을 만들어 냅니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          나병에서 깨끗함으로, 개인 회복에서 공동체 복귀로, 그리고 군중의 열광에서 기도의 자리로 흐름이 이어집니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>6) 현대 적용 (개인 · 공동체 · 공적 영역)</h3>
+
+        <p class="note">
+          이 본문을 오늘에 옮길 때 핵심은 “기적을 어떻게 볼 것인가”보다,
+          <b>우리가 누구를 멀리하고 있는가</b>, <b>회복을 어디까지 생각하는가</b>,
+          <b>바쁠수록 무엇으로 중심을 붙들 것인가</b>에 있습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>6-1) 개인 — 내가 숨기고 싶은 상처를 예수님 앞에 가져가는 용기</h4>
+          <p>
+            이 사람은 자신을 숨기고만 있지 않고 예수님께 엎드립니다.
+            오늘 우리도 마찬가지입니다.
+            부끄러운 실패, 오래된 상처, 끊어지지 않는 습관, 관계의 파열 같은 것들은
+            자꾸 숨기고 혼자 감당하고 싶게 만듭니다.
+            그러나 본문은 예수님께 나아가는 일이 회복의 시작임을 보여 줍니다.
+            믿음은 강한 척하는 것이 아니라, 내 가장 약한 자리를 주님 앞에 가져가는 용기일 수 있습니다.
+          </p>
+
+          <h4>6-2) 공동체 — 상처 입은 사람이 다시 들어올 수 있는 구조 만들기</h4>
+          <p>
+            교회가 이 본문을 진지하게 읽는다면, 단순히 “예수님은 사랑이 많으시다”라고 말하는 데서 멈출 수 없습니다.
+            공동체는 실제로 상처 입은 사람, 실패한 사람, 낙인 찍힌 사람이 다시 들어와도 숨 막히지 않을 구조를 만들어야 합니다.
+            환영 인사 몇 마디가 아니라,
+            다시 앉을 자리, 다시 섬길 수 있는 자리, 다시 믿어 줄 사람이 필요합니다.
+            예수님이 제사장에게 보내신 이유도, 회복이 실제 삶의 구조 안에 들어가게 하려는 데 있었습니다.
+          </p>
+
+          <h4>6-3) 공적 영역 — 사람을 낙인으로 규정하지 않는 사회적 상상력</h4>
+          <p>
+            오늘 사회에도 여전히 “만지기 싫은 사람”, “멀리 두고 싶은 사람”이 있습니다.
+            병든 사람, 가난한 사람, 전과가 있는 사람, 정신적으로 흔들리는 사람, 말이 서툰 사람,
+            혹은 사회적으로 실패한 사람들을 우리는 쉽게 낙인으로 판단합니다.
+            그러나 예수님의 행동은 그 낙인의 질서를 흔듭니다.
+            공적 영역에서 이 본문은,
+            질서를 지키면서도 사람을 버리지 않는 제도와 태도를 고민하게 만듭니다.
+          </p>
+
+          <h4>6-4) 루틴 — 일이 많아질수록 더 깊은 고요를 확보하기</h4>
+          <p>
+            16절은 현대인에게 특별히 강하게 다가옵니다.
+            일정이 많고, 연락이 많고, 기대가 많아질수록 우리는 더 분주해집니다.
+            하지만 예수님은 “사람이 많이 찾을수록 더 많이 움직이는” 방식 대신,
+            “사람이 많이 찾을수록 더 하나님께 물러가는” 방식을 보여 주십니다.
+            오늘 우리의 루틴도 이와 같아야 합니다.
+            바쁠수록 기도와 침묵, 점검의 시간이 더 선명해져야 길을 잃지 않습니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          개인은 상처를 숨기지 말고 주님께 가져가야 하고, 공동체는 상처 입은 사람이 다시 들어올 수 있는 구조를 만들어야 합니다. 또한 바쁠수록 더 깊은 고요와 기도가 필요합니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>7) 작은 실천 체크리스트 (이번 주 적용)</h3>
+        <ul class="content-long">
+          <li><b>1.</b> 내가 요즘 사람들에게 숨기고 있는 약함이나 상처가 무엇인지 한 가지 적어 보고, 그것을 기도 안에서 주님께 솔직히 가져갑니다.</li>
+          <li><b>2.</b> 내가 은근히 피하고 있던 사람 한 명을 떠올리고, 그 사람을 다시 사람답게 대할 수 있는 작은 행동 하나를 실천합니다.</li>
+          <li><b>3.</b> 누군가의 회복을 말로만 응원하지 말고, 그 사람이 다시 공동체 안에 설 수 있도록 실제 자리나 도움을 하나 마련해 봅니다.</li>
+          <li><b>4.</b> 이번 주에 하루 10분이라도 일부러 한적한 시간을 정해, 휴대폰과 일에서 물러나 하나님 앞에 머무는 기도 시간을 가집니다.</li>
+          <li><b>5.</b> “깨끗함”을 완벽함으로 생각해 온 부분이 있다면, 그것을 “다시 함께 살아갈 수 있는 회복”으로 다시 정의해 봅니다.</li>
+        </ul>
+
+        <p class="muted small">
+          기억할 것: 예수님은 사람을 감동만 시키고 보내지 않으셨습니다. 그 사람을 다시 삶의 자리와 공동체 자리로 돌려보내셨습니다.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>8) 마지막 3–4문장 핵심 요약</h3>
+        <p class="content-long">
+          누가복음 5:12–16은 예수님이 공동체 밖으로 밀려난 한 사람을 피하지 않고 손을 대시며 회복시키는 이야기입니다.
+          이 회복은 몸만 낫는 차원이 아니라, 제사장에게 보이고 예물을 드리게 하심으로 다시 공동체 안으로 돌아가게 하는 회복입니다.
+          그리고 예수님은 사람들의 열광이 커질수록 더 깊이 기도의 자리로 물러가심으로, 사역의 중심이 군중의 반응이 아니라 하나님과의 관계에 있음을 보여 주십니다.
+          그래서 이 본문은 우리에게 묻습니다. 나는 누구를 멀리하고 있으며, 바쁠수록 어디로 물러가고 있는가?
+        </p>
+      </article>
+
+      <article class="card" style="text-align:center; opacity:0.88;">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.<br/>
+          상단 <b>공유</b> 버튼으로 링크를 나누고,
+          하단 <b>요약 모드</b>로 소그룹 나눔에도 활용해 보세요.<br/>
+          같은 형식으로 다른 본문도
+          <b>정론 · 정행 · 현대 적용</b> 관점에서 계속 확장할 수 있습니다.
+        </p>
+      </article>
+
+    </section>
+  </main>
+
+  <div class="bar" aria-label="하단 도구 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 접기</button>
+    </div>
+  </div>
+
+  <script>
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '누가복음 5:12–16 정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\\n' + location.href);
+        }
+      });
+    }
+
+    const themeBtn = document.getElementById('btnTheme');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    function getSystemTheme() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (themeIcon && themeLabel) {
+        if (theme === 'light') {
+          themeIcon.textContent = '☀️';
+          themeLabel.textContent = '일반';
+        } else {
+          themeIcon.textContent = '🌙';
+          themeLabel.textContent = '다크';
+        }
+      }
+    }
+
+    const storedTheme = localStorage.getItem('lk05_12_16_theme');
+    const initialTheme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : getSystemTheme();
+    applyTheme(initialTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('lk05_12_16_theme', next);
+        applyTheme(next);
+      });
+    }
+
+    if (!storedTheme && window.matchMedia) {
+      const mq = window.matchMedia('(prefers-color-scheme: light)');
+      const handler = () => applyTheme(getSystemTheme());
+      if (mq.addEventListener) mq.addEventListener('change', handler);
+      else if (mq.addListener) mq.addListener(handler);
+    }
+
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
