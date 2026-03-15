@@ -31,17 +31,25 @@ jobs:
 
           def find_issue_dirs():
               items = []
-              for d in sorted(os.listdir('.')):
-                  if not os.path.isdir(d):
-                      continue
-                  if d.startswith(('.', '_', 'assets', '.git')):
-                      continue
-                  if re.fullmatch(r'\d{8}', d):
-                      items.append(d)
-              return items
+              skip_names = {'.git', '.github', 'assets', 'latest', '_site', '__pycache__'}
+    
+              for root, dirs, files in os.walk('.'):
+                  dirs[:] = [
+                          d for d in dirs
+                          if not d.startswith('.') and d not in skip_names
+                      ]
+
+                      rel_root = os.path.relpath(root, '.')
+                      if rel_root == '.':
+                          continue
+
+                      leaf = os.path.basename(rel_root)
+                      if re.fullmatch(r'\d{8}', leaf):
+                          items.append(rel_root.replace("\\", "/"))
+                  return sorted(items)
 
           def parse_date_from_folder(name):
-              s = name
+              s = os.path.basename(name)
               if re.fullmatch(r'\d{8}', s):
                   mm, dd, yyyy = int(s[:2]), int(s[2:4]), int(s[4:])
                   if 1 <= mm <= 12 and 1 <= dd <= 31 and 2000 <= yyyy <= 2100:
