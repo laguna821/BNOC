@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>누가복음 5:17–26 — 정론·정행·현대 적용</title>
+  <meta name="date" content="2026-03-15" />
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.72);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.42);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+
+      --tag-hebrew-bg: rgba(217, 119, 6, 0.16);
+      --tag-hebrew-border: #fbbf24;
+      --tag-hebrew-text: #fed7aa;
+
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-serif: "Merriweather", "Times New Roman", serif;
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-body: #f8fafc;
+        --bg-body-rgb: 248, 250, 252;
+        --bg-gradient-start: #f1f5f9;
+        --bg-gradient-start-rgb: 241, 245, 249;
+        --bg-gradient-end: #e2e8f0;
+        --bg-gradient-end-rgb: 226, 232, 240;
+
+        --card-bg: rgba(255, 255, 255, 0.88);
+        --card-border: rgba(0, 0, 0, 0.07);
+        --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --text-highlight: #0f172a;
+
+        --accent-primary: #059669;
+        --accent-secondary: #b45309;
+        --accent-glow: rgba(5, 150, 105, 0.10);
+
+        --tag-greek-bg: rgba(37, 99, 235, 0.12);
+        --tag-greek-border: rgba(37, 99, 235, 0.55);
+        --tag-greek-text: #1e3a8a;
+      }
+    }
+
+    html[data-theme="dark"] {
+      --bg-body: #0a0e14;
+      --bg-body-rgb: 10, 14, 20;
+      --bg-gradient-start: #111827;
+      --bg-gradient-start-rgb: 17, 24, 39;
+      --bg-gradient-end: #020408;
+      --bg-gradient-end-rgb: 2, 4, 8;
+
+      --card-bg: rgba(23, 30, 41, 0.72);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.42);
+
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-highlight: #f8fafc;
+
+      --accent-primary: #10b981;
+      --accent-secondary: #f59e0b;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+
+      --tag-greek-bg: rgba(59, 130, 246, 0.18);
+      --tag-greek-border: #93c5fd;
+      --tag-greek-text: #dbeafe;
+    }
+
+    html[data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-body-rgb: 248, 250, 252;
+      --bg-gradient-start: #f1f5f9;
+      --bg-gradient-start-rgb: 241, 245, 249;
+      --bg-gradient-end: #e2e8f0;
+      --bg-gradient-end-rgb: 226, 232, 240;
+
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-highlight: #0f172a;
+
+      --accent-primary: #059669;
+      --accent-secondary: #b45309;
+      --accent-glow: rgba(5, 150, 105, 0.10);
+
+      --tag-greek-bg: rgba(37, 99, 235, 0.12);
+      --tag-greek-border: rgba(37, 99, 235, 0.55);
+      --tag-greek-text: #1e3a8a;
+    }
+
+    html{
+      background: radial-gradient(circle at top center, var(--bg-gradient-start) 0%, var(--bg-body) 60%, var(--bg-gradient-end) 100%);
+      background-color: var(--bg-body);
+      min-height: 100%;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { margin: 0; padding: 0; min-height: 100%; }
+    body { margin: 0; padding: 0; min-height: 100vh; }
+
+    body {
+      font-family: var(--font-sans);
+      background: transparent;
+      color: var(--text-main);
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding-bottom: 140px;
+    }
+
+    h1, h2, h3, h4 { margin: 0; color: var(--text-highlight); }
+    h1, h2 { font-family: var(--font-serif); }
+
+    .h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.35;
+      margin: 16px 0 12px;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .sub b { color: var(--text-main); font-weight: 650; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(var(--bg-body-rgb), 0.82);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      gap: 12px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), #064e3b);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.32);
+      position: relative;
+      flex: 0 0 auto;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .title-group { display: flex; flex-direction: column; min-width: 0; }
+    .title { font-weight: 800; font-size: 15px; letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .subtitle { font-size: 11px; color: var(--text-muted); font-weight: 550; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .controls { display: flex; gap: 10px; align-items: center; flex: 0 0 auto; }
+    #btnTheme, #btnShare { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    #btnTheme { min-width: 92px; }
+    #btnShare { min-width: 72px; }
+
+    .btn {
+      appearance: none;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-main);
+      font-size: 13px;
+      padding: 8px 14px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-weight: 650;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { background: rgba(255,255,255,0.10); transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.32);
+    }
+    .btn.primary:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.42); }
+
+    main { padding: 10px 14px; }
+
+    .fulltext { margin-bottom: 22px; animation: fadeUp 0.6s ease-out; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    details[open] {
+      background: rgba(var(--bg-body-rgb), 0.42);
+      border-color: var(--accent-primary);
+    }
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--text-highlight);
+      user-select: none;
+      transition: background 0.2s;
+      gap: 12px;
+    }
+    summary:hover { background: rgba(255,255,255,0.03); }
+    summary::-webkit-details-marker { display: none; }
+
+    .chev {
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.10);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      flex: 0 0 auto;
+    }
+    details[open] .chev { transform: rotate(90deg); background: var(--accent-primary); color: #fff; }
+
+    .content.scripture {
+      padding: 10px 20px 22px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.95;
+      color: var(--text-main);
+      background: rgba(0,0,0,0.18);
+    }
+    .scripture p { margin: 12px 0; }
+    .v {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--accent-primary);
+      margin-right: 6px;
+      vertical-align: 1px;
+      opacity: 0.95;
+    }
+
+    .hero { padding: 6px 4px 22px; animation: fadeUp 0.7s ease-out; }
+    .pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 8px;
+    }
+    .pill span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 7px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    .pill span.greek {
+      background: var(--tag-greek-bg);
+      border-color: var(--tag-greek-border);
+      color: var(--tag-greek-text);
+    }
+
+    .grid { display: grid; gap: 16px; animation: fadeUp 0.85s ease-out; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.20), transparent);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+    }
+
+    .card h4 {
+      font-size: 13px;
+      font-weight: 850;
+      color: var(--accent-secondary);
+      margin: 18px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .card b { color: var(--text-main); font-weight: 700; }
+    .card ul { margin: 10px 0; padding-left: 20px; }
+    .card li { margin-bottom: 8px; }
+
+    .note {
+      margin: 14px 0;
+      padding: 14px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.09);
+      border: 1px solid rgba(16, 185, 129, 0.22);
+      color: var(--text-main);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--card-border);
+      padding-top: 12px;
+    }
+
+    .kv {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 8px 14px;
+      font-size: 14px;
+      margin-top: 12px;
+      background: rgba(0,0,0,0.18);
+      padding: 12px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .kv div { padding: 4px 0; }
+    .kv-label {
+      color: var(--accent-secondary);
+      font-weight: 900;
+      font-family: var(--font-serif);
+      border-right: 1px solid var(--card-border);
+      padding-right: 10px;
+    }
+
+    body.summary-mode .content-long,
+    body.summary-mode .detail-body { display: none; }
+
+    .hint-compressed {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    body.summary-mode .hint-compressed { display: block; }
+
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      background-color: rgba(var(--bg-body-rgb), 0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 14px max(12px, env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.20);
+    }
+    .bar-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+    }
+    .bar-inner .btn { flex: 1; padding: 12px; font-size: 14px; }
+
+    .divider { height: 1px; background: var(--card-border); margin: 22px 0; }
+    .muted.small { font-size: 12px; opacity: 0.75; text-align: center; display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-group">
+          <div class="title">누가복음 5:17–26</div>
+          <div class="subtitle">정론 · 정행 · 현대 적용 가이드 (일반 성도용)</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="btnTheme" aria-label="다크/일반 모드 전환">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">다크</span>
+        </button>
+        <button class="btn" id="btnShare" aria-label="공유하기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+          </svg>
+          공유
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="fulltext" aria-label="누가복음 5:17–26 본문">
+      <details open>
+        <summary>📜 본문 읽기 (눅 5:17–26) <span class="chev">›</span></summary>
+        <div class="content scripture">
+          <p><span class="v">17</span> 하루는 가르치실 때에 갈릴리의 각 마을과 유대와 예루살렘에서 온 <b>바리새인과 율법교사들</b>이 앉았는데 <b>병을 고치는 주의 능력</b>이 예수와 함께 하더라</p>
+          <p><span class="v">18</span> 한 <b>중풍병자</b>를 사람들이 침상에 메고 와서 예수 앞에 들여놓고자 하였으나</p>
+          <p><span class="v">19</span> 무리 때문에 메고 들어갈 길을 얻지 못한지라 <b>지붕에 올라가 기와를 벗기고</b> 병자를 침상째 무리 가운데로 예수 앞에 달아 내리니</p>
+          <p><span class="v">20</span> 예수께서 <b>그들의 믿음</b>을 보시고 이르시되 이 사람아 <b>네 죄 사함을 받았느니라</b> 하시니</p>
+          <p><span class="v">21</span> 서기관과 바리새인들이 생각하여 이르되 이 신성모독 하는 자가 누구냐 <b>오직 하나님 외에 누가 능히 죄를 사하겠느냐</b></p>
+          <p><span class="v">22</span> 예수께서 그 생각을 아시고 대답하여 이르시되 너희 마음에 무슨 생각을 하느냐</p>
+          <p><span class="v">23</span> 네 죄 사함을 받았느니라 하는 말과 일어나 걸어가라 하는 말이 어느 것이 쉽겠느냐</p>
+          <p><span class="v">24</span> 그러나 <b>인자가 땅에서 죄를 사하는 권세</b>가 있는 줄을 너희로 알게 하리라 하시고 중풍병자에게 말씀하시되 내가 네게 이르노니 일어나 네 침상을 가지고 집으로 가라 하시매</p>
+          <p><span class="v">25</span> 그 사람이 그들 앞에서 곧 일어나 그 누웠던 것을 가지고 하나님께 영광을 돌리며 자기 집으로 돌아가니</p>
+          <p><span class="v">26</span> 모든 사람이 놀라 하나님께 영광을 돌리며 심히 두려워하여 이르되 <b>오늘 우리가 놀라운 일을 보았다</b> 하니라</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="hero">
+      <div class="pill">
+        <span class="greek">πίστις (pistis)</span>
+        <span class="greek">ἀφίημι (aphiēmi)</span>
+        <span class="greek">βλασφημία (blasphēmia)</span>
+        <span class="greek">ἐξουσία (exousia)</span>
+        <span class="greek">ὁ υἱὸς τοῦ ἀνθρώπου</span>
+        <span class="greek">παραλελυμένος</span>
+      </div>
+
+      <h1 class="h1">“네 죄 사함을 받았느니라” —
+        보이는 치유보다 먼저, 보이지 않는 용서와 권세를 드러내시는 예수님</h1>
+
+      <p class="sub">
+        누가복음 5:17–26은 단순히 한 마비된 사람이 일어나 걷게 된 기적 이야기만이 아닙니다.
+        이 본문은 <b>예수님의 정체</b>, <b>죄 사함의 권한</b>, <b>공동체의 믿음</b>, 그리고 <b>막힌 길을 뚫고 사람을 주님 앞으로 데려가는 실천</b>이 함께 들어 있는 본문입니다.
+        그래서 이 사건을 읽을 때는 “와, 병이 나았다”에서 멈추지 말고,
+        왜 예수님이 먼저 <b>죄 사함</b>을 선언하셨는지, 왜 종교 지도자들이 즉시 반발했는지,
+        그리고 왜 예수님이 이 치유를 <b>인자가 땅에서 죄를 사하는 권세</b>의 증거로 쓰셨는지까지 함께 보아야 합니다.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="해설 섹션">
+
+      <article class="card">
+        <h3>0) 아주 짧은 도입 (2–3문장)</h3>
+        <p>
+          이 본문은 갈릴리 사역이 점점 넓게 알려지던 때, 예수님을 둘러싼 기대와 검토와 긴장이 한 자리에 모인 장면입니다.
+          무리는 말씀을 들으러 왔고, 친구들은 한 병자를 살리기 위해 왔고, 바리새인과 율법교사들은 예수님의 권위를 판단하기 위해 앉아 있었습니다.
+          그리고 예수님은 모두의 예상과 다르게, 병을 고치기 전에 먼저 죄 사함을 선언하십니다.
+        </p>
+        <div class="hint">
+          그래서 이 본문은 “치유 이야기”이면서 동시에 “예수님은 누구신가?”를 정면으로 묻는 본문입니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>1) 한눈 요약 (3–4문장)</h3>
+        <p class="content-long">
+          <b>1)</b> 예수님이 가르치시는 집 안에 사람들이 가득 찼고, 갈릴리와 유대와 예루살렘에서 온 바리새인과 율법교사들도 앉아 있었습니다.<br/>
+          <b>2)</b> 몇 사람이 마비된 친구를 침상째 메고 왔지만 문으로 들어갈 수 없자, 지붕을 열고 예수님 앞에 그를 달아 내립니다.<br/>
+          <b>3)</b> 예수님은 그들의 믿음을 보시고 먼저 “네 죄 사함을 받았다”라고 선언하셨고, 이 말 때문에 종교 지도자들은 예수님을 신성모독이라고 생각합니다.<br/>
+          <b>4)</b> 예수님은 중풍병자를 실제로 일으켜 세우심으로, 자신이 땅에서 죄를 사하는 권세를 가진 인자라는 사실을 눈에 보이게 드러내십니다.
+        </p>
+        <div class="hint-compressed">
+          친구들의 행동 믿음, 예수님의 죄 사함 선언, 종교 지도자들의 반발, 그리고 눈에 보이는 치유를 통한 권세 증명이 이 본문의 핵심입니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>2) 역사 · 지리 · 배경</h3>
+
+        <div class="content-long">
+          <h4>2-1) 이 장면은 갈릴리의 한 집 안에서 벌어진 공개 검토 자리였다</h4>
+          <p>
+            누가복음은 이 사건의 정확한 마을 이름을 바로 적지 않지만, 평행본문인 마가복음 2장을 보면 이 일은 가버나움의 집 안 장면과 연결됩니다.
+            이미 예수님의 소문이 널리 퍼졌기 때문에, 집 안에는 단순한 동네 사람만이 아니라 말씀을 들으려는 무리와 예수를 따져 보려는 종교 전문가들까지 함께 있었습니다.
+            특히 누가는 “갈릴리의 각 마을과 유대와 예루살렘에서 온 바리새인과 율법교사들”이라고 적어,
+            예수님이 이제 더 이상 지역 인기 설교자 수준이 아니라 공식적으로 주목받고 검토받는 인물이 되었음을 보여 줍니다.
+          </p>
+
+          <h4>2-2) 당시 집 구조 때문에 지붕 접근이 가능했다</h4>
+          <p>
+            오늘 한국식 아파트를 떠올리면 지붕을 열고 사람을 내린다는 장면이 너무 낯설게 느껴집니다.
+            하지만 1세기 갈릴리의 집은 대체로 평평한 지붕 구조였고, 바깥 계단이나 사다리로 지붕에 올라갈 수 있었습니다.
+            지붕은 나무 들보와 가지, 갈대, 흙을 다져 만든 경우가 많았기 때문에 일부를 걷어내는 일이 전혀 불가능한 상상은 아니었습니다.
+            누가는 “기와를 벗기고”라고 적지만, 핵심은 건축 재료 설명보다, 친구들이 포기하지 않고 예수님 앞으로 사람을 데려가려 했다는 점에 있습니다.
+          </p>
+
+          <h4>2-3) 중풍병자는 단지 아픈 사람만이 아니라, 완전히 타인의 도움에 기대야 하는 사람이다</h4>
+          <p>
+            본문의 중풍병자는 스스로 걸어 들어올 수 없는 사람입니다.
+            그는 자신의 힘만으로는 예수님께 가까이 갈 수 없고, 누군가가 메고 와야 하고, 누군가가 길을 만들고, 누군가가 침상을 내려야 합니다.
+            이 점은 이 본문에서 믿음이 얼마나 공동체적인가를 보여 줍니다.
+            여기서 회복은 한 개인의 의지 문제가 아니라, 함께 짊어지는 관계 속에서 벌어집니다.
+          </p>
+
+          <h4>2-4) 바리새인과 율법교사들은 왜 그렇게 민감하게 반응했는가</h4>
+          <p>
+            21절의 반응은 단순한 시비가 아닙니다.
+            유대 신앙 안에서 죄를 궁극적으로 용서하시는 분은 하나님이시며, 성전과 제사와 회개의 질서도 결국 그 하나님 앞에 서는 문제와 연결되어 있었습니다.
+            그런데 예수님이 병 고침보다 먼저 “네 죄 사함을 받았다”라고 직접 선언하셨으니,
+            종교 지도자들 입장에서는 예수님이 하나님의 자리를 넘보는 것처럼 들렸을 수 있습니다.
+            그래서 그들의 질문은 단순한 불쾌감이 아니라, “이 사람은 도대체 자신을 누구라고 생각하는가”라는 신학적 충돌입니다.
+          </p>
+
+          <h4>2-5) 당시 종교 지도자들이 ‘앉아 있었다’는 표현도 의미가 있다</h4>
+          <p>
+            본문은 그들이 앉아 있었다고 적습니다.
+            이것은 단지 자세 묘사만이 아니라, 가르침을 듣고 판단하는 공식 자리처럼 보이게 만듭니다.
+            예수님의 말씀과 행동은 이미 개인적 호감이나 소문 수준을 넘어, 율법과 권위의 기준 앞에서 평가받는 상황에 들어섰습니다.
+            그래서 이 사건은 단순한 은혜 체험담이 아니라, 예수님의 정체를 둘러싼 공개 논쟁의 시작점 가운데 하나입니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          이 사건은 가득 찬 집 안에서, 무리와 친구들과 종교 지도자들이 함께 있는 가운데 벌어진 공개적 충돌 장면입니다. 지붕 장면은 당시 집 구조와 연결되고, 쟁점은 결국 예수님의 권위입니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>3) ① 정론(Orthodoxy): 전통적으로 무엇을 믿어 왔나</h3>
+
+        <p class="note">
+          정론의 관점에서 교회는 이 본문을 주로 <b>예수님의 신적 권위</b>, <b>죄 사함의 주권</b>, <b>인자라는 자기 계시</b>, 그리고 <b>보이는 치유와 보이지 않는 용서의 관계</b>를 드러내는 본문으로 읽어 왔습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>3-1) 예수님은 먼저 더 깊은 문제를 다루신다</h4>
+          <p>
+            사람들이 기대한 것은 아마 병 고침이었을 것입니다.
+            그런데 예수님은 먼저 “네 죄 사함을 받았느니라”라고 말씀하십니다.
+            전통적 교회 해석은 여기서, 인간의 가장 깊은 문제는 단지 몸의 아픔만이 아니라 하나님과의 관계 단절과 죄의 문제라는 사실을 봅니다.
+            다시 말해, 예수님은 증상보다 더 깊은 자리부터 만지십니다.
+          </p>
+
+          <h4>3-2) 죄 사함 선언은 단순 위로가 아니라 권세의 행사다</h4>
+          <p>
+            이 선언은 “괜찮다, 마음 편히 가져라” 수준의 위로가 아닙니다.
+            헬라어 <b>ἀφέωνταί</b>는 실제로 용서가 선언되고 성립된 상태를 강하게 드러내는 표현입니다.
+            그래서 교회는 이 본문을 읽을 때, 예수님이 단순히 하나님의 용서를 소개하시는 분이 아니라,
+            그 용서를 지금 여기서 실제로 선포하시는 분으로 보아 왔습니다.
+          </p>
+
+          <h4>3-3) 보이는 치유는 보이지 않는 죄 사함의 표지다</h4>
+          <p>
+            23–24절은 이 본문의 핵심 논리입니다.
+            “네 죄 사함을 받았다”는 말은 눈으로 확인하기 어렵지만,
+            “일어나 걸어가라”는 말은 곧 눈앞에서 증명될 수 있습니다.
+            그래서 예수님은 실제 치유를 통해, 자신이 말한 죄 사함 선언이 빈말이 아니라는 사실을 보여 주십니다.
+            정론적으로 말하면, 이 치유는 본질이 아니라 표지이고, 중심은 예수님의 권세입니다.
+          </p>
+
+          <h4>3-4) ‘인자’라는 호칭은 단순한 겸손 표현이 아니다</h4>
+          <p>
+            예수님은 자신을 “인자”라고 부르십니다.
+            이 표현은 구약 다니엘 7장의 “사람 같은 이” 전통과 이어지며, 하나님 앞에서 권세를 받는 존재를 떠올리게 합니다.
+            그래서 전통 교회는 이 본문에서 “인자”를 단순히 “나” 정도로 낮게 보지 않고,
+            예수님이 자신의 메시아적 권위와 하늘 권위를 드러내는 표현으로 이해해 왔습니다.
+            특히 “인자가 땅에서 죄를 사하는 권세가 있다”는 말은, 하늘의 권세가 지금 땅 위에서 예수님을 통해 나타난다는 뜻으로 읽힙니다.
+          </p>
+
+          <h4>3-5) 하나님께 영광 돌리는 결말은 기적의 목적을 보여 준다</h4>
+          <p>
+            25–26절에서 사람들은 단순히 놀라는 데서 끝나지 않고 하나님께 영광을 돌립니다.
+            정론적으로 이것은 매우 중요합니다.
+            기적은 사람을 유명하게 만드는 공연이 아니라, 하나님이 누구신지 드러내는 사건이어야 하기 때문입니다.
+            누가는 이 결말을 통해, 예수님의 사역이 결국 하나님의 영광을 향하고 있음을 보여 줍니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          예수님은 병보다 더 깊은 죄 문제를 먼저 다루시고, 실제 치유를 통해 자신이 죄를 사하는 권세를 가진 인자임을 드러내십니다. 그래서 이 본문은 예수님의 정체를 강하게 밝히는 본문입니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>4) ② 정행(Orthopraxy): “그래서 어떻게 살아야 하나?”로 읽기</h3>
+
+        <p class="note">
+          정행의 관점에서 이 본문은 “예수님이 누구신가?”라는 질문을 넘어,
+          <b>우리는 누군가를 주님 앞으로 데려가는 사람인가</b>, <b>막힌 길을 만나면 포기하는가</b>,
+          <b>공동체는 약한 사람에게 실제 길을 내어 주고 있는가</b>를 묻습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>4-1) 믿음은 머릿속 동의만이 아니라 사람을 짊어지는 행동이다</h4>
+          <p>
+            20절에서 예수님은 “그의 믿음”이 아니라 “그들의 믿음”을 보십니다.
+            이것은 매우 중요합니다.
+            이 본문에서 믿음은 한 사람의 개인 감정만이 아니라,
+            친구를 메고 오고, 막히면 다른 길을 찾고, 끝내 예수님 앞에 내려놓는 공동체적 행동으로 드러납니다.
+            정행의 관점에서 믿음은 생각보다 훨씬 물리적이고 실제적입니다.
+          </p>
+
+          <h4>4-2) 우리는 문 앞의 군중이 되기 쉽다</h4>
+          <p>
+            본문에서 중풍병자가 바로 들어가지 못한 이유는 단순합니다. 사람이 너무 많았기 때문입니다.
+            그런데 정행적으로 읽으면 이 장면은 오늘 교회와 공동체를 아프게 비춥니다.
+            때로 공동체는 예수님을 믿는다고 말하면서도,
+            실제로는 약한 사람, 느린 사람, 설명이 많이 필요한 사람, 상처가 큰 사람이 안으로 들어오기 어렵게 만들 수 있습니다.
+            문을 막은 사람들은 악의를 가진 박해자가 아니라, 그냥 이미 안에 앉아 있던 사람들일 수도 있습니다.
+          </p>
+
+          <h4>4-3) 막히면 지붕으로 가는 상상력이 필요하다</h4>
+          <p>
+            친구들은 “오늘은 사람이 너무 많으니 다음에 오자”라고 하지 않았습니다.
+            정행의 관점에서 이들의 행동은 단순한 열정이 아니라 거룩한 상상력입니다.
+            정해진 문이 막히면 다른 길을 찾는 것, 제도와 구조가 누군가를 막고 있으면 우회로를 만드는 것,
+            그것이 이 본문이 보여 주는 실천적 믿음입니다.
+            오늘 교회도 마찬가지입니다. 한 사람을 살리기 위해 규칙을 무너뜨리라는 뜻이 아니라,
+            규칙 때문에 사람이 계속 밖에 남아 있지 않도록 방법을 고민해야 합니다.
+          </p>
+
+          <h4>4-4) 이 본문은 병든 사람을 죄인으로 몰아가는 데 쓰이면 안 된다</h4>
+          <p>
+            예수님이 죄 사함을 먼저 선언하셨다고 해서, 이 병이 곧바로 그 사람의 특정 죄 때문이라고 단정할 수는 없습니다.
+            정행적 읽기는 이 점에서 매우 조심합니다.
+            이 본문을 아픈 사람에게 “네가 죄가 있어서 그렇다”라고 적용하면,
+            본문이 살리는 말씀이 아니라 상처를 덧내는 말로 바뀌어 버립니다.
+            본문의 중심은 원인 추적이 아니라, 예수님이 죄 사함과 회복의 권세를 가진 분이라는 데 있습니다.
+          </p>
+
+          <h4>4-5) 회복은 다시 집으로 돌아가게 하는 것이다</h4>
+          <p>
+            예수님은 그 사람에게 단순히 일어나 보라고만 하지 않으시고,
+            “네 침상을 가지고 집으로 가라”라고 말씀하십니다.
+            정행적으로 이것은 매우 따뜻한 장면입니다.
+            회복은 군중 앞에서 잠깐 빛나는 체험이 아니라,
+            자기 삶의 자리, 자기 관계의 자리, 자기 일상의 자리로 다시 돌아가는 것입니다.
+            신앙은 사람을 공중에 띄워 놓는 감정의 폭발보다, 삶으로 돌아가게 하는 힘이어야 합니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          믿음은 친구를 짊어지고 길을 만드는 행동입니다. 또한 공동체는 사람을 막는 군중이 아니라, 주님 앞으로 들어가게 돕는 통로가 되어야 합니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>5) 원어 키워드 정리 (헬라어/그리스어)</h3>
+
+        <p class="muted small">
+          신약 본문이므로 핵심 키워드는 <b>헬라어 lemma(표제어)</b> 기준으로 정리했습니다.
+          단어 뜻을 길게 나열하기보다, 이 본문 안에서 어떤 역할을 하는지에 초점을 맞추었습니다.
+        </p>
+
+        <div class="content-long">
+          <h4>핵심 단어</h4>
+          <div class="kv">
+            <div class="kv-label">παραλελυμένος</div>
+            <div>
+              <b>paralelymenos</b> (마비된 사람, 중풍병자).
+              이 본문에서는 스스로 움직일 수 없고 타인의 도움에 의지해야 하는 상태를 보여 주며, 공동체적 돌봄의 필요를 드러냅니다.
+              <span class="hint">대표 용례: 눅 5:18, 행 8:7</span>
+            </div>
+
+            <div class="kv-label">πίστις</div>
+            <div>
+              <b>pistis</b> (믿음, 신뢰).
+              이 본문에서는 친구들의 행동으로 드러난 믿음을 뜻하며, 생각이 아니라 실제 행동으로 나타난 신뢰를 보여 줍니다.
+              <span class="hint">대표 용례: 눅 5:20, 눅 7:50</span>
+            </div>
+
+            <div class="kv-label">ἀφίημι</div>
+            <div>
+              <b>aphiēmi</b> (용서하다, 놓아주다, 보내 주다).
+              “죄 사함”의 핵심 단어로, 죄의 짐과 묶임에서 풀어 주는 뜻을 품고 있습니다.
+              <span class="hint">대표 용례: 눅 5:20, 눅 7:48</span>
+            </div>
+
+            <div class="kv-label">βλασφημία</div>
+            <div>
+              <b>blasphēmia</b> (신성모독, 하나님을 모독하는 말).
+              종교 지도자들이 예수님의 죄 사함 선언을 듣고 느낀 충격을 보여 주며, 이 사건이 단순 치유 사건이 아님을 드러냅니다.
+              <span class="hint">대표 용례: 눅 5:21, 막 14:64</span>
+            </div>
+
+            <div class="kv-label">ἐξουσία</div>
+            <div>
+              <b>exousia</b> (권세, 정당한 권한).
+              예수님이 단순 능력만 가진 분이 아니라, 죄를 사할 정당한 권세를 가지신 분임을 드러냅니다.
+              <span class="hint">대표 용례: 눅 5:24, 눅 4:36</span>
+            </div>
+
+            <div class="kv-label">ὁ υἱὸς τοῦ ἀνθρώπου</div>
+            <div>
+              <b>ho huios tou anthrōpou</b> (인자).
+              예수님의 자기 호칭이며, 다니엘 7장과 이어지는 하늘 권위의 배경을 가진 표현으로 읽힙니다.
+              <span class="hint">대표 용례: 눅 5:24, 눅 6:5</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h4>짧은 관찰: 단어들이 만드는 흐름</h4>
+          <p>
+            누가는 <b>παραλελυμένος</b>로 시작해, 친구들의 <b>πίστις</b>를 지나,
+            예수님의 <b>ἀφίημι</b> 선언으로 본문을 깊은 곳으로 끌고 갑니다.
+            그러자 곧 <b>βλασφημία</b> 논쟁이 일어나고,
+            예수님은 실제 치유를 통해 자신의 <b>ἐξουσία</b>를 드러내시며,
+            그 모든 것을 <b>인자</b>라는 자기 계시 안에서 묶어 내십니다.
+            즉 이 본문은 “병→치유”보다 “믿음→용서→충돌→권세 계시”의 흐름이 더 강합니다.
+          </p>
+
+          <div class="divider"></div>
+
+          <h4>OT–NT 연결: 인자 개념</h4>
+          <div class="kv">
+            <div class="kv-label">OT</div>
+            <div><b>בַּר אֱנָשׁ (bar enash)</b> — 다니엘 7:13의 아람어 표현으로, “사람 같은 이”를 뜻합니다.</div>
+            <div class="kv-label">NT</div>
+            <div><b>ὁ υἱὸς τοῦ ἀνθρώπου</b> — 예수님이 자신을 가리켜 쓰신 표현으로, 다니엘의 배경을 떠올리게 합니다.</div>
+            <div class="kv-label">의미</div>
+            <div>다니엘에서는 하늘 권세를 받는 존재의 그림이 나오고, 누가복음에서는 그 권세가 “땅에서 죄를 사하는 권세”로 연결됩니다.</div>
+          </div>
+          <p>
+            이 연결은 단순한 말장난이 아닙니다.
+            예수님은 자신을 낮게 소개하시는 정도가 아니라,
+            하늘에서 오는 권세가 지금 땅 위의 한 사람의 삶을 회복시키는 방식으로 나타난다고 말씀하시는 것입니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          이 본문의 단어들은 믿음, 죄 사함, 신성모독 논쟁, 권세, 인자라는 흐름으로 이어집니다. 특히 중심은 “예수님이 누구신가”입니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>6) 현대 적용 (개인 · 공동체 · 공적 영역)</h3>
+
+        <p class="note">
+          이 본문을 오늘에 옮길 때 핵심은 “기적을 믿느냐 안 믿느냐”의 문제만이 아니라,
+          <b>나는 누구를 짊어지고 있는가</b>, <b>공동체는 누구를 막고 있는가</b>, <b>회복을 어디까지 생각하고 있는가</b>입니다.
+        </p>
+
+        <div class="content-long">
+          <h4>6-1) 개인 — 내 삶의 가장 깊은 문제를 주님 앞에 놓기</h4>
+          <p>
+            우리는 보통 눈에 보이는 문제부터 해결하고 싶어 합니다.
+            건강, 일, 관계, 돈, 평판 같은 것이 늘 먼저 보입니다.
+            그런데 예수님은 이 본문에서 보이는 문제보다 더 깊은 자리, 곧 죄와 끊어짐의 문제를 먼저 만지십니다.
+            오늘 우리도 주님 앞에 나아갈 때, 단지 상황만 고쳐 달라고 하기보다,
+            내 마음 깊은 곳의 무거움과 뒤틀림과 끊어진 관계까지 함께 내어 놓아야 합니다.
+          </p>
+
+          <h4>6-2) 공동체 — 약한 사람에게 실제 길을 내 주는 교회 되기</h4>
+          <p>
+            교회는 이 본문을 들으면서 친구들의 믿음을 칭찬만 하고 지나가면 안 됩니다.
+            더 아픈 질문은 이것입니다. 우리는 혹시 문 앞을 막고 서 있는 무리와 비슷하지 않은가.
+            처음 오는 사람, 상처가 많은 사람, 말이 어눌한 사람, 경제적으로 어렵거나 관계적으로 복잡한 사람이
+            우리 공동체 안으로 들어오려 할 때, 실제로 들어오기 쉬운가를 점검해야 합니다.
+            정행은 따뜻한 말 몇 마디가 아니라, 실제 접근성과 환대 구조를 만드는 데까지 가야 합니다.
+          </p>
+
+          <h4>6-3) 공적 영역 — 구조가 막고 있는 사람을 위해 지붕을 여는 상상력</h4>
+          <p>
+            오늘 사회에도 스스로는 안으로 들어오기 어려운 사람이 많습니다.
+            장애 때문에, 제도가 복잡해서, 낙인이 두려워서, 정보에 접근하기 어려워서,
+            혹은 이미 실패한 이력 때문에 기회에서 밀려난 사람이 많습니다.
+            이 본문은 그런 현실 앞에서 “원래 문이 막혀 있으니 어쩔 수 없다”라고 말하지 않습니다.
+            오히려 지붕으로라도 길을 만드는 믿음, 곧 구조를 바꾸고 우회로를 만들고 사람을 실제로 살리는 상상력을 요구합니다.
+          </p>
+
+          <h4>6-4) 일상 루틴 — 사람을 살리는 믿음은 늘 손과 발을 필요로 한다</h4>
+          <p>
+            친구들의 믿음은 감정이 아니라 노동이었습니다.
+            침상을 들었고, 길을 찾았고, 계단을 올랐고, 지붕을 열었고, 조심히 달아 내렸습니다.
+            오늘 우리도 누군가를 위해 기도한다고 말하면서 아무것도 하지 않을 때가 많습니다.
+            하지만 이 본문은 믿음이 손과 발을 움직이는가를 묻습니다.
+            돌봄, 전화 한 통, 동행, 설명, 안내, 시간 내기, 비용 감수 같은 것이 모두 오늘의 “침상 메기”일 수 있습니다.
+          </p>
+        </div>
+
+        <div class="hint-compressed">
+          예수님은 보이는 문제보다 더 깊은 문제를 먼저 다루시고, 우리에게도 사람을 실제로 짊어지고 길을 만드는 믿음을 요구하십니다.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>7) 작은 실천 체크리스트 (이번 주 적용)</h3>
+        <ul class="content-long">
+          <li><b>1.</b> 이번 주에 내 주변에서 “스스로는 들어오기 어려운 사람”이 누구인지 한 사람 떠올리고, 그 사람을 위해 실제 행동 하나를 해 봅니다.</li>
+          <li><b>2.</b> 기도할 때 눈에 보이는 문제만 말하지 말고, 내 삶에서 하나님 앞에 바로 놓아야 할 더 깊은 죄책과 끊어짐이 무엇인지 적어 봅니다.</li>
+          <li><b>3.</b> 내가 속한 공동체가 처음 오는 사람이나 약한 사람에게 실제로 쉬운 구조인지 냉정하게 점검해 봅니다.</li>
+          <li><b>4.</b> 누군가를 도울 때 조언부터 하지 말고, 먼저 “내가 대신 들어 줄 침상은 무엇인가”를 생각해 봅니다.</li>
+          <li><b>5.</b> 이번 주에 한 번, 예수님이 그 사람을 집으로 돌려보내신 것처럼 누군가가 자기 삶의 자리로 돌아가도록 도울 수 있는 일을 찾아봅니다.</li>
+        </ul>
+
+        <p class="muted small">
+          기억할 것: 본문 속 믿음은 말로만 존재하지 않았습니다. 믿음은 친구를 짊어지고, 길을 만들고, 예수님 앞에 내려놓는 행동이었습니다.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>8) 마지막 3–4문장 핵심 요약</h3>
+        <p class="content-long">
+          누가복음 5:17–26은 예수님이 한 중풍병자를 고치신 이야기이지만, 그보다 더 깊게는 예수님이 <b>죄를 사하는 권세를 가진 분</b>임을 드러내는 본문입니다.
+          친구들의 믿음은 그 사람을 실제로 메고 와서, 막히면 다른 길을 찾고, 끝내 예수님 앞에 내려놓는 행동으로 나타났습니다.
+          예수님은 보이는 치유를 통해 보이지 않는 용서의 현실을 증명하셨고, 사람들은 하나님께 영광을 돌렸습니다.
+          그래서 이 본문은 우리에게 묻습니다. 나는 지금 누군가를 주님 앞으로 데려가는 친구인가, 아니면 문을 막고 서 있는 군중인가?
+        </p>
+      </article>
+
+      <article class="card" style="text-align:center; opacity:0.88;">
+        <p class="muted small">
+          이 페이지는 <b>모바일 전용</b>으로 제작되었습니다.<br/>
+          상단 <b>공유</b> 버튼으로 링크를 나누고,
+          하단 <b>요약 모드</b>로 소그룹 나눔에도 활용해 보세요.<br/>
+          같은 형식으로 다른 본문도
+          <b>정론 · 정행 · 현대 적용</b> 관점에서 계속 확장할 수 있습니다.
+        </p>
+      </article>
+
+    </section>
+  </main>
+
+  <div class="bar" aria-label="하단 도구 바">
+    <div class="bar-inner">
+      <button class="btn" id="btnToggleSummary">요약 모드</button>
+      <button class="btn primary" id="btnExpand">전체 접기</button>
+    </div>
+  </div>
+
+  <script>
+    const btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: '누가복음 5:17–26 정론·정행·현대 적용 가이드',
+          url: location.href
+        };
+        if (navigator.share) {
+          try { await navigator.share(shareData); } catch (e) {}
+        } else {
+          alert('이 링크를 복사해 공유하세요:\n' + location.href);
+        }
+      });
+    }
+
+    const themeBtn = document.getElementById('btnTheme');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    function getSystemTheme() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (themeIcon && themeLabel) {
+        if (theme === 'light') {
+          themeIcon.textContent = '☀️';
+          themeLabel.textContent = '일반';
+        } else {
+          themeIcon.textContent = '🌙';
+          themeLabel.textContent = '다크';
+        }
+      }
+    }
+
+    const storedTheme = localStorage.getItem('lk05_17_26_theme');
+    const initialTheme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : getSystemTheme();
+    applyTheme(initialTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('lk05_17_26_theme', next);
+        applyTheme(next);
+      });
+    }
+
+    if (!storedTheme && window.matchMedia) {
+      const mq = window.matchMedia('(prefers-color-scheme: light)');
+      const handler = () => applyTheme(getSystemTheme());
+      if (mq.addEventListener) mq.addEventListener('change', handler);
+      else if (mq.addListener) mq.addListener(handler);
+    }
+
+    const btnSummary = document.getElementById('btnToggleSummary');
+    btnSummary.addEventListener('click', () => {
+      document.body.classList.toggle('summary-mode');
+      btnSummary.textContent = document.body.classList.contains('summary-mode')
+        ? '자세히 모드'
+        : '요약 모드';
+    });
+
+    const btnExpand = document.getElementById('btnExpand');
+    let expanded = true;
+    btnExpand.addEventListener('click', () => {
+      const all = Array.from(document.querySelectorAll('details'));
+      expanded = !expanded;
+      all.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? '전체 접기' : '전체 펼치기';
+    });
+  </script>
+</body>
+</html>
