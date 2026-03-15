@@ -30,23 +30,24 @@ jobs:
           HOST  = f"https://{OWNER}.github.io"
 
           def find_issue_dirs():
-              items = []
-              skip_names = {'.git', '.github', 'assets', 'latest', '_site', '__pycache__'}
-    
-              for root, dirs, files in os.walk('.'):
-                  dirs[:] = [
-                          d for d in dirs
-                          if not d.startswith('.') and d not in skip_names
-                      ]
+    items = []
+    skip_names = {'.git', '.github', 'assets', 'latest', '_site', '__pycache__'}
 
-                      rel_root = os.path.relpath(root, '.')
-                      if rel_root == '.':
-                          continue
+    for root, dirs, files in os.walk('.'):
+        dirs[:] = [
+            d for d in dirs
+            if not d.startswith('.') and d not in skip_names
+        ]
 
-                      leaf = os.path.basename(rel_root)
-                      if re.fullmatch(r'\d{8}', leaf):
-                          items.append(rel_root.replace("\\", "/"))
-                  return sorted(items)
+        rel_root = os.path.relpath(root, '.')
+        if rel_root == '.':
+            continue
+
+        leaf = os.path.basename(rel_root)
+        if re.fullmatch(r'\d{8}', leaf):
+            items.append(rel_root.replace("\\", "/"))
+
+    return sorted(items)
 
           def parse_date_from_folder(name):
               s = os.path.basename(name)
