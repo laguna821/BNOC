@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="date" content="2026-04-26" />
+  <meta name="theme-color" content="#f7f5f0" id="themeColorMeta" />
+  <title>누가복음 6:12–19 — 프리미엄 정론·정행·현대 적용 가이드</title>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('lk06_12_19_premium_theme');
+        const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', saved === 'light' || saved === 'dark' ? saved : (systemDark ? 'dark' : 'light'));
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+
+    :root {
+      color-scheme: light dark;
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+      --font-serif: "Noto Serif KR", "Source Han Serif KR", "AppleMyungjo", Georgia, serif;
+      --page-max: 760px;
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+
+    html[data-theme="light"] {
+      color-scheme: light;
+      --bg: #f7f5f0;
+      --bg-2: #ede6d9;
+      --bg-3: #fffaf3;
+      --surface: rgba(255,255,255,.76);
+      --surface-strong: rgba(255,255,255,.94);
+      --surface-soft: rgba(255,250,243,.66);
+      --surface-inset: rgba(246,241,232,.78);
+      --border: rgba(94,76,44,.17);
+      --border-strong: rgba(94,76,44,.26);
+      --text: #1c1c1c;
+      --text-strong: #0f1115;
+      --muted: #6b7280;
+      --muted-2: #8a8378;
+      --emerald: #0f6b4f;
+      --emerald-2: #0a8a66;
+      --emerald-soft: rgba(15,107,79,.12);
+      --amber: #d79a3a;
+      --amber-2: #9a6221;
+      --amber-soft: rgba(215,154,58,.14);
+      --shadow: 0 22px 70px rgba(58,43,22,.13);
+      --shadow-soft: 0 14px 36px rgba(58,43,22,.10);
+      --header-bg: rgba(247,245,240,.78);
+      --bottom-bg: rgba(247,245,240,.84);
+      --hero-glow: rgba(215,154,58,.24);
+      --focus: rgba(15,107,79,.36);
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #081020;
+      --bg-2: #0b1020;
+      --bg-3: #121826;
+      --surface: rgba(18,24,38,.72);
+      --surface-strong: rgba(20,27,42,.92);
+      --surface-soft: rgba(12,18,31,.72);
+      --surface-inset: rgba(5,10,18,.48);
+      --border: rgba(230,233,242,.10);
+      --border-strong: rgba(255,184,69,.26);
+      --text: #d8deea;
+      --text-strong: #f2efe7;
+      --muted: #a9b1c2;
+      --muted-2: #7e8799;
+      --emerald: #00c896;
+      --emerald-2: #16e0ad;
+      --emerald-soft: rgba(0,200,150,.13);
+      --amber: #ffb845;
+      --amber-2: #d99a35;
+      --amber-soft: rgba(255,184,69,.13);
+      --shadow: 0 26px 86px rgba(0,0,0,.48);
+      --shadow-soft: 0 18px 44px rgba(0,0,0,.38);
+      --header-bg: rgba(8,16,32,.80);
+      --bottom-bg: rgba(8,16,32,.86);
+      --hero-glow: rgba(0,200,150,.20);
+      --focus: rgba(0,200,150,.42);
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { min-height: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font-sans);
+      color: var(--text);
+      background:
+        radial-gradient(circle at 50% -12%, var(--hero-glow) 0%, rgba(0,0,0,0) 34rem),
+        radial-gradient(circle at 8% 10%, rgba(15,107,79,.16), rgba(0,0,0,0) 24rem),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 48%, var(--bg) 100%);
+      line-height: 1.72;
+      letter-spacing: -0.012em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      pointer-events: none;
+      z-index: -1;
+    }
+    body::before {
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: radial-gradient(circle at top, black 0%, transparent 72%);
+    }
+    body::after {
+      width: 34rem;
+      height: 34rem;
+      right: -16rem;
+      top: 6rem;
+      border-radius: 999px;
+      background: radial-gradient(circle, var(--amber-soft), transparent 64%);
+      filter: blur(10px);
+    }
+
+    ::selection { background: var(--emerald-soft); color: var(--text-strong); }
+    a { color: inherit; }
+    button, summary { font: inherit; }
+
+    .skip-link {
+      position: fixed;
+      left: 14px;
+      top: -80px;
+      z-index: 999;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--emerald);
+      text-decoration: none;
+      transition: top .2s var(--ease);
+    }
+    .skip-link:focus { top: 14px; outline: 3px solid var(--focus); }
+
+    .shell {
+      width: min(var(--page-max), 100%);
+      margin: 0 auto;
+      padding: 14px 16px 132px;
+    }
+
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      backdrop-filter: blur(22px) saturate(165%);
+      -webkit-backdrop-filter: blur(22px) saturate(165%);
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .app-header__inner {
+      width: min(var(--page-max), 100%);
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: space-between;
+    }
+    .brand {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(135deg, var(--emerald), #064e3b 72%),
+        var(--surface-strong);
+      color: white;
+      box-shadow: 0 16px 34px rgba(15,107,79,.28);
+      position: relative;
+      overflow: hidden;
+    }
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.26);
+    }
+    .brand-mark svg { width: 22px; height: 22px; position: relative; z-index: 1; }
+    .brand-text { min-width: 0; }
+    .brand-title {
+      margin: 0;
+      font-size: clamp(16px, 4vw, 20px);
+      line-height: 1.15;
+      color: var(--text-strong);
+      font-weight: 860;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .brand-subtitle {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11.5px;
+      font-weight: 650;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 0 0 auto;
+    }
+
+    .icon-btn,
+    .pill-btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-strong);
+      border-radius: 999px;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 1px 0 rgba(255,255,255,.10) inset;
+      transition: transform .18s var(--ease), border-color .18s var(--ease), background .18s var(--ease), box-shadow .18s var(--ease);
+    }
+    .icon-btn { width: 40px; padding: 0; }
+    .pill-btn { padding: 0 14px; font-size: 13px; font-weight: 760; }
+    .icon-btn svg,
+    .pill-btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icon-btn:hover,
+    .pill-btn:hover { transform: translateY(-1px); border-color: var(--border-strong); box-shadow: var(--shadow-soft); }
+    .icon-btn:active,
+    .pill-btn:active { transform: translateY(0); }
+    .icon-btn:focus-visible,
+    .pill-btn:focus-visible,
+    .study-card__toggle:focus-visible,
+    summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+    .reading-panel,
+    .hero-panel,
+    .study-card,
+    .footer-card {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      backdrop-filter: blur(18px) saturate(155%);
+      -webkit-backdrop-filter: blur(18px) saturate(155%);
+      box-shadow: var(--shadow);
+    }
+
+    .reading-panel {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 14px 0 14px;
+    }
+    details.scripture-details { background: transparent; }
+    details.scripture-details summary {
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+      padding: 17px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--text-strong);
+      font-weight: 840;
+    }
+    details.scripture-details summary::-webkit-details-marker { display: none; }
+    .summary-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .summary-left svg { width: 20px; height: 20px; color: var(--emerald); flex: 0 0 auto; }
+    .summary-left span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .chevron-round,
+    .study-card__chev {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      background: var(--surface-inset);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      flex: 0 0 auto;
+      transition: transform .24s var(--ease), color .24s var(--ease), background .24s var(--ease), border-color .24s var(--ease);
+    }
+    .chevron-round svg,
+    .study-card__chev svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
+    details[open] .chevron-round { transform: rotate(180deg); color: var(--emerald); border-color: var(--border-strong); }
+    .scripture-body {
+      padding: 2px 20px 22px;
+      border-top: 1px solid var(--border);
+      background: var(--surface-soft);
+      font-family: var(--font-serif);
+      font-size: 15.8px;
+      line-height: 2;
+      color: var(--text);
+    }
+    .scripture-body p { margin: 13px 0; }
+    .scripture-body b { color: var(--text-strong); font-weight: 760; }
+    .v {
+      font-family: var(--font-sans);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      margin-right: 7px;
+      border-radius: 999px;
+      background: var(--emerald-soft);
+      color: var(--emerald);
+      font-size: 11px;
+      font-weight: 900;
+      vertical-align: 1px;
+    }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      padding: 28px 22px 26px;
+      margin: 14px 0 18px;
+    }
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 0%, var(--amber-soft), transparent 32%),
+        radial-gradient(circle at 88% 16%, var(--emerald-soft), transparent 35%),
+        linear-gradient(180deg, rgba(255,255,255,.08), transparent 42%);
+      pointer-events: none;
+    }
+    .hero-panel > * { position: relative; }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--amber);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 900;
+    }
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 20px;
+    }
+    .hero-chip-row span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border-strong);
+      color: var(--emerald);
+      background: var(--emerald-soft);
+      font-family: var(--font-serif);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: -.01em;
+    }
+    .hero-quote {
+      margin: 0;
+      font-family: var(--font-serif);
+      color: var(--text-strong);
+      font-size: clamp(31px, 8.5vw, 54px);
+      line-height: 1.26;
+      font-weight: 900;
+      letter-spacing: -.055em;
+    }
+    .hero-caption {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 60ch;
+    }
+    .hero-caption b { color: var(--text-strong); font-weight: 760; }
+    .hero-rule {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 22px 0 16px;
+      color: var(--amber);
+    }
+    .hero-rule::before,
+    .hero-rule::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+    }
+
+    .section-list {
+      display: grid;
+      gap: 13px;
+    }
+    .study-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease), box-shadow .2s var(--ease);
+    }
+    .study-card:hover { border-color: var(--border-strong); }
+    .study-card__head { border-bottom: 1px solid transparent; }
+    .study-card.is-open .study-card__head { border-bottom-color: var(--border); }
+    .study-card__toggle {
+      appearance: none;
+      border: 0;
+      width: 100%;
+      padding: 16px 16px;
+      background: transparent;
+      color: var(--text-strong);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      cursor: pointer;
+    }
+    .study-card__num {
+      width: 36px;
+      height: 36px;
+      border-radius: 13px;
+      display: inline-grid;
+      place-items: center;
+      background: var(--surface-inset);
+      color: var(--emerald);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+    .study-card__title {
+      min-width: 0;
+      font-size: clamp(15.5px, 4.2vw, 18px);
+      font-weight: 880;
+      line-height: 1.35;
+      letter-spacing: -.028em;
+    }
+    .study-card.is-open .study-card__chev { transform: rotate(180deg); color: var(--emerald); border-color: var(--border-strong); }
+
+    .summary-brief,
+    .detail-body {
+      padding: 17px 18px 20px;
+    }
+    .summary-brief {
+      display: none;
+      border-top: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--emerald-soft), rgba(255,255,255,0));
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.72;
+    }
+    .summary-brief .summary-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 9px;
+      margin: 0 0 8px;
+      border-radius: 999px;
+      color: var(--emerald);
+      background: var(--surface-inset);
+      border: 1px solid var(--border);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+    .summary-brief b { color: var(--text-strong); }
+    .study-card:not(.is-open) .detail-body { display: none; }
+    body.summary-mode .study-card.is-open .summary-brief { display: block; }
+    body.summary-mode .study-card .detail-body { display: none; }
+    body:not(.summary-mode) .study-card.is-open .detail-body { display: block; }
+
+    .detail-body {
+      background: linear-gradient(180deg, var(--surface-soft), transparent);
+      color: var(--text);
+    }
+    .detail-body p,
+    .detail-body li {
+      margin: 0 0 13px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.82;
+    }
+    .detail-body p:last-child,
+    .detail-body li:last-child { margin-bottom: 0; }
+    .detail-body b { color: var(--text-strong); font-weight: 780; }
+    .detail-body ul { margin: 0; padding-left: 22px; }
+    .detail-body h4 {
+      margin: 22px 0 8px;
+      color: var(--amber);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .015em;
+      line-height: 1.45;
+    }
+    .detail-body h4:first-child { margin-top: 0; }
+    .note,
+    .detail-body .note {
+      margin: 0 0 16px;
+      padding: 16px 16px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--emerald-soft), rgba(255,255,255,0));
+      border: 1px solid var(--border-strong);
+      color: var(--text);
+    }
+    .hint,
+    .detail-body .hint {
+      display: block;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+      color: var(--muted-2);
+      font-size: 13px;
+      font-style: normal;
+    }
+    .muted.small,
+    .detail-body .muted.small {
+      color: var(--muted-2);
+      font-size: 13px;
+      text-align: left;
+      display: block;
+    }
+
+    .kv {
+      display: grid;
+      grid-template-columns: minmax(95px, 130px) 1fr;
+      gap: 0;
+      margin-top: 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--surface-inset);
+    }
+    .kv > div {
+      padding: 12px 13px;
+      border-bottom: 1px solid var(--border);
+    }
+    .kv > div:nth-last-child(-n+2) { border-bottom: 0; }
+    .kv-label {
+      color: var(--emerald);
+      font-family: var(--font-serif);
+      font-weight: 900;
+      background: var(--emerald-soft);
+      border-right: 1px solid var(--border);
+      word-break: break-word;
+    }
+    .mapping-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 14px;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--surface-inset);
+      font-size: 13px;
+    }
+    .mapping-table th,
+    .mapping-table td {
+      padding: 11px 10px;
+      vertical-align: top;
+      text-align: left;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .mapping-table th:last-child,
+    .mapping-table td:last-child { border-right: 0; }
+    .mapping-table tr:last-child td { border-bottom: 0; }
+    .mapping-table th {
+      color: var(--text-strong);
+      background: var(--surface-soft);
+      font-weight: 850;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+
+    /* OT–NT 연결: 모바일 우선 카드형 비교 블록 */
+    .otnt-bridge {
+      display: grid;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .otnt-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 0% 0%, var(--amber-soft), rgba(0,0,0,0) 42%),
+        linear-gradient(145deg, var(--surface-strong), var(--surface-inset));
+      box-shadow: var(--shadow-soft);
+    }
+    .otnt-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--emerald), var(--amber));
+      opacity: .88;
+    }
+    .otnt-card__top {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px 16px 13px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    .otnt-card__num {
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 13px;
+      background: var(--emerald-soft);
+      color: var(--emerald);
+      font-family: var(--font-serif);
+      font-size: 14px;
+      font-weight: 900;
+      border: 1px solid rgba(15,107,79,.18);
+      box-shadow: 0 1px 0 rgba(255,255,255,.16) inset;
+    }
+    html[data-theme="dark"] .otnt-card__num {
+      border-color: rgba(0,200,150,.25);
+    }
+    .otnt-card__title {
+      min-width: 0;
+      display: grid;
+      gap: 3px;
+    }
+    .otnt-card__eyebrow {
+      color: var(--amber);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    .otnt-card__concept {
+      color: var(--text-strong);
+      font-size: 17px;
+      font-weight: 920;
+      line-height: 1.35;
+      letter-spacing: -.015em;
+    }
+    .otnt-flow {
+      display: grid;
+      gap: 8px;
+      padding: 14px 16px 15px 18px;
+      background: rgba(0,0,0,.025);
+    }
+    html[data-theme="dark"] .otnt-flow {
+      background: rgba(255,255,255,.025);
+    }
+    .otnt-flow__row {
+      display: grid;
+      grid-template-columns: minmax(82px, 106px) 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+    .otnt-flow__label {
+      color: var(--muted-2);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .01em;
+      line-height: 1.25;
+    }
+    .otnt-flow__value {
+      min-width: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+    .term-chip {
+      display: inline-flex;
+      max-width: 100%;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 9px 6px;
+      border-radius: 999px;
+      border: 1px solid var(--border-strong);
+      background: var(--surface-soft);
+      color: var(--text-strong);
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.25;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+    .term-chip--hebrew {
+      direction: rtl;
+      unicode-bidi: isolate;
+      letter-spacing: .01em;
+    }
+    .term-chip--nt {
+      color: var(--emerald);
+      background: var(--emerald-soft);
+      border-color: rgba(15,107,79,.28);
+    }
+    html[data-theme="dark"] .term-chip--nt {
+      border-color: rgba(0,200,150,.28);
+    }
+    .otnt-insight {
+      display: grid;
+      gap: 10px;
+      padding: 0 16px 16px 18px;
+    }
+    .otnt-insight__block {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 13px;
+      background: var(--surface-soft);
+    }
+    .otnt-insight__label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 5px;
+      color: var(--amber);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .otnt-insight__label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: currentColor;
+      opacity: .86;
+    }
+    .otnt-insight__text {
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.68;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .otnt-caption {
+      margin-top: 13px;
+      padding: 14px 15px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-strong);
+      background: linear-gradient(135deg, var(--amber-soft), rgba(255,255,255,0));
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .otnt-caption b { color: var(--text-strong); }
+
+    @media (min-width: 680px) {
+      .otnt-bridge { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .otnt-card { display: flex; flex-direction: column; }
+      .otnt-insight { flex: 1; }
+      .otnt-flow__row { grid-template-columns: 1fr; gap: 5px; align-items: start; }
+      .otnt-card__top { padding-right: 15px; }
+      .otnt-card__concept { font-size: 16px; }
+      .otnt-insight__text { font-size: 13.5px; }
+    }
+
+    @media (max-width: 440px) {
+      .otnt-card { border-radius: 20px; }
+      .otnt-card__top { padding: 15px 14px 12px 17px; }
+      .otnt-flow { padding: 13px 14px 14px 17px; }
+      .otnt-insight { padding: 0 14px 15px 17px; }
+      .otnt-flow__row { grid-template-columns: 1fr; gap: 5px; align-items: start; }
+      .term-chip { min-height: 28px; font-size: 12.5px; padding-left: 8px; padding-right: 8px; }
+      .otnt-card__concept { font-size: 16px; }
+      .otnt-insight__text { font-size: 13.5px; line-height: 1.66; }
+    }
+    .divider { height: 1px; margin: 22px 0; background: var(--border); }
+
+    .footer-card {
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      text-align: center;
+      color: var(--muted);
+    }
+    .footer-card b { color: var(--text-strong); }
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 14px;
+      color: var(--amber);
+      font-family: var(--font-serif);
+      letter-spacing: .16em;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .bottom-bar {
+      position: fixed;
+      inset: auto 0 0;
+      z-index: 70;
+      padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+      background: var(--bottom-bg);
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(24px) saturate(170%);
+      -webkit-backdrop-filter: blur(24px) saturate(170%);
+      box-shadow: 0 -18px 56px rgba(0,0,0,.16);
+    }
+    .bottom-bar__inner {
+      width: min(var(--page-max), 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .action-btn {
+      appearance: none;
+      border: 1px solid var(--border-strong);
+      min-height: 52px;
+      border-radius: 18px;
+      cursor: pointer;
+      color: var(--text-strong);
+      font-size: 14px;
+      font-weight: 870;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      box-shadow: 0 1px 0 rgba(255,255,255,.12) inset, var(--shadow-soft);
+      transition: transform .18s var(--ease), filter .18s var(--ease);
+    }
+    .action-btn svg { width: 19px; height: 19px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .action-btn:active { transform: translateY(1px); }
+    .action-btn--summary {
+      background: linear-gradient(135deg, var(--emerald), #075f47);
+      color: white;
+      border-color: rgba(255,255,255,.12);
+    }
+    .action-btn--collapse {
+      background: linear-gradient(135deg, var(--amber), var(--amber-2));
+      color: #fff8e8;
+      border-color: rgba(255,255,255,.12);
+    }
+    .action-btn[aria-pressed="true"] { filter: saturate(1.16) brightness(1.03); }
+    .action-btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: calc(88px + env(safe-area-inset-bottom));
+      z-index: 100;
+      transform: translate(-50%, 12px);
+      padding: 11px 14px;
+      border-radius: 999px;
+      background: var(--text-strong);
+      color: var(--bg);
+      box-shadow: var(--shadow);
+      font-size: 13px;
+      font-weight: 800;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s var(--ease), transform .2s var(--ease);
+      white-space: nowrap;
+    }
+    .toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+
+    @media (min-width: 720px) {
+      .shell { padding-left: 20px; padding-right: 20px; }
+      .hero-panel { padding: 38px 38px 34px; }
+      .summary-brief,
+      .detail-body { padding-left: 22px; padding-right: 22px; }
+    }
+
+    @media (max-width: 440px) {
+      .app-header__inner { padding: 10px 12px; }
+      .brand-mark { width: 38px; height: 38px; border-radius: 14px; }
+      .brand-subtitle { max-width: 190px; }
+      .pill-btn span.theme-text { display: none; }
+      .pill-btn { min-width: 40px; padding: 0 12px; }
+      .shell { padding-left: 12px; padding-right: 12px; }
+      .hero-panel { padding: 25px 18px 23px; }
+      .scripture-body { padding-left: 17px; padding-right: 17px; }
+      .study-card__toggle { padding: 14px 13px; gap: 10px; }
+      .study-card__num { width: 32px; height: 32px; border-radius: 12px; }
+      .summary-brief,
+      .detail-body { padding: 15px 15px 18px; }
+      .kv { grid-template-columns: 1fr; }
+      .kv-label { border-right: 0; }
+      .kv > div:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .kv > div:last-child { border-bottom: 0; }
+      .mapping-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .bottom-bar { padding-left: 12px; padding-right: 12px; }
+      .action-btn { min-height: 50px; border-radius: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+    }
+
+  
+
+    /* Luke 6:12–19 custom additions — original visual language preserved */
+    .scripture-ref {
+      margin: 0 0 12px;
+      color: var(--amber);
+      font-family: var(--font-serif);
+      font-weight: 900;
+      letter-spacing: .06em;
+      font-size: 12px;
+    }
+    .scripture-body .plain-verse {
+      display: block;
+      margin: 12px 0;
+    }
+    .context-tag-row,
+    .pastoral-grid,
+    .mini-card-grid {
+      display: grid;
+      gap: 10px;
+      margin: 14px 0 16px;
+    }
+    .context-tag-row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .context-tag,
+    .pastoral-card,
+    .mini-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface-inset);
+      padding: 13px 14px;
+    }
+    .context-tag span,
+    .pastoral-card span,
+    .mini-card span {
+      display: inline-flex;
+      margin-bottom: 5px;
+      color: var(--amber);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+    .context-tag b,
+    .pastoral-card b,
+    .mini-card b {
+      display: block;
+      color: var(--text-strong);
+      font-size: 14px;
+      line-height: 1.45;
+      margin-bottom: 4px;
+    }
+    .context-tag p,
+    .pastoral-card p,
+    .mini-card p {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.68;
+      color: var(--muted);
+    }
+    .people-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .person-row {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface-inset);
+    }
+    .person-row .person-no {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      display: inline-grid;
+      place-items: center;
+      background: var(--emerald-soft);
+      color: var(--emerald);
+      font-size: 11px;
+      font-weight: 900;
+      border: 1px solid var(--border-strong);
+    }
+    .person-row strong {
+      color: var(--text-strong);
+      font-size: 14.5px;
+      line-height: 1.35;
+    }
+    .person-row p {
+      margin: 4px 0 0;
+      font-size: 13.3px;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+    .pastoral-grid {
+      grid-template-columns: 1fr;
+    }
+    .callout-quote {
+      margin: 17px 0;
+      padding: 18px 17px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-strong);
+      background:
+        radial-gradient(circle at 8% 0%, var(--amber-soft), rgba(255,255,255,0) 44%),
+        linear-gradient(135deg, var(--emerald-soft), rgba(255,255,255,0));
+      color: var(--text-strong);
+      font-family: var(--font-serif);
+      font-size: 18px;
+      line-height: 1.62;
+      font-weight: 800;
+      letter-spacing: -.025em;
+    }
+    .ordered-practice {
+      counter-reset: practice;
+      list-style: none;
+      padding-left: 0 !important;
+      display: grid;
+      gap: 10px;
+      margin: 14px 0 0 !important;
+    }
+    .ordered-practice li {
+      counter-increment: practice;
+      position: relative;
+      margin: 0 !important;
+      padding: 13px 13px 13px 48px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface-inset);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .ordered-practice li::before {
+      content: counter(practice, decimal-leading-zero);
+      position: absolute;
+      left: 12px;
+      top: 13px;
+      width: 27px;
+      height: 27px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: var(--emerald-soft);
+      color: var(--emerald);
+      font-size: 10px;
+      font-weight: 900;
+      border: 1px solid var(--border-strong);
+    }
+    @media (min-width: 680px) {
+      .pastoral-grid,
+      .mini-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .people-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 440px) {
+      .context-tag-row { grid-template-columns: 1fr; }
+      .callout-quote { font-size: 16.5px; }
+      .person-row { grid-template-columns: 34px 1fr; padding: 11px; }
+    }
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#content">본문으로 바로가기</a>
+
+  <header class="app-header" aria-label="상단 메뉴">
+    <div class="app-header__inner">
+      <div class="brand" aria-label="페이지 제목">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 5.8c2.8-.9 5.2-.5 8 1.4 2.8-1.9 5.2-2.3 8-1.4v12.8c-2.8-.9-5.2-.5-8 1.4-2.8-1.9-5.2-2.3-8-1.4V5.8z"/><path d="M12 7.2v12.2"/></svg>
+        </div>
+        <div class="brand-text">
+          <p class="brand-title">누가복음 6:12–19</p>
+          <div class="brand-subtitle">정론 · 정행 · 현대 적용 가이드</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="pill-btn" id="btnTheme" type="button" aria-label="테마 변경">
+          <span id="themeIcon" aria-hidden="true">☀️</span>
+          <span class="theme-text" id="themeText">라이트</span>
+        </button>
+        <button class="icon-btn" id="btnShare" type="button" aria-label="공유하기">
+          <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.6l6.8-4.2M8.6 13.4l6.8 4.2"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell" id="content">
+    <section class="reading-panel" aria-label="누가복음 6장 12절부터 19절 본문">
+      <details class="scripture-details" open>
+        <summary>
+          <span class="summary-left">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.8c2.8-.9 5.2-.5 8 1.4 2.8-1.9 5.2-2.3 8-1.4v12.8c-2.8-.9-5.2-.5-8 1.4-2.8-1.9-5.2-2.3-8-1.4V5.8z"/><path d="M12 7.2v12.2"/></svg>
+            <span>본문 읽기 <small>(눅 6:12–19)</small></span>
+          </span>
+          <span class="chevron-round" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+        </summary>
+        <div class="scripture-body">
+          
+<p class="scripture-ref">누가복음 6:12-19</p>
+<p class="plain-verse"><span class="v">12</span> 이 때에 예수께서 기도하시러 산으로 가사 밤이 새도록 하나님께 기도하시고</p>
+<p class="plain-verse"><span class="v">13</span> 밝으매 그 제자들을 부르사 그 중에서 열둘을 택하여 사도라 칭하셨으니</p>
+<p class="plain-verse"><span class="v">14</span> 곧 베드로라고도 이름을 주신 시몬과 그의 동생 안드레와 야고보와 요한과 빌립과 바돌로매와</p>
+<p class="plain-verse"><span class="v">15</span> 마태와 도마와 알패오의 아들 야고보와 1)셀롯이라는 시몬과</p>
+<p class="plain-verse"><span class="v">16</span> 야고보의 아들 유다와 예수를 파는 자 될 가룟 유다라</p>
+<p class="plain-verse"><span class="v">17</span> 예수께서 그들과 함께 내려오사 평지에 서시니 그 제자의 많은 무리와 2)예수의 말씀도 듣고 병 고침을 받으려고 유대 사방과 예루살렘과 두로와 시돈의 해안으로부터 온 많은 백성도 있더라</p>
+<p class="plain-verse"><span class="v">18</span> 더러운 귀신에게 고난 받는 자들도 고침을 받은지라</p>
+<p class="plain-verse"><span class="v">19</span> 온 무리가 예수를 만지려고 힘쓰니 이는 능력이 예수께로부터 나와서 모든 사람을 낫게 함이러라</p>
+
+        </div>
+      </details>
+    </section>
+
+    <section class="hero-panel" aria-label="핵심 구절과 설명">
+      <p class="eyebrow">Bible Study · Premium Guide</p>
+      <div class="hero-chip-row">
+        <span class="greek">προσευχή (proseuchē)</span>
+        <span class="greek">διανυκτερεύω (dianyktereuō)</span>
+        <span class="greek">ἐκλέγομαι (eklegomai)</span>
+        <span class="greek">μαθητής (mathētēs)</span>
+        <span class="greek">ἀπόστολος (apostolos)</span>
+        <span class="greek">τόπος πεδινός (topos pedinos)</span>
+        <span class="greek">δύναμις (dynamis)</span>
+      </div>
+      <h1 class="hero-quote">“산에서 기도하시고,<br/>평지에서 회복시키시다.”</h1>
+      <div class="hero-rule" aria-hidden="true">✦</div>
+      <p class="hero-caption">
+        누가복음 6:12–19는 예수님의 갈릴리 사역이 한 단계 전환되는 장면입니다.
+        예수님은 <b>밤새 하나님께 기도</b>하신 뒤 열둘을 택하여 <b>사도</b>라 부르시고,
+        산에서 내려와 <b>평지</b>에서 말씀을 듣고 치유를 구하는 사람들 곁에 서십니다.
+        이 본문은 예수님의 공동체가 <b>기도 · 제자도 · 파송 · 치유</b>라는 리듬 안에서 세워진다는 것을 보여 줍니다.
+      </p>
+    </section>
+
+    <section class="section-list" aria-label="해설 섹션">
+      
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">00</span>
+            <span class="study-card__title">아주 짧은 도입: 산에서 기도하시고 평지에 서신 예수님</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>누가복음 6:12–19는 예수님의 사역이 개인적 치유와 논쟁을 넘어, 하나님 나라 공동체를 세우는 단계로 들어가는 장면입니다. 예수님은 산에서 밤새 기도하시고, 열둘을 세우신 뒤, 평지에서 말씀과 치유를 기다리는 사람들 곁에 서십니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<p>
+  누가복음 6:12–19는 짧지만 매우 밀도 높은 본문입니다. 이 본문에는 <b>기도, 제자, 사도, 산, 평지, 무리, 말씀, 치유, 능력</b>이라는 주제가 한꺼번에 모여 있습니다. 그래서 이 장면은 단순히 “예수님이 열두 제자를 뽑으셨다”는 행정적 기록이 아니라, 예수님의 공동체가 어떤 방식으로 시작되는지를 보여 주는 중요한 전환점입니다.
+</p>
+<p>
+  바로 앞 문맥에서 예수님은 안식일 논쟁과 손 마른 사람의 치유 때문에 종교 지도자들과 심각한 긴장에 들어가셨습니다. 그런 갈등 속에서 예수님은 곧바로 세력을 모으거나 사람을 설득하는 전략을 짜지 않으시고, 먼저 산으로 올라가 밤새 기도하십니다. 그리고 아침이 되자 많은 제자들 가운데 열둘을 택하시고, 그들을 “사도”라 부르십니다. 그 후 예수님은 산 아래 평지에 서셔서 유대와 예루살렘, 두로와 시돈 해안 지방에서 온 사람들의 고통을 마주하십니다.
+</p>
+<div class="hint">
+  전통적으로 누가복음 6장의 배경을 떠올릴 때 갈릴리 호수 북서쪽, 가버나움과 주변 구릉 지대를 함께 생각하곤 합니다. 그러나 6:17의 “평지”가 오늘날 특정 지점과 정확히 동일하다고 단정하기는 어렵습니다. 본문이 강조하는 핵심은 장소 이름보다, 예수님이 <b>하나님께 올라가 기도하시고 사람들 곁으로 내려오셨다</b>는 장면의 흐름입니다.
+</div>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">01</span>
+            <span class="study-card__title">한눈 요약: 이 본문에서 무슨 일이 일어나는가</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>예수님은 갈등이 커지는 상황에서 산으로 가 밤새 기도하신 뒤 열둘을 사도로 세우십니다. 그리고 산 아래 평지에서 말씀과 치유를 구하는 큰 무리를 만나시며, 능력이 예수께로부터 나와 모든 사람을 낫게 합니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<p>
+  누가복음 6:12–19의 이야기는 세 장면으로 나누어 읽으면 쉽습니다. 첫째, 예수님은 산으로 올라가 밤새 하나님께 기도하십니다. 둘째, 날이 밝자 많은 제자들 가운데 열둘을 택하시고 그들을 “사도”라 부르십니다. 셋째, 예수님은 그들과 함께 내려와 평지에 서시고, 말씀을 듣고 병 고침을 받으려는 수많은 사람들을 맞이하십니다.
+</p>
+<div class="context-tag-row">
+  <div class="context-tag"><span>Scene 1</span><b>산에서의 밤샘 기도</b><p>예수님의 사역 방향은 군중의 반응이나 종교 지도자들의 압박이 아니라 하나님과의 깊은 교제 속에서 결정됩니다.</p></div>
+  <div class="context-tag"><span>Scene 2</span><b>열둘의 선택</b><p>많은 제자들 가운데 열둘이 사도로 세워집니다. 이들은 단순한 추종자가 아니라 예수님의 증인으로 보냄 받을 사람들입니다.</p></div>
+  <div class="context-tag"><span>Scene 3</span><b>평지의 무리</b><p>예수님은 높은 곳에 머무르지 않고 내려오셔서 병든 사람들, 더러운 영에게 괴로움 받는 사람들, 말씀을 듣고자 하는 사람들 곁에 서십니다.</p></div>
+  <div class="context-tag"><span>Center</span><b>말씀과 치유</b><p>무리는 예수님의 말씀을 듣고 병 고침을 받으러 왔습니다. 누가에게 복음은 영혼만이 아니라 몸과 삶 전체의 회복입니다.</p></div>
+</div>
+<p>
+  이 본문을 한 문장으로 요약하면 이렇습니다. <b>예수님의 공동체는 기도로 시작되고, 제자도 안에서 형성되며, 고통받는 사람들의 자리로 내려가는 공동체입니다.</b> 그러므로 이 본문은 교회가 무엇을 믿어야 하는지뿐 아니라, 어떻게 사람을 세우고 어떻게 세상 속으로 내려가야 하는지도 가르쳐 줍니다.
+</p>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">02</span>
+            <span class="study-card__title">역사·지리·배경 1: 갈릴리 사역과 로마 지배 질서</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>이 사건은 예수님의 공생애 초반, 갈릴리를 중심으로 사역하시던 시기에 놓입니다. 당시 갈릴리는 헤롯 안티파스의 통치 아래 있었고, 유대와 예루살렘은 로마 제국과 성전 지도층의 정치·종교 질서 속에 있었습니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<h4>2-1) 예수님의 사역은 조용한 시골 종교 활동이 아니었다</h4>
+<p>
+  예수님은 갈릴리에서 가르치고 병자를 고치시며 하나님 나라를 선포하셨습니다. 갈릴리는 예루살렘 성전이 있는 유대의 중심부와는 거리가 있었지만, 결코 역사 바깥의 한적한 시골이 아니었습니다. 로마 제국의 질서, 헤롯 왕가의 통치, 세금과 경제적 압박, 유대 종교 전통, 이방 지역과의 접촉이 모두 얽혀 있던 곳입니다.
+</p>
+<p>
+  당시 갈릴리는 헤롯 대왕의 아들 헤롯 안티파스가 다스렸고, 예루살렘과 유대 지역은 로마 총독과 대제사장 체제의 영향 아래 있었습니다. 그래서 예수님의 사역은 단순히 “개인에게 위로를 주는 종교 활동”이 아니라, <b>하나님 나라의 통치가 로마 제국과 성전 권위와 지역 사회의 질서 속으로 들어오는 사건</b>이었습니다.
+</p>
+<h4>2-2) 바로 앞의 안식일 논쟁이 중요하다</h4>
+<p>
+  누가복음 6:12의 “이 때에”는 그냥 시간이 흘렀다는 표시가 아닙니다. 바로 앞 6:1–11에서 예수님은 안식일 문제를 두고 바리새인과 서기관들과 충돌하셨습니다. 제자들이 안식일에 이삭을 잘라 먹은 일, 그리고 손 마른 사람을 회복시키신 일이 논쟁의 불씨가 되었습니다.
+</p>
+<p>
+  그러므로 예수님이 산으로 올라가 기도하신 것은 단순한 경건 훈련 장면이 아닙니다. 갈등이 커지고, 사역의 방향을 분명히 해야 하며, 앞으로 하나님 나라 공동체의 기초를 세워야 하는 중대한 시점에서 예수님은 먼저 하나님께 나아가십니다. 이 배경을 알면, 6:12의 밤샘 기도가 훨씬 더 무겁고 깊게 느껴집니다.
+</p>
+<div class="note">
+  일반 성도에게 이 장면은 매우 현실적인 질문을 던집니다. 갈등이 생겼을 때, 중요한 결정을 앞두었을 때, 우리는 먼저 사람을 모으고 계획을 짜기 쉬운가요, 아니면 하나님 앞에서 오래 머물며 내 마음과 공동체의 방향을 점검하나요?
+</div>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">03</span>
+            <span class="study-card__title">역사·지리·배경 2: 산, 밤, 평지의 장면 구성</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>누가는 예수님이 산으로 올라가 밤새 기도하셨고, 이후 평지에 서셨다고 말합니다. 산은 하나님과의 깊은 교제를, 평지는 사람들 곁으로 내려오시는 예수님의 사역을 상징적으로 보여 줍니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<h4>3-1) “산”은 하나님 앞에 머무는 자리다</h4>
+<p>
+  누가는 예수님이 “기도하시러 산으로 가셨다”고 말합니다. 여기서 산은 헬라어 <b>ὄρος(oros)</b>입니다. 갈릴리 호수 주변의 산은 우리가 상상하는 거대한 고산이라기보다 호수와 마을을 둘러싼 구릉과 언덕을 포함하는 표현일 수 있습니다. 그러나 누가가 장소를 말할 때 중요한 것은 지형 정보만이 아닙니다. 성경에서 산은 종종 하나님 앞에 나아가고, 사명을 받고, 공동체의 방향이 결정되는 장소로 등장합니다.
+</p>
+<h4>3-2) “밤이 새도록”은 예수님의 분별이 즉흥적이지 않았음을 보여 준다</h4>
+<p>
+  예수님은 잠깐 기도하고 곧바로 결정하신 것이 아니라, 밤이 새도록 하나님께 기도하셨습니다. 이것은 예수님의 선택이 단순한 인상, 인간적 친분, 사역 효율성, 군중의 인기만으로 이루어진 것이 아니었음을 보여 줍니다. 하나님의 아들이신 예수님도 중요한 결정을 앞두고 오래 기도하셨다면, 우리 역시 중요한 사람을 세우고 방향을 정할 때 기도 없는 속도를 조심해야 합니다.
+</p>
+<h4>3-3) “평지”는 사람들에게 가까이 열려 있는 자리다</h4>
+<p>
+  예수님은 산에서 머무르지 않으시고 내려오셔서 평지에 서십니다. 누가복음 6:17의 “평지”는 헬라어 표현으로 <b>τόπος πεδινός(topos pedinos)</b>, 곧 평평한 장소를 뜻합니다. 이 표현 때문에 이어지는 누가복음 6:20 이하의 설교는 보통 “평지 설교”라고 불립니다.
+</p>
+<p>
+  여기서 평지는 매우 아름다운 신학적 그림을 줍니다. 예수님은 하나님께 올라가 기도하시지만, 사람들 위에 군림하기 위해 높은 곳에 머무르지 않으십니다. 그분은 아래로 내려오셔서 사람들이 가까이 올 수 있는 자리에 서십니다. <b>예수님의 사역은 하나님께 깊이 올라가는 기도와, 사람들 곁으로 낮게 내려오는 섬김이 함께 갑니다.</b>
+</p>
+<div class="callout-quote">
+  “산에서 기도하신 예수님은 평지에서 사람들 곁에 서십니다. 참된 영성은 하나님께 깊이 올라갈수록 사람의 아픔을 향해 더 가까이 내려옵니다.”
+</div>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">04</span>
+            <span class="study-card__title">역사·지리·배경 3: 유대, 예루살렘, 두로와 시돈에서 온 사람들</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>예수님께 나온 사람들은 갈릴리 주변 사람들만이 아니었습니다. 유대와 예루살렘, 그리고 두로와 시돈 해안 지방에서 온 사람들까지 모였다는 점은 예수님의 사역이 중심부와 경계 지역을 함께 향하고 있음을 보여 줍니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<h4>4-1) 유대와 예루살렘은 종교 중심부를 가리킨다</h4>
+<p>
+  누가는 많은 백성이 “유대 사방과 예루살렘”에서 왔다고 말합니다. 예루살렘은 성전이 있는 도시이며, 유대 신앙과 제도 권위의 중심지였습니다. 그러므로 예루살렘에서 사람들이 왔다는 말은 예수님의 사역 소문이 단지 갈릴리 마을 안에만 머물지 않았다는 뜻입니다.
+</p>
+<p>
+  예수님의 말씀과 치유는 중심부 사람들에게도 관심의 대상이 되었습니다. 어떤 사람은 진심으로 말씀을 듣고 싶어 왔을 것이고, 어떤 사람은 병 고침을 기대했을 것이며, 어떤 사람은 예수님을 의심하거나 관찰하려는 마음으로 왔을 수도 있습니다. 누가는 그 다양한 동기를 모두 한 장면 안에 담아 놓습니다.
+</p>
+<h4>4-2) 두로와 시돈은 경계와 이방 세계를 떠올리게 한다</h4>
+<p>
+  두로와 시돈은 지중해 연안의 중요한 해안 도시들입니다. 구약 성경에서도 두로와 시돈은 이스라엘과 접촉하면서도 종종 이방 세계의 대표적 이미지로 등장합니다. 누가복음 6:17은 그 지역에서 온 사람들도 예수님께 나아왔다고 말합니다. 여기서 모든 사람이 반드시 이방인이었다고 단정할 필요는 없지만, 이 표현은 예수님의 사역이 유대 내부의 경계선을 넘어 확장되고 있음을 보여 줍니다.
+</p>
+<h4>4-3) 그들이 온 이유는 세 가지였다</h4>
+<p>
+  본문은 무리가 온 이유를 분명히 말합니다. 그들은 <b>예수님의 말씀을 듣고</b>, <b>병 고침을 받고</b>, <b>더러운 귀신에게 고난 받는 상태에서 해방되기 위해</b> 왔습니다. 누가에게 복음은 생각의 위로만이 아닙니다. 말씀을 듣는 지성, 병든 몸, 억눌린 마음과 영적 고통이 모두 예수님 앞에 나아옵니다.
+</p>
+<div class="pastoral-grid">
+  <div class="pastoral-card"><span>Center</span><b>유대와 예루살렘</b><p>종교적 중심부에서 온 사람들입니다. 예수님의 사역이 공식적 종교 질서의 관심과 긴장 안으로 들어가고 있음을 보여 줍니다.</p></div>
+  <div class="pastoral-card"><span>Margin</span><b>두로와 시돈 해안</b><p>경계 지역에서 온 사람들입니다. 예수님의 소문과 치유가 문화적·지역적 경계를 넘어 퍼지고 있음을 보여 줍니다.</p></div>
+</div>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">05</span>
+            <span class="study-card__title">본문 따라 읽기 1: 12–13절, 기도와 선택</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>예수님은 열둘을 세우기 전에 밤새 기도하십니다. 그리고 많은 제자들 가운데 열둘을 택하여 사도라 부르시는데, 이것은 예수님의 공동체가 기도와 부르심 위에 세워졌음을 보여 줍니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<h4>5-1) “기도하시러 산으로 가사”</h4>
+<p>
+  12절은 예수님이 먼저 “기도하시러” 산으로 가셨다고 말합니다. 여기서 중요한 것은 예수님이 문제를 해결하기 전에 먼저 하나님께 나아가셨다는 점입니다. 종교 지도자들과의 갈등이 커지고, 앞으로 사역을 어떻게 이어 갈지 결정해야 하는 순간에 예수님은 사람들을 붙잡아 설득하기보다 하나님께 머무르십니다.
+</p>
+<p>
+  이것은 예수님의 약함을 뜻하지 않습니다. 오히려 누가는 예수님의 권위가 아버지 하나님과의 깊은 관계 안에서 드러난다는 사실을 보여 줍니다. 예수님은 하나님의 아들이시지만, 동시에 참 인간으로서 기도하시며 순종의 길을 걸으십니다.
+</p>
+<h4>5-2) “밤이 새도록 하나님께 기도하시고”</h4>
+<p>
+  이 구절은 예수님의 결정이 얼마나 신중하고 깊었는지를 보여 줍니다. 우리는 종종 사람을 세우는 일을 능력, 성격, 말솜씨, 충성도, 친분, 눈에 보이는 성과로 판단합니다. 그러나 예수님은 열둘을 세우기 전에 밤을 새우며 하나님께 기도하셨습니다. 하나님의 나라를 맡길 사람을 세우는 일은 단순한 인사 결정이 아니라 영적 분별의 문제였기 때문입니다.
+</p>
+<h4>5-3) “그 제자들을 부르사 그 중에서 열둘을 택하여”</h4>
+<p>
+  13절은 예수님 주위에 이미 많은 제자가 있었음을 보여 줍니다. 그 가운데 열둘이 선택됩니다. 여기서 “제자”는 배우는 사람이고, “사도”는 보냄 받은 사람입니다. 이 순서는 매우 중요합니다. <b>보냄 받기 전에 먼저 배워야 합니다.</b> 사명은 예수님에게서 배우는 삶을 건너뛰고 생기지 않습니다.
+</p>
+<h4>5-4) “사도라 칭하셨으니”</h4>
+<p>
+  예수님은 그들을 단지 “친한 제자”라고 부르지 않고 “사도”라고 부르십니다. 사도는 헬라어 <b>ἀπόστολος(apostolos)</b>로, 보냄 받은 사람, 사명을 위임받은 사람이라는 뜻을 가집니다. 이들은 훗날 예수님의 죽음과 부활을 증언하고, 교회 공동체의 기초를 놓는 사람들입니다.
+</p>
+<div class="note">
+  정리하면, 예수님의 공동체는 “인기 있는 사람들이 모인 팀”이 아니라 <b>기도 가운데 부름 받고, 배움 가운데 준비되며, 세상으로 보냄 받는 사람들의 공동체</b>입니다.
+</div>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">06</span>
+            <span class="study-card__title">본문 따라 읽기 2: 14–16절, 열두 이름이 들려주는 메시지</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>열두 사도의 명단은 단순한 이름 목록이 아닙니다. 이 명단은 예수님이 다양한 배경과 성격의 사람들을 부르셨고, 심지어 배신자가 될 가룟 유다까지 이 공동체 안에 있었다는 불편한 진실을 보여 줍니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<p>
+  누가는 열두 사도의 이름을 하나하나 적습니다. 성경을 읽을 때 이름 목록은 쉽게 지나치기 쉽지만, 이 명단은 예수님의 공동체가 어떤 사람들로 시작되었는지를 보여 주는 중요한 증언입니다. 예수님은 완성된 성자들의 모임을 세우신 것이 아니라, 약점과 가능성, 열심과 오해, 충성과 실패가 뒤섞인 실제 사람들을 부르셨습니다.
+</p>
+<div class="people-list">
+  <div class="person-row"><span class="person-no">01</span><div><strong>시몬, 곧 베드로</strong><p>예수님께 새 이름을 받은 인물입니다. 앞장서는 열심이 있었지만, 훗날 실패와 회복을 함께 경험합니다.</p></div></div>
+  <div class="person-row"><span class="person-no">02</span><div><strong>안드레</strong><p>베드로의 동생으로 소개됩니다. 복음서 전통에서 사람을 예수께 데려오는 조용한 연결자의 모습으로 기억됩니다.</p></div></div>
+  <div class="person-row"><span class="person-no">03</span><div><strong>야고보와 요한</strong><p>형제 제자로, 훗날 초대교회와 예수님의 수난 이야기에서 중요한 위치를 차지합니다. 열심이 큰 만큼 예수님께 계속 빚어져야 했던 사람들입니다.</p></div></div>
+  <div class="person-row"><span class="person-no">04</span><div><strong>빌립과 바돌로매</strong><p>이름은 짧게 지나가지만, 예수님은 이름이 크게 드러나지 않는 사람들도 하나님 나라의 기초 공동체 안에 두십니다.</p></div></div>
+  <div class="person-row"><span class="person-no">05</span><div><strong>마태와 도마</strong><p>마태는 다른 복음서에서 세리와 연결되고, 도마는 훗날 의심과 고백의 인물로 알려집니다. 예수님의 공동체는 단순한 성격 유형 하나로 설명되지 않습니다.</p></div></div>
+  <div class="person-row"><span class="person-no">06</span><div><strong>알패오의 아들 야고보</strong><p>잘 알려진 정보가 많지 않은 제자입니다. 그러나 이름이 덜 알려졌다고 사명의 무게가 작은 것은 아닙니다.</p></div></div>
+  <div class="person-row"><span class="person-no">07</span><div><strong>셀롯이라는 시몬</strong><p>“셀롯”은 열심 있는 사람이라는 뜻을 지닙니다. 훗날 정치적 열심당과 연결해 상상하기 쉽지만, 예수 시대의 정확한 정치 조직을 단정하기보다 강한 열심의 이미지로 조심스럽게 읽는 것이 좋습니다.</p></div></div>
+  <div class="person-row"><span class="person-no">08</span><div><strong>야고보의 아들 유다와 가룟 유다</strong><p>한 사람은 비교적 조용히 지나가고, 다른 한 사람은 “예수를 파는 자 될” 사람으로 소개됩니다. 이 표현은 예수님의 공동체 안에도 끝까지 깨어 있어야 할 위험과 비극이 있음을 보여 줍니다.</p></div></div>
+</div>
+<p>
+  열두 명이라는 숫자는 이스라엘의 열두 지파를 떠올리게 합니다. 예수님은 옛 이스라엘을 단순히 폐기하신 것이 아니라, 하나님 백성의 소명을 새롭게 세우고 확장하십니다. 그래서 열둘의 선택은 단지 리더 선발이 아니라, <b>예수님 안에서 새롭게 모이는 하나님 백성의 상징적 출발</b>입니다.
+</p>
+<div class="hint">
+  가룟 유다가 명단 안에 있다는 사실은 매우 불편하지만 중요합니다. 예수님을 가까이 따른다는 외적 위치가 곧 마음의 충성을 보장하지는 않습니다. 신앙 공동체는 늘 겸손과 회개와 분별이 필요합니다.
+</div>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">07</span>
+            <span class="study-card__title">본문 따라 읽기 3: 17–19절, 평지의 말씀과 치유</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>예수님은 열둘과 함께 내려오셔서 평지에 서십니다. 그곳에는 많은 제자와 큰 무리가 있었고, 그들은 말씀을 듣고 병 고침과 해방을 받기 위해 예수께 나아왔습니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<h4>7-1) “그들과 함께 내려오사 평지에 서시니”</h4>
+<p>
+  예수님은 산에서 열둘을 세우신 뒤, 그들과 함께 내려오십니다. 이 표현은 사도들이 예수님 곁에만 머무르는 사람들이 아니라, 예수님과 함께 사람들의 자리로 내려가는 사람들이 되어야 함을 보여 줍니다. 사도는 높은 곳의 특권자가 아니라, 예수님의 발걸음을 따라 낮은 곳으로 이동하는 사람입니다.
+</p>
+<h4>7-2) 제자의 많은 무리와 많은 백성</h4>
+<p>
+  누가는 두 그룹을 구분합니다. 하나는 “그 제자의 많은 무리”이고, 다른 하나는 유대와 예루살렘과 두로와 시돈 해안으로부터 온 “많은 백성”입니다. 예수님 곁에는 이미 배우며 따르는 제자들이 있었고, 동시에 아직 제자라고 부르기 어려운 큰 무리도 있었습니다. 예수님의 사역 현장은 늘 이 두 부류가 함께 있는 자리였습니다.
+</p>
+<h4>7-3) 듣고, 고침 받고, 해방되다</h4>
+<p>
+  무리는 예수님의 말씀을 들으려 했고, 병 고침을 받으려 했으며, 더러운 귀신에게 고난 받는 사람들도 고침을 받았습니다. 이것은 누가복음의 중요한 특징입니다. 누가는 말씀 사역과 치유 사역을 분리하지 않습니다. 예수님의 말씀은 단순한 정보 전달이 아니라 사람을 살리는 권위 있는 말씀이고, 예수님의 치유는 단순한 기적 쇼가 아니라 하나님 나라가 몸과 마음과 영적 고통을 회복시키는 사건입니다.
+</p>
+<h4>7-4) “온 무리가 예수를 만지려고 힘쓰니”</h4>
+<p>
+  19절은 매우 생생합니다. 온 무리가 예수님을 만지려고 힘썼습니다. 이것은 군중이 예수님을 단순히 멀리서 감상하지 않았다는 뜻입니다. 그들은 절박했습니다. 병과 고통과 억눌림 속에서 예수님께 실제로 닿고 싶어 했습니다. 누가는 그 이유를 “능력이 예수께로부터 나와서 모든 사람을 낫게 함이러라”고 설명합니다.
+</p>
+<div class="note">
+  이 구절을 기계적인 치유 공식으로 읽으면 안 됩니다. “예수님을 만지면 모두 즉시 낫는다”는 식으로 단순화하면 오늘 병든 성도에게 죄책감을 줄 수 있습니다. 그러나 이 구절은 분명히 말합니다. <b>예수님은 인간의 몸과 고통을 하찮게 여기지 않으시며, 하나님 나라의 능력은 실제 삶의 회복을 향한다</b>는 것입니다.
+</div>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">08</span>
+            <span class="study-card__title">① 정론(Orthodoxy): 교회가 전통적으로 붙들어 온 믿음</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>정론적으로 이 본문은 예수님의 기도, 주권적 선택, 사도적 권위, 새 이스라엘의 상징, 메시아적 치유 능력을 보여 줍니다. 예수님은 하나님께 기도하시는 참 인간이시며, 동시에 사람을 부르고 고치시는 주권자이십니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<p class="note">
+  정론은 “우리가 무엇을 믿는가”의 차원입니다. 누가복음 6:12–19에서 교회가 전통적으로 붙들어 온 핵심은, 예수님이 단지 뛰어난 선생이나 치유자가 아니라 <b>하나님의 뜻 안에서 하나님 백성을 새롭게 세우시고, 말씀과 능력으로 회복시키시는 메시아</b>라는 고백입니다.
+</p>
+<h4>8-1) 예수님은 기도하시는 하나님의 아들이시다</h4>
+<p>
+  예수님은 하나님의 아들이시지만, 아버지와의 교제를 건너뛰고 사역하지 않으셨습니다. 누가는 예수님의 중요한 순간마다 기도를 강조합니다. 이것은 예수님의 참 인간성을 보여 줍니다. 예수님은 하나님께 의존하지 않아도 되는 초인으로 행동하지 않으시고, 하나님 아버지와의 친밀한 교제 속에서 순종의 길을 가십니다.
+</p>
+<h4>8-2) 열둘의 선택은 예수님의 주권적 부르심이다</h4>
+<p>
+  예수님은 많은 제자들 가운데 열둘을 택하셨습니다. 이것은 제자들이 스스로 자격을 증명해서 얻은 지위가 아니라 예수님의 부르심에서 시작된 사명입니다. 교회는 이 장면을 사도직의 중요한 기원으로 보아 왔습니다. 사도들은 예수님의 말씀과 행적, 죽음과 부활을 증언하는 기초 증인입니다.
+</p>
+<h4>8-3) 열둘은 새롭게 모이는 하나님 백성을 상징한다</h4>
+<p>
+  “열둘”이라는 숫자는 이스라엘의 열두 지파를 떠올리게 합니다. 예수님은 하나님 백성을 새롭게 부르시고 조직하십니다. 이 새로움은 옛 이스라엘을 무시하는 것이 아니라, 예수님 안에서 이스라엘의 소명이 새롭게 성취되고 더 넓게 확장되는 흐름으로 이해할 수 있습니다.
+</p>
+<h4>8-4) 예수님의 치유는 하나님 나라의 표지다</h4>
+<p>
+  19절의 “능력”은 헬라어 <b>δύναμις(dynamis)</b>입니다. 이것은 단순한 마술적 에너지나 사람을 끌어당기는 카리스마가 아닙니다. 누가가 말하는 능력은 하나님 나라가 예수님의 인격과 사역을 통해 실제 세계 안으로 들어오는 생명의 힘입니다. 예수님은 말씀으로 하나님 나라를 선포하시고, 치유로 그 나라가 어떤 회복을 가져오는지 보여 주십니다.
+</p>
+<div class="callout-quote">
+  정론의 핵심 고백은 이것입니다. “예수님은 기도로 아버지께 순종하시는 참 인간이시며, 동시에 하나님 백성을 부르고 세우고 회복시키시는 메시아이시다.”
+</div>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">09</span>
+            <span class="study-card__title">② 정행(Orthopraxy): 그래서 어떻게 살아야 하는가</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>정행의 관점에서 이 본문은 기도 없는 결정, 배움 없는 리더십, 높은 자리에서 내려오지 않는 공동체를 경계하게 합니다. 예수님의 방식은 먼저 기도하고, 제자로 배우고, 사람들의 아픔이 있는 평지로 내려가는 것입니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<p class="note">
+  정행은 “그러면 우리는 어떻게 살아야 하는가”의 차원입니다. 이 본문은 바른 교리를 아는 것에서 멈추지 않고, 예수님의 공동체가 실제로 어떤 습관과 구조와 태도를 가져야 하는지 묻게 합니다.
+</p>
+<h4>9-1) 중요한 결정 앞에서 먼저 멈추고 기도하기</h4>
+<p>
+  예수님은 열둘을 세우기 전에 밤새 기도하셨습니다. 오늘의 교회와 성도는 사람을 세울 때 너무 빨리 판단할 때가 많습니다. 능력이 있어 보이는 사람, 말을 잘하는 사람, 내 편이 되어 줄 사람, 당장 일을 처리할 수 있는 사람을 쉽게 선택합니다. 그러나 예수님의 방식은 먼저 하나님 앞에서 오래 머무는 것입니다.
+</p>
+<p>
+  이것은 “기도했으니 내 결정은 무조건 맞다”는 뜻이 아닙니다. 오히려 진짜 기도는 내 욕망과 두려움과 조급함을 하나님 앞에서 내려놓게 합니다. 정행적으로 기도는 결정을 미루는 핑계가 아니라, 더 정직하고 겸손하게 결정하기 위한 훈련입니다.
+</p>
+<h4>9-2) 사도이기 전에 제자 되기</h4>
+<p>
+  본문에서 사도는 먼저 제자들 가운데서 선택됩니다. 이것은 사명이 배움에서 나온다는 뜻입니다. 교회 안에서 어떤 일을 맡는다는 것은 단순히 직책을 얻는 것이 아닙니다. 먼저 예수님의 마음과 방식과 길을 배우는 제자여야 합니다. 많이 아는 사람보다, 예수님 곁에서 오래 배우고 사람을 예수님의 방식으로 대하는 사람이 공동체를 섬길 수 있습니다.
+</p>
+<h4>9-3) 산에서 내려와 평지에 서는 공동체</h4>
+<p>
+  예수님은 산에 머무르지 않고 평지에 서십니다. 정행적으로 이것은 매우 중요합니다. 교회는 높은 지식, 높은 언어, 높은 문턱, 높은 권위로 사람을 내려다보는 공동체가 되어서는 안 됩니다. 예수님의 공동체는 병든 사람, 지친 사람, 영적 괴로움을 겪는 사람, 경계 지역에서 온 사람이 가까이 올 수 있는 평지가 되어야 합니다.
+</p>
+<h4>9-4) 치유를 공식으로 만들지 않고 돌봄의 길로 만들기</h4>
+<p>
+  이 본문은 예수님께서 모든 사람을 낫게 하셨다고 말합니다. 그러나 오늘 우리가 이것을 “믿음이 있으면 모든 병이 즉시 낫는다”는 공식으로 만들면 위험합니다. 그런 말은 병든 사람에게 또 다른 상처와 죄책감을 줄 수 있습니다. 정행적으로 이 본문은 병든 사람을 정죄하지 말고, 그들이 말씀을 듣고 돌봄을 받고 기도와 의료적 도움과 공동체적 지지를 함께 받을 수 있도록 길을 열라는 부르심입니다.
+</p>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">10</span>
+            <span class="study-card__title">원어 키워드 정리: 헬라어로 보는 본문 흐름</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>핵심 헬라어 단어들은 기도, 밤샘, 선택, 제자, 사도, 산, 평지, 능력, 치유라는 흐름을 이룹니다. 이 단어들은 예수님의 공동체가 기도에서 시작해 파송과 회복으로 나아간다는 그림을 보여 줍니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<p class="muted small">
+  신약 본문이므로 핵심 키워드는 <b>헬라어 lemma(표제어)</b> 기준으로 정리했습니다. 사전식 뜻을 길게 나열하기보다, 이 본문 안에서 각 단어가 어떤 역할을 하는지에 집중했습니다.
+</p>
+<div class="kv">
+  <div class="kv-label">προσεύχομαι / προσευχή</div>
+  <div><b>proseuchomai / proseuchē</b> — 기도하다 / 기도. 6:12에서 예수님은 기도하시러 산으로 가시고, 밤새 하나님의 기도 안에 머무십니다. 중요한 결정이 하나님과의 교제 안에서 이루어짐을 보여 줍니다. <span class="hint">대표 용례: 눅 5:16, 눅 9:18</span></div>
+  <div class="kv-label">διανυκτερεύω</div>
+  <div><b>dianyktereuō</b> — 밤을 새우다, 밤새 지내다. 예수님의 기도가 짧은 형식이 아니라 깊은 분별의 시간이었다는 점을 강조합니다. <span class="hint">대표 용례: 눅 6:12</span></div>
+  <div class="kv-label">ἐκλέγομαι</div>
+  <div><b>eklegomai</b> — 택하다, 선택하다. 6:13의 선택은 사도직이 예수님의 주권적 부르심에서 시작됨을 보여 줍니다. <span class="hint">대표 용례: 눅 9:35, 행 1:24</span></div>
+  <div class="kv-label">μαθητής</div>
+  <div><b>mathētēs</b> — 제자, 배우는 사람. 사도는 먼저 예수님께 배우는 사람이어야 함을 보여 줍니다. <span class="hint">대표 용례: 눅 14:27, 행 6:1</span></div>
+  <div class="kv-label">ἀπόστολος</div>
+  <div><b>apostolos</b> — 사도, 보냄 받은 사람. 열둘의 정체성이 단순 추종자가 아니라 예수님의 사명으로 파송되는 증인임을 드러냅니다. <span class="hint">대표 용례: 눅 9:10, 행 1:2</span></div>
+  <div class="kv-label">ὄρος</div>
+  <div><b>oros</b> — 산, 높은 곳. 본문에서는 하나님께 기도하고 사명을 분별하는 장소로 기능합니다. <span class="hint">대표 용례: 눅 6:12, 눅 9:28</span></div>
+  <div class="kv-label">τόπος πεδινός</div>
+  <div><b>topos pedinos</b> — 평평한 곳, 평지. 예수님의 말씀과 치유가 사람들이 가까이 올 수 있는 열린 자리에서 이루어짐을 보여 줍니다. <span class="hint">대표 용례: 눅 6:17</span></div>
+  <div class="kv-label">ὀχλέω</div>
+  <div><b>ochleō</b> — 괴롭히다, 시달리게 하다. 더러운 영에게 고난 받는 사람들이 단지 종교적 낙인 대상이 아니라 실제 괴로움 속에 있는 사람들임을 보여 줍니다. <span class="hint">대표 용례: 눅 6:18, 행 5:16</span></div>
+  <div class="kv-label">δύναμις</div>
+  <div><b>dynamis</b> — 능력, 권능. 예수님의 치유가 하나님 나라의 생명력과 권위를 드러냅니다. <span class="hint">대표 용례: 눅 5:17, 눅 8:46</span></div>
+  <div class="kv-label">ἰάομαι / θεραπεύω</div>
+  <div><b>iaomai / therapeuō</b> — 고치다, 치유하다. 말씀을 들으러 온 무리의 몸과 삶이 함께 회복되는 장면을 표현합니다. <span class="hint">대표 용례: 눅 5:17, 행 10:38</span></div>
+</div>
+<p>
+  이 단어들을 이어 보면 누가의 그림이 선명해집니다. 예수님은 <b>기도</b>로 시작하시고, <b>제자</b> 가운데 <b>사도</b>를 세우시며, <b>산</b>에서 내려와 <b>평지</b>에서 사람들을 만나시고, <b>능력</b>으로 <b>치유</b>하십니다. 결국 본문은 예수님의 공동체가 기도, 배움, 파송, 회복이라는 리듬 안에서 움직인다는 것을 보여 줍니다.
+</p>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">11</span>
+            <span class="study-card__title">신약–구약 개념 연결: 열둘, 산, 치유의 큰 흐름</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>누가복음 6:12–19는 구약을 직접 인용하지는 않지만, 열두 지파, 산에서의 하나님 만남, 치유와 회복이라는 성경 전체의 큰 흐름을 강하게 떠올리게 합니다. 단어를 억지로 1:1 대응시키기보다 개념의 흐름을 보는 것이 중요합니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<p class="muted small">
+  이 본문에는 구약 직접 인용문이 나오지는 않습니다. 그러나 “열둘”, “산”, “치유와 회복”은 성경 전체의 흐름 속에서 중요한 배경을 가집니다. 아래 비교는 단어를 기계적으로 맞추기보다, 개념이 어떻게 이어지는지를 보기 위한 것입니다.
+</p>
+<div class="otnt-bridge" role="list" aria-label="구약과 신약의 개념 연결">
+  <article class="otnt-card" role="listitem">
+    <div class="otnt-card__top"><span class="otnt-card__num" aria-hidden="true">01</span><div class="otnt-card__title"><span class="otnt-card__eyebrow">Twelve</span><strong class="otnt-card__concept">열두 지파와 새 공동체</strong></div></div>
+    <div class="otnt-flow">
+      <div class="otnt-flow__row"><span class="otnt-flow__label">OT 히브리어</span><span class="otnt-flow__value"><span class="term-chip term-chip--hebrew" lang="he">שֵׁבֶט</span><span class="term-chip">shevet</span><span class="term-chip term-chip--hebrew" lang="he">מַטֶּה</span><span class="term-chip">matteh</span></span></div>
+      <div class="otnt-flow__row"><span class="otnt-flow__label">OT 헬라어</span><span class="otnt-flow__value"><span class="term-chip" lang="grc">φυλή</span></span></div>
+      <div class="otnt-flow__row"><span class="otnt-flow__label">NT 헬라어</span><span class="otnt-flow__value"><span class="term-chip term-chip--nt" lang="grc">δώδεκα</span><span class="term-chip term-chip--nt" lang="grc">ἀπόστολοι</span></span></div>
+    </div>
+    <div class="otnt-insight"><div class="otnt-insight__block"><span class="otnt-insight__label">연결</span><div class="otnt-insight__text">직접 인용은 아니지만 상징적 연결은 강합니다. 예수님은 하나님 백성을 새롭게 모으시는 메시아로 나타납니다.</div></div><div class="otnt-insight__block"><span class="otnt-insight__label">해석 포인트</span><div class="otnt-insight__text">교회는 개인들의 모임만이 아니라 하나님 나라 백성으로 부름 받은 공동체입니다.</div></div></div>
+  </article>
+  <article class="otnt-card" role="listitem">
+    <div class="otnt-card__top"><span class="otnt-card__num" aria-hidden="true">02</span><div class="otnt-card__title"><span class="otnt-card__eyebrow">Mountain</span><strong class="otnt-card__concept">산에서의 하나님 만남</strong></div></div>
+    <div class="otnt-flow">
+      <div class="otnt-flow__row"><span class="otnt-flow__label">OT 히브리어</span><span class="otnt-flow__value"><span class="term-chip term-chip--hebrew" lang="he">הַר</span><span class="term-chip">har</span></span></div>
+      <div class="otnt-flow__row"><span class="otnt-flow__label">OT 헬라어</span><span class="otnt-flow__value"><span class="term-chip" lang="grc">ὄρος</span></span></div>
+      <div class="otnt-flow__row"><span class="otnt-flow__label">NT 헬라어</span><span class="otnt-flow__value"><span class="term-chip term-chip--nt" lang="grc">ὄρος</span></span></div>
+    </div>
+    <div class="otnt-insight"><div class="otnt-insight__block"><span class="otnt-insight__label">연결</span><div class="otnt-insight__text">모세 전승과 직접 동일시할 수는 없지만, 산은 성경에서 기도와 계시와 사명 부여의 분위기를 강하게 갖습니다.</div></div><div class="otnt-insight__block"><span class="otnt-insight__label">해석 포인트</span><div class="otnt-insight__text">예수님의 사명은 하늘과 땅, 기도와 실천이 분리되지 않는 자리에서 드러납니다.</div></div></div>
+  </article>
+  <article class="otnt-card" role="listitem">
+    <div class="otnt-card__top"><span class="otnt-card__num" aria-hidden="true">03</span><div class="otnt-card__title"><span class="otnt-card__eyebrow">Healing</span><strong class="otnt-card__concept">치유와 회복</strong></div></div>
+    <div class="otnt-flow">
+      <div class="otnt-flow__row"><span class="otnt-flow__label">OT 히브리어</span><span class="otnt-flow__value"><span class="term-chip term-chip--hebrew" lang="he">רָפָא</span><span class="term-chip">raphaʾ</span></span></div>
+      <div class="otnt-flow__row"><span class="otnt-flow__label">OT 헬라어</span><span class="otnt-flow__value"><span class="term-chip" lang="grc">ἰάομαι</span><span class="term-chip" lang="grc">θεραπεύω</span></span></div>
+      <div class="otnt-flow__row"><span class="otnt-flow__label">NT 헬라어</span><span class="otnt-flow__value"><span class="term-chip term-chip--nt" lang="grc">ἰάομαι</span><span class="term-chip term-chip--nt" lang="grc">θεραπεύω</span></span></div>
+    </div>
+    <div class="otnt-insight"><div class="otnt-insight__block"><span class="otnt-insight__label">연결</span><div class="otnt-insight__text">구약의 회복 언어가 예수님의 사역 안에서 몸과 마음과 공동체 회복으로 구체화됩니다.</div></div><div class="otnt-insight__block"><span class="otnt-insight__label">해석 포인트</span><div class="otnt-insight__text">하나님 나라는 영혼만이 아니라 몸과 사회적 고통까지 다룹니다.</div></div></div>
+  </article>
+</div>
+<p class="otnt-caption">
+  이 연결은 “구약 단어 하나가 신약 단어 하나와 반드시 같다”는 뜻이 아닙니다. 오히려 성경 전체의 큰 흐름 속에서, 예수님이 하나님 백성을 새롭게 모으시고, 하나님 앞에서 사명을 분별하시며, 고통받는 사람들을 회복시키시는 분으로 나타난다는 점을 보여 줍니다.
+</p>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">12</span>
+            <span class="study-card__title">현대 적용: 개인 · 공동체 · 공적 영역</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>이 본문은 개인에게는 기도와 분별의 루틴을, 교회 공동체에는 배움에서 나오는 리더십과 낮은 문턱을, 공적 영역에는 경계 밖 사람들을 향한 열린 자리를 요청합니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<h4>12-1) 개인: 중요한 선택 앞에서 먼저 기도하는 삶</h4>
+<p>
+  이 본문은 우리에게 “나는 중요한 결정을 어떻게 내리는가?”를 묻습니다. 예수님은 사람을 세우는 일을 앞두고 밤새 기도하셨습니다. 현대의 신앙인도 직장, 관계, 결혼, 진로, 사역, 교회 안의 역할을 결정할 때 단순히 빠르고 유리한 선택만 기준으로 삼지 않아야 합니다. 기도는 현실을 피하는 도피가 아니라, 내 욕망과 두려움과 조급함을 하나님 앞에서 정직하게 드러내는 시간입니다.
+</p>
+<h4>12-2) 공동체: 리더십은 지위가 아니라 배움과 파송이다</h4>
+<p>
+  교회 공동체는 리더를 세울 때 능력, 말솜씨, 친분, 성과만 보지 말아야 합니다. 본문에서 사도는 먼저 제자였습니다. 좋은 리더는 사람들을 자기 주변에 묶어 두는 사람이 아니라, 예수님께 배우고 하나님 나라의 사명으로 사람들을 세우는 사람입니다. 공동체의 건강은 “누가 위에 있느냐”보다 “우리가 함께 예수님을 배우고 있는가”에 달려 있습니다.
+</p>
+<h4>12-3) 공동체: 평지처럼 가까이 갈 수 있는 교회 되기</h4>
+<p>
+  예수님은 평지에 서셨고, 많은 사람이 그분께 가까이 왔습니다. 오늘의 교회도 사람들이 안전하게 가까이 올 수 있는 자리여야 합니다. 몸이 아픈 사람, 마음이 지친 사람, 신앙이 흔들리는 사람, 사회적 경계에 있는 사람, 질문이 많은 사람이 부끄러움 없이 다가올 수 있어야 합니다. 교회가 너무 높은 언어와 높은 문턱과 높은 시선으로 서 있다면, 예수님의 평지와 거리가 멀어집니다.
+</p>
+<h4>12-4) 공적 영역: 경계 밖의 사람들을 향한 열린 자리</h4>
+<p>
+  두로와 시돈에서 온 사람들은 유대 중심부의 시선으로 보면 경계 바깥의 사람들입니다. 그런데 그들도 예수님께 나아옵니다. 이것은 오늘의 교회가 사회적 경계, 문화적 차이, 계층, 질병, 정신적 고통, 이주민과 소수자의 문제 앞에서 어떤 태도를 가져야 하는지 묻게 합니다. 예수님의 평지는 중심부 사람과 경계 지역 사람이 함께 모이는 자리였습니다.
+</p>
+<div class="mini-card-grid">
+  <div class="mini-card"><span>Personal</span><b>기도 루틴 만들기</b><p>중요한 결정을 앞두고 하루 10분이라도 침묵과 기도로 내 마음을 하나님 앞에 가져가는 습관을 세웁니다.</p></div>
+  <div class="mini-card"><span>Church</span><b>제자도에서 리더십 보기</b><p>누가 일을 잘하느냐만 보지 않고, 누가 예수님의 마음과 방식을 배우고 있는지를 살핍니다.</p></div>
+  <div class="mini-card"><span>Care</span><b>고통을 정죄하지 않기</b><p>병든 사람에게 믿음 부족이라는 말을 쉽게 던지지 않고, 기도와 돌봄과 실제 도움을 함께 제공합니다.</p></div>
+  <div class="mini-card"><span>Public</span><b>경계의 사람에게 자리 내기</b><p>우리와 다른 배경의 사람도 말씀을 듣고 회복을 경험할 수 있도록 공동체의 문턱을 낮춥니다.</p></div>
+</div>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">13</span>
+            <span class="study-card__title">작은 실천 체크리스트와 소그룹 질문</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>이번 주에는 중요한 결정을 위해 기도하고, 내가 배우는 제자인지 점검하며, 우리 공동체의 문턱이 누구에게 높은지 살펴볼 수 있습니다. 이 본문은 묵상에서 끝나지 않고 구체적 실천으로 이어져야 합니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<h4>이번 주에 해 볼 작은 실천</h4>
+<ol class="ordered-practice">
+  <li><b>중요한 결정 하나를 적고 기도하기.</b> 내가 앞두고 있는 결정 하나를 종이에 쓰고, 하루 10분씩 조용히 하나님께 가져가 보십시오.</li>
+  <li><b>내가 먼저 제자인지 점검하기.</b> 나는 사역의 성과를 내려고만 하는지, 아니면 예수님께 배우는 시간을 실제로 가지고 있는지 돌아보십시오.</li>
+  <li><b>우리 공동체의 문턱 상상하기.</b> 몸이 아픈 사람, 마음이 지친 사람, 처음 교회에 오는 사람, 신앙 질문이 많은 사람에게 우리 모임은 얼마나 안전한지 생각해 보십시오.</li>
+  <li><b>고통받는 사람을 조언보다 먼저 듣기.</b> 병이나 마음의 어려움을 겪는 사람에게 쉽게 해석해 주려 하지 말고, 먼저 듣고 함께 있어 주는 시간을 가져 보십시오.</li>
+  <li><b>예수님의 능력을 소비하려는 태도 점검하기.</b> 나는 예수님의 능력을 내 필요 해결을 위해서만 찾는지, 아니면 예수님의 말씀을 듣고 그분의 길을 따르려 하는지 묵상해 보십시오.</li>
+</ol>
+<div class="divider"></div>
+<h4>소그룹 나눔 질문</h4>
+<ol class="ordered-practice">
+  <li>예수님이 밤새 기도하신 장면을 볼 때, 내 삶의 중요한 결정 방식에서 바꾸어야 할 점은 무엇입니까?</li>
+  <li>“제자”와 “사도”의 차이를 생각할 때, 나는 배우는 삶과 보냄 받은 삶 중 어느 쪽이 더 약합니까?</li>
+  <li>예수님이 평지에 서셨다는 장면은 우리 교회나 모임의 분위기에 어떤 질문을 던집니까?</li>
+  <li>병든 사람과 영적으로 괴로움 당하는 사람들을 대할 때, 우리가 조심해야 할 말과 꼭 해 주어야 할 행동은 무엇입니까?</li>
+</ol>
+
+        </div>
+      </article>
+    
+
+      <article class="study-card is-open" data-card>
+        <div class="study-card__head">
+          <button class="study-card__toggle" type="button" aria-expanded="true">
+            <span class="study-card__num">14</span>
+            <span class="study-card__title">마지막 핵심 요약</span>
+            <span class="study-card__chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="summary-brief" aria-label="요약">
+          <span class="summary-label">요약</span>
+          <div>누가복음 6:12–19는 예수님의 공동체가 기도에서 시작되고, 제자도 안에서 형성되며, 세상을 향한 파송과 치유로 나아간다는 것을 보여 줍니다. 오늘 우리에게 주어진 질문은 “나는 예수님의 말씀을 듣고 그분의 방식으로 살아가는 제자인가?”입니다.</div>
+        </div>
+        <div class="detail-body">
+          
+<p>
+  누가복음 6:12–19는 예수님의 공동체가 <b>기도에서 시작되고, 제자도 안에서 형성되며, 세상을 향한 파송과 치유로 나아간다</b>는 것을 보여 줍니다. 예수님은 산에서 하나님께 기도하시고, 많은 제자들 가운데 열둘을 세우신 뒤, 평지에서 고통받는 사람들 곁에 서십니다.
+</p>
+<p>
+  이 본문은 교회가 높은 곳의 권위 공동체가 아니라, 예수님께 배우고 보냄 받아 사람들의 아픔이 있는 자리로 내려가는 공동체가 되어야 함을 가르칩니다. 또한 말씀과 치유, 기도와 실천, 선택과 파송이 서로 떨어져 있지 않다는 것을 보여 줍니다.
+</p>
+<div class="callout-quote">
+  오늘 우리에게 던지는 질문은 이것입니다. “나는 예수님의 능력을 구경하는 무리인가, 아니면 예수님의 말씀을 듣고 그분의 방식으로 살아가는 제자인가?”
+</div>
+
+        </div>
+      </article>
+    
+
+      <article class="footer-card">
+        <p class="muted small">
+          이 페이지는 <b>모바일 성경공부 노트</b>로 읽기 좋게 제작되었습니다.<br/>
+          하단 <b>요약 모드</b>는 소그룹 나눔이나 설교 전 준비에 활용할 수 있고,
+          <b>전체 접기</b>는 필요한 카드만 열어 보는 데 도움이 됩니다.<br/>
+          핵심 흐름은 <b>산의 기도 → 열둘의 선택 → 평지의 말씀과 치유 → 오늘의 실천</b>입니다.
+        </p>
+        <div class="footer-brand" aria-hidden="true">SOLI DEO GLORIA</div>
+      </article>
+    </section>
+  </main>
+
+  <nav class="bottom-bar" aria-label="하단 도구 모음">
+    <div class="bottom-bar__inner">
+      <button class="action-btn action-btn--summary" id="btnSummaryMode" type="button" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12"/><path d="M8 12h12"/><path d="M8 18h12"/><path d="M4 6h.01"/><path d="M4 12h.01"/><path d="M4 18h.01"/></svg>
+        <span id="summaryLabel">요약 모드</span>
+      </button>
+      <button class="action-btn action-btn--collapse" id="btnCollapseAll" type="button" aria-pressed="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l4-4 4 4"/><path d="M12 3v8"/><path d="M16 17l-4 4-4-4"/><path d="M12 13v8"/></svg>
+        <span id="collapseLabel">전체 접기</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+
+    (() => {
+      const root = document.documentElement;
+      const body = document.body;
+      const themeBtn = document.getElementById('btnTheme');
+      const themeIcon = document.getElementById('themeIcon');
+      const themeText = document.getElementById('themeText');
+      const themeMeta = document.getElementById('themeColorMeta');
+      const shareBtn = document.getElementById('btnShare');
+      const summaryBtn = document.getElementById('btnSummaryMode');
+      const summaryLabel = document.getElementById('summaryLabel');
+      const collapseBtn = document.getElementById('btnCollapseAll');
+      const collapseLabel = document.getElementById('collapseLabel');
+      const toast = document.getElementById('toast');
+      const themeKey = 'lk06_12_19_premium_theme';
+      const summaryKey = 'lk06_12_19_summary_mode';
+
+      function showToast(message) {
+        if (!toast) return;
+        toast.textContent = message;
+        toast.classList.add('is-visible');
+        window.clearTimeout(showToast.timer);
+        showToast.timer = window.setTimeout(() => toast.classList.remove('is-visible'), 1700);
+      }
+
+      function getSystemTheme() {
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+
+      function setTheme(theme, persist = true) {
+        const safeTheme = theme === 'dark' ? 'dark' : 'light';
+        root.setAttribute('data-theme', safeTheme);
+        if (persist) localStorage.setItem(themeKey, safeTheme);
+        if (themeIcon) themeIcon.textContent = safeTheme === 'dark' ? '🌙' : '☀️';
+        if (themeText) themeText.textContent = safeTheme === 'dark' ? '다크' : '라이트';
+        if (themeBtn) {
+          themeBtn.setAttribute('aria-label', safeTheme === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환');
+          themeBtn.setAttribute('aria-pressed', safeTheme === 'dark' ? 'true' : 'false');
+        }
+        if (themeMeta) themeMeta.setAttribute('content', safeTheme === 'dark' ? '#081020' : '#f7f5f0');
+      }
+
+      const savedTheme = localStorage.getItem(themeKey);
+      setTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : getSystemTheme(), Boolean(savedTheme));
+
+      if (!savedTheme && window.matchMedia) {
+        const mq = window.matchMedia('(prefers-color-scheme: dark)');
+        const syncSystemTheme = () => setTheme(getSystemTheme(), false);
+        if (mq.addEventListener) mq.addEventListener('change', syncSystemTheme);
+        else if (mq.addListener) mq.addListener(syncSystemTheme);
+      }
+
+      if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+          const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+          setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+      }
+
+      function setSummaryMode(on, persist = true) {
+        body.classList.toggle('summary-mode', on);
+        if (summaryBtn) summaryBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        if (summaryLabel) summaryLabel.textContent = on ? '자세히 보기' : '요약 모드';
+        if (persist) localStorage.setItem(summaryKey, on ? '1' : '0');
+      }
+
+      setSummaryMode(localStorage.getItem(summaryKey) === '1', false);
+
+      if (summaryBtn) {
+        summaryBtn.addEventListener('click', () => {
+          const next = !body.classList.contains('summary-mode');
+          setSummaryMode(next);
+          showToast(next ? '요약 모드로 바꿨습니다.' : '자세히 보기로 바꿨습니다.');
+        });
+      }
+
+      function cards() {
+        return Array.from(document.querySelectorAll('[data-card]'));
+      }
+
+      function scriptureDetails() {
+        return document.querySelector('details.scripture-details');
+      }
+
+      function isCardOpen(card) {
+        return card.classList.contains('is-open');
+      }
+
+      function setCardOpen(card, open) {
+        card.classList.toggle('is-open', open);
+        const toggle = card.querySelector('.study-card__toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+
+      function allOpen() {
+        const everyCardOpen = cards().every(isCardOpen);
+        const scriptureOpen = scriptureDetails() ? scriptureDetails().open : true;
+        return everyCardOpen && scriptureOpen;
+      }
+
+      function updateCollapseButton() {
+        const opened = allOpen();
+        if (collapseLabel) collapseLabel.textContent = opened ? '전체 접기' : '전체 펼치기';
+        if (collapseBtn) {
+          collapseBtn.setAttribute('aria-pressed', opened ? 'true' : 'false');
+          collapseBtn.setAttribute('aria-label', opened ? '모든 섹션 접기' : '모든 섹션 펼치기');
+        }
+      }
+
+      cards().forEach((card) => {
+        const toggle = card.querySelector('.study-card__toggle');
+        if (!toggle) return;
+        toggle.addEventListener('click', () => {
+          setCardOpen(card, !isCardOpen(card));
+          updateCollapseButton();
+        });
+      });
+
+      const scripture = scriptureDetails();
+      if (scripture) scripture.addEventListener('toggle', updateCollapseButton);
+
+      if (collapseBtn) {
+        collapseBtn.addEventListener('click', () => {
+          const nextOpen = !allOpen();
+          cards().forEach((card) => setCardOpen(card, nextOpen));
+          const d = scriptureDetails();
+          if (d) d.open = nextOpen;
+          updateCollapseButton();
+          showToast(nextOpen ? '모든 섹션을 펼쳤습니다.' : '모든 섹션을 접었습니다.');
+        });
+      }
+
+      updateCollapseButton();
+
+      if (shareBtn) {
+        shareBtn.addEventListener('click', async () => {
+          const shareData = {
+            title: document.title,
+            text: '누가복음 6:12–19 정론·정행·현대 적용 가이드',
+            url: window.location.href
+          };
+          if (navigator.share) {
+            try {
+              await navigator.share(shareData);
+              return;
+            } catch (error) {
+              if (error && error.name === 'AbortError') return;
+            }
+          }
+          try {
+            await navigator.clipboard.writeText(window.location.href);
+            showToast('링크를 복사했습니다.');
+          } catch (error) {
+            window.prompt('아래 링크를 복사해 공유하세요.', window.location.href);
+          }
+        });
+      }
+    })();
+
+  </script>
+</body>
+</html>
