@@ -1,0 +1,27 @@
+{
+  "id": "2026-01-04-97f154613d504c76",
+  "date": "2026-01-04",
+  "reference": "이사야 43:19-21",
+  "service": "revision-c26213fbf0d672549d75",
+  "relativePath": "2026/01042026/Isaiah_43_19-21_AI_2026_NewYear_Edition_v3.html",
+  "manuscriptSha256": "62879a3bb0879cf5b1546594d752b2dda1da559efbf8ed0a6c2578758ab20fc3",
+  "passageSha256": "3d24eb2ac9dd0a5d409598d7a5d205d7578a9c2f1698b8451498eb04045fadd7",
+  "htmlSha256": "eec0b5660a9de0390e11b320c97c2444839565ad3cbdaa015d19c1ca4f05621a",
+  "editorialReviewSha256": "f69e4aec3ebd92b380e2d5cd49ff664d5b244b8c5927e7709cb6ccc3c57387dd",
+  "visualPlanSha256": "36608914763a26ffc4576376bb7d72dfccc8ae0987b4cff52196776c52eaed2f",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "1e77518eb7357e79e70f257d66ebfe4142a5672a",
+    "originalSha256": "6ebf38272fe905bbe4b6c6c78f17260dde72439118640212ad95ef86afcfefe7",
+    "revisedAt": "2026-10-18T17:08:25.736783+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
