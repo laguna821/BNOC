@@ -1,0 +1,27 @@
+{
+  "id": "2025-12-25-5a63379e8aba9493",
+  "date": "2025-12-25",
+  "reference": "누가복음 2:8-14",
+  "service": "revision-3176016a6db18069925a",
+  "relativePath": "2025/12252025/Luke_2_8-14_v1.html",
+  "manuscriptSha256": "33a8a797dbea7447d8cf672563d1b743cd24fa7721bee01efff7c044aaeaa27a",
+  "passageSha256": "635ff1d20ee1bf5adc8571711c9afab116cbd5de3e34f36aacb69f9031ea25bb",
+  "htmlSha256": "a5f952f11ef61e7b15945771498bc6c3b48e8b7ebdab9674c6abdb60e8165555",
+  "editorialReviewSha256": "45372a0aba0fb61924593a19e364e66c71d0979d1ead65f1e461a625c2da0a7c",
+  "visualPlanSha256": "3ce05fa0e1decc1469f0e179d898439b751bb8504bc4efc82b8f578b01fd2b06",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "7e7c38ee2e991eeeb6a6b0ed2450bfff3b151a95",
+    "originalSha256": "7559930b57b2e36be10c42facce1eb4c5f595b743e39350a6ec5f7d9ae58c843",
+    "revisedAt": "2026-10-18T15:31:15.318978+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
