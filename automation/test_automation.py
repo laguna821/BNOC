@@ -45,6 +45,18 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(self.b.official('마',1)['units'],{'1':'A'})
             with self.assertRaisesRegex(ValueError,'chapter'):self.b.official('마',2)
             with self.assertRaisesRegex(ValueError,'book'):self.b.official('신',1)
+    def test_official_psalm_heading_uses_pyeon_and_keeps_requested_number(self):
+        html='<div class="titleBg">[시편 110:1 ]</div><b>개역개정</b><font class="chapNum">제 110 편</font><span><span class="number">1&nbsp;</span>A</span>'
+        with patch('bible.fetch',return_value=html.encode()):
+            self.assertEqual(self.b.official('시',110)['units'],{'1':'A'})
+            with self.assertRaisesRegex(ValueError,'chapter'):self.b.official('시',109)
+            with self.assertRaisesRegex(ValueError,'chapter'):self.b.official('마',110)
+    def test_psalm_heading_does_not_relax_book_or_translation_identity(self):
+        html='<div class="titleBg">[잠언 110:1 ]</div><b>개역개정</b><font class="chapNum">제 110 편</font><span><span class="number">1&nbsp;</span>A</span>'
+        with patch('bible.fetch',return_value=html.encode()):
+            with self.assertRaisesRegex(ValueError,'book'):self.b.official('시',110)
+        with patch('bible.fetch',return_value=html.replace('개역개정','개역한글').encode()):
+            with self.assertRaisesRegex(ValueError,'translation'):self.b.official('시',110)
     def test_discovery_and_schedule(self):
         html='<a href="/main/sub.html?boardID=www199&num=1&Mode=view">2026년 10월 18일 주보</a>'
         self.assertEqual(bulletin.parse_list(html)[0]['date'],'2026-10-18')

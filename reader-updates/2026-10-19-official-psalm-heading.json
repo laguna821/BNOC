@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-18T18:20:06.978361+00:00",
+  "baseCommit": "d1e35778d6c81fbbb8ed93a7b585ac3c0a1dbfe5",
+  "purpose": "Accept the official Psalm pyeon heading while preserving book, translation and chapter identity checks",
+  "researchRef": "research:rr-fb334776743f2f1bbc46ab6cd5634cfc:da9fefec101e45558feb1d60da98ebb3d69bf0bb277fb75dc9ae8d52223071bb",
+  "checks": {
+    "regressionTests": {
+      "total": 65,
+      "passed": 64,
+      "skipped": 1,
+      "skipReason": "Optional local encoder integration environment"
+    },
+    "actualOfficialPsalm": {
+      "reference": "시편 110:1-4",
+      "verified": true,
+      "corrections": 0,
+      "source": {
+        "url": "https://www.bskorea.or.kr/bible/korbibReadpage.php?version=GAE&book=psa&chap=110",
+        "retrievedAt": "2026-10-18T18:13:38.893995+00:00",
+        "htmlSha256": "f115edc2bb31b7e52207d97240be30ab5800251f505ed60313144ccea1405565"
+      }
+    },
+    "negativeIdentityCases": [
+      "wrong Psalm number",
+      "pyeon suffix on another book",
+      "wrong book",
+      "wrong translation"
+    ],
+    "authoredHtml": "unchanged"
+  },
+  "fileHashes": {
+    "automation/bible.py": "03d008347545bf74bf3d49f3950b6721436f04367eb46c72d308b4bd14c33960",
+    "automation/test_automation.py": "09c55a1fb619d0d9ac686dacf0567e14fd5101d100780d1baac195754f26c7fb"
+  }
+}
