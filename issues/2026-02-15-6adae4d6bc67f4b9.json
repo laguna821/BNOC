@@ -1,0 +1,27 @@
+{
+  "id": "2026-02-15-6adae4d6bc67f4b9",
+  "date": "2026-02-15",
+  "reference": "창세기 17:1-2",
+  "service": "revision-b39d92c7b8bb20b3b0e6",
+  "relativePath": "2026/02152026/Genesis_17_1-2_v1.html",
+  "manuscriptSha256": "8d19b91cf11af07ae67fddd309159dbd63b7687bb60c53d442e68e4bc63ecc44",
+  "passageSha256": "a60ed6b4c1c968da9be1f213647af75bab95ba756ba4896fea31433e03070c3b",
+  "htmlSha256": "adde352af1348bf15d72a965307ea4a33a568fceccf2c4f2a9eabddc80374136",
+  "editorialReviewSha256": "e39903cf56ad288459c24faa996c380f2a7ff488fec36323a79ee52b6eed4d11",
+  "visualPlanSha256": "376daa439bd2493c2d6fbfe973e6def3568b915d5e67811a576ca6e5c5c8e589",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "f1e29ff8000c9f4d236c36868ae1f4bc8cc33a6d",
+    "originalSha256": "e8aeec3a02c748a20c1ed243bfe95b069e5ad705c5a0cd54ca20c7711cbfdaf8",
+    "revisedAt": "2026-10-18T20:42:48.163318+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
