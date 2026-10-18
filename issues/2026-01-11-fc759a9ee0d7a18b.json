@@ -1,0 +1,27 @@
+{
+  "id": "2026-01-11-fc759a9ee0d7a18b",
+  "date": "2026-01-11",
+  "reference": "히브리서 12:1-2",
+  "service": "revision-461b7a7289f470198118",
+  "relativePath": "2026/01112026/hebrews_12_1-2.html",
+  "manuscriptSha256": "ce07c2779670b9772ce57ad74b2efd8de2769bdbec9686e7d0f14b98f23b9ee9",
+  "passageSha256": "05cfe2052c4578b61f0d965848e42749c8bf05e9c2386920302eeccfae097224",
+  "htmlSha256": "df5ba3668ae89d6b8c5a1b09736b01cdcc23d21c61254a486f350957ad52eabf",
+  "editorialReviewSha256": "0ee2882e3379c0a085dfcdd25fc2062ca36956af0129b8439a4dc97160efcbaa",
+  "visualPlanSha256": "b99ceffccbad89aeab08ec23cac95d086a896a32b937ef3519a79f78daff17c0",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "d1e35778d6c81fbbb8ed93a7b585ac3c0a1dbfe5",
+    "originalSha256": "ff039c2d75cb50f85208656f8f8bbd89c07ad25f3f6d4ad5afeb965b9ea42547",
+    "revisedAt": "2026-10-18T18:10:12.837591+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
