@@ -1,0 +1,27 @@
+{
+  "id": "2026-02-22-3313d4838c0a1260",
+  "date": "2026-02-22",
+  "reference": "누가복음 4:38-39",
+  "service": "revision-e967ee1356c8e627454a",
+  "relativePath": "2026/02222026/Luke_4_38-39_v1.html",
+  "manuscriptSha256": "4cfce7edcc856c14097eb3ee46b13c2294dd5d7acbfcf44f6eeb418fdf79ecce",
+  "passageSha256": "6e04471fd958d7380e47b636c50eeada8f77c25a51f8d105fa6dac1e917a6f9c",
+  "htmlSha256": "403b94ca010b2497bd480951ad3ad3194bd4881bb4a539a6e6efa4bd8882c687",
+  "editorialReviewSha256": "bb8b62db9838eaa111a9ff7b1623afd25dda544da6c0b95d22beee0294278368",
+  "visualPlanSha256": "388aa105d1e515a7ab6eedf3157c048b24d766095857a7aa15c233ba1bf81984",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "f938c0cd4bd2baaa571170c4cc16c846745f17c7",
+    "originalSha256": "17201527a879d9b974d9fb88a5ceb2fd8425e937a0ba16a83ec2dd14c0ef9bad",
+    "revisedAt": "2026-10-18T21:14:03.000598+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
