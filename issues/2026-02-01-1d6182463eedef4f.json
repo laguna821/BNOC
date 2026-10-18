@@ -1,0 +1,27 @@
+{
+  "id": "2026-02-01-1d6182463eedef4f",
+  "date": "2026-02-01",
+  "reference": "마가복음 1:14-20",
+  "service": "revision-3c640d1d4c8982fdb686",
+  "relativePath": "2026/02012026/Mark_1_14-20_v1.html",
+  "manuscriptSha256": "70fee8c7b7fa02692a8bb8f6f82b86c1bd3f3809bcbec8a1496717ab66d39b40",
+  "passageSha256": "1c6e192b2e1605da4c41647de1b0c9ef54590e828d3d6a3092fd3cd3568d8c31",
+  "htmlSha256": "f47b3a058813446958ec6ee4ac005d8ee57902a4d0c94302524fe388943c8f30",
+  "editorialReviewSha256": "34645d544d571258545ef4fff510b961a0b989ed7736aaf97d79fbfe5499fae1",
+  "visualPlanSha256": "98cf3c1727fef949ad8559efa434d092130e0ee414e074f42566c4ff362e7aec",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "ec2d76e607646443e844ebfdf56d3e19707fe354",
+    "originalSha256": "51901c927db4fe2a1fa4554c55347bd8cd86603cefd9da9dfff41d257ab644c2",
+    "revisedAt": "2026-10-18T19:46:30.406444+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
