@@ -1,0 +1,27 @@
+{
+  "id": "2025-12-31-10891a6f0132b90d",
+  "date": "2025-12-31",
+  "reference": "이사야 43:18-21",
+  "service": "revision-8f83c2e657c157121d3e",
+  "relativePath": "2025/12312025/Isaiah_43_18-21_v1.html",
+  "manuscriptSha256": "b5ba3666d5628851134cd6537e49e93bae7bfe5c1856078808e2918380c66629",
+  "passageSha256": "b2471cf95c87c989f546ea0e883bfb80775964ec15d076890416ab976d8b5023",
+  "htmlSha256": "622f9900ee8192fc9c41c62a30d8793e925dca78ce63da858fb108ba5c2148ba",
+  "editorialReviewSha256": "25798384971d8930105965569e26fd1446d7dd991f9a691a712a0998b0c15c26",
+  "visualPlanSha256": "9b8ab0e67abd7d6f32c90b7031b99499ee76dccf2801f309197ed719344ab731",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "3d4476b3d156fa97ddb68f58cb85aa26471032a8",
+    "originalSha256": "bf1b8a4ce57affdf274ca16b648ad558576df448b123ede1a7a8267f72ffa181",
+    "revisedAt": "2026-10-18T16:18:50.666537+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
