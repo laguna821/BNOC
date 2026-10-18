@@ -1,0 +1,27 @@
+{
+  "id": "2025-10-26-23839d241aac04d1",
+  "date": "2025-10-26",
+  "reference": "누가복음 6:20-38",
+  "service": "revision-c5630ec6cb275717daf6",
+  "relativePath": "2025/10262025/luke_6_20_38.html",
+  "manuscriptSha256": "85c2d9e1c99ad96fe74d8488debc858590ec74baca2142336a674ce770d13bd1",
+  "passageSha256": "f6ce850fa39e9081866a6380994059820b7f4d371dcdc42e067c50aa49f2cb58",
+  "htmlSha256": "448b593f068ca0225ab7891b5f88704429677fa282ca8189f3af5d6abbed7889",
+  "editorialReviewSha256": "a4d72f3968c142db85a43fa26b676d9d3620ec6104be600e78176199a5f6b320",
+  "visualPlanSha256": "699dd50d1c9d4f4f9daa301f49f8066c140a19905c0d1f5b185312ad29c106be",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "321f5c10ccf3b2a4b644a0ad9966c856c876bea7",
+    "originalSha256": "15d2775092fc96644bf674fdbd828d9614d5a70b4eecefbab4f13dee9700714b",
+    "revisedAt": "2026-10-18T11:46:20.531487+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
