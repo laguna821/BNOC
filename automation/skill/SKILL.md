@@ -26,7 +26,7 @@ description: 성경 구절 또는 춘천중앙교회 주보를 바탕으로 일�
 7. `render`한다. 레이아웃 단계에서 원고를 요약·재작성하지 않는다. 변경한 원고나 그림이 있으면 다시 render하고 검토도 갱신한다.
 8. 결과 HTML을 읽고 원문·근거·원어·해석의 균형을 검토한다. 실제 브라우저로 모바일/데스크톱·두 테마·검색·메모·글자 크기·다운로드 대상·인쇄 레이아웃을 확인한다. 미실시 검사를 통과했다고 기록하지 않는다. 읽을 수 없는 원어와 의미 없는 장식 그림은 수정한다.
 9. review.json을 실제 산출물 해시에 묶어 작성하고 `validate`한다. 통과하면 publish 모드에서 `publish` 후 `verify`로 Actions와 실제 페이지를 확인한다. draft이면 결과 경로와 검토 상태를 보고한다.
-10. 작업을 완료·중단한 경우 lease를 release한다. 임시 서버/렌더 도구는 Achmage resource_acquire 및 stable launcher resource-run을 사용하고, 실제 작업 완료 후 정상 종료한다.
+10. verify가 published를 반환하면 lease는 이미 자동 해제된다. 초안 완료·중단 등 나머지 경우에는 유효한 token으로 release한다. 임시 서버/렌더 도구는 Achmage resource_acquire 및 stable launcher resource-run을 사용하고, 실제 작업 완료 후 정상 종료한다.
 
 ## 중단과 재개
 

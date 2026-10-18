@@ -53,6 +53,8 @@ render.json의 해시를 review에 사용한다. 검토 항목은 manuscript.md�
 
 verify가 deploying/waiting이면 30–60초 후 확인하며, 사용자에게 배포 중임을 알린다. published만 완료다. push가 성공했는지 애매하면 무작정 다시 만들지 말고 같은 run으로 publish를 재개해 원격 manifest를 확인한다.
 
+verify의 published 결과는 lease를 자동 해제한다. 이때 release를 다시 실행하지 않는다. 위 release 명령은 초안 완료나 게시 전 중단 등 아직 lease가 남은 경우에만 쓴다.
+
 ## 실패
 
 ```text
