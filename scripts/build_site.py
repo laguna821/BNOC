@@ -2,7 +2,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from html import escape
-import re, json, shutil, datetime, subprocess
+import re, json, shutil, datetime, subprocess, sys
 from urllib.parse import quote
 from xml.etree import ElementTree as ET
 
@@ -10,6 +10,8 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE='/BNOC'
 ORIGIN='https://laguna821.github.io'
 CUTOFF='2026-10-18'
+sys.path.insert(0,str(ROOT/'automation'))
+from bible import BOOKS as CANON_BOOKS
 BOOKS={'Genesis':'창세기','Exodus':'출애굽기','Numbers':'민수기','Deut':'신명기','Judges':'사사기','Isaiah':'이사야','Ezekiel':'에스겔','Matthew':'마태복음','Mark':'마가복음','Luke':'누가복음','John':'요한복음','Acts':'사도행전','Romans':'로마서','Ephesians':'에베소서','Colossians':'골로새서','Hebrews':'히브리서','Revelation':'요한계시록','Phil':'빌립보서'}
 
 class Text(HTMLParser):
@@ -69,7 +71,7 @@ def build():
             parsed=Text();parsed.feed(html);date=date_for(rel)
             title=' '.join(parsed.t).strip() or path.stem
             words=' '.join(' '.join(parsed.words).split())
-            books=[v for k,v in BOOKS.items() if re.search(k,re.escape(path.name),re.I) or v in title]
+            books=list(dict.fromkeys([b['name'] for b in CANON_BOOKS if b['name'] in title or path.name.lower().startswith(b['code']+'-')]+[v for k,v in BOOKS.items() if re.search(k,re.escape(path.name),re.I) or v in title]))
             desc=parsed.meta.get('description','')
             if not desc:desc=' · '.join(books)+' 본문을 중심으로 배경과 의미, 삶의 적용을 살펴보는 말씀 자료.'
             target=rel

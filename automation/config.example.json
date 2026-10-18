@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "repository": "ABSOLUTE_PATH_TO_BNOC",
+  "stateRoot": "PRIVATE_DIRECTORY_OUTSIDE_REPOSITORY",
+  "bible": "PRIVATE_DIRECTORY_OUTSIDE_REPOSITORY/bible-original.json",
+  "site": "https://laguna821.github.io/BNOC/",
+  "gitAuthor": { "name": "YOUR_GITHUB_NAME", "email": "YOUR_GITHUB_NOREPLY_EMAIL" },
+  "python": "ABSOLUTE_PATH_TO_PYTHON_3_11_OR_LATER"
+}

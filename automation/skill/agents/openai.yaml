@@ -1,0 +1,6 @@
+interface:
+  display_name: "BNOC 말씀 제작·게시"
+  short_description: "성경 본문을 깊이 해설하고 그림·SameTone HTML을 만들어 BNOC에 게시합니다."
+  default_prompt: "$bnoc-publish로 마태복음 1:1–5를 일반 성도용으로 자세히 해설하고 BNOC에 게시해줘."
+policy:
+  allow_implicit_invocation: true
