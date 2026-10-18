@@ -1,0 +1,27 @@
+{
+  "id": "2025-09-21-1361cbd21b63e65f",
+  "date": "2025-09-21",
+  "reference": "신명기 28:45-48",
+  "service": "revision-3be7bf7bfd444d164415",
+  "relativePath": "2025/09212025/deut_28_45-48.html",
+  "manuscriptSha256": "4a35fc4ca9e20d66512128ee47b82bd366301ed6f97903f77a498fe27c64c51a",
+  "passageSha256": "2ae7b8414f3385e67fc1fb55075e90b562be10b781b00a261bc546524571906a",
+  "htmlSha256": "6e3168da949f939ea138d6862dc36779579b0dbea23fd411639cea6d7fffa5b5",
+  "editorialReviewSha256": "be8bf25831f2da073bc5cb618759c328f99a39a4368a9fc825ff39e257685929",
+  "visualPlanSha256": "29da84f0c8261aeda69177df372a1ddc8a43f16c3d485457840ce2528eece6cd",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "40981528dbc1c248689e28ed403141ef64f525f7",
+    "originalSha256": "32a399ded9b4523be60e31cfee1ac88dad78e133683263ddb06d954326432bde",
+    "revisedAt": "2026-10-18T09:22:01.910007+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
