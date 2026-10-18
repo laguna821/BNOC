@@ -1,0 +1,27 @@
+{
+  "id": "2025-12-28-beaea9c71503d482",
+  "date": "2025-12-28",
+  "reference": "사사기 2:20-23",
+  "service": "revision-b799acdadc42b63a32df",
+  "relativePath": "2025/12282025/Judges_2_20-23_v1.html",
+  "manuscriptSha256": "eea5f74a7a80cb890680fa8909859b0765b53b3d46f8824d3c07a0cc6e8a7019",
+  "passageSha256": "e32074a77806251bd15b404ca47a80c0babc714400c679a9854dbe229f4e18fe",
+  "htmlSha256": "00d8744823705e020610b95e04cb484ea1d396b66eb771cb1b2d446bcfa1b8c6",
+  "editorialReviewSha256": "5e21f3808d14dc84067d91d31f57321168bd04bcf0b9053d181efb8010d5cbfe",
+  "visualPlanSha256": "d6782a48abcf610c474d5840daa5d7db1ebaac54adfcf261a5637292924c143e",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "807bfaeee47886ece0261a7fc642594140bdbd76",
+    "originalSha256": "2e6b5e17476297b5fb46f46065b1144ccbbfdafbd445b0205aaa5ab422412925",
+    "revisedAt": "2026-10-18T15:58:12.581934+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
