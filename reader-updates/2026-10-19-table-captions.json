@@ -1,0 +1,178 @@
+{
+  "version": "bnoc-reader-1.2",
+  "baseCommit": "dacc4e8152ae4cf81e36001b747ca79adf65d388",
+  "reviewedAt": "2026-10-18T15:04:45.192374+00:00",
+  "researchRef": "research:rr-9004d56ff8d5173dcf0f0ca2f6b0fe0f:1b7ee3ebdee704313751ade640ec62f7b25e1f43caa2cceabf8afc91545f0165",
+  "checks": {
+    "contentPreserved": {
+      "passed": true,
+      "evidence": "9개 공개 원본→후보의 content_snapshot 전후 동일:본문/요약/언어dir/성경key/링크/그림SVG와삽화.신학원고재작성없음."
+    },
+    "mobileTables": {
+      "passed": true,
+      "evidence": "실제9편×320/390=18케이스·22px.16caption전체가displayblock/폭227–339px=표폭/높이35–70px/가로넘침0.전체td/th셀잘림0·열제목연결·히브리어RTL.새18원고2표도동일검수."
+    },
+    "readerControls": {
+      "passed": true,
+      "evidence": "9편각각전체접기0열림→요약전체열림→자세히복원,성경block항상유지.하단도구48px.18신규글에서는개별접기/검색결과펼침·focus/Escape복귀실제통과."
+    },
+    "fontsAndMedia": {
+      "passed": true,
+      "evidence": "업그레이드는공통CSS에caption1규칙만추가.직전공개원본대비별도내장폰트스타일/readerJS바이트동일성도publish전코드검사.그림/원어방향/출처는snapshot동일."
+    },
+    "desktopPrint": {
+      "passed": true,
+      "evidence": "1280기존9편대표두captiontable-caption800px유지.새18두표인쇄CSSproof실제680.3125px10pt/nativecaption/라벨·도구숨김/15details열림확인.화면모바일조건에만수정되어인쇄CSS와분리."
+    },
+    "functionalRegression": {
+      "passed": true,
+      "evidence": "같은readerJS유지·9편전체접기/요약실제반복검수.새18검색중간태1결과/filling펼침focus·메모/체크보존후복원·실제HTTP다운로드정확성확인.공개배포바이트검증은별도진행."
+    }
+  },
+  "articles": [
+    {
+      "date": "2025-08-24",
+      "path": "2025/08242025/Numbers_19-1_10.html",
+      "runId": "2025-08-24-fee62e18d8055b64",
+      "beforeSha256": "d114cf62ac673bd4eba3bf94dd508de707aa219ff19a896712f2cd8b89ecd617",
+      "htmlSha256": "a212ce699a1eafbc1cb8df854ce9f9ad2edada43ecf57c27325a6856cfc5cafb",
+      "contentSnapshotSha256": "b465c0ea411d0ccd33c7c5122eb665dbb952c2f707b03c31bf4ce98a459c68a8",
+      "manuscriptSha256": "bd461bf721c9c48f917c826ad33cd52325898d8a98f78276413e34f2a44fe3a6",
+      "passageSha256": "217ad63099d297fc73746f6e331a732701369706a3859ac89d464abd15bd414a",
+      "cards": 17,
+      "tables": 2,
+      "verses": 10,
+      "media": 2,
+      "colspan": 0,
+      "rowspan": 0
+    },
+    {
+      "date": "2025-08-31",
+      "path": "2025/08312025/deut_3_18-29.html",
+      "runId": "2025-08-31-2bf5a19a5998acde",
+      "beforeSha256": "48f535179772daf436b319b55128ad598da9b590333b8b9ac60fe7f9966d5ecd",
+      "htmlSha256": "072fc0df3cf68e1571dd7644994e558e451734748d782968417876b2eb8ed81f",
+      "contentSnapshotSha256": "e96c8de6186a650ea5c97cf193ef4aaf2c9bddc5bcfb4472484f1403249c2357",
+      "manuscriptSha256": "bdb50d05cf5ce6b5b9ed16cad52e1c7ad22e2a9efc696b8e6e173d330a9b4040",
+      "passageSha256": "cc3e28b52dc782152346f2f97cec8bf22424ff8a32f30fb54586bd175a877d97",
+      "cards": 19,
+      "tables": 1,
+      "verses": 12,
+      "media": 2,
+      "colspan": 0,
+      "rowspan": 0
+    },
+    {
+      "date": "2025-09-07",
+      "path": "2025/09072025/deut-6_10-19.html",
+      "runId": "2025-09-07-2727258ee2d7450c",
+      "beforeSha256": "6f356d87f908f4a6ced89413751d8cd873330c0666d8a5e7e6e2e6e28cac39f3",
+      "htmlSha256": "72b1f45d739d31cf4234f1432ce81b2d133a47cb83f788f0673377dac3895256",
+      "contentSnapshotSha256": "dc2ca87ea23d71159b24e41858655074be30e0e67bd62e3b2e4393bd1d69fdcf",
+      "manuscriptSha256": "0ff702d0d71fb58ff19ab2c06f1deb2f7a73952c0566df3ba2fe6d6035f1621f",
+      "passageSha256": "35ba0fca43a8153afa88638575b6abe43425eed4d3379ff2d43f5a42f6d82b29",
+      "cards": 12,
+      "tables": 2,
+      "verses": 9,
+      "media": 2,
+      "colspan": 0,
+      "rowspan": 0
+    },
+    {
+      "date": "2025-09-14",
+      "path": "2025/09142025/deut-6_12-19.html",
+      "runId": "2025-09-14-85a2148043a04b0d",
+      "beforeSha256": "01437f1bf2c4fb77590822d8a9b0c9f08aab5d2dd259a2e75c0d362d59cdf02a",
+      "htmlSha256": "ac0c5df29bd7ea5903d9313e3306a885df05778c9a901bd768497ae44afbab2e",
+      "contentSnapshotSha256": "02e7510eff4d003a914283c53cb5040c3ea6742718807e92cca34bb9f332ece3",
+      "manuscriptSha256": "9a43eb856b893a4d65c2c2415cf216d36fafbc9dbd2ccd4e2ce9ae0b7efdf986",
+      "passageSha256": "7fc4de216bf9941c22139ef73175009d4a635a94d5cfef440391d3c28a6855ae",
+      "cards": 14,
+      "tables": 2,
+      "verses": 7,
+      "media": 1,
+      "colspan": 0,
+      "rowspan": 0
+    },
+    {
+      "date": "2025-09-21",
+      "path": "2025/09212025/deut_28_45-48.html",
+      "runId": "2025-09-21-1361cbd21b63e65f",
+      "beforeSha256": "b4965894ae36f3a2c5c99f350913e24a47e80894696211f9b02c874d33de0541",
+      "htmlSha256": "c2fdf5dc8fb572e0698aa95cb70bdfd464b320e49f68583da93346aa85623963",
+      "contentSnapshotSha256": "3e481419b747a02956987d5e9f1596ff4c7a9590252c3b33d93e5d1dbe86ba00",
+      "manuscriptSha256": "4a35fc4ca9e20d66512128ee47b82bd366301ed6f97903f77a498fe27c64c51a",
+      "passageSha256": "2ae7b8414f3385e67fc1fb55075e90b562be10b781b00a261bc546524571906a",
+      "cards": 12,
+      "tables": 1,
+      "verses": 4,
+      "media": 1,
+      "colspan": 0,
+      "rowspan": 0
+    },
+    {
+      "date": "2025-09-28",
+      "path": "2025/09282025/deut32_phil2.html",
+      "runId": "2025-09-28-c7e6d3368c3dee98",
+      "beforeSha256": "1c9a8939b6be9e8736aaffdd8d159643bcf3d83247f2aebc47e1f27c328803f8",
+      "htmlSha256": "0741613d02057b26ce640175c698bef07ba3ea8dfc366af4825c101c9a348b1e",
+      "contentSnapshotSha256": "b809afb0affaefb8edb7df9f9cd12d29f84785a925ea5935bf750e7c576cca2e",
+      "manuscriptSha256": "409a289f786ac967ffc8e2237c45263dbe6a70a0e45c8a8c76bc9a86699f8c49",
+      "passageSha256": "650156f7ba48562f0963b16381fafae7fd7d3fe1fa5d628ebb11aabd103092f4",
+      "cards": 12,
+      "tables": 2,
+      "verses": 2,
+      "media": 1,
+      "colspan": 0,
+      "rowspan": 0
+    },
+    {
+      "date": "2025-10-05",
+      "path": "2025/10052025/deut_33_29.html",
+      "runId": "2025-10-05-06a77af53ed55540",
+      "beforeSha256": "158e314d799ffba7a14d5147b0e52a94a2cc101ea677a69d3e7d2ca99a73eb0b",
+      "htmlSha256": "0d426dcef92a1cdbbc0f6380ce9507175b49a1e94b9544891ddc8a8299da9815",
+      "contentSnapshotSha256": "2117f404953d7698283db0c5b67834d39aa698a59509ff46aa84e55821f67a93",
+      "manuscriptSha256": "7192b591026d3fb082ae30a42c081fcc11f13d8f31104f63404dfc02fd8b1e45",
+      "passageSha256": "cb953c7bf3ccf0e0fdece6f4909acbd34b70586b1526070e9f17c67211c147b4",
+      "cards": 12,
+      "tables": 2,
+      "verses": 1,
+      "media": 2,
+      "colspan": 0,
+      "rowspan": 0
+    },
+    {
+      "date": "2025-10-12",
+      "path": "2025/10122005/luke_2_8_20.html",
+      "runId": "2025-10-12-a74ef88bceb9001b",
+      "beforeSha256": "438b917e8369f6c08ac2c9aeee1d465864e0a76f3b177a011b59347a9fe74ccb",
+      "htmlSha256": "8f32c044b38c18c0c2dad21dc86cfafcdee88b456c967fd3061672d3093f4168",
+      "contentSnapshotSha256": "64e363dd8847c43bb66326da3038487b57b13c55e825137f96b1e1dd6bcbfca0",
+      "manuscriptSha256": "af244b188c691094aa51a9f63c86d65372f259c2e67d4e26c0d94eb2afcfe3b9",
+      "passageSha256": "b72fa1e27b584f7cc46458e05944836dbb733e8866098299e6d4c08f428a052f",
+      "cards": 13,
+      "tables": 2,
+      "verses": 13,
+      "media": 1,
+      "colspan": 0,
+      "rowspan": 0
+    },
+    {
+      "date": "2025-10-19",
+      "path": "2025/10192025/luke_4_1_13.html",
+      "runId": "2025-10-19-a9ccbe28e3531041",
+      "beforeSha256": "d2592b41c98e83c568f6c90fbf26b1694de18c4852af0b822878676bca098a4c",
+      "htmlSha256": "a1642931bd09bfe6e525913cd577a0bcd275c5c87137b5eedf15bc0de24833ff",
+      "contentSnapshotSha256": "7fae5129bc1375bdbe78ba6e7fc62d5bde057512c39b63d4d39aaf4c83e6ca38",
+      "manuscriptSha256": "a12d50883b14bc81fab57c0a121ab8f5dbe0a92a4657a0fc674fd533d8fd952e",
+      "passageSha256": "a3ab3f0bdbfc03c16b94fffafb4c3e2dd02a530cb68973fd13ffaf930a2a4bd3",
+      "cards": 11,
+      "tables": 2,
+      "verses": 13,
+      "media": 2,
+      "colspan": 0,
+      "rowspan": 0
+    }
+  ]
+}
