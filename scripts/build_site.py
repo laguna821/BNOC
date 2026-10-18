@@ -84,7 +84,11 @@ def build():
         data=subprocess.check_output(['git','show','HEAD:'+legacy],cwd=ROOT).decode('utf-8-sig')
         target=legacy.rstrip('.');(out/target).parent.mkdir(parents=True,exist_ok=True);(out/target).write_text(data,encoding='utf-8')
         p=Text();p.feed(data)
-        items.append(dict(title=' '.join(p.t),date='2026-01-25',year='2026',books=['누가복음'],description='누가복음 본문을 중심으로 배경과 의미, 삶의 적용을 살펴보는 말씀 자료.',link=BASE+'/'+target,dir='2026/01252026',search=' '.join(p.words),style='original'))
+        title=' '.join(p.t).strip()
+        desc='누가복음 본문을 중심으로 배경과 의미, 삶의 적용을 살펴보는 말씀 자료.'
+        words=' '.join(' '.join(p.words).split())
+        search=' '.join([title,desc,'누가복음',Path(legacy).name,words])
+        items.append(dict(title=title,date='2026-01-25',year='2026',books=['누가복음'],description=desc,link=BASE+'/'+target,dir='2026/01252026',search=search,style='original'))
     items.sort(key=lambda x:(x['date'],x['link']),reverse=True)
     shutil.copytree(ROOT/'web/assets',out/'assets')
     for name in ('site.css','site.js'):shutil.copy(ROOT/'web'/name,out/'assets'/name)
