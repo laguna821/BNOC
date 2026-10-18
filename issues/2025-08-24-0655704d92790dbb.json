@@ -1,0 +1,23 @@
+{
+  "id": "2025-08-24-0655704d92790dbb",
+  "date": "2025-08-24",
+  "reference": "민수기 19:1-10",
+  "service": "revision-334b5a58c6c758a3a446",
+  "relativePath": "2025/08242025/Numbers_19-1_10.html",
+  "originalSha256": "db449b943d6d75f42eb49c216ce05cd627a3fbab596f81ee535b87d5ebb9e0c9",
+  "contentSha256": "0d246be059e0a2aba74c080adbd20b700437fed21afbef94e186ce94b487c6da",
+  "htmlSha256": "9cb708c7f063141555360d682b38a899ceb9b5f3ca2ffbed959c0991f71554ca",
+  "versions": {
+    "skill": "1.0",
+    "template": "bnoc-reader-1.0"
+  },
+  "reviewModel": "GPT-6 (Codex; exact runtime variant not exposed)",
+  "revision": {
+    "originalCommit": "81c93bbfc0c3e4e313dacd77802cea69d2fddc0d",
+    "originalSha256": "db449b943d6d75f42eb49c216ce05cd627a3fbab596f81ee535b87d5ebb9e0c9",
+    "revisedAt": "2026-10-18T08:45:38.976422+00:00",
+    "kinds": [
+      "scripture"
+    ]
+  }
+}
