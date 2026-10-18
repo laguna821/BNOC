@@ -22,7 +22,7 @@ import image_delivery
 
 DEFAULT_CONFIG=Path(os.environ.get('BNOC_CONFIG',str(Path.home()/'Achmage-System/bnoc/config.json')))
 STAGES=['discovered','passage-confirmed','researched','written','illustrated','rendered','validated','pushed','published']
-REVIEW_KEYS=['historicalAccuracy','originalLanguages','orthodoxyOrthopraxy','layReadability','citationsChecked','visualAccuracy','mobileLightDark','searchNotesDownload','printLayout']
+REVIEW_KEYS=['historicalAccuracy','originalLanguages','orthodoxyOrthopraxy','layReadability','citationsChecked','visualAccuracy','mobileLightDark','mobileTables','readerControls','searchNotesDownload','printLayout']
 
 def load(path):return json.loads(Path(path).read_text(encoding='utf-8-sig'))
 def config(path):
@@ -304,7 +304,7 @@ def main():
                 m=load(path/'manuscript.json');p=load(path/'passage.json');name=Path(run['relativePath']).name.rstrip('.')
                 if m.get('date')!=run['date']:raise ValueError('Manuscript date differs from issue')
                 doc,meta=render.render(m,p,path,run['id'],name)
-                run['versions'].update(skill='1.1',template=meta['templateVersion'])
+                run['versions'].update(skill='1.2',template=meta['templateVersion'])
                 (path/name).write_text(doc,encoding='utf-8',newline='\n');save(path/'render.json',dict(meta,htmlSha256=digest(doc.encode()),file=name));advance(c,path,run,'rendered');result=dict(status='rendered',file=str(path/name),**meta)
                 if args.print_proof:
                     (path/'print-proof.html').write_text(render.print_proof(doc),encoding='utf-8',newline='\n')

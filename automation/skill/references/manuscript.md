@@ -1,6 +1,6 @@
 # 원고와 검토 파일
 
-manuscript.json은 저자의 글을 담는다. 섹션/카드 수는 자유롭다. cards는 내부 데이터 이름이며 접는 카드로 보여야 한다는 뜻이 아니다. 각 section에 presentation:"essay"를 지정하면 문단이 이어지는 글로 표시한다. 기본값 disclosure는 펼쳐진 접이식 표시다. 이 선택은 원고 검토 후 결정한다. intro와 summary도 실제 문장으로 쓴다. coverage 배열은 기존 파일과의 호환용이며 항목명을 넣는 것으로 해석 검토를 대신할 수 없다.
+manuscript.json은 저자의 글을 담는다. 섹션/카드 수는 자유롭다. cards는 내부 데이터 이름이며 고정된 분량의 카드로 원고를 끊으라는 뜻이 아니다. 각 section의 presentation:"essay"는 문단이 이어지는 테두리 없는 배치, 기본 disclosure는 경계가 있는 배치다. 두 배치 모두 기본 펼침·개별/전체 접기·요약·찾기를 제공한다. 레이아웃을 이유로 읽기 기능을 제거하지 않는다. 이 선택은 원고 검토 후 결정한다. intro와 summary도 실제 문장으로 쓴다. coverage 배열은 기존 파일과의 호환용이며 항목명을 넣는 것으로 해석 검토를 대신할 수 없다.
 
 ```json
 {
@@ -18,7 +18,7 @@ manuscript.json은 저자의 글을 담는다. 섹션/카드 수는 자유롭다
 }
 ```
 
-html은 p, h4, strong/b, em/i, blockquote/cite, ul/ol/li, table/thead/tbody/tr/td/th/caption, small/span, a, br, sup/sub만 허용한다. 코드·스크립트·임의 스타일·이벤트 속성은 금지된다. table은 가로 스크롤이 가능한 span class="table-scroll"보다 CSS 블록형 컨테이너를 렌더러에서 자동 제공하므로 원고에는 의미 있는 표만 작성한다. 표의 열 제목·행 제목에는 scope를 사용한다.
+html은 p, h4, strong/b, em/i, blockquote/cite, ul/ol/li, table/thead/tbody/tr/td/th/caption, small/span, a, br, sup/sub만 허용한다. 코드·스크립트·임의 스타일·이벤트 속성은 금지된다. 원고에는 의미 있는 표와 실제 열 제목을 작성한다. 렌더러는 모바일에서 그 열 제목을 각 항목에 붙여 세로로 읽게 한다. 표의 열 제목·행 제목에는 scope를 사용한다. 내용을 줄이거나 원어를 잘라 표 폭에 끼워 맞추지 않는다.
 
 그리스어는 span lang="grc", 히브리어는 span lang="he" dir="rtl"로 표시한다. 출처의 id는 영문 소문자/숫자/하이픈, 인용 링크는 #ref-ID다. 출처별 확인 내용을 research.md에 남긴다. figures는 빈 배열일 수 있다. 그림을 넣는 경우 위 예시에 content-first.md의 해시·실제 검토·provenance 필드를 추가해야 한다.
 
@@ -43,6 +43,8 @@ html은 p, h4, strong/b, em/i, blockquote/cite, ul/ol/li, table/thead/tbody/tr/t
     "citationsChecked":{"passed":true,"evidence":"링크가 실제 주장을 뒷받침하는지 확인"},
     "visualAccuracy":{"passed":true,"evidence":"실제 그림/도표를 눈으로 검토"},
     "mobileLightDark":{"passed":true,"evidence":"실제 브라우저에서 확인한 크기와 두 테마"},
+    "mobileTables":{"passed":true,"evidence":"320/390px·22px 글자에서 전체 원어/설명/용례를 세로로 읽고 열 제목 대응·RTL·폭을 확인한 내용"},
+    "readerControls":{"passed":true,"evidence":"장문 중 하단 도구 접근·개별/전체 접기·요약·검색 뒤 펼침/포커스·성경 항상 펼침 확인 내용"},
     "searchNotesDownload":{"passed":true,"evidence":"검색·메모·저장 링크 확인 결과"},
     "printLayout":{"passed":true,"evidence":"실제 인쇄 미리보기 또는 렌더 확인 결과"}
   }
@@ -51,7 +53,7 @@ html은 p, h4, strong/b, em/i, blockquote/cite, ul/ol/li, table/thead/tbody/tr/t
 
 검토를 통과시키려고 판정 값을 자동으로 true로 채우는 스크립트를 만들지 않는다. 모델이 미래에 발전해도 이 원칙은 유지한다.
 
-카드별 tableLayout:"wide"를 선택하면 긴 원어 설명 표에 화면용 최소 폭을 주고 가로로 넘겨 읽게 한다. 기본 auto는 기존 배치다. 인쇄에서는 최소 폭을 해제한다. 이는 원고를 줄이지 않는 표시 선택이며 신학적 검토의 기준이 아니다.
+카드별 tableLayout:"wide"는 데스크톱에서 긴 원어 설명 표의 폭을 확보하는 선택이다. 모바일에서는 auto/wide 모두 열 제목이 붙은 세로형으로 전환되어 모든 셀을 가로 스크롤 없이 읽어야 한다. 인쇄에서는 원래 표로 표시한다. 상세 검수는 [모바일 읽기 규약](mobile-reader.md)을 따른다.
 성경 본문은 항상 펼쳐진 독립 영역으로 표시한다. scriptureCollapsible은 사용하지 않으며, 과거 원고에 있어도 렌더러가 접기 동작을 만들지 않는다. 요약 읽기에서도 성경 본문은 유지한다.
 
 생성 삽화는 원본과 웹 배포본을 구별해 기록한다. [배포 압축](image-delivery.md)의 optimize-images 명령으로 PNG/JPEG를 해상도 유지 WebP 품질92와 비교해 실제 작아진 경우에만 내장한다. SVG·기존 WebP는 유지하고 글자·정밀 도표는 무손실 또는 keep을 선택한다. 원본을 덮어쓰지 않으며 provenance에 원본/배포 해시와 조건을 남긴다. 변환 시 그림 검토가 무효화되므로 배포본도 실제로 육안 확인한다. MIME은 실제 형식과 일치해야 한다. 그림 수를 모든 원고에 강제하지 않는다. 게시완료 후 원본의 GitHub 복구 보관과 원격 해시 검증을 마치면 로컬 원본·원고·완성본 사본을 정리한다.

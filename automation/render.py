@@ -8,6 +8,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 from bible import digest, plain
 import editorial
+import reader_layout
 
 ROOT=Path(__file__).resolve().parents[1]
 TAGS={'p','h4','strong','b','em','i','blockquote','cite','ul','ol','li','table','thead','tbody','tr','td','th','caption','small','span','a','br','sup','sub'}
@@ -145,7 +146,7 @@ def render(manuscript,passage,run_dir,issue_id,filename):
     js=(ROOT/'automation/reader.js').read_text(encoding='utf-8')
     logo=(ROOT/'web/logo.svg').read_text(encoding='utf-8')
     license=(ROOT/'web/assets/FONT-LICENSES.txt').read_text(encoding='utf-8')
-    meta=dict(issueId=issue_id,templateVersion='bnoc-reader-1.1',manuscriptSha256=digest(manuscript),passageSha256=passage['sha256'],figureHashes={f['id']:digest((Path(run_dir)/f['file']).read_bytes()) for f in figures.values()},metrics=metrics)
+    meta=dict(issueId=issue_id,templateVersion=reader_layout.VERSION,manuscriptSha256=digest(manuscript),passageSha256=passage['sha256'],figureHashes={f['id']:digest((Path(run_dir)/f['file']).read_bytes()) for f in figures.values()},metrics=metrics)
     metadata_json=json.dumps(meta,ensure_ascii=False).replace('<','\\u003c')
     license_json=json.dumps(license,ensure_ascii=False).replace('<','\\u003c')
     doc=f'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -168,5 +169,6 @@ def render(manuscript,passage,run_dir,issue_id,filename):
     # Scripture remains visible in full and in summary mode, including legacy manuscripts.
     if manuscript.get('revision'):
         doc=doc.replace('주보는 본문 선정의 근거이며, 이 글은 교회의 공식 해석이나 설교 요약이 아닙니다. 창작 그림은 본문 이해를 돕는 해석적 삽화입니다.', '기존에 게재된 본문과 제작 의도를 바탕으로 개정한 개인 성경 연구 노트입니다. 교회의 공식 해석이나 설교 원고를 대신하지 않습니다. 그림과 도표의 성격은 각 설명에 표시했습니다.')
+    doc,meta=reader_layout.upgrade(doc)
     if any(v['text'] not in html.unescape(doc) for v in passage['verses']):raise ValueError('Verse lost during assembly')
     return doc,meta

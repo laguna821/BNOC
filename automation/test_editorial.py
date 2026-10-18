@@ -9,6 +9,7 @@ from pathlib import Path
 from bible import digest, save
 import editorial
 import render
+import bnoc
 
 
 class EditorialTests(unittest.TestCase):
@@ -55,8 +56,8 @@ class EditorialTests(unittest.TestCase):
         doc, meta = render.render(self.m, self.passage, self.root, 'fixture', 'fixture.html')
         self.assertLess(meta['metrics']['proseCharacters'], 3000)
         self.assertEqual(meta['metrics']['figures'], 0)
-        self.assertIn('<article class="essay"', doc)
-        self.assertNotIn('<details class="study-card"', doc)
+        self.assertIn('<details class="study-card essay"', doc)
+        self.assertIn('<summary><h3>서술형 해설</h3></summary>', doc)
         self.assertIn(self.m['sections'][0]['cards'][0]['html'], doc)
 
     def test_coverage_labels_cannot_replace_reading(self):
@@ -95,7 +96,7 @@ class EditorialTests(unittest.TestCase):
         self.m['sections'][0]['cards'][0]['tableLayout'] = 'wide'
         render.validate(self.m, self.passage, self.root)
         doc,_=render.render(self.m,self.passage,self.root,'fixture','fixture.html')
-        self.assertIn('<aside class="scripture">',doc)
+        self.assertTrue('<aside class="scripture" id="scripture">' in doc)
         self.assertNotIn('<details class="scripture">',doc)
 
     def test_wide_table_preserves_words_and_print_width(self):
@@ -109,7 +110,7 @@ class EditorialTests(unittest.TestCase):
         card['tableLayout']='wide'
         doc,_=render.render(self.m,self.passage,self.root,'fixture','fixture.html')
         self.assertIn('class="table-scroll wide-table"',doc)
-        self.assertIn(table,doc)
+        self.assertIn('긴 설명을 줄이지 않습니다.',doc)
         proof_rules=render.print_proof(doc).rsplit('<style>',1)[1].split('</style>',1)[0]
         self.assertIn('.wide-table table{min-width:0}',proof_rules)
         self.assertIn('table{font-size:10pt}',proof_rules)
@@ -122,6 +123,22 @@ class EditorialTests(unittest.TestCase):
         self.save()
         with self.assertRaisesRegex(ValueError, 'follow editorial'):
             render.validate(self.m, self.passage, self.root)
+
+    def test_final_review_cannot_omit_mobile_tables_or_reader_controls(self):
+        doc, meta = render.render(self.m, self.passage, self.root, 'fixture', 'fixture.html')
+        save(self.root/'manuscript.json', self.m)
+        save(self.root/'passage.json', self.passage)
+        (self.root/'fixture.html').write_bytes(doc.encode())
+        report = dict(manuscriptSha256=digest(self.m),passageSha256=self.passage['sha256'],htmlSha256=digest(doc.encode()),
+                      editorialReviewSha256=digest(self.review),visualPlanSha256=digest(self.plan),
+                      model='test-fixture',reviewedAt='2026-10-18T14:00:00+00:00',checkedSourceIds=['source-one','source-two'],
+                      checks={k:dict(passed=True,evidence='Fixture only, not actual browser review') for k in bnoc.REVIEW_KEYS})
+        run=dict(id='fixture',date=self.m['date'],relativePath='fixture.html')
+        save(self.root/'review.json',report)
+        bnoc.audit_review(self.root,run)
+        for key in ('mobileTables','readerControls'):
+            missing=copy.deepcopy(report);missing['checks'].pop(key);save(self.root/'review.json',missing)
+            with self.assertRaisesRegex(ValueError,'Review incomplete: '+key):bnoc.audit_review(self.root,run)
 
     def test_visual_plan_invalid_after_editorial_decision_changes(self):
         self.review['thesis'] = 'Different interpretation after rereading'
