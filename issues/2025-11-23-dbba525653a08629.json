@@ -1,0 +1,27 @@
+{
+  "id": "2025-11-23-dbba525653a08629",
+  "date": "2025-11-23",
+  "reference": "누가복음 11:45-54",
+  "service": "revision-bc719d9c9ab32eaa4d7d",
+  "relativePath": "2025/11232025/luke_11_45_54.html",
+  "manuscriptSha256": "5e1ae63af87ce7e03017d9d24204a695cf20499e53225787c720f3dd0c4bcf0c",
+  "passageSha256": "b1e64765956cd79807a35ab4209302a8c5a247f01bcb8d48a1da1b68eae09f31",
+  "htmlSha256": "a0a7c6c123084b18b161f5741cdf94acfa1007d670483999a2086977335130e1",
+  "editorialReviewSha256": "cd8018bb2741f02a5bedc7c451cf9261178eb429e2981c000ac6010f7d8da5c1",
+  "visualPlanSha256": "5829061581552d4c2a2cd9032258a09f0f6d6dd39dc12cb9a9891da659be27c3",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "0227d9cddab34dd714192bab62dcd72396609df8",
+    "originalSha256": "b4a8d9f01b0e4681ff5a7057245f25c26b77cf18d704cd2ebee265ad50b7baf8",
+    "revisedAt": "2026-10-18T13:06:27.930103+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
