@@ -1,0 +1,27 @@
+{
+  "id": "2025-12-21-32d3501ed9e129b8",
+  "date": "2025-12-21",
+  "reference": "골로새서 3:15-17",
+  "service": "revision-0ed39a4e6623b2ebefa9",
+  "relativePath": "2025/12212025/Colossians_3_15-17.html",
+  "manuscriptSha256": "e5096b5f7cd9e72a87297f7d3f096da7701d4ef89614300a703ef0ba2b7ff138",
+  "passageSha256": "2d84862d0bc36e1cdf478acf2ab4adf9979c02b81c469e796365d8303311fdb9",
+  "htmlSha256": "12f7f16851d43bdb9ee58e8b1cc21b321283f8b66000e2d0b1b039e99977c4c4",
+  "editorialReviewSha256": "a0480bbd66457c069b0ec5c4c462ed0d9a0a8c61ce14da9bc52b1969b5639389",
+  "visualPlanSha256": "a4d5d8b8e994f2bf021ce0a18c1b3cc9908a430590094d929cae65853db96bca",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "53e12586b31a1d78013215791afcfce6a7aef74a",
+    "originalSha256": "5a8961e7ec99e3cfd486b6ddf80ade7ca9126f8e937dd6ae979f354e4493d408",
+    "revisedAt": "2026-10-18T15:12:24.293128+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
