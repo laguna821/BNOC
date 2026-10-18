@@ -1,0 +1,27 @@
+{
+  "id": "2025-09-07-2727258ee2d7450c",
+  "date": "2025-09-07",
+  "reference": "신명기 6:10-19",
+  "service": "revision-4d3ef1f9f0e0070a602b",
+  "relativePath": "2025/09072025/deut-6_10-19.html",
+  "manuscriptSha256": "0ff702d0d71fb58ff19ab2c06f1deb2f7a73952c0566df3ba2fe6d6035f1621f",
+  "passageSha256": "35ba0fca43a8153afa88638575b6abe43425eed4d3379ff2d43f5a42f6d82b29",
+  "htmlSha256": "0d501e78d4ba89e7f1e0f4cdedc9dd42eaf00e491edc37fcfddadfb26ffe9a7b",
+  "editorialReviewSha256": "603f59dabeb08555bd3ce4980a0655a3ff4721f62c66649b41ade3e69cce6b00",
+  "visualPlanSha256": "f99a50b8b839a9c3daf186a07a64e3447ba63f67563c5675c13438bdcdc56e40",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "40981528dbc1c248689e28ed403141ef64f525f7",
+    "originalSha256": "5a6f58576237915c2126c46316c6b82b8b3bfc80480f78d7d1bea6d671a25ad4",
+    "revisedAt": "2026-10-18T09:13:23.661238+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
