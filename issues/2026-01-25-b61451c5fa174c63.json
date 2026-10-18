@@ -1,0 +1,27 @@
+{
+  "id": "2026-01-25-b61451c5fa174c63",
+  "date": "2026-01-25",
+  "reference": "누가복음 24:13-25",
+  "service": "revision-2340b2a77edb7886b8e5",
+  "relativePath": "2026/01252026/Luke_24_13-25_v1.html.",
+  "manuscriptSha256": "17ca2f6e1705e36b17abca581cb811a9e582729915cb89a05d31aa9f57cfa77f",
+  "passageSha256": "58c2068f913f4eeff57c45ee62b7bea8bc92402661ef635c355cc4383bda0bb8",
+  "htmlSha256": "e3c3ae36a0cf86f414125718903692cb488bbaa18f5812509b08eb4a88b27f08",
+  "editorialReviewSha256": "e0dbf8155fe102cbbe0d7cfb17dd839fab61589c27855d4be4142453a1b8873c",
+  "visualPlanSha256": "7bd4743fcb6e18e0af90907ff65addc0e0e4e1b3e1619f25983f530b210d5147",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "8b7831065dcbf08e1c70a8bae967db441a042c74",
+    "originalSha256": "7f614bf498507846775fec3b54dc9e1f8633e9f2ca9163e707acd95cbac7da55",
+    "revisedAt": "2026-10-18T19:19:04.190804+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
