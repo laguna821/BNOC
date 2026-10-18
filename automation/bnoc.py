@@ -104,7 +104,7 @@ def check(c,force=False):
     return dict(status='needs-image-reading',candidate=str(folder/'candidate.json'),date=candidate['date'],images=downloaded)
 
 def audit_review(path,run):
-    if run.get('revision',{}).get('kinds')==['design']:return revision.audit_design(path,run)
+    if run.get('revision',{}).get('kinds') in (['design'],['scripture']):return revision.audit_design(path,run)
     manuscript=load(path/'manuscript.json');passage=load(path/'passage.json')
     report=load(path/'review.json');output=path/Path(run['relativePath']).name.rstrip('.')
     binding={'manuscriptSha256':digest(manuscript),'passageSha256':passage['sha256'],'htmlSha256':digest(output.read_bytes())}
@@ -249,7 +249,7 @@ def main():
                     render.validate(load(path/'manuscript.json'),load(path/'passage.json'),path)
                 run['attempts'].append(dict(stage=args.stage,evidence=args.evidence,at=dt.datetime.now(dt.timezone.utc).isoformat()));advance(c,path,run,args.stage);result={'status':args.stage}
             elif command=='render':
-                if run.get('revision',{}).get('kinds')==['design']:
+                if run.get('revision',{}).get('kinds') in (['design'],['scripture']):
                     if args.print_proof:raise ValueError('Design-only revision retains its original print rules; inspect that document in print preview instead of applying the new-reader proof')
                     doc,meta=revision.render_design(path,run);name=Path(run['relativePath']).name.rstrip('.')
                     (path/name).write_text(doc,encoding='utf-8',newline='\n');save(path/'render.json',dict(meta,file=name));advance(c,path,run,'rendered')

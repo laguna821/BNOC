@@ -7,7 +7,7 @@ from pathlib import PurePosixPath, Path
 from html.parser import HTMLParser
 from bible import digest, save
 
-KINDS = {'design', 'theology', 'expansion'}
+KINDS = {'design', 'theology', 'expansion', 'scripture'}
 
 def source(repo, relative, ref='origin/main'):
     p = PurePosixPath(relative)
@@ -23,7 +23,9 @@ def check_base(repo, revision, relative, ref):
 def begin(c, relative, reference, date, kinds, intent, mode):
     import bnoc
     if not kinds or not set(kinds) <= KINDS:
-        raise ValueError('Choose design, theology, expansion, or a combination')
+        raise ValueError('Choose design, theology, expansion, or scripture')
+    if 'scripture' in kinds and kinds != ['scripture']:
+        raise ValueError('Scripture visibility revisions must be isolated')
     if not intent.strip():
         raise ValueError('Record preserved editorial intent before revising')
     bnoc.git(c['repo'], 'fetch', 'origin', 'main')
@@ -82,6 +84,21 @@ def render_design(path, run):
     if digest(raw)!=run['revision']['originalSha256']:
         raise ValueError('Original snapshot changed; recover the recorded Git blob')
     original=raw.decode('utf-8-sig')
+    if run['revision']['kinds']==['scripture']:
+        # Narrow migration of our exact old renderer markup, never arbitrary legacy DOM.
+        opening='<details class="scripture"><summary>성경 본문 전체 보기</summary>'
+        if original.count(opening)!=1:
+            raise ValueError('Expected exactly one known collapsed scripture block')
+        start=original.index(opening); end=original.index('</details>',start)
+        inner=original[start+len(opening):end]
+        if '<details' in inner or '<h2>' not in inner or 'verse-no' not in inner:
+            raise ValueError('Unexpected scripture structure; inspect individually')
+        doc=original[:start]+'<aside class="scripture">'+inner+'</aside>'+original[end+10:]
+        # Reversibility proves all scripture, commentary, assets, scripts and storage keys are untouched.
+        restored=doc[:start]+opening+inner+'</details>'+doc[start+len('<aside class="scripture">')+len(inner)+len('</aside>'):]
+        if restored!=original:raise ValueError('Visibility migration changed unrelated content')
+        doc=stamp(doc,run['revision'])
+        return doc,dict(originalSha256=run['revision']['originalSha256'],contentSha256=content_hash(original),htmlSha256=digest(doc.encode()))
     css=(root/'web/reader-fonts.css').read_text(encoding='utf-8')+'\n'+(root/'automation/typography.css').read_text(encoding='utf-8')+'\n'+(root/'automation/revision.css').read_text(encoding='utf-8')
     licenses=(root/'web/assets/FONT-LICENSES.txt').read_text(encoding='utf-8').replace('*/','* /')
     css+='\n/* Embedded font licenses\n'+licenses+'\n*/'

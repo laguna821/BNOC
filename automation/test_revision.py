@@ -42,6 +42,20 @@ class RevisionTests(unittest.TestCase):
         self.assertIn('<details class="scripture" open>',proof)
         self.assertNotIn('open open',proof)
 
+    def test_scripture_visibility_preserves_every_other_byte(self):
+        original='<html><head></head><body><details class="scripture"><summary>성경 본문 전체 보기</summary><h2>민수기</h2><p><span class="verse-no">1</span>본문</p></details><details id="study"><summary>해설</summary>보존</details><script>let note="keep";</script></body></html>'
+        rev={'originalSha256':digest(original.encode()),'kinds':['scripture'],'revisedAt':'2026-10-18T08:45:00+00:00'}
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp);(path/'original.html').write_bytes(original.encode())
+            doc,_=revision.render_design(path,{'revision':rev})
+            expected=original.replace('<details class="scripture"><summary>성경 본문 전체 보기</summary>','<aside class="scripture">').replace('</details>','</aside>',1)
+            self.assertEqual(doc,revision.stamp(expected,rev))
+            self.assertIn('<details id="study">',doc)
+            bad=original.replace('class="scripture"','class="unknown"')
+            (path/'original.html').write_bytes(bad.encode());rev['originalSha256']=digest(bad.encode())
+            with self.assertRaisesRegex(ValueError,'known collapsed'):
+                revision.render_design(path,{'revision':rev})
+
     def test_revision_replaces_only_target_and_retries_safely(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);repo=root/'repo';repo.mkdir();remote=root/'remote.git'

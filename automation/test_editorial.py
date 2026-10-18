@@ -93,6 +93,9 @@ class EditorialTests(unittest.TestCase):
         self.m['scriptureCollapsible'] = True
         self.m['sections'][0]['cards'][0]['tableLayout'] = 'wide'
         render.validate(self.m, self.passage, self.root)
+        doc,_=render.render(self.m,self.passage,self.root,'fixture','fixture.html')
+        self.assertIn('<aside class="scripture">',doc)
+        self.assertNotIn('<details class="scripture">',doc)
 
     def test_wide_table_preserves_words_and_print_width(self):
         card=self.m['sections'][0]['cards'][0]

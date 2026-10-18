@@ -165,8 +165,7 @@ def render(manuscript,passage,run_dir,issue_id,filename):
         doc=revision.stamp(doc,manuscript['revision'])
         revised=esc(manuscript['revision']['revisedAt'][:10])
         doc=doc.replace('<p class="meta">',f'<p class="meta">개정 {revised} · 최초 게재일은 유지됩니다.</p><p class="meta">',1)
-    if manuscript.get('scriptureCollapsible'):
-        doc=doc.replace('<aside class="scripture">','<details class="scripture"><summary>성경 본문 전체 보기</summary>').replace('</aside>','</details>',1)
+    # Scripture remains visible in full and in summary mode, including legacy manuscripts.
     if manuscript.get('revision'):
         doc=doc.replace('주보는 본문 선정의 근거이며, 이 글은 교회의 공식 해석이나 설교 요약이 아닙니다. 창작 그림은 본문 이해를 돕는 해석적 삽화입니다.', '기존에 게재된 본문과 제작 의도를 바탕으로 개정한 개인 성경 연구 노트입니다. 교회의 공식 해석이나 설교 원고를 대신하지 않습니다. 그림과 도표의 성격은 각 설명에 표시했습니다.')
     if any(v['text'] not in html.unescape(doc) for v in passage['verses']):raise ValueError('Verse lost during assembly')
