@@ -1,0 +1,27 @@
+{
+  "id": "2025-08-17-990d0b0d00a4449f",
+  "date": "2025-08-17",
+  "reference": "민수기 18:21-32",
+  "service": "revision-776684afb8622da791b4",
+  "relativePath": "2025/08172025/Numbers-18_21_32.html",
+  "manuscriptSha256": "b2cbb16002cda04ce2ec4f74836badb43e4b8d25c776612d9fa56e09457022a7",
+  "passageSha256": "077ef48de53919307a875ded4efb9e10c04a13004d9652e9984cbff20f06f5bd",
+  "htmlSha256": "2c54e9dc3bf3a10397caf21472d231d3fb01a4898a7f1a24d15dfaaeca84c640",
+  "editorialReviewSha256": "2bbcd357dd3e810d2612a2c0e9cdb398d2bdd41dc0b1bae91803305d520b7728",
+  "visualPlanSha256": "55fedbb873cb84436bf95ee37c4c12d0bfaae9f15d0a907f3f68e441dbb08d8a",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex; exact runtime variant not exposed)",
+  "revision": {
+    "originalCommit": "2b8f30eff1a34f82d56e194c99d18c19c7c49acb",
+    "originalSha256": "4fbe43f770f36e02cd8d6bbc08f35da096c7bc7ba57bbdc1544f06fb70e09ac7",
+    "revisedAt": "2026-10-18T07:09:38.848432+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
