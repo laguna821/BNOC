@@ -3,7 +3,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 from html import escape
 import re, json, shutil, datetime, subprocess, sys
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 from xml.etree import ElementTree as ET
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -91,6 +91,14 @@ def build():
         words=' '.join(' '.join(p.words).split())
         search=' '.join([title,desc,'누가복음',Path(legacy).name,words])
         items.append(dict(title=title,date='2026-01-25',year='2026',books=['누가복음'],description=desc,link=BASE+'/'+target,dir='2026/01252026',search=search,style='original'))
+    # Keep original date ordering; revision metadata changes only the badge.
+    for item in items:
+        source_path=out/unquote(item['link'].removeprefix(BASE+'/'))
+        if source_path.exists():
+            meta=Text();meta.feed(source_path.read_text(encoding='utf-8-sig'))
+            if meta.meta.get('bnoc-revised'):
+                item['revisedAt']=meta.meta['bnoc-revised']
+                item['revisionKinds']=meta.meta.get('bnoc-revision-kinds','').split(',')
     items.sort(key=lambda x:(x['date'],x['link']),reverse=True)
     shutil.copytree(ROOT/'web/assets',out/'assets')
     for name in ('site.css','site.js'):shutil.copy(ROOT/'web'/name,out/'assets'/name)
@@ -99,7 +107,8 @@ def build():
     (out/'index.json').write_text(json.dumps({'items':public},ensure_ascii=False),encoding='utf-8')
     (out/'search.json').write_text(json.dumps(items,ensure_ascii=False),encoding='utf-8')
     def card(x):
-        return f'<article class="entry"><div class="entry-meta"><time datetime="{x["date"]}">{x["date"].replace("-",".")}</time><span>{escape(" · ".join(x["books"]) or "성경 연구")}</span></div><h3><a href="{x["link"]}">{escape(x["title"])}</a></h3><p>{escape(x["description"])}</p><a class="read" href="{x["link"]}">자료 읽기 <span aria-hidden="true">↗</span></a></article>'
+        badge='<span>개정 '+escape(x['revisedAt'][:10])+'</span>' if x.get('revisedAt') else ''
+        return f'<article class="entry"><div class="entry-meta"><time datetime="{x["date"]}">{x["date"].replace("-",".")}</time><span>{escape(" · ".join(x["books"]) or "성경 연구")}</span>{badge}</div><h3><a href="{x["link"]}">{escape(x["title"])}</a></h3><p>{escape(x["description"])}</p><a class="read" href="{x["link"]}">자료 읽기 <span aria-hidden="true">↗</span></a></article>'
     latest=items[0];template=(ROOT/'web/index.html').read_text(encoding='utf-8')
     values={'LOGO':(ROOT/'web/logo.svg').read_text(encoding='utf-8'),'CARDS':''.join(card(x) for x in items),'COUNT':str(len(items)),'DATE':latest['date'].replace('-','.'),'LATEST_TITLE':escape(latest['title']),'LATEST_LINK':latest['link'],'YEARS':''.join(f'<option value="{y}">{y}년</option>' for y in sorted({x['year'] for x in items},reverse=True)),'BOOKS':''.join(f'<option>{escape(b)}</option>' for b in sorted({b for x in items for b in x['books']}))}
     for k,v in values.items():template=template.replace('{{'+k+'}}',v)

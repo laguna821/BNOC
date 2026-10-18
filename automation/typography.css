@@ -1,0 +1,19 @@
+/* Shared type and colour roles, not an article outline or layout template. */
+:root{--bg:#fff;--paper:#fff;--paper-soft:#f7f9fc;--soft:var(--paper-soft);--ink:#00102e;--text:#202b3a;--muted:#586a84;--line:#dce5f0;--accent:#005bac;--accent-deep:#002870;--accent-soft:#f0f5fb;--h1:#00102e;--h2:#001d53;--h3:#00102e}
+html[data-theme=dark]{--bg:#08090a;--paper:#0b0c0e;--paper-soft:#121317;--soft:var(--paper-soft);--ink:#d7d7dc;--text:#d7d7dc;--muted:#a0a0a7;--line:#303138;--accent:#f27aa4;--accent-deep:#ffb2cb;--accent-soft:#1b1418;--h1:#f27aa4;--h2:#f27aa4;--h3:#e9e9ed}
+body{font-synthesis:none}
+h1{color:var(--h1);font-weight:800;line-height:1.35}
+h2{color:var(--h2);font-weight:700;line-height:1.4}
+h3{color:var(--h3);font-weight:700;font-size:calc(var(--body-size,18px)*23/18);line-height:1.45}
+h4{font-size:calc(var(--body-size,18px)*20/18);font-weight:600;line-height:1.5}
+strong,b{font-weight:600}
+table{font-size:calc(var(--body-size,18px)*16/18);line-height:1.8}
+figcaption{font-size:calc(var(--body-size,18px)*14/18);font-weight:400;line-height:1.75}
+[lang=he],[lang=grc],[lang=el]{font-weight:500;font-synthesis:none}
+:is(td,th) [lang=he],:is(td,th) [lang=grc],:is(td,th) [lang=el]{font-size:1.25em;line-height:1.85}
+.essay{margin:32px 0}
+figure>svg{display:block;max-width:100%;height:auto;margin:auto}
+.essay>.prose,.essay>.brief{padding:0}
+.essay>h3{margin:0 0 16px}
+@media(max-width:650px){h3{font-size:calc(var(--body-size,18px)*21/18)}}
+@media print{html,html[data-theme=dark]{--h1:#00102e;--h2:#001d53;--h3:#00102e;--accent:#005bac}h3{font-size:14pt}h4{font-size:12pt}table{font-size:10pt}figcaption{font-size:9pt}}

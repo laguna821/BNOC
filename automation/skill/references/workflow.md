@@ -33,12 +33,12 @@ bnoc.py promote RUN_ID --token TOKEN
 
 ## 제작과 검토
 
-각 run 폴더에 passage.json, research.md, manuscript.json, 그림, review.json을 둔다. 실제 모델 ID는 review.json에 적는다. 각 단계 완료 시 checkpoint로 파일 경로/확인 내용을 남긴다.
+각 run 폴더에 passage.json, research.md, manuscript.json, editorial-review.json, visual-plan.json, 필요한 그림, review.json을 둔다. content-first.md에 따라 글부터 검토한다. 실제 모델 ID를 기록하되 런타임이 공개하지 않은 세부 버전은 추정하지 않는다. 각 단계 완료 시 checkpoint로 파일 경로/확인 내용을 남긴다. written은 실제 원고 검토, illustrated는 원고에 따른 시각 결정의 이행을 검사한다. illustrated라는 기존 상태 이름은 텍스트만인 구성의 검증도 포함한다.
 
 ```text
 bnoc.py checkpoint RUN_ID --token TOKEN --stage researched --evidence "research.md의 출처와 주요 논쟁 확인"
-bnoc.py checkpoint RUN_ID --token TOKEN --stage written --evidence "manuscript.json 완성"
-bnoc.py checkpoint RUN_ID --token TOKEN --stage illustrated --evidence "그림 파일과 설명을 눈으로 확인"
+bnoc.py checkpoint RUN_ID --token TOKEN --stage written --evidence "원고를 읽고 본문 근거와 해석의 한계를 검토"
+bnoc.py checkpoint RUN_ID --token TOKEN --stage illustrated --evidence "검토 후 결정한 시각 구성의 실제 이행 확인"
 bnoc.py render RUN_ID --token TOKEN
 bnoc.py render RUN_ID --token TOKEN --print-proof
 bnoc.py validate RUN_ID --token TOKEN

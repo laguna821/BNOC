@@ -15,6 +15,8 @@ from urllib.parse import quote
 from bible import Bible, digest, save, fetch, ALIASES
 import bulletin
 import render
+import revision
+import editorial
 
 DEFAULT_CONFIG=Path(os.environ.get('BNOC_CONFIG',str(Path.home()/'Achmage-System/bnoc/config.json')))
 STAGES=['discovered','passage-confirmed','researched','written','illustrated','rendered','validated','pushed','published']
@@ -102,13 +104,21 @@ def check(c,force=False):
     return dict(status='needs-image-reading',candidate=str(folder/'candidate.json'),date=candidate['date'],images=downloaded)
 
 def audit_review(path,run):
+    if run.get('revision',{}).get('kinds')==['design']:return revision.audit_design(path,run)
     manuscript=load(path/'manuscript.json');passage=load(path/'passage.json')
-    report=load(path/'review.json');output=path/Path(run['relativePath']).name
+    report=load(path/'review.json');output=path/Path(run['relativePath']).name.rstrip('.')
     binding={'manuscriptSha256':digest(manuscript),'passageSha256':passage['sha256'],'htmlSha256':digest(output.read_bytes())}
     for k,v in binding.items():
         if report.get(k)!=v:raise ValueError('Stale review: '+k)
     if manuscript.get('date')!=run['date']:raise ValueError('Manuscript date differs from issue')
+    evidence=editorial.validate(manuscript,passage,path)
+    for key in ('editorialReviewSha256','visualPlanSha256'):
+        if report.get(key)!=evidence[key]:raise ValueError('Stale final review: '+key)
+        binding[key]=evidence[key]
     rebuilt,_=render.render(manuscript,passage,path,run['id'],output.name)
+    if run.get('revision'):
+        if manuscript.get('revision')!=revision.public_metadata(run['revision']):raise ValueError('Revision metadata mismatch')
+        if report.get('preservedIntent')!=run['revision']['intent']:raise ValueError('Review must confirm preserved editorial intent')
     if digest(rebuilt.encode())!=binding['htmlSha256']:raise ValueError('Re-render required: figures or renderer changed')
     if report.get('blockingFindings'):raise ValueError('Unresolved review findings')
     if not report.get('model') or not report.get('reviewedAt'):raise ValueError('Record actual reviewer model and time')
@@ -128,7 +138,7 @@ def publish(c,path,run):
     # No whole-directory add. Preserve every remote tree entry, including Windows-invalid historical names.
     git(repo,'fetch','origin','main')
     base=git(repo,'rev-parse','origin/main')
-    relative=run['relativePath'];manifest=f'issues/{run["id"]}.json';data=(path/Path(relative).name).read_bytes()
+    relative=run['relativePath'];manifest=f'issues/{run["id"]}.json';data=(path/Path(relative).name.rstrip('.')).read_bytes()
     existing=subprocess.run(['git','show',base+':'+manifest],cwd=repo,capture_output=True)
     if existing.returncode==0:
         previous=json.loads(existing.stdout)
@@ -136,8 +146,11 @@ def publish(c,path,run):
         run['commit']=previous.get('commit',base);advance(c,path,run,'pushed')
         return {'status':'already-pushed','commit':run['commit'],'url':c['site']+relative}
     collision=subprocess.run(['git','cat-file','-e',base+':'+relative],cwd=repo,capture_output=True)
-    if collision.returncode==0:raise ValueError('Refusing to overwrite an existing document')
+    if run.get('revision'):
+        revision.check_base(repo,run['revision'],relative,base)
+    elif collision.returncode==0:raise ValueError('Refusing to overwrite an existing document')
     record=dict(id=run['id'],date=run['date'],reference=run['reference'],service=run['service'],relativePath=relative,**binding,versions=run['versions'],reviewModel=load(path/'review.json')['model'])
+    if run.get('revision'):record['revision']=revision.public_metadata(run['revision'])
     with tempfile.TemporaryDirectory(prefix='bnoc-index-') as temp:
         env=dict(os.environ,GIT_INDEX_FILE=str(Path(temp)/'index'))
         git(repo,'read-tree',base,env=env)
@@ -161,11 +174,12 @@ def verify_deployment(c,path,run):
     job=jobs[0]
     if job['status']!='completed':return dict(status='deploying',workflow=job['html_url'])
     if job['conclusion']!='success':raise ValueError('Deployment failed: '+job['html_url'])
-    url=c['site']+run['relativePath'];live=fetch(url)
-    expected=(path/Path(run['relativePath']).name).read_bytes()
+    public_path=run.get('revision',{}).get('publicPath',run['relativePath'])
+    url=c['site']+public_path;live=fetch(url)
+    expected=(path/Path(run['relativePath']).name.rstrip('.')).read_bytes()
     if live.replace(b'\r\n',b'\n')!=expected.replace(b'\r\n',b'\n'):return dict(status='waiting-for-live-content',workflow=job['html_url'])
     index=json.loads(fetch(c['site']+'index.json'))['items']
-    if not any(run['relativePath'] in x['link'] for x in index):raise ValueError('Document missing from archive')
+    if not any(public_path in x['link'] for x in index):raise ValueError('Document missing from archive')
     advance(c,path,run,'published');s=state(c);s['issues'][run['id']].update(url=url,commit=commit);save(c['root']/'state.json',s)
     run['lease']=None;run['url']=url;save(path/'run.json',run)
     return dict(status='published',url=url,workflow=job['html_url'])
@@ -177,6 +191,9 @@ def main():
     extract=sub.add_parser('extract');extract.add_argument('reference');extract.add_argument('--output',required=True)
     start=sub.add_parser('start');start.add_argument('reference');start.add_argument('--date',default=dt.datetime.now(bulletin.KST).date().isoformat());start.add_argument('--service',default='manual');start.add_argument('--mode',choices=['draft','publish'],default='draft')
     observe=sub.add_parser('observe');observe.add_argument('candidate');observe.add_argument('observation')
+    rev=sub.add_parser('revise');rev.add_argument('relative_path');rev.add_argument('reference')
+    rev.add_argument('--date',required=True);rev.add_argument('--kinds',nargs='+',choices=sorted(revision.KINDS),required=True)
+    rev.add_argument('--intent',required=True);rev.add_argument('--mode',choices=['draft','publish'],default='draft')
     for name in ['claim','status','promote','passage','render','validate','publish','verify','release','fail','checkpoint']:
         p=sub.add_parser(name);p.add_argument('run_id')
         if name=='claim':
@@ -195,6 +212,7 @@ def main():
             result=bible.extract(args.reference);save(args.output,result)
             result={k:v for k,v in result.items() if k!='verses'}
         elif command=='start':result=make_run(c,args.reference,args.date,args.service,args.mode)
+        elif command=='revise':result=revision.begin(c,args.relative_path,args.reference,args.date,args.kinds,args.intent,args.mode)
         elif command=='observe':
             candidate=load(args.candidate);obs=bulletin.validate_observation(candidate,load(args.observation))
             prior=state(c);previous=prior['observations'].get(candidate['id'],{})
@@ -224,11 +242,23 @@ def main():
             elif command=='passage':
                 p=bible.extract(run['reference']);save(path/'passage.json',p);advance(c,path,run,'passage-confirmed');result={'status':'passage-confirmed','file':str(path/'passage.json'),'corrections':p['corrections']}
             elif command=='checkpoint':
+                if args.stage=='researched' and not (path/'research.md').is_file():raise ValueError('Actual research.md required')
+                if args.stage=='written':
+                    editorial.review(load(path/'manuscript.json'),load(path/'passage.json'),path)
+                if args.stage=='illustrated':
+                    render.validate(load(path/'manuscript.json'),load(path/'passage.json'),path)
                 run['attempts'].append(dict(stage=args.stage,evidence=args.evidence,at=dt.datetime.now(dt.timezone.utc).isoformat()));advance(c,path,run,args.stage);result={'status':args.stage}
             elif command=='render':
-                m=load(path/'manuscript.json');p=load(path/'passage.json');name=Path(run['relativePath']).name
+                if run.get('revision',{}).get('kinds')==['design']:
+                    if args.print_proof:raise ValueError('Design-only revision retains its original print rules; inspect that document in print preview instead of applying the new-reader proof')
+                    doc,meta=revision.render_design(path,run);name=Path(run['relativePath']).name.rstrip('.')
+                    (path/name).write_text(doc,encoding='utf-8',newline='\n');save(path/'render.json',dict(meta,file=name));advance(c,path,run,'rendered')
+                    print(json.dumps(dict(status='rendered',file=str(path/name),**meta),ensure_ascii=False));return
+                m=load(path/'manuscript.json');p=load(path/'passage.json');name=Path(run['relativePath']).name.rstrip('.')
                 if m.get('date')!=run['date']:raise ValueError('Manuscript date differs from issue')
-                doc,meta=render.render(m,p,path,run['id'],name);(path/name).write_text(doc,encoding='utf-8',newline='\n');save(path/'render.json',dict(meta,htmlSha256=digest(doc.encode()),file=name));advance(c,path,run,'rendered');result=dict(status='rendered',file=str(path/name),**meta)
+                doc,meta=render.render(m,p,path,run['id'],name)
+                run['versions'].update(skill='1.1',template=meta['templateVersion'])
+                (path/name).write_text(doc,encoding='utf-8',newline='\n');save(path/'render.json',dict(meta,htmlSha256=digest(doc.encode()),file=name));advance(c,path,run,'rendered');result=dict(status='rendered',file=str(path/name),**meta)
                 if args.print_proof:
                     (path/'print-proof.html').write_text(render.print_proof(doc),encoding='utf-8',newline='\n')
                     result['printProof']=str(path/'print-proof.html')
