@@ -2,7 +2,6 @@
 import base64
 import html
 import json
-import mimetypes
 import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -117,7 +116,8 @@ def render(manuscript,passage,run_dir,issue_id,filename):
     esc=lambda s:html.escape(str(s),quote=True)
     figures={f['id']:f for f in manuscript.get('figures',[])}
     def figure(fid):
-        f=figures[fid];p=Path(run_dir)/f['file'];mime=mimetypes.guess_type(p.name)[0] or 'image/png'
+        f=figures[fid];p=Path(run_dir)/f['file']
+        mime={'.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.svg':'image/svg+xml'}[p.suffix.lower()]
         if p.suffix.lower()=='.svg':
             graphic=diagram_svg(p.read_text(encoding='utf-8'),fid)
             return f'<figure aria-label="{esc(f["alt"])}">{graphic}<figcaption>{esc(f["caption"])}</figcaption></figure>'

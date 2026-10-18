@@ -4,6 +4,7 @@ import copy
 import re
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 from bible import digest, save
 import editorial
@@ -152,6 +153,23 @@ class EditorialTests(unittest.TestCase):
         self.save()
         with self.assertRaisesRegex(ValueError, 'actual raster'):
             render.validate(self.m, self.passage, self.root)
+
+    def test_webp_keeps_its_mime_when_host_registry_misidentifies_it(self):
+        # A small WebP fixture; this test makes no real-generation claim.
+        self.diagram()
+        data=base64.b64decode('UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA')
+        (self.root/'image.webp').write_bytes(data)
+        figure=self.m['figures'][0]
+        figure.update(file='image.webp',kind='generated-illustration',sha256=digest(data))
+        figure['inspection']['sha256']=digest(data)
+        figure['provenance']=dict(tool='test-fixture',prompt='Fixture only',originalSha256=digest(data),generatedAt='2026-10-18T07:02:00+00:00')
+        self.plan['items'][0]['kind']='generated-illustration'
+        self.save()
+        with mock.patch('mimetypes.guess_type',return_value=('image/png',None)):
+            doc,_=render.render(self.m,self.passage,self.root,'fixture','fixture.html')
+        encoded=base64.b64encode(data).decode()
+        self.assertIn('src="data:image/webp;base64,'+encoded,doc)
+        self.assertNotIn('src="data:image/png;base64,'+encoded,doc)
 
     def test_wrong_placement_is_not_silently_accepted(self):
         self.diagram()
