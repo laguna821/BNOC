@@ -1,0 +1,27 @@
+{
+  "id": "2025-11-16-9314623658e7280b",
+  "date": "2025-11-16",
+  "reference": "누가복음 10:25-37",
+  "service": "revision-ddb40ad89939e08a68c6",
+  "relativePath": "2025/11162025/luke_10_25-37.html",
+  "manuscriptSha256": "7cb3341b407d6ea693c7c5b043e01a72a8c3b84dcf68bce01792498861c6d37c",
+  "passageSha256": "92305105e9f4f1927b5a556aabd785c08581dd9c65976229568403a8433319c2",
+  "htmlSha256": "54baf8dcef2990b696a0167c333a287bbeaebb0ad0710a84929b554786b6b99c",
+  "editorialReviewSha256": "38d339744d40ed973f3eaf304746ba1547161e8833f654a520415f898e43cb8f",
+  "visualPlanSha256": "66e795cb5aa97ee111c55529e3b5f2040f50589bf7fe73d4458492bf6dd54e16",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "2851a7b09a613bbc1d1a4d9d4f40decb6f16f56c",
+    "originalSha256": "d2b721628a32d74db2e0e5e510913e3b9db4c1d027e3e65d247d93c5e45754e9",
+    "revisedAt": "2026-10-18T12:36:47.912495+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
