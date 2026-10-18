@@ -1,0 +1,27 @@
+{
+  "id": "2026-03-08-cd98873b78bfc66e",
+  "date": "2026-03-08",
+  "reference": "누가복음 5:12-16",
+  "service": "revision-18dc80a3c3ad44fc0180",
+  "relativePath": "2026/03082026/Luke_5_12-16_v1.html",
+  "manuscriptSha256": "2ff513e1c6e36c62355d86b44e1ef5d4030316b6585a5dc1964cee90b2bfff71",
+  "passageSha256": "295b6e3e2bda08d813addece343e4a595307834eb31618906c1b42138b189a57",
+  "htmlSha256": "391afe61105e153adc1757f73cfe65094c2f35e3f2dd111eaab01ccf1baa13f3",
+  "editorialReviewSha256": "35f90c615728c6bea6148c07ecb28010e779bb69de7d8757efd2088bb5a35afb",
+  "visualPlanSha256": "a54cf92aee9cc1f864c47dfaf3e8f0945b21220202c9dedee3dd3a2811cd7995",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "d77671514c612d167bae2d145cb0d9753beb688d",
+    "originalSha256": "59ae59e93ee0d1c3118f19d744cacb79d9baba5ebddf535601f0911822442657",
+    "revisedAt": "2026-10-18T22:13:49.672641+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
