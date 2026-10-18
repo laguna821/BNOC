@@ -1,0 +1,27 @@
+{
+  "id": "2025-09-28-c7e6d3368c3dee98",
+  "date": "2025-09-28",
+  "reference": "신명기 32:5; 빌립보서 2:15",
+  "service": "revision-f794cba3d5bd2148e371",
+  "relativePath": "2025/09282025/deut32_phil2.html",
+  "manuscriptSha256": "409a289f786ac967ffc8e2237c45263dbe6a70a0e45c8a8c76bc9a86699f8c49",
+  "passageSha256": "650156f7ba48562f0963b16381fafae7fd7d3fe1fa5d628ebb11aabd103092f4",
+  "htmlSha256": "b60b6c5094fe6a23c8a073fb3ef45f632e7dfd4921680a48ae04d10d0b41a51d",
+  "editorialReviewSha256": "7dec4d3cce2267eb216c81d95f401b3ea666f05e5acf69c859fa9320289f7761",
+  "visualPlanSha256": "c1b02eaca2c0330b2fe47e11eae01cd9de016abf2c1641ed20ae05dc2acd70ac",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "2610e177cf1efcb4c51c5609914456279c798e5a",
+    "originalSha256": "8b6a07c87816c348b4af7c60da37cf4811e04365f9a237cf7b13dc30f302c740",
+    "revisedAt": "2026-10-18T09:42:27.981498+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
