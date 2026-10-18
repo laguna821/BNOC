@@ -57,13 +57,17 @@ def diagram_svg(source,figure_id):
 
 def print_proof(doc):
     # Local visual proof of the exact print rules; pagination still belongs to the user's print dialog.
-    css=(ROOT/'automation/reader.css').read_text(encoding='utf-8')
-    start=css.index('@media print{')+len('@media print{');depth=1;end=start
-    while depth:
-        if css[end]=='{':depth+=1
-        elif css[end]=='}':depth-=1
-        end+=1
-    rules=css[start:end-1]
+    css='\n'.join((ROOT/'automation'/name).read_text(encoding='utf-8')
+                  for name in ('reader.css','typography.css'))
+    blocks=[];cursor=0
+    while (marker:=css.find('@media print{',cursor))!=-1:
+        start=marker+len('@media print{');depth=1;end=start
+        while depth:
+            if css[end]=='{':depth+=1
+            elif css[end]=='}':depth-=1
+            end+=1
+        blocks.append(css[start:end-1]);cursor=end
+    rules='\n'.join(blocks)
     doc=re.sub(r'<script>.*?</script>','',doc,flags=re.S)
     doc=re.sub(r'<details\b([^>]*)>',lambda m:'<details'+re.sub(r'\sopen(?:=["\'][^"\']*["\'])?','',m[1])+' open>',doc)
     return doc.replace('</head>',f'<style>{rules}main{{max-width:180mm;margin:auto}}html{{background:#fff}}</style></head>')
@@ -104,6 +108,7 @@ def validate(manuscript,passage,run_dir):
         for card in section['cards']:
             if card.get('figure') and card['figure'] not in figures:raise ValueError('Unknown figure reference')
             if card.get('figurePosition','before') not in ('before','after'):raise ValueError('Unknown figure position')
+            if card.get('tableLayout','auto') not in ('auto','wide'):raise ValueError('Unknown table layout')
     binding=editorial.validate(manuscript,passage,run_dir)
     return dict(proseCharacters=len(text),cards=len(ids)-len(manuscript['sections']),figures=len(figures),proseSha256=digest(prose),**binding)
 
@@ -123,7 +128,8 @@ def render(manuscript,passage,run_dir,issue_id,filename):
         cards=[]
         for c in section['cards']:
             picture=figure(c['figure']) if c.get('figure') else ''
-            prose=re.sub(r'(<table\b.*?</table>)',r'<div class="table-scroll" tabindex="0" role="region" aria-label="가로로 읽는 표">\1</div>',c['html'],flags=re.S)
+            table_class='table-scroll wide-table' if c.get('tableLayout')=='wide' else 'table-scroll'
+            prose=re.sub(r'(<table\b.*?</table>)',lambda match:f'<div class="{table_class}" tabindex="0" role="region" aria-label="가로로 읽는 표">{match[1]}</div>',c['html'],flags=re.S)
             if c.get('figurePosition')=='after':prose,picture=prose+picture,''
             if section.get('presentation')=='essay':
                 cards.append(f'<article class="essay" id="{esc(c["id"])}"><h3>{esc(c["title"])}</h3><div class="brief">{esc(c["summary"])}</div><div class="prose">{picture}{prose}</div></article>')

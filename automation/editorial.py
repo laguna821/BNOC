@@ -16,7 +16,7 @@ def content(manuscript):
     return {k: v for k, v in manuscript.items() if k not in
             {'figures', 'heroFigure', 'scriptureCollapsible', 'revision', 'coverage', 'sections'}} | {
         'sections': [{k: v for k, v in section.items() if k not in {'cards', 'presentation'}} | {
-            'cards': [{k: v for k, v in card.items() if k not in {'figure','figurePosition'}} for card in section['cards']]
+            'cards': [{k: v for k, v in card.items() if k not in {'figure','figurePosition','tableLayout'}} for card in section['cards']]
         } for section in manuscript['sections']]}
 
 

@@ -8,8 +8,10 @@ h3{color:var(--h3);font-weight:700;font-size:calc(var(--body-size,18px)*23/18);l
 h4{font-size:calc(var(--body-size,18px)*20/18);font-weight:600;line-height:1.5}
 strong,b{font-weight:600}
 table{font-size:calc(var(--body-size,18px)*16/18);line-height:1.8}
+.wide-table table{min-width:720px}
+@media print{.wide-table table{min-width:0}}
 figcaption{font-size:calc(var(--body-size,18px)*14/18);font-weight:400;line-height:1.75}
-[lang=he],[lang=grc],[lang=el]{font-weight:500;font-synthesis:none}
+[lang=he],[lang=grc],[lang=el]{font-weight:500;font-synthesis:none;overflow-wrap:normal;word-break:normal}
 :is(td,th) [lang=he],:is(td,th) [lang=grc],:is(td,th) [lang=el]{font-size:1.25em;line-height:1.85}
 .essay{margin:32px 0}
 figure>svg{display:block;max-width:100%;height:auto;margin:auto}

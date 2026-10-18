@@ -91,7 +91,27 @@ class EditorialTests(unittest.TestCase):
     def test_layout_changes_do_not_invalidate_editorial_reading(self):
         self.m['sections'][0]['presentation'] = 'disclosure'
         self.m['scriptureCollapsible'] = True
+        self.m['sections'][0]['cards'][0]['tableLayout'] = 'wide'
         render.validate(self.m, self.passage, self.root)
+
+    def test_wide_table_preserves_words_and_print_width(self):
+        card=self.m['sections'][0]['cards'][0]
+        table='<table><tr><td>긴 설명을 줄이지 않습니다.</td></tr></table>'
+        card['html']+=table
+        self.review['contentSha256']=digest(editorial.content(self.m))
+        self.plan['contentSha256']=self.review['contentSha256']
+        self.plan['editorialReviewSha256']=digest(self.review)
+        self.save()
+        card['tableLayout']='wide'
+        doc,_=render.render(self.m,self.passage,self.root,'fixture','fixture.html')
+        self.assertIn('class="table-scroll wide-table"',doc)
+        self.assertIn(table,doc)
+        proof_rules=render.print_proof(doc).rsplit('<style>',1)[1].split('</style>',1)[0]
+        self.assertIn('.wide-table table{min-width:0}',proof_rules)
+        self.assertIn('table{font-size:10pt}',proof_rules)
+        card['tableLayout']='arbitrary-css'
+        with self.assertRaisesRegex(ValueError,'Unknown table layout'):
+            render.validate(self.m,self.passage,self.root)
 
     def test_visual_decision_cannot_precede_review(self):
         self.plan['decidedAt'] = '2026-10-18T06:00:00+00:00'
