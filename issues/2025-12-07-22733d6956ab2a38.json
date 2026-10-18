@@ -1,0 +1,27 @@
+{
+  "id": "2025-12-07-22733d6956ab2a38",
+  "date": "2025-12-07",
+  "reference": "사도행전 14:19-28",
+  "service": "revision-558f7e4c8b7d15c614ee",
+  "relativePath": "2025/12072025/Acts_14_19-28.html",
+  "manuscriptSha256": "720686c041988feafb56f7115afda562d4b5f7849ac326e7e72e6e57d4e65fd3",
+  "passageSha256": "729b18f5e16ce51c68d4dccf248ca7594778d83f08620d1a657df6b677108719",
+  "htmlSha256": "002ffe64e7a49c06e9a6292277b19673a72edf24b8ded97e5e563b5214807e11",
+  "editorialReviewSha256": "b8b8b55a1461a529237cb049b1fda16dfb428bbd0c8670b975e7644cc10fd68a",
+  "visualPlanSha256": "70cc7209bdc176679e891371dfe5bb3f010d958298de23e8e0bef203fd2e6f44",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "567d0205e6e0c2f5d635dd7e34f69c1cd5d8e485",
+    "originalSha256": "114330342a746853674df836aba14b92005fa8b658be79b3f11cab7f597b3252",
+    "revisedAt": "2026-10-18T13:46:52.148030+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
