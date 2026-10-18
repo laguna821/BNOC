@@ -1,0 +1,27 @@
+{
+  "id": "2025-10-19-a9ccbe28e3531041",
+  "date": "2025-10-19",
+  "reference": "누가복음 4:1-13",
+  "service": "revision-0ba903b0174cf3371464",
+  "relativePath": "2025/10192025/luke_4_1_13.html",
+  "manuscriptSha256": "a12d50883b14bc81fab57c0a121ab8f5dbe0a92a4657a0fc674fd533d8fd952e",
+  "passageSha256": "a3ab3f0bdbfc03c16b94fffafb4c3e2dd02a530cb68973fd13ffaf930a2a4bd3",
+  "htmlSha256": "c068808c067209550f64572099c7da3779dfffdcbfda2e56eb6e77386f16919f",
+  "editorialReviewSha256": "84df5f55eba0de581d50f7e41e985e11930d9d606fb89ed68dc6602e86aafc8a",
+  "visualPlanSha256": "bc51de0586cc04818fbefe3e98134253e69bf73ff1c56eb0c75cf8833f618ee6",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "00f854cd085de8ba6c8321e6f0e83afbcbcbd6f4",
+    "originalSha256": "fa94b098a28c36247c9340d92d73a015823a2da93c0104f44e507ff569929532",
+    "revisedAt": "2026-10-18T11:24:29.878944+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
