@@ -1,0 +1,27 @@
+{
+  "id": "2026-01-18-df295243efbeeffe",
+  "date": "2026-01-18",
+  "reference": "로마서 1:19-21",
+  "service": "revision-34002b3f9c9e17ff2afc",
+  "relativePath": "2026/01182026/Romans_1_19-21_v3.html",
+  "manuscriptSha256": "c8b2b3dfa6cca118933ef429887060e3125cb5d59b4e146f4cc2c1ee5a2b4830",
+  "passageSha256": "e0c40a9140a6bec78e594beae436623cbf8ea27d44eacdc6d5606cbe7b92d7f4",
+  "htmlSha256": "9e717ae4b20cbb46529ef074a7919ebd21b79ed8c4db323fabfe4a7159cb11da",
+  "editorialReviewSha256": "b853055b9cf43ffa79ba7ce770cfe9276b10bbf15fcb373943584c7fe0390bc2",
+  "visualPlanSha256": "386a27ffb4126acf261eb10b56df6fc6c1e6e722d095e0e7b39deb5b4ab6000b",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "adba20cbf41fb03c05009d2b79dff73f61340859",
+    "originalSha256": "7912c47d5ad8cefc2883b58610c6c72f673109ddd39640dd9f52313dca238207",
+    "revisedAt": "2026-10-18T18:48:59.826827+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
