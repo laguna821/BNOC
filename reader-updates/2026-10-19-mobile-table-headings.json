@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-18T17:34:29.999468+00:00",
+  "baseCommit": "1e77518eb7357e79e70f257d66ebfe4142a5672a",
+  "purpose": "Verify mobile labels against actual table headers, including spanning cells",
+  "researchRef": "research:rr-aebdae1f78ce8f2365ec0f59029d55b9:ffa7cd7049656fbbbdf02aa166b4eaf8fc0e40e782121d303147004c392467ee",
+  "checks": {
+    "regressionTests": {
+      "total": 63,
+      "passed": 62,
+      "skipped": 1,
+      "skipReason": "Optional local encoder integration requires environment configuration"
+    },
+    "existingReaders": {
+      "articles": 22,
+      "cards": 341,
+      "tables": 39,
+      "verses": 169,
+      "structuralAudit": "passed"
+    },
+    "publicMobile": {
+      "cases": [
+        "390px Hebrew at 22px: two captions, summary/collapse, search reveal and Scripture visible",
+        "320px Greek at 22px in dark theme: cells unclipped, four 48px reading controls"
+      ],
+      "result": "passed"
+    },
+    "authoredHtml": "unchanged"
+  },
+  "legacyCoverage": {
+    "total": 58,
+    "reader12": 22,
+    "pendingIndividualReview": 36
+  },
+  "fileHashes": {
+    "automation/reader_layout.py": "c88547aff9b83c0aaae4d9889c9bef3fed36bf1393bc8fd1874e4b26e18ef819",
+    "automation/test_reader_layout.py": "419e36d8db9c75bf0db5cd3729f0daa6da3319058025d9aa254aaf1c99082aa6",
+    "automation/skill/references/mobile-reader.md": "0f2ff169e01f323b6d9d78e0b7040970511909757c69ffa00df3f596216a1b72"
+  }
+}

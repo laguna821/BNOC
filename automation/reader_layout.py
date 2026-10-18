@@ -149,10 +149,47 @@ class ReaderContract(HTMLParser):
 
     def handle_data(self, data):
         for node in self.stack:
-            if 'cell-label' in node['attrs'].get('class', '').split(): node['text'].append(data)
+            if node['tag'] == 'th' or 'cell-label' in node['attrs'].get('class', '').split(): node['text'].append(data)
 
     def within(self, parent, tag=None):
         return [n for n in self.nodes if any(p is parent for p in n['parents']) and (tag is None or n['tag'] == tag)]
+
+
+def _body_column_headings(parsed, table):
+    """Resolve actual header columns, including grouped headers and spanned cells."""
+    rows = parsed.within(table, 'tr')
+    cells = lambda row: [n for n in parsed.within(row) if n['tag'] in ('td', 'th')]
+    span = lambda cell, name: max(1, int(cell['attrs'].get(name, '1')))
+    headers = []; header_rows = set(); active = {}
+    for index, row in enumerate(rows):
+        parts = cells(row)
+        if not parts or not all(n['tag'] == 'th' and n['attrs'].get('scope', '').lower() != 'row' for n in parts):
+            break
+        header_rows.add(index)
+        occupied = dict(active); active = {k: v - 1 for k, v in active.items() if v > 1}
+        column = 0
+        for cell in parts:
+            while occupied.get(column, 0): column += 1
+            label = ' '.join(''.join(cell['text']).split())
+            for col in range(column, column + span(cell, 'colspan')):
+                while len(headers) <= col: headers.append([])
+                if label and label not in headers[col]: headers[col].append(label)
+                if span(cell, 'rowspan') > 1: active[col] = span(cell, 'rowspan') - 1
+            column += span(cell, 'colspan')
+    expected = {}; active = {}
+    for index, row in enumerate(rows):
+        if index in header_rows: continue
+        occupied = dict(active); active = {k: v - 1 for k, v in active.items() if v > 1}
+        column = 0
+        for cell in cells(row):
+            while occupied.get(column, 0): column += 1
+            labels = []
+            for col in range(column, column + span(cell, 'colspan')):
+                if col < len(headers): labels.extend(x for x in headers[col] if x not in labels)
+                if span(cell, 'rowspan') > 1: active[col] = span(cell, 'rowspan') - 1
+            expected[id(cell)] = ' · '.join(labels)
+            column += span(cell, 'colspan')
+    return expected
 
 
 def audit(doc):
@@ -193,11 +230,13 @@ def audit(doc):
         rows = parsed.within(table, 'tr')
         multiple = any(len([n for n in parsed.within(row) if n['tag'] in ('td', 'th')]) > 1 for row in rows)
         labelled = bool(parsed.within(table, 'thead')) or multiple
+        expected = _body_column_headings(parsed, table)
         for cell in parsed.within(table, 'td'):
             labels = [n for n in parsed.within(cell) if has_class(n, 'cell-label')]
             if labelled:
                 require(bool(cell['attrs'].get('data-label')) and len(labels) == 1, 'table cell lacks its column heading')
                 require(''.join(labels[0]['text']).strip() == cell['attrs']['data-label'] and labels[0]['attrs'].get('aria-hidden') == 'true', 'mobile column heading is inconsistent')
+                require(bool(expected.get(id(cell))) and cell['attrs']['data-label'] == expected[id(cell)], 'mobile column heading differs from actual table header')
     return dict(cards=len(cards), tables=len(tables), verses=len(verses), readingTools=4)
 
 

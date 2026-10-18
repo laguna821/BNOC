@@ -71,6 +71,21 @@ class ReaderLayoutTests(unittest.TestCase):
             with self.subTest(broken=broken[-120:]), self.assertRaisesRegex(ValueError, 'Scripture|brief|initially open'):
                 layout.audit(broken)
 
+    def test_final_contract_refuses_matching_labels_for_the_wrong_column(self):
+        source = self.fixture('<table><thead><tr><th>개념</th><th>MT</th><th>LXX</th></tr></thead><tbody><tr><th scope="row">언약</th><td>히브리어 설명</td><td>그리스어 설명</td></tr></tbody></table>')
+        doc, _ = layout.upgrade(source)
+        broken = doc.replace('data-label="MT"', 'data-label="LXX"').replace('>MT</span>', '>LXX</span>')
+        with self.assertRaisesRegex(ValueError, 'actual table header'):
+            layout.audit(broken)
+
+    def test_final_contract_checks_grouped_headers_and_spanned_body_cells(self):
+        source = self.fixture('<table><thead><tr><th rowspan="2">개념</th><th colspan="2">원문</th><th rowspan="2">해석</th></tr><tr><th>MT</th><th>LXX</th></tr></thead><tbody><tr><th scope="row" rowspan="2">사랑</th><td colspan="2">두 전승의 비교</td><td>첫 문맥</td></tr><tr><td>히브리어</td><td>그리스어</td><td>둘째 문맥</td></tr></tbody></table>')
+        doc, _ = layout.upgrade(source)
+        self.assertEqual(layout.audit(doc)['tables'], 1)
+        broken = doc.replace('data-label="원문 · MT"', 'data-label="원문 · LXX"').replace('>원문 · MT</span>', '>원문 · LXX</span>')
+        with self.assertRaisesRegex(ValueError, 'actual table header'):
+            layout.audit(broken)
+
     def test_final_contract_refuses_a_reader_without_scripture_verses(self):
         doc, _ = layout.upgrade(self.fixture('<p>원래 해설</p>'))
         with self.assertRaisesRegex(ValueError, 'all verses'):
