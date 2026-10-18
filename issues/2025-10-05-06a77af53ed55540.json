@@ -1,0 +1,27 @@
+{
+  "id": "2025-10-05-06a77af53ed55540",
+  "date": "2025-10-05",
+  "reference": "신명기 33:29",
+  "service": "revision-6451b7fe317bc924dc33",
+  "relativePath": "2025/10052025/deut_33_29.html",
+  "manuscriptSha256": "7192b591026d3fb082ae30a42c081fcc11f13d8f31104f63404dfc02fd8b1e45",
+  "passageSha256": "cb953c7bf3ccf0e0fdece6f4909acbd34b70586b1526070e9f17c67211c147b4",
+  "htmlSha256": "2878817e9a74fc4702f9e30bcedf6aecc543721cc6300e7fcef47bc9a806c455",
+  "editorialReviewSha256": "e47e330e4d5aaf2d0724cd199728f93e5c4a5e13d294a97e67fb5e8107688fe9",
+  "visualPlanSha256": "d6fd68ecc54c0dd91f91e934950d939d74f57514667b069889d264fb3932a7ba",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "617340eecae91d24aa47a7d25ddd0bf37ba0c7bf",
+    "originalSha256": "08b19f0f81a6385eacc198de33306927755e3ba6c238c71596df2f2cb225bd97",
+    "revisedAt": "2026-10-18T10:04:13.385347+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
