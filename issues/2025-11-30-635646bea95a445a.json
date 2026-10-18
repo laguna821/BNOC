@@ -1,0 +1,27 @@
+{
+  "id": "2025-11-30-635646bea95a445a",
+  "date": "2025-11-30",
+  "reference": "요한복음 13:34-35",
+  "service": "revision-06f0eb1bbc221cce4379",
+  "relativePath": "2025/11302025/John_13_34-35.html",
+  "manuscriptSha256": "5399e93b734a0d16c57306afce7ebcaf8c594e5d2b39d6859cfc34acb59d0d76",
+  "passageSha256": "b71049bb248cb830167980e1f0d78f1b78817dc4b9c378499d6fd2d34e767d67",
+  "htmlSha256": "6fbf390383819098536d657d840c29ab23b764e43b3675322306445e0d4abb16",
+  "editorialReviewSha256": "9fa15799a4d2a7f450cc01cec4a5c2dc886f0f90655d38b8ac9ef5b69c53d42c",
+  "visualPlanSha256": "4415aa20c358af374810f331309c7af89c164d24f09a61244ac6111032dead05",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "87cea574b6b0ac9b4c90e5210709f08609343b69",
+    "originalSha256": "d08d9c6c522a0dd738c95fbd9f306edbca323ef415b875492ab3cd696c42daba",
+    "revisedAt": "2026-10-18T13:31:29.086622+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
