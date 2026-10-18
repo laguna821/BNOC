@@ -1,0 +1,27 @@
+{
+  "id": "2025-11-09-c75bcd64bdd48ff5",
+  "date": "2025-11-09",
+  "reference": "누가복음 9:1-6",
+  "service": "revision-eabac9bf2e91665a4b0f",
+  "relativePath": "2025/11092025/luke_9_1_6.html",
+  "manuscriptSha256": "90393e5332d711817d7c78f79298ba8e00153b4dc32b4d820d38afa53fb926a2",
+  "passageSha256": "ff0a26d4d9633168835d3f788d62465682375ec3d450a84d5b592bd1d3fe8f30",
+  "htmlSha256": "72caa9661cce41d0a2cdd16d3a60b9850a5cd2a8496aa6e419f83135131e429a",
+  "editorialReviewSha256": "75ff74488b90a7938613ead8fb9fed506e9c6f24357575108ea3f75d145a42e8",
+  "visualPlanSha256": "5aed469bcb65846b08c02ade31b7e61c7e5b8641cbfd16dc4aa1db8e737b8bbe",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "269424f6da0c3e53ef1ecc85d988657bf4806968",
+    "originalSha256": "87c3d4d7280b90cd3b605e01ba0e52c8eeb006d976e794c1d4a7b4b197cc3016",
+    "revisedAt": "2026-10-18T12:10:32.737038+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
