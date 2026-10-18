@@ -1,0 +1,27 @@
+{
+  "id": "2025-10-12-a74ef88bceb9001b",
+  "date": "2025-10-12",
+  "reference": "누가복음 2:8-20",
+  "service": "revision-9c8b4a0a62887595a008",
+  "relativePath": "2025/10122005/luke_2_8_20.html",
+  "manuscriptSha256": "af244b188c691094aa51a9f63c86d65372f259c2e67d4e26c0d94eb2afcfe3b9",
+  "passageSha256": "b72fa1e27b584f7cc46458e05944836dbb733e8866098299e6d4c08f428a052f",
+  "htmlSha256": "3ff4e4cbf2d8d5a1ebb1cef3b4c55cd99fd8a9839ba5eafd8dfdae8a91ff93bc",
+  "editorialReviewSha256": "33e773caa85e3a00a2046bf020478d409e09b2a58c78c2e1f0caff3004fef7e0",
+  "visualPlanSha256": "3883afbdfe5bbca6dbeec3ad9adcb928899a29960608385109f64e6a6be4f213",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "a8d4d5b9dbe73201a9ab4ad1d44d50e15f6f4907",
+    "originalSha256": "9127ab6c9196f201f396b6bf8ef5c2a09ffb30d7bf9ad2e56082ee98976db629",
+    "revisedAt": "2026-10-18T11:10:51.349013+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
