@@ -1,0 +1,27 @@
+{
+  "id": "2026-03-01-185d1a2ad61d23d5",
+  "date": "2026-03-01",
+  "reference": "누가복음 5:1-11",
+  "service": "revision-28885646e432bba45e13",
+  "relativePath": "2026/03012026/Luke_5_1-11_v1.html",
+  "manuscriptSha256": "53262e0ef90b0cb7f5cd55a4976678d2a70b28c5cd621bbe787aa7a15d8861f1",
+  "passageSha256": "e62d4e5e23dd34be992985574135c23eeb9eb45765097231d79c01e1a383b7dd",
+  "htmlSha256": "26b08db8f0ddb2d241f344941b5409afc68087f28d71e2dd057775b94f6a2d53",
+  "editorialReviewSha256": "a81a32ba17f555a37d3a58eb579ab959161b3b77287b1f0056df3598524b3369",
+  "visualPlanSha256": "76f9ed0f79b095dbd7fbdc1827a919167556e2fb906fa4c288796b23cdfa6724",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "92b55569a412e27b8bcb7bbfe7d1358bd7ced4d8",
+    "originalSha256": "4f7ef5acc70f51bc29ac0321134cb1bb8bccc7a527bca5521bcf3f714eeae499",
+    "revisedAt": "2026-10-18T21:40:01.526141+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
