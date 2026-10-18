@@ -1,0 +1,27 @@
+{
+  "id": "2025-08-24-fee62e18d8055b64",
+  "date": "2025-08-24",
+  "reference": "민수기 19:1-10",
+  "service": "revision-64fba41e2f2371ecc600",
+  "relativePath": "2025/08242025/Numbers_19-1_10.html",
+  "manuscriptSha256": "bd461bf721c9c48f917c826ad33cd52325898d8a98f78276413e34f2a44fe3a6",
+  "passageSha256": "217ad63099d297fc73746f6e331a732701369706a3859ac89d464abd15bd414a",
+  "htmlSha256": "db449b943d6d75f42eb49c216ce05cd627a3fbab596f81ee535b87d5ebb9e0c9",
+  "editorialReviewSha256": "f3b3dd6300a35da971eb96c266afe4c6ff3c0eb17dbba98eae4b8a6ac8b02b78",
+  "visualPlanSha256": "bac62a220abfda169286e193079a2c6091102de5bb5840ee2ce3b2aeb0bcc6c6",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex; exact runtime variant not exposed)",
+  "revision": {
+    "originalCommit": "bfbc201777a22237d7967de6c36ede81c6334eee",
+    "originalSha256": "785eaa9a54cbae3bc15cebc27898ec76446c16e507292510b15db530b63f5d04",
+    "revisedAt": "2026-10-18T08:10:01.767887+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
