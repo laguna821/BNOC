@@ -55,6 +55,8 @@ verify가 deploying/waiting이면 30–60초 후 확인하며, 사용자에게 �
 
 verify의 published 결과는 lease를 자동 해제한다. 이때 release를 다시 실행하지 않는다. 위 release 명령은 초안 완료나 게시 전 중단 등 아직 lease가 남은 경우에만 쓴다.
 
+같은 주소의 과거 버전이 남을 수 있으므로, verify는 공개 HTML 외에도 index.json과 search.json의 제목·설명·개정 시각·개정 종류와 검색 본문 전체가 새 파일과 일치하는지 확인한다. waiting-for-live-archive이면 배포/캐시 반영을 기다린 뒤 같은 run으로 검증한다. 브라우저에서도 검색 버튼을 실행해 새 제목의 결과를 확인한다.
+
 ## 실패
 
 ```text

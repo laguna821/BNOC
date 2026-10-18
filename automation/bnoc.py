@@ -11,6 +11,7 @@ import subprocess
 import sys
 import tempfile
 import time
+from html.parser import HTMLParser
 from urllib.parse import quote
 from bible import Bible, digest, save, fetch, ALIASES
 import bulletin
@@ -165,6 +166,32 @@ def publish(c,path,run):
     run['commit']=commit;advance(c,path,run,'pushed')
     return dict(status='pushed-awaiting-deployment',commit=commit,url=c['site']+relative)
 
+class PublicationText(HTMLParser):
+    """Read published metadata and searchable prose, excluding embedded code/fonts."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.skip=0;self.in_title=False;self.title=[];self.words=[];self.meta={}
+    def handle_starttag(self,tag,attrs):
+        if tag in ('script','style'):self.skip+=1
+        if tag=='title' and not self.title:self.in_title=True
+        if tag=='meta':
+            attrs=dict(attrs)
+            if attrs.get('name'):self.meta[attrs['name']]=attrs.get('content','')
+    def handle_endtag(self,tag):
+        if tag in ('script','style'):self.skip=max(0,self.skip-1)
+        if tag=='title':self.in_title=False
+    def handle_data(self,data):
+        if self.in_title:self.title.append(data)
+        if not self.skip:self.words.append(data)
+
+def archive_matches(item,expected,search=False):
+    if item.get('title')!=' '.join(expected.title).strip():return False
+    if expected.meta.get('description') and item.get('description')!=expected.meta['description']:return False
+    if expected.meta.get('bnoc-revised')!=item.get('revisedAt'):return False
+    kinds=expected.meta.get('bnoc-revision-kinds')
+    if kinds is not None and item.get('revisionKinds')!=kinds.split(','):return False
+    return not search or ' '.join(' '.join(expected.words).split()) in item.get('search','')
+
 def verify_deployment(c,path,run):
     commit=run.get('commit')
     if not commit:raise ValueError('No recorded commit')
@@ -178,8 +205,14 @@ def verify_deployment(c,path,run):
     url=c['site']+public_path;live=fetch(url)
     expected=(path/Path(run['relativePath']).name.rstrip('.')).read_bytes()
     if live.replace(b'\r\n',b'\n')!=expected.replace(b'\r\n',b'\n'):return dict(status='waiting-for-live-content',workflow=job['html_url'])
-    index=json.loads(fetch(c['site']+'index.json'))['items']
-    if not any(public_path in x['link'] for x in index):raise ValueError('Document missing from archive')
+    expected_text=PublicationText();expected_text.feed(expected.decode('utf-8-sig'))
+    # An old revision has the same URL. Require this revision's metadata and actual prose.
+    for filename,search in [('index.json',False),('search.json',True)]:
+        data=json.loads(fetch(c['site']+filename))
+        entries=data['items'] if isinstance(data,dict) else data
+        item=next((x for x in entries if x['link'].removeprefix('/BNOC/')==public_path),None)
+        if item is None or not archive_matches(item,expected_text,search):
+            return dict(status='waiting-for-live-archive',artifact=filename,workflow=job['html_url'])
     advance(c,path,run,'published');s=state(c);s['issues'][run['id']].update(url=url,commit=commit);save(c['root']/'state.json',s)
     run['lease']=None;run['url']=url;save(path/'run.json',run)
     return dict(status='published',url=url,workflow=job['html_url'])

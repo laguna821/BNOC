@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import tempfile
 import subprocess
+import sys
 import unittest
 from unittest.mock import patch
 from bible import Bible, plain, digest, save, official_units
@@ -108,5 +109,36 @@ class PipelineTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'explicit revision'):bnoc.publish(self.c,path,run)
         run['mode']='draft'
         with self.assertRaisesRegex(ValueError,'Draft'):bnoc.publish(self.c,path,run)
+
+    def test_deployment_rejects_stale_archive_at_the_same_url(self):
+        a=bnoc.make_run(self.c,'마1:1','2026-10-18','manual','publish')
+        save(self.root/'config.json',dict(stateRoot=str(self.c['root']),repository=str(self.root/'repository'),bible=self.c['bible']))
+        claimed=subprocess.run([sys.executable,'-X','utf8',bnoc.__file__,'--config',str(self.root/'config.json'),'claim',a['runId'],'--owner','unit-test'],capture_output=True)
+        self.assertEqual(claimed.returncode,0,claimed.stderr.decode('utf-8'))
+        path=Path(a['path']);run=bnoc.load(path/'run.json');run['commit']='new-commit'
+        self.c['site']='https://example.test/'
+        doc='<title>New &amp; thoughtful</title><meta name="description" content="New description"><meta name="bnoc-revised" content="2026-10-18T12:00:00Z"><meta name="bnoc-revision-kinds" content="theology,expansion"><style>private-font-code</style><script>private-script</script><p>New prose with substance.</p>'
+        (path/Path(run['relativePath']).name).write_text(doc,encoding='utf-8')
+        item=dict(link='/BNOC/'+run['relativePath'],title='New & thoughtful',description='New description',revisedAt='2026-10-18T12:00:00Z',revisionKinds=['theology','expansion'])
+        search=dict(item,search='prefix New & thoughtful New prose with substance. suffix')
+        workflow={'workflow_runs':[dict(name='BNOC Pages (hub+feed)',status='completed',conclusion='success',html_url='https://example.test/workflow')]}
+        def check(index,search_item):
+            def response(url):
+                if 'actions/runs?' in url:return json.dumps(workflow).encode()
+                if url.endswith('index.json'):return json.dumps({'items':[index]}).encode()
+                if url.endswith('search.json'):return json.dumps([search_item]).encode()
+                return doc.encode()
+            with patch('bnoc.fetch',side_effect=response):return bnoc.verify_deployment(self.c,path,run)
+        for field,value in [('title','Old title'),('description','Old description'),('revisedAt','old-time'),('revisionKinds',['design'])]:
+            stale=dict(item,**{field:value})
+            result=check(stale,search)
+            self.assertEqual(result['status'],'waiting-for-live-archive');self.assertEqual(result['artifact'],'index.json')
+            self.assertIsNotNone(run['lease'])
+        for stale in [dict(search,title='Old title'),dict(search,search='Old prose at exactly the same URL')]:
+            result=check(item,stale)
+            self.assertEqual(result['status'],'waiting-for-live-archive');self.assertEqual(result['artifact'],'search.json')
+            self.assertIsNotNone(run['lease'])
+        self.assertEqual(check(item,search)['status'],'published')
+        self.assertIsNone(bnoc.load(path/'run.json')['lease'])
 
 if __name__=='__main__':unittest.main()
