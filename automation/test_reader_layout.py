@@ -41,6 +41,12 @@ class ReaderLayoutTests(unittest.TestCase):
         self.assertIn('단독 설명', result)
         self.assertNotIn('data-label=', result)
 
+    def test_multilevel_headers_do_not_shift_the_mt_lxx_column_labels(self):
+        table='<table><thead><tr><th rowspan="2">개념</th><th colspan="2">원문</th></tr><tr><th>MT</th><th>LXX</th></tr></thead><tbody><tr><th scope="row">사랑</th><td>히브리어</td><td>그리스어</td></tr></tbody></table>'
+        result=layout.responsive_table(table)
+        self.assertIn('data-label="원문 · MT"><span class="cell-label" aria-hidden="true">원문 · MT</span>히브리어',result)
+        self.assertIn('data-label="원문 · LXX"><span class="cell-label" aria-hidden="true">원문 · LXX</span>그리스어',result)
+
     def test_unknown_html_is_refused_before_a_bulk_update(self):
         with self.assertRaisesRegex(ValueError, 'Not a BNOC'):
             layout.upgrade('<main>다른 문서</main>')

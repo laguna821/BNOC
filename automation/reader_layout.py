@@ -29,18 +29,25 @@ def responsive_table(table):
     cells = lambda row: list(re.finditer(r'<(th|td)\b([^>]*)>(.*?)</\1>', row, re.S | re.I))
     headers = []
     header_rows = set()
+    header_spans = {}
     for index, row in enumerate(rows):
         parts = cells(row[1])
         if parts and all(c[1].lower() == 'th' and not re.search(r'\bscope=["\']?row', c[2]) for c in parts):
             column = 0
+            occupied = dict(header_spans)
+            header_spans = {k: v - 1 for k, v in header_spans.items() if v > 1}
             header_rows.add(index)
             for cell in parts:
+                while occupied.get(column, 0):
+                    column += 1
                 label = plain(cell[3]).strip()
                 for offset in range(_span(cell[2], 'colspan')):
                     while len(headers) <= column + offset:
                         headers.append([])
                     if label and label not in headers[column + offset]:
                         headers[column + offset].append(label)
+                    if _span(cell[2], 'rowspan') > 1:
+                        header_spans[column + offset] = _span(cell[2], 'rowspan') - 1
                 column += _span(cell[2], 'colspan')
         elif header_rows:
             break

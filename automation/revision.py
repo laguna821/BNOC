@@ -119,7 +119,7 @@ def audit_design(path, run):
         if report.get(k)!=v:raise ValueError('Stale design review: '+k)
     if report.get('blockingFindings') or not report.get('model') or not report.get('reviewedAt'):raise ValueError('Incomplete design review')
     if report.get('preservedIntent')!=run['revision']['intent']:raise ValueError('Editorial intent not confirmed')
-    for key in ('contentPreserved','mobileLightDark','originalLanguages','searchNotesDownload','printLayout'):
+    for key in ('contentPreserved','mobileLightDark','mobileTables','readerControls','originalLanguages','searchNotesDownload','printLayout'):
         item=report.get('checks',{}).get(key,{})
         if item.get('passed') is not True or not item.get('evidence'):raise ValueError('Design review incomplete: '+key)
     return binding

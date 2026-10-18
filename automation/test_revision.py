@@ -9,6 +9,19 @@ import render
 from bible import digest, save
 
 class RevisionTests(unittest.TestCase):
+    def test_design_only_review_also_requires_mobile_reader_checks(self):
+        original='<html><head></head><body><p>보존하는 원고</p></body></html>'
+        rev=dict(originalSha256=digest(original.encode()),kinds=['design'],revisedAt='2026-10-18T14:00:00Z',intent='Fixture only')
+        run=dict(relativePath='2025/08172025/fixture.html',revision=rev)
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp);(path/'original.html').write_bytes(original.encode());doc,binding=revision.render_design(path,run)
+            (path/'fixture.html').write_bytes(doc.encode())
+            report=dict(**binding,model='test-fixture',reviewedAt=rev['revisedAt'],preservedIntent=rev['intent'],checks={k:dict(passed=True,evidence='Fixture only') for k in ('contentPreserved','mobileLightDark','mobileTables','readerControls','originalLanguages','searchNotesDownload','printLayout')})
+            save(path/'review.json',report);revision.audit_design(path,run)
+            for key in ('mobileTables','readerControls'):
+                missing=json.loads(json.dumps(report));missing['checks'].pop(key);save(path/'review.json',missing)
+                with self.assertRaisesRegex(ValueError,'Design review incomplete: '+key):revision.audit_design(path,run)
+
     def test_target_traversal_and_non_archive_rejected(self):
         for path in ('../index.html','/2025/08172025/x.html','2025/08172025/../x.html','index.html','2025\\08172025\\x.html'):
             with self.assertRaises(ValueError):revision.source('.',path)
