@@ -1,0 +1,27 @@
+{
+  "id": "2025-12-14-205312db25ce0e80",
+  "date": "2025-12-14",
+  "reference": "에베소서 1:22-23",
+  "service": "revision-09086d7f4a9b71a8b17b",
+  "relativePath": "2025/12142025/Ephesians_1_22-23.html",
+  "manuscriptSha256": "1e255c2bd8532517552140097e565f1f3bf57d1161daa08a3f7577ba7ccff2a1",
+  "passageSha256": "14c99b73c8fa8c02b2eb1662fe4da379595dc2a5c34f4043f5fe59722cfa7a39",
+  "htmlSha256": "d48059e73f5012bf6668f53219a832ff1470073f74a66ad4e9e3d51c1bc84ac5",
+  "editorialReviewSha256": "9c878dd898da0b9c50753a84d6d2a2e37998215d9d00390cb9f577850d57f2b9",
+  "visualPlanSha256": "78f474ff964878efbd963d0d1a92a03f9e395c04a413d705a829fcc42d45d2a4",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "6922412318d596a66742e17e13506115e01fd083",
+    "originalSha256": "fd1adf8f31041f2543fc48ba40caedd3fad800b2b0225db7b793f082f7496140",
+    "revisedAt": "2026-10-18T14:06:20.524973+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
