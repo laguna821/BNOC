@@ -128,6 +128,79 @@ def content_snapshot(doc):
     return {key: getattr(result, key) for key in ('words', 'languages', 'links', 'verses', 'media')}
 
 
+class ReaderContract(HTMLParser):
+    """Inspect final structure, without judging prose or simulating browser QA."""
+    VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
+
+    def __init__(self, doc):
+        super().__init__(convert_charrefs=True)
+        self.nodes = []; self.stack = []
+        self.feed(doc); self.close()
+
+    def handle_starttag(self, tag, attrs):
+        node = dict(tag=tag, attrs=dict(attrs), parents=tuple(self.stack), text=[])
+        self.nodes.append(node)
+        if tag not in self.VOID: self.stack.append(node)
+
+    def handle_endtag(self, tag):
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index]['tag'] == tag:
+                del self.stack[index:]; break
+
+    def handle_data(self, data):
+        for node in self.stack:
+            if 'cell-label' in node['attrs'].get('class', '').split(): node['text'].append(data)
+
+    def within(self, parent, tag=None):
+        return [n for n in self.nodes if any(p is parent for p in n['parents']) and (tag is None or n['tag'] == tag)]
+
+
+def audit(doc):
+    """Block missing reader controls/labels even if a manual review says passed."""
+    def require(condition, message):
+        if not condition: raise ValueError('Reader contract: ' + message)
+
+    parsed = ReaderContract(doc)
+    by_id = lambda key: [n for n in parsed.nodes if n['attrs'].get('id') == key]
+    has_class = lambda n, name: name in n['attrs'].get('class', '').split()
+    tools = [n for n in parsed.nodes if n['tag'] == 'nav' and has_class(n, 'reading-tools')]
+    require(len(tools) == 1, 'one persistent reading toolbar required')
+    for key in ('search', 'summary', 'collapse', 'top'):
+        nodes = by_id(key)
+        require(len(nodes) == 1 and nodes[0]['tag'] == 'button' and any(p is tools[0] for p in nodes[0]['parents']), 'missing or duplicate toolbar button: ' + key)
+    for key, tag in (('searchDialog', 'dialog'), ('query', 'input'), ('matches', 'div'), ('closeSearch', 'button')):
+        nodes = by_id(key)
+        require(len(nodes) == 1 and nodes[0]['tag'] == tag, 'missing or duplicate search element: ' + key)
+        if key != 'searchDialog':
+            require(any(p is by_id('searchDialog')[0] for p in nodes[0]['parents']), 'search element outside dialog: ' + key)
+    scripture = by_id('scripture')
+    require(len(scripture) == 1 and scripture[0]['tag'] == 'aside' and has_class(scripture[0], 'scripture'), 'Scripture must be an independent aside')
+    require(not any(p['tag'] == 'details' for p in scripture[0]['parents']), 'Scripture cannot collapse')
+    verses = [n for n in parsed.nodes if 'data-verse' in n['attrs']]
+    require(bool(verses) and all(any(p is scripture[0] for p in n['parents']) for n in verses), 'all verses must remain inside the Scripture aside')
+    cards = [n for n in parsed.nodes if has_class(n, 'study-card') or has_class(n, 'essay')]
+    require(bool(cards), 'authored exposition missing')
+    for card in cards:
+        require(card['tag'] == 'details' and 'open' in card['attrs'], 'exposition must be individually collapsible and initially open')
+        children = [n for n in parsed.within(card) if n['parents'][-1] is card]
+        require(sum(n['tag'] == 'summary' for n in children) == 1, 'exposition needs one disclosure heading')
+        for name in ('brief', 'prose'):
+            require(sum(has_class(n, name) for n in children) == 1, 'missing authored ' + name)
+    tables = [n for n in parsed.nodes if n['tag'] == 'table']
+    for table in tables:
+        require(has_class(table, 'reading-table') and table['attrs'].get('role') == 'table', 'table lacks mobile reading layout')
+        require(not any(p['tag'] == 'table' for p in table['parents']), 'nested table needs individual layout')
+        rows = parsed.within(table, 'tr')
+        multiple = any(len([n for n in parsed.within(row) if n['tag'] in ('td', 'th')]) > 1 for row in rows)
+        labelled = bool(parsed.within(table, 'thead')) or multiple
+        for cell in parsed.within(table, 'td'):
+            labels = [n for n in parsed.within(cell) if has_class(n, 'cell-label')]
+            if labelled:
+                require(bool(cell['attrs'].get('data-label')) and len(labels) == 1, 'table cell lacks its column heading')
+                require(''.join(labels[0]['text']).strip() == cell['attrs']['data-label'] and labels[0]['attrs'].get('aria-hidden') == 'true', 'mobile column heading is inconsistent')
+    return dict(cards=len(cards), tables=len(tables), verses=len(verses), readingTools=4)
+
+
 def upgrade(doc):
     """Update only our known reader format; refuse any loss of authored content."""
     provenance = re.search(r'<script type="application/json" id="bnoc-provenance">(.*?)</script>', doc, re.S)
@@ -157,4 +230,5 @@ def upgrade(doc):
     data = json.dumps(meta, ensure_ascii=False).replace('<', '\\u003c')
     doc = re.sub(r'(<script type="application/json" id="bnoc-provenance">).*?(</script>)', lambda m: m[1] + data + m[2], doc, flags=re.S)
     if content_snapshot(doc) != before: raise ValueError('Reader upgrade changed authored content')
+    audit(doc)
     return doc, meta

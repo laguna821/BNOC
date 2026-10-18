@@ -16,7 +16,8 @@ class EditorialTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)
-        self.passage = {'verified': True, 'reference': '테스트 본문', 'verses': []}
+        self.passage = {'verified': True, 'reference': '테스트 본문', 'verses': [
+            {'key': 'fixture1:1', 'chapter': 1, 'verse': 1, 'text': '구조 검사 전용 시험 구절입니다.'}]}
         self.passage['sha256'] = digest(self.passage)
         self.m = dict(title='테스트', date='2026-10-18', description='fixture', intro='fixture intro',
                       passageSha256=self.passage['sha256'], figures=[], practices=['fixture practice'],

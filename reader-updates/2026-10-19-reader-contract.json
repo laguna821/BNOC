@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-18T16:42:16.903558+00:00",
+  "baseCommit": "3d4476b3d156fa97ddb68f58cb85aa26471032a8",
+  "readerVersion": "bnoc-reader-1.2",
+  "purpose": "Block omitted mobile reading structure during HTML assembly",
+  "researchRef": "research:rr-9004d56ff8d5173dcf0f0ca2f6b0fe0f:4c5f228a17c1971d6c50ea4297ca6620ba79de1b5901edec52a15ed87b268450",
+  "checks": {
+    "regressionTests": {
+      "total": 61,
+      "passed": 60,
+      "skipped": 1,
+      "skipReason": "Local sharp encoder configuration required for optional integration test"
+    },
+    "existingReaders": {
+      "articles": 21,
+      "tables": 37,
+      "cards": 323,
+      "verses": 165,
+      "structuralAudit": "passed"
+    },
+    "publicMobile": {
+      "cases": [
+        "390px Hebrew at 22px with search reveal",
+        "320px Greek at 22px in dark theme"
+      ],
+      "result": "passed"
+    },
+    "authoredHtml": "unchanged"
+  },
+  "legacyCoverage": {
+    "total": 58,
+    "reviewedReader12": 21,
+    "legacyPendingIndividualReview": 37
+  },
+  "fileHashes": {
+    "automation/reader_layout.py": "65a2fb506346f597b260ecbe12da090e59ad2d79d8362ca439454429de0b1467",
+    "automation/test_reader_layout.py": "b65302c3720b466c22d0652e14157e82b035ef9f00776601c94d72f449d9c0d6",
+    "automation/test_editorial.py": "3a26c48928cb33b786211e87723fe8895016a33a743113ef22a508b280a21a91",
+    "automation/skill/references/mobile-reader.md": "ab1acb2c3323aa8cc82ea5df47693dacdcd1eca4dd700337f68e5c80b3326ccb",
+    "automation/README.md": "99984138d6337102538eccdeca541257da07f68884e0588086405945fcd1f3fa"
+  }
+}

@@ -51,5 +51,30 @@ class ReaderLayoutTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Not a BNOC'):
             layout.upgrade('<main>다른 문서</main>')
 
+    def test_final_contract_refuses_missing_or_duplicate_reading_controls(self):
+        doc, _ = layout.upgrade(self.fixture('<p>원래 해설</p>'))
+        for broken in (doc.replace('id="collapse"', 'id="lost-collapse"'), doc.replace('</nav>', '<button id="search">중복</button></nav>')):
+            with self.subTest(broken=broken[-120:]), self.assertRaisesRegex(ValueError, 'toolbar button'):
+                layout.audit(broken)
+
+    def test_final_contract_refuses_scroll_only_or_mislabelled_tables(self):
+        doc, _ = layout.upgrade(self.fixture('<table><thead><tr><th>원어</th><th>문맥</th></tr></thead><tbody><tr><th scope="row">λόγος</th><td>충분한 설명</td></tr></tbody></table>'))
+        self.assertEqual(layout.audit(doc), dict(cards=1, tables=1, verses=1, readingTools=4))
+        for broken in (doc.replace('class="reading-table"', 'class="scroll-only"'), doc.replace('data-label="문맥"', 'data-label="번역"'), doc.replace('data-label="문맥"', '')):
+            with self.subTest(broken=broken[-120:]), self.assertRaisesRegex(ValueError, 'table|heading'):
+                layout.audit(broken)
+
+    def test_final_contract_refuses_collapsible_scripture_or_missing_authored_summary(self):
+        doc, _ = layout.upgrade(self.fixture('<p>원래 해설</p>'))
+        variants = [doc.replace('<aside class="scripture"', '<details open><aside class="scripture"').replace('</aside>', '</aside></details>'), doc.replace('class="brief"', 'class="lost-brief"'), doc.replace('id="essay-one" open', 'id="essay-one"')]
+        for broken in variants:
+            with self.subTest(broken=broken[-120:]), self.assertRaisesRegex(ValueError, 'Scripture|brief|initially open'):
+                layout.audit(broken)
+
+    def test_final_contract_refuses_a_reader_without_scripture_verses(self):
+        doc, _ = layout.upgrade(self.fixture('<p>원래 해설</p>'))
+        with self.assertRaisesRegex(ValueError, 'all verses'):
+            layout.audit(doc.replace('data-verse=', 'data-lost-verse='))
+
 
 if __name__ == '__main__': unittest.main()
