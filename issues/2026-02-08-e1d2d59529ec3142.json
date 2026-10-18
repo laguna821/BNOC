@@ -1,0 +1,27 @@
+{
+  "id": "2026-02-08-e1d2d59529ec3142",
+  "date": "2026-02-08",
+  "reference": "창세기 12:10-13",
+  "service": "revision-f15b232755bc2fe5d27d",
+  "relativePath": "2026/02082026/Genesis_12_10-13_v1.html",
+  "manuscriptSha256": "ee9b17ec314550dcfd1faf2a801f95e3463f0bca94ff83bc76c853319f2cb3da",
+  "passageSha256": "243a3b5643afb0013556088a1ccfc82de436343358ee3cc1203668554cec3d02",
+  "htmlSha256": "560b52b21d6c08e9a577a0d4208e1fb54bf33698e9796a85b18aa4c6422da7d9",
+  "editorialReviewSha256": "6aa6db225fd64762637b403eb68b9bc2f05fd66297ba16dc52713ac03aa437fb",
+  "visualPlanSha256": "7dd0f53578fd8cdc4abe483f58546cb36cd195a212d3aedfba6108e5108cceb4",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "7a0df5e352727fe853a6f088b42465ff8d72f602",
+    "originalSha256": "485e21fc313486987559535947232541fa8e3898a3175c0eb3dd69df6eeefd7a",
+    "revisedAt": "2026-10-18T20:16:14.826834+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
