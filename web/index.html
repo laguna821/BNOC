@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BNOC · 말씀을 읽고, 삶으로 이어가다</title>
+<meta name="description" content="성경의 맥락을 살피고 삶의 적용을 나누는 BNOC 말씀 아카이브. 제목, 성경 본문, 키워드와 날짜로 자료를 찾아보세요.">
+<meta name="theme-color" content="#f7f9fc">
+<link rel="canonical" href="https://laguna821.github.io/BNOC/">
+<link rel="alternate" type="application/rss+xml" title="BNOC 새 자료" href="/BNOC/feed.xml">
+<link rel="stylesheet" href="/BNOC/assets/fonts.css"><link rel="stylesheet" href="/BNOC/assets/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('bnoc-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
+<script src="/BNOC/assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#archive">자료 목록으로 건너뛰기</a>
+<header class="site-header"><a class="logo" href="https://achmage-slides.vercel.app/" aria-label="Achmage 포트폴리오">{{LOGO}}</a><a class="wordmark" href="/BNOC/">BNOC <span>말씀 아카이브</span></a><nav aria-label="주 메뉴"><a href="#archive">전체 자료</a><a href="#about">소개</a><button id="theme" aria-label="어두운 테마로 변경" title="테마 변경">◐</button></nav></header>
+<main>
+<section class="hero" aria-labelledby="hero-title">
+<div class="intro"><p class="eyebrow">BIBLE NOTES ON CONTEXT</p><h1 id="hero-title">말씀을 읽고,<br>삶으로 이어가다<span class="dot">.</span></h1><p class="lede">성경의 맥락을 깊이 살피고,<br>오늘의 삶에 닿는 의미를 함께 찾습니다.</p><div class="hero-links"><a href="#archive">전체 자료 살펴보기 ↘</a><a href="/BNOC/latest/">최신 자료 읽기 ↗</a></div><p class="stats">{{COUNT}}개의 말씀 자료 <span>·</span> 최근 업데이트 {{DATE}}</p></div>
+<aside class="featured" aria-labelledby="latest-title"><p class="eyebrow">가장 최근의 말씀</p><time>{{DATE}}</time><h2 id="latest-title"><a href="{{LATEST_LINK}}">{{LATEST_TITLE}}</a></h2><p>본문의 배경에서 묵상과 실천까지.<br>이번 말씀을 차분히 읽어보세요.</p><a class="primary" href="{{LATEST_LINK}}">이번 자료 읽기 <span aria-hidden="true">↗</span></a><span class="feature-number" aria-hidden="true">01</span></aside>
+</section>
+<section id="archive" aria-labelledby="archive-title"><div class="section-heading"><div><p class="eyebrow">EXPLORE THE ARCHIVE</p><h2 id="archive-title">어떤 말씀을 찾고 있나요?</h2></div><a href="/BNOC/feed.xml">RSS 구독 ↗</a></div>
+<form id="filters" role="search"><div class="search-row"><label class="sr-only" for="q">자료 검색</label><input id="q" name="q" type="search" placeholder="제목, 성경 이름, 본문 속 단어로 검색" autocomplete="off"><button type="submit">검색 ↗</button></div><div class="filter-row"><label>연도 <select id="year" name="year"><option value="">전체 연도</option>{{YEARS}}</select></label><label>성경 <select id="book" name="book"><option value="">전체 성경</option>{{BOOKS}}</select></label><label>정렬 <select id="sort" name="sort"><option value="new">최신순</option><option value="old">오래된순</option><option value="title">제목순</option></select></label><button type="reset" class="reset">초기화</button><button type="button" id="random">한 편 만나기 ↗</button></div></form>
+<div class="result-line"><p id="result" role="status" aria-live="polite">전체 {{COUNT}}개 자료</p><p>읽고, 묵상하고, 나누는 기록</p></div>
+<noscript><p>전체 자료는 아래에서 읽을 수 있습니다. 검색과 필터는 JavaScript를 켜면 사용할 수 있습니다.</p></noscript>
+<div id="entries" class="entries">{{CARDS}}</div><p id="empty" hidden>찾는 자료가 없습니다. 검색어를 줄이거나 필터를 초기화해 보세요.</p>
+</section>
+<section id="about" class="about"><p class="eyebrow">ABOUT BNOC</p><h2>맥락 안에서 읽는 말씀,<br>삶 안에서 자라는 믿음.</h2><p>BNOC는 성경의 역사적 맥락과 신학적 의미를 살피고, 바른 이해와 삶의 실천을 연결하는 개인 말씀 연구 아카이브입니다. 각 자료의 출처와 참고문헌은 본문에서 확인할 수 있습니다.</p></section>
+</main>
+<footer><span>BNOC · Bible Notes on Context</span><div><a href="https://achmage-slides.vercel.app/">Achmage 포트폴리오 ↗</a><a href="https://github.com/laguna821/BNOC">GitHub ↗</a><a href="/BNOC/assets/FONT-LICENSES.txt">글꼴 라이선스</a><a href="#top">맨 위로 ↑</a></div></footer>
+</body></html>

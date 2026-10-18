@@ -1,0 +1,38 @@
+@font-face{font-family:'Achmage SameTone Lite';src:url(font-705280.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(font-12704.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(font-27844.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(font-186552.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}@font-face {
+  font-family: 'Noto Serif Hebrew';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(font-18412.woff2) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}.figure-kicker{display:block;font-size:10px;letter-spacing:.04em;color:var(--gold);margin-bottom:5px}.scene-figure figcaption strong{display:block;font-size:14px;line-height:1.8;margin-bottom:5px}.scene-figure figcaption>span:last-child{display:block}
+:root{--sans:'Noto Serif Hebrew','Noto Serif','Achmage SameTone Lite',sans-serif;--serif:var(--sans)}
+body,button,input,textarea,select{font-family:var(--sans)}
+.hero h1,.hero-quote,.scripture-text,.pullquote p,.prayer-box,.chapter-num,.edition-number,.route-dot,.card-no{font-family:var(--sans)}
+[lang="grc"],[lang="el"]{font-family:'Noto Serif','Achmage SameTone Lite',sans-serif!important;letter-spacing:normal;font-style:normal;font-synthesis:none;line-height:1.8}
+[lang="he"]{font-family:'Noto Serif Hebrew',sans-serif!important;direction:rtl;unicode-bidi:isolate;display:inline-block;letter-spacing:normal;font-style:normal;font-synthesis:none;line-height:1.85}
