@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "8af6064d0273f496abd177774577050af50e8064",
+  "checkedAt": "2026-10-18T17:56:02.160662+00:00",
+  "purpose": "Explicit Escape close and focus restoration, preserving reviewed manuscripts",
+  "researchRef": "research:rr-0531322940e46e899fc7055ecf938e85:93b7fb12c8b6fbc08c5a36af3d26a29f3a072a4d78ce7389c0373e92cedb558b",
+  "checks": {
+    "executableScriptOnly": "reversible byte replacement; authored content, CSS, fonts, original-language direction, Scripture, media and links unchanged",
+    "actualBrowser": "Final new-script article: Escape closes dialog and restores focus, full search reveal/summary/collapse and notes/checks reload passed",
+    "nodeSyntax": "passed",
+    "regressionScope": "Existing 63 regression tests passed62/skipped1 before this narrow handler change; browser tests cover the changed handler"
+  },
+  "articles": [
+    {
+      "path": "2025/08172025/Numbers-18_21_32.html",
+      "beforeSha256": "e974753eefad760ad3d769a2988606a407ba195fdcd90939a39d22b49bd55814",
+      "htmlSha256": "715f7ee615249ea23594e60e3fa8aaaae1fe566766f681da13696885380d5489",
+      "cards": 23,
+      "tables": 1,
+      "verses": 12,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/08242025/Numbers_19-1_10.html",
+      "beforeSha256": "a212ce699a1eafbc1cb8df854ce9f9ad2edada43ecf57c27325a6856cfc5cafb",
+      "htmlSha256": "3fd1682acf599d666448fa9de6dd2529df30bcdd4a7d4f58f579646000a1b5f2",
+      "cards": 17,
+      "tables": 2,
+      "verses": 10,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/08312025/deut_3_18-29.html",
+      "beforeSha256": "072fc0df3cf68e1571dd7644994e558e451734748d782968417876b2eb8ed81f",
+      "htmlSha256": "54702fa3236c256a150471cc213874bfdc071cbeb29e0e0afdbb18dabe9aa2db",
+      "cards": 19,
+      "tables": 1,
+      "verses": 12,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/09072025/deut-6_10-19.html",
+      "beforeSha256": "72b1f45d739d31cf4234f1432ce81b2d133a47cb83f788f0673377dac3895256",
+      "htmlSha256": "7a29af504e0132b17daa6489194e1cfaf1689d4c5593fe6578ef12673f3b6fb0",
+      "cards": 12,
+      "tables": 2,
+      "verses": 9,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/09142025/deut-6_12-19.html",
+      "beforeSha256": "ac0c5df29bd7ea5903d9313e3306a885df05778c9a901bd768497ae44afbab2e",
+      "htmlSha256": "26fe83657456217841b099c4062f0db07d747627e0b961180ffb4542e5188435",
+      "cards": 14,
+      "tables": 2,
+      "verses": 7,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/09212025/deut_28_45-48.html",
+      "beforeSha256": "c2fdf5dc8fb572e0698aa95cb70bdfd464b320e49f68583da93346aa85623963",
+      "htmlSha256": "a9d4f13635d9e1b644dd3ddf74c053779a36f6c777f897c6899cdcbcec1f0fd1",
+      "cards": 12,
+      "tables": 1,
+      "verses": 4,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/09282025/deut32_phil2.html",
+      "beforeSha256": "0741613d02057b26ce640175c698bef07ba3ea8dfc366af4825c101c9a348b1e",
+      "htmlSha256": "475f60146147e9724d33c7597ccb98599b362de57ffaf4edcdde6211392409d0",
+      "cards": 12,
+      "tables": 2,
+      "verses": 2,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/10052025/deut_33_29.html",
+      "beforeSha256": "0d426dcef92a1cdbbc0f6380ce9507175b49a1e94b9544891ddc8a8299da9815",
+      "htmlSha256": "9f382a5613c93bc91faa1bb376a8598e537ec528ccd0a542df94c6cce257e829",
+      "cards": 12,
+      "tables": 2,
+      "verses": 1,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/10122005/luke_2_8_20.html",
+      "beforeSha256": "8f32c044b38c18c0c2dad21dc86cfafcdee88b456c967fd3061672d3093f4168",
+      "htmlSha256": "a4d47927c12b6d09cfef1a85a431664e86f9b7afdcbdf71c50e882da305fe7fb",
+      "cards": 13,
+      "tables": 2,
+      "verses": 13,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/10192025/luke_4_1_13.html",
+      "beforeSha256": "a1642931bd09bfe6e525913cd577a0bcd275c5c87137b5eedf15bc0de24833ff",
+      "htmlSha256": "ee31b702f30a3d6cf47e92b6da660c08c57872fcabf5550d660f2b8053f448df",
+      "cards": 11,
+      "tables": 2,
+      "verses": 13,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/10262025/luke_6_20_38.html",
+      "beforeSha256": "2cb4442d8055068d4cfecb475051497493f013314d8dbc4262f9585664340f78",
+      "htmlSha256": "d5aa155555915b5b9b8a9de55fe3df19e966c31ec887a5d7734a840a32e6f22c",
+      "cards": 16,
+      "tables": 2,
+      "verses": 19,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/11022025/luke_7_18_23.html",
+      "beforeSha256": "56f48233135748cfda1045f7850a00cf802475b611019e2a41bb30bc145a784a",
+      "htmlSha256": "9f237a566553e4512530b921923bd84f1abcfec37b227e218973e4334bf9ef01",
+      "cards": 16,
+      "tables": 2,
+      "verses": 6,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/11092025/luke_9_1_6.html",
+      "beforeSha256": "39ab970915d5615ecf8df6c8fb409544052b037c7be82d8921c61ef95452eea1",
+      "htmlSha256": "8b86876c03502ec65b8cfacae824c596226eb0f9f65c7c953de2a171589d24d3",
+      "cards": 14,
+      "tables": 2,
+      "verses": 6,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/11162025/luke_10_25-37.html",
+      "beforeSha256": "cd3f2ed28f5bd5534ecc1a2ba9a50f7604bb88f1acb92fb9c8346918a44af65c",
+      "htmlSha256": "60c8b671fc8115aa94fba3599a83e27229c6b6caca5dede441bf423cea352944",
+      "cards": 18,
+      "tables": 2,
+      "verses": 13,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/11232025/luke_11_45_54.html",
+      "beforeSha256": "bf64b5e9d7ab28616d7192795398887b80019ee2a65aa49cde0628d8e424b28d",
+      "htmlSha256": "fd9e2fa7d1bc78e8ca79d9602b9e62850a90566904344b2ed368406b7d123c0f",
+      "cards": 18,
+      "tables": 2,
+      "verses": 10,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/11302025/John_13_34-35.html",
+      "beforeSha256": "e4fef4063872aec74ec97a430f03ea38d3bbce809bbf22e41b93adfa2e46116e",
+      "htmlSha256": "f726fdcbf99492089ad37a018a8bb45de01d47af9c5bcb0d5fafab71c661e14d",
+      "cards": 18,
+      "tables": 2,
+      "verses": 2,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/12072025/Acts_14_19-28.html",
+      "beforeSha256": "f05f43f7d8cb705a9eb3156fb132dc7359a93430a72f61d4208e30675a9a2905",
+      "htmlSha256": "b0c13bd62be9c11db727d577b391b2f456b19d915206449e463084c16fc667aa",
+      "cards": 17,
+      "tables": 2,
+      "verses": 10,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/12142025/Ephesians_1_22-23.html",
+      "beforeSha256": "d48059e73f5012bf6668f53219a832ff1470073f74a66ad4e9e3d51c1bc84ac5",
+      "htmlSha256": "754bb55497d62ac878ca420fb65c4f1bd792fd22694dcce774d5307862ef4343",
+      "cards": 15,
+      "tables": 2,
+      "verses": 2,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/12212025/Colossians_3_15-17.html",
+      "beforeSha256": "12f7f16851d43bdb9ee58e8b1cc21b321283f8b66000e2d0b1b039e99977c4c4",
+      "htmlSha256": "e5341b3c5ab7728c4a54c94bb42d0006d3e1caa03c3171dde8d4b79cd92bb7ec",
+      "cards": 16,
+      "tables": 1,
+      "verses": 3,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/12252025/Luke_2_8-14_v1.html",
+      "beforeSha256": "a5f952f11ef61e7b15945771498bc6c3b48e8b7ebdab9674c6abdb60e8165555",
+      "htmlSha256": "1b967cfe3a05ecd3584fc9e384cef436b84f0f9c50b46e27d4243cf985b2d0f4",
+      "cards": 14,
+      "tables": 1,
+      "verses": 7,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/12282025/Judges_2_20-23_v1.html",
+      "beforeSha256": "00d8744823705e020610b95e04cb484ea1d396b66eb771cb1b2d446bcfa1b8c6",
+      "htmlSha256": "a252614e7c9446b90dd4763f0b90d13576491d8727bc26a77059e50fb3daae89",
+      "cards": 16,
+      "tables": 2,
+      "verses": 4,
+      "readingTools": 4
+    },
+    {
+      "path": "2025/12312025/Isaiah_43_18-21_v1.html",
+      "beforeSha256": "622f9900ee8192fc9c41c62a30d8793e925dca78ce63da858fb108ba5c2148ba",
+      "htmlSha256": "b8f132ac2c008bfc756d5324bcd7bc83803231f95ad4a503438ca80cf923e20c",
+      "cards": 18,
+      "tables": 2,
+      "verses": 4,
+      "readingTools": 4
+    }
+  ],
+  "scriptBeforeSha256": "bc467aca67cf78d472d35b070b5d5b0594166864e4a8ea9402f2e2c5cd449f43",
+  "scriptAfterSha256": "9164b589b1be383cc8abeb9eacec430033cb4d65cf14a1490f01d96485f44115",
+  "codeSha256": "755fb03374a0b292b6758c7aa532e6fa40fcc5f2723734b4d79c5e24161dc85f",
+  "newArticleAlreadyContainsFix": "2026/01042026/Isaiah_43_19-21_AI_2026_NewYear_Edition_v3.html"
+}
