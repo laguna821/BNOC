@@ -1,0 +1,27 @@
+{
+  "id": "2025-09-14-85a2148043a04b0d",
+  "date": "2025-09-14",
+  "reference": "신명기 6:12-19",
+  "service": "revision-70e3fede8120363b189f",
+  "relativePath": "2025/09142025/deut-6_12-19.html",
+  "manuscriptSha256": "9a43eb856b893a4d65c2c2415cf216d36fafbc9dbd2ccd4e2ce9ae0b7efdf986",
+  "passageSha256": "7fc4de216bf9941c22139ef73175009d4a635a94d5cfef440391d3c28a6855ae",
+  "htmlSha256": "50932545ff3967174ad3fa382812c7053e712092f3535576da80e16594e0696a",
+  "editorialReviewSha256": "4b27864cab8c5dd56d0050e5087937a34fec32e4cb3b25e0d7a217fd40dd68d2",
+  "visualPlanSha256": "f54382adda16fb5f928cdd541f545182349507107da60557fdb51ac9b81baccf",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "40981528dbc1c248689e28ed403141ef64f525f7",
+    "originalSha256": "8936608c2c692844b267779ee2b91b2dabd1c9235b22ae54d427b4f737bb5289",
+    "revisedAt": "2026-10-18T09:13:24.965689+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
