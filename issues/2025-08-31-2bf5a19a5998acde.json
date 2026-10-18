@@ -1,0 +1,27 @@
+{
+  "id": "2025-08-31-2bf5a19a5998acde",
+  "date": "2025-08-31",
+  "reference": "신명기 3:18-29",
+  "service": "revision-0dbdb5ec80b47d7c0eb5",
+  "relativePath": "2025/08312025/deut_3_18-29.html",
+  "manuscriptSha256": "bdb50d05cf5ce6b5b9ed16cad52e1c7ad22e2a9efc696b8e6e173d330a9b4040",
+  "passageSha256": "cc3e28b52dc782152346f2f97cec8bf22424ff8a32f30fb54586bd175a877d97",
+  "htmlSha256": "efdccfb43b253232a67b3c021ddef0f28d8a575d7d57280e82575def23d07c32",
+  "editorialReviewSha256": "0487ba8d83a335cf23483182cf2f3157cb1b8747a2d2700a73bf79bc0ec1da09",
+  "visualPlanSha256": "fb5dcf5e2962292ffc4d0313c26938081899c5a1fa3c8c31ebc84cae7a965bdf",
+  "versions": {
+    "skill": "1.1",
+    "template": "bnoc-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex; exact runtime variant not exposed)",
+  "revision": {
+    "originalCommit": "e83cce4867aaa2a0a23212df551eaa3ed31eafd5",
+    "originalSha256": "9c9622af39a6ca10fd710b324de373bc9b3aacbf39579015446f45c23f74f3be",
+    "revisedAt": "2026-10-18T08:48:06.685212+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
