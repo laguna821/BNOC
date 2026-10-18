@@ -38,6 +38,7 @@ bnoc.py promote RUN_ID --token TOKEN
 ```text
 bnoc.py checkpoint RUN_ID --token TOKEN --stage researched --evidence "research.md의 출처와 주요 논쟁 확인"
 bnoc.py checkpoint RUN_ID --token TOKEN --stage written --evidence "원고를 읽고 본문 근거와 해석의 한계를 검토"
+bnoc.py optimize-images RUN_ID --token TOKEN
 bnoc.py checkpoint RUN_ID --token TOKEN --stage illustrated --evidence "검토 후 결정한 시각 구성의 실제 이행 확인"
 bnoc.py render RUN_ID --token TOKEN
 bnoc.py render RUN_ID --token TOKEN --print-proof
@@ -48,6 +49,7 @@ bnoc.py release RUN_ID --token TOKEN
 ```
 
 render.json의 해시를 review에 사용한다. 검토 항목은 manuscript.md에 설명되어 있다. 단순 파일 존재·모델 자체 점수만으로 품질 검토를 대체하지 않는다. 변경 후 과거 review는 사용할 수 없다.
+optimize-images 전 원본 그림의 실제 inspection이 필요하며, 변환 후 비워진 inspection을 배포본의 육안 검토로 새로 작성해야 illustrated가 통과한다. [압축 절차](image-delivery.md)를 따른다. SVG·기존WebP·텍스트만인 구성은 변환 없이 보고된다.
 
 브라우저가 시스템 인쇄 미리보기를 노출하지 않으면 --print-proof로 실제 인쇄 CSS를 적용한 비공개 print-proof.html을 만든 뒤 브라우저에서 확인한다. 제목·표·본문·그림과 어두운 테마의 인쇄 색을 검사하고, 페이지 나눔/실물 인쇄를 확인했는지는 검토 근거에 구별하여 적는다. proof는 공개하지 않는다. 다운로드 이벤트를 도구에서 확인할 수 없으면 링크의 실제 파일 응답과 메모 저장 상태를 확인하고 그 한계를 기록한다.
 

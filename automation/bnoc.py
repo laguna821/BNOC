@@ -18,6 +18,7 @@ import bulletin
 import render
 import revision
 import editorial
+import image_delivery
 
 DEFAULT_CONFIG=Path(os.environ.get('BNOC_CONFIG',str(Path.home()/'Achmage-System/bnoc/config.json')))
 STAGES=['discovered','passage-confirmed','researched','written','illustrated','rendered','validated','pushed','published']
@@ -227,7 +228,7 @@ def main():
     rev=sub.add_parser('revise');rev.add_argument('relative_path');rev.add_argument('reference')
     rev.add_argument('--date',required=True);rev.add_argument('--kinds',nargs='+',choices=sorted(revision.KINDS),required=True)
     rev.add_argument('--intent',required=True);rev.add_argument('--mode',choices=['draft','publish'],default='draft')
-    for name in ['claim','status','promote','passage','render','validate','publish','verify','release','fail','checkpoint']:
+    for name in ['claim','status','promote','passage','optimize-images','render','validate','publish','verify','release','fail','checkpoint']:
         p=sub.add_parser(name);p.add_argument('run_id')
         if name=='claim':
             p.add_argument('--resume-expired',action='store_true');p.add_argument('--owner',required=True)
@@ -235,6 +236,9 @@ def main():
         elif name not in ('status',):p.add_argument('--token',required=True)
         if name=='checkpoint':p.add_argument('--stage',choices=['researched','written','illustrated'],required=True);p.add_argument('--evidence',required=True)
         if name=='render':p.add_argument('--print-proof',action='store_true')
+        if name=='optimize-images':
+            p.add_argument('--quality',type=int,default=92)
+            p.add_argument('--lossless',action='store_true')
         if name=='fail':p.add_argument('--reason',required=True);p.add_argument('--changed-evidence',default='')
     args=parser.parse_args();c=config(args.config);command=args.command
     with guard(c['root']):
@@ -281,6 +285,16 @@ def main():
                 if args.stage=='illustrated':
                     render.validate(load(path/'manuscript.json'),load(path/'passage.json'),path)
                 run['attempts'].append(dict(stage=args.stage,evidence=args.evidence,at=dt.datetime.now(dt.timezone.utc).isoformat()));advance(c,path,run,args.stage);result={'status':args.stage}
+            elif command=='optimize-images':
+                if run['stage'] in ('pushed','published'):raise ValueError('Published images require an explicit revision')
+                m=load(path/'manuscript.json');p=load(path/'passage.json')
+                render.validate(m,p,path)  # real source inspection and prior editorial/visual decisions
+                m,result=image_delivery.optimize(m,path,c.get('imageEncoder',{}),args.quality,args.lossless)
+                save(path/'image-optimization.json',result)
+                if result['changedFigures']:
+                    save(path/'manuscript.json',m)
+                    advance(c,path,run,'written')  # derivative inspection is now pending
+                result['report']=str(path/'image-optimization.json')
             elif command=='render':
                 if run.get('revision',{}).get('kinds') in (['design'],['scripture']):
                     if args.print_proof:raise ValueError('Design-only revision retains its original print rules; inspect that document in print preview instead of applying the new-reader proof')
