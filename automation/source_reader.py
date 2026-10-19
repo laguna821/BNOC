@@ -202,4 +202,5 @@ def audit_review(path,run):
         if item.get('passed') is not True or not item.get('evidence'):raise ValueError('Native QA missing '+key)
     checked=read(Path(path)/'source-exegesis-review.json')['checkedSources']
     if set(report.get('checkedSourceIds',[]))!={s['id'] for s in checked}:raise ValueError('Native checked-source scope mismatch')
-    return binding
+    # The publisher owns issue/date fields; an audit returns only immutable evidence bindings.
+    return {k:binding[k] for k in ('originalSha256','passageSha256','htmlSha256','contentSha256','sourcePlanSha256','editorialReviewSha256','visualPlanSha256')}

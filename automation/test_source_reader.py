@@ -2,6 +2,8 @@ import copy
 import json
 import tempfile
 import unittest
+import subprocess
+import bnoc
 from pathlib import Path
 from bible import digest
 import source_reader as sr
@@ -67,5 +69,35 @@ class NativePreservationTests(unittest.TestCase):
     def test_bible_replacement_is_not_a_design_change(self):
         source=SOURCE.replace('정확한 성경 본문','다른 성경 본문')
         with self.assertRaisesRegex(ValueError,'differs'):sr.structural_changes(source,self.passage)
+    def test_native_audit_is_consumed_by_real_publisher_and_manifest(self):
+        repo=self.p/'repo';repo.mkdir();remote=self.p/'remote.git'
+        subprocess.run(['git','init','--bare',str(remote)],check=True,capture_output=True)
+        subprocess.run(['git','init',str(repo)],check=True,capture_output=True)
+        def git(*args,input=None):return bnoc.git(repo,*args,input=input)
+        git('remote','add','origin',str(remote))
+        target='2026/09132026/native.html'
+        for name,data in [(target,SOURCE.encode()),('untouched.html',b'keep')]:
+            blob=git('hash-object','-w','--stdin',input=data)
+            git('update-index','--add','--cacheinfo','100644',blob,name)
+        tree=git('write-tree')
+        base=git('-c','user.name=Test','-c','user.email=test@example.test','commit-tree',tree,input=b'baseline')
+        git('push','origin',base+':refs/heads/main')
+        run=copy.deepcopy(self.run)
+        run.update(relativePath=target,reference='계3:1',service='fixture',mode='publish',stage='validated',versions={'template':sr.VERSION})
+        run['revision']['originalCommit']=base
+        doc,meta=sr.render(self.p,run);(self.p/'native.html').write_bytes(doc.encode())
+        report=dict(**meta,model='test-fixture',reviewedAt='2026-10-19T10:00:00+00:00',preservedIntent=run['revision']['intent'],blockingFindings=[],
+                    checkedSourceIds=['a','b'],checks={key:dict(passed=True,evidence='Fixture only') for key in sr.REVIEW_KEYS})
+        self.save('review.json',report)
+        cfg=dict(root=self.p/'state',repo=repo,site='https://example.test/',gitAuthor=dict(name='Test',email='test@example.test'))
+        cfg['root'].mkdir()
+        bnoc.save(cfg['root']/'state.json',dict(schemaVersion=1,issues={run['id']:dict(stage='validated')},observations={},failures={}))
+        result=bnoc.publish(cfg,self.p,run)
+        self.assertEqual(result['status'],'pushed-awaiting-deployment')
+        git('fetch','origin','main')
+        manifest=json.loads(git('show','origin/main:issues/'+run['id']+'.json'))
+        self.assertEqual(manifest['date'],run['date'])
+        self.assertEqual(manifest['htmlSha256'],digest(doc.encode()))
+        self.assertEqual(git('show','origin/main:untouched.html'),'keep')
 
 if __name__=='__main__':unittest.main()
