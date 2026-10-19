@@ -1,0 +1,311 @@
+{
+  "base": "f8aa79415606290b27676215d70e4c4c3208d2a3",
+  "reviewedAt": "2026-10-19T12:18:04.754858+00:00",
+  "operation": "embedded-image-encoding-only",
+  "beforeBytes": 64444152,
+  "afterBytes": 20922731,
+  "inputImageBytes": 38700233,
+  "outputImageBytes": 6052712,
+  "scope": "Only embedded PNG14 -> WebP14 and their provenance hashes; no commentary, typography, interface or storage-key rewrite.",
+  "items": [
+    {
+      "number": 1,
+      "runId": "2025-08-17-990d0b0d00a4449f",
+      "path": "2025/08172025/Numbers-18_21_32.html",
+      "beforeSha256": "715f7ee615249ea23594e60e3fa8aaaae1fe566766f681da13696885380d5489",
+      "htmlSha256": "e721203e91a03dacac3d6fb5ea0c949be70522f9e95704d3cb736585d05c869f",
+      "beforeBytes": 8860648,
+      "afterBytes": 2567191,
+      "inverseProof": true,
+      "authoredContentSha256": "bf5e38de7571f91f129c3dac1a3e0fb4246a27b6167c73a91638cb690ec8de90",
+      "figures": [
+        {
+          "id": "provision",
+          "sourceSha256": "1633a758bfecef089f0c98c718182aeabef1f8b5d0465ee49f1a3538523ef0af",
+          "sha256": "121ff8eea8b99c1eb0f305160d3a0a85340b8de671959e54572d0ff6a58ee19c",
+          "inputBytes": 2756316,
+          "outputBytes": 401006,
+          "width": 1672,
+          "height": 941,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "PNG와 WebP를 각각 열어 곡식 낟알·바구니 선·맞잡은 손·직물과 밝은 배경을 대조했다. 새로 생긴 번짐/테두리 결손은 보이지 않았다."
+        },
+        {
+          "id": "family",
+          "sourceSha256": "a99b56f08035e2aad83e96fa9a4f36ee9a506daebad8e29602c38d510f4d7f03",
+          "sha256": "f0d54b5d3bf8374912d6ab5dd7a8cb47bfaa910bc505be4c738c2b6099c37af0",
+          "inputBytes": 2808227,
+          "outputBytes": 442564,
+          "width": 1672,
+          "height": 941,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "식탁의 얼굴·빵/올리브·손가락·목재와 석벽을 PNG/WebP에서 대조했다. 구도와 색/작은 선이 유지되며 눈에 띄는 압축 손상은 없었다."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "runId": "2025-08-24-fee62e18d8055b64",
+      "path": "2025/08242025/Numbers_19-1_10.html",
+      "beforeSha256": "3fd1682acf599d666448fa9de6dd2529df30bcdd4a7d4f58f579646000a1b5f2",
+      "htmlSha256": "fb1099cf79ee62e267b176ada690afada00dc6797b744bd5e36440a988f979a6",
+      "beforeBytes": 8672742,
+      "afterBytes": 2525377,
+      "inverseProof": true,
+      "authoredContentSha256": "c2c0b733684cafe8dd9b3f6ace82dcf89f1730a332b4e8c98166ad81c5caff3a",
+      "figures": [
+        {
+          "id": "ashes-kept",
+          "sourceSha256": "60a2a6130171da38ef4c943aef901cec0d0adac383440a769711adeb079218c4",
+          "sha256": "47580821fc9ae80f26286de4159318414792c8733fb7c9d4e7f8b7daa43109cf",
+          "inputBytes": 3063051,
+          "outputBytes": 524082,
+          "width": 1536,
+          "height": 1024,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "재의 작은 입자·나무 주걱 가장자리·항아리·손과 직물을 원본/배포본 각각 열어 비교했다. 회백색 입자의 구분과 윤곽이 유지됐다."
+        },
+        {
+          "id": "shared-care",
+          "sourceSha256": "7e9124e9d2a6f996ec619741d964941369e4e900dc0d42bcb98298db31806bff",
+          "sha256": "bd823c1346cb7ed81f548d7fcfe5f11074c33725b7c228077d10e2bcdc49a9a6",
+          "inputBytes": 2369707,
+          "outputBytes": 297274,
+          "width": 1536,
+          "height": 1024,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "문앞 세 사람의 표정·선물 보자기/손·장바구니·실내외 빛을 각각 대조했다. 원래 회화 질감과 밤색/노랑색 경계가 유지됐다."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "runId": "2025-08-31-2bf5a19a5998acde",
+      "path": "2025/08312025/deut_3_18-29.html",
+      "beforeSha256": "54702fa3236c256a150471cc213874bfdc071cbeb29e0e0afdbb18dabe9aa2db",
+      "htmlSha256": "559651c06eeaa6dfa6745c939824d275bb8aaf3447d5a33b83d83ab7ed027a77",
+      "beforeBytes": 8940788,
+      "afterBytes": 2618956,
+      "inverseProof": true,
+      "authoredContentSha256": "fcf713c9379aaaa00c8e1cb2648de8a40a5c2c8149113ddebc3f5eafa6d9eba7",
+      "figures": [
+        {
+          "id": "pisgah",
+          "sourceSha256": "65b232cc0af96cd12e88bab3a8131dacfaad200b87e36cff6336af2ff9b00317",
+          "sha256": "675b359372824e98250228106754e08b2a8e4aa25cb0cae920275c92ba8ca7fa",
+          "inputBytes": 2658415,
+          "outputBytes": 398100,
+          "width": 1536,
+          "height": 1024,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "넓은 계곡의 나무·바위·강과 인물 외투의 작은 가장자리를 각각 비교했다. 먼 풍경의 단계와 색이 뭉개지지 않았다."
+        },
+        {
+          "id": "encouragement",
+          "sourceSha256": "6fd2ff5107e28eebeca25d9b821a78310a94e57e6cef66da52e1c5bfcf14ecb5",
+          "sha256": "e01432fe68f9e80d6c8d65227328517d8cf506aa86d22262e2e015536394f5d6",
+          "inputBytes": 2977806,
+          "outputBytes": 495894,
+          "width": 1536,
+          "height": 1024,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "두 인물의 얼굴·수염/손·지팡이와 천막·노을 계곡을 원본/배포본에서 대조했다. 관계와 세부 윤곽/그림자가 유지됐다."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "runId": "2025-09-07-2727258ee2d7450c",
+      "path": "2025/09072025/deut-6_10-19.html",
+      "beforeSha256": "7a29af504e0132b17daa6489194e1cfaf1689d4c5593fe6578ef12673f3b6fb0",
+      "htmlSha256": "de46a24a98a81a722518be558702b1fbdc1cf1562a36dcece0d3c57c69b70b83",
+      "beforeBytes": 9343830,
+      "afterBytes": 2797007,
+      "inverseProof": true,
+      "authoredContentSha256": "f63353f167128c607ccdf02e6716dbc523dc0750958ec966f5ff1d885e4952c8",
+      "figures": [
+        {
+          "id": "received-land",
+          "sourceSha256": "3bb2105590fa85622c85ab90e94a952c73a479ef37a1f49095577a767f26e851",
+          "sha256": "978aef0e494bc7ec7a81809cd659e12890cd361b19f23054f1df685605536fe7",
+          "inputBytes": 3473722,
+          "outputBytes": 684622,
+          "width": 1536,
+          "height": 1024,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "우물 뚜껑의 판자·항아리·포도/올리브 잎·네 인물과 석벽을 각각 열어 비교했다. 잎과 돌의 세부, 빛과 구도가 유지됐다."
+        },
+        {
+          "id": "shared-table",
+          "sourceSha256": "3d494e22231198f55679cb0e632d62d81d5ed55ba6e2a47bb8f442870af59d59",
+          "sha256": "53c42fff9c6e6373ee531a6ca11e0512eacf95993e96b6573b61ce0d1dc7b74c",
+          "inputBytes": 2465584,
+          "outputBytes": 343702,
+          "width": 1536,
+          "height": 1024,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "네 사람의 얼굴·손·그릇/음식·앞치마/식탁보 질감을 PNG/WebP 각각 비교했다. 작은 음식과 식탁 도구의 윤곽이 유지됐다."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "runId": "2025-09-14-85a2148043a04b0d",
+      "path": "2025/09142025/deut-6_12-19.html",
+      "beforeSha256": "26fe83657456217841b099c4062f0db07d747627e0b961180ffb4542e5188435",
+      "htmlSha256": "b178f8abcff31990dd1a35dc2b03b1f04861781e10947ae0d8e3463c6905c651",
+      "beforeBytes": 4784644,
+      "afterBytes": 1885820,
+      "inverseProof": true,
+      "authoredContentSha256": "e499bfbd0f6c91cff1808011055dc846a0121ef5e8be1021fb5165fb63055c67",
+      "figures": [
+        {
+          "id": "remember-together",
+          "sourceSha256": "b316833187643d8b8888d03d35837702c1204bceb0d020026498fa34ab421556",
+          "sha256": "82807ecdc84187561f2dce6f7bfa4156ef5a43c691df9768427b8268ea1d367e",
+          "inputBytes": 2518517,
+          "outputBytes": 343888,
+          "width": 1536,
+          "height": 1024,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "노트의 추상 도형·세 사람의 얼굴과 손가락·머그/직물·창빛을 각각 대조했다. 글자라고 읽을 수 없는 원래 표식과 회화 질감이 유지됐다."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "runId": "2025-09-21-1361cbd21b63e65f",
+      "path": "2025/09212025/deut_28_45-48.html",
+      "beforeSha256": "a9d4f13635d9e1b644dd3ddf74c053779a36f6c777f897c6899cdcbcec1f0fd1",
+      "htmlSha256": "1745eb59195fdad79c778c5b468ee4d0bce1fff7b7d6978df5fc6b8707cff746",
+      "beforeBytes": 4552279,
+      "afterBytes": 1794444,
+      "inverseProof": true,
+      "authoredContentSha256": "d49d6defb478ceb627a10c497b1b2b57ed2de06d4a6346898639e98a466d4b77",
+      "figures": [
+        {
+          "id": "listen-and-care",
+          "sourceSha256": "2bec8c91a99cac2a914c698935e743df1238d9964d0768605707c54511aaa9d0",
+          "sha256": "aff9efd995064c7c298d623143ae635e807bce8782887ff25dcc52dad644cbfd",
+          "inputBytes": 2348882,
+          "outputBytes": 280002,
+          "width": 1536,
+          "height": 1024,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "세 사람의 얼굴·손·머그와 식료품/접힌 직물의 경계·빛을 각각 대조했다. 현대 적용 장면의 구도/윤곽/색에 뚜렷한 압축 손상이 없다."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "runId": "2025-09-28-c7e6d3368c3dee98",
+      "path": "2025/09282025/deut32_phil2.html",
+      "beforeSha256": "475f60146147e9724d33c7597ccb98599b362de57ffaf4edcdde6211392409d0",
+      "htmlSha256": "b0c152d8d9e76d851089a203c3ce5e31612e8dac22b1e99e23aa24bef788da4f",
+      "beforeBytes": 4927762,
+      "afterBytes": 1958617,
+      "inverseProof": true,
+      "authoredContentSha256": "edb2776bb4beb0c1f315cf887e6eb06a76f7b81801e5fbf928747f638a3441a6",
+      "figures": [
+        {
+          "id": "shared-discernment",
+          "sourceSha256": "b123463edfdf44c16169db67867cd97c05ba45edcc68ab008bd31c3af8eaeba5",
+          "sha256": "042a50ef0102518d5d850ca066ccc02500c9f985ec77934dacea3804220a29bf",
+          "inputBytes": 2628315,
+          "outputBytes": 400950,
+          "width": 1536,
+          "height": 1024,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "네 사람의 표정과 손·책/노트의 추상 표식·안경·저녁 램프/도시빛을 각각 열어 비교했다. 어두운 면의 질감과 밝은 경계가 유지됐다."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "runId": "2025-10-05-06a77af53ed55540",
+      "path": "2025/10052025/deut_33_29.html",
+      "beforeSha256": "9f382a5613c93bc91faa1bb376a8598e537ec528ccd0a542df94c6cce257e829",
+      "htmlSha256": "15c59890715741c5609c3241a7cdad0c14e2868a2f0d3b5030c0a0548531e31f",
+      "beforeBytes": 9436480,
+      "afterBytes": 2801742,
+      "inverseProof": true,
+      "authoredContentSha256": "2d8c6ab7840048fff53a3b8eea2d013d66e89dd6a4edcb0c8517687ac4986299",
+      "figures": [
+        {
+          "id": "farewell-camp",
+          "sourceSha256": "4f8027a0f66bdb2bbfdea2f35ec109d2afda0b12b6a8769db955162f43fa5147",
+          "sha256": "a009a639a39bc3a510690e30997bbfaebf6524ff982383e5573e8cebb151627f",
+          "inputBytes": 3052768,
+          "outputBytes": 531342,
+          "width": 1536,
+          "height": 1024,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "여러 인물의 손·얼굴과 지팡이·천막선·바구니·금빛 계곡을 원본/배포본에서 각각 대조했다. 원래 구도/미세 윤곽/노을 단계가 유지됐다."
+        },
+        {
+          "id": "shared-path",
+          "sourceSha256": "e245d1f092a9d0deccfd49b9cbec5cf9223cbb3675f1603b224575d2168bfa26",
+          "sha256": "2c82cde4f7c91d7a1da7f3c37a994bd195741e5d20fa23ed46ea6e8d0341015a",
+          "inputBytes": 2956919,
+          "outputBytes": 501398,
+          "width": 1536,
+          "height": 1024,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "우산 손잡이·빗방울/젖은 바닥 반사·상자 손잡이·네 사람 얼굴/손을 각각 대조했다. 압축 후에도 작은 선과 빛/직물 윤곽이 유지됐다."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "runId": "2025-10-12-a74ef88bceb9001b",
+      "path": "2025/10122005/luke_2_8_20.html",
+      "beforeSha256": "a4d47927c12b6d09cfef1a85a431664e86f9b7afdcbdf71c50e882da305fe7fb",
+      "htmlSha256": "44d7c975fbb332a2e4238136d7fa978d3ca6654fa75dce9f58d19d07c191e1dc",
+      "beforeBytes": 4924979,
+      "afterBytes": 1973577,
+      "inverseProof": true,
+      "authoredContentSha256": "52f88094051315b0776233a4530863fc9ca98764aa63fcbfe02869ca5b4f4bfc",
+      "figures": [
+        {
+          "id": "manger-hearing",
+          "sourceSha256": "b5ae7d516f950c0ad39105974ea8239c459fb014cab1864f476ae48cff821bf1",
+          "sha256": "17f873a000058acd7615f506ffe1e1b5725b9e7b2b0fe81e9a23f1800fd04d7b",
+          "inputBytes": 2622004,
+          "outputBytes": 407888,
+          "width": 1536,
+          "height": 1024,
+          "quality": 92,
+          "lossless": false,
+          "occurrences": 1,
+          "visualInspection": "어두운 실내의 네 얼굴·아기와 천의 가장자리·목자 손/지팡이·뒤편 밤색/등불빛을 PNG/WebP 각각 열어 비교했다. 따뜻한 밝은 면과 어두운 직물의 세부가 유지되고 눈에 띄는 블록/밴딩 손상은 없다."
+        }
+      ]
+    }
+  ]
+}
