@@ -1,0 +1,28 @@
+{
+  "id": "2026-09-13-e757b63314836e28",
+  "date": "2026-09-13",
+  "reference": "요한계시록3:1-6",
+  "service": "revision-fc5ceb3f9609db35481c",
+  "relativePath": "2026/09132026/revelation_3_1_6_sardis_premium_guide.html",
+  "originalSha256": "f846d4e1c4f87fb5338e511a44d5974c9873bc1519acc4eb9258bdd0ce839d5f",
+  "passageSha256": "76e2aedf4197746250c88e7ebd987c651f52d253fe08a08693978ff030c8df86",
+  "htmlSha256": "07e2a51d533675a6c8649388433b0dcde5a19b49ac23f6293a52084801ee13b2",
+  "contentSha256": "df482a1d09d6e368c28b412d4d7f08af3ec2deeae0e134fc72462d560e4d926d",
+  "sourcePlanSha256": "e9f93f0a8beb09b6c0b5567c6c454347c807114ecdcc825f5ad13fbadc2f61c0",
+  "editorialReviewSha256": "3f5c61e109322f6b648a634dae2a4e728f5345181d573216f12ca6ac8713519d",
+  "visualPlanSha256": "8bb6ed37f61c15b3be5dd230519022f80fd273b66183c7a49c27d2db5885e15b",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-source-reader-1.0"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "d5b068959bb2563813c6bf78de09ed8fd5d297bc",
+    "originalSha256": "f846d4e1c4f87fb5338e511a44d5974c9873bc1519acc4eb9258bdd0ce839d5f",
+    "revisedAt": "2026-10-19T08:56:00.742707+00:00",
+    "kinds": [
+      "design",
+      "theology"
+    ]
+  }
+}
