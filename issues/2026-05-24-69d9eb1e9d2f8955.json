@@ -1,0 +1,26 @@
+{
+  "id": "2026-05-24-69d9eb1e9d2f8955",
+  "date": "2026-05-24",
+  "reference": "누가복음6:43-45",
+  "service": "revision-564fbe06560074734004",
+  "relativePath": "2026/05242026/Luke_6_43-45_premium_orthodoxy_orthopraxy_guide.html",
+  "manuscriptSha256": "d2aa8c33e47dc80a7c0bab3b9d78e2d3421af84e5b01626f971e91154b75ded5",
+  "passageSha256": "b36d9544ced499f0ed841a1d9fcdcdcb1d540463ce4f126564828a1fa05bcc8e",
+  "htmlSha256": "d5a912ffeaaf7080bab208ba3bad71be4d198ee8bd8f68afdb2aef431acddf49",
+  "editorialReviewSha256": "6653b222145a648d607754e1a83ba7f675f51137ea48bcbb952dc84602956655",
+  "visualPlanSha256": "009cf2a85f8ccded0ae2fcde3852dadaf212d4b6c4d65da08859fdcd48c787f4",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "15bf75085ad0d2ea740f8e6f37114976b41088ac",
+    "originalSha256": "2cbdd1952cfc54da8e46bfea21ae888c523e91f478acfa6f27a43ccfe8cf167a",
+    "revisedAt": "2026-10-19T03:34:00.363491+00:00",
+    "kinds": [
+      "design",
+      "theology"
+    ]
+  }
+}
