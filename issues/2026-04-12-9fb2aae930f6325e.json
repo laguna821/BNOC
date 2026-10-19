@@ -1,0 +1,27 @@
+{
+  "id": "2026-04-12-9fb2aae930f6325e",
+  "date": "2026-04-12",
+  "reference": "누가복음 5:33-39",
+  "service": "revision-fdd116ace5e7c284c2f3",
+  "relativePath": "2026/04122026/Luke_5_33-39_v1.html",
+  "manuscriptSha256": "2b26ebb6f91fa78933b1315b5d9eba6f165c74293b7f0172ad9d760d1dbc32fc",
+  "passageSha256": "a784f744abc05916d738c9d94baceb4613fe9f2105e264f5a840a34acbc6d881",
+  "htmlSha256": "d1d92b5001234627c84fd18809866f0d4682122eff25bc674ad226ee82d77cc0",
+  "editorialReviewSha256": "1128355afe6a3b1125b3643d6b7f70188675bb599a897eae9b7a1f7b912d5099",
+  "visualPlanSha256": "cf14536ebb1b139f60171b35ead382c6743a5e370b8e7baabef8e7cd09f08d1e",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "f3b5aef0751b14253282d3556718cb71056aeadd",
+    "originalSha256": "11de852be8144a450ba8dae1b0c96fb54f99ec727e7559fc7bbc37802cd78589",
+    "revisedAt": "2026-10-19T01:25:39.292264+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
