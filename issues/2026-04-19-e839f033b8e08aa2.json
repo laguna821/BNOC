@@ -1,0 +1,27 @@
+{
+  "id": "2026-04-19-e839f033b8e08aa2",
+  "date": "2026-04-19",
+  "reference": "누가복음 6:6-11",
+  "service": "revision-54c473e0ad78aaee4b1b",
+  "relativePath": "2026/04192026/Luke_6_6-11_v1.html",
+  "manuscriptSha256": "3592a3763f5abc58588306adf658f8c07ffdc4fbf01f2cf0cedbac84b288a8a4",
+  "passageSha256": "d0de1f0e519884bbbf58151533643d72a90a6103f81d884e008466713168ebfc",
+  "htmlSha256": "645dac733351f742ac96e944c6e01eb577292c18cf9addaf4d126a9c99f0a353",
+  "editorialReviewSha256": "3f04cbc0e486c028c5eeae2f48c235c83da70c793c97a2100d0cebee03c3e765",
+  "visualPlanSha256": "8b2caa74b3ac1c15ea8b51a28070cfe9820db87fbc3e3fbb0899c4931bf7ed02",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "e0ddba0ef419b122de04cd163373d002f0df8976",
+    "originalSha256": "c8b1801da6913e250186a0ae35a97660d9449d0034ec08872939db0f858a995f",
+    "revisedAt": "2026-10-19T01:56:38.559501+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
