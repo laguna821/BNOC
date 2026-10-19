@@ -91,5 +91,15 @@ class ReaderLayoutTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'all verses'):
             layout.audit(doc.replace('data-verse=', 'data-lost-verse='))
 
+    def test_legacy_header_cells_need_an_explicit_print_header_group(self):
+        # Correct mobile labels alone must not hide the absence of print headers.
+        body = '<tr><th>식탁</th><th>약속</th></tr><tr><td>압력</td><td>생명</td></tr>'
+        with self.assertRaisesRegex(ValueError, 'explicit thead'):
+            layout.upgrade(self.fixture('<table>' + body + '</table>'))
+        proper = self.fixture('<table><thead><tr><th scope="col">식탁</th><th scope="col">약속</th></tr></thead><tbody><tr><td>압력</td><td>생명</td></tr></tbody></table>')
+        doc, _ = layout.upgrade(proper)
+        self.assertEqual(layout.audit(doc)['tables'], 1)
+        self.assertEqual(layout.content_snapshot(proper), layout.content_snapshot(doc))
+
 
 if __name__ == '__main__': unittest.main()

@@ -229,6 +229,7 @@ def audit(doc):
         require(not any(p['tag'] == 'table' for p in table['parents']), 'nested table needs individual layout')
         rows = parsed.within(table, 'tr')
         multiple = any(len([n for n in parsed.within(row) if n['tag'] in ('td', 'th')]) > 1 for row in rows)
+        require(not multiple or bool(parsed.within(table, 'thead')), 'multicolumn table needs an explicit thead for print headers')
         labelled = bool(parsed.within(table, 'thead')) or multiple
         expected = _body_column_headings(parsed, table)
         for cell in parsed.within(table, 'td'):
