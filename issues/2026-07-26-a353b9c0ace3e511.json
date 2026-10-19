@@ -1,0 +1,26 @@
+{
+  "id": "2026-07-26-a353b9c0ace3e511",
+  "date": "2026-07-26",
+  "reference": "누가복음8:22-25",
+  "service": "revision-fe1286c70dd9da947daf",
+  "relativePath": "2026/07262026/luke_8_22_25_premium_card_guide.html",
+  "manuscriptSha256": "8ae303ac7ab10757e069aef4d2574391cef3eabd5e0a37234e5aeec548c0d56f",
+  "passageSha256": "946ddc4f3f0cb5a6b294d00decd5c041cba7df80402fd320e8a1c6edf357230c",
+  "htmlSha256": "473475ab3c0634ca9461c1ba1f4165720ad47b674ea80a6e7cef8c0c161db78d",
+  "editorialReviewSha256": "288c101d740179b3970cb67a20d8e72f82ba617c9c3c86dee5f922d4d1631301",
+  "visualPlanSha256": "f0496ac4b22fd6ecb97babae3fd596072dcea1b113cd6abe90400aab48b82139",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "c474671852270439a29073cd17c09b5465c7fed3",
+    "originalSha256": "d69d4e25ba92792957769f0b6025bf6e171d3abf6430119cb6261ad321161acf",
+    "revisedAt": "2026-10-19T06:28:42.505471+00:00",
+    "kinds": [
+      "design",
+      "theology"
+    ]
+  }
+}
