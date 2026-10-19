@@ -1,0 +1,27 @@
+{
+  "id": "2026-04-26-bfabb3f15835eb28",
+  "date": "2026-04-26",
+  "reference": "누가복음 6:12-19",
+  "service": "revision-e93a5e22830b8fae1d61",
+  "relativePath": "2026/04262026/luke_6_12_19_premium_card_guide.html",
+  "manuscriptSha256": "fee0fe5e6d85364b717a80d920341e24eb26c67fe9c515c61318ab27b84044a4",
+  "passageSha256": "29332ecf703ce2e630f4b24a71264593e2234e79c399e7e17ad213e4697cc102",
+  "htmlSha256": "f5814dce9b4d3965120bbffaa04781c1f433de5eca913c6d44aa619a34b0add8",
+  "editorialReviewSha256": "c873e2f7581dcfa98f05a1fe463a30564f93b5dcf84f4a1ec14d41ab13fd5643",
+  "visualPlanSha256": "32e5722778774c69cda2e391f9ba5349383beb5c31385fde83909158a98899a7",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "9341dbde5600ca16008e378936558a4da7674adb",
+    "originalSha256": "bc4bbc5555ef655c53ecf8d972837570e575142669abf06a558f52b9c468a13e",
+    "revisedAt": "2026-10-19T02:21:09.978670+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
