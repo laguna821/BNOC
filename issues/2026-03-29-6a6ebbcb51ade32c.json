@@ -1,0 +1,27 @@
+{
+  "id": "2026-03-29-6a6ebbcb51ade32c",
+  "date": "2026-03-29",
+  "reference": "마가복음 3:31-35",
+  "service": "revision-90be685ffb84e39d3ce3",
+  "relativePath": "2026/03292026/Mark_3_31-35_general_believer_guide.html",
+  "manuscriptSha256": "8753957f6097301ab21d80b150d6f513f75832a0d49adec12275e1a440c8d723",
+  "passageSha256": "b16d7cfdc2e57ac30c4027dc0ea9e04b94f34826b7acfd5da5b4c6ea075f4c3a",
+  "htmlSha256": "49e412781937e839678bffef497ec9398d03468fc80b5a80f7d1fda6175dc82a",
+  "editorialReviewSha256": "b0cf3b4592df3eba871017fc850547ae2b8353f89a3c0fc6fa722bdb527f9e94",
+  "visualPlanSha256": "907d48ce4af95bd5a35fda8c0bd210a5f00c29a9f8c672c444ecadb72ad75101",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "17fc5519337cd33036abdb0d776b69b3aab46464",
+    "originalSha256": "f3afa44e1f35756686917e215c7813ce92209a037678708e3d18cab6a776ce55",
+    "revisedAt": "2026-10-19T00:35:27.187883+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
