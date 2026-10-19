@@ -52,6 +52,35 @@ class NativePreservationTests(unittest.TestCase):
     def test_original_tamper_requires_new_reading(self):
         (self.p/'original.html').write_text(SOURCE.replace('깊은 해설','바뀐 글'),encoding='utf-8')
         with self.assertRaisesRegex(ValueError,'binding'):sr.validate(self.p,self.run)
+    def test_content_revision_requires_exact_baseline_and_preserves_identity(self):
+        after=CARD.replace('끝까지 보존할 문단','끝까지 보존할 문단과 개별 보강')
+        edit=dict(originalSha256=digest(SOURCE.encode()),rationale='수동 보강',cards=[dict(cardId='guide',beforeSha256=digest(CARD),afterHtml=after,rationale='보강')])
+        result=sr.apply_content_edits(SOURCE,edit)
+        self.assertEqual(sr.cards(result)['guide'],after)
+        edit['cards'][0]['beforeSha256']='0'*64
+        with self.assertRaisesRegex(ValueError,'baseline changed'):sr.apply_content_edits(SOURCE,edit)
+    def test_native_content_cannot_change_heading_or_add_executable_code(self):
+        for after,message in [(CARD.replace('깊은 해설','다른 제목'),'preserve heading'),(CARD.replace('끝까지 보존할 문단','<script>alert(1)</script>'),'executable')]:
+            edit=dict(originalSha256=digest(SOURCE.encode()),rationale='보강',cards=[dict(cardId='guide',beforeSha256=digest(CARD),afterHtml=after,rationale='보강')])
+            with self.assertRaisesRegex(ValueError,message):sr.apply_content_edits(SOURCE,edit)
+    def test_unbound_native_content_file_is_rejected(self):
+        self.save('source-content-edits.json',{})
+        with self.assertRaisesRegex(ValueError,'explicit source-plan'):sr.validate(self.p,self.run)
+    def test_bound_revision_needs_post_edit_editorial_reading(self):
+        edit=dict(originalSha256=digest(SOURCE.encode()),rationale='보강',cards=[dict(cardId='guide',beforeSha256=digest(CARD),afterHtml=CARD.replace('끝까지 보존할 문단','새로 보강한 문단'),rationale='보강')])
+        self.save('source-content-edits.json',edit)
+        plan=sr.read(self.p/'source-reader-plan.json');plan.update(contentEditsSha256=digest(edit),reviewedSnapshot=sr.snapshot(sr.apply_content_edits(SOURCE,edit)));self.save('source-reader-plan.json',plan)
+        with self.assertRaisesRegex(ValueError,'edited-content review'):sr.validate(self.p,self.run)
+        review=sr.read(self.p/'source-exegesis-review.json');review['reviewedContentSha256']=digest(plan['reviewedSnapshot']['cards']);self.save('source-exegesis-review.json',review)
+        visual=sr.read(self.p/'source-visual-plan.json');visual['editorialReviewSha256']=digest(review);self.save('source-visual-plan.json',visual)
+        doc,meta=sr.render(self.p,self.run)
+        self.assertIn('새로 보강한 문단',doc);self.assertEqual(meta['contentSha256'],review['reviewedContentSha256'])
+    def test_ezekiel_wrapped_verse_and_existing_large_font_controls(self):
+        src=SOURCE.replace('<p><span class="verse-no">1</span>정확한 성경 본문</p>','<p id="verse-1"><span class="verse-no">1</span><span class="verse-content">정확한 성경 본문</span></p>').replace('const fontSizes=[17,19,21]','const fontSizes=[18,20,22]').replace('화면 글꼴은 기기의 기본 글꼴을 사용하므로 기기에 따라 조금 다르게 보일 수 있습니다.','이미지와 글은 오프라인으로 읽을 수 있습니다. 외부 자료 링크는 인터넷 연결이 필요합니다.')
+        src=src.replace('</body>','8개 장 · 43개 해설 카드 · 20개 자료 · 묵상 기록</body>')
+        changes=sr.structural_changes(src,self.passage,'ezekiel-native-v1')
+        for before,after in changes:src=src.replace(before,after,1)
+        self.assertIn('<aside id="scripture"',src);self.assertIn('원전 대조 자료',src);self.assertIn('원어용 글꼴도',src)
     def test_stale_editorial_anchor_is_rejected(self):
         data=sr.read(self.p/'source-exegesis-review.json');data['assessments']['orthodoxy']['anchors'][0]['quote']='없는 문장';self.save('source-exegesis-review.json',data)
         with self.assertRaisesRegex(ValueError,'anchor mismatch'):sr.validate(self.p,self.run)
