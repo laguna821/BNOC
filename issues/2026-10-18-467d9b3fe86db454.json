@@ -1,0 +1,32 @@
+{
+  "id": "2026-10-18-467d9b3fe86db454",
+  "date": "2026-10-18",
+  "reference": "누가복음10:1-9",
+  "service": "revision-9430f6cf3f559339381e",
+  "relativePath": "2026/10182026/luke_10_1_9_premium_guide.html",
+  "originalSha256": "e1d5c25e9da6e0bb0e7fc2c4765d32ec2b0220adef536980bf7d12450f098d4b",
+  "passageSha256": "2636e13b844e7b1d29bdcc730f7d094d474c65e573a9c1d5ee41fe1fac123de4",
+  "htmlSha256": "e07a5743708f80aae22ef153bcf25343c023c3826b53ae1f63a62c6794129ee9",
+  "contentSha256": "05781d3a9a44b6477dade3e1346229fc528675e20c0f60b00e2bfafba33b647b",
+  "sourcePlanSha256": "6a110391aa652137aeef98f93bc4b572e0ff7ac870eae2c09cae42a71bd92fae",
+  "editorialReviewSha256": "c1da33f43742cd293c1fa420aa042c169ad35154474673c60a202006557b922a",
+  "visualPlanSha256": "693471a7221eb22e59eb219b5c03d0be53e185f254af8583b90b0a96a71f27d4",
+  "readingAxes": {
+    "version": "bnoc-analysis-guide-1.0",
+    "guideSha256": "2cec53e5d7749ae288dc1410deab5221acf6eeff5577ce235ae0dc8d05b214ff",
+    "preservedCardsSha256": "91f0c9595a24348ba296c0924c153f6fe88507caf14288a234ae1db7b04b190c"
+  },
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-source-reader-1.3"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "89427b18c76ae6c10bd8ce58ffaa779dbd0cd475",
+    "originalSha256": "e1d5c25e9da6e0bb0e7fc2c4765d32ec2b0220adef536980bf7d12450f098d4b",
+    "revisedAt": "2026-10-19T11:41:25.338866+00:00",
+    "kinds": [
+      "design"
+    ]
+  }
+}
