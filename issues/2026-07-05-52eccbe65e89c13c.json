@@ -1,0 +1,26 @@
+{
+  "id": "2026-07-05-52eccbe65e89c13c",
+  "date": "2026-07-05",
+  "reference": "출애굽기23:14-17",
+  "service": "revision-e946739ee80fa541cee1",
+  "relativePath": "2026/07052026/exodus_23_14_17.html",
+  "manuscriptSha256": "566e5f38eaed9ebe37e5ee079bf43113070e924872a88893b217df52a7754565",
+  "passageSha256": "fe67ae5e186a81e4bb5a5ce9fe6868df0cc2db45c025194c8756a266deb3513e",
+  "htmlSha256": "a30328916858baabef7f978cb5c32d765ad2a54a300850a59ac0b88b3195c238",
+  "editorialReviewSha256": "6f85d53b97a9afd06e91e0212188f5672c15f9dd68335db0b8d424d34e21377e",
+  "visualPlanSha256": "43f9e37bbc8a6a1fa532074c7fe5aa8d040c1df024e12424b03873a76096256b",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "6c9f5ef549fe4fa18888d3f50502c212c40c184d",
+    "originalSha256": "2a64de0c07bf11068edcd6822c34d5b7ec3824e71ea98627424137a4993f7fcc",
+    "revisedAt": "2026-10-19T05:59:14.481750+00:00",
+    "kinds": [
+      "design",
+      "theology"
+    ]
+  }
+}
