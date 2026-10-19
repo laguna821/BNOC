@@ -1,0 +1,26 @@
+{
+  "id": "2026-06-28-c6b6477a8d00cd93",
+  "date": "2026-06-28",
+  "reference": "누가복음7:40-50",
+  "service": "revision-d77e50c2ea3a8c95d589",
+  "relativePath": "2026/06282026/luke_7_40_50_premium_card_guide.html",
+  "manuscriptSha256": "692d6cf077339eb47e6b6414c4168ed68caa4e715d66e1b62fc6d2173a39ec99",
+  "passageSha256": "0d389c40a534ff0974d0432dae180eae516eeda283a0e2d50cef24a7b1cc36f2",
+  "htmlSha256": "27fd6d1ae4f3214afbec6fd44ddc8f9d6e3a5ebcef109879d94b276ad2a1f54b",
+  "editorialReviewSha256": "78e11b3bb8f74cd912c5e3eb80694f42c3f4d52ab3aabcce7936a45d92ed9af5",
+  "visualPlanSha256": "e07682c5cc1afd613165b0f53a10777bb00eb0ee7dc87d368751454ab7a533c2",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "e113f3b65b8e80ca881976eee40d4aefb9c8c68f",
+    "originalSha256": "ec9e8d2524ea730cc18179452fa01180614398a5e038f02f8ed148fbbfd5d6c8",
+    "revisedAt": "2026-10-19T05:38:34.219325+00:00",
+    "kinds": [
+      "design",
+      "theology"
+    ]
+  }
+}
