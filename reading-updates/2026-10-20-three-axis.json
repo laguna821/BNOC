@@ -1,7 +1,7 @@
 {
   "version": "bnoc-analysis-guide-1.0",
   "date": "2026-10-20",
-  "scope": "Individually read expositions retain all original prose, media, scripts, notes and checklist identity. Add named orthodoxy/orthopraxy/application routes and passage-specific introductions. Articles39 and55 receive explicit new public-life application prose. Recent Luke56–58 are published through their own validated native revision runs.",
+  "scope": "All58 individually reread and published. Preserve authored exposition/media/storage identities; add passage-specific three-part reading routes. Native Luke revisions use validated production publishing.",
   "originalContract": "automation/skill/references/original-analysis-contract.md",
   "browserReview": {
     "tool": "Codex in-app browser2",
@@ -89,8 +89,8 @@
     }
   },
   "tests": {
-    "tests": 103,
-    "passed": 102,
+    "tests": 108,
+    "passed": 107,
     "skipped": 1
   },
   "items": [
@@ -344,18 +344,6 @@
         "version": "bnoc-analysis-guide-1.0",
         "guideSha256": "5baeabc726bf88ae5a15c53681351696c1c487d1214eef24db5efb873b390eab",
         "preservedCardsSha256": "dfa2cf472671a60af5cb7d556d02a7ea35f707b355546dc55b1070bd336d4165"
-      }
-    },
-    {
-      "n": 55,
-      "path": "2026/09202026/ezekiel_2_1_10_premium_guide.html",
-      "originalSha256": "36479d911e0f23679dea781db01f9bccf7d75644ba89849f4dcb1f5977c746db",
-      "htmlSha256": "11b9f3e094fab5d312475b9383dfe0c7bc4830a63fd229bcc48a56bca67849c3",
-      "bytes": 2302242,
-      "binding": {
-        "version": "bnoc-analysis-guide-1.0",
-        "guideSha256": "a9133a92c2a665935610ddb361ab600a32c9b1c99cb7110e9aa72eb46aa56864",
-        "preservedCardsSha256": "3b19efe32af3a328ca600eb60f73b67b7c651de11c9ca5b28b01badfba2a50e0"
       }
     },
     {
@@ -753,6 +741,61 @@
         "guideSha256": "1d8156618fd1cbe9491399a96f756269a7353494f5ccaf6fbc0794c224f03f55",
         "preservedCardsSha256": "f2e9c46e7acfd7e783a4dec1de6de35a9c57447fa035e7ac3e4404395dc5e824"
       }
+    },
+    {
+      "n": 55,
+      "path": "2026/09202026/ezekiel_2_1_10_premium_guide.html",
+      "originalSha256": "36479d911e0f23679dea781db01f9bccf7d75644ba89849f4dcb1f5977c746db",
+      "htmlSha256": "11b9f3e094fab5d312475b9383dfe0c7bc4830a63fd229bcc48a56bca67849c3",
+      "bytes": 2302242,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "a9133a92c2a665935610ddb361ab600a32c9b1c99cb7110e9aa72eb46aa56864",
+        "preservedCardsSha256": "3b19efe32af3a328ca600eb60f73b67b7c651de11c9ca5b28b01badfba2a50e0"
+      }
+    },
+    {
+      "n": 56,
+      "path": "2026/10042026/luke_9_51_56_premium_guide.html",
+      "originalSha256": "d4bc15a7670af946aa197ab2bc863f1ed4c6d6fe697931070bef1bed766e85b5",
+      "htmlSha256": "e7045e7992b1101158aa77cc384e9a6cf1511c2c7b9cd087649ee2050588d0df",
+      "bytes": 2411692,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "52a98c75e2656d575fbd55e01fef178eebc50091b466e9daffd22dda437bd13d",
+        "preservedCardsSha256": "f223793f7b6b6a6b125b8aef8d3f6dea5280de6ea5a4938069c824533f1472f8"
+      }
+    },
+    {
+      "n": 57,
+      "path": "2026/10112026/index.html",
+      "originalSha256": "0818e3fb625709e4a4ddf454c7c8afd333460e50813cfe4e3585a5ce6a82af6b",
+      "htmlSha256": "0d429ac72cc669f38215be3fca11d0a73be862ee67655bfed2b4a016f9aff120",
+      "bytes": 1511736,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "d3eed9bd61a7c1590d49ce10f342e45ad9473d363b313034b722ecc6ad1e3bda",
+        "preservedCardsSha256": "97239c5940e0a1b7f0de5c3b5ba5b08a2d23890f5f85ba0b0e34718288df0833"
+      }
+    },
+    {
+      "n": 58,
+      "path": "2026/10182026/luke_10_1_9_premium_guide.html",
+      "originalSha256": "e1d5c25e9da6e0bb0e7fc2c4765d32ec2b0220adef536980bf7d12450f098d4b",
+      "htmlSha256": "e07a5743708f80aae22ef153bcf25343c023c3826b53ae1f63a62c6794129ee9",
+      "bytes": 3464546,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "2cec53e5d7749ae288dc1410deab5221acf6eeff5577ce235ae0dc8d05b214ff",
+        "preservedCardsSha256": "91f0c9595a24348ba296c0924c153f6fe88507caf14288a234ae1db7b04b190c"
+      }
     }
-  ]
+  ],
+  "verification": {
+    "publicHtmlMatched": 58,
+    "hubAndSearchMatched": 58,
+    "nativeOriginalBundles": 3,
+    "readingGuides": 58,
+    "notes": "Actual browser/public verification and independent ZIP download/entry hashing; no physical-pagination or download-event claim."
+  }
 }

@@ -199,6 +199,20 @@ def archive_matches(item,expected,search=False):
     if kinds is not None and item.get('revisionKinds')!=kinds.split(','):return False
     return not search or ' '.join(' '.join(expected.words).split()) in item.get('search','')
 
+def successor_deployment(c,commit):
+    """A queued Pages run may be cancelled when a newer main deployment supersedes it."""
+    recent=json.loads(fetch('https://api.github.com/repos/laguna821/BNOC/actions/runs?per_page=20'))
+    candidates=[x for x in recent['workflow_runs'] if x.get('name')=='BNOC Pages (hub+feed)'
+                and x.get('status')=='completed' and x.get('conclusion')=='success'
+                and x.get('head_branch')=='main' and x.get('event') in ('push','workflow_dispatch')
+                and re.fullmatch(r'[0-9a-f]{40}',x.get('head_sha',''))]
+    if not candidates:return None
+    git(c['repo'],'fetch','origin','main')
+    for job in candidates:
+        check=subprocess.run(['git','merge-base','--is-ancestor',commit,job['head_sha']],cwd=c['repo'],capture_output=True)
+        if check.returncode==0:return job
+    return None
+
 def verify_deployment(c,path,run):
     commit=run.get('commit')
     if not commit:raise ValueError('No recorded commit')
@@ -207,7 +221,11 @@ def verify_deployment(c,path,run):
     if not jobs:return dict(status='waiting-for-workflow',commit=commit)
     job=jobs[0]
     if job['status']!='completed':return dict(status='deploying',workflow=job['html_url'])
-    if job['conclusion']!='success':raise ValueError('Deployment failed: '+job['html_url'])
+    if job['conclusion']=='cancelled':
+        successor=successor_deployment(c,commit)
+        if not successor:return dict(status='waiting-for-successor-deployment',workflow=job['html_url'],commit=commit)
+        job=successor
+    elif job['conclusion']!='success':raise ValueError('Deployment failed: '+job['html_url'])
     public_path=run.get('revision',{}).get('publicPath',run['relativePath'])
     url=c['site']+public_path;live=fetch(url)
     expected=(path/Path(run['relativePath']).name.rstrip('.')).read_bytes()
@@ -221,7 +239,7 @@ def verify_deployment(c,path,run):
         if item is None or not archive_matches(item,expected_text,search):
             return dict(status='waiting-for-live-archive',artifact=filename,workflow=job['html_url'])
     advance(c,path,run,'published');s=state(c);s['issues'][run['id']].update(url=url,commit=commit);save(c['root']/'state.json',s)
-    run['lease']=None;run['url']=url;save(path/'run.json',run)
+    run['lease']=None;run['url']=url;run['deploymentWorkflow']=job['html_url'];run['deploymentCommit']=job.get('head_sha',commit);save(path/'run.json',run)
     return dict(status='published',url=url,workflow=job['html_url'])
 
 def main():
