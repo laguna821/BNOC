@@ -1,0 +1,27 @@
+{
+  "id": "2026-05-17-62ff4ca3129821ee",
+  "date": "2026-05-17",
+  "reference": "누가복음 6:39-42",
+  "service": "revision-b3e0d4717dd8eddafbe2",
+  "relativePath": "2026/05172026/Luke_6_39-42_premium_orthodoxy_orthopraxy_guide.html",
+  "manuscriptSha256": "1ebdf2404e1856bce6839fb1ea417ebf1602f114ad283ae3a016e04caaa2ad87",
+  "passageSha256": "b0d5b6b7f857a3955c750dd19f6e17bb2890fd548528ef7b9bd774d841a44e51",
+  "htmlSha256": "b3cba038ee107561205e701d86503d407f658cba93f92b1ff3bd45de1bf3f924",
+  "editorialReviewSha256": "6290c09b5b2c1325c5a85d02438312a87568aaa0cdf4f29d3158710fbe05b61e",
+  "visualPlanSha256": "acfe399e6ebf3ada77b1e4f5c522dc64862caca936fe7dc7af49118a2269aa5a",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "3f86f6bb5a52fe894df8f875081ae39001dc9d99",
+    "originalSha256": "e1c1f57b7b17ec4f672be79898e73e55b8f382271c4767d96eca042230299d52",
+    "revisedAt": "2026-10-19T03:05:08.900080+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
