@@ -233,6 +233,8 @@ def render(path,run):
         licenses=''  # The reviewed source already embeds the full font licenses.
     else:
         names=('web/reader-fonts.css','automation/typography.css','automation/revision.css','automation/source_reader.css')
+        if plan['profile'] in ('luke-9-51-native-v1','luke-9-57-native-v1'):
+            names+=('automation/editorial_roles.css','automation/luke_shared_roles.css')
         licenses=(ROOT/'web/assets/FONT-LICENSES.txt').read_text(encoding='utf-8').replace('*/','* /')
     css='\n'.join((ROOT/name).read_text(encoding='utf-8') for name in names)
     logo=(ROOT/'web/logo.svg').read_text(encoding='utf-8')
@@ -295,7 +297,11 @@ def audit_html(doc):
 
 def audit_review(path,run):
     doc,binding=render(path,run)
+    if (Path(path)/'reading-axes.json').is_file():
+        import reading_axes
+        doc,binding=reading_axes.finalize(doc,binding,path)
     report=read(Path(path)/'review.json')
+    if 'readingAxes' in binding:reading_axes.verify_review(report,binding)
     output=(Path(path)/Path(run['relativePath']).name.rstrip('.')).read_bytes()
     if digest(output)!=binding['htmlSha256']:raise ValueError('Native HTML changed; render again')
     for k in ('originalSha256','passageSha256','htmlSha256','contentSha256','sourcePlanSha256','editorialReviewSha256','visualPlanSha256'):
@@ -309,4 +315,5 @@ def audit_review(path,run):
     checked=read(Path(path)/'source-exegesis-review.json')['checkedSources']
     if set(report.get('checkedSourceIds',[]))!={s['id'] for s in checked}:raise ValueError('Native checked-source scope mismatch')
     # The publisher owns issue/date fields; an audit returns only immutable evidence bindings.
-    return {k:binding[k] for k in ('originalSha256','passageSha256','htmlSha256','contentSha256','sourcePlanSha256','editorialReviewSha256','visualPlanSha256')}
+    keys=('originalSha256','passageSha256','htmlSha256','contentSha256','sourcePlanSha256','editorialReviewSha256','visualPlanSha256','readingAxes')
+    return {k:binding[k] for k in keys if k in binding}

@@ -1,0 +1,102 @@
+/* SameTone editorial hierarchy. Screen-only; original print rules remain authoritative. */
+@media screen {
+:root{
+ --size-display:48px;--size-section:30px;--size-card:calc(var(--body-size)*1.277778);
+ --size-subheading:calc(var(--body-size)*1.111111);--size-body:var(--body-size);
+ --size-table:calc(var(--body-size)*.888889);--size-caption:calc(var(--body-size)*.777778);
+ --size-ui:14px;--weight-display:800;--weight-heading:700;--weight-emphasis:600;--weight-medium:500;--weight-body:400;
+ --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--space-16:64px;
+ --prose-pad:32px;
+}
+html[data-theme="light"]{--text:#202B3A;--strong:var(--text);--italic:var(--text);--h3:var(--ink);--h4:var(--ink)}
+html[data-theme="dark"]{--text:#D7D7DC;--strong:var(--text);--italic:var(--text);--h3:#E9E9ED;--h4:#E9E9ED}
+body{font-size:var(--size-body);font-weight:var(--weight-body);line-height:1.85;letter-spacing:-.01em}
+h1,h2,h3,h4,.card-title{line-height:1.4;letter-spacing:-.03em}
+strong,b{font-weight:var(--weight-emphasis);color:inherit}
+em,i{color:inherit}
+.hero h1{font-size:var(--size-display);font-weight:var(--weight-display);line-height:1.35;margin:0 0 24px}
+.chapter-head h2{font-size:var(--size-section);font-weight:var(--weight-heading);line-height:1.4}
+.card-title{font-size:var(--size-card);font-weight:var(--weight-heading);line-height:1.45;color:var(--h3)}
+.prose h3{font-size:var(--size-subheading);font-weight:600;line-height:1.5;margin:32px 0 12px}
+.prose h4{font-size:var(--size-body);font-weight:600;line-height:1.5;margin:24px 0 12px}
+.prose h3:first-child,.prose h4:first-child{margin-top:0}
+.prose,.brief,.subdetails>div,.prayer>p,.journal textarea{font-size:var(--size-body);font-weight:400;line-height:1.85}
+.prose{--prose-pad:32px;padding:32px var(--prose-pad)}
+.brief{padding:24px 32px}
+.prose p{margin-bottom:1.1em}
+.prose p:last-child{margin-bottom:0}
+.prose li{margin-bottom:.65em}
+.article-column{max-width:800px;width:100%}
+.chapter,body.summary-mode .chapter{margin-top:64px}
+.chapter-head{gap:16px;padding:0 0 24px}
+.chapter-num{font-size:40px;font-weight:200;line-height:1.2;color:var(--muted);letter-spacing:-.03em}
+.study-card{margin-bottom:24px}
+.study-card>summary{padding:24px var(--prose-pad);gap:12px}
+.card-no,.verse-no{font-size:13px;font-weight:500;color:var(--muted);line-height:1.5;letter-spacing:0}
+.verse-badge,.eyebrow,.sidebar-title,.figure-label,.figure-kicker,.callout-label{font-size:13px;font-weight:600;line-height:1.5;letter-spacing:0}
+.verse-badge{color:var(--muted);background:var(--paper-soft);margin-bottom:4px}
+.chapter-head p,.hero-desc{font-size:var(--size-table);font-weight:400;line-height:1.8}
+.hero-desc{margin-bottom:24px}
+.scripture-panel>summary{font-size:var(--size-card);font-weight:700;line-height:1.45;padding:24px var(--prose-pad)}
+.scripture-text{padding:8px var(--prose-pad) 32px;font-size:var(--size-subheading);font-weight:500;line-height:1.9}
+.hero-quote,.pullquote p,.closing-text p,.page-footer .motto{font-size:var(--size-subheading);font-weight:500;line-height:1.85;letter-spacing:-.01em;color:var(--ink)}
+.pullquote{padding:24px;margin:24px 0}
+.hero-quote cite,.pullquote cite{font-size:var(--size-caption);font-weight:400;line-height:1.7;color:var(--muted);letter-spacing:0}
+.callout,.greek-block,.prayer-box{padding:24px;margin:24px 0}
+.callout p,.comparison p,.verse-flow p,.response-steps p,.misread-grid p,.check-item small,.question-list p,.evidence-key p{font-size:var(--size-body);font-weight:400;line-height:1.85;color:var(--text)}
+.callout-label{color:var(--ink);margin-bottom:12px}
+.prose .references,.source-list p,.source-meta,.source-domain,.source-note,.small-note,.scripture-credit,
+.hero-art figcaption,.inline-figure figcaption,.scene-figure figcaption,.chapter-art figcaption,.closing-art figcaption,
+.greek-block small,.check-status,.page-footer p,.page-footer .art-note{font-size:var(--size-caption);font-weight:400;line-height:1.75;color:var(--muted)}
+.hero-art figcaption b{font-size:inherit;color:inherit;font-weight:600}
+.prose>figure.inline-figure,.prose>figure.scene-figure,.prose>figure.chapter-art,.prose>figure.closing-art{margin-top:24px;margin-bottom:24px}
+.prose>figure:first-child{margin-top:-32px}
+.inline-figure figcaption,.scene-figure figcaption,.chapter-art figcaption,.closing-art figcaption{padding:16px var(--prose-pad)}
+.prose table,.prose table td,.prose .bridge-table td{font-size:var(--size-table);font-weight:400;line-height:1.8}
+.prose table th,.prose table th[scope="row"],.prose table td:first-child{font-size:var(--size-table);font-weight:600;color:var(--ink)}
+.prose .bridge-table .concept{font-size:var(--size-body);font-weight:600;color:var(--ink)}
+.prose table small,.prose table caption,.prose table th i,.prose table td i,.bridge-table td:before,.prose table:not(.bridge-table) td:before{font-size:var(--size-caption);font-weight:400;line-height:1.75;color:var(--muted)}
+.prose table caption{margin-bottom:12px}
+.prose table [lang="grc"],.prose table [lang="he"],.lex-table td [lang="grc"],.bridge-table [lang="grc"],.bridge-table [lang="he"]{font-size:var(--size-subheading);font-weight:500;line-height:1.85;letter-spacing:0;color:var(--ink)}
+.greek-block>span{font-size:var(--size-card);font-weight:500;color:var(--ink);line-height:1.85}
+.prose [lang="he"]{font-size:1.1em}
+.prose table [lang="he"]{font-size:var(--size-subheading)}
+.prose [lang="grc"],.prose [lang="he"]{letter-spacing:0}
+.brand strong{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-.01em}
+.brand small{font-size:11px;line-height:1.5;letter-spacing:0}
+.edition-number{font-size:28px;font-weight:300;line-height:1;letter-spacing:0}
+.edition-number small,.edition-text,.series-label,.reading-route small{font-size:13px;font-weight:400;line-height:1.6}
+.edition-text strong,.series-label b,.reading-route strong{font-size:14px;font-weight:600;line-height:1.6}
+.reading-route li{font-size:14px;line-height:1.6}
+.route-dot{font-size:14px;font-weight:500;line-height:1}
+.button,.icon-button,.hero-actions .button,.sidebar-note .button,.note-actions .button,.tool,.side-nav a,.text-button,.dialog-link{font-size:var(--size-ui);font-weight:500;line-height:1.5;letter-spacing:0}
+.side-nav a[aria-current="location"],.tool[aria-pressed="true"]{font-weight:600}
+.side-nav a span{font-size:12px;line-height:1.5;color:var(--muted)}
+.sidebar-note,.read-progress,.read-progress b{font-size:13px;line-height:1.7}
+.font-symbol{font-size:17px;font-weight:600}.font-symbol small{font-size:11px}
+.dialog-title-row h2{font-size:24px;font-weight:700;line-height:1.4}
+.toc-search{font-size:16px;line-height:1.5}
+.dialog-link .toc-group,#searchCount,#emptySearch{font-size:13px;line-height:1.6}
+.prose .cite,.ref{font-size:13px;font-weight:500;line-height:1.5;letter-spacing:0}
+.source-title,.journal label,.check-item strong,.evidence-key b,.subdetails summary{font-size:var(--size-body);font-weight:600;line-height:1.6;color:var(--ink)}
+.source-list a[href^="http"]{font-size:var(--size-table);font-weight:500}
+.verse-flow>div>span,.certainty{font-size:13px;line-height:1.6;font-weight:500}
+.response-steps>section>span,.question-list>section>span{font-size:var(--size-subheading);font-weight:300;line-height:1.5;color:var(--muted)}
+.toast{font-size:14px;line-height:1.5}
+small{font-size:var(--size-caption)}
+@media(max-width:820px){.article-column{margin:auto}}
+@media(max-width:600px){
+ :root{--size-display:36px;--size-section:26px;--size-card:calc(var(--body-size)*1.166667);--prose-pad:20px;--page-pad:16px}
+ .chapter-num{font-size:32px}.chapter-head{gap:12px}
+ .study-card>summary{grid-template-columns:20px minmax(0,1fr) 24px;padding:24px 20px;gap:8px}
+ .prose{--prose-pad:20px;padding:24px var(--prose-pad)}.prose>figure:first-child{margin-top:-24px}
+ .brief{padding:24px 20px}
+ .scripture-panel>summary{padding:24px 20px}
+ .prose table:not(.bridge-table) tbody th,.prose table:not(.bridge-table) tbody td{font-size:var(--size-table);line-height:1.8}
+ .prose .study-table tbody th[scope="row"] [lang="grc"],.prose .study-table tbody td [lang="he"]{font-size:var(--size-subheading)}
+ .tool{font-size:13px;gap:4px}
+ .hero-actions .button{padding:12px}
+ .callout,.greek-block,.pullquote,.prayer-box{padding:16px}
+}
+@media(max-width:380px){.brand small{display:none}.brand-symbol{display:none}}
+}

@@ -1,0 +1,12 @@
+/* Shared reading routes; article exposition and illustration layout remain authored. */
+.analysis-guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:24px 0 32px;padding:20px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);font:400 14px/1.7 var(--sans)}
+.analysis-guide-title{grid-column:1/-1;margin:0 0 4px;font-size:13px;font-weight:600;color:var(--muted)}
+.analysis-guide a{display:block;min-width:0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--accent-soft,var(--paper-soft));color:var(--ink);font-size:14px;font-weight:600;text-decoration:none;overflow-wrap:anywhere}
+.analysis-guide a:focus-visible{outline:3px solid var(--accent,var(--green));outline-offset:3px}
+.analysis-landmark{margin:0 0 24px;padding-bottom:20px;border-bottom:1px solid var(--line);scroll-margin-top:110px}
+.analysis-landmark h3{font-size:calc(var(--body-size,18px)*20/18)!important;font-weight:700!important;line-height:1.5!important;margin:0 0 12px!important;color:var(--ink)!important}
+.analysis-landmark p{font:400 var(--body-size,18px)/1.85 var(--sans)!important;color:var(--text);margin:0!important}
+.analysis-landmark p+p{margin-top:12px!important}
+.analysis-guide-dialog{grid-template-columns:1fr;margin:12px 0;padding:12px}
+@media screen and (max-width:650px){.analysis-guide{grid-template-columns:1fr;padding:16px}.analysis-guide a{padding:12px 14px}.analysis-landmark{scroll-margin-top:90px}}
+@media print{.analysis-guide{display:none!important}.analysis-landmark h3{font-size:12pt!important}.analysis-landmark p{font-size:10.5pt!important}.analysis-landmark{break-inside:avoid}}

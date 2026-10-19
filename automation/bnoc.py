@@ -120,6 +120,10 @@ def audit_review(path,run):
         if report.get(key)!=evidence[key]:raise ValueError('Stale final review: '+key)
         binding[key]=evidence[key]
     rebuilt,_=render.render(manuscript,passage,path,run['id'],output.name)
+    if (path/'reading-axes.json').is_file():
+        import reading_axes
+        rebuilt,axis_meta=reading_axes.finalize(rebuilt,{},path)
+        reading_axes.verify_review(report,axis_meta)
     if run.get('revision'):
         if manuscript.get('revision')!=revision.public_metadata(run['revision']):raise ValueError('Revision metadata mismatch')
         if report.get('preservedIntent')!=run['revision']['intent']:raise ValueError('Review must confirm preserved editorial intent')
@@ -300,8 +304,11 @@ def main():
                     advance(c,path,run,'written')  # derivative inspection is now pending
                 result['report']=str(path/'image-optimization.json')
             elif command=='render':
+                import reading_axes
+                if not (path/'reading-axes.json').is_file():raise ValueError('Original three-part analysis contract: reading-axes.json required')
                 if source_reader.enabled(path):
                     doc,meta=source_reader.render(path,run);name=Path(run['relativePath']).name.rstrip('.')
+                    doc,meta=reading_axes.finalize(doc,meta,path)
                     run['versions'].update(skill='1.2',template=meta['templateVersion'])
                     (path/name).write_text(doc,encoding='utf-8',newline='\n');save(path/'render.json',dict(meta,file=name));advance(c,path,run,'rendered')
                     result=dict(status='rendered',file=str(path/name),**meta)
@@ -313,11 +320,13 @@ def main():
                 if run.get('revision',{}).get('kinds') in (['design'],['scripture']):
                     if args.print_proof:raise ValueError('Design-only revision retains its original print rules; inspect that document in print preview instead of applying the new-reader proof')
                     doc,meta=revision.render_design(path,run);name=Path(run['relativePath']).name.rstrip('.')
+                    doc,meta=reading_axes.finalize(doc,meta,path)
                     (path/name).write_text(doc,encoding='utf-8',newline='\n');save(path/'render.json',dict(meta,file=name));advance(c,path,run,'rendered')
                     print(json.dumps(dict(status='rendered',file=str(path/name),**meta),ensure_ascii=False));return
                 m=load(path/'manuscript.json');p=load(path/'passage.json');name=Path(run['relativePath']).name.rstrip('.')
                 if m.get('date')!=run['date']:raise ValueError('Manuscript date differs from issue')
                 doc,meta=render.render(m,p,path,run['id'],name)
+                doc,meta=reading_axes.finalize(doc,meta,path)
                 run['versions'].update(skill='1.2',template=meta['templateVersion'])
                 (path/name).write_text(doc,encoding='utf-8',newline='\n');save(path/'render.json',dict(meta,htmlSha256=digest(doc.encode()),file=name));advance(c,path,run,'rendered');result=dict(status='rendered',file=str(path/name),**meta)
                 if args.print_proof:

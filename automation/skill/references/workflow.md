@@ -35,6 +35,8 @@ bnoc.py promote RUN_ID --token TOKEN
 
 각 run 폴더에 passage.json, research.md, manuscript.json, editorial-review.json, visual-plan.json, 필요한 그림, review.json을 둔다. content-first.md에 따라 글부터 검토한다. 실제 모델 ID를 기록하되 런타임이 공개하지 않은 세부 버전은 추정하지 않는다. 각 단계 완료 시 checkpoint로 파일 경로/확인 내용을 남긴다. written은 실제 원고 검토, illustrated는 원고에 따른 시각 결정의 이행을 검사한다. illustrated라는 기존 상태 이름은 텍스트만인 구성의 검증도 포함한다.
 
+render 전에 reading-axes.json을 직접 작성한다. [원래 분석 규격](original-analysis-contract.md)에 따라 orthodoxy/orthopraxy/application 각각의 실제 cardId·정확한 quote·공개 전환 설명 introduction·개별 판단 rationale을 적고 model/reviewedAt/blockingFindings를 기록한다. applicationScopes의 personal/community/public에도 실제 문단의 cardId·quote를 각각 연결한다. 세 축을 같은 카드 하나로 합치지 않는다. 코드가 문장 존재를 확인하는 것이 해석 검토를 대신하지 않는다. native 익명 카드는 기존 순서의 @ordinal:NN을 내부 결합에만 쓰며 HTML ID나 기존 메모 공간을 바꾸지 않는다. 세 축의 공통 목차와 실제 해설의 연결을 적용한 뒤 원고·그림·스크립트·메모의 원래 바이트를 역변환으로 확인한다. final review의 readingAxes 결합과 checks.readingAxes에는 실제 세 축의 내용 및 링크·접힌/요약 상태 이동 검토를 적는다.
+
 ```text
 bnoc.py checkpoint RUN_ID --token TOKEN --stage researched --evidence "research.md의 출처와 주요 논쟁 확인"
 bnoc.py checkpoint RUN_ID --token TOKEN --stage written --evidence "원고를 읽고 본문 근거와 해석의 한계를 검토"
@@ -60,6 +62,14 @@ verify의 published 결과는 lease를 자동 해제한다. 이때 release를 �
 같은 주소의 과거 버전이 남을 수 있으므로, verify는 공개 HTML 외에도 index.json과 search.json의 제목·설명·개정 시각·개정 종류와 검색 본문 전체가 새 파일과 일치하는지 확인한다. waiting-for-live-archive이면 배포/캐시 반영을 기다린 뒤 같은 run으로 검증한다. 브라우저에서도 검색 버튼을 실행해 새 제목의 결과를 확인한다.
 
 ## 실패
+
+세 관점 바로가기는 본문 위 안내와 기존 목차·검색 대화상자에 함께 표시한다. 요약 보기나 전체 접기 상태에서도 바로가기를 실행하면 해당 해설을 펼치고 키보드 초점을 이동해야 한다. 공적 적용이 실제로 부족하여 새 문단을 쓴 경우 applicationScopes의 해당 cardId는 @guide:application으로 기록해 기존 원고에 있던 설명과 구별할 수 있다. 새로 쓴 문장도 본문과 자료에 근거해 직접 검토하고, 단락 구분은 introduction의 빈 줄로 표시한다.
+
+reading-axes.json의 최소 형태는 다음과 같다. 아래 예시는 형식 설명이며 해석·검토 완료 자료로 복제하지 않는다.
+
+```json
+{"model":"실제 사용 모델","reviewedAt":"실제 검토 시각","blockingFindings":[],"axes":{"orthodoxy":{"cardId":"실제 카드 ID","quote":"그 카드에 있는 정확한 문장","introduction":"이 본문의 정론 해석으로 들어가는 연결 문단","rationale":"직접 읽고 선택하거나 보강한 이유"},"orthopraxy":{"cardId":"다른 실제 카드 ID","quote":"실제 문장","introduction":"이 본문의 정행 해석 연결 문단","rationale":"개별 판단"},"application":{"cardId":"또 다른 실제 카드 ID","quote":"실제 문장","introduction":"개인·공동체·공적 적용으로 이어지는 설명","rationale":"세 적용 범위를 읽고 판단한 근거"}},"applicationScopes":{"personal":{"cardId":"실제 카드 ID","quote":"개인 적용 문장"},"community":{"cardId":"실제 카드 ID","quote":"공동체 적용 문장"},"public":{"cardId":"실제 카드 ID","quote":"공적 적용 문장"}}}
+```
 
 ```text
 bnoc.py fail RUN_ID --token TOKEN --reason "정확한 실패 원인" --changed-evidence "다음에 시험할 변경된 조건"

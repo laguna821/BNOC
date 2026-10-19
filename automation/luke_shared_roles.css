@@ -1,0 +1,28 @@
+/* Native Luke articles share the reviewed 10:1–9 type roles; narrative layout stays authored. */
+@media screen{
+body:is([data-bnoc-source-profile="luke-9-51-native-v1"],[data-bnoc-source-profile="luke-9-57-native-v1"]){font-family:var(--sans);font-size:var(--body-size);line-height:1.85;letter-spacing:-.01em}
+body:is([data-bnoc-source-profile="luke-9-51-native-v1"],[data-bnoc-source-profile="luke-9-57-native-v1"]) :is(h1,h2,h3,h4,.card-title){font-family:var(--sans)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"]{--body-size:var(--size,18px);--size-body:var(--body-size);--size-card:calc(var(--body-size)*1.277778);--size-subheading:calc(var(--body-size)*1.111111);--size-table:calc(var(--body-size)*.888889);--size-caption:calc(var(--body-size)*.777778)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] h1{font-size:var(--size-display);font-weight:800!important;line-height:1.35;color:var(--h1)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .chapter-head h2{font-size:var(--size-section);font-weight:700;line-height:1.4;color:var(--h2)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .study-card>summary>span:not(.card-no){font-size:var(--size-card);font-weight:700;line-height:1.45;color:var(--h3)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .study-card>summary>h3{font-size:var(--size-card);font-weight:700;line-height:1.45;color:var(--h3)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .art figcaption{font-size:var(--size-caption);line-height:1.75;color:var(--muted)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] :is(.head-inner,.toolbar){background:var(--header);color:var(--text)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .brief{padding:24px 32px;font-size:var(--body-size);line-height:1.85;background:var(--paper-soft)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .lex :is(td,th){font-size:var(--size-table);line-height:1.8}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .lex :is([lang=grc],[lang=he]){font-size:var(--size-subheading);font-weight:500;line-height:1.85}
+body[data-bnoc-source-profile="luke-9-51-native-v1"] :is(.card-no,.verse-no){font-size:13px;font-weight:500}
+body:is([data-bnoc-source-profile="luke-9-51-native-v1"],[data-bnoc-source-profile="luke-9-57-native-v1"]) :is(.tool,.button,.icon-button){font-size:14px;font-weight:500;line-height:1.5}
+}
+@media screen and (max-width:650px){
+body[data-bnoc-source-profile="luke-9-51-native-v1"] :is(.lex-table,.bridge-table){display:block;width:100%;max-width:100%;min-width:0}
+body[data-bnoc-source-profile="luke-9-51-native-v1"] :is(.lex-table,.bridge-table) :is(tbody,tr,td){display:block;width:100%;max-width:100%;min-width:0}
+body[data-bnoc-source-profile="luke-9-51-native-v1"] :is(.lex-table,.bridge-table) td{padding:16px;border-bottom:1px solid var(--line)}
+body[data-bnoc-source-profile="luke-9-51-native-v1"] :is(.lex-table,.bridge-table) td::before{display:block;position:static;direction:ltr;text-align:left;margin:0 0 7px;font-size:calc(var(--body-size)*14/18);line-height:1.75;color:var(--muted)}
+body[data-bnoc-source-profile="luke-9-51-native-v1"] :is(.lex-table,.bridge-table) caption:not(.sr-only){display:block;max-width:100%;width:100%}
+body[data-bnoc-source-profile="luke-9-57-native-v1"]{--size-card:calc(var(--body-size)*1.166667)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .brief{padding:24px 20px}
+body:is([data-bnoc-source-profile="luke-9-51-native-v1"],[data-bnoc-source-profile="luke-9-57-native-v1"]) .tool{font-size:13px}
+}
+@media screen and (max-width:600px){body[data-bnoc-source-profile="luke-9-57-native-v1"] .study-card>summary{grid-template-columns:20px minmax(0,1fr) 12px;padding:24px 20px;gap:8px}}

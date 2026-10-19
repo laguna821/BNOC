@@ -113,6 +113,10 @@ def render_design(path, run):
 def audit_design(path, run):
     report=json.loads((path/'review.json').read_text(encoding='utf-8'))
     rebuilt,binding=render_design(path,run)
+    if (path/'reading-axes.json').is_file():
+        import reading_axes
+        rebuilt,binding=reading_axes.finalize(rebuilt,binding,path)
+        reading_axes.verify_review(report,binding)
     output=(path/PurePosixPath(run['relativePath']).name.rstrip('.')).read_bytes()
     if digest(output)!=binding['htmlSha256']:raise ValueError('Design output changed; render and review again')
     for k,v in binding.items():

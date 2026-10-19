@@ -1,0 +1,758 @@
+{
+  "version": "bnoc-analysis-guide-1.0",
+  "date": "2026-10-20",
+  "scope": "Individually read expositions retain all original prose, media, scripts, notes and checklist identity. Add named orthodoxy/orthopraxy/application routes and passage-specific introductions. Articles39 and55 receive explicit new public-life application prose. Recent Luke56–58 are published through their own validated native revision runs.",
+  "originalContract": "automation/skill/references/original-analysis-contract.md",
+  "browserReview": {
+    "tool": "Codex in-app browser2",
+    "navigation": {
+      "articles": 58,
+      "viewport": 390,
+      "threeRoutes": true,
+      "summaryExit": true,
+      "targetRevealed": true,
+      "dialogCloses": true,
+      "scriptureAlwaysAside": true
+    },
+    "narrowTables": {
+      "articles": 58,
+      "viewport": 320,
+      "fontPx": 22,
+      "theme": "dark",
+      "tableCells": 1821,
+      "allCellsLabeled": true,
+      "clippedCells": 0,
+      "horizontalOverflow": 0
+    },
+    "typedSearch": {
+      "articles": 58,
+      "nativeAndGenericDialogs": true,
+      "resultAndFocusConfirmed": true,
+      "settledFrameRechecks": [
+        15,
+        19
+      ]
+    },
+    "nativeNotes": {
+      "articles": [
+        56,
+        57,
+        58
+      ],
+      "originalToRevised": true,
+      "testOnlyFields": 3,
+      "checkPreserved": true,
+      "ownTestValuesClearedAndReloaded": true
+    },
+    "print": {
+      "articles": [
+        56,
+        57,
+        58
+      ],
+      "method": "exact print CSS in local proof",
+      "allCardsOpen": [
+        43,
+        36,
+        26
+      ],
+      "whiteBackground": true,
+      "blackText": true,
+      "guideAndToolbarHidden": true,
+      "physicalPaginationVerified": false
+    },
+    "download": {
+      "eventObserved": false,
+      "limitation": "exportNotes56 clicked with own test values; browser did not expose completion event; no completed-download claim."
+    },
+    "lukeTypeRoles": {
+      "articles": [
+        56,
+        57,
+        58
+      ],
+      "mobile": {
+        "h1": 36,
+        "section": 26,
+        "card": 21,
+        "body": 18,
+        "caption": 14
+      },
+      "desktop": {
+        "h1": 48,
+        "section": 30,
+        "card": 23,
+        "body": 18,
+        "caption": 14
+      },
+      "lastCaptionSelectorConfirmed": ".art figcaption"
+    }
+  },
+  "tests": {
+    "tests": 103,
+    "passed": 102,
+    "skipped": 1
+  },
+  "items": [
+    {
+      "n": 1,
+      "path": "2025/08172025/Numbers-18_21_32.html",
+      "originalSha256": "e721203e91a03dacac3d6fb5ea0c949be70522f9e95704d3cb736585d05c869f",
+      "htmlSha256": "0e0723efef332b94db9a95fcc4f12f141f549f094e305c52bcf05afadb0b9819",
+      "bytes": 2572618,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "2ed53d021c0d782a312d2e71e152f5c6466d816b13e34683bfe560b1138571c3",
+        "preservedCardsSha256": "b22c682212cfcbc68ad43f3561bedc79a5a6e9000cde31ad04aa10cd934b3e47"
+      }
+    },
+    {
+      "n": 2,
+      "path": "2025/08242025/Numbers_19-1_10.html",
+      "originalSha256": "fb1099cf79ee62e267b176ada690afada00dc6797b744bd5e36440a988f979a6",
+      "htmlSha256": "a330a331c0bc3ec3c198f55aa90ae513974db012b25e81813e1654ef45d2f3f1",
+      "bytes": 2530966,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "5175ed47bf98d60e408ad5017f644d0cd217fa9355a149483e421761d0bb69f8",
+        "preservedCardsSha256": "09771835d45e9ad9b8f96116db7a0403932aace77c1fcc330b52b49e20c8554d"
+      }
+    },
+    {
+      "n": 3,
+      "path": "2025/08312025/deut_3_18-29.html",
+      "originalSha256": "559651c06eeaa6dfa6745c939824d275bb8aaf3447d5a33b83d83ab7ed027a77",
+      "htmlSha256": "db9124864429e800ab5f7e3cd67b5896363c9cd1bf76f69b2beb290a2998ff56",
+      "bytes": 2624334,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "1060af928e94136f63508f4b63336a829f1657481e61cbf3ffda8d47e27d234d",
+        "preservedCardsSha256": "2b0cc306347f0fc133f211ae3d23c960fd40462e2ce6157b988a6ca5d86c5a3c"
+      }
+    },
+    {
+      "n": 4,
+      "path": "2025/09072025/deut-6_10-19.html",
+      "originalSha256": "de46a24a98a81a722518be558702b1fbdc1cf1562a36dcece0d3c57c69b70b83",
+      "htmlSha256": "a1e19ee8ad7891dc8b56bf53d7456bd180acefb801a16cff85d832e60af75308",
+      "bytes": 2802433,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "a9bfae7c5ff968d83df73c6b16b281e43369f57822df6ef806031e0455175504",
+        "preservedCardsSha256": "4db04b7a0d160480492daadaf4468a4444de5896c765b883bc8d3048946f6328"
+      }
+    },
+    {
+      "n": 5,
+      "path": "2025/09142025/deut-6_12-19.html",
+      "originalSha256": "b178f8abcff31990dd1a35dc2b03b1f04861781e10947ae0d8e3463c6905c651",
+      "htmlSha256": "827693fbc35d74da8117963301ebdf5c451562677336264ab0278e303979efa9",
+      "bytes": 1891294,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "3dc597489582b86f4b1c84abaf9e7e2c39aefa1836560d4924ce63a38b1136ab",
+        "preservedCardsSha256": "76d0ef3efad334741d3635ceb8d5c5e43a8e245fd3690a97547f4c8825c2676f"
+      }
+    },
+    {
+      "n": 6,
+      "path": "2025/09212025/deut_28_45-48.html",
+      "originalSha256": "1745eb59195fdad79c778c5b468ee4d0bce1fff7b7d6978df5fc6b8707cff746",
+      "htmlSha256": "7572662f84fead3ecbca00291208bfcdf9480dd15f5b94c7438249eddd77e67a",
+      "bytes": 1799999,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "ca2463b30c3c56fc2a87cbb23d87ba151e2f10398ce1a5042892f30f208f6e1d",
+        "preservedCardsSha256": "0698c309180277e838eb73c2b980a76acd5af035e62a29f7a4607ef1a54eea71"
+      }
+    },
+    {
+      "n": 7,
+      "path": "2025/09282025/deut32_phil2.html",
+      "originalSha256": "b0c152d8d9e76d851089a203c3ce5e31612e8dac22b1e99e23aa24bef788da4f",
+      "htmlSha256": "9be0e1de3fc0d141183e18c2c6ba41429473b5893e8303545fc9e6f36042e590",
+      "bytes": 1964160,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "41ec67c83bd663dec29613a89a5fbccddc9dc3d4e4060d48557e534010f21863",
+        "preservedCardsSha256": "3302ab6ec3b2c73a40c48b5886e82a3f4e2a5c0c164288bd3d563e86505dbd09"
+      }
+    },
+    {
+      "n": 8,
+      "path": "2025/10052025/deut_33_29.html",
+      "originalSha256": "15c59890715741c5609c3241a7cdad0c14e2868a2f0d3b5030c0a0548531e31f",
+      "htmlSha256": "2ce33030d0996ba2f1c9f3ec235b88fcde158de7509f3bc27d2e4646a8b023b5",
+      "bytes": 2807196,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "2f4564631ba6cccdde76d694c65920f5468ca613ca55c769160edcdf83855ac2",
+        "preservedCardsSha256": "6487bbaffc4a5d26165eae5b94f82d1e2a819fbc3a81a195e98ee3019a367c3e"
+      }
+    },
+    {
+      "n": 9,
+      "path": "2025/10122005/luke_2_8_20.html",
+      "originalSha256": "44d7c975fbb332a2e4238136d7fa978d3ca6654fa75dce9f58d19d07c191e1dc",
+      "htmlSha256": "4032751035b61c68dfd4b034fc20f1fc81a38f8759099a833828af81a57b039f",
+      "bytes": 1979086,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "1687a35fb7b866c1310b32485cf9f8388c8be082bdd76d70a42c85f1d7ef53f5",
+        "preservedCardsSha256": "6dcec3f5b0c8d673cb4ccdf06fe8c8f7330f244a28ffe5fb955c1c68b2816595"
+      }
+    },
+    {
+      "n": 10,
+      "path": "2025/10192025/luke_4_1_13.html",
+      "originalSha256": "ee31b702f30a3d6cf47e92b6da660c08c57872fcabf5550d660f2b8053f448df",
+      "htmlSha256": "89e329c2b889230817641250d01e0bb0d8869e38b0c2af31b21fe6db48f429cc",
+      "bytes": 2738495,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "81843e4af6f9a9c444a98d5599eb441d98114c4c24ae811c81ad64a4bce96b49",
+        "preservedCardsSha256": "14cf1f8f9128d1745309981a3dc9223aad7ea275e655d696615c3c44a2bee28d"
+      }
+    },
+    {
+      "n": 11,
+      "path": "2025/10262025/luke_6_20_38.html",
+      "originalSha256": "d5aa155555915b5b9b8a9de55fe3df19e966c31ec887a5d7734a840a32e6f22c",
+      "htmlSha256": "ee34b153521ad6a27fdee9efa63187e7678d045e443291542bf1bc644730c9f5",
+      "bytes": 2751721,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "6798023e73e3590608d1bcdf86fbd96b16de9967868c627620901d5ec47cf934",
+        "preservedCardsSha256": "3cd9e973181e2aa9e5b526a22e6a8d6aff8ac991a9570ba68a06e30dece3184d"
+      }
+    },
+    {
+      "n": 12,
+      "path": "2025/11022025/luke_7_18_23.html",
+      "originalSha256": "9f237a566553e4512530b921923bd84f1abcfec37b227e218973e4334bf9ef01",
+      "htmlSha256": "9292c4f7e136f893f83d9e06f02335a47c928c851e6157f5e5dc0181e3aae8dc",
+      "bytes": 2161794,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "7ac40e31df7cb20c5c8b8bfc5f643d4c532a332860756d27c988adb1474b7237",
+        "preservedCardsSha256": "666bfee7169244bb99eec6b40bdd35125fa1b034f27b959be258bb876a6bc8da"
+      }
+    },
+    {
+      "n": 13,
+      "path": "2025/11092025/luke_9_1_6.html",
+      "originalSha256": "8b86876c03502ec65b8cfacae824c596226eb0f9f65c7c953de2a171589d24d3",
+      "htmlSha256": "0a202eebb1292f3318237df683dc69128030cedb412b91f8cc9fe59f0994a9d0",
+      "bytes": 2119083,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "b719fb79a6294c55f78321bcc1325d4cbc181bccacc5eb604f05d2fd60dd5992",
+        "preservedCardsSha256": "f78108a21cab7b4ce50f74e74ac68fae33c82ccd21122b3e2be035af63f028cd"
+      }
+    },
+    {
+      "n": 14,
+      "path": "2025/11162025/luke_10_25-37.html",
+      "originalSha256": "60c8b671fc8115aa94fba3599a83e27229c6b6caca5dede441bf423cea352944",
+      "htmlSha256": "8923a970a428f0a9265c2c7898d19deceb10049b6b2fdf462f7c4b26c13306c7",
+      "bytes": 2922699,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "c8d87c4808685f791edbf01ca25fb9325d69f06f28b805aae20d36241b1abad6",
+        "preservedCardsSha256": "6302028cdf096b3e185557d705d8d0a5fd2808a7c3206f4d4f02aad61b3d718e"
+      }
+    },
+    {
+      "n": 15,
+      "path": "2025/11232025/luke_11_45_54.html",
+      "originalSha256": "fd9e2fa7d1bc78e8ca79d9602b9e62850a90566904344b2ed368406b7d123c0f",
+      "htmlSha256": "15072e64b7c8da3c78e411bc4900102ab6d5b674b9b4e6f9b3e86eaf128a3f1a",
+      "bytes": 2021099,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "37090ef28d4bfe95c8396b421cc241e669af1e633bb4c379273664a7aab13c4b",
+        "preservedCardsSha256": "70f338db9b40458f5c9b95f3b055c1cf41f723364e1c752f45e69b676bd219b2"
+      }
+    },
+    {
+      "n": 16,
+      "path": "2025/11302025/John_13_34-35.html",
+      "originalSha256": "f726fdcbf99492089ad37a018a8bb45de01d47af9c5bcb0d5fafab71c661e14d",
+      "htmlSha256": "37fa8ada6c4943c1033930a92fc67cbe61273c263affa17b82507c6c0bdacc0e",
+      "bytes": 2104229,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "4bf004f6fd1beae8efa052192e1124b2d597d779720f0ea112934a96da6a1e47",
+        "preservedCardsSha256": "cbfccab66b62b477ae11280d29710d9734438d4755e2a30dea628b289901b3bb"
+      }
+    },
+    {
+      "n": 17,
+      "path": "2025/12072025/Acts_14_19-28.html",
+      "originalSha256": "b0c13bd62be9c11db727d577b391b2f456b19d915206449e463084c16fc667aa",
+      "htmlSha256": "a36f1c47491ade70bb306edc99c20d9e0e0fe1f479fa72e7f7961eab002cc110",
+      "bytes": 2186883,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "8a6732e6f304627020432b4e149c30536695d9c3141668bf5ba5cc233d4a4989",
+        "preservedCardsSha256": "9ab62ddbe17a5e511468ebdc374ad0e36b82aba9e023cedf3877d8d51da30ff4"
+      }
+    },
+    {
+      "n": 18,
+      "path": "2025/12142025/Ephesians_1_22-23.html",
+      "originalSha256": "754bb55497d62ac878ca420fb65c4f1bd792fd22694dcce774d5307862ef4343",
+      "htmlSha256": "f807ecbc32e341c16dda33d31318d2686508f56328cb3b54dc7232b995cbd928",
+      "bytes": 2134932,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "a97b26f2ab3f1706a65559c4a43fef8a3a202e931ff7b8764c92b691d6a7ca77",
+        "preservedCardsSha256": "b7998104c561f6dcce2187ede23d86182dfc75fad6c710e575e24627a781d660"
+      }
+    },
+    {
+      "n": 19,
+      "path": "2025/12212025/Colossians_3_15-17.html",
+      "originalSha256": "e5341b3c5ab7728c4a54c94bb42d0006d3e1caa03c3171dde8d4b79cd92bb7ec",
+      "htmlSha256": "a302e7ee542161d17421a391d91b194d9f716c9023888464f5948f97c9bd96b4",
+      "bytes": 1948526,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "d4c627d0faa1b8846cc7142c9eb6db89818e3d78b8e2c9a3b42b9301bb9c679e",
+        "preservedCardsSha256": "f63d1b6c3f42a817031456ca61816629aa535c6f7811147207ca44ace85d9f14"
+      }
+    },
+    {
+      "n": 20,
+      "path": "2025/12252025/Luke_2_8-14_v1.html",
+      "originalSha256": "1b967cfe3a05ecd3584fc9e384cef436b84f0f9c50b46e27d4243cf985b2d0f4",
+      "htmlSha256": "6fd4c618a70991fecb5f3c5b32a830e349dc15d08fddb52611480b99f85fbe91",
+      "bytes": 2559757,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "ae89790e0315ed22cd963d62a21097c8d3817bae5407ccc7faf5820ff0036c84",
+        "preservedCardsSha256": "ff278b7cdb5fe93d3cfc4b06f40eb2547d5e5102533bb45c89e89a89a7e9cae1"
+      }
+    },
+    {
+      "n": 21,
+      "path": "2025/12282025/Judges_2_20-23_v1.html",
+      "originalSha256": "a252614e7c9446b90dd4763f0b90d13576491d8727bc26a77059e50fb3daae89",
+      "htmlSha256": "51c2bf5591b47fe2b63a34b855e1ea9cf76b2bfc15250518b3b410fffbbd8058",
+      "bytes": 2161106,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "5baeabc726bf88ae5a15c53681351696c1c487d1214eef24db5efb873b390eab",
+        "preservedCardsSha256": "dfa2cf472671a60af5cb7d556d02a7ea35f707b355546dc55b1070bd336d4165"
+      }
+    },
+    {
+      "n": 55,
+      "path": "2026/09202026/ezekiel_2_1_10_premium_guide.html",
+      "originalSha256": "36479d911e0f23679dea781db01f9bccf7d75644ba89849f4dcb1f5977c746db",
+      "htmlSha256": "11b9f3e094fab5d312475b9383dfe0c7bc4830a63fd229bcc48a56bca67849c3",
+      "bytes": 2302242,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "a9133a92c2a665935610ddb361ab600a32c9b1c99cb7110e9aa72eb46aa56864",
+        "preservedCardsSha256": "3b19efe32af3a328ca600eb60f73b67b7c651de11c9ca5b28b01badfba2a50e0"
+      }
+    },
+    {
+      "n": 22,
+      "path": "2025/12312025/Isaiah_43_18-21_v1.html",
+      "originalSha256": "b8f132ac2c008bfc756d5324bcd7bc83803231f95ad4a503438ca80cf923e20c",
+      "htmlSha256": "a730e54c59900be75b59c1e06ba2067b4fec5d126a2054b4f9f61e314e3020e7",
+      "bytes": 2549909,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "19031ec9876b7e487765433cad1b66ac5831f1d9bab87b6490e0c1910e8b3e4a",
+        "preservedCardsSha256": "23e34ed69b2e5121a8d5c24273b05643d5e77eee5a26b46e663c521b7ab5347c"
+      }
+    },
+    {
+      "n": 23,
+      "path": "2026/01042026/Isaiah_43_19-21_AI_2026_NewYear_Edition_v3.html",
+      "originalSha256": "eec0b5660a9de0390e11b320c97c2444839565ad3cbdaa015d19c1ca4f05621a",
+      "htmlSha256": "6a77d9a578aa26273cd434b3dec43a8cdf25c1748d7d24d261f6b4d781cb8faa",
+      "bytes": 2904266,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "be15fc58e629ada156fc6d1f0f09e5b6142bfa764ab90ecac75ad5b491c60beb",
+        "preservedCardsSha256": "5ab0a10ea7d4fa469c9d4cd45ce10e6e7773414e76cd513c95fcff532437abe8"
+      }
+    },
+    {
+      "n": 24,
+      "path": "2026/01112026/hebrews_12_1-2.html",
+      "originalSha256": "df5ba3668ae89d6b8c5a1b09736b01cdcc23d21c61254a486f350957ad52eabf",
+      "htmlSha256": "614450928a5acb8b2edfa4b6130da378ea47acc95daf70d0663263d6836ffbe5",
+      "bytes": 1975110,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "91840044a50dffe93d84061f35b6e17c3bdb47c48d79ebd66fdbafd034274e04",
+        "preservedCardsSha256": "8d38d991f30d30363acb6f6a31fe52447d073cafa342c7a807161e59131071d7"
+      }
+    },
+    {
+      "n": 25,
+      "path": "2026/01182026/Romans_1_19-21_v3.html",
+      "originalSha256": "9e717ae4b20cbb46529ef074a7919ebd21b79ed8c4db323fabfe4a7159cb11da",
+      "htmlSha256": "38b73702f43c9d054830d8c67b29cfe8cefd1063317dc4b6eaaca5810db4c187",
+      "bytes": 2892137,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "4a93da9c3eb7f57ff4d7b5f7a0d16a2a06ff59e29d6b24e41b16f385daa51b2c",
+        "preservedCardsSha256": "cd2bfba5a3f15a2d64d0aec0d84037d60b0f772c42ccf4295b2944a1645c2789"
+      }
+    },
+    {
+      "n": 26,
+      "path": "2026/01252026/Luke_24_13-25_v1.html.",
+      "originalSha256": "e3c3ae36a0cf86f414125718903692cb488bbaa18f5812509b08eb4a88b27f08",
+      "htmlSha256": "1d064a71a8feeeb14a7ea169bbc6ebc68dbe595671b8cce57f47343c340c07e6",
+      "bytes": 3076739,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "dc64182eddef525ddcdc4a946865fb2c2ccbd489a5997595fb84336b8357630b",
+        "preservedCardsSha256": "048b674c318c5a617df4eee2d711caf7f0b895bee7166195f6c12403ac0d1c1e"
+      }
+    },
+    {
+      "n": 27,
+      "path": "2026/02012026/Mark_1_14-20_v1.html",
+      "originalSha256": "f47b3a058813446958ec6ee4ac005d8ee57902a4d0c94302524fe388943c8f30",
+      "htmlSha256": "91797dba1e7b62d120c0733f255b6649a692359f3ff4573a2a6ec8eddf146862",
+      "bytes": 2228455,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "5db8ac8f8c9bef0d99bd1a5b2bd89961e102126a93995c50f07fbbb442fa30fc",
+        "preservedCardsSha256": "e5a360aff9b69b8883ce88877f01a2ba2fd034194b5adc72826a91c7ba69f03d"
+      }
+    },
+    {
+      "n": 28,
+      "path": "2026/02082026/Genesis_12_10-13_v1.html",
+      "originalSha256": "560b52b21d6c08e9a577a0d4208e1fb54bf33698e9796a85b18aa4c6422da7d9",
+      "htmlSha256": "5bce770db06b2279129f69110c949292b3de90d11e2b7c119e6bf3c4478ccaf0",
+      "bytes": 2261179,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "25ed37abb93afb0ea1d0f36a45d26a107622fed50cb28c2da823b99d897b9697",
+        "preservedCardsSha256": "876083c25ffa84f635a1641ea09069c5d658b028eb5781ad98771448cb06564e"
+      }
+    },
+    {
+      "n": 29,
+      "path": "2026/02152026/Genesis_17_1-2_v1.html",
+      "originalSha256": "adde352af1348bf15d72a965307ea4a33a568fceccf2c4f2a9eabddc80374136",
+      "htmlSha256": "f3ee215af1edd340978101861634cb601327b1888c08c57235f75e93f6fbaf00",
+      "bytes": 2106801,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "fb911ae9a7527a4a421ff47d5d51882a106c8a1fc69e47c5d7f1c035fdefd4fd",
+        "preservedCardsSha256": "72fbdbfa530225f32e888333b5d0408e15d50e1e8a450db4f037bc438e33f7ff"
+      }
+    },
+    {
+      "n": 30,
+      "path": "2026/02222026/Luke_4_38-39_v1.html",
+      "originalSha256": "403b94ca010b2497bd480951ad3ad3194bd4881bb4a539a6e6efa4bd8882c687",
+      "htmlSha256": "3bdf54df7a43f130e1910beb48787f6bfd76106d8578c7b9b4a65c6de3817cc7",
+      "bytes": 2424717,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "674a4b14ec8f8b8884c590139a8f4ac93cd1109b618675c3c95eb2771bfa7e2e",
+        "preservedCardsSha256": "cc731d987f0e0293fc1227bfcdcf047cf57994dfe03ea994c011125324a46a2c"
+      }
+    },
+    {
+      "n": 31,
+      "path": "2026/03012026/Luke_5_1-11_v1.html",
+      "originalSha256": "26b08db8f0ddb2d241f344941b5409afc68087f28d71e2dd057775b94f6a2d53",
+      "htmlSha256": "35d7a11d5bbc142083b76778ff979ccba706193b924b15bf6576595140522973",
+      "bytes": 2983319,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "df3901e2ff9c94a93998648ba60e82da773bed711a462863560557e526b37ddb",
+        "preservedCardsSha256": "a1b0e16bdfa2f6f67a7b478d8aeee2d5b6f79aa84e6be78ce3047a7f3ca19cad"
+      }
+    },
+    {
+      "n": 32,
+      "path": "2026/03082026/Luke_5_12-16_v1.html",
+      "originalSha256": "391afe61105e153adc1757f73cfe65094c2f35e3f2dd111eaab01ccf1baa13f3",
+      "htmlSha256": "5b0a2c9c9fe00fa1d581e48f4c28d8f72f7e2055dd6569b376ce281a8a9f1a47",
+      "bytes": 2840986,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "ce62720808254b2e40e5a0b0ced444cb941f7081f61dd52a7d6e50e50e4dd1a5",
+        "preservedCardsSha256": "b3bb80809f32c14ac60e2ecfa2f3fa2702210b7b1b5c7f76fe81e46eb1d525dd"
+      }
+    },
+    {
+      "n": 33,
+      "path": "2026/03152026/Luke_5_17-26_template.html",
+      "originalSha256": "37bcdb472e7ea24807136c24fdd6340a7a4e64af20798f6f62da55ebf7a3e8c5",
+      "htmlSha256": "9deefe8c264b9b3a3c01fcc32aa87495f0dc40780a38378a8f164d7bff212f0d",
+      "bytes": 2843307,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "22485265011839bfa7978ffc947b2b630e4905cf3d79a3899dade0d6b13ada1b",
+        "preservedCardsSha256": "1a8828f63624daedfe72fc7c0f963b2e839fe924e037bc6431f6007c51ec8e1e"
+      }
+    },
+    {
+      "n": 34,
+      "path": "2026/03222026/Luke_5_27-32_general_believer_guide.html",
+      "originalSha256": "8bc05abd8dba8263b81ce7db54345b19173975c814c0d4e816d4cfd17a6711ce",
+      "htmlSha256": "e9a59f4367fe928ceaadce078d6c629564cd18b955d87dc4356b3bee0e531e76",
+      "bytes": 2694107,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "0bea19a4160ff18d58535a57e2a35e7ecbad3931fe80255d74245b99eb3821f0",
+        "preservedCardsSha256": "353ea5d7ecc56d7c50b4754a9279fdf503cd4b178ba91bad5920c7797a3c5dae"
+      }
+    },
+    {
+      "n": 35,
+      "path": "2026/03292026/Mark_3_31-35_general_believer_guide.html",
+      "originalSha256": "49e412781937e839678bffef497ec9398d03468fc80b5a80f7d1fda6175dc82a",
+      "htmlSha256": "4e4c0c504554eff5791097a60faec6cb2a856984f2ec8a53d7220dd863c0956a",
+      "bytes": 1963551,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "783244ce2f4a3cb26ef88a6407a79834fc12df02370001b598eadc89cd620efa",
+        "preservedCardsSha256": "b49e5480c9047ab970c54a2687109d14e0b57a4d85b97a1511beacc8a5d11f72"
+      }
+    },
+    {
+      "n": 36,
+      "path": "2026/04052026/Matthew_28_16-20_general_believer_guide.html",
+      "originalSha256": "1a142811188826e25db624f0d12bafd2cdee1779dcb0259bc66254f9a2392a81",
+      "htmlSha256": "3f9e620179aa0e067ac90c2b42be9962f8003090c660668ffe4e31c71f61bbf1",
+      "bytes": 2287208,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "1ddd001f7d51bd8298b970f52698469572067453d0c3ecb44358ba2c31d2cb8e",
+        "preservedCardsSha256": "f42c21659ab925c0290ecdd57327f6a62084cec0074dc51cf977f46a857f98a2"
+      }
+    },
+    {
+      "n": 37,
+      "path": "2026/04122026/Luke_5_33-39_v1.html",
+      "originalSha256": "d1d92b5001234627c84fd18809866f0d4682122eff25bc674ad226ee82d77cc0",
+      "htmlSha256": "5788e70d58f68562e599a8a1cc35d01e4b67393f01418a5594bccf85e530ad5f",
+      "bytes": 2126840,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "d256e1f115c2f70e83ea171e5bea6715c06ab4a791e15a202b57d6e140ff56b3",
+        "preservedCardsSha256": "d7f9543cb70d27e85cbe64a5802c67f62d03ffee2d8bf72eb5bef953dd10f163"
+      }
+    },
+    {
+      "n": 38,
+      "path": "2026/04192026/Luke_6_6-11_v1.html",
+      "originalSha256": "645dac733351f742ac96e944c6e01eb577292c18cf9addaf4d126a9c99f0a353",
+      "htmlSha256": "43c1422d8b9788db1722e4fd5a66dab7f299763af5102d053a0b877ed6749257",
+      "bytes": 2171481,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "b4b5728db6775ac8f2a1dcf91187943188d988f0a01e8b3de173c6d17cf27da2",
+        "preservedCardsSha256": "1ed6fde9b830e64c56232d1389a7f8767af72f234dc26e9d3e2405cc7ea8bbba"
+      }
+    },
+    {
+      "n": 39,
+      "path": "2026/04262026/luke_6_12_19_premium_card_guide.html",
+      "originalSha256": "f5814dce9b4d3965120bbffaa04781c1f433de5eca913c6d44aa619a34b0add8",
+      "htmlSha256": "4565344109b5f272b8036004fbb95e89d7a30902a383df9735539ab639a87c10",
+      "bytes": 2233345,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "e865ac02f484c183c408c83d15ca0fadf3baf2d5b680e0714ee6ac51c594279f",
+        "preservedCardsSha256": "f2ef441500b8701c0155ad8fbc76f762c6a3fdcc271fa343e96640eb115674dc"
+      }
+    },
+    {
+      "n": 40,
+      "path": "2026/05032026/genesis_25_1-18_premium_guide.html",
+      "originalSha256": "7d9f3269139ba08e375a56d6faacc821b19ff293137d3b8ffcabcca6895483ba",
+      "htmlSha256": "4546288a2ee62ac730e423be0b3066e5ab42d70ea9dcb515e7210f7e76485440",
+      "bytes": 2428352,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "8d8c5ae3aba25b8f001c2bd20939e94a0bd0392fa326870a5721393f0574700d",
+        "preservedCardsSha256": "d7758497185b98dbea77e6728fdf6202d963d3497440e9584d1c6f078b2309b3"
+      }
+    },
+    {
+      "n": 41,
+      "path": "2026/05172026/Luke_6_39-42_premium_orthodoxy_orthopraxy_guide.html",
+      "originalSha256": "b3cba038ee107561205e701d86503d407f658cba93f92b1ff3bd45de1bf3f924",
+      "htmlSha256": "a70ba84a69ce52bc15754cd22fbf96fcc4207b81ebdb9ffcdfa6a8b2b7936841",
+      "bytes": 2261351,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "a9dd723c36a8e86c53317112e37514d41ac05b559a2f280102d22485d9c91306",
+        "preservedCardsSha256": "084aaa8326babc72c432de67e2673c34f8786a8996688fa6fe1814720b2a4d5f"
+      }
+    },
+    {
+      "n": 42,
+      "path": "2026/05242026/Luke_6_43-45_premium_orthodoxy_orthopraxy_guide.html",
+      "originalSha256": "d5a912ffeaaf7080bab208ba3bad71be4d198ee8bd8f68afdb2aef431acddf49",
+      "htmlSha256": "2ac8fe26850df0a4d77fa82f1e4a42da4a35e4f5db5d64a2c7f10d8268b73331",
+      "bytes": 1924828,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "004eb803bba71ea7a04237db88dd25b77185539cdaa859fc13e28626aeadc9fd",
+        "preservedCardsSha256": "8e4b3860fda3f042ad92a979d6b607e64220ee1645dc03e4b50b7b4ce1c6f100"
+      }
+    },
+    {
+      "n": 43,
+      "path": "2026/05312026/Luke_6_46-49_premium_orthodoxy_orthopraxy_guide.html",
+      "originalSha256": "f3324987f1d92517faea6abc530dbe6e8bf172801142be8c21c84a08af361b6b",
+      "htmlSha256": "0f30c20bfcee0bef81d832e6ba272943bc4a0e8d2dbf2d65a06096c61aae1a4e",
+      "bytes": 2260758,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "bc2b170d945b99919a6f677efc99515d98b1b2e4350d49027bbb405183c59866",
+        "preservedCardsSha256": "4d7ef132e1efdbb4a6adb3b08dc92d9823d9d7b82142196689df19218fcfa776"
+      }
+    },
+    {
+      "n": 44,
+      "path": "2026/06072026/Luke_7_1-10_premium_redesign_otnt_cards.html",
+      "originalSha256": "e9a9ea52fb0d3aff49a81e52ef99a5d40af6c3973b32672c2d0123a1d4305b97",
+      "htmlSha256": "5614da81ff214d1f2820a3990cd7fc81c8673fbd83173f224facdd29697460bc",
+      "bytes": 2134748,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "8a6c3cc79f8f040321fcd8b134dac8aca0543af51f4b5f5905655883f659f083",
+        "preservedCardsSha256": "96dcf14252190fd27ab0d7d4657bf8d8a0fad8ba74bdf1d1dfc8f87905df7169"
+      }
+    },
+    {
+      "n": 45,
+      "path": "2026/06142026/Luke_7_11-17_general_believers_premium_guide.html",
+      "originalSha256": "d6456a987d1c0112d13c6db4ba4a967db3eabf719befd15afde2d66e6e7c8847",
+      "htmlSha256": "742213b8ac663ea0ec6ca4cc90a1b83c4f608cd37bbe7d583586a304f13b9b5b",
+      "bytes": 2102635,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "1de310c0ec72d29c6d2bc96777326deb2ec8cf86267cec7504c97970c375d764",
+        "preservedCardsSha256": "1f82003d7150d6904f07034212b54d471f8e4ba2519591f38f95d63757365174"
+      }
+    },
+    {
+      "n": 46,
+      "path": "2026/06212026/luke_7_18_23_premium_card_guide.html",
+      "originalSha256": "da17e5aa493cdbc3400ab76c5a9c69d5ac34f59901730479b758d64ce2373a81",
+      "htmlSha256": "f58beef438a34d568ab9959931f7264115d5239e901a49a4ab37b2a8fc4582c7",
+      "bytes": 2098952,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "971de59e49d94afa89f6b106f8c430ae1ed5ddbc1f968ddd27fc5b8e08e00e39",
+        "preservedCardsSha256": "1798c48b08e6dc56a12c748a3e686763ced16e5506f6ec3cfce6f05d05ec5730"
+      }
+    },
+    {
+      "n": 47,
+      "path": "2026/06282026/luke_7_40_50_premium_card_guide.html",
+      "originalSha256": "27fd6d1ae4f3214afbec6fd44ddc8f9d6e3a5ebcef109879d94b276ad2a1f54b",
+      "htmlSha256": "28aa7c445b14a003c34a7d5c6354a86ad88c1fad2977db326f879d27836a160d",
+      "bytes": 2026987,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "8cbaaa522b831a0c4f9a46fd10c02731b2a3593386a36c5c1b030cc8cec3e854",
+        "preservedCardsSha256": "62775f5fc86a191a3f48c2a9a16b5387a64e0779f6fcca68cbf60b00359d0085"
+      }
+    },
+    {
+      "n": 48,
+      "path": "2026/07052026/exodus_23_14_17.html",
+      "originalSha256": "a30328916858baabef7f978cb5c32d765ad2a54a300850a59ac0b88b3195c238",
+      "htmlSha256": "9c5b4e28ea6f5c47347470a251f5dbd97d873b93fd635675afdd9a16336cbbef",
+      "bytes": 2315149,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "e10e256f98623546446391f3a710b56bae459ce0d2d1d44e216ee7248ec593dc",
+        "preservedCardsSha256": "e8dd05cdede01dd11f6056e128b6baba08d6bf9f9c22eb5edb3f4148d3a4d910"
+      }
+    },
+    {
+      "n": 49,
+      "path": "2026/07262026/luke_8_22_25_premium_card_guide.html",
+      "originalSha256": "473475ab3c0634ca9461c1ba1f4165720ad47b674ea80a6e7cef8c0c161db78d",
+      "htmlSha256": "b271722f4a3aeed286f2f7d173c15ef369eae2a535f5d17733d55b7253d26887",
+      "bytes": 2104730,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "decf99721e2376e66ef48e071e500d696a2feb7b27f179ebba4dbd7012685d09",
+        "preservedCardsSha256": "b1bb1c5f6fd4bf56152e145763146b9e8b24036899a25f467da64e220cae17e4"
+      }
+    },
+    {
+      "n": 50,
+      "path": "2026/08092026/luke_8_43_48_premium_card_guide.html",
+      "originalSha256": "65d8784f430f1bffb9cf2028d6064143557e72c6552c5570a2b837d221c73754",
+      "htmlSha256": "28f321420925fed4feb338c044c7ac3a1fa5d02332be626d18e304f9e8aff9ef",
+      "bytes": 2112872,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "c92b0114e726a03495f3872340f9498b845ddf203322b1aee38dbd19b4dfbe04",
+        "preservedCardsSha256": "63553fa0c715cd334709b149d57ccce1277373bed7d8379d2a7bb911578d1a9c"
+      }
+    },
+    {
+      "n": 51,
+      "path": "2026/08162026/revelation_2_8_11_premium_card_guide.html",
+      "originalSha256": "cd778f12a575a039102a852f66206c92065260a25d73ce6a958e734aacc4427f",
+      "htmlSha256": "19fc8702fb0aeb983d2bc9abb63026c1853153bd31b0e887b40b43cce4dfeae1",
+      "bytes": 2040261,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "faf8fc9a2d19888fe05d4bcd95cefa0c34c138c38fe90291a3d40b53989b49e8",
+        "preservedCardsSha256": "67ba602cc873ebdf866217aca158c13d43ec2f50f068e93a447f724fe911c028"
+      }
+    },
+    {
+      "n": 52,
+      "path": "2026/08232026/luke_9_1_6_premium_card_guide.html",
+      "originalSha256": "557c8ef18cadabdb2c620018ad6eca6e12ae587500f67a1872bf652676080b50",
+      "htmlSha256": "601d70a7209ce1934e48143c4ce69fab06b8d7b7857f7e5da4868d05693c7009",
+      "bytes": 2131811,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "73e4db1acdba8c19d1f930be5e63fac812f13105454f1f086009af66b5fa6a84",
+        "preservedCardsSha256": "49027bcf8b19f0de195c6a43b0aa68756642c223925732aaf73f97f3eb7df778"
+      }
+    },
+    {
+      "n": 53,
+      "path": "2026/08302026/revelation_2_12_17_premium_card_guide.html",
+      "originalSha256": "fcff46c40973606038abe7e4ae43fcc2134d35ceab3691bc4365c8ca2d044995",
+      "htmlSha256": "1d49e94520403bcfe5504f0301d389f4704458f9528c4e9eb1dcf295239cb752",
+      "bytes": 1957568,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "038429d022d69d4478e389098ad66683622224c5c0a2a23ddd38e973126f8410",
+        "preservedCardsSha256": "d907b3dd55ce72496d87a8afc69a883d4a22b32c983ef863f1230520e6437253"
+      }
+    },
+    {
+      "n": 54,
+      "path": "2026/09132026/revelation_3_1_6_sardis_premium_guide.html",
+      "originalSha256": "07e2a51d533675a6c8649388433b0dcde5a19b49ac23f6293a52084801ee13b2",
+      "htmlSha256": "79b7aa5324ccbf53ccaabcccbbd48daa3e69304a369aaea19990869677adef1d",
+      "bytes": 1606292,
+      "binding": {
+        "version": "bnoc-analysis-guide-1.0",
+        "guideSha256": "1d8156618fd1cbe9491399a96f756269a7353494f5ccaf6fbc0794c224f03f55",
+        "preservedCardsSha256": "f2e9c46e7acfd7e783a4dec1de6de35a9c57447fa035e7ac3e4404395dc5e824"
+      }
+    }
+  ]
+}
