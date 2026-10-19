@@ -1,0 +1,26 @@
+{
+  "id": "2026-08-16-3a9c94dafcd033de",
+  "date": "2026-08-16",
+  "reference": "요한계시록2:8-11",
+  "service": "revision-2418333c528cc4173296",
+  "relativePath": "2026/08162026/revelation_2_8_11_premium_card_guide.html",
+  "manuscriptSha256": "7db327f62411c1eb93320450ced7b9cc38e1e23945ef01aa2f2bd1cc682f96e6",
+  "passageSha256": "7cc7dccfce0cb5d93bb788dbf3e031ab7d542766535e28ca4c6f58a3d0989d59",
+  "htmlSha256": "cd778f12a575a039102a852f66206c92065260a25d73ce6a958e734aacc4427f",
+  "editorialReviewSha256": "38f8275d96b18944f6661ec81d87de1a879346be46ee307b9f38552d95407197",
+  "visualPlanSha256": "23f97e11f415b0c43332f0c6c78799f3791d0b1284f688cef532201eda0fcf96",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "2a83aad566d9e1fb9e222a0d9715af8f49492751",
+    "originalSha256": "c3b9b077bce70209a116a5f9a54000d68d30230d0b5de2b5dbcd765bd9c1fc6e",
+    "revisedAt": "2026-10-19T07:23:01.802485+00:00",
+    "kinds": [
+      "design",
+      "theology"
+    ]
+  }
+}
