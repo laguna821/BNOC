@@ -1,0 +1,26 @@
+{
+  "id": "2026-08-09-176daeef67a2ceeb",
+  "date": "2026-08-09",
+  "reference": "누가복음8:43-48",
+  "service": "revision-20ab6af0b108c8d98604",
+  "relativePath": "2026/08092026/luke_8_43_48_premium_card_guide.html",
+  "manuscriptSha256": "5fc84ad0115d50254329c9fe5960a4d0688efd6bb88600ba63fcdbeac69c4840",
+  "passageSha256": "f5edee496bab1ee91a00e912587bc59bd8bd360ed639c5b5c01939c0847c3900",
+  "htmlSha256": "65d8784f430f1bffb9cf2028d6064143557e72c6552c5570a2b837d221c73754",
+  "editorialReviewSha256": "b9f30fccd9955ce3318ea0b2a85e6903e696158c4f91da01d896b5337f7b801a",
+  "visualPlanSha256": "b860a2c8bfe32c2e81a55ff94bd90a0cc043bec04eb9da829feb739501f1e8ca",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "e214c10a57412df9bf756662e4f6304de8c9a3b7",
+    "originalSha256": "4e26f8b8704c3daf215aaf2b052d1afa4b57ca193bf1ac317da0e6a7feed8eb7",
+    "revisedAt": "2026-10-19T06:51:26.819257+00:00",
+    "kinds": [
+      "design",
+      "theology"
+    ]
+  }
+}
