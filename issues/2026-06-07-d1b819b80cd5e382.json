@@ -1,0 +1,26 @@
+{
+  "id": "2026-06-07-d1b819b80cd5e382",
+  "date": "2026-06-07",
+  "reference": "누가복음 7:1-10",
+  "service": "revision-ccb43184bdd7e2458f68",
+  "relativePath": "2026/06072026/Luke_7_1-10_premium_redesign_otnt_cards.html",
+  "manuscriptSha256": "2507dc3bc5c506b135c8b4285452edae0e24363fa8f11c68ddbf13702251336d",
+  "passageSha256": "076f5d6ab59a48b8e53c153357ee8ea71a98986ae711e960a27ddb293ee282a2",
+  "htmlSha256": "e9a9ea52fb0d3aff49a81e52ef99a5d40af6c3973b32672c2d0123a1d4305b97",
+  "editorialReviewSha256": "2c939a0bf0b3f13ae39c9efc5ec93a459888d89dd387aee28e168b7ccbce2cf1",
+  "visualPlanSha256": "173cf52c0671c11e664241049d5e1f623e636626a8867302510819ca30363113",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "25ae5aa5a8521b0dba05eaba26b7a9731206da35",
+    "originalSha256": "4f3ac1d2b6dd96a987129d5a622b1c1869f3d09f07d01913739489df9d4c6e0f",
+    "revisedAt": "2026-10-19T04:14:18.227828+00:00",
+    "kinds": [
+      "design",
+      "theology"
+    ]
+  }
+}
