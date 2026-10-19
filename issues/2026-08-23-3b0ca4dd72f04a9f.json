@@ -1,0 +1,26 @@
+{
+  "id": "2026-08-23-3b0ca4dd72f04a9f",
+  "date": "2026-08-23",
+  "reference": "누가복음9:1-6",
+  "service": "revision-d6d44fc4c0638f5cfa24",
+  "relativePath": "2026/08232026/luke_9_1_6_premium_card_guide.html",
+  "manuscriptSha256": "7fe92cec898d9c8575350a49bad0e5b0d925c11d2c847678ba1988695b6176df",
+  "passageSha256": "71a6503bafa9c4c82d5e237b25d3753dafdae892adbc296016639b48bdb800fc",
+  "htmlSha256": "557c8ef18cadabdb2c620018ad6eca6e12ae587500f67a1872bf652676080b50",
+  "editorialReviewSha256": "8e1f8809f5ac134fca9f738a7dc2db2209cbc111e2742a4247bc99ca1e937ccf",
+  "visualPlanSha256": "3dba24c461399aff25f86ab45229e4e1316eddf43e6c2568f4cc3d21551c05a0",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "0283ebabdcd5125a090716a3e9c016d5c1ed0e6f",
+    "originalSha256": "f7cb21e48315d7054b241fc290540985cf42c4e3eabec81d0c03d40346a8038b",
+    "revisedAt": "2026-10-19T07:51:55.816309+00:00",
+    "kinds": [
+      "design",
+      "theology"
+    ]
+  }
+}
