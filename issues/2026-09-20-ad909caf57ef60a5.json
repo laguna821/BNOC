@@ -1,0 +1,28 @@
+{
+  "id": "2026-09-20-ad909caf57ef60a5",
+  "date": "2026-09-20",
+  "reference": "에스겔2:1-10",
+  "service": "revision-277cf3d768e12df48816",
+  "relativePath": "2026/09202026/ezekiel_2_1_10_premium_guide.html",
+  "originalSha256": "12f77693a7ab29e5ee579608c53b2c01f69873cc0cb41c2377dab5bc0efb7d69",
+  "passageSha256": "f31804233fa63dfcb0cb04e9baa18f16d22e779e43f832e537377b3d535ce47e",
+  "htmlSha256": "36479d911e0f23679dea781db01f9bccf7d75644ba89849f4dcb1f5977c746db",
+  "contentSha256": "8a67f225f663ebf1f2ee7343610736512a9870ff0c75eb544b1f8a04818ddc48",
+  "sourcePlanSha256": "77b85a4962fc07c7a95c850680aafade12311903854fcfd7e2c9ac6436dab91f",
+  "editorialReviewSha256": "1b33a45337ca21b90a69b9c5d0b05d6e7d508ab7ab1802abb59911daa2fdcb4d",
+  "visualPlanSha256": "52b713a8dba2ce786571f311fb6e36881e8fd1958587ad991581e8d8934988b9",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-source-reader-1.1"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "82037a0bee877d4458e44fea6d6bcf4b7e7b29e6",
+    "originalSha256": "12f77693a7ab29e5ee579608c53b2c01f69873cc0cb41c2377dab5bc0efb7d69",
+    "revisedAt": "2026-10-19T10:01:05.912288+00:00",
+    "kinds": [
+      "design",
+      "theology"
+    ]
+  }
+}
