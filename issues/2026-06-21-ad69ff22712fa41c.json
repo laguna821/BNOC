@@ -1,0 +1,26 @@
+{
+  "id": "2026-06-21-ad69ff22712fa41c",
+  "date": "2026-06-21",
+  "reference": "누가복음7:18-23",
+  "service": "revision-531e482f63618a190c52",
+  "relativePath": "2026/06212026/luke_7_18_23_premium_card_guide.html",
+  "manuscriptSha256": "1107c27de03c1ff8e606b04868498eb6e0b047d0a1066499d6bba1d1b1fb403e",
+  "passageSha256": "3b3ef4449ad684c0d59da860f1fa42e5c54b5a75db22a3d3ad7b39ba384d5e64",
+  "htmlSha256": "da17e5aa493cdbc3400ab76c5a9c69d5ac34f59901730479b758d64ce2373a81",
+  "editorialReviewSha256": "e32e94c4ca5a80662942726612f812a198682799b886776ced57ec76e8948c15",
+  "visualPlanSha256": "f3daff47e4274fc1dffe57ef3936be51fb9f36450da439a15699951f757b7182",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "94122b57c3162dcc96bc5e285aa7d1491554bc08",
+    "originalSha256": "d7cd5b0782c5b42901244f20fd32e15c2f32a438bf26b608c459d532b997bd52",
+    "revisedAt": "2026-10-19T05:12:11.941898+00:00",
+    "kinds": [
+      "design",
+      "theology"
+    ]
+  }
+}
