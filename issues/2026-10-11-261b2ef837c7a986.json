@@ -1,0 +1,32 @@
+{
+  "id": "2026-10-11-261b2ef837c7a986",
+  "date": "2026-10-11",
+  "reference": "누가복음9:57-62",
+  "service": "revision-ee841f156bf94cf8785d",
+  "relativePath": "2026/10112026/index.html",
+  "originalSha256": "0818e3fb625709e4a4ddf454c7c8afd333460e50813cfe4e3585a5ce6a82af6b",
+  "passageSha256": "2481f2351b6585d965b7960ad6b1c9b9db22fbec577bd86ec50d7046fd9a6425",
+  "htmlSha256": "0d429ac72cc669f38215be3fca11d0a73be862ee67655bfed2b4a016f9aff120",
+  "contentSha256": "fa2f7554e4129866b091c219aaf29c453caf915c4af1f63821a9abd9b0c2b111",
+  "sourcePlanSha256": "6e8eef7ac772a70d78b3bb738a74014c96b5c3485087ffd21c628228c97279b6",
+  "editorialReviewSha256": "61d203dc53459f27e13ebab4d519c67ddc0c44e9b4b4726fcc86ec97013cae03",
+  "visualPlanSha256": "4862604ef70c978d34d6adb28bb964857878862b5cb4c47546182170269407e7",
+  "readingAxes": {
+    "version": "bnoc-analysis-guide-1.0",
+    "guideSha256": "d3eed9bd61a7c1590d49ce10f342e45ad9473d363b313034b722ecc6ad1e3bda",
+    "preservedCardsSha256": "97239c5940e0a1b7f0de5c3b5ba5b08a2d23890f5f85ba0b0e34718288df0833"
+  },
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-source-reader-1.3"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "89427b18c76ae6c10bd8ce58ffaa779dbd0cd475",
+    "originalSha256": "0818e3fb625709e4a4ddf454c7c8afd333460e50813cfe4e3585a5ce6a82af6b",
+    "revisedAt": "2026-10-19T11:26:55.659389+00:00",
+    "kinds": [
+      "design"
+    ]
+  }
+}
