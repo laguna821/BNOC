@@ -1,0 +1,27 @@
+{
+  "id": "2026-03-22-468841b14d7818c4",
+  "date": "2026-03-22",
+  "reference": "누가복음 5:27-32",
+  "service": "revision-9df5eeac4033d3813bea",
+  "relativePath": "2026/03222026/Luke_5_27-32_general_believer_guide.html",
+  "manuscriptSha256": "549af6822e49a61fd8558e9f41ddb15850342921022381894018159a77cefa9f",
+  "passageSha256": "a9d558df03869051f940e2ccbb2302f6b45a0fc21a4a683c81d82f802e3d1ed8",
+  "htmlSha256": "8bc05abd8dba8263b81ce7db54345b19173975c814c0d4e816d4cfd17a6711ce",
+  "editorialReviewSha256": "5db4e27f67488bd8491fa0e50444fbc2243532e0d2b7049f479ac5282e21368d",
+  "visualPlanSha256": "6aa01e56aedb38e26242a26e3491b13ce12f5167a2e69755f73409a6e84faa8e",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "1bf1891a376729dc9ef24a225840eb18c8194ac7",
+    "originalSha256": "23ca07c6c3fb0c6ba20117088ffb512cc13d86353e11db72beca96243b5ac3ae",
+    "revisedAt": "2026-10-19T00:13:43.111126+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
