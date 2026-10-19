@@ -1,0 +1,27 @@
+{
+  "id": "2026-04-05-0d28ea3c1b0e8f52",
+  "date": "2026-04-05",
+  "reference": "마태복음 28:16-20",
+  "service": "revision-a774fecf2b05e7c417e8",
+  "relativePath": "2026/04052026/Matthew_28_16-20_general_believer_guide.html",
+  "manuscriptSha256": "2eeb0cc71b4ea7f963f5f53da3c18fb319e32f28515fa21a64782bd7c135e6db",
+  "passageSha256": "01db3b970011c0243717a888d18a979f3fafa25e2f0eda0e4c39047fe7c18e9d",
+  "htmlSha256": "1a142811188826e25db624f0d12bafd2cdee1779dcb0259bc66254f9a2392a81",
+  "editorialReviewSha256": "b1b1f397dcee760fbb92c44f375eefae2298718934014a42e9557c8897c29017",
+  "visualPlanSha256": "abd438a3682013408fe6b8507527758255f24dd46d5eb1e61b47abb3c62f72fa",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "f2544524b6a807ce2e1a19840189cf0554d1291f",
+    "originalSha256": "4d273eb0e1a3bb098e5f7a447f985c8812412c54c445b2a8a9df5f39132a4f5f",
+    "revisedAt": "2026-10-19T00:58:43.864577+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
