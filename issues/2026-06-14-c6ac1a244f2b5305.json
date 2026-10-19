@@ -1,0 +1,26 @@
+{
+  "id": "2026-06-14-c6ac1a244f2b5305",
+  "date": "2026-06-14",
+  "reference": "누가복음7:11-17",
+  "service": "revision-37651a89c2b9faaa6f52",
+  "relativePath": "2026/06142026/Luke_7_11-17_general_believers_premium_guide.html",
+  "manuscriptSha256": "651771eab3ae95edede7bbf05257f163c064c6f00a442a86dd02e1af8330ecc2",
+  "passageSha256": "65d30e084f123d73aa26275bba4637116ac6c6bed341e4212290ce9cae787f07",
+  "htmlSha256": "d6456a987d1c0112d13c6db4ba4a967db3eabf719befd15afde2d66e6e7c8847",
+  "editorialReviewSha256": "0e8ab56053c5660ac3dc7f1d05414ef8b5fcf0d1247d84d8f53d8be8b1abfaae",
+  "visualPlanSha256": "324df8d13f1d25885d01d475f5017cbeb055ada80da3944e0899ee65aff2dad2",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "4f8a24e2e015b29fd6d5d6b9f3323d13bf9f8be4",
+    "originalSha256": "05f9d8adc5f4566248d1d19e87acf3b8104c92dc6460bb6a3eeae29f6957d8d7",
+    "revisedAt": "2026-10-19T04:47:53.798344+00:00",
+    "kinds": [
+      "design",
+      "theology"
+    ]
+  }
+}
