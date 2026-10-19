@@ -38,6 +38,19 @@ class NativePreservationTests(unittest.TestCase):
     def save(self,name,data):(self.p/name).write_text(json.dumps(data,ensure_ascii=False),encoding='utf-8')
     def test_nested_grammar_and_following_paragraph_are_exact(self):
         self.assertEqual(sr.cards(SOURCE),{'guide':CARD})
+    def test_anonymous_cards_keep_html_and_order_without_invented_dom_ids(self):
+        a=CARD.replace(' id="guide"','');b=a.replace('깊은 해설','둘째 해설')
+        self.assertEqual(sr.cards(a+b),{'@ordinal:01':a,'@ordinal:02':b})
+        edit=dict(originalSha256='test',rationale='둘째 표의 실제 모바일 라벨만 보완',cards=[dict(cardId='@ordinal:02',beforeSha256=digest(b),afterHtml=b.replace('끝까지 보존할 문단','끝까지 보존할 문단과 추가 설명'),rationale='개별 검토')])
+        doc=sr.apply_content_edits(a+b,edit)
+        self.assertEqual(sr.cards(doc)['@ordinal:01'],a)
+        self.assertNotIn('id="@ordinal:',doc)
+    def test_existing_fonts_are_reused_only_after_exact_asset_byte_comparison(self):
+        from source_reader_luke101 import verify_existing_fonts
+        baseline="@font-face{font-family:Test;src:url(data:font/woff2;base64,YWJj)}"
+        source='<style id="embedded-fonts">'+baseline+'</style>'
+        verify_existing_fonts(source,baseline)
+        with self.assertRaisesRegex(ValueError,'byte comparison'):verify_existing_fonts(source.replace('YWJj','ZGVm'),baseline)
     def test_render_preserves_authored_cards_keys_and_native_note_fields(self):
         doc,meta=sr.render(self.p,self.run)
         self.assertEqual(sr.cards(doc),sr.cards(SOURCE))
@@ -69,12 +82,13 @@ class NativePreservationTests(unittest.TestCase):
     def test_bound_revision_needs_post_edit_editorial_reading(self):
         edit=dict(originalSha256=digest(SOURCE.encode()),rationale='보강',cards=[dict(cardId='guide',beforeSha256=digest(CARD),afterHtml=CARD.replace('끝까지 보존할 문단','새로 보강한 문단'),rationale='보강')])
         self.save('source-content-edits.json',edit)
-        plan=sr.read(self.p/'source-reader-plan.json');plan.update(contentEditsSha256=digest(edit),reviewedSnapshot=sr.snapshot(sr.apply_content_edits(SOURCE,edit)));self.save('source-reader-plan.json',plan)
+        plan=sr.read(self.p/'source-reader-plan.json');plan.update(contentEditsSha256=digest(edit),reviewedSnapshot=sr.snapshot(sr.apply_content_edits(SOURCE,edit)),revisionDescription='직접 검토한 해설과 표의 열 제목을 보완했습니다.');self.save('source-reader-plan.json',plan)
         with self.assertRaisesRegex(ValueError,'edited-content review'):sr.validate(self.p,self.run)
         review=sr.read(self.p/'source-exegesis-review.json');review['reviewedContentSha256']=digest(plan['reviewedSnapshot']['cards']);self.save('source-exegesis-review.json',review)
         visual=sr.read(self.p/'source-visual-plan.json');visual['editorialReviewSha256']=digest(review);self.save('source-visual-plan.json',visual)
         doc,meta=sr.render(self.p,self.run)
         self.assertIn('새로 보강한 문단',doc);self.assertEqual(meta['contentSha256'],review['reviewedContentSha256'])
+        self.assertIn(plan['revisionDescription'],doc)
     def test_ezekiel_wrapped_verse_and_existing_large_font_controls(self):
         src=SOURCE.replace('<p><span class="verse-no">1</span>정확한 성경 본문</p>','<p id="verse-1"><span class="verse-no">1</span><span class="verse-content">정확한 성경 본문</span></p>').replace('const fontSizes=[17,19,21]','const fontSizes=[18,20,22]').replace('화면 글꼴은 기기의 기본 글꼴을 사용하므로 기기에 따라 조금 다르게 보일 수 있습니다.','이미지와 글은 오프라인으로 읽을 수 있습니다. 외부 자료 링크는 인터넷 연결이 필요합니다.')
         src=src.replace('</body>','8개 장 · 43개 해설 카드 · 20개 자료 · 묵상 기록</body>')
@@ -84,9 +98,40 @@ class NativePreservationTests(unittest.TestCase):
     def test_stale_editorial_anchor_is_rejected(self):
         data=sr.read(self.p/'source-exegesis-review.json');data['assessments']['orthodoxy']['anchors'][0]['quote']='없는 문장';self.save('source-exegesis-review.json',data)
         with self.assertRaisesRegex(ValueError,'anchor mismatch'):sr.validate(self.p,self.run)
+    def luke_annotated_source(self):
+        note=' <sup><a href="#manuscripts" title="제공된 각주 번호와 사본 차이의 설명">2)</a></sup>'
+        src=SOURCE.replace('<p><span class="verse-no">1</span>정확한 성경 본문</p>','<p id="verse-55"><span class="verse-no">55</span><span class="verse-content">정확한 성경 본문</span>'+note+'</p>')
+        src=src.replace('const fontSizes=[17,19,21]','const fontSizes=[18,20,22]').replace('화면 글꼴은 기기의 기본 글꼴을 사용하므로 기기에 따라 조금 다르게 보일 수 있습니다.','글과 그림은 오프라인으로 읽을 수 있습니다. 출처 링크를 여는 데에는 인터넷 연결이 필요합니다.')
+        passage=copy.deepcopy(self.passage);passage['verses'][0]['verse']='55'
+        return src,passage,note
+    def test_luke_keeps_known_annotation_separate_from_verified_bible(self):
+        src,passage,note=self.luke_annotated_source()
+        for before,after in sr.structural_changes(src,passage,'luke-9-51-native-v1'):src=src.replace(before,after,1)
+        self.assertIn(note,src);self.assertIn('<aside id="scripture"',src)
+        self.assertEqual(sr.cards(src),{'guide':CARD})
+    def test_unknown_scripture_note_cannot_hide_bible_tampering(self):
+        src,passage,note=self.luke_annotated_source()
+        for bad in [src.replace('>2)</a>','>3)</a>'),src.replace('</span>'+note,'</span>추가 성경 문장'+note)]:
+            with self.assertRaisesRegex(ValueError,'annotation'):sr.structural_changes(bad,passage,'luke-9-51-native-v1')
     def test_visual_omission_is_rejected(self):
         data=sr.read(self.p/'source-visual-plan.json');data['items']=[];self.save('source-visual-plan.json',data)
         with self.assertRaisesRegex(ValueError,'visual inventory'):sr.validate(self.p,self.run)
+    def test_css_composition_binds_its_markup_and_actual_styles(self):
+        figure='<figure><div role="img" aria-label="고랑을 나타낸 도안">방향</div><figcaption>추상 표현</figcaption></figure>'
+        doc='<style>.poster{color:blue}</style>'+figure
+        inventory=sr.meaningful_visuals(doc)
+        self.assertEqual([v['kind'] for v in inventory.values()],['css-composition'])
+        self.assertNotEqual(inventory,sr.meaningful_visuals(doc.replace('blue','red')))
+        self.assertNotEqual(inventory,sr.meaningful_visuals(doc.replace('방향','다른 방향')))
+    def test_text_only_needs_an_individual_editorial_visual_rationale(self):
+        src=SOURCE.replace(SVG,'');sha=digest(src.encode())
+        (self.p/'original.html').write_bytes(src.encode());self.run['revision']['originalSha256']=sha
+        plan=sr.read(self.p/'source-reader-plan.json');plan.update(originalSha256=sha,sourceSnapshot=sr.snapshot(src));self.save('source-reader-plan.json',plan)
+        review=sr.read(self.p/'source-exegesis-review.json');review['originalSha256']=sha;self.save('source-exegesis-review.json',review)
+        visual=sr.read(self.p/'source-visual-plan.json');visual.update(originalSha256=sha,editorialReviewSha256=digest(review),items=[]);self.save('source-visual-plan.json',visual)
+        with self.assertRaisesRegex(ValueError,'visual inventory'):sr.validate(self.p,self.run)
+        visual['textOnlyRationale']='이 본문은 서술과 대화의 대조로 충분하며 별도 장면을 그리면 알려지지 않은 결말을 사실화할 수 있다.';self.save('source-visual-plan.json',visual)
+        sr.validate(self.p,self.run)
     def test_scripture_cannot_be_collapsible_even_with_provenance(self):
         doc,_=sr.render(self.p,self.run)
         doc=doc.replace('<aside id="scripture" class="scripture-panel">','<details id="scripture" class="scripture-panel">')

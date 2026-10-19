@@ -115,6 +115,8 @@ def validate(manuscript,passage,run_dir):
 
 def render(manuscript,passage,run_dir,issue_id,filename):
     metrics=validate(manuscript,passage,run_dir)
+    from reader_state import storage_identity
+    storage_issue=storage_identity(manuscript,run_dir,issue_id)
     esc=lambda s:html.escape(str(s),quote=True)
     figures={f['id']:f for f in manuscript.get('figures',[])}
     def figure(fid):
@@ -152,7 +154,7 @@ def render(manuscript,passage,run_dir,issue_id,filename):
     license_json=json.dumps(license,ensure_ascii=False).replace('<','\\u003c')
     doc=f'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(manuscript['title'])}</title><meta name="description" content="{esc(manuscript['description'])}"><meta name="bnoc-style" content="original">
-<style id="embedded-fonts">{font}</style><style id="bnoc-reader-v1">{css}</style></head><body data-issue="{esc(issue_id)}">
+<style id="embedded-fonts">{font}</style><style id="bnoc-reader-v1">{css}</style></head><body data-issue="{esc(issue_id)}" data-storage-issue="{esc(storage_issue)}">
 <a href="#main" class="skip">본문으로 건너뛰기</a><header class="top"><a class="brand" href="https://laguna821.github.io/BNOC/">{logo}<span>BNOC 말씀 아카이브</span></a><div class="tools"><button id="theme">테마</button><button id="size">글자 18</button><button id="summary" aria-pressed="false">요약 읽기</button><button id="search">본문 검색</button><button id="print">인쇄</button></div></header>
 <main id="main"><div class="intro"><p class="eyebrow">BIBLE NOTES ON CONTEXT · {esc(manuscript['date'])}</p><h1>{esc(manuscript['title'])}</h1><p class="lead">{esc(manuscript['intro'])}</p><p class="meta">{esc(passage['reference'])} · 개인 성경 연구 노트</p><p><a href="{esc(filename)}" download="{esc(filename)}">HTML 저장</a></p></div>
 {figure(manuscript['heroFigure']) if manuscript.get('heroFigure') else ''}

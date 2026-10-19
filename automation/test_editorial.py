@@ -61,6 +61,19 @@ class EditorialTests(unittest.TestCase):
         self.assertIn('<summary><h3>서술형 해설</h3></summary>', doc)
         self.assertIn(self.m['sections'][0]['cards'][0]['html'], doc)
 
+    def test_successive_generic_revisions_keep_one_local_record_namespace(self):
+        doc, _ = render.render(self.m, self.passage, self.root, 'first-run', 'fixture.html')
+        for issue in ('second-run', 'third-run'):
+            raw = doc.encode('utf-8')
+            (self.root/'original.html').write_bytes(raw)
+            self.m['revision'] = dict(originalCommit='a'*40, originalSha256=digest(raw),
+                                      revisedAt='2026-10-19T00:00:00+00:00', kinds=['design'])
+            doc, meta = render.render(self.m, self.passage, self.root, issue, 'fixture.html')
+            self.assertIn('data-issue="'+issue+'" data-storage-issue="first-run"', doc)
+            self.assertEqual(meta['issueId'], issue)
+            self.assertIn('document.body.dataset.storageIssue||document.body.dataset.issue', doc)
+            self.assertNotIn('localStorage.removeItem', doc)
+
     def test_coverage_labels_cannot_replace_reading(self):
         (self.root/'editorial-review.json').unlink()
         self.m['coverage'] = list(editorial.AXES)

@@ -10,9 +10,9 @@ import editorial
 import revision
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = 'bnoc-source-reader-1.1'
+VERSION = 'bnoc-source-reader-1.3'
 PROFILE = 'sardis-native-v1'
-PROFILES = (PROFILE, 'ezekiel-native-v1')
+PROFILES = (PROFILE, 'ezekiel-native-v1', 'luke-9-51-native-v1', 'luke-9-57-native-v1', 'luke-10-native-v1')
 REVIEW_KEYS = ('historicalAccuracy','originalLanguages','orthodoxyOrthopraxy','layReadability','citationsChecked','visualAccuracy','mobileLightDark','mobileTables','readerControls','searchNotesDownload','printLayout')
 
 def read(path):
@@ -33,8 +33,12 @@ def apply_content_edits(source, edits):
         if key in seen or key not in originals:raise ValueError('Unknown or duplicate native prose edit')
         seen.add(key);before=originals[key];after=edit['afterHtml']
         if digest(before)!=edit['beforeSha256']:raise ValueError('Native prose baseline changed')
-        if cards(after)!={key:after}:raise ValueError('Native prose edit changed the card boundary')
-        pattern=r'<div class="prose">(.*)</div></details>$'
+        parsed_after=cards(after)
+        if key.startswith('@ordinal:'):
+            valid_after=len(parsed_after)==1 and next(iter(parsed_after.values()))==after and next(iter(parsed_after)).startswith('@ordinal:')
+        else:valid_after=parsed_after=={key:after}
+        if not valid_after:raise ValueError('Native prose edit changed the card boundary')
+        pattern=r'<div class="prose">(.*)</div>\s*</details>$'
         old=re.search(pattern,before,re.S);new=re.search(pattern,after,re.S)
         if not old or not new or before[:old.start(1)]!=after[:new.start(1)] or before[old.end(1):]!=after[new.end(1):]:
             raise ValueError('Native prose edits must preserve heading, summary and card identity')
@@ -55,20 +59,29 @@ def meaningful_visuals(doc):
         if not match:raise ValueError('Native illustration must remain embedded')
         data=base64.b64decode(match[1],validate=True)
         actual[digest(data)]=dict(kind='image',alt=image['attrs'].get('alt',''))
+    # An inspected CSS composition is artwork too; bind its markup AND original styles.
+    styles=[digest(x) for x in re.findall(r'<style\b[^>]*>(.*?)</style>',doc,re.S)]
+    for figure in re.findall(r'<figure\b.*?</figure>',doc,re.S):
+        if not re.search(r'<(?:img|svg)\b',figure) and 'role="img"' in figure:
+            if not styles or not re.search(r'aria-label="[^"]+"',figure) or '<figcaption>' not in figure:
+                raise ValueError('CSS composition needs styles, accessible description and caption')
+            actual[digest(dict(figure=figure,styles=styles))]=dict(kind='css-composition')
     return actual
 
 
 def cards(doc):
     class Capture(HTMLParser):
         def __init__(self):
-            super().__init__();self.stack=[];self.found={}
+            super().__init__();self.stack=[];self.found={};self.ordinal=0
             self.lines=[0]
             for line in doc.splitlines(keepends=True):self.lines.append(self.lines[-1]+len(line))
         def absolute_position(self):
             line,col=self.getpos();return self.lines[line-1]+col
         def handle_starttag(self,tag,attrs):
             if tag=='details':
-                a=dict(attrs);key=a.get('id') if 'study-card' in a.get('class','').split() else None
+                a=dict(attrs);study='study-card' in a.get('class','').split()
+                if study:self.ordinal+=1
+                key=(a.get('id') or '@ordinal:'+str(self.ordinal).zfill(2)) if study else None
                 if key and any(k for _,k in self.stack):raise ValueError('Nested study card')
                 self.stack.append((self.absolute_position(),key))
         def handle_endtag(self,tag):
@@ -89,6 +102,8 @@ def snapshot(doc):
                 title=plain(re.search(r'<title>(.*?)</title>',doc,re.S)[1]))
     images=[sha for sha,item in meaningful_visuals(doc).items() if item['kind']=='image']
     if images:result['imageHashes']=images
+    compositions=[sha for sha,item in meaningful_visuals(doc).items() if item['kind']=='css-composition']
+    if compositions:result['cssCompositionHashes']=compositions
     return result
 
 def validate(path, run):
@@ -139,15 +154,21 @@ def validate(path, run):
     if editorial.timestamp(visual.get('decidedAt')) < editorial.timestamp(review['reviewedAt']):
         raise ValueError('Native visual decision predates reading')
     actual = meaningful_visuals(source)
-    if not actual or {x.get('sha256') for x in visual.get('items',[])} != set(actual):
+    if {x.get('sha256') for x in visual.get('items',[])} != set(actual) or (not actual and not visual.get('textOnlyRationale')):
         raise ValueError('Native meaningful visual inventory mismatch')
     for item in visual['items']:
         if not all(item.get(k) for k in ('purpose','captionScope','inspectedAt','inspectionEvidence')) or item.get('decision') != 'retain':
-            raise ValueError('Native SVG must be actually inspected and individually retained')
+            raise ValueError('Native visual must be actually inspected and individually retained')
     return source, plan, passage, review, visual
 
 def structural_changes(source, passage, profile=PROFILE):
     """Only this inspected native structure is supported, never arbitrary HTML repair."""
+    if profile=='luke-9-57-native-v1':
+        from source_reader_luke957 import structural_changes as luke_changes
+        return luke_changes(source,passage)
+    if profile=='luke-10-native-v1':
+        from source_reader_luke101 import structural_changes as luke_changes
+        return luke_changes(source,passage)
     changes = []
     def change(old,new):
         if source.count(old) != 1:
@@ -160,14 +181,23 @@ def structural_changes(source, passage, profile=PROFILE):
     if not heading: raise ValueError('Native Scripture heading missing')
     body = block[1][heading.end():]
     verses = re.findall(r'<p\b[^>]*><span class="verse-no">(\d+)</span>(.*?)</p>',body,re.S)
-    if [(str(v['verse']),v['text']) for v in passage['verses']] != [(n,plain(t)) for n,t in verses]:
+    def verse_text(number, text):
+        if profile=='luke-9-51-native-v1':
+            # The supplied 2) is an annotation, never part of the Bible sentence.
+            note=r' <sup><a href="#manuscripts" title="제공된 각주 번호와 사본 차이의 설명">2\)</a></sup>'
+            match=re.fullmatch(r'<span class="verse-content">(.*?)</span>('+note+r')?',text,re.S)
+            if not match or (match[2] and number!='55'):
+                raise ValueError('Native Scripture annotation needs individual review')
+            return plain(match[1])
+        return plain(text)
+    if [(str(v['verse']),v['text']) for v in passage['verses']] != [(n,verse_text(n,t)) for n,t in verses]:
         raise ValueError('Native Bible differs from verified passage')
     # Preserve every original verse byte, replacing only the disclosure container and heading.
     new = '<aside id="scripture" class="scripture-panel"><div class="scripture-heading">'+heading[1]+'</div>'+body+'</aside>'
     change(block[0],new)
     if profile==PROFILE:
         change('const fontSizes=[17,19,21]','const fontSizes=[18,20,22]')
-    elif profile=='ezekiel-native-v1':
+    elif profile in ('ezekiel-native-v1','luke-9-51-native-v1'):
         if source.count('const fontSizes=[18,20,22]')!=1:raise ValueError('Unexpected native font controls')
     else:raise ValueError('Unknown native UI profile')
     change("if(a.classList.contains('dialog-link'))setSummary(false);reveal(target);","if(a.classList.contains('dialog-link')){setSummary(false);target.querySelectorAll('details').forEach(d=>d.open=true);}reveal(target);")
@@ -175,9 +205,11 @@ def structural_changes(source, passage, profile=PROFILE):
     change('<a class="brand" href="#top">','<a class="brand" href="https://laguna821.github.io/BNOC/">')
     if profile==PROFILE:
         change('화면 글꼴은 기기의 기본 글꼴을 사용하므로 기기에 따라 조금 다르게 보일 수 있습니다.','SameTone Lite 가변 글꼴과 원어용 글꼴을 이 파일에 내장했습니다.')
-    else:
+    elif profile=='ezekiel-native-v1':
         change('8개 장 · 43개 해설 카드 · 20개 자료 · 묵상 기록','8개 장 · 43개 해설 카드 · 원전 대조 자료 · 묵상 기록')
         change('이미지와 글은 오프라인으로 읽을 수 있습니다. 외부 자료 링크는 인터넷 연결이 필요합니다.','이미지와 글은 오프라인으로 읽을 수 있습니다. 외부 자료 링크는 인터넷 연결이 필요합니다. SameTone Lite 가변 글꼴과 원어용 글꼴도 이 파일에 내장했습니다.')
+    elif profile=='luke-9-51-native-v1':
+        change('글과 그림은 오프라인으로 읽을 수 있습니다. 출처 링크를 여는 데에는 인터넷 연결이 필요합니다.','글과 그림은 오프라인으로 읽을 수 있습니다. 출처 링크를 여는 데에는 인터넷 연결이 필요합니다. SameTone Lite 가변 글꼴과 원어용 글꼴도 이 파일에 내장했습니다.')
     return changes
 
 def render(path,run):
@@ -194,11 +226,17 @@ def render(path,run):
     expected=plan.get('reviewedSnapshot',plan['sourceSnapshot'])
     if {k:digest(v) for k,v in cards(doc).items()}!=expected['cards']:
         raise ValueError('Native authored card changed')
-    css='\n'.join((ROOT/name).read_text(encoding='utf-8') for name in
-                  ('web/reader-fonts.css','automation/typography.css','automation/revision.css','automation/source_reader.css'))
-    licenses=(ROOT/'web/assets/FONT-LICENSES.txt').read_text(encoding='utf-8').replace('*/','* /')
+    if plan['profile']=='luke-10-native-v1':
+        from source_reader_luke101 import verify_existing_fonts
+        verify_existing_fonts(source,(ROOT/'web/reader-fonts.css').read_text(encoding='utf-8'))
+        names=('automation/revision.css','automation/source_reader_luke101.css')
+        licenses=''  # The reviewed source already embeds the full font licenses.
+    else:
+        names=('web/reader-fonts.css','automation/typography.css','automation/revision.css','automation/source_reader.css')
+        licenses=(ROOT/'web/assets/FONT-LICENSES.txt').read_text(encoding='utf-8').replace('*/','* /')
+    css='\n'.join((ROOT/name).read_text(encoding='utf-8') for name in names)
     logo=(ROOT/'web/logo.svg').read_text(encoding='utf-8')
-    brand=re.search(r'(<span class="brand-symbol"(?: aria-hidden="true")?>)(.*?)(</span>)',doc,re.S)
+    brand=re.search(r'(<span class="(?:brand-symbol|brand-mark)"(?: aria-hidden="true")?>)(.*?)(</span>)',doc,re.S)
     if not brand:raise ValueError('Native brand icon missing')
     doc=doc[:brand.start(2)]+logo+doc[brand.end(2):]
     meta=dict(issueId=run['id'],templateVersion=VERSION,profile=plan['profile'],originalSha256=plan['originalSha256'],
@@ -210,7 +248,8 @@ def render(path,run):
     doc=revision.stamp(doc,run['revision'])
     filename=html.escape(Path(run['relativePath']).name.rstrip('.'),quote=True)
     message='기존 해설·삽화·메모 구조를 보존하고 원전 대조와 읽기 환경을 보완했습니다.' if not plan.get('contentEditsSha256') else '기존 해설과 메모 구조를 살리고, 원어·성경의 연결을 보강하며 읽기 환경을 보완했습니다.'
-    notice='<aside class="bnoc-revision-notice">개정 '+run['revision']['revisedAt'][:10]+' · '+message+' <a href="'+filename+'" download="'+filename+'">HTML 저장</a></aside>'
+    message=plan.get('revisionDescription') or message
+    notice='<aside class="bnoc-revision-notice">개정 '+run['revision']['revisedAt'][:10]+' · '+html.escape(message)+' <a href="'+filename+'" download="'+filename+'">HTML 저장</a></aside>'
     doc=re.sub(r'(<body\b[^>]*>)',lambda m:m[0]+notice,doc,count=1)
     doc=re.sub(r'(<body\b)',lambda m:m[0]+' data-bnoc-source-profile="'+plan['profile']+'"',doc,count=1)
     metrics=audit_html(doc)
@@ -237,16 +276,18 @@ def audit_html(doc):
     tools=[n for n in p.nodes if n['tag']=='nav' and cls(n,'bottom-tools')]
     require(len(tools)==1,'Persistent toolbar missing')
     buttons=p.within(tools[0],'button')
-    require(len(buttons)==4 and any('data-open-toc' in n['attrs'] for n in buttons),'Four reading controls required')
-    for key in ('summaryBtn','collapseBtn','topBtn'):
+    luke=bool(re.search(r'<body\b[^>]*data-bnoc-source-profile="luke-9-57-native-v1"',doc))
+    luke10=bool(re.search(r'<body\b[^>]*data-bnoc-source-profile="luke-10-native-v1"',doc))
+    require(len(buttons)==4 and any(('data-toc' if luke else 'data-open-toc') in n['attrs'] for n in buttons),'Four reading controls required')
+    for key in ('summaryBtn','foldBtn' if luke else 'collapseBtn','topBtn'):
         require(len(byid(key))==1 and any(n is byid(key)[0] for n in buttons),'Toolbar control missing '+key)
-    for key,tag in (('tocDialog','dialog'),('tocSearch','input'),('closeToc','button'),('fontBtn','button'),('themeBtn','button')):
+    for key,tag in (('tocDialog','dialog'),('searchInput' if luke else 'tocSearch','input'),('closeToc','button'),('fontBtn','button'),('themeBtn','button')):
         require(len(byid(key))==1 and byid(key)[0]['tag']==tag,'Native control missing '+key)
     require(len([n for n in p.nodes if n['tag']=='textarea' and 'data-note' in n['attrs']])==3,'Three native note fields required')
     tables=[n for n in p.nodes if n['tag']=='table']
     for table in tables:
         require(bool(p.within(table,'thead')),'Explicit print headings required')
-        require(cls(table,'lex-table') or cls(table,'bridge-table'),'Unknown native table requires review')
+        require(cls(table,'lex-table') or cls(table,'bridge-table') or (luke and cls(table,'lex')) or (luke10 and cls(table,'study-table')),'Unknown native table requires review')
         expected=_body_column_headings(p,table)
         for cell in p.within(table,'td'):
             require(bool(expected.get(id(cell))) and cell['attrs'].get('data-label')==expected[id(cell)],'Native mobile column heading mismatch')

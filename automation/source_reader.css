@@ -19,13 +19,14 @@ body{font-synthesis:none}
 .lex-table,.bridge-table{max-width:100%;min-width:0;font-size:calc(var(--body-size)*16/18)}
 body[data-bnoc-source-profile="ezekiel-native-v1"] .lex-table.bnoc-bridge th{width:16.6667%}
 :is(.lex-table,.bridge-table) :is(td,th){min-width:0;overflow-wrap:anywhere;word-break:normal}
-table.lex-table :is(td,th){font-size:inherit}
+:is(table.lex-table,table.bridge-table) :is(td,th){font-size:inherit}
+.bridge-table td.concept{font-size:inherit}
 :is(td,th) :is([lang=he],[lang=grc],[lang=el]){overflow-wrap:anywhere;word-break:normal}
 :is([lang=he],.he,.hebrew){direction:rtl;unicode-bidi:isolate}
 .tool{min-height:48px}
 .bnoc-revision-notice{font-size:13px;padding:10px 28px;margin:0 auto;max-width:1220px}
 @media screen and (max-width:650px){
- body[data-bnoc-source-profile="ezekiel-native-v1"] :is(.hero-art,.chapter-figure){width:100%!important;max-width:100%!important;margin-left:0!important;margin-right:0!important}
+ body:is([data-bnoc-source-profile="ezekiel-native-v1"],[data-bnoc-source-profile="luke-9-51-native-v1"]) :is(.hero-art,.chapter-figure){width:100%!important;max-width:100%!important;margin-left:0!important;margin-right:0!important}
  .card-title{font-size:calc(var(--body-size)*21/18)}
  .scripture-heading{padding:20px}
  .lex-table,.bridge-table{font-size:calc(var(--body-size)*16/18)}
@@ -50,4 +51,45 @@ table.lex-table :is(td,th){font-size:inherit}
  details::details-content{display:block!important;content-visibility:visible!important;height:auto!important}
  .site-header,.bottom-tools,dialog,.header-actions{display:none!important}
  .page-wrap,.content-layout,.main-content{max-width:100%!important;width:auto!important;padding:0!important;margin:0!important;display:block!important}
+}
+/* Luke 9:57 has a distinct authored layout and original --size storage contract. */
+body[data-bnoc-source-profile="luke-9-57-native-v1"]{--body-size:var(--size);--soft:var(--paper-soft);--goldsoft:var(--gold-soft)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .brand-mark{width:84px;height:34px;border:0;background:transparent}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .brand-mark svg{width:84px;height:32px}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .study-card>summary{display:grid;grid-template-columns:22px minmax(0,1fr) 12px}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .study-card>summary::after{display:block;content:''}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .brief{font-size:calc(var(--body-size)*17/18)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] table.lex{min-width:0;max-width:100%;font-size:calc(var(--body-size)*16/18)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .lex :is(td,th){font-size:inherit;overflow-wrap:anywhere;word-break:normal}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .lex td small{font-size:.85em;line-height:1.8}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .map-langs>div{font-size:calc(var(--body-size)*16/18)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .map-note{font-size:calc(var(--body-size)*17/18)}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .map-title{font-size:var(--body-size);font-weight:650}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] .poster{background:#002870}
+body[data-bnoc-source-profile="luke-9-57-native-v1"] :is(.poster-top,.poster-bottom,.poster-title span){color:#dbe9ff}
+@media screen and (max-width:650px){
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .brand-mark{width:68px;flex:0 0 68px}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .brand-mark svg{width:68px}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .art{width:100%!important;max-width:100%!important;margin-left:0!important;margin-right:0!important}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .head-inner{gap:8px;padding-left:14px;padding-right:14px}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .brand{gap:8px}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .brand b{font-size:13px}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .brand small{font-size:10px}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .lex caption{display:block;width:100%;max-width:100%}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .lex td{display:block;width:100%;max-width:100%}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .lex td::before{display:block;direction:ltr;text-align:left;font-size:12px;line-height:1.7;margin-bottom:7px}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .map-langs{grid-template-columns:1fr}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .map-langs>div{border-right:0;border-bottom:1px solid var(--line)}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .map-langs>div:last-child{border-bottom:0}
+}
+@media screen and (max-width:380px){body[data-bnoc-source-profile="luke-9-57-native-v1"] .brand small{display:none}}
+@media print{
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .lex{display:table!important;width:100%!important;table-layout:fixed;font-size:10pt!important}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .lex thead{display:table-header-group!important}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .lex tbody{display:table-row-group!important}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .lex tr{display:table-row!important}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .lex :is(th,td){display:table-cell!important;width:auto!important;max-width:none!important}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .lex td::before{display:none!important}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .poster{background:#fff;color:#000;border:1px solid #aaa}
+ body[data-bnoc-source-profile="luke-9-57-native-v1"] .poster :is(p,span,small){color:#000}
 }

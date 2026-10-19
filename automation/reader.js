@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const $=s=>document.querySelector(s),key='bnoc:'+document.body.dataset.issue,theme=$('#theme'),size=$('#size'),summary=$('#summary'),collapse=$('#collapse'),dialog=$('#searchDialog'),q=$('#query'),note=$('#note');
+const $=s=>document.querySelector(s),key='bnoc:'+(document.body.dataset.storageIssue||document.body.dataset.issue),theme=$('#theme'),size=$('#size'),summary=$('#summary'),collapse=$('#collapse'),dialog=$('#searchDialog'),q=$('#query'),note=$('#note');
 const cards=[...document.querySelectorAll('details.study-card')];
 function get(k){try{return localStorage.getItem(k)}catch(e){return null}}
 function put(k,v){try{localStorage.setItem(k,v);return true}catch(e){return false}}

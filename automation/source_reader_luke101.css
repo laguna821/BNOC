@@ -1,0 +1,18 @@
+/* Keep the reviewed SameTone hierarchy and four WebP illustrations already embedded. */
+.brand-symbol{width:84px;height:34px;flex:0 0 84px;border:0;background:transparent;border-radius:0}
+.brand-symbol svg{width:84px;height:32px}
+.scripture-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:22px 28px;color:var(--ink);font-size:var(--body-size);font-weight:700}
+.scripture-heading .chevron{display:none}
+@media screen and (max-width:650px){
+ .brand-symbol{width:68px;flex-basis:68px}.brand-symbol svg{width:68px}
+ .scripture-heading{padding:20px}
+}
+@media print{
+ .scripture-heading{padding:4mm 0;break-after:avoid}
+ .study-table{display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:fixed}
+ .study-table thead{display:table-header-group!important}
+ .study-table tbody{display:table-row-group!important}
+ .study-table tr{display:table-row!important}
+ .study-table :is(th,td){display:table-cell!important;width:auto!important;max-width:none!important}
+ .study-table td::before{display:none!important}
+}

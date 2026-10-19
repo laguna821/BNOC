@@ -197,7 +197,7 @@ def audit(doc):
     provenance=re.search(r'<script type="application/json" id="bnoc-provenance">(.*?)</script>',doc,re.S)
     if provenance:
         meta=json.loads(provenance[1])
-        if meta.get('templateVersion') in ('bnoc-source-reader-1.0','bnoc-source-reader-1.1'):
+        if meta.get('templateVersion') in ('bnoc-source-reader-1.0','bnoc-source-reader-1.1','bnoc-source-reader-1.2','bnoc-source-reader-1.3'):
             import source_reader
             if meta.get('profile') not in source_reader.PROFILES:raise ValueError('Unknown native reader profile')
             return source_reader.audit_html(doc)
