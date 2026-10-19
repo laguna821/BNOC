@@ -1,0 +1,27 @@
+{
+  "id": "2026-05-03-65d3ac23a259a407",
+  "date": "2026-05-03",
+  "reference": "창세기 25:1-18",
+  "service": "revision-9047b27a54d4614ca406",
+  "relativePath": "2026/05032026/genesis_25_1-18_premium_guide.html",
+  "manuscriptSha256": "f8b6ba82405a35ddf1e4f5ba0571c3ba1893329effbc652cad2008e493450249",
+  "passageSha256": "4b0a4ecb9675de2ccfbb43d3c6e1ce48421ece95fd18a961295d13b9fad7c385",
+  "htmlSha256": "7d9f3269139ba08e375a56d6faacc821b19ff293137d3b8ffcabcca6895483ba",
+  "editorialReviewSha256": "97342e229801d509e6143deb48ca7dd93456b43f3eee0e6f932fec5e1d22d8aa",
+  "visualPlanSha256": "56b8c176a328ea5cb41a83d6c787fca5ee9c5f718b9552a18f758b89a35e875c",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "1847f709848d3c5a5b0a8ee932d4c6de745a4358",
+    "originalSha256": "e9e0017f4584c739942dbd17e6bfe218500afc77efdf571074a108a940146e18",
+    "revisedAt": "2026-10-19T02:43:55.108431+00:00",
+    "kinds": [
+      "design",
+      "expansion",
+      "theology"
+    ]
+  }
+}
