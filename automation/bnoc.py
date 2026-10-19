@@ -19,6 +19,7 @@ import render
 import revision
 import editorial
 import image_delivery
+import source_reader
 
 DEFAULT_CONFIG=Path(os.environ.get('BNOC_CONFIG',str(Path.home()/'Achmage-System/bnoc/config.json')))
 STAGES=['discovered','passage-confirmed','researched','written','illustrated','rendered','validated','pushed','published']
@@ -106,6 +107,7 @@ def check(c,force=False):
     return dict(status='needs-image-reading',candidate=str(folder/'candidate.json'),date=candidate['date'],images=downloaded)
 
 def audit_review(path,run):
+    if source_reader.enabled(path):return source_reader.audit_review(path,run)
     if run.get('revision',{}).get('kinds') in (['design'],['scripture']):return revision.audit_design(path,run)
     manuscript=load(path/'manuscript.json');passage=load(path/'passage.json')
     report=load(path/'review.json');output=path/Path(run['relativePath']).name.rstrip('.')
@@ -281,9 +283,11 @@ def main():
             elif command=='checkpoint':
                 if args.stage=='researched' and not (path/'research.md').is_file():raise ValueError('Actual research.md required')
                 if args.stage=='written':
-                    editorial.review(load(path/'manuscript.json'),load(path/'passage.json'),path)
+                    if source_reader.enabled(path):source_reader.validate(path,run)
+                    else:editorial.review(load(path/'manuscript.json'),load(path/'passage.json'),path)
                 if args.stage=='illustrated':
-                    render.validate(load(path/'manuscript.json'),load(path/'passage.json'),path)
+                    if source_reader.enabled(path):source_reader.validate(path,run)
+                    else:render.validate(load(path/'manuscript.json'),load(path/'passage.json'),path)
                 run['attempts'].append(dict(stage=args.stage,evidence=args.evidence,at=dt.datetime.now(dt.timezone.utc).isoformat()));advance(c,path,run,args.stage);result={'status':args.stage}
             elif command=='optimize-images':
                 if run['stage'] in ('pushed','published'):raise ValueError('Published images require an explicit revision')
@@ -296,6 +300,16 @@ def main():
                     advance(c,path,run,'written')  # derivative inspection is now pending
                 result['report']=str(path/'image-optimization.json')
             elif command=='render':
+                if source_reader.enabled(path):
+                    doc,meta=source_reader.render(path,run);name=Path(run['relativePath']).name.rstrip('.')
+                    run['versions'].update(skill='1.2',template=meta['templateVersion'])
+                    (path/name).write_text(doc,encoding='utf-8',newline='\n');save(path/'render.json',dict(meta,file=name));advance(c,path,run,'rendered')
+                    result=dict(status='rendered',file=str(path/name),**meta)
+                    if args.print_proof:
+                        css='\n'.join(re.findall(r'<style\b[^>]*>(.*?)</style>',doc,re.S))
+                        (path/'print-proof.html').write_text(render.print_proof(doc,css),encoding='utf-8',newline='\n')
+                        result['printProof']=str(path/'print-proof.html')
+                    print(json.dumps(result,ensure_ascii=False));return
                 if run.get('revision',{}).get('kinds') in (['design'],['scripture']):
                     if args.print_proof:raise ValueError('Design-only revision retains its original print rules; inspect that document in print preview instead of applying the new-reader proof')
                     doc,meta=revision.render_design(path,run);name=Path(run['relativePath']).name.rstrip('.')

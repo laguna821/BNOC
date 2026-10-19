@@ -194,6 +194,13 @@ def _body_column_headings(parsed, table):
 
 def audit(doc):
     """Block missing reader controls/labels even if a manual review says passed."""
+    provenance=re.search(r'<script type="application/json" id="bnoc-provenance">(.*?)</script>',doc,re.S)
+    if provenance:
+        meta=json.loads(provenance[1])
+        if meta.get('templateVersion')=='bnoc-source-reader-1.0':
+            import source_reader
+            if meta.get('profile')!=source_reader.PROFILE:raise ValueError('Unknown native reader profile')
+            return source_reader.audit_html(doc)
     def require(condition, message):
         if not condition: raise ValueError('Reader contract: ' + message)
 

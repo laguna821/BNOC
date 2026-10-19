@@ -55,10 +55,11 @@ def diagram_svg(source,figure_id):
     ET.register_namespace('','http://www.w3.org/2000/svg')
     return ET.tostring(node,encoding='unicode')
 
-def print_proof(doc):
+def print_proof(doc,css=None):
     # Local visual proof of the exact print rules; pagination still belongs to the user's print dialog.
-    css='\n'.join((ROOT/'automation'/name).read_text(encoding='utf-8')
-                  for name in ('reader.css','typography.css'))
+    if css is None:
+        css='\n'.join((ROOT/'automation'/name).read_text(encoding='utf-8')
+                      for name in ('reader.css','typography.css'))
     blocks=[];cursor=0
     while (marker:=css.find('@media print{',cursor))!=-1:
         start=marker+len('@media print{');depth=1;end=start
