@@ -1,0 +1,26 @@
+{
+  "id": "2026-05-31-882dd8d195f455fd",
+  "date": "2026-05-31",
+  "reference": "누가복음 6:46-49",
+  "service": "revision-5f046086a052b627c147",
+  "relativePath": "2026/05312026/Luke_6_46-49_premium_orthodoxy_orthopraxy_guide.html",
+  "manuscriptSha256": "c9f45f99caf05b82e038ca624a2b52c920fbb4b4f35af1efbdb3ba27b5f3e0d2",
+  "passageSha256": "444120e7e01ca5f896ac07e5bd38548a273910840cff8cc0236f501cdc801bdb",
+  "htmlSha256": "f3324987f1d92517faea6abc530dbe6e8bf172801142be8c21c84a08af361b6b",
+  "editorialReviewSha256": "1b25b1c1d879bb5702b8b03acb9afbdc33bb24d43637b5ef6fa2d1c370009426",
+  "visualPlanSha256": "40ca5cde5cf869a8801f64bbbf8a4d259e557d32fe0648a3cf71ce446ba7f6c0",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex)",
+  "revision": {
+    "originalCommit": "8dc6af15c01969c2611683d1fef7f612732f072c",
+    "originalSha256": "79528fd29082ccf7d6d4407d04841aae2999fd4d76481a6d2489cb1df126fb63",
+    "revisedAt": "2026-10-19T03:54:08.234280+00:00",
+    "kinds": [
+      "design",
+      "theology"
+    ]
+  }
+}
