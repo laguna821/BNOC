@@ -1,0 +1,17 @@
+{
+  "id": "2026-10-25-7964aaef521dc22f",
+  "date": "2026-10-25",
+  "reference": "누가복음 10:17-20",
+  "service": "sunday-morning-adult",
+  "relativePath": "2026/10252026/luk-10-17-c2b0bfc6.html",
+  "manuscriptSha256": "625ac3c416c8f0ae2cd42702fa218f3c5a11275df76259f504ff57ac063a270b",
+  "passageSha256": "33c2b2d11265e813003b3747063e5742993ddc5dfb0cc686aeb833a180d6f11a",
+  "htmlSha256": "3eb0e2374e27839e83d3af6bf78ecd361522cbcd99b8631fb167755c6d315cc7",
+  "editorialReviewSha256": "aa05e296a5ef0e0855307877a622548886d0f06284e694ae239986c224655974",
+  "visualPlanSha256": "4b7a95218ab9db547ecffff0b1727edb2f59a5aa620df10225c8a10ce6423e60",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex; runtime does not expose a more specific model identifier)"
+}
