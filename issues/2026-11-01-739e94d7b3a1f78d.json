@@ -1,0 +1,17 @@
+{
+  "id": "2026-11-01-739e94d7b3a1f78d",
+  "date": "2026-11-01",
+  "reference": "누가복음 10:21-24",
+  "service": "sunday-morning-adult",
+  "relativePath": "2026/11012026/luk-10-21-0eeafb7d.html",
+  "manuscriptSha256": "6a1f5c2f37f66044dad9075d811e267c7bd971a2a6f9ae62495e68763ff9aabb",
+  "passageSha256": "4ee3fd27eb3fe3996d53452530fbac5a70f0721339028f705a0f2a318e4a89d8",
+  "htmlSha256": "53d11967bb4a5a4e3250e70b485ebdbc3fc4b6d40afd1b40e1ae824ad468d435",
+  "editorialReviewSha256": "b452d5edd1686a5a397bd8444315dbbe4a850eac8e4d1008f90ade788470d72c",
+  "visualPlanSha256": "f2962001136c69f705665306ba87f95a302c842f89bc59d8dea35d21ab40bfad",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 (Codex session runtime; finer identifier not exposed)"
+}
