@@ -1,0 +1,17 @@
+{
+  "id": "2026-11-08-c5fd189e4554eb51",
+  "date": "2026-11-08",
+  "reference": "누가복음 10:30-37",
+  "service": "sunday-morning-adult",
+  "relativePath": "2026/11082026/luk-10-30-1d451ca5.html",
+  "manuscriptSha256": "ddc20cb6d59ffe9808a25e3b55e0a27f1735ba2074cf8cfe422da5dd927cc5f2",
+  "passageSha256": "113eb1b7d52b55b88f4e0a2026c0e1c764fa3e377f4f63369167476113f8f1d4",
+  "htmlSha256": "ccf1a06e6a718f3c1c9b8e14a2e4feb6021b5b095993f4ad02b5514aef77ffbd",
+  "editorialReviewSha256": "fbabe3e5d3a7559eb9693dac949b9240f6c617966e3fdfae6aadc41db8df546c",
+  "visualPlanSha256": "5ec1f9681a00281cd212d6ff325d0954dea7582c50cbd287d0a08c15b40a5790",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 · current Codex session (exact deployment version not exposed)"
+}
