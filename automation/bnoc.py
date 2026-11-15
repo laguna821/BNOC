@@ -256,7 +256,7 @@ def main():
         p=sub.add_parser(name);p.add_argument('run_id')
         if name=='claim':
             p.add_argument('--resume-expired',action='store_true');p.add_argument('--owner',required=True)
-            p.add_argument('--changed-evidence',default='');p.add_argument('--manual-recovery',action='store_true')
+            p.add_argument('--changed-evidence',default='')
         elif name not in ('status',):p.add_argument('--token',required=True)
         if name=='checkpoint':p.add_argument('--stage',choices=['researched','written','illustrated'],required=True);p.add_argument('--evidence',required=True)
         if name=='render':p.add_argument('--print-proof',action='store_true')
@@ -289,10 +289,8 @@ def main():
             if run['stage']=='published':result={'status':'already-published','url':run.get('url')}
             elif lease and lease['expires']>time.time():result={'status':'busy','owner':lease['owner'],'expires':lease['expires']}
             elif lease and not args.resume_expired:result={'status':'interrupted-needs-resume','stage':run['stage']}
-            elif run.get('failureCount',0)>=3 and not args.manual_recovery:result={'status':'needs-attention','reason':'Three failed attempts; no automatic retry'}
             elif run.get('lastFailure') and not args.changed_evidence:result={'status':'needs-changed-evidence','failure':run['lastFailure']}
             else:
-                if args.manual_recovery:run['failureCount']=0
                 if args.changed_evidence:run['attempts'].append(dict(experiment=args.changed_evidence,at=dt.datetime.now(dt.timezone.utc).isoformat()))
                 run['lastFailure']=None
                 run['lease']=dict(token=secrets.token_hex(16),owner=args.owner,expires=time.time()+21600);save(path/'run.json',run);result={'status':'claimed',**run['lease'],'path':str(path),'stage':run['stage']}

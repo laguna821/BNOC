@@ -1,0 +1,17 @@
+{
+  "id": "2026-11-15-7bfe5bc269302a1b",
+  "date": "2026-11-15",
+  "reference": "누가복음 10:38-42",
+  "service": "sunday-morning-adult",
+  "relativePath": "2026/11152026/luk-10-38-5c7a95ac.html",
+  "manuscriptSha256": "ba068efe32fba68cdad2ef6709f03aa0c7cbfa42b25ea680fc057d671ff453a7",
+  "passageSha256": "ce082df93ba5f6cfd52f0f25750f3a84ad4b33b0f23c0a7a13a6ba1aac3a92bf",
+  "htmlSha256": "3018cade0b50bdf9e1d773c14061709b336c90e8979a719761a74f6893a35b62",
+  "editorialReviewSha256": "2714ea0cce7af449548451ac9559340437cfb26443bbfd900c103c1d693b4153",
+  "visualPlanSha256": "b3434661e53b7c3a207923ecf87c50e8e6c8caef95104c8ebd0fc7cfae620bca",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "GPT-6 · 현재 Codex 세션(세부 배포 버전은 노출되지 않음)"
+}
