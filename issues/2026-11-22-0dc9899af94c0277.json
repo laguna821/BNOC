@@ -1,0 +1,17 @@
+{
+  "id": "2026-11-22-0dc9899af94c0277",
+  "date": "2026-11-22",
+  "reference": "누가복음 11:1-4",
+  "service": "sunday-morning-adult",
+  "relativePath": "2026/11222026/luk-11-1-265fceee.html",
+  "manuscriptSha256": "ca43b7fe9b016730abd45449dbd4c6e60354203b0682d27073231ef0b48cbbb6",
+  "passageSha256": "3f7131c39b243ad819b4d2f016e26904caf53c3a2058235c879cff3ee2836aab",
+  "htmlSha256": "a0df9f8b1cb67d9e7099f4e0119f774fbccc030822fbb4732a509b1aa84df6f6",
+  "editorialReviewSha256": "793f9f1067f8ec7e84255163e68649230f61b327f2b9d40da82fe2412d055a88",
+  "visualPlanSha256": "f8115a97cf318eb8fa5d29ca1ab7cf47dc3ce4651fcb00c1f6a386f12b4bbffc",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "Codex / GPT-6"
+}
