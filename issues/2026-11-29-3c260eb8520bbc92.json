@@ -1,0 +1,17 @@
+{
+  "id": "2026-11-29-3c260eb8520bbc92",
+  "date": "2026-11-29",
+  "reference": "누가복음 11:5-13",
+  "service": "sunday-morning-adult",
+  "relativePath": "2026/11292026/luk-11-5-c78ddd98.html",
+  "manuscriptSha256": "041931193b100b37eaf4c51a6be261e560fc440a1f0b7e3e6704c11a07f64008",
+  "passageSha256": "6865486cfdd36c96ce7f32a00aa293098d7d32223e1f01adfd68de6af1f00f42",
+  "htmlSha256": "c9fb612d018eac6574cb0c80735164b05d18b32bf094d509516ddc507f4679db",
+  "editorialReviewSha256": "9b727d29743e115199cf65fb6d39feb586a78c27f8c5843e219f02eb70316fb3",
+  "visualPlanSha256": "07a3576d6dd8caf97a417c3813bc872f3b8f8aeae20cb98233261ef48e86a80e",
+  "versions": {
+    "skill": "1.2",
+    "template": "bnoc-reader-1.2"
+  },
+  "reviewModel": "Codex (현재 호출 모델; 세부 버전 비공개)"
+}
