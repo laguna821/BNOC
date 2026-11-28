@@ -296,6 +296,10 @@ def main():
                 run['lease']=dict(token=secrets.token_hex(16),owner=args.owner,expires=time.time()+21600);save(path/'run.json',run);result={'status':'claimed',**run['lease'],'path':str(path),'stage':run['stage']}
         else:
             path,run=owned(c,args.run_id,args.token)
+            if (c.get('weeklyReader') and run['service']=='sunday-morning-adult'
+                    and run['date'] >= '2026-11-29' and run['mode']=='publish'
+                    and command in {'passage','checkpoint','optimize-images','render','validate','publish','verify'}):
+                raise ValueError("Weekly publication uses passage_weekly.py and the pinned OS reader")
             if command=='promote':
                 run['mode']='publish';save(path/'run.json',run);result={'status':'publish-mode','stage':run['stage']}
             elif command=='passage':

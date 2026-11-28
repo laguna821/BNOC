@@ -4,16 +4,21 @@
   "reference": "누가복음 11:5-13",
   "service": "sunday-morning-adult",
   "relativePath": "2026/11292026/luk-11-5-c78ddd98.html",
-  "manuscriptSha256": "041931193b100b37eaf4c51a6be261e560fc440a1f0b7e3e6704c11a07f64008",
-  "passageSha256": "6865486cfdd36c96ce7f32a00aa293098d7d32223e1f01adfd68de6af1f00f42",
-  "htmlSha256": "c9fb612d018eac6574cb0c80735164b05d18b32bf094d509516ddc507f4679db",
-  "editorialReviewSha256": "9b727d29743e115199cf65fb6d39feb586a78c27f8c5843e219f02eb70316fb3",
-  "visualPlanSha256": "07a3576d6dd8caf97a417c3813bc872f3b8f8aeae20cb98233261ef48e86a80e",
   "versions": {
-    "skill": "1.2",
-    "template": "bnoc-reader-1.2"
+    "skill": "bnoc-passage-reader",
+    "version": "1.2.0",
+    "sha256": "115bac33dade9be8b61a57a15abdb4d4a2c67bdb8ef6e04e163cad6d155b1502"
   },
-  "reviewModel": "Codex (현재 호출 모델; 세부 버전 비공개)",
-  "publicationStatus": "withdrawn-pending-replacement",
-  "replacementSkill": "bnoc-passage-reader@1.2.0"
+  "publicationStatus": "published",
+  "htmlSha256": "31ad31297b67b5e3926cf070fba329a538242f919b690a7d13aad1f3167285d2",
+  "files": {
+    "2026/11292026/luk-11-5-c78ddd98.html": "31ad31297b67b5e3926cf070fba329a538242f919b690a7d13aad1f3167285d2",
+    "2026/11292026/og.png": "9115bdebf6f5f7318a3c817b2b9f56f5124aaddcb26181213edc81369d9c95f3",
+    "2026/11292026/apple-touch-icon.png": "12c94b3711348df8df1c97ea81c80c16c2dc142eabd7898d16785eecb3c61082",
+    "2026/11292026/favicon.svg": "40fb5c3b2ca4baa2050a07269a15de6d038dfed0608bcf0566ac71abf04d5158",
+    "2026/11292026/share.json": "3a28fe0ef30afa63ce87e2b4676ebd138ac9931d4b0637a05855b8046a98d215"
+  },
+  "reviewedInputsSha256": "40177e2e0e47762c7d766c51ef00ead2bc4bd0795d0c2db7077674ae07a48754",
+  "auditSha256": "d7960f3ef4a0ea8f87617ab6831a9d0df929ad22dab3706c93d090f618d36b2a",
+  "reviewModel": "Codex 독립 검토 하위 대화(집필 대화와 이전 호를 열지 않고 검수)"
 }

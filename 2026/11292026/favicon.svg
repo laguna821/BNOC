@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 512 512" role="img" aria-label="Achmage BNOC">
+<defs><radialGradient id="b" cx="50%" cy="34%" r="80%"><stop offset="0" stop-color="#1c3a5e"/><stop offset="1" stop-color="#0a1830"/></radialGradient>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe9b4"/><stop offset="0.5" stop-color="#e2bd6b"/><stop offset="1" stop-color="#b98a3a"/></linearGradient>
+<linearGradient id="p" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#efe3c2"/><stop offset="0.5" stop-color="#fffaf0"/><stop offset="1" stop-color="#efe3c2"/></linearGradient></defs>
+<rect width="512" height="512" rx="104" fill="url(#b)"/>
+<circle cx="256" cy="176" r="150" fill="#f6dc9a" fill-opacity="0.10"/>
+<path d="M238,62 L274,62 L274,138 L338,138 L338,174 L274,174 L274,318 L238,318 L238,174 L174,174 L174,138 L238,138 Z" fill="url(#g)"/>
+<path d="M256,300 C214,274 150,270 96,290 L96,410 C150,390 214,394 256,420 C298,394 362,390 416,410 L416,290 C362,270 298,274 256,300 Z" fill="url(#p)" stroke="#bfae84" stroke-width="3"/>
+<path d="M88,300 L88,428 C148,406 214,410 256,438 C298,410 364,406 424,428 L424,300" fill="none" stroke="url(#g)" stroke-width="7" stroke-linejoin="round"/>
+<path d="M256,300 L256,420" stroke="#8a7650" stroke-width="5"/>
+<g stroke="#6b5a3e" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round" fill="none"><path d="M126,322 C166,312 204,314 234,326"/><path d="M126,350 C166,340 204,342 234,354"/><path d="M126,378 C166,368 204,370 234,382"/><path d="M278,326 C308,314 346,312 386,322"/><path d="M278,354 C308,342 346,340 386,350"/><path d="M278,382 C308,370 346,368 386,378"/></g>
+<path d="M248,296 L264,296 L266,462 L256,448 L246,462 Z" fill="#c8332b"/>
+</svg>

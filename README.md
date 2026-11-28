@@ -2,6 +2,8 @@
 
 https://laguna821.github.io/BNOC/
 
+2026년 11월 29일호부터 주간 본문은 OS `bnoc-passage-reader 1.2.0`이 생성한 HTML과 공유 자산을 원본 바이트로 배포합니다. [주간 발행 절차](automation/skill/references/weekly-reader.md)
+
 ## 새 자료 올리기
 
 1. 기존처럼 `YYYY/MMDDYYYY/파일이름.html`에 HTML과 필요한 이미지 파일을 올립니다.

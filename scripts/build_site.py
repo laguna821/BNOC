@@ -2,7 +2,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from html import escape
-import re, json, shutil, datetime, subprocess, sys
+import re, json, shutil, datetime, subprocess, sys, hashlib
 from urllib.parse import quote, unquote
 from xml.etree import ElementTree as ET
 
@@ -61,6 +61,19 @@ def build():
     for child in out.iterdir():
         if child.is_dir():shutil.rmtree(child)
         else:child.unlink()
+    originals = {}
+    for manifest in (ROOT / 'issues').glob('*.json'):
+        record = json.loads(manifest.read_text(encoding='utf-8-sig'))
+        version = record.get('versions', {})
+        if version.get('skill') != 'bnoc-passage-reader' or record.get('publicationStatus') != 'published':
+            continue
+        if version.get('version') != '1.2.0':
+            raise ValueError('Unexpected passage reader version in ' + manifest.name)
+        originals[record['relativePath']] = record
+        for relative, expected in record['files'].items():
+            file = (ROOT / relative).resolve()
+            if not file.is_relative_to(ROOT) or hashlib.sha256(file.read_bytes()).hexdigest() != expected:
+                raise ValueError('Passage reader asset hash differs: ' + relative)
     items=[]
     for year in sorted(ROOT.iterdir()):
         if not year.is_dir() or not re.fullmatch(r'20\d{2}',year.name):continue
@@ -70,16 +83,25 @@ def build():
             rel=path.relative_to(ROOT);html=path.read_text(encoding='utf-8-sig')
             parsed=Text();parsed.feed(html);date=date_for(rel)
             title=' '.join(parsed.t).strip() or path.stem
+            if rel.as_posix() in originals:
+                title = json.loads((path.parent/'share.json').read_text(encoding='utf-8-sig'))['title']
             words=' '.join(' '.join(parsed.words).split())
             books=list(dict.fromkeys([b['name'] for b in CANON_BOOKS if b['name'] in title or path.name.lower().startswith(b['code']+'-')]+[v for k,v in BOOKS.items() if re.search(k,re.escape(path.name),re.I) or v in title]))
             desc=parsed.meta.get('description','')
             if not desc:desc=' · '.join(books)+' 본문을 중심으로 배경과 의미, 삶의 적용을 살펴보는 말씀 자료.'
             target=rel
             if path.name.endswith('.'):target=rel.with_name(path.name.rstrip('.'))
-            rendered=reader(html,date)
-            (out/target).write_text(rendered,encoding='utf-8')
+            original = originals.get(rel.as_posix())
+            if original:
+                if hashlib.sha256(path.read_bytes()).hexdigest() != original['htmlSha256']:
+                    raise ValueError('Unexpected weekly HTML: ' + str(rel))
+                # copytree above preserves the original bytes, including line endings.
+                style = 'bnoc-passage-reader-1.2.0'
+            else:
+                (out/target).write_text(reader(html,date),encoding='utf-8')
+                style = 'original' if date < CUTOFF or parsed.meta.get('bnoc-style') == 'original' else 'sametone-lite-v1'
             link=BASE+'/'+quote(target.as_posix())
-            items.append(dict(title=title,date=date,year=date[:4],books=books,description=desc,link=link,dir=rel.parent.as_posix(),search=' '.join([title,desc,*books,path.name,words]),style='sametone-lite-v1' if date>=CUTOFF and 'bnoc-style" content="original' not in html else 'original'))
+            items.append(dict(title=title,date=date,year=date[:4],books=books,description=desc,link=link,dir=rel.parent.as_posix(),search=' '.join([title,desc,*books,path.name,words]),style=style))
     # Windows checkout omits exactly one non-portable historical name; recover its bytes from Git.
     legacy='2026/01252026/Luke_24_13-25_v1.html.'
     if not (ROOT/legacy).exists():
