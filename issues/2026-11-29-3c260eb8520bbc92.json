@@ -13,5 +13,7 @@
     "skill": "1.2",
     "template": "bnoc-reader-1.2"
   },
-  "reviewModel": "Codex (현재 호출 모델; 세부 버전 비공개)"
+  "reviewModel": "Codex (현재 호출 모델; 세부 버전 비공개)",
+  "publicationStatus": "withdrawn-pending-replacement",
+  "replacementSkill": "bnoc-passage-reader@1.2.0"
 }
