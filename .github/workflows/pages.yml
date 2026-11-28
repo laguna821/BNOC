@@ -1,12 +1,10 @@
 name: BNOC Pages (hub+feed)
 on:
   push:
-    branches: [main]
+    branches: [main, preview/bnoc-reader]
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -21,10 +19,17 @@ jobs:
       - run: python scripts/build_site.py
       - run: python -m unittest discover -s scripts -p 'test_*.py'
       - run: python -m unittest discover -s automation -p 'test_*.py'
+      - name: Check mobile and desktop reading in Chrome
+        run: python scripts/check_reader_browser.py
       - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main'
         with:
           path: _site
   deploy:
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      pages: write
+      id-token: write
     needs: build
     runs-on: ubuntu-latest
     environment:

@@ -1,0 +1,39 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>BNOC 실제 화면 검증</title>
+<style>body{font:16px system-ui;margin:8px}iframe{height:760px;border:1px solid #999;max-width:none}pre{white-space:pre-wrap}</style>
+<h1>주간 본문 화면 검증</h1><pre id="results">검증 중</pre><div id="frames"></div>
+<script>
+async function inspect(width) {
+  const view=document.createElement('iframe');
+  view.width=width;view.title=width+'픽셀 읽기 화면';
+  const ready=new Promise((ok,fail)=>{view.onload=ok;view.onerror=fail});
+  view.src='./reading.html';document.querySelector('#frames').append(view);await ready;
+  const doc=view.contentDocument, win=view.contentWindow, query=(s)=>doc.querySelector(s);
+  const visible=(s)=>[...doc.querySelectorAll(s)].find(e=>e.getClientRects().length && win.getComputedStyle(e).visibility!=='hidden');
+  function verify(value,label){if(!value)throw Error(width+'px '+label);return label}
+  const out={width,renderedWidth:win.innerWidth,checks:[]};
+  verify(win.innerWidth===width,'화면 폭');
+  const card=()=>query('section.card.on');
+  const start=card();verify(start,'첫 장');
+  query('#next').click();verify(card()!==start,'다음 장');
+  query('#prev').click();verify(card()===start,'이전 장');
+  const ink=()=>win.getComputedStyle(doc.body).backgroundColor;
+  for(let n=0;n<3 && doc.documentElement.dataset.theme!=='light';n++)visible('button.shade').click();
+  out.light=ink();visible('button.shade').click();out.dark=ink();
+  verify(out.light!==out.dark,'밝기 전환');
+  visible('button.shade').click();
+  for(let n=0;n<150 && !visible('.chips button')&&!query('#next').disabled;n++)query('#next').click();
+  const chip=visible('.chips button');verify(chip,'낱말 단추');chip.click();verify(visible('.word.on'),'낱말 풀이');
+  out.bodyFont=win.getComputedStyle(doc.body).fontFamily;
+  verify(out.bodyFont.includes('Pretendard')&&!out.bodyFont.includes('SameTone'),'원본 고딕');
+  const serif=[...doc.querySelectorAll('blockquote,.verse,.scripture,.chips button')].map(e=>win.getComputedStyle(e).fontFamily);
+  verify(serif.some(x=>x.includes('Noto Serif KR')),'원본 명조');
+  verify(doc.documentElement.scrollWidth<=win.innerWidth+1,'가로 넘침');
+  verify(!query('#bnoc-reader-v1')&&!query('#sametone-editorial'),'공개용 스타일');
+  out.cards=doc.querySelectorAll('section.card').length;
+  out.og=query('meta[property="og:image"]').content;
+  while(!query('#prev').disabled)query('#prev').click();
+  out.checks=['첫 장','다음·이전','밝기 전환','낱말 풀이','고딕·명조','가로 폭','원본 스타일'];
+  return out;
+}
+(async()=>{try{const data=[await inspect(390),await inspect(1200)];results.textContent=JSON.stringify({passed:true,data},null,2)}catch(e){results.textContent='FAIL '+e.message};document.title=results.textContent})()
+</script>
